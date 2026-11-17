@@ -263,6 +263,23 @@ def run_steps(args, port, immortal, restart=None):
                  lambda: (send_name(late, "Motdman"), late.expect(r"right, .*\(Y/N\)")))
             late.close()
             step("immortal quits", lambda: (god.send("quit"), god.expect_closed()))
+
+            if restart:
+                # Last, because it ends the game. shutdown while wizinvis used to leave buf uninitialised, so
+                # shutdown.txt held garbage or nothing, and startup restarted the game (abraidotti/charm#6).
+                inv = open_session()
+                step(f"{iname} logs in again and goes wizinvis",
+                     lambda: (old_character(inv, iname, ipw), inv.send("wizinvis"), inv.expect(r"vanish into thin air")))
+                step("shutdown while wizinvis", lambda: (inv.send("shutdown"), inv.expect_closed()))
+                down = {}
+                step("the game stays down and exits 0",
+                     lambda: (down.update(code=restart.wait_exit(8)),
+                              _check(down["code"] == 0, f"exit status {down['code']} (None: still running, so "
+                                                        f"startup didn't find shutdown.txt and restarted)")))
+                step("shutdown.txt said who shut it down",
+                     lambda: _check(f"shutdown.txt: [" in restart.latest_log()
+                                    and f"Shutdown by {iname}." in restart.latest_log(),
+                                    "no 'Shutdown by' line from startup.sh in the game log"))
     except Fail as e:
         print(f"FAIL after {len(steps)} step(s): {e}")
         if args.verbose:
@@ -310,18 +327,32 @@ def run_docker(args):
         def stop(self):
             """docker stop; returns the exit status and the newest game log (to check the game itself shut down)."""
             docker("stop", container)
-            code = int(docker("inspect", "-f", "{{.State.ExitCode}}", container).stdout.strip())
-            # The log dir is in the stopped container's filesystem: docker cp streams it out as a tar.
+            return self.exit_code(), self.latest_log()
+
+        def start(self):
+            docker("start", container)
+
+        def exit_code(self):
+            return int(docker("inspect", "-f", "{{.State.ExitCode}}", container).stdout.strip())
+
+        def wait_exit(self, timeout):
+            """Wait for the container to exit by itself; its exit status, or None if it's still running."""
+            deadline = time.monotonic() + timeout
+            while time.monotonic() < deadline:
+                if docker("inspect", "-f", "{{.State.Running}}", container).stdout.strip() == "false":
+                    return self.exit_code()
+                time.sleep(0.5)
+            return None
+
+        def latest_log(self):
+            # Works on a stopped container too: docker cp streams the log dir out as a tar.
             out = subprocess.run(["docker", "cp", f"{container}:/opt/charm/log/.", "-"], capture_output=True)
             logs = {}
             with tarfile.open(fileobj=io.BytesIO(out.stdout)) as tar:
                 for m in tar.getmembers():
                     if m.isfile() and m.name.endswith(".log"):
                         logs[m.name] = tar.extractfile(m).read().decode("latin-1")
-            return code, logs[max(logs)] if logs else ""
-
-        def start(self):
-            docker("start", container)
+            return logs[max(logs)] if logs else ""
 
     try:
         docker("cp", str(FIXTURES / "player" / IMMORTAL[0]), f"{container}:/opt/charm/player/{IMMORTAL[0]}")
