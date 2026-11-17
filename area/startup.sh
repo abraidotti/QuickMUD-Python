@@ -32,6 +32,8 @@ while :; do
 
     # Restart, giving old connections a chance to die.
     if [ -e shutdown.txt ]; then
+        # Keep a record of who shut the game down before removing the file.
+        echo "startup.sh: shutdown.txt: $(cat shutdown.txt)" >>"$logfile"
         rm -f shutdown.txt
         exit 0
     fi

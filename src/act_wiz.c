@@ -2048,8 +2048,10 @@ void do_shutdown (CHAR_DATA * ch, char *argument)
 {
     char buf[MAX_STRING_LENGTH];
 
-    if (ch->invis_level < LEVEL_HERO)
-        sprintf (buf, "Shutdown by %s.", ch->name);
+    /* Always fill buf: it used to be left uninitialised when the immortal was
+     * wizinvis, so shutdown.txt got garbage or nothing (#6). Only the echo
+     * depends on visibility. -- Charm */
+    sprintf (buf, "Shutdown by %s.", ch->name);
     append_file (ch, SHUTDOWN_FILE, buf);
     strcat (buf, "\n\r");
     if (ch->invis_level < LEVEL_HERO)
