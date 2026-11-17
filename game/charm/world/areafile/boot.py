@@ -11,6 +11,14 @@ was rewritten from Charm's db.c/db2.c (ROM's formats and checks differ from Xani
 
 Not modelled (reported, never guessed): the old #MOBOLD and #OBJOLD formats (no stock area uses them), area.lst's
 "-" (read from stdin), and the first reset pass (area_update) that runs after loading.
+
+load_mobiles and load_objects are marked [partial]: the model keeps what the file says, where the C also changes
+the prototype as it loads (a mob's race flags ORed into its act, aff and other flags, ACT_IS_NPC set, and so on).
+The game needs the C's version; P1's second PR adds it.
+
+Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
+(c) 1993-98 Russ Taylor. Ported from src/db.c, src/db2.c. Licence terms: README.md#licence-terms and doc/.
 """
 
 from __future__ import annotations
@@ -18,7 +26,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from ..source.ctables import LookupTables, prefix_lookup, str_prefix_matches
+from .lookups import LookupTables, prefix_lookup, str_prefix_matches
 from .model import (
     AreaFile, AreaHeader, Dice, Exit, ExtraDescription, FlagRemoval, Help, Mob, MobProg, MobProgRef, Obj, ObjAffect,
     REV_DIR, Reset, Room, Shop, Social, Special,
@@ -162,6 +170,7 @@ class Boot:
         return self.area_last
 
     # -- #AREA (load_area, db.c:441) and #AREADATA (new_load_area, db.c:518) -----------------------------------
+    # C: db.c load_area
     def _load_area(self, r: Reader, af: AreaFile) -> AreaHeader:
         file_name = r.read_string()
         name = r.read_string()
@@ -171,6 +180,7 @@ class Boot:
         header = AreaHeader(file_name, name, credits, lo, hi)
         return self._add_area(af, header)
 
+    # C: db.c new_load_area
     def _new_load_area(self, r: Reader, af: AreaFile) -> AreaHeader:
         h = AreaHeader(file_name=r.filename, name="New Area", credits="", min_vnum=0, max_vnum=0, builders="",
                        olc=True)
@@ -200,6 +210,7 @@ class Boot:
         return header
 
     # -- #HELPS (load_helps, db.c:603) -------------------------------------------------------------------------
+    # C: db.c load_helps
     def _load_helps(self, r: Reader, af: AreaFile) -> None:
         while True:
             line = r.line
@@ -213,6 +224,7 @@ class Boot:
             self.counts.helps += 1
 
     # -- #MOBILES (load_mobiles, db2.c:190) --------------------------------------------------------------------
+    # C: db2.c load_mobiles [partial]
     def _load_mobiles(self, r: Reader, af: AreaFile) -> None:
         area = self._need_area(r, "Load_mobiles: no #AREA seen yet.")
         t = self.tables
@@ -299,6 +311,7 @@ class Boot:
         return Dice(n, s, r.read_number())
 
     # -- #OBJECTS (load_objects, db2.c:379) --------------------------------------------------------------------
+    # C: db2.c load_objects [partial]
     def _load_objects(self, r: Reader, af: AreaFile) -> None:
         self._need_area(r, "Load_objects: no #AREA seen yet.")
         t, d = self.tables, self.tables.defines
@@ -380,6 +393,7 @@ class Boot:
         else:
             self.counts.resets += 1
 
+    # C: db.c load_resets
     def _load_resets(self, r: Reader, af: AreaFile) -> None:
         self._need_area(r, "Load_resets: no #AREA seen yet.")
         d = self.tables.defines
@@ -428,6 +442,7 @@ class Boot:
                 self._reset_free = True  # free_reset_data
 
     # -- #ROOMS (load_rooms, db.c:1113) ------------------------------------------------------------------------
+    # C: db.c load_rooms
     def _load_rooms(self, r: Reader, af: AreaFile) -> None:
         area = self._need_area(r, "Load_resets: no #AREA seen yet.")  # sic: the C prints Load_resets here
         d = self.tables.defines
@@ -501,6 +516,7 @@ class Boot:
         return max(i, 0)
 
     # -- #SHOPS (load_shops, db.c:1287) ------------------------------------------------------------------------
+    # C: db.c load_shops
     def _load_shops(self, r: Reader, af: AreaFile) -> None:
         while True:
             line = r.line
@@ -517,6 +533,7 @@ class Boot:
             self.counts.shops += 1
 
     # -- #SPECIALS (load_specials, db.c:1344) ------------------------------------------------------------------
+    # C: db.c load_specials
     def _load_specials(self, r: Reader, af: AreaFile) -> None:
         while True:
             letter = r.read_letter()
@@ -536,6 +553,7 @@ class Boot:
             r.read_to_eol()
 
     # -- #SOCIALS (load_socials, db2.c:53) ---------------------------------------------------------------------
+    # C: db2.c load_socials
     def _load_socials(self, r: Reader, af: AreaFile) -> None:
         while True:
             name = r.read_word()
@@ -554,6 +572,7 @@ class Boot:
             self.counts.socials += 1
 
     # -- #MOBPROGS (load_mobprogs, db.c:1519) ------------------------------------------------------------------
+    # C: db.c load_mobprogs
     def _load_mobprogs(self, r: Reader, af: AreaFile) -> None:
         self._need_area(r, "Load_mobprogs: no #AREA seen yet.")
         while True:
@@ -577,6 +596,8 @@ class Boot:
             buckets.setdefault(vnum % MAX_KEY_HASH, []).insert(0, vnum)
         return [v for h in sorted(buckets) for v in buckets[h]]
 
+    # C: db.c fix_exits
+    # C: db.c fix_mobprogs
     def finish(self) -> None:
         if self.finished:
             return

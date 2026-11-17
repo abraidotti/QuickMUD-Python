@@ -6,12 +6,18 @@ the ROM behaviour differs from Xania's in places (noted on each method). Positio
 
 Fatal conditions (the C calls ``exit(1)``, or would hang or crash) raise AreaParseError. Conditions the C only
 reports with ``bug()`` are recorded as Diagnostics.
+
+Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
+(c) 1993-98 Russ Taylor. Ported from src/db.c. Licence terms: README.md#licence-terms and doc/.
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+
+from charm.core.cint import int32, sh_int  # noqa: F401  (re-exported)
 
 EOF = ""
 _WS = " \t\n\r\v\f"  # C isspace() in the "C" locale
@@ -23,18 +29,6 @@ def isdigit(c: str) -> bool:
 
 def isalpha(c: str) -> bool:
     return len(c) == 1 and ("A" <= c <= "Z" or "a" <= c <= "z")
-
-
-def int32(n: int) -> int:
-    """Wrap to a C int (32-bit two's complement), as the game's arithmetic does on x86-64."""
-    n &= 0xFFFFFFFF
-    return n - (1 << 32) if n & 0x80000000 else n
-
-
-def sh_int(n: int) -> int:
-    """Wrap to ROM's sh_int (short): vnums are stored in one."""
-    n &= 0xFFFF
-    return n - (1 << 16) if n & 0x8000 else n
 
 
 class AreaParseError(Exception):
@@ -70,6 +64,7 @@ class Diagnostic:
         return f"{self.file}:{self.line}: {self.message}" if self.file else self.message
 
 
+# C: db.c flag_convert
 def flag_convert(letter: str) -> int:
     """``flag_convert`` (db.c:2790): A..Z -> 2^0..2^25, a..z -> 2^26..2^51, as a C long (64-bit)."""
     if "A" <= letter <= "Z":
@@ -129,11 +124,13 @@ class Reader:
             self.pos += 1
 
     # -- fread_* ports ------------------------------------------------------
+    # C: db.c fread_letter
     def read_letter(self) -> str:
         """``fread_letter`` (db.c:2677): the next non-space character ("" at EOF)."""
         self.skip_ws()
         return self.getc()
 
+    # C: db.c fread_number
     def read_number(self) -> int:
         """``fread_number`` (db.c:2695): optional sign, digits required (else fatal), ``a|b`` adds. Consumes one
         trailing space; any other terminator is pushed back."""
@@ -159,6 +156,7 @@ class Reader:
             self.ungetc()
         return n
 
+    # C: db.c fread_flag
     def read_flag(self) -> int:
         """``fread_flag`` (db.c:2743). Unlike Xania's, ROM's:
 
@@ -186,6 +184,7 @@ class Reader:
             self.ungetc()
         return -n if negative else n
 
+    # C: db.c fread_string
     def read_string(self) -> str | None:
         """``fread_string`` (db.c:2822): text up to ``~``. The game turns ``\\n`` into ``\\n\\r`` and drops ``\\r``;
         this keeps plain ``\\n``. At EOF the game logs "Fread_string: EOF" and returns NULL, and so does this
@@ -199,6 +198,7 @@ class Reader:
         s, self.pos = self.text[self.pos:end], end + 1
         return s.replace("\r", "")
 
+    # C: db.c fread_string_eol
     def read_string_eol(self) -> str:
         """``fread_string_eol`` (db.c:2926): rest of the line; the newline is consumed. EOF is fatal."""
         self.skip_ws()
@@ -214,6 +214,7 @@ class Reader:
         s, self.pos = self.text[self.pos:end], end + 1
         return s
 
+    # C: db.c fread_to_eol
     def read_to_eol(self) -> str:
         """``fread_to_eol`` (db.c:3029): skip to the end of the line and past any blank lines. Returns the skipped
         text (stripped), which in #RESETS is a human comment worth keeping. At EOF the C loops forever."""
@@ -232,6 +233,7 @@ class Reader:
         self.ungetc()
         return rest.strip()
 
+    # C: db.c fread_word
     def read_word(self) -> str:
         """``fread_word`` (db.c:3054): a whitespace-delimited word, or a quoted one if the *first* character is a
         quote (Xania's reader accepts a quote anywhere; ROM's doesn't). Words are capped at MAX_INPUT_LENGTH (256)

@@ -12,8 +12,7 @@ from pathlib import Path
 
 from charm_tools import paths
 from charm_tools.explore import parity
-from charm_tools.explore.areafile.boot import Counts
-from charm_tools.explore.areafile.world import load_world
+from charm_tools.explore.world import Counts, load_world
 
 FIXTURES = paths.find_root() / "tools" / "fixtures" / "boot"
 

@@ -7,8 +7,7 @@ from pathlib import Path
 
 from .. import paths
 from . import checks, parity
-from .areafile.boot import Counts
-from .areafile.world import World, load_world
+from .world import Counts, World, load_world
 
 FIXTURE_DIR = paths.find_root() / "tools" / "fixtures" / "boot"
 

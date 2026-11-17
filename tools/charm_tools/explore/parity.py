@@ -15,8 +15,7 @@ import subprocess
 from dataclasses import dataclass, fields
 from pathlib import Path
 
-from .areafile.boot import Counts
-from .areafile.world import World
+from .world import Counts, World
 
 # The memory command's labels, mapped to Counts fields.
 MEMORY_LINES = {
