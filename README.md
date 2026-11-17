@@ -185,6 +185,20 @@ character to level 2 and edit its file, to make the first immortal. After that, 
 | `imc/` | IMC2 configuration and licences |
 | `player/`, `log/` | Player files and logs |
 | `plans/` | Charm's plans |
+| `tools/` | `charm_tools`, the Python tools for working on Charm (MIT, see [tools/LICENSE](tools/LICENSE)) |
+
+## Tools
+
+`tools/` holds `charm_tools`. It's stdlib-only Python 3.12+, so there's nothing to install. Run it from `tools/`:
+
+```sh
+cd tools
+python -m charm_tools doctor                     # Python, checkout, Docker and the charm image
+python -m charm_tools sim smoke --docker charm   # the smoke test (also: python tools/smoke.py from the root)
+python -m unittest discover -s tests -t .        # the tools' own tests
+```
+
+The tools are being ported from the Xania tools in stages; see [plans/tools-port.md](plans/tools-port.md).
 
 ## Roadmap
 
