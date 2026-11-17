@@ -1,0 +1,38 @@
+#!/bin/sh
+# POSIX sh port of area/startup (csh), which was
+# written by Furey, with additions from Tony and Alander.
+#
+# Usage: ./startup.sh [port]   (default 4000)
+# Runs the game from area/, logging each run to ../log/NNNN.log, and restarts it
+# after a crash. A 'shutdown' in game (which writes shutdown.txt) stops the loop.
+# SIGTERM or SIGINT stops the game and the loop (for 'docker stop').
+
+port="${1:-4000}"
+
+# Change to the area directory (the csh script did 'cd ../area').
+cd "$(dirname "$0")" || exit 1
+
+rm -f shutdown.txt
+
+pid=
+trap 'if [ -n "$pid" ]; then kill -TERM "$pid" 2>/dev/null; wait "$pid"; fi; exit 0' TERM INT
+
+while :; do
+    index=1000
+    while [ -e "../log/$index.log" ]; do
+        index=$((index + 1))
+    done
+    logfile="../log/$index.log"
+
+    ../area/rom "$port" >"$logfile" 2>&1 &
+    pid=$!
+    wait "$pid"
+    pid=
+
+    # Restart, giving old connections a chance to die.
+    if [ -e shutdown.txt ]; then
+        rm -f shutdown.txt
+        exit 0
+    fi
+    sleep 10
+done

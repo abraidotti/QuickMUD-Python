@@ -176,8 +176,8 @@ int    listen        args( ( int s, int backlog ) );
 */
 
 int close args ((int fd));
-int gettimeofday args ((struct timeval * tp, struct timezone * tzp));
-/* int    read        args( ( int fd, char *buf, int nbyte ) ); */
+/* gettimeofday comes from <sys/time.h>; current glibc's prototype conflicts with the old one here. */
+/* int    read      args( ( int fd, char *buf, int nbyte ) ); */
 int select args ((int width, fd_set * readfds, fd_set * writefds,
                   fd_set * exceptfds, struct timeval * timeout));
 int socket args ((int domain, int type, int protocol));

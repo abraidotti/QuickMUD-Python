@@ -1,0 +1,19 @@
+# Build output
+src/obj/
+area/rom
+
+# Runtime output
+log/*.log
+area/bugs.txt
+area/typos.txt
+area/shutdown.txt
+player/romtmp
+gods/
+notes/
+
+# Player files made while playing locally; Shemp is the stock fixture
+player/*
+!player/Shemp
+
+# Python
+__pycache__/
