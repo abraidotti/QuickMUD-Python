@@ -8,8 +8,10 @@ of `avinson/rom24-quickmud`. No upstream for our work: PRs go to `abraidotti/cha
 - [README.md](README.md): lineage, credits and licence obligations.
 - [plans/tools-port.md](plans/tools-port.md): porting Explorer, Sim and Builder into `tools/` (phases T0-T7).
 - [plans/refactor.md](plans/refactor.md): refactor phases R0-R6.
+- [plans/python-port.md](plans/python-port.md): porting the game to Python, spike first (phases P0-P6).
 
-The decisions in both plans have recommended answers that the user has **not yet confirmed**. Ask before acting on one.
+A plan decision marked *Recommended* has **not been confirmed** by the user: ask before acting on one. Decisions
+marked *Answered* have been.
 
 ## Source for the port
 
