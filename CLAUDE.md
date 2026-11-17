@@ -13,12 +13,12 @@ The decisions in both plans have recommended answers that the user has **not yet
 
 ## Source for the port
 
-The Xania tools live beside this repo and are read by path. They're Xania's, so don't modify them:
+The Xania tools live in `../xania-sandro/` and are read by path. They're Xania's, so don't modify them:
 
-- `../xania-explorer` (main, 90cfc79): assessment
-- `../xania-sim` (main, 8d403f2): testing bots
-- `../xania-builder` (main, cb7c692): research, gate, ship
-- `../xania`: the Xania game (C++), for reference only
+- `../xania-sandro/xania-explorer` (main, 90cfc79): assessment
+- `../xania-sandro/xania-sim` (main, 8d403f2): testing bots
+- `../xania-sandro/xania-builder` (main, cb7c692): research, gate, ship
+- `../xania-sandro/xania`: the Xania game (C++), for reference only
 
 ## Hard rules
 
