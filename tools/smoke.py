@@ -156,6 +156,21 @@ def half_created(s):
     s.expect(r"What is your race")
 
 
+def at_motd(s, name):
+    """Create a new character all the way to the MOTD and stop there: still level 0, CON_READ_MOTD."""
+    send_name(s, name)
+    s.expect(r"right, .*\(Y/N\)");        s.send("y")
+    s.expect(r"password");                s.send("motd1234")
+    s.expect(r"[Rr]etype password");      s.send("motd1234")
+    s.expect(r"What is your race");       s.send("human")
+    s.expect(r"What is your sex");        s.send("m")
+    s.expect(r"Select a class");          s.send("warrior")
+    s.expect(r"Which alignment");         s.send("n")
+    s.expect(r"Customize \(Y/N\)");       s.send("n")
+    s.expect(r"Your choice\?");           s.send("sword")
+    s.expect(r"continue")
+
+
 def lag_shows_on_prompt(s):
     """save adds WAIT_STATE(4 * PULSE_VIOLENCE): %W should read 48 pulses, then 0 once the lag has passed."""
     s.send("prompt <smoke %W>")
@@ -232,13 +247,20 @@ def run_steps(args, port, immortal, restart=None):
             step(f"immortal {iname} logs in", lambda: old_character(god, iname, ipw))
             half = open_session()
             step("second connection stops mid-creation", lambda: half_created(half))
+            motd = open_session()
+            step("third connection stops at a new character's MOTD", lambda: at_motd(motd, "Motdman"))
             step("copyover", lambda: (god.send("copyover"), god.expect(rf"COPYOVER by {iname}")))
             step("half-created connection is dropped",
                  lambda: half.expect_closed(args.timeout, r"Sorry, we are rebooting"))
+            # Copyover used to keep this one and restore it as a level-0 player (abraidotti/charm#5).
+            step("MOTD connection is dropped too",
+                 lambda: motd.expect_closed(args.timeout, r"Sorry, we are rebooting"))
             step("immortal is restored", lambda: god.expect(r"Copyover recovery complete", args.timeout + 20))
             step("immortal can still play", lambda: (god.send("score"), god.expect(rf"You are {iname}")))
             late = open_session()
             step("new connections are accepted after copyover", lambda: None)
+            step("the MOTD character's name is still free",
+                 lambda: (send_name(late, "Motdman"), late.expect(r"right, .*\(Y/N\)")))
             late.close()
             step("immortal quits", lambda: (god.send("quit"), god.expect_closed()))
     except Fail as e:
