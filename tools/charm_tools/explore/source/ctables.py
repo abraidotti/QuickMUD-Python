@@ -78,9 +78,45 @@ def _split_top(body: str) -> list[str]:
     return [p.strip() for p in parts if p.strip()]
 
 
+_C_ESCAPES = {"a": "\a", "b": "\b", "e": "\x1b", "f": "\f", "n": "\n", "r": "\r", "t": "\t", "v": "\v",
+              "\\": "\\", "'": "'", '"': '"', "?": "?"}
+
+
+def c_unescape(body: str) -> str:
+    """A C string literal's contents (between the quotes) as the string the compiler makes. Handles the standard
+    escapes, octal and hex, and GCC's \\e (ESC), which merc.h's colour codes use. Python's unicode_escape codec
+    doesn't know \\e and would leave it as a backslash and an e."""
+    out, i = [], 0
+    while i < len(body):
+        c = body[i]
+        if c != "\\":
+            out.append(c)
+            i += 1
+            continue
+        n = body[i + 1] if i + 1 < len(body) else ""
+        if n in _C_ESCAPES:
+            out.append(_C_ESCAPES[n])
+            i += 2
+        elif n in "01234567" and n:
+            j = i + 1
+            while j < len(body) and j < i + 4 and body[j] in "01234567":
+                j += 1
+            out.append(chr(int(body[i + 1:j], 8)))
+            i = j
+        elif n == "x":
+            j = i + 2
+            while j < len(body) and body[j] in "0123456789abcdefABCDEF":
+                j += 1
+            out.append(chr(int(body[i + 2:j], 16) & 0xFF))
+            i = j
+        else:
+            raise SourceError(f"unknown escape \\{n} in C string {body!r}")
+    return "".join(out)
+
+
 def _field(text: str) -> Field:
     if text.startswith('"') and text.endswith('"'):
-        return Str(bytes(text[1:-1], "latin-1").decode("unicode_escape"))
+        return Str(c_unescape(text[1:-1]))
     return text
 
 
