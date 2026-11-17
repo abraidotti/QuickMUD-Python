@@ -4473,7 +4473,7 @@ void do_copyover (CHAR_DATA * ch, char *argument)
 {
     FILE *fp;
     DESCRIPTOR_DATA *d, *d_next;
-    char buf[100], buf2[100], buf3[100];
+    char buf[100], buf2[100];
     extern int port, control;    /* db.c */
 
     fp = fopen (COPYOVER_FILE, "w");
@@ -4526,23 +4526,12 @@ void do_copyover (CHAR_DATA * ch, char *argument)
 
     fclose (fpReserve);
 
-#ifdef IMC
-   imc_hotboot();
-#endif
 
     /* exec - descriptors are inherited */
 
     sprintf (buf, "%d", port);
     sprintf (buf2, "%d", control);
-#ifdef IMC
-   if( this_imcmud )
-      snprintf( buf3, 100, "%d", this_imcmud->desc );
-   else
-      strncpy( buf3, "-1", 100 );
-#else
-   strncpy( buf3, "-1", 100 );
-#endif
-    execl (EXE_FILE, "rom", buf, "copyover", buf2, buf3, (char *) NULL);
+    execl (EXE_FILE, "rom", buf, "copyover", buf2, (char *) NULL);
 
     /* Failed - sucessful exec will not return */
 

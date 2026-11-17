@@ -20,7 +20,6 @@ RUN apt-get update \
  && useradd --system --no-create-home --home-dir /opt/charm charm
 WORKDIR /opt/charm
 COPY --from=build /opt/charm/area/ area/
-COPY imc/ imc/
 COPY player/ player/
 COPY doc/ doc/
 COPY README* CHANGELOG.quickmud ./
