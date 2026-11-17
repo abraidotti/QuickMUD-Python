@@ -43,12 +43,8 @@
  * -- Furey  26 Jan 1993
  */
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
 #include <sys/time.h>
-#endif
 
 #include <ctype.h>
 #include <errno.h>
@@ -67,15 +63,7 @@
 /*
  * Malloc debugging stuff.
  */
-#if defined(sun)
-#undef MALLOC_DEBUG
-#endif
 
-#if defined(MALLOC_DEBUG)
-#include <malloc.h>
-extern int malloc_debug args ((int));
-extern int malloc_verify args ((void));
-#endif
 
 
 
@@ -84,30 +72,16 @@ extern int malloc_verify args ((void));
  * Apollo has a problem with __attribute(atomic) in signal.h,
  *   I dance around it.
  */
-#if defined(apollo)
-#define __attribute(x)
-#endif
 
-#if defined(unix)
 #include <signal.h>
-#endif
 
-#if defined(apollo)
-#undef __attribute
-#endif
 
 
 
 /*
  * Socket and TCP/IP stuff.
  */
-#if    defined(macintosh) || defined(MSDOS)
-const char echo_off_str[] = { '\0' };
-const char echo_on_str[] = { '\0' };
-const char go_ahead_str[] = { '\0' };
-#endif
 
-#if    defined(unix)
 #include <fcntl.h>
 #include <netdb.h>
 #include <netinet/in.h>
@@ -118,51 +92,16 @@ const char go_ahead_str[] = { '\0' };
 const char echo_off_str[] = { IAC, WILL, TELOPT_ECHO, '\0' };
 const char echo_on_str[] = { IAC, WONT, TELOPT_ECHO, '\0' };
 const char go_ahead_str[] = { IAC, GA, '\0' };
-#endif
 
 
 
 /*
  * OS-dependent declarations.
  */
-#if    defined(_AIX)
-#include <sys/select.h>
-int accept args ((int s, struct sockaddr * addr, int *addrlen));
-int bind args ((int s, struct sockaddr * name, int namelen));
-void bzero args ((char *b, int length));
-int getpeername args ((int s, struct sockaddr * name, int *namelen));
-int getsockname args ((int s, struct sockaddr * name, int *namelen));
-int gettimeofday args ((struct timeval * tp, struct timezone * tzp));
-int listen args ((int s, int backlog));
-int setsockopt args ((int s, int level, int optname, void *optval,
-                      int optlen));
-int socket args ((int domain, int type, int protocol));
-#endif
 
-#if    defined(apollo)
-#include <unistd.h>
-void bzero args ((char *b, int length));
-#endif
 
-#if    defined(__hpux)
-int accept args ((int s, void *addr, int *addrlen));
-int bind args ((int s, const void *addr, int addrlen));
-void bzero args ((char *b, int length));
-int getpeername args ((int s, void *addr, int *addrlen));
-int getsockname args ((int s, void *name, int *addrlen));
-int gettimeofday args ((struct timeval * tp, struct timezone * tzp));
-int listen args ((int s, int backlog));
-int setsockopt args ((int s, int level, int optname,
-                      const void *optval, int optlen));
-int socket args ((int domain, int type, int protocol));
-#endif
 
-#if    defined(interactive)
-#include <net/errno.h>
-#include <sys/fnctl.h>
-#endif
 
-#if    defined(linux)
 /* 
     Linux shouldn't need these. If you have a problem compiling, try
     uncommenting these functions.
@@ -182,117 +121,14 @@ int select args ((int width, fd_set * readfds, fd_set * writefds,
                   fd_set * exceptfds, struct timeval * timeout));
 int socket args ((int domain, int type, int protocol));
 /* int    write        args( ( int fd, char *buf, int nbyte ) ); *//* read,write in unistd.h */
-#endif
 
-#if    defined(macintosh)
-#include <console.h>
-#include <fcntl.h>
-#include <unix.h>
-struct timeval {
-    time_t tv_sec;
-    time_t tv_usec;
-};
-#if    !defined(isascii)
-#define    isascii(c)        ( (c) < 0200 )
-#endif
-static long theKeys[4];
 
-int gettimeofday args ((struct timeval * tp, void *tzp));
-#endif
 
-#if    defined(MIPS_OS)
-extern int errno;
-#endif
 
-#if    defined(MSDOS)
-int gettimeofday args ((struct timeval * tp, void *tzp));
-int kbhit args ((void));
-#endif
 
-#if    defined(NeXT)
-int close args ((int fd));
-int fcntl args ((int fd, int cmd, int arg));
-#if    !defined(htons)
-u_short htons args ((u_short hostshort));
-#endif
-#if    !defined(ntohl)
-u_long ntohl args ((u_long hostlong));
-#endif
-int read args ((int fd, char *buf, int nbyte));
-int select args ((int width, fd_set * readfds, fd_set * writefds,
-                  fd_set * exceptfds, struct timeval * timeout));
-int write args ((int fd, char *buf, int nbyte));
-#endif
-
-#if    defined(sequent)
-int accept args ((int s, struct sockaddr * addr, int *addrlen));
-int bind args ((int s, struct sockaddr * name, int namelen));
-int close args ((int fd));
-int fcntl args ((int fd, int cmd, int arg));
-int getpeername args ((int s, struct sockaddr * name, int *namelen));
-int getsockname args ((int s, struct sockaddr * name, int *namelen));
-int gettimeofday args ((struct timeval * tp, struct timezone * tzp));
-#if    !defined(htons)
-u_short htons args ((u_short hostshort));
-#endif
-int listen args ((int s, int backlog));
-#if    !defined(ntohl)
-u_long ntohl args ((u_long hostlong));
-#endif
-int read args ((int fd, char *buf, int nbyte));
-int select args ((int width, fd_set * readfds, fd_set * writefds,
-                  fd_set * exceptfds, struct timeval * timeout));
-int setsockopt args ((int s, int level, int optname, caddr_t optval,
-                      int optlen));
-int socket args ((int domain, int type, int protocol));
-int write args ((int fd, char *buf, int nbyte));
-#endif
 
 /* This includes Solaris Sys V as well */
-#if defined(sun)
-int accept args ((int s, struct sockaddr * addr, int *addrlen));
-int bind args ((int s, struct sockaddr * name, int namelen));
-void bzero args ((char *b, int length));
-int close args ((int fd));
-int getpeername args ((int s, struct sockaddr * name, int *namelen));
-int getsockname args ((int s, struct sockaddr * name, int *namelen));
-int listen args ((int s, int backlog));
-int read args ((int fd, char *buf, int nbyte));
-int select args ((int width, fd_set * readfds, fd_set * writefds,
-                  fd_set * exceptfds, struct timeval * timeout));
 
-#if !defined(__SVR4)
-int gettimeofday args ((struct timeval * tp, struct timezone * tzp));
-
-#if defined(SYSV)
-int setsockopt args ((int s, int level, int optname,
-                      const char *optval, int optlen));
-#else
-int setsockopt args ((int s, int level, int optname, void *optval,
-                      int optlen));
-#endif
-#endif
-int socket args ((int domain, int type, int protocol));
-int write args ((int fd, char *buf, int nbyte));
-#endif
-
-#if defined(ultrix)
-int accept args ((int s, struct sockaddr * addr, int *addrlen));
-int bind args ((int s, struct sockaddr * name, int namelen));
-void bzero args ((char *b, int length));
-int close args ((int fd));
-int getpeername args ((int s, struct sockaddr * name, int *namelen));
-int getsockname args ((int s, struct sockaddr * name, int *namelen));
-int gettimeofday args ((struct timeval * tp, struct timezone * tzp));
-int listen args ((int s, int backlog));
-int read args ((int fd, char *buf, int nbyte));
-int select args ((int width, fd_set * readfds, fd_set * writefds,
-                  fd_set * exceptfds, struct timeval * timeout));
-int setsockopt args ((int s, int level, int optname, void *optval,
-                      int optlen));
-int socket args ((int domain, int type, int protocol));
-int write args ((int fd, char *buf, int nbyte));
-#endif
 
 
 
@@ -314,19 +150,12 @@ bool MOBtrigger = TRUE;            /* act() switch                 */
 /*
  * OS-dependent local functions.
  */
-#if defined(macintosh) || defined(MSDOS)
-void game_loop_mac_msdos args ((void));
-bool read_from_descriptor args ((DESCRIPTOR_DATA * d));
-bool write_to_descriptor args ((int desc, char *txt, int length));
-#endif
 
-#if defined(unix)
 void game_loop_unix args ((int control));
 int init_socket args ((int port));
 void init_descriptor args ((int control));
 bool read_from_descriptor args ((DESCRIPTOR_DATA * d));
 bool write_to_descriptor args ((int desc, char *txt, int length));
-#endif
 
 
 
@@ -368,9 +197,6 @@ int main (int argc, char **argv)
     /*
      * Memory debugging if needed.
      */
-#if defined(MALLOC_DEBUG)
-    malloc_debug (2);
-#endif
 
     /*
      * Init time.
@@ -382,12 +208,6 @@ int main (int argc, char **argv)
     /*
      * Macintosh console initialization.
      */
-#if defined(macintosh)
-    console_options.nrows = 31;
-    cshow (stdout);
-    csetmode (C_RAW, stdin);
-    cecho2file ("log file", 1, stderr);
-#endif
 
     /*
      * Reserve one channel for our use.
@@ -432,14 +252,7 @@ int main (int argc, char **argv)
     /*
      * Run the game.
      */
-#if defined(macintosh) || defined(MSDOS)
-    qmconfig_read(); /* Here because it fits, no conflicts with Linux placement -- JR 05/06/01 */
-    boot_db ();
-    log_string ("Merc is ready to rock.");
-    game_loop_mac_msdos ();
-#endif
 
-#if defined(unix)
 
     qmconfig_read(); /* Here so we can set the IP adress. -- JR 05/06/01 */
     if (!fCopyOver)
@@ -461,7 +274,6 @@ int main (int argc, char **argv)
 #ifdef IMC
    imc_shutdown( FALSE );
 #endif
-#endif
 
     /*
      * That's all, folks.
@@ -473,7 +285,6 @@ int main (int argc, char **argv)
 
 
 
-#if defined(unix)
 int init_socket (int port)
 {
     static struct sockaddr_in sa_zero;
@@ -495,22 +306,6 @@ int init_socket (int port)
         exit (1);
     }
 
-#if defined(SO_DONTLINGER) && !defined(SYSV)
-    {
-        struct linger ld;
-
-        ld.l_onoff = 1;
-        ld.l_linger = 1000;
-
-        if (setsockopt (fd, SOL_SOCKET, SO_DONTLINGER,
-                        (char *) &ld, sizeof (ld)) < 0)
-        {
-            perror ("Init_socket: SO_DONTLINGER");
-            close (fd);
-            exit (1);
-        }
-    }
-#endif
 
     sa = sa_zero;
     sa.sin_family = AF_INET;
@@ -535,194 +330,12 @@ int init_socket (int port)
 
     return fd;
 }
-#endif
 
 
 
-#if defined(macintosh) || defined(MSDOS)
-void game_loop_mac_msdos (void)
-{
-    struct timeval last_time;
-    struct timeval now_time;
-    static DESCRIPTOR_DATA dcon;
-
-    gettimeofday (&last_time, NULL);
-    current_time = (time_t) last_time.tv_sec;
-
-    /*
-     * New_descriptor analogue.
-     */
-    dcon.descriptor = 0;
-	if (!mud_ansiprompt)
-		dcon.connected = CON_GET_NAME;
-	else
-		dcon.connected = CON_ANSI;
-    dcon.ansi = mud_ansicolor;
-    dcon.host = str_dup ("localhost");
-    dcon.outsize = 2000;
-    dcon.outbuf = alloc_mem (dcon.outsize);
-    dcon.next = descriptor_list;
-    dcon.showstr_head = NULL;
-    dcon.showstr_point = NULL;
-    dcon.pEdit = NULL;            /* OLC */
-    dcon.pString = NULL;        /* OLC */
-    dcon.editor = 0;            /* OLC */
-    descriptor_list = &dcon;
-
-    /*
-     * First Contact!
-     */
-	if (!mud_ansiprompt)
-	{
-		extern char * help_greeting;
-		if ( help_greeting[0] == '.' )
-			send_to_desc ( help_greeting+1, &dcon );
-		else
-			send_to_desc ( help_greeting  , &dcon );
-	}
-
-	else
-    	write_to_buffer (&dcon, "Do you want ANSI? (Y/n) ", 0);
-
-    /* Main loop */
-    while (!merc_down)
-    {
-        DESCRIPTOR_DATA *d;
-
-        /*
-         * Process input.
-         */
-        for (d = descriptor_list; d != NULL; d = d_next)
-        {
-            d_next = d->next;
-            d->fcommand = FALSE;
-
-#if defined(MSDOS)
-            if (kbhit ())
-#endif
-            {
-                if (d->character != NULL)
-                    d->character->timer = 0;
-                if (!read_from_descriptor (d))
-                {
-                    if (d->character != NULL && d->connected == CON_PLAYING)
-                        save_char_obj (d->character);
-                    d->outtop = 0;
-                    close_socket (d);
-                    continue;
-                }
-            }
-
-            if (d->character != NULL && d->character->daze > 0)
-                --d->character->daze;
-
-            if (d->character != NULL && d->character->wait > 0)
-            {
-                --d->character->wait;
-                continue;
-            }
-
-            read_from_buffer (d);
-            if (d->incomm[0] != '\0')
-            {
-                d->fcommand = TRUE;
-                stop_idling (d->character);
-
-                /* OLC */
-                if (d->showstr_point)
-                    show_string (d, d->incomm);
-                else if (d->pString)
-                    string_add (d->character, d->incomm);
-                else
-                    switch (d->connected)
-                    {
-                        case CON_PLAYING:
-                            if (!run_olc_editor (d))
-                                substitute_alias (d, d->incomm);
-                            break;
-                        default:
-                            nanny (d, d->incomm);
-                            break;
-                    }
-
-                d->incomm[0] = '\0';
-            }
-        }
 
 
 
-        /*
-         * Autonomous game motion.
-         */
-        update_handler ();
-
-
-
-        /*
-         * Output.
-         */
-        for (d = descriptor_list; d != NULL; d = d_next)
-        {
-            d_next = d->next;
-
-            if ((d->fcommand || d->outtop > 0))
-            {
-                if (!process_output (d, TRUE))
-                {
-                    if (d->character != NULL && d->connected == CON_PLAYING)
-                        save_char_obj (d->character);
-                    d->outtop = 0;
-                    close_socket (d);
-                }
-            }
-        }
-
-
-
-        /*
-         * Synchronize to a clock.
-         * Busy wait (blargh).
-         */
-        now_time = last_time;
-        for (;;)
-        {
-            int delta;
-
-#if defined(MSDOS)
-            if (kbhit ())
-#endif
-            {
-                if (dcon.character != NULL)
-                    dcon.character->timer = 0;
-                if (!read_from_descriptor (&dcon))
-                {
-                    if (dcon.character != NULL && d->connected == CON_PLAYING)
-                        save_char_obj (d->character);
-                    dcon.outtop = 0;
-                    close_socket (&dcon);
-                }
-#if defined(MSDOS)
-                break;
-#endif
-            }
-
-            gettimeofday (&now_time, NULL);
-            delta = (now_time.tv_sec - last_time.tv_sec) * 1000 * 1000
-                + (now_time.tv_usec - last_time.tv_usec);
-            if (delta >= 1000000 / PULSE_PER_SECOND)
-                break;
-        }
-        last_time = now_time;
-        current_time = (time_t) last_time.tv_sec;
-    }
-
-    return;
-}
-#endif
-
-
-
-#if defined(unix)
 /*
  * SIGTERM and SIGINT ask for a clean shutdown. The handler only records the
  * signal; the main loop acts on it at the top of the next pulse. -- Charm
@@ -793,10 +406,6 @@ void game_loop_unix (int control)
             break;
         }
 
-#if defined(MALLOC_DEBUG)
-        if (malloc_verify () != 1)
-            abort ();
-#endif
 
         /*
          * Poll all active descriptors.
@@ -985,11 +594,9 @@ void game_loop_unix (int control)
 
     return;
 }
-#endif
 
 
 
-#if defined(unix)
 
 void init_descriptor (int control)
 {
@@ -1007,9 +614,6 @@ void init_descriptor (int control)
         return;
     }
 
-#if !defined(FNDELAY)
-#define FNDELAY O_NDELAY
-#endif
 
     if (fcntl (desc, F_SETFL, FNDELAY) == -1)
     {
@@ -1100,7 +704,6 @@ void init_descriptor (int control)
 
     return;
 }
-#endif
 
 
 
@@ -1168,9 +771,6 @@ void close_socket (DESCRIPTOR_DATA * dclose)
 
     close (dclose->descriptor);
     free_descriptor (dclose);
-#if defined(MSDOS) || defined(macintosh)
-    exit (1);
-#endif
     return;
 }
 
@@ -1196,23 +796,7 @@ bool read_from_descriptor (DESCRIPTOR_DATA * d)
     }
 
     /* Snarf input. */
-#if defined(macintosh)
-    for (;;)
-    {
-        int c;
-        c = getc (stdin);
-        if (c == '\0' || c == EOF)
-            break;
-        putc (c, stdout);
-        if (c == '\r')
-            putc ('\n', stdout);
-        d->inbuf[iStart++] = c;
-        if (iStart > sizeof (d->inbuf) - 10)
-            break;
-    }
-#endif
 
-#if defined(MSDOS) || defined(unix)
     for (;;)
     {
         int nRead;
@@ -1238,7 +822,6 @@ bool read_from_descriptor (DESCRIPTOR_DATA * d)
             return FALSE;
         }
     }
-#endif
 
     d->inbuf[iStart] = '\0';
     return TRUE;
@@ -1718,10 +1301,6 @@ bool write_to_descriptor (int desc, char *txt, int length)
     int nWrite;
     int nBlock;
 
-#if defined(macintosh) || defined(MSDOS)
-    if (desc == 0)
-        desc = 1;
-#endif
 
     if (length <= 0)
         length = strlen (txt);
@@ -1788,15 +1367,9 @@ bool check_parse_name (char *name)
     if (strlen (name) < 2)
         return FALSE;
 
-#if defined(MSDOS)
-    if (strlen (name) > 8)
-        return FALSE;
-#endif
 
-#if defined(macintosh) || defined(unix)
     if (strlen (name) > 12)
         return FALSE;
-#endif
 
     /*
      * Alphanumerics only.
@@ -2008,14 +1581,10 @@ void page_to_char_bw (const char *txt, CHAR_DATA * ch)
         return;
     }
 
-#if defined(macintosh)
-    send_to_char_bw (txt, ch);
-#else
     ch->desc->showstr_head = alloc_mem (strlen (txt) + 1);
     strcpy (ch->desc->showstr_head, txt);
     ch->desc->showstr_point = ch->desc->showstr_head;
     show_string (ch->desc, "");
-#endif
 }
 
 /*
@@ -2127,9 +1696,6 @@ void page_to_char (const char *txt, CHAR_DATA * ch)
     char buf[MAX_STRING_LENGTH * 4];
     int skip = 0;
 
-#if defined(macintosh)
-    send_to_char (txt, ch);
-#else
     buf[0] = '\0';
     point2 = buf;
     if (txt && ch->desc)
@@ -2174,7 +1740,6 @@ void page_to_char (const char *txt, CHAR_DATA * ch)
             show_string (ch->desc, "");
         }
     }
-#endif
     return;
 }
 
@@ -2846,13 +2411,6 @@ void colourconv (char *buffer, const char *txt, CHAR_DATA * ch)
 /*
  * Macintosh support functions.
  */
-#if defined(macintosh)
-int gettimeofday (struct timeval *tp, void *tzp)
-{
-    tp->tv_sec = time (NULL);
-    tp->tv_usec = 0;
-}
-#endif
 
 /* source: EOD, by John Booth <???> */
 

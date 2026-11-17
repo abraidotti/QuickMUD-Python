@@ -30,13 +30,9 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <time.h>
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
 #include <sys/time.h>
 #include <sys/resource.h>
-#endif
 
 #include "merc.h"
 #include "db.h"
@@ -46,22 +42,11 @@
 #include "lookup.h"
 #include "olc.h"
 
-#if !defined(macintosh)
 extern int _filbuf args ((FILE *));
-#endif
 
-#if !defined(OLD_RAND)
-#if !defined(linux)
-#if !defined(QMFIXES)
-long random ();
-#endif
-#endif
-#if !defined(QMFIXES)
 void srandom (unsigned int);
-#endif
 int getpid ();
 time_t time (time_t * tloc);
-#endif
 
 
 /* externals for counting purposes */
@@ -1904,13 +1889,6 @@ void reset_room (ROOM_INDEX_DATA * pRoom)
                                 olevel = number_range (10, 20);
                                 break;
 
-#if 0                            /* envy version */
-                            case ITEM_WEAPON:
-                                if (pReset->command == 'G')
-                                    olevel = number_range (5, 15);
-                                else
-                                    olevel = number_fuzzy (level);
-#endif /* envy version */
 
                                 break;
                         }
@@ -1918,10 +1896,6 @@ void reset_room (ROOM_INDEX_DATA * pRoom)
                     pObj = create_object (pObjIndex, olevel);
                     SET_BIT (pObj->extra_flags, ITEM_INVENTORY);    /* ROM OLC */
 
-#if 0                            /* envy version */
-                    if (pReset->command == 'G')
-                        SET_BIT (pObj->extra_flags, ITEM_INVENTORY);
-#endif /* envy version */
 
                 }
                 else
@@ -3566,31 +3540,12 @@ int number_bits (int width)
    back to the system srandom call.  If this doesn't work for you,
    define OLD_RAND to use the old system -- Alander */
 
-#if defined (OLD_RAND)
-static int rgiState[2 + 55];
-#endif
+/* The OLD_RAND (Mitchell-Moore) version was removed in R2 (#21); git history
+   has it. -- Charm */
 
 void init_mm ()
 {
-#if defined (OLD_RAND)
-    int *piState;
-    int iState;
-
-    piState = &rgiState[2];
-
-    piState[-2] = 55 - 55;
-    piState[-1] = 55 - 24;
-
-    piState[0] = ((int) current_time) & ((1 << 30) - 1);
-    piState[1] = 1;
-    for (iState = 2; iState < 55; iState++)
-    {
-        piState[iState] = (piState[iState - 1] + piState[iState - 2])
-            & ((1 << 30) - 1);
-    }
-#else
     srandom (time (NULL) ^ getpid ());
-#endif
     return;
 }
 
@@ -3598,27 +3553,7 @@ void init_mm ()
 
 long number_mm (void)
 {
-#if defined (OLD_RAND)
-    int *piState;
-    int iState1;
-    int iState2;
-    int iRand;
-
-    piState = &rgiState[2];
-    iState1 = piState[-2];
-    iState2 = piState[-1];
-    iRand = (piState[iState1] + piState[iState2]) & ((1 << 30) - 1);
-    piState[iState1] = iRand;
-    if (++iState1 == 55)
-        iState1 = 0;
-    if (++iState2 == 55)
-        iState2 = 0;
-    piState[-2] = iState1;
-    piState[-1] = iState2;
-    return iRand >> 6;
-#else
     return random () >> 6;
-#endif
 }
 
 

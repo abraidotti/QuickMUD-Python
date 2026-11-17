@@ -33,12 +33,8 @@
  *   seems to be a popular task for new mud coders, so what the heck?       *
  ***************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
 #include <sys/time.h>
-#endif
 
 #include <ctype.h>
 #include <errno.h>
@@ -54,13 +50,7 @@
 #include "recycle.h"
 #include "tables.h"
 
-#if    defined(macintosh) || defined(MSDOS)
-extern const char echo_off_str[];
-extern const char echo_on_str[];
-extern const char go_ahead_str[];
-#endif
 
-#if    defined(unix)
 #include <fcntl.h>
 #include <netdb.h>
 #include <netinet/in.h>
@@ -69,24 +59,16 @@ extern const char go_ahead_str[];
 extern const char echo_off_str[];
 extern const char echo_on_str[];
 extern const char go_ahead_str[];
-#endif
 
 /*
  * OS-dependent local functions.
  */
-#if defined(macintosh) || defined(MSDOS)
-void game_loop_mac_msdos args ((void));
-bool read_from_descriptor args ((DESCRIPTOR_DATA * d));
-bool write_to_descriptor args ((int desc, char *txt, int length));
-#endif
 
-#if defined(unix)
 void game_loop_unix args ((int control));
 int init_socket args ((int port));
 void init_descriptor args ((int control));
 bool read_from_descriptor args ((DESCRIPTOR_DATA * d));
 bool write_to_descriptor args ((int desc, char *txt, int length));
-#endif
 
 /*
  *  * Other local functions (OS-independent).
@@ -262,9 +244,7 @@ void nanny (DESCRIPTOR_DATA * d, char *argument)
             break;
 
         case CON_GET_OLD_PASSWORD:
-#if defined(unix)
             write_to_buffer (d, "\n\r", 2);
-#endif
 
             if (strcmp (crypt (argument, ch->pcdata->pwd), ch->pcdata->pwd))
             {
@@ -380,9 +360,7 @@ void nanny (DESCRIPTOR_DATA * d, char *argument)
             break;
 
         case CON_GET_NEW_PASSWORD:
-#if defined(unix)
             write_to_buffer (d, "\n\r", 2);
-#endif
 
             if (strlen (argument) < 5)
             {
@@ -411,9 +389,7 @@ void nanny (DESCRIPTOR_DATA * d, char *argument)
             break;
 
         case CON_CONFIRM_NEW_PASSWORD:
-#if defined(unix)
             write_to_buffer (d, "\n\r", 2);
-#endif
 
             if (strcmp (crypt (argument, ch->pcdata->pwd), ch->pcdata->pwd))
             {
