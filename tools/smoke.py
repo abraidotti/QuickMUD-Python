@@ -217,6 +217,23 @@ def run_steps(args, port, immortal, restart=None):
         step("log back in", lambda: old_character(s, name, pw))
         step("score shows the character", lambda: (s.send("score"), s.expect(rf"You are {name}")))
 
+        # do_title read before the argument when it was empty or one character (abraidotti/charm#9). That read has
+        # no visible effect, so these pin down that title behaves the same in every case around it.
+        def title_cases():
+            for arg, reply, shown in [("", "Change your title to what?", None),
+                                      ("{", "Change your title to what?", None),
+                                      ("x", "Ok.", " x"),
+                                      ("the Brave{", "Ok.", " the Brave"),
+                                      # kept as "{{", which score shows as nothing with colour off (as before #9)
+                                      ("the Brave{{", "Ok.", " the Brave"),
+                                      ("the Brave", "Ok.", " the Brave")]:
+                s.send(f"title {arg}".rstrip())
+                s.expect(re.escape(reply))
+                if shown is not None:
+                    s.send("score")
+                    s.expect(re.escape(f"You are {name}{shown}, level"))
+        step("title: empty, '{', one letter, trailing '{' and '{{'", title_cases)
+
         if restart:
             # A change that isn't saved by hand: the new prompt. SIGTERM should save it.
             step("change something without saving", lambda: (s.send("prompt <sigterm %W>"), s.expect(r"<sigterm 0>")))
