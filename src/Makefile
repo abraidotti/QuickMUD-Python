@@ -8,7 +8,9 @@ RM = rm
 EXE = ../area/rom
 PROF = -O -g3
 
-C_FLAGS = $(PROF) -Wall
+# -std=gnu17: gcc 15 defaults to C23, where 'typedef int bool' and '()' prototypes are errors.
+# -fcommon: gcc 10+ rejects the duplicate globals in mem.c and recycle.c (help_free, extra_descr_free).
+C_FLAGS = $(PROF) -Wall -std=gnu17 -fcommon
 L_FLAGS = $(PROF) -lcrypt
 
 #IMC2 - Comment out to disable IMC2 support
