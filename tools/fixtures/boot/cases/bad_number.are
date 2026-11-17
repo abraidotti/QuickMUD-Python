@@ -1,0 +1,8 @@
+#AREA
+bad_number.are~
+Parity bad_number~
+{ 1  5} charm_tools  Parity bad_number~
+30000 30099
+
+#ROOMS
+#abc

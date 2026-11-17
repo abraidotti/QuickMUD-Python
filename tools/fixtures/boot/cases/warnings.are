@@ -1,0 +1,75 @@
+#AREA
+warnings.are~
+Parity warnings~
+{ 1  5} charm_tools  Parity warnings~
+30000 30099
+
+#MOBILES
+#30000
+testmob~
+the test mob~
+A test mob stands here.
+~
+It's here for the parity tests.
+~
+human~
+A 0 0 0
+1 0 1d1+1 1d1+1 1d1+1 punch
+0 0 0 0
+0 0 0 0
+stand stand male 0
+0 0 gigantic 0
+#0
+
+#OBJECTS
+#30000
+gizmo~
+a gizmo~
+A gizmo lies here.~
+metal~
+gizmo 0 A
+0 0 0 0 0
+1 1 10 P
+#30001
+flask~
+a flask~
+A flask lies here.~
+glass~
+drink 0 A
+10 10 nectarx 0 0
+1 1 10 P
+#0
+
+#ROOMS
+#30000
+Parity Room One~
+A room for the parity tests.
+~
+0 0 0
+D0
+~
+door~
+1 -1 30001
+S
+#30001
+Parity Room Two~
+The second room. Its north exit leads to the temple, whose south exit doesn't lead back.
+~
+0 0 0
+D2
+~
+door~
+1 -1 30000
+D0
+~
+~
+0 -1 3001
+S
+#0
+
+#RESETS
+D 0 30000 0 3
+M 0 30000 1 30000 1
+S
+
+#$

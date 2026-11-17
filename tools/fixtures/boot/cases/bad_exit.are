@@ -1,0 +1,20 @@
+#AREA
+bad_exit.are~
+Parity bad_exit~
+{ 1  5} charm_tools  Parity bad_exit~
+30000 30099
+
+#ROOMS
+#30000
+Nowhere Exit~
+Its north exit leads to a room that doesn't exist.
+~
+0 0 0
+D0
+~
+~
+0 -1 30999
+S
+#0
+
+#$

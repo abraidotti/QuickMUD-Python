@@ -1,0 +1,11 @@
+#AREA
+mob_eof.are~
+Parity mob_eof~
+{ 1  5} charm_tools  Parity mob_eof~
+30000 30099
+
+#MOBILES
+#30000
+cutoff~
+the cutoff mob~
+This long description never ends
