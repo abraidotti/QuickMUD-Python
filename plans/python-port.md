@@ -1,7 +1,7 @@
 # Plan: port Charm's game from C to Python
 
-Status: draft, 2026-11-17. Nothing here is decided yet. Decision 1 (whether to port at all) comes first, and its
-recommended answer is a time-boxed spike that ends in a go or no-go.
+Status: decisions 1-7 answered as recommended, 2026-11-17 (#19). Next: refactor R2, then P0 and the P1 spike, which
+ends in a go/no-go issue.
 
 ## Goal
 
@@ -93,36 +93,42 @@ Reading it for patterns is fine. Copying code from it isn't.
 - **One checkpoint per C file.** A file is done when its tracker row says so and its parity checks pass. "Unknown" is
   reported as unknown.
 
-## Decisions (recommended answers first)
+## Decisions (answered in #19)
 
-1. **Port at all?** *Recommended: run a spike first (phase P1), then decide.* The spike ports enough to boot, log in,
+1. **Port at all?** *Answered: run a spike first (phase P1), then decide.* The spike ports enough to boot, log in,
    look, move, save and quit. It ends when `sim smoke` passes its login and save steps against the Python game, or at
    a time box, whichever comes first. The go/no-go issue then has real numbers: lines per C line, divergences found,
    and an estimate for the rest. Alternatives: commit to the port now, or stay in C and close this plan.
-2. **Our own port or Nostoi's?** *Recommended: our own, borrowing their patterns (see above).* Alternative: fork
+2. **Our own port or Nostoi's?** *Answered: our own, borrowing their patterns (see above).* Alternative: fork
    theirs and add Charm's fixes. That's faster to a running game, but it comes with their licence, their size and their
    data formats.
-3. **How exact?** *Recommended: identical given the same seed, the RNG included.* Port glibc's `random()` (the TYPE_3
+3. **How exact?** *Answered: identical given the same seed, the RNG included.* Port glibc's `random()` (the TYPE_3
    additive generator that `srandom()` sets up), and add a test-only `CHARM_SEED` environment variable to the C game
    so both sides can be fixed. Alternative: build the oracle with `-DOLD_RAND` as Nostoi did. That's less work, but
    then the oracle isn't the game players are on.
-4. **Networking loop.** *Recommended: stdlib `selectors`, a copy of `game_loop_unix`'s structure.* Alternative:
-   `asyncio` for I/O only, with the game code still synchronous. Either works if the rule above holds; `selectors` keeps
-   the code closer to `comm.c`.
-5. **Dependencies.** *Recommended: stdlib only, Python 3.12+, as for `tools/`.* Verify old DES hashes through `ctypes`
+4. **Networking loop.** *Answered: stdlib `selectors`, a copy of `game_loop_unix`'s structure* (`comm.c:765`). Each
+   pulse polls, reads, runs at most one command per descriptor in `descriptor_list` order, runs `update_handler()`,
+   flushes output in list order and sleeps out the pulse. A write error (including `EAGAIN` on a full buffer)
+   disconnects, as `write_to_descriptor` does. Copyover passes plain inheritable sockets through `os.execv`. Game
+   code only touches a small descriptor interface (input buffer, output buffer, close), so the transport can be
+   swapped for `asyncio` later, as its own issue, if a web client or SSH ever needs it. Rejected for now: `asyncio`,
+   because input order across descriptors would follow the event loop rather than the list, writes would buffer
+   without limit, copyover would need sockets detached from their transports, and async game code is where three of
+   Nostoi's divergence classes came from.
+5. **Dependencies.** *Answered: stdlib only, Python 3.12+, as for `tools/`.* Verify old DES hashes through `ctypes`
    and libcrypt, which is in the Docker image already. Refactor decision 3 (modern hashing) then becomes `hashlib.scrypt`
    with a rehash on login, as its own issue after cut-over.
-6. **Where it lives.** *Recommended: a `game/` directory holding a `charm` package, with its own tests.* T1's loader
+6. **Where it lives.** *Answered: a `game/` directory holding a `charm` package, with its own tests.* T1's loader
    moves from `tools/` into `game/` and `tools/` imports it from there. Because the loader is a port of `db.c`, it then
    sits under the game's licences rather than MIT. Alternative: keep the two separate and maintain two loaders.
-7. **What happens to `src/` at cut-over.** *Recommended: a tag (`c-final`) and removal from master, once the parity
+7. **What happens to `src/` at cut-over.** *Answered: a tag (`c-final`) and removal from master, once the parity
    suite and a full Sim run are green.* Alternative: keep `src/` on master as the reference.
 
 ## Phases
 
 | Phase | What | Done when |
 |---|---|---|
-| **P0 Groundwork** | Decisions 1-7 answered. Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-file tracker and `CHARM_SEED` in C. glibc `random()` in Python, checked against C output for a few seeds. | Tracker lists every C file; RNG matches C for 10k draws on 3 seeds |
+| **P0 Groundwork** | Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-file tracker and `CHARM_SEED` in C. glibc `random()` in Python, checked against C output for a few seeds. | Tracker lists every C file; RNG matches C for 10k draws on 3 seeds |
 | **P1 Spike** | Move T1's loader into `game/`, then port: `area_update` and resets, the descriptor loop, `nanny.c`, `save.c` (load and save, round-trip with C's files), `interp.c`, `act()`, and the commands the smoke test uses (`look`, movement, `save`, `quit`, `score`, `title`). | `sim smoke` passes its login, save and quit steps on the Python game, or the time box ends. Go/no-go issue written with the numbers. |
 | **P2 Differential harness** | Scenario files, an additive C driver, goldens, pure-Python replay in the tests. Guard tests for the divergence classes. | 10 scenarios replay green; guard tests run in the suite |
 | **P3 Commands without RNG** | The rest of `act_info.c`, `act_move.c`, `act_obj.c`, `act_comm.c`, `act_enter.c`, `alias.c`, `ban.c`, `board.c`, `act_wiz.c`. | Their tracker rows done; full `sim smoke` passes on Python |
