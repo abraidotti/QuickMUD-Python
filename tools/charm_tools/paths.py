@@ -41,3 +41,16 @@ def src_dir(root: Path | None = None) -> Path:
 
 def area_dir(root: Path | None = None) -> Path:
     return (root or find_root()) / "area"
+
+
+def game_dir(root: Path | None = None) -> Path:
+    return (root or find_root()) / "game"
+
+
+def use_game(root: Path | None = None) -> Path:
+    """Make the Python game (game/charm) importable, without installing it (abraidotti/charm#23, decision 1)."""
+    import sys
+    path = str(game_dir(root))
+    if path not in sys.path:
+        sys.path.insert(0, path)
+    return Path(path)

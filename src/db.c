@@ -29,6 +29,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <errno.h>
 #include <time.h>
 #include <sys/types.h>
 #include <sys/time.h>
@@ -3509,9 +3510,33 @@ int number_bits (int width)
 /* The OLD_RAND (Mitchell-Moore) version was removed in R2 (#21); git history
    has it. -- Charm */
 
+/* CHARM_SEED=N (0 to 4294967295) fixes the seed so a run can be repeated;
+   tests use it (#23). The seed is always logged, so any run can be replayed.
+   -- Charm */
 void init_mm ()
 {
-    srandom (time (NULL) ^ getpid ());
+    const char *env = getenv ("CHARM_SEED");
+    unsigned long value;
+    unsigned int seed;
+    char *end;
+
+    if (env != NULL && env[0] != '\0')
+    {
+        errno = 0;
+        value = strtoul (env, &end, 10);
+        if (env[0] != '-' && *end == '\0' && errno == 0 && value <= 0xFFFFFFFFUL)
+        {
+            seed = (unsigned int) value;
+            srandom (seed);
+            log_f ("Random seed: %u (CHARM_SEED)", seed);
+            return;
+        }
+        log_f ("CHARM_SEED=%.20s isn't a number from 0 to 4294967295; using the clock.", env);
+    }
+
+    seed = time (NULL) ^ getpid ();
+    srandom (seed);
+    log_f ("Random seed: %u (clock)", seed);
     return;
 }
 

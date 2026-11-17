@@ -9,7 +9,7 @@ This began as the refactor plan's R0 smoke test (tools/smoke.py) and is the seed
 
 --docker creates a container on a free port, copies the fixtures in before boot (the immortal
 tools/fixtures/player/Smokegod, tools/fixtures/player/Shemp as saved before IMC2 was removed, and
-tools/fixtures/qmconfig.rc, which turns the ANSI question off), runs every step
+tools/fixtures/qmconfig.rc, which turns the ANSI question off), sets CHARM_SEED, runs every step
 and always removes the container. The clean-shutdown steps (docker stop, then start) need --docker. Against a
 running game, copyover runs only if you pass --immortal NAME:PASSWORD for a level-60 character. Either way the
 test creates a player file, so don't point it at your real player/.
@@ -29,6 +29,7 @@ IAC = 255
 ANSI = re.compile(rb"\x1b\[[0-9;]*[A-Za-z]")
 FIXTURES = Path(__file__).resolve().parents[2] / "fixtures"  # tools/fixtures
 IMMORTAL = ("Smokegod", "smoke123")  # tools/fixtures/player/Smokegod, level 60
+SEED = "20261117"  # --docker runs the game with CHARM_SEED set to this (abraidotti/charm#23)
 OLD_FILE = ("Shemp", "psswrd")  # tools/fixtures/player/Shemp: the stock file, with IMCPerm and IMCFlags lines
 
 
@@ -211,6 +212,10 @@ def run_steps(args, port, immortal, restart=None):
             print(f"SKIP {e}")
             return 2
         name, pw = args.name, args.password
+        if restart:
+            step("the game logs the CHARM_SEED it was given",
+                 lambda: _check(f"Random seed: {SEED} (CHARM_SEED)" in restart.latest_log(),
+                                f"no 'Random seed: {SEED} (CHARM_SEED)' line in the game log"))
         step("create character", lambda: new_character(s, name, pw))
         lag = {}
         step("%W shows save's lag, then 0", lambda: lag.update(zip(("pulses", "secs"), lag_shows_on_prompt(s))))
@@ -361,7 +366,8 @@ def run_docker(args):
     port = free_port()
     container = f"charm-smoke-{port}"
     try:
-        docker("create", "--init", "--name", container, "-p", f"127.0.0.1:{port}:4000", args.docker)
+        docker("create", "--init", "--name", container, "-p", f"127.0.0.1:{port}:4000",
+               "-e", f"CHARM_SEED={SEED}", args.docker)
     except FileNotFoundError:
         print("SKIP docker isn't installed")
         return 2

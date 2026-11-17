@@ -1,7 +1,7 @@
 # Plan: port Charm's game from C to Python
 
-Status: decisions 1-7 answered as recommended, 2026-11-17 (#19). Next: refactor R2, then P0 and the P1 spike, which
-ends in a go/no-go issue.
+Status: decisions 1-7 answered (#19); R2 done (#22); P0 in review (#23), 2026-11-17. Next: the P1 spike, which ends
+in a go/no-go issue.
 
 ## Goal
 
@@ -124,11 +124,45 @@ Reading it for patterns is fine. Copying code from it isn't.
 7. **What happens to `src/` at cut-over.** *Answered: a tag (`c-final`) and removal from master, once the parity
    suite and a full Sim run are green.* Alternative: keep `src/` on master as the reference.
 
+## P0 decisions (answered in #23)
+
+1. **Package.** `game/charm/`, run as `python -m charm`; tests in `game/tests/` with `unittest`. `charm_tools` makes
+   it importable with `paths.use_game()`, which puts `game/` on `sys.path`.
+2. **Licence headers.** Every module's docstring has a short header: the Diku, Merc and ROM copyright holders, the C
+   file it was ported from (or "Written for Charm; no single C source"), and a pointer to the licence texts in
+   `doc/` and the README's licence section. No `game/LICENSE`. `game/tests/test_guards.py` checks every module.
+3. **Layout and tracker.** By topic, not by C file (see Layout below). Ported functions carry
+   `# C: <file>.c <function>` above their `def`; `charm_tools port status` reports per C file from those markers,
+   and fails on a marker that names no C function.
+4. **`CHARM_SEED`.** An environment variable read by `init_mm`. The game logs the seed it used at every boot.
+5. **RNG check.** `tools/oracle/rngcheck.c`, linked against the game's object files, prints 8 streams of 10,000
+   draws on 4 seeds. `charm_tools port rng` captures them into `game/tests/data/rng.json`, and
+   `game/tests/test_rng.py` checks the Python RNG against that file.
+
+## Layout
+
+```
+game/charm/
+  core/       C-faithful primitives: cint, rng, later text and flags       imports nothing else in charm
+  data/       static tables: classes, races, skills, liquids, weapons      imports core
+  world/      the static world: areafile/ (T1's loader), model, resets     imports core, data
+  entities/   characters and objects at run time, handler functions
+  net/        the selectors loop, descriptors, act() and output, login
+  persist/    player files, notes, bans
+  commands/   interp and the commands, one module per topic
+  systems/    fight, magic, skills, update, specials, mob programs
+  olc/        the online builder (P5)
+```
+
+The import rules for the first three layers are tested. The rest get rules once the port shows where the C game's
+circular calls land (`update.c` calls `do_quit`, for one). Format code stays in three places: `world/areafile/`,
+`persist/` and `data/`. A later change of file format only swaps readers and writers there.
+
 ## Phases
 
 | Phase | What | Done when |
 |---|---|---|
-| **P0 Groundwork** | Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-file tracker and `CHARM_SEED` in C. glibc `random()` in Python, checked against C output for a few seeds. | Tracker lists every C file; RNG matches C for 10k draws on 3 seeds |
+| **P0 Groundwork** | Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-function tracker and `CHARM_SEED` in C. glibc `random()` and `db.c`'s RNG functions in Python, checked against the C game's own. | Tracker lists every C function; RNG matches C for 10k draws per stream on 4 seeds |
 | **P1 Spike** | Move T1's loader into `game/`, then port: `area_update` and resets, the descriptor loop, `nanny.c`, `save.c` (load and save, round-trip with C's files), `interp.c`, `act()`, and the commands the smoke test uses (`look`, movement, `save`, `quit`, `score`, `title`). | `sim smoke` passes its login, save and quit steps on the Python game, or the time box ends. Go/no-go issue written with the numbers. |
 | **P2 Differential harness** | Scenario files, an additive C driver, goldens, pure-Python replay in the tests. Guard tests for the divergence classes. | 10 scenarios replay green; guard tests run in the suite |
 | **P3 Commands without RNG** | The rest of `act_info.c`, `act_move.c`, `act_obj.c`, `act_comm.c`, `act_enter.c`, `alias.c`, `ban.c`, `board.c`, `act_wiz.c`. | Their tracker rows done; full `sim smoke` passes on Python |
@@ -137,6 +171,32 @@ Reading it for patterns is fine. Copying code from it isn't.
 | **P6 Cut-over** | Sim lobby and churn trials on both games, compared. Docker image switched to Python. Decision 7 for `src/`. | Every tracker row done; trials show no new findings on Python; licence checklist ticked |
 
 Each phase is one or more PRs, each with its parity proof, as for T1.
+
+**Later, its own issue: JSON.** The files on disk stay as they are until cut-over (ground rules). Before then, a
+cheap first look is possible: export each `.are` file to JSON from the loaded model, read it back and check that
+nothing changed. That gives real JSON to judge the format by, for areas first and then skills, classes and the other
+tables. The same issue takes up refactor decision 6 (tables in C or in data files).
+
+## How the tools fit
+
+The Xania tools come over in [tools-port.md](tools-port.md). A Python game changes what each one can lean on.
+
+- **Explorer (assessments).** Until cut-over, Explorer reads the C: T2's table readers parse `const.c` and
+  `tables.c`, and the same readers check `charm/data/` against them. After cut-over, Explorer imports the tables
+  and the world from `charm` directly, so there's one source of truth. For formulas (to-hit, damage, XP, regen), an
+  assessment that asks "what does the game do" calls the game's own pure functions. One that checks the game
+  against its intent keeps an independent derivation, or it could only ever agree with the code. Source pointers
+  name the Python function, and the marker gives its C origin.
+- **Sim (testing bots).** The telnet bots work unchanged against both games. That's how P1-P6 are gated: the same
+  trials on both, compared. The Python game adds an in-process mode, where Sim attaches bots through the descriptor
+  interface with no sockets, a fixed seed and, after P2, a fixed clock. That makes trials fast, repeatable and
+  runnable without Docker. Keeping `net/`'s descriptor interface small (#19, decision 4) is what makes it possible.
+  P2's differential scenarios are Sim scenarios run against both games.
+- **Companions.** Xania Companions are rule-based bots that play beside a player. They follow, fight and heal, and
+  write their own legends, all built on Sim's session layer. On Charm they'd connect the same way, over telnet or
+  in-process through a descriptor, and see only what a player sees. They never read game state directly, so they
+  play by the same rules as people and don't tie themselves to the game's internals. They come after Sim's trials
+  (T5) and aren't part of this plan, but the descriptor interface keeps the door open.
 
 ## Effect on the other plans
 
