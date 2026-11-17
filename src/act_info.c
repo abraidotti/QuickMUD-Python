@@ -2560,7 +2560,9 @@ void do_title (CHAR_DATA * ch, char *argument)
         argument[45] = '\0';
 
 	i = strlen(argument);
-    if (argument[i-1] == '{' && argument[i-2] != '{')
+    /* Drop a lone trailing colour code. Guarded so an empty or one-character
+     * title doesn't read before the argument (#9). -- Charm */
+    if (i > 0 && argument[i-1] == '{' && (i < 2 || argument[i-2] != '{'))
 		argument[i-1] = '\0';
 
     if (argument[0] == '\0')
