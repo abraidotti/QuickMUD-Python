@@ -5,6 +5,8 @@
     explore check          data checks on the loaded world
     explore parity         compare the loader with the real game (--docker IMAGE, or the saved capture)
     sim smoke [ARGS...]    the smoke test (see: python -m charm_tools sim smoke --help)
+    port status            how much of the C game the Python game (game/) has ported, function by function
+    port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
 """
 
 from __future__ import annotations
@@ -43,6 +45,14 @@ def main(argv: list[str] | None = None) -> int:
     sim_sub = sim.add_subparsers(dest="sim_command", required=True, metavar="sim-command")
     sim_sub.add_parser("smoke", help="the smoke test (handled above; listed here for --help)")
 
+    port = sub.add_parser("port", help="the Python port of the game")
+    port_sub = port.add_subparsers(dest="port_command", required=True, metavar="port-command")
+    port_sub.add_parser("status", help="per C file: functions ported, and where they went")
+    prng = port_sub.add_parser("rng", help="capture the C game's random numbers and compare with the fixture")
+    prng.add_argument("--docker", metavar="IMAGE", required=True,
+                      help="a build-stage image: docker build --target build -t charm:build .")
+    prng.add_argument("--save", action="store_true", help="save the capture as the new fixture")
+
     args = ap.parse_args(argv)
 
     if args.command == "doctor":
@@ -58,5 +68,12 @@ def main(argv: list[str] | None = None) -> int:
             if args.save and not args.docker:
                 ap.error("--save needs --docker")
             return commands.run_parity(args.docker, args.save)
+    if args.command == "port":
+        if args.port_command == "status":
+            from .port import status
+            return status.run()
+        if args.port_command == "rng":
+            from .port import rng
+            return rng.run(args.docker, args.save)
     ap.error(f"unknown command {args.command}")  # unreachable: argparse enforces the choices
     return 2
