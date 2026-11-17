@@ -4802,8 +4802,10 @@ void qmconfig_read (void) {
 				KEY ("Ansiprompt", mud_ansiprompt, fread_number(fp));
 				break;
 			case 'E':
-				if (!str_cmp(word, "END"))
+				if (!str_cmp(word, "END")) {
+					fclose (fp);	/* was leaked on every read (#7) -- Charm */
 					return;
+				}
 				break;
 			case 'T':
 				KEY ("Telnetga", mud_telnetga, fread_number(fp));
