@@ -245,6 +245,16 @@ def run_steps(args, port, immortal, restart=None):
             iname, ipw = immortal
             god = open_session()
             step(f"immortal {iname} logs in", lambda: old_character(god, iname, ipw))
+            if restart:
+                # qmconfig_read never closed its file, so each 'qmconfig read' leaked one (abraidotti/charm#7).
+                def qmconfig_reads_dont_leak():
+                    before = restart.open_fds()
+                    for _ in range(5):
+                        god.send("qmconfig read")
+                        god.expect(r"<\d+hp")
+                    after = restart.open_fds()
+                    _check(after == before, f"open files went from {before} to {after} over 5 reads")
+                step("'qmconfig read' doesn't leak files", qmconfig_reads_dont_leak)
             half = open_session()
             step("second connection stops mid-creation", lambda: half_created(half))
             motd = open_session()
@@ -343,6 +353,11 @@ def run_docker(args):
                     return self.exit_code()
                 time.sleep(0.5)
             return None
+
+        def open_fds(self):
+            """How many file descriptors the game process has open."""
+            script = 'for p in /proc/[0-9]*; do case "$(readlink $p/exe)" in */rom) ls $p/fd | wc -l;; esac; done'
+            return int(docker("exec", container, "sh", "-c", script).stdout.split()[0])
 
         def latest_log(self):
             # Works on a stopped container too: docker cp streams the log dir out as a tar.
