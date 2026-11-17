@@ -411,6 +411,15 @@ struct    weather_data
 #define CON_NOTE_TEXT			8
 #define CON_NOTE_FINISH			9
 
+/*
+ * Is this connection's character in the game (playing, or writing a note)?
+ * Anything else is still logging in, and may hold a half-created character
+ * that must not be saved or kept over a copyover. -- Charm
+ */
+#define IS_IN_GAME(d)	((d)->connected == CON_PLAYING \
+			 || ((d)->connected >= CON_NOTE_TO \
+			     && (d)->connected <= CON_NOTE_FINISH))
+
 
 /*
  * Descriptor (channel) structure.

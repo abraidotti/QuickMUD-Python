@@ -756,10 +756,7 @@ void shutdown_all (const char *message)
         if (message != NULL)
             write_to_descriptor (d->descriptor, (char *) message, 0);
         vch = d->original ? d->original : d->character;
-        if (vch != NULL
-            && (d->connected == CON_PLAYING
-                || (d->connected >= CON_NOTE_TO
-                    && d->connected <= CON_NOTE_FINISH)))
+        if (vch != NULL && IS_IN_GAME (d))
             save_char_obj (vch);
         close_socket (d);
     }
