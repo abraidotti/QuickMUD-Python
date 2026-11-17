@@ -24,7 +24,7 @@ Measured on master (8cdcf11), 2026-11-17:
   including 11 broken-area cases.
 - **A parity method that already works.** `charm_tools explore parity` boots the real game in Docker, captures its
   output and compares it with the Python side. The smoke test (`charm_tools sim smoke`) speaks telnet and doesn't care
-  what language the server is in, so the same 30 steps can run against both games.
+  what language the server is in, so the same steps can run against both games.
 - **The RNG.** Charm is built without `OLD_RAND`, so `number_mm` (`db.c:3599`) calls glibc's `random()`, seeded with
   `time(NULL) ^ getpid()` in `init_mm`. A port that wants identical fights needs glibc's `random()` in Python and a way
   to fix the seed on both sides.

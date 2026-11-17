@@ -1,9 +1,9 @@
 # Plan: refactor Charm's code
 
-Status: R0 and R1 done (#1/#2, #3/#10), 2026-11-17. The game builds with gcc 15 and clang 21 in Docker, the smoke
+Status: R0 and R1 done (#1/#2, #3/#10), R2 in review (#21), 2026-11-17. The game builds with gcc 15 and clang 21 in Docker, the smoke
 test (`charm_tools sim smoke`) covers login, save, clean shutdown and copyover, and bugs #4-#9 found on the way are
 fixed (#10-#15). R1 dropped configurable paths: each trial runs in its own container (#3, decision 1).
-Decisions 1-6 below are still open. A Python port is planned in [python-port.md](python-port.md) (#19): R2 runs
+Decision 2 is answered (#21); 1 and 3-6 are still open. A Python port is planned in [python-port.md](python-port.md) (#19): R2 runs
 first, then a spike decides whether R3-R5 continue in C.
 
 ## Goal
