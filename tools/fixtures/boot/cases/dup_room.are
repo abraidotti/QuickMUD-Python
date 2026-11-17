@@ -1,0 +1,16 @@
+#AREA
+dup_room.are~
+Parity dup_room~
+{ 1  5} charm_tools  Parity dup_room~
+30000 30099
+
+#ROOMS
+#3001
+A Second Temple~
+Vnum 3001 is already the Temple of Mota.
+~
+0 0 0
+S
+#0
+
+#$

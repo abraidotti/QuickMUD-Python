@@ -1,0 +1,9 @@
+#AREA
+string_eof.are~
+Parity string_eof~
+{ 1  5} charm_tools  Parity string_eof~
+30000 30099
+
+#ROOMS
+#30000
+A room whose name never ends

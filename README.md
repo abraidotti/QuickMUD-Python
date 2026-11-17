@@ -194,9 +194,19 @@ character to level 2 and edit its file, to make the first immortal. After that, 
 ```sh
 cd tools
 python -m charm_tools doctor                     # Python, checkout, Docker and the charm image
+python -m charm_tools explore areas              # load every area as the game does: counts and bug() lines
+python -m charm_tools explore check              # data checks: never-spawned mobs, unreachable rooms, ...
+python -m charm_tools explore parity --docker charm   # compare the loader with the real game
 python -m charm_tools sim smoke --docker charm   # the smoke test (also: python tools/smoke.py from the root)
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
+
+`explore` reads the area files the way the game's `boot_db` does, quirks included. `explore parity` checks that
+against the game itself:
+- The totals of the game's `memory` command and the `bug()` lines in its boot log must match.
+- So must the game's exact log output for each deliberately broken area in `tools/fixtures/boot/cases/`.
+
+Without `--docker`, it compares against the captures saved there.
 
 The tools are being ported from the Xania tools in stages; see [plans/tools-port.md](plans/tools-port.md).
 

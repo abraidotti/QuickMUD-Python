@@ -1,0 +1,11 @@
+#AREA
+bad_spec.are~
+Parity bad_spec~
+{ 1  5} charm_tools  Parity bad_spec~
+30000 30099
+
+#SPECIALS
+M 3000 spec_no_such_thing
+S
+
+#$

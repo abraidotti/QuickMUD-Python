@@ -1,6 +1,7 @@
 # Plan: bring the Xania tools into Charm
 
-Status: proposed, 2026-11-17. Nothing started.
+Status: T0 and T1 in review, 2026-11-17 (#16). Decisions 1-4 answered as recommended; Docker replaced WSL as the
+place the game runs (decision 5, #1). Decisions 6-7 are still open.
 
 ## Goal
 

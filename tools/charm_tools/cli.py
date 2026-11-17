@@ -1,6 +1,9 @@
 """python -m charm_tools <command> ...
 
     doctor                 check that the tools can run here
+    explore areas          load every area as boot_db does: per-area counts, totals, bug() lines
+    explore check          data checks on the loaded world
+    explore parity         compare the loader with the real game (--docker IMAGE, or the saved capture)
     sim smoke [ARGS...]    the smoke test (see: python -m charm_tools sim smoke --help)
 """
 
@@ -27,6 +30,15 @@ def main(argv: list[str] | None = None) -> int:
     doc = sub.add_parser("doctor", help="check that the tools can run here")
     doc.add_argument("--image", default="charm", help="the game image to look for (default: charm)")
 
+    exp = sub.add_parser("explore", help="read and check the game's areas")
+    exp_sub = exp.add_subparsers(dest="explore_command", required=True, metavar="explore-command")
+    exp_sub.add_parser("areas", help="per-area counts, the totals 'memory' prints, and the boot's bug() lines")
+    exp_sub.add_parser("check", help="data checks on the loaded world")
+    par = exp_sub.add_parser("parity", help="compare the loader with the real game")
+    par.add_argument("--docker", metavar="IMAGE", help="capture from a throwaway container (default: the saved "
+                                                       "capture in tools/fixtures/boot)")
+    par.add_argument("--save", action="store_true", help="with --docker: save the capture as the new fixture")
+
     sim = sub.add_parser("sim", help="testing against a running game")
     sim_sub = sim.add_subparsers(dest="sim_command", required=True, metavar="sim-command")
     sim_sub.add_parser("smoke", help="the smoke test (handled above; listed here for --help)")
@@ -36,5 +48,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "doctor":
         from . import doctor
         return doctor.main(args.image)
+    if args.command == "explore":
+        from .explore import commands
+        if args.explore_command == "areas":
+            return commands.areas()
+        if args.explore_command == "check":
+            return commands.check()
+        if args.explore_command == "parity":
+            if args.save and not args.docker:
+                ap.error("--save needs --docker")
+            return commands.run_parity(args.docker, args.save)
     ap.error(f"unknown command {args.command}")  # unreachable: argparse enforces the choices
     return 2

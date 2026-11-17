@@ -39,6 +39,22 @@ class CliTest(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(smoke_main.call_args.args[0], ["--docker", "charm", "-v"])
 
+    def test_explore_areas_prints_the_memory_totals(self):
+        code, out, _ = run(["explore", "areas"])
+        self.assertEqual(code, 0)
+        self.assertIn("Resets  4588", out)
+        self.assertIn("bug() lines at boot: 4", out)
+
+    def test_explore_check_exits_0_with_findings(self):
+        code, out, _ = run(["explore", "check"])
+        self.assertEqual(code, 0)
+        self.assertIn("mob.never-spawns", out)
+
+    def test_explore_parity_save_needs_docker(self):
+        code, _, err = run(["explore", "parity", "--save"])
+        self.assertEqual(code, 2)
+        self.assertIn("--save needs --docker", err)
+
     def test_sim_smoke_help(self):
         code, out, _ = run(["sim", "smoke", "--help"])
         self.assertEqual(code, 0)

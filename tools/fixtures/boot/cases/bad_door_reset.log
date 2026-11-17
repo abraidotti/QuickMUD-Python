@@ -1,0 +1,2 @@
+[*****] FILE: bad_door_reset.are LINE: 21
+[*****] BUG: Load_resets: 'D': exit 0, room 30000 not door.

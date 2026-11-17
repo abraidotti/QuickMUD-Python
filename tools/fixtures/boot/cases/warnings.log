@@ -1,0 +1,13 @@
+[*****] FILE: warnings.are LINE: 21
+[*****] BUG: CHECK_POS : size == -1 < 0
+[*****] FILE: warnings.are LINE: 30
+[*****] BUG: CHECK_POS : item_type == -1 < 0
+[*****] FILE: warnings.are LINE: 39
+[*****] BUG: CHECK_POS : liq_lookup == -1 < 0
+[*****] FILE: warnings.are LINE: 71
+[*****] BUG: Load_resets: 'D': bad 'locks': 3.
+[*****] BUG: Fix_exits: 10525:1 -> 10535:3 -> 10534.
+[*****] BUG: Fix_exits: 30001:0 -> 3001:2 -> 3005.
+[*****] BUG: Fix_exits: 3458:2 -> 3472:0 -> 10401.
+[*****] BUG: Fix_exits: 8705:4 -> 8706:5 -> 8708.
+[*****] BUG: Fix_exits: 8717:2 -> 8719:0 -> 8718.

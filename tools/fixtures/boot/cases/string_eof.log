@@ -1,0 +1,6 @@
+[*****] FILE: string_eof.are LINE: 9
+[*****] BUG: Fread_string: EOF
+[*****] FILE: string_eof.are LINE: 9
+[*****] BUG: Fread_string: EOF
+[*****] FILE: string_eof.are LINE: 9
+[*****] BUG: Fread_number: bad format.

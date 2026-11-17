@@ -1,0 +1,16 @@
+Affects   743
+Areas      48
+ExDes    1115
+Exits    7320
+Helps     273
+Socials   244
+Mobs      986(986 new format)
+(in use) 2173
+Objs     1266(1266 new format)
+Resets   4588
+Rooms    3126
+Shops      62
+Strings 17111 strings of 1400377 bytes (max 1413120).
+Perms   28089 blocks  of 2935568 bytes.
+
+<100hp 100m 100mv> 
