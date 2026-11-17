@@ -27,13 +27,8 @@
 
 /*   QuickMUD - The Lazy Man's ROM - $Id: act_wiz.c,v 1.3 2000/12/01 10:48:33 ring0 Exp $ */
 
-#if defined(macintosh)
-#include <types.h>
-#include <time.h>
-#else
 #include <sys/types.h>
 #include <sys/time.h>
-#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -4478,7 +4473,7 @@ void do_copyover (CHAR_DATA * ch, char *argument)
 {
     FILE *fp;
     DESCRIPTOR_DATA *d, *d_next;
-    char buf[100], buf2[100], buf3[100];
+    char buf[100], buf2[100];
     extern int port, control;    /* db.c */
 
     fp = fopen (COPYOVER_FILE, "w");
@@ -4518,16 +4513,6 @@ void do_copyover (CHAR_DATA * ch, char *argument)
         {
             fprintf (fp, "%d %s %s\n", d->descriptor, och->name, d->host);
 
-#if 0                            /* This is not necessary for ROM */
-            if (och->level == 1)
-            {
-                write_to_descriptor (d->descriptor,
-                                     "Since you are level one, and level one characters do not save, you gain a free level!\n\r",
-                                     0);
-                advance_level (och);
-                och->level++;    /* Advance_level doesn't do that */
-            }
-#endif
             save_char_obj (och);
 
             write_to_descriptor (d->descriptor, buf, 0);
@@ -4541,23 +4526,12 @@ void do_copyover (CHAR_DATA * ch, char *argument)
 
     fclose (fpReserve);
 
-#ifdef IMC
-   imc_hotboot();
-#endif
 
     /* exec - descriptors are inherited */
 
     sprintf (buf, "%d", port);
     sprintf (buf2, "%d", control);
-#ifdef IMC
-   if( this_imcmud )
-      snprintf( buf3, 100, "%d", this_imcmud->desc );
-   else
-      strncpy( buf3, "-1", 100 );
-#else
-   strncpy( buf3, "-1", 100 );
-#endif
-    execl (EXE_FILE, "rom", buf, "copyover", buf2, buf3, (char *) NULL);
+    execl (EXE_FILE, "rom", buf, "copyover", buf2, (char *) NULL);
 
     /* Failed - sucessful exec will not return */
 

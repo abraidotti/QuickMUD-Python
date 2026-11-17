@@ -19,11 +19,7 @@
  *  mob etc is part of that area.
  */
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -41,7 +37,6 @@
  *  may aid in debugging.
  */
 
-/* #define VERBOSE */
 
 /*****************************************************************************
  Name:        fix_string
@@ -589,14 +584,8 @@ void save_specials (FILE * fp, AREA_DATA * pArea)
         {
             if (pMobIndex && pMobIndex->area == pArea && pMobIndex->spec_fun)
             {
-#if defined( VERBOSE )
-                fprintf (fp, "M %d %s Load to: %s\n", pMobIndex->vnum,
-                         spec_name (pMobIndex->spec_fun),
-                         pMobIndex->short_descr);
-#else
                 fprintf (fp, "M %d %s\n", pMobIndex->vnum,
                          spec_name (pMobIndex->spec_fun));
-#endif
             }
         }
     }
@@ -633,23 +622,10 @@ void save_door_resets (FILE * fp, AREA_DATA * pArea)
                         && pExit->u1.to_room
                         && (IS_SET (pExit->rs_flags, EX_CLOSED)
                             || IS_SET (pExit->rs_flags, EX_LOCKED)))
-#if defined( VERBOSE )
-                        fprintf (fp, "D 0 %d %d %d The %s door of %s is %s\n",
-                                 pRoomIndex->vnum,
-                                 pExit->orig_door,
-                                 IS_SET (pExit->rs_flags, EX_LOCKED) ? 2 : 1,
-                                 dir_name[pExit->orig_door],
-                                 pRoomIndex->name,
-                                 IS_SET (pExit->rs_flags,
-                                         EX_LOCKED) ? "closed and locked" :
-                                 "closed");
-#endif
-#if !defined( VERBOSE )
                     fprintf (fp, "D 0 %d %d %d\n",
                              pRoomIndex->vnum,
                              pExit->orig_door,
                              IS_SET (pExit->rs_flags, EX_LOCKED) ? 2 : 1);
-#endif
                 }
             }
         }
@@ -923,17 +899,7 @@ void do_asave (CHAR_DATA * ch, char *argument)
 {
     char arg1[MAX_INPUT_LENGTH];
     AREA_DATA *pArea;
-    FILE *fp;
-    int value, sec;
-
-    fp = NULL;
-
-    if (!ch)                    /* Do an autosave */
-        sec = 9;
-    else if (!IS_NPC (ch))
-        sec = ch->pcdata->security;
-    else
-        sec = 0;
+    int value;
 
 /*    {
     save_area_list();

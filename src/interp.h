@@ -93,7 +93,6 @@ DECLARE_DO_FUN( do_berserk		);
 DECLARE_DO_FUN( do_board		);
 DECLARE_DO_FUN(	do_brandish		);
 DECLARE_DO_FUN( do_brief		);
-DECLARE_DO_FUN(	do_bug			);
 DECLARE_DO_FUN(	do_buy			);
 DECLARE_DO_FUN(	do_cast			);
 DECLARE_DO_FUN( do_channels		);

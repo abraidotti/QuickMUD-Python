@@ -13,11 +13,7 @@
 
 
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -613,12 +609,6 @@ AEDIT (aedit_show)
     sprintf (buf, "Name:     [%5d] %s\n\r", pArea->vnum, pArea->name);
     send_to_char (buf, ch);
 
-#if 0                            /* ROM OLC */
-    sprintf (buf, "Recall:   [%5d] %s\n\r", pArea->recall,
-             get_room_index (pArea->recall)
-             ? get_room_index (pArea->recall)->name : "none");
-    send_to_char (buf, ch);
-#endif /* ROM */
 
     sprintf (buf, "File:     %s\n\r", pArea->file_name);
     send_to_char (buf, ch);
@@ -789,37 +779,6 @@ AEDIT (aedit_age)
 }
 
 
-#if 0                            /* ROM OLC */
-AEDIT (aedit_recall)
-{
-    AREA_DATA *pArea;
-    char room[MAX_STRING_LENGTH];
-    int value;
-
-    EDIT_AREA (ch, pArea);
-
-    one_argument (argument, room);
-
-    if (!is_number (argument) || argument[0] == '\0')
-    {
-        send_to_char ("Syntax:  recall [#xrvnum]\n\r", ch);
-        return FALSE;
-    }
-
-    value = atoi (room);
-
-    if (!get_room_index (value))
-    {
-        send_to_char ("AEdit:  Room vnum does not exist.\n\r", ch);
-        return FALSE;
-    }
-
-    pArea->recall = value;
-
-    send_to_char ("Recall set.\n\r", ch);
-    return TRUE;
-}
-#endif /* ROM OLC */
 
 
 AEDIT (aedit_security)
@@ -1955,27 +1914,6 @@ const struct wear_type wear_table[] = {
     {WEAR_HOLD, ITEM_HOLD},
     {NO_FLAG, NO_FLAG}
 };
-
-
-
-/*****************************************************************************
- Name:        wear_loc
- Purpose:    Returns the location of the bit that matches the count.
-         1 = first match, 2 = second match etc.
- Called by:    oedit_reset(olc_act.c).
- ****************************************************************************/
-int wear_loc (int bits, int count)
-{
-    int flag;
-
-    for (flag = 0; wear_table[flag].wear_bit != NO_FLAG; flag++)
-    {
-        if (IS_SET (bits, wear_table[flag].wear_bit) && --count < 1)
-            return wear_table[flag].wear_loc;
-    }
-
-    return NO_FLAG;
-}
 
 
 
@@ -3329,8 +3267,6 @@ OEDIT (oedit_ed)
 
     if (!str_cmp (command, "format"))
     {
-        EXTRA_DESCR_DATA *ped = NULL;
-
         if (keyword[0] == '\0')
         {
             send_to_char ("Syntax:  ed format [keyword]\n\r", ch);
@@ -3341,7 +3277,6 @@ OEDIT (oedit_ed)
         {
             if (is_name (keyword, ed->keyword))
                 break;
-            ped = ed;
         }
 
         if (!ed)

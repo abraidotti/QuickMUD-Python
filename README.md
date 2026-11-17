@@ -73,8 +73,8 @@ QuickMUD is "a Rom24b6 codebase" with these packages added. Each keeps its own c
 | Note boards | Erwin S. Andreasen (1995–96) | `src/board.c` |
 | Colour login | QuickMUD, after a snippet by Jaey of Crimson Souls | `src/nanny.c` |
 | Help editor (hedit) | after Kermit's `hedit_1` snippet | `src/hedit.c` |
-| IMC2 Freedom client (2004) | Roger Libiez (Samson), with Johnathan Walker (Xorith), Jesse Defer (Garil) and Rogel; credits Scion Altera, Shogar, Kratas, Tagith, Noplex, Senir, Trax and Ntanel StormBlade | `src/imc.c`, `src/imc.h`, [imc/](imc/) |
-| SHA-256 (used by IMC2) | Colin Percival (2005, BSD licence) | `src/sha256.c` |
+| IMC2 Freedom client (2004) | Roger Libiez (Samson), with Johnathan Walker (Xorith), Jesse Defer (Garil) and Rogel; credits Scion Altera, Shogar, Kratas, Tagith, Noplex, Senir, Trax and Ntanel StormBlade | Removed in R2 (#21); in git history before then |
+| SHA-256 (used by IMC2) | Colin Percival (2005, BSD licence) | Removed with IMC2 (#21) |
 
 ### QuickMUD (to 2007)
 
@@ -117,9 +117,8 @@ Charm is not open source in the modern sense. Running it means following all thr
   copyright 1993–1996 Russ Taylor, visible on a 24-line terminal; the help files must keep the `ROM` entry unaltered;
   the game may not be called ROM or "something-ROM"; derivatives must keep all README and credits files.
 
-The add-ons carry their own terms: IMC2 ([imc/imc2freedom.license](imc/imc2freedom.license)), strlcpy/strlcat
-([imc/STRLCPY-STRLCAT-LICENSE](imc/STRLCPY-STRLCAT-LICENSE)) and SHA-256 (the BSD licence in `src/sha256.c`). Leave
-every copyright header in `src/` as it is, and keep `help diku`, `help merc`, `help rom` and the greeting's credits
+IMC2, its strlcpy/strlcat and SHA-256 carried their own licences. Charm no longer ships them (#21), so their terms
+no longer apply; their authors stay credited above. Leave every copyright header in `src/` as it is, and keep `help diku`, `help merc`, `help rom` and the greeting's credits
 when Charm gets its own identity.
 
 The QuickMUD maintainer's request still stands: "don't just download this code, compile it, and advertise it on MUD
@@ -168,8 +167,6 @@ cd ../area
 telnet localhost 4000
 ```
 
-`src/Makefile` builds IMC2 in by default. Comment out `IMC = 1` to leave it out.
-
 ### First immortal
 
 A level 2 character named Shemp (password `psswrd`) is in `player/`. Edit the `Levl` line of that file, or play any
@@ -179,10 +176,9 @@ character to level 2 and edit its file, to make the first immortal. After that, 
 
 | Path | Contents |
 |---|---|
-| `src/` | C source, Makefiles |
+| `src/` | C source and its Makefile |
 | `area/` | Area files, `area.lst`, `startup`, `qmconfig.rc` |
 | `doc/` | Diku, Merc, ROM, OLC and MOBprogram documentation and licences |
-| `imc/` | IMC2 configuration and licences |
 | `player/`, `log/` | Player files and logs |
 | `plans/` | Charm's plans |
 | `tools/` | `charm_tools`, the Python tools for working on Charm (MIT, see [tools/LICENSE](tools/LICENSE)) |

@@ -26,11 +26,7 @@
  ***************************************************************************/
 
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -282,16 +278,6 @@ bool check_dispel (int dis_level, CHAR_DATA * victim, int sn)
     }
     return FALSE;
 }
-
-/* for finding mana costs -- temporary version */
-int mana_cost (CHAR_DATA * ch, int min_mana, int level)
-{
-    if (ch->level + 2 == level)
-        return 1000;
-    return UMAX (min_mana, (100 / (2 + ch->level - level)));
-}
-
-
 
 /*
  * The kludgy global is for spells who want more stuff from command line.

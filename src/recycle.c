@@ -25,13 +25,8 @@
  *  ROM license, in the file Rom24/doc/rom.license                         *
  ***************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#include <time.h>
-#else
 #include <sys/types.h>
 #include <sys/time.h>
-#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -344,9 +339,6 @@ void free_char (CHAR_DATA * ch)
     free_string (ch->prompt);
     free_string (ch->prefix);
 /*    free_note (ch->pnote); */
-#ifdef IMC
-    imc_freechardata( ch );
-#endif
     free_pcdata (ch->pcdata);
 
     ch->next = char_free;
@@ -441,39 +433,6 @@ MEM_DATA *mem_data_free;
 
 BUFFER *buf_free;
 
-MEM_DATA *new_mem_data (void)
-{
-    MEM_DATA *memory;
-
-    if (mem_data_free == NULL)
-        memory = alloc_mem (sizeof (*memory));
-    else
-    {
-        memory = mem_data_free;
-        mem_data_free = mem_data_free->next;
-    }
-
-    memory->next = NULL;
-    memory->id = 0;
-    memory->reaction = 0;
-    memory->when = 0;
-    VALIDATE (memory);
-
-    return memory;
-}
-
-void free_mem_data (MEM_DATA * memory)
-{
-    if (!IS_VALID (memory))
-        return;
-
-    memory->next = mem_data_free;
-    mem_data_free = memory;
-    INVALIDATE (memory);
-}
-
-
-
 /* buffer sizes */
 const int buf_size[MAX_BUF_LIST] = {
     16, 32, 64, 128, 256, 1024, 2048, 4096, 8192, 16384
@@ -516,34 +475,6 @@ BUFFER *new_buf ()
 
     return buffer;
 }
-
-BUFFER *new_buf_size (int size)
-{
-    BUFFER *buffer;
-
-    if (buf_free == NULL)
-        buffer = alloc_perm (sizeof (*buffer));
-    else
-    {
-        buffer = buf_free;
-        buf_free = buf_free->next;
-    }
-
-    buffer->next = NULL;
-    buffer->state = BUFFER_SAFE;
-    buffer->size = get_size (size);
-    if (buffer->size == -1)
-    {
-        bug ("new_buf: buffer size %d too large.", size);
-        exit (1);
-    }
-    buffer->string = alloc_mem (buffer->size);
-    buffer->string[0] = '\0';
-    VALIDATE (buffer);
-
-    return buffer;
-}
-
 
 void free_buf (BUFFER * buffer)
 {

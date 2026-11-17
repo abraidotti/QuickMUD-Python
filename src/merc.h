@@ -60,17 +60,8 @@ int system();
 #define TRUE     1
 #endif
 
-#if    defined(_AIX)
-#if    !defined(const)
-#define const
-#endif
-typedef int                sh_int;
-typedef int                bool;
-#define unix
-#else
 typedef short   int            sh_int;
 typedef unsigned char            bool;
-#endif
 
 /* ea */
 #define MSL MAX_STRING_LENGTH
@@ -170,9 +161,6 @@ typedef void SPELL_FUN args( ( int sn, int level, CHAR_DATA *ch, void *vo,
 #define AVATAR      (MAX_LEVEL - 8)
 #define HERO        LEVEL_HERO
 
-#ifdef IMC
-   #include "imc.h"
-#endif
 
 /*
  * ColoUr stuff v2.0, by Lope.
@@ -1709,9 +1697,6 @@ struct    pc_data
     int				fight_ohit[3];          /* {3 */
     int				fight_thit[3];          /* {4 */
     int				fight_skill[3];         /* {5 */              
-#ifdef IMC
-    IMC_CHARDATA *imcchardata;
-#endif
 };
 
 /* Data for generating characters -- only used during generation */
@@ -2227,74 +2212,17 @@ extern  bool				MOBtrigger;
  * These are all very standard library functions,
  *   but some systems have incomplete or non-ansi header files.
  */
-#if    defined(_AIX)
+
+
+
 char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
 
-#if    defined(apollo)
-int    atoi        args( ( const char *string ) );
-void *    calloc        args( ( unsigned nelem, size_t size ) );
-char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
 
-#if    defined(hpux)
-char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
 
-#if    defined(linux)
-char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
 
-#if    defined(macintosh)
-#define NOCRYPT
-#if    defined(unix)
-#undef    unix
-#endif
-#endif
 
-#if    defined(MIPS_OS)
-char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
 
-#if    defined(MSDOS)
-#define NOCRYPT
-#if    defined(unix)
-#undef    unix
-#endif
-#endif
 
-#if    defined(NeXT)
-char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
-
-#if    defined(sequent)
-char *    crypt        args( ( const char *key, const char *salt ) );
-int    fclose        args( ( FILE *stream ) );
-int    fprintf        args( ( FILE *stream, const char *format, ... ) );
-int    fread        args( ( void *ptr, int size, int n, FILE *stream ) );
-int    fseek        args( ( FILE *stream, long offset, int ptrname ) );
-void    perror        args( ( const char *s ) );
-int    ungetc        args( ( int c, FILE *stream ) );
-#endif
-
-#if    defined(sun)
-char *    crypt        args( ( const char *key, const char *salt ) );
-int    fclose        args( ( FILE *stream ) );
-int    fprintf        args( ( FILE *stream, const char *format, ... ) );
-#if    defined(SYSV)
-siz_t    fread        args( ( void *ptr, size_t size, size_t n, 
-                FILE *stream) );
-#elif !defined(__SVR4)
-int    fread        args( ( void *ptr, int size, int n, FILE *stream ) );
-#endif
-int    fseek        args( ( FILE *stream, long offset, int ptrname ) );
-void    perror        args( ( const char *s ) );
-int    ungetc        args( ( int c, FILE *stream ) );
-#endif
-
-#if    defined(ultrix)
-char *    crypt        args( ( const char *key, const char *salt ) );
-#endif
 
 
 
@@ -2321,24 +2249,12 @@ char *    crypt        args( ( const char *key, const char *salt ) );
  *   so players can go ahead and telnet to all the other descriptors.
  * Then we close it whenever we need to open a file (e.g. a save file).
  */
-#if defined(macintosh)
-#define PLAYER_DIR      ""                  /* Player files            */
-#define TEMP_FILE       "romtmp"
-#define NULL_FILE       "proto.are"         /* To reserve one stream   */
-#endif
 
-#if defined(MSDOS)
-#define PLAYER_DIR      ""                   /* Player files           */
-#define TEMP_FILE       "romtmp"
-#define NULL_FILE       "nul"                /* To reserve one stream  */
-#endif
 
-#if defined(unix)
 #define PLAYER_DIR      "../player/"         /* Player files           */
 #define GOD_DIR         "../gods/"           /* list of gods           */
 #define TEMP_FILE       "../player/romtmp"
 #define NULL_FILE       "/dev/null"          /* To reserve one stream  */
-#endif
 
 #define AREA_LIST       "area.lst"            /* List of areas         */
 #define BUG_FILE        "bugs.txt"            /* For 'bug' and bug()   */
@@ -2430,7 +2346,6 @@ CD *     create_mobile       args( ( MOB_INDEX_DATA *pMobIndex ) );
 void     clone_mobile        args( ( CHAR_DATA *parent, CHAR_DATA *clone) );
 OD *     create_object       args( ( OBJ_INDEX_DATA *pObjIndex, int level ) );
 void     clone_object        args( ( OBJ_DATA *parent, OBJ_DATA *clone ) );
-void     clear_char          args( ( CHAR_DATA *ch ) );
 char *   get_extra_descr     args( ( const char *name, EXTRA_DESCR_DATA *ed ) );
 MID *    get_mob_index       args( ( int vnum ) );
 OID *    get_obj_index       args( ( int vnum ) );
@@ -2476,7 +2391,6 @@ bool     check_pet_affected  args( ( int vnum, AFFECT_DATA *paf) );
  int   colour          args( ( char type, CHAR_DATA *ch, char *string ) );
  void  colourconv      args( ( char *buffer, const char *txt, CHAR_DATA*ch)); 
  void  send_to_char_bw args( ( const char *txt, CHAR_DATA *ch ) );
- void  page_to_char_bw args( ( const char *txt, CHAR_DATA *ch ) );    
 
 
 /* effect.c */
@@ -2507,7 +2421,6 @@ int    count_users    args( (OBJ_DATA *obj) );
 void     deduct_cost    args( (CHAR_DATA *ch, int cost) );
 void    affect_enchant    args( (OBJ_DATA *obj) );
 int     check_immune    args( (CHAR_DATA *ch, int dam_type) );
-int     material_lookup args( ( const char *name) );
 int    weapon_lookup    args( ( const char *name) );
 int    weapon_type    args( ( const char *name) );
 char     *weapon_name    args( ( int weapon_Type) );
@@ -2517,7 +2430,6 @@ long    wiznet_lookup    args( ( const char *name) );
 int    class_lookup    args( ( const char *name) );
 bool    is_clan        args( (CHAR_DATA *ch) );
 bool    is_same_clan    args( (CHAR_DATA *ch, CHAR_DATA *victim));
-bool    is_old_mob    args ( (CHAR_DATA *ch) );
 int    get_skill    args( ( CHAR_DATA *ch, int sn ) );
 int    get_weapon_sn    args( ( CHAR_DATA *ch ) );
 int    get_weapon_skill args(( CHAR_DATA *ch, int sn ) );
@@ -2601,7 +2513,6 @@ char *    one_argument    args( ( char *argument, char *arg_first ) );
 
 /* magic.c */
 int    find_spell    args( ( CHAR_DATA *ch, const char *name) );
-int     mana_cost     (CHAR_DATA *ch, int min_mana, int level);
 int    skill_lookup    args( ( const char *name ) );
 int    slot_lookup    args( ( int slot ) );
 bool    saves_spell    args( ( int level, CHAR_DATA *victim, int dam_type ) );
@@ -2655,7 +2566,6 @@ void    gain_condition    args( ( CHAR_DATA *ch, int iCond, int value ) );
 void    update_handler    args( ( void ) );
 
 /* string.c */
-void    string_edit    args( ( CHAR_DATA *ch, char **pString ) );
 void    string_append   args( ( CHAR_DATA *ch, char **pString ) );
 char *    string_replace    args( ( char * orig, char * old, char * new ) );
 void    string_add      args( ( CHAR_DATA *ch, char *argument ) );

@@ -299,21 +299,17 @@ DECLARE_OLC_FUN( hedit_list		);
 RESET_DATA	*new_reset_data		args ( ( void ) );
 void		free_reset_data		args ( ( RESET_DATA *pReset ) );
 AREA_DATA	*new_area		args ( ( void ) );
-void		free_area		args ( ( AREA_DATA *pArea ) );
 EXIT_DATA	*new_exit		args ( ( void ) );
 void		free_exit		args ( ( EXIT_DATA *pExit ) );
 ED 		*new_extra_descr	args ( ( void ) );
 void		free_extra_descr	args ( ( ED *pExtra ) );
 ROOM_INDEX_DATA *new_room_index		args ( ( void ) );
-void		free_room_index		args ( ( ROOM_INDEX_DATA *pRoom ) );
 AFFECT_DATA	*new_affect		args ( ( void ) );
 void		free_affect		args ( ( AFFECT_DATA* pAf ) );
 SHOP_DATA	*new_shop		args ( ( void ) );
 void		free_shop		args ( ( SHOP_DATA *pShop ) );
 OBJ_INDEX_DATA	*new_obj_index		args ( ( void ) );
-void		free_obj_index		args ( ( OBJ_INDEX_DATA *pObj ) );
 MOB_INDEX_DATA	*new_mob_index		args ( ( void ) );
-void		free_mob_index		args ( ( MOB_INDEX_DATA *pMob ) );
 #undef	ED
 
 void		show_liqlist		args ( ( CHAR_DATA *ch ) );
@@ -323,4 +319,3 @@ char *		mprog_type_to_name	args ( ( int type ) );
 MPROG_LIST      *new_mprog              args ( ( void ) );
 void            free_mprog              args ( ( MPROG_LIST *mp ) );
 MPROG_CODE	*new_mpcode		args ( (void) );
-void		free_mpcode		args ( ( MPROG_CODE *pMcode));

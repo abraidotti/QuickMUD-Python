@@ -25,11 +25,7 @@
  *  ROM license, in the file Rom24/doc/rom.license                         *
  ***************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -40,9 +36,7 @@
 #include "tables.h"
 #include "lookup.h"
 
-#if !defined(macintosh)
 extern int _filbuf args ((FILE *));
-#endif
 
 
 /* int rename(const char *oldfname, const char *newfname); viene en stdio.h */
@@ -125,7 +119,6 @@ void save_char_obj (CHAR_DATA * ch)
     if (ch->desc != NULL && ch->desc->original != NULL)
         ch = ch->desc->original;
 
-#if defined(unix)
     /* create god log */
     if (IS_IMMORTAL (ch) || ch->level >= LEVEL_IMMORTAL)
     {
@@ -142,7 +135,6 @@ void save_char_obj (CHAR_DATA * ch)
         fclose (fp);
         fpReserve = fopen (NULL_FILE, "r");
     }
-#endif
 
     fclose (fpReserve);
     sprintf (strsave, "%s%s", PLAYER_DIR, capitalize (ch->name));
@@ -438,9 +430,6 @@ void fwrite_char (CHAR_DATA * ch, FILE * fp)
                  paf->level,
                  paf->duration, paf->modifier, paf->location, paf->bitvector);
     }
-#ifdef IMC
-    imc_savechar( ch, fp );
-#endif
     fprintf (fp, "End\n\n");
     return;
 }
@@ -790,13 +779,9 @@ bool load_char_obj (DESCRIPTOR_DATA * d, char *name)
     ch->pcdata->fight_skill[0] = (BRIGHT);
     ch->pcdata->fight_skill[1] = (WHITE);
     ch->pcdata->fight_skill[2] = 0;
-#ifdef IMC
-    imc_initchar( ch );
-#endif
     found = FALSE;
     fclose (fpReserve);
 
-#if defined(unix)
     /* decompress if .gz file exists */
     sprintf (strsave, "%s%s%s", PLAYER_DIR, capitalize (name), ".gz");
     if ((fp = fopen (strsave, "r")) != NULL)
@@ -805,7 +790,6 @@ bool load_char_obj (DESCRIPTOR_DATA * d, char *name)
         sprintf (buf, "gzip -dfq %s", strsave);
         system (buf);
     }
-#endif
 
     sprintf (strsave, "%s%s", PLAYER_DIR, capitalize (name));
     if ((fp = fopen (strsave, "r")) != NULL)
@@ -1325,10 +1309,15 @@ void fread_char (CHAR_DATA * ch, FILE * fp)
                 KEY ("InvisLevel", ch->invis_level, fread_number (fp));
                 KEY ("Inco", ch->incog_level, fread_number (fp));
                 KEY ("Invi", ch->invis_level, fread_number (fp));
-#ifdef IMC
-           if( ( fMatch = imc_loadchar( ch, fp, word ) ) )
-                break;
-#endif
+                /* IMC2 was removed in R2 (#21). Files saved before then still
+                 * have IMCPerm, IMCFlags and other one-line IMC* keys: skip
+                 * them quietly. They're gone after the next save. -- Charm */
+                if (!str_prefix ("IMC", word))
+                {
+                    fread_to_eol (fp);
+                    fMatch = TRUE;
+                    break;
+                }
                 break;
 
             case 'L':

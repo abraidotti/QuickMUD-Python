@@ -13,13 +13,6 @@ PROF = -O -g3
 C_FLAGS = $(PROF) -Wall -std=gnu17 -fcommon
 L_FLAGS = $(PROF) -lcrypt
 
-#IMC2 - Comment out to disable IMC2 support
-IMC = 1
-
-ifdef IMC
-   C_FLAGS := $(C_FLAGS) -DIMC -DIMCROM
-endif
-
 # Source Files
 SRC_FILES := $(wildcard *.c)
 

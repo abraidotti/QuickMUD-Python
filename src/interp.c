@@ -25,11 +25,7 @@
 *    ROM license, in the file Rom24/doc/rom.license                         *
 ****************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -501,9 +497,6 @@ void interpret (CHAR_DATA * ch, char *argument)
          * Look for command in socials table.
          */
         if (!check_social (ch, command, argument)
-#ifdef IMC
-	&&   !imc_command_hook( ch, command, argument )
-#endif
            )
             send_to_char ("Huh?\n\r", ch);
         return;

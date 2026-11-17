@@ -27,12 +27,8 @@
 
 /*   QuickMUD - The Lazy Man's ROM - $Id: act_comm.c,v 1.2 2000/12/01 10:48:33 ring0 Exp $ */
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
 #include <sys/time.h>
-#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -1429,13 +1425,6 @@ void do_pose (CHAR_DATA * ch, char *argument)
 }
 
 
-
-void do_bug (CHAR_DATA * ch, char *argument)
-{
-    append_file (ch, BUG_FILE, argument);
-    send_to_char ("Bug logged.\n\r", ch);
-    return;
-}
 
 void do_typo (CHAR_DATA * ch, char *argument)
 {

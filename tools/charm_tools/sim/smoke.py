@@ -8,7 +8,8 @@ This began as the refactor plan's R0 smoke test (tools/smoke.py) and is the seed
     python tools/smoke.py --docker charm             # the same, from the repo root
 
 --docker creates a container on a free port, copies the fixtures in before boot (the immortal
-tools/fixtures/player/Smokegod and tools/fixtures/qmconfig.rc, which turns the ANSI question off), runs every step
+tools/fixtures/player/Smokegod, tools/fixtures/player/Shemp as saved before IMC2 was removed, and
+tools/fixtures/qmconfig.rc, which turns the ANSI question off), runs every step
 and always removes the container. The clean-shutdown steps (docker stop, then start) need --docker. Against a
 running game, copyover runs only if you pass --immortal NAME:PASSWORD for a level-60 character. Either way the
 test creates a player file, so don't point it at your real player/.
@@ -28,6 +29,7 @@ IAC = 255
 ANSI = re.compile(rb"\x1b\[[0-9;]*[A-Za-z]")
 FIXTURES = Path(__file__).resolve().parents[2] / "fixtures"  # tools/fixtures
 IMMORTAL = ("Smokegod", "smoke123")  # tools/fixtures/player/Smokegod, level 60
+OLD_FILE = ("Shemp", "psswrd")  # tools/fixtures/player/Shemp: the stock file, with IMCPerm and IMCFlags lines
 
 
 class Fail(Exception):
@@ -259,6 +261,21 @@ def run_steps(args, port, immortal, restart=None):
             step("the unsaved change survived", lambda: (s.send("look"), s.expect(r"<sigterm 0>")))
         step("quit again", lambda: (s.send("quit"), s.expect_closed()))
 
+        if restart:
+            # IMC2 was removed (abraidotti/charm#21). Files saved before then still have IMC* lines, which fread_char
+            # now skips; without that, each one logged "Fread_char: no match." until the player saved again.
+            oname, opw = OLD_FILE
+            old = open_session()
+            step(f"{oname}'s pre-#21 file logs in", lambda: old_character(old, oname, opw))
+            step("its IMC lines load without a bug line",
+                 lambda: _check("Fread_char: no match" not in restart.latest_log(),
+                                "the game log has 'Fread_char: no match.'"))
+            step("save drops the IMC lines",
+                 lambda: (old.send("save"), old.expect(r"Saving"),
+                          _check("IMC" not in restart.player_file(oname), f"player/{oname} still has IMC lines")))
+            old.send("quit")
+            old.expect_closed(timeout=args.timeout + 15)  # quit waits out save's 12s lag
+
         if immortal:
             iname, ipw = immortal
             god = open_session()
@@ -377,6 +394,9 @@ def run_docker(args):
             script = 'for p in /proc/[0-9]*; do case "$(readlink $p/exe)" in */rom) ls $p/fd | wc -l;; esac; done'
             return int(docker("exec", container, "sh", "-c", script).stdout.split()[0])
 
+        def player_file(self, name):
+            return docker("exec", container, "cat", f"/opt/charm/player/{name}").stdout
+
         def latest_log(self):
             # Works on a stopped container too: docker cp streams the log dir out as a tar.
             out = subprocess.run(["docker", "cp", f"{container}:/opt/charm/log/.", "-"], capture_output=True)
@@ -388,7 +408,8 @@ def run_docker(args):
             return logs[max(logs)] if logs else ""
 
     try:
-        docker("cp", str(FIXTURES / "player" / IMMORTAL[0]), f"{container}:/opt/charm/player/{IMMORTAL[0]}")
+        for who in (IMMORTAL[0], OLD_FILE[0]):
+            docker("cp", str(FIXTURES / "player" / who), f"{container}:/opt/charm/player/{who}")
         docker("cp", str(FIXTURES / "qmconfig.rc"), f"{container}:/opt/charm/area/qmconfig.rc")
         docker("start", container)
         print(f"container {container} on 127.0.0.1:{port}", flush=True)

@@ -25,11 +25,7 @@
 *    ROM license, in the file Rom24/doc/rom.license                         *
 ****************************************************************************/
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -1728,7 +1724,6 @@ void group_gain (CHAR_DATA * ch, CHAR_DATA * victim)
 {
     char buf[MAX_STRING_LENGTH];
     CHAR_DATA *gch;
-    CHAR_DATA *lch;
     int xp;
     int members;
     int group_levels;
@@ -1759,8 +1754,6 @@ void group_gain (CHAR_DATA * ch, CHAR_DATA * victim)
         group_levels = ch->level;
     }
 
-    lch = (ch->leader != NULL) ? ch->leader : ch;
-
     for (gch = ch->in_room->people; gch != NULL; gch = gch->next_in_room)
     {
         OBJ_DATA *obj;
@@ -1768,20 +1761,6 @@ void group_gain (CHAR_DATA * ch, CHAR_DATA * victim)
 
         if (!is_same_group (gch, ch) || IS_NPC (gch))
             continue;
-
-/*    Taken out, add it back if you want it
-    if ( gch->level - lch->level >= 5 )
-    {
-        send_to_char( "You are too high for this group.\n\r", gch );
-        continue;
-    }
-
-    if ( gch->level - lch->level <= -5 )
-    {
-        send_to_char( "You are too low for this group.\n\r", gch );
-        continue;
-    }
-*/
 
         xp = xp_compute (gch, victim, group_levels);
         sprintf (buf, "You receive %d experience points.\n\r", xp);

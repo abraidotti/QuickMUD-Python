@@ -27,11 +27,7 @@
 
 /*   QuickMUD - The Lazy Man's ROM - $Id: alias.c,v 1.2 2000/12/01 10:48:33 ring0 Exp $ */
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <stdio.h>
 #include <string.h>
 #include <time.h>

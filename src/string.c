@@ -12,11 +12,7 @@
  ***************************************************************************/
 
 
-#if defined(macintosh)
-#include <types.h>
-#else
 #include <sys/types.h>
-#endif
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,34 +25,6 @@
 char *string_linedel (char *, int);
 char *string_lineadd (char *, char *, int);
 char *numlines (char *);
-
-/*****************************************************************************
- Name:        string_edit
- Purpose:    Clears string and puts player into editing mode.
- Called by:    none
- ****************************************************************************/
-void string_edit (CHAR_DATA * ch, char **pString)
-{
-    send_to_char ("-========- Entering EDIT Mode -=========-\n\r", ch);
-    send_to_char ("    Type .h on a new line for help\n\r", ch);
-    send_to_char (" Terminate with a ~ or @ on a blank line.\n\r", ch);
-    send_to_char ("-=======================================-\n\r", ch);
-
-    if (*pString == NULL)
-    {
-        *pString = str_dup ("");
-    }
-    else
-    {
-        **pString = '\0';
-    }
-
-    ch->desc->pString = pString;
-
-    return;
-}
-
-
 
 /*****************************************************************************
  Name:        string_append
