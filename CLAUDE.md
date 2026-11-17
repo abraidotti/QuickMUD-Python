@@ -28,6 +28,8 @@ The Xania tools live in `../xania-sandro/` and are read by path. They're Xania's
   `credits`, `help diku`, `help merc`, `help rom`). Never call the game ROM.
 - Refactors preserve behaviour until plan phase R6. Check with Explorer output and Sim trials before and after.
 - Tools: stdlib-only Python for analysis; MIT licence in `tools/LICENSE`, kept separate from the game's licences.
+- `game/` (the Python port) is under the game's licences, not MIT. Every module keeps the short licence header, and
+  every ported function has a `# C: <file>.c <function>` marker above its `def`; tests enforce both.
 - Commit or push only when the user asks. Commit messages are casual.
 
 ## How the user works

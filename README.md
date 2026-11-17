@@ -182,6 +182,7 @@ character to level 2 and edit its file, to make the first immortal. After that, 
 | `player/`, `log/` | Player files and logs |
 | `plans/` | Charm's plans |
 | `tools/` | `charm_tools`, the Python tools for working on Charm (MIT, see [tools/LICENSE](tools/LICENSE)) |
+| `game/` | the game's Python port, in progress (Diku, Merc and ROM terms, like `src/`; see [game/README.md](game/README.md)) |
 
 ## Tools
 
@@ -194,6 +195,8 @@ python -m charm_tools explore areas              # load every area as the game d
 python -m charm_tools explore check              # data checks: never-spawned mobs, unreachable rooms, ...
 python -m charm_tools explore parity --docker charm   # compare the loader with the real game
 python -m charm_tools sim smoke --docker charm   # the smoke test (also: python tools/smoke.py from the root)
+python -m charm_tools port status                # how much of the C game the Python port has ported
+python -m charm_tools port rng --docker charm:build   # the C game's random numbers vs game/tests/data/rng.json
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 
@@ -212,3 +215,4 @@ The tools are being ported from the Xania tools in stages; see [plans/tools-port
   from the Xania work into this repository, so Charm can be developed on its own.
 - [plans/refactor.md](plans/refactor.md): make the code safe and testable to work on, without breaking the
   credits and licences above.
+- [plans/python-port.md](plans/python-port.md): port the game to Python, matching the C game first.
