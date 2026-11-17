@@ -1426,13 +1426,6 @@ void do_pose (CHAR_DATA * ch, char *argument)
 
 
 
-void do_bug (CHAR_DATA * ch, char *argument)
-{
-    append_file (ch, BUG_FILE, argument);
-    send_to_char ("Bug logged.\n\r", ch);
-    return;
-}
-
 void do_typo (CHAR_DATA * ch, char *argument)
 {
     append_file (ch, TYPO_FILE, argument);

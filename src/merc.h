@@ -2352,7 +2352,6 @@ CD *     create_mobile       args( ( MOB_INDEX_DATA *pMobIndex ) );
 void     clone_mobile        args( ( CHAR_DATA *parent, CHAR_DATA *clone) );
 OD *     create_object       args( ( OBJ_INDEX_DATA *pObjIndex, int level ) );
 void     clone_object        args( ( OBJ_DATA *parent, OBJ_DATA *clone ) );
-void     clear_char          args( ( CHAR_DATA *ch ) );
 char *   get_extra_descr     args( ( const char *name, EXTRA_DESCR_DATA *ed ) );
 MID *    get_mob_index       args( ( int vnum ) );
 OID *    get_obj_index       args( ( int vnum ) );
@@ -2398,7 +2397,6 @@ bool     check_pet_affected  args( ( int vnum, AFFECT_DATA *paf) );
  int   colour          args( ( char type, CHAR_DATA *ch, char *string ) );
  void  colourconv      args( ( char *buffer, const char *txt, CHAR_DATA*ch)); 
  void  send_to_char_bw args( ( const char *txt, CHAR_DATA *ch ) );
- void  page_to_char_bw args( ( const char *txt, CHAR_DATA *ch ) );    
 
 
 /* effect.c */
@@ -2429,7 +2427,6 @@ int    count_users    args( (OBJ_DATA *obj) );
 void     deduct_cost    args( (CHAR_DATA *ch, int cost) );
 void    affect_enchant    args( (OBJ_DATA *obj) );
 int     check_immune    args( (CHAR_DATA *ch, int dam_type) );
-int     material_lookup args( ( const char *name) );
 int    weapon_lookup    args( ( const char *name) );
 int    weapon_type    args( ( const char *name) );
 char     *weapon_name    args( ( int weapon_Type) );
@@ -2439,7 +2436,6 @@ long    wiznet_lookup    args( ( const char *name) );
 int    class_lookup    args( ( const char *name) );
 bool    is_clan        args( (CHAR_DATA *ch) );
 bool    is_same_clan    args( (CHAR_DATA *ch, CHAR_DATA *victim));
-bool    is_old_mob    args ( (CHAR_DATA *ch) );
 int    get_skill    args( ( CHAR_DATA *ch, int sn ) );
 int    get_weapon_sn    args( ( CHAR_DATA *ch ) );
 int    get_weapon_skill args(( CHAR_DATA *ch, int sn ) );
@@ -2523,7 +2519,6 @@ char *    one_argument    args( ( char *argument, char *arg_first ) );
 
 /* magic.c */
 int    find_spell    args( ( CHAR_DATA *ch, const char *name) );
-int     mana_cost     (CHAR_DATA *ch, int min_mana, int level);
 int    skill_lookup    args( ( const char *name ) );
 int    slot_lookup    args( ( int slot ) );
 bool    saves_spell    args( ( int level, CHAR_DATA *victim, int dam_type ) );
@@ -2577,7 +2572,6 @@ void    gain_condition    args( ( CHAR_DATA *ch, int iCond, int value ) );
 void    update_handler    args( ( void ) );
 
 /* string.c */
-void    string_edit    args( ( CHAR_DATA *ch, char **pString ) );
 void    string_append   args( ( CHAR_DATA *ch, char **pString ) );
 char *    string_replace    args( ( char * orig, char * old, char * new ) );
 void    string_add      args( ( CHAR_DATA *ch, char *argument ) );

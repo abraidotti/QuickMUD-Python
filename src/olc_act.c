@@ -1918,27 +1918,6 @@ const struct wear_type wear_table[] = {
 
 
 /*****************************************************************************
- Name:        wear_loc
- Purpose:    Returns the location of the bit that matches the count.
-         1 = first match, 2 = second match etc.
- Called by:    oedit_reset(olc_act.c).
- ****************************************************************************/
-int wear_loc (int bits, int count)
-{
-    int flag;
-
-    for (flag = 0; wear_table[flag].wear_bit != NO_FLAG; flag++)
-    {
-        if (IS_SET (bits, wear_table[flag].wear_bit) && --count < 1)
-            return wear_table[flag].wear_loc;
-    }
-
-    return NO_FLAG;
-}
-
-
-
-/*****************************************************************************
  Name:        wear_bit
  Purpose:    Converts a wear_loc into a bit.
  Called by:    redit_oreset(olc_act.c).
@@ -3288,8 +3267,6 @@ OEDIT (oedit_ed)
 
     if (!str_cmp (command, "format"))
     {
-        EXTRA_DESCR_DATA *ped = NULL;
-
         if (keyword[0] == '\0')
         {
             send_to_char ("Syntax:  ed format [keyword]\n\r", ch);
@@ -3300,7 +3277,6 @@ OEDIT (oedit_ed)
         {
             if (is_name (keyword, ed->keyword))
                 break;
-            ped = ed;
         }
 
         if (!ed)

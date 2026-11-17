@@ -1568,26 +1568,6 @@ void send_to_char_bw (const char *txt, CHAR_DATA * ch)
 }
 
 /*
- * Send a page to one char.
- */
-void page_to_char_bw (const char *txt, CHAR_DATA * ch)
-{
-    if (txt == NULL || ch->desc == NULL)
-        return;
-
-    if (ch->lines == 0)
-    {
-        send_to_char_bw (txt, ch);
-        return;
-    }
-
-    ch->desc->showstr_head = alloc_mem (strlen (txt) + 1);
-    strcpy (ch->desc->showstr_head, txt);
-    ch->desc->showstr_point = ch->desc->showstr_head;
-    show_string (ch->desc, "");
-}
-
-/*
  * Page to one char, new colour version, by Lope.
  */
 void send_to_char (const char *txt, CHAR_DATA * ch)
@@ -1798,13 +1778,6 @@ void show_string (struct descriptor_data *d, char *input)
 }
 
 
-/* quick sex fixer */
-void fix_sex (CHAR_DATA * ch)
-{
-    if (ch->sex < 0 || ch->sex > 2)
-        ch->sex = IS_NPC (ch) ? 0 : ch->pcdata->true_sex;
-}
-
 void act_new (const char *format, CHAR_DATA * ch, const void *arg1,
               const void *arg2, int type, int min_pos)
 {
@@ -1823,7 +1796,6 @@ void act_new (const char *format, CHAR_DATA * ch, const void *arg1,
     char *point;
     char *pbuff;
     char buffer[MSL * 2];
-    bool fColour = FALSE;
 
 
     /*
@@ -1876,7 +1848,6 @@ void act_new (const char *format, CHAR_DATA * ch, const void *arg1,
                 *point++ = *str++;
                 continue;
             }
-            fColour = TRUE;
             ++str;
             i = " <@@@> ";
 

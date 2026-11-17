@@ -91,14 +91,11 @@ void	free_pcdata args( (PC_DATA *pcdata) );
 #define MD MEM_DATA
 long 	get_pc_id args( (void) );
 long	get_mob_id args( (void) );
-MD	*new_mem_data args( (void) );
-void	free_mem_data args( ( MEM_DATA *memory) );
 MD	*find_memory args( (MEM_DATA *memory, long id) );
 #undef MD
 
 /* buffer procedures */
 BUFFER	*new_buf args( (void) );
-BUFFER  *new_buf_size args( (int size) );
 void	free_buf args( (BUFFER *buffer) );
 bool	add_buf args( (BUFFER *buffer, char *string) );
 void	clear_buf args( (BUFFER *buffer) );

@@ -56,8 +56,6 @@ void free_note   (NOTE_DATA *note); /* deallocate memory used by a note */
 void load_boards (void); /* load all boards */
 int board_lookup (const char *name); /* Find a board with that name */
 bool is_note_to (CHAR_DATA *ch, NOTE_DATA *note); /* is tha note to ch? */
-void personal_message (const char *sender, const char *to, const char *subject, const int expire_days, const char *text);
-void make_note (const char* board_name, const char *sender, const char *to, const char *subject, const int expire_days, const char *text);
 void save_notes ();
 
 /* for nanny */

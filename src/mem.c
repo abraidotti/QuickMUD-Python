@@ -120,20 +120,6 @@ AREA_DATA *new_area (void)
 
 
 
-void free_area (AREA_DATA * pArea)
-{
-    free_string (pArea->name);
-    free_string (pArea->file_name);
-    free_string (pArea->builders);
-    free_string (pArea->credits);
-
-    pArea->next = area_free->next;
-    area_free = pArea;
-    return;
-}
-
-
-
 EXIT_DATA *new_exit (void)
 {
     EXIT_DATA *pExit;
@@ -214,37 +200,6 @@ ROOM_INDEX_DATA *new_room_index (void)
 }
 
 
-
-void free_room_index (ROOM_INDEX_DATA * pRoom)
-{
-    int door;
-    EXTRA_DESCR_DATA *pExtra;
-    RESET_DATA *pReset;
-
-    free_string (pRoom->name);
-    free_string (pRoom->description);
-    free_string (pRoom->owner);
-
-    for (door = 0; door < MAX_DIR; door++)
-    {
-        if (pRoom->exit[door])
-            free_exit (pRoom->exit[door]);
-    }
-
-    for (pExtra = pRoom->extra_descr; pExtra; pExtra = pExtra->next)
-    {
-        free_extra_descr (pExtra);
-    }
-
-    for (pReset = pRoom->reset_first; pReset; pReset = pReset->next)
-    {
-        free_reset_data (pReset);
-    }
-
-    pRoom->next = room_index_free;
-    room_index_free = pRoom;
-    return;
-}
 
 extern AFFECT_DATA *affect_free;
 
@@ -332,32 +287,6 @@ OBJ_INDEX_DATA *new_obj_index (void)
 
 
 
-void free_obj_index (OBJ_INDEX_DATA * pObj)
-{
-    EXTRA_DESCR_DATA *pExtra;
-    AFFECT_DATA *pAf;
-
-    free_string (pObj->name);
-    free_string (pObj->short_descr);
-    free_string (pObj->description);
-
-    for (pAf = pObj->affected; pAf; pAf = pAf->next)
-    {
-        free_affect (pAf);
-    }
-
-    for (pExtra = pObj->extra_descr; pExtra; pExtra = pExtra->next)
-    {
-        free_extra_descr (pExtra);
-    }
-
-    pObj->next = obj_index_free;
-    obj_index_free = pObj;
-    return;
-}
-
-
-
 MOB_INDEX_DATA *new_mob_index (void)
 {
     MOB_INDEX_DATA *pMob;
@@ -423,21 +352,6 @@ MOB_INDEX_DATA *new_mob_index (void)
 
 
 
-void free_mob_index (MOB_INDEX_DATA * pMob)
-{
-    free_string (pMob->player_name);
-    free_string (pMob->short_descr);
-    free_string (pMob->long_descr);
-    free_string (pMob->description);
-    free_mprog (pMob->mprogs);
-
-    free_shop (pMob->pShop);
-
-    pMob->next = mob_index_free;
-    mob_index_free = pMob;
-    return;
-}
-
 MPROG_CODE *mpcode_free;
 
 MPROG_CODE *new_mpcode (void)
@@ -460,12 +374,4 @@ MPROG_CODE *new_mpcode (void)
     NewCode->next = NULL;
 
     return NewCode;
-}
-
-void free_mpcode (MPROG_CODE * pMcode)
-{
-    free_string (pMcode->code);
-    pMcode->next = mpcode_free;
-    mpcode_free = pMcode;
-    return;
 }

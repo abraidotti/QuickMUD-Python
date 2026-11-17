@@ -835,52 +835,6 @@ void do_board (CHAR_DATA *ch, char *argument)
 	send_to_char (buf,ch);
 }
 
-/* Send a note to someone on the personal board */
-void personal_message (const char *sender, const char *to, const char *subject, const int expire_days, const char *text)
-{
-	make_note ("Personal", sender, to, subject, expire_days, text);
-}
-
-void make_note (const char* board_name, const char *sender, const char *to, const char *subject, const int expire_days, const char *text)
-{
-	int board_index = board_lookup (board_name);
-	BOARD_DATA *board;
-	NOTE_DATA *note;
-	char *strtime;
-	
-	if (board_index == BOARD_NOTFOUND)
-	{
-		bug ("make_note: board not found",0);
-		return;
-	}
-	
-	if (strlen(text) > MAX_NOTE_TEXT)
-	{
-		bug ("make_note: text too long (%d bytes)", strlen(text));
-		return;
-	}
-	
-	
-	board = &boards [board_index];
-	
-	note = new_note(); /* allocate new note */
-	
-	note->sender = str_dup (sender);
-	note->to_list = str_dup(to);
-	note->subject = str_dup (subject);
-	note->expire = current_time + expire_days * 60 * 60 * 24;
-	note->text = str_dup (text);
-
-	/* convert to ascii. ctime returns a string which last character is \n, so remove that */	
-	strtime = ctime (&current_time);
-	strtime[strlen(strtime)-1] = '\0';
-	
-	note->date = str_dup (strtime);
-	
-	finish_note (board, note);
-	
-}
-
 /* tries to change to the next accessible board */
 static bool next_board (CHAR_DATA *ch)
 {

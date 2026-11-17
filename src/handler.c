@@ -42,52 +42,6 @@
 void affect_modify args ((CHAR_DATA * ch, AFFECT_DATA * paf, bool fAdd));
 
 
-/* friend stuff -- for NPC's mostly */
-bool is_friend (CHAR_DATA * ch, CHAR_DATA * victim)
-{
-    if (is_same_group (ch, victim))
-        return TRUE;
-
-
-    if (!IS_NPC (ch))
-        return FALSE;
-
-    if (!IS_NPC (victim))
-    {
-        if (IS_SET (ch->off_flags, ASSIST_PLAYERS))
-            return TRUE;
-        else
-            return FALSE;
-    }
-
-    if (IS_AFFECTED (ch, AFF_CHARM))
-        return FALSE;
-
-    if (IS_SET (ch->off_flags, ASSIST_ALL))
-        return TRUE;
-
-    if (ch->group && ch->group == victim->group)
-        return TRUE;
-
-    if (IS_SET (ch->off_flags, ASSIST_VNUM)
-        && ch->pIndexData == victim->pIndexData)
-        return TRUE;
-
-    if (IS_SET (ch->off_flags, ASSIST_RACE) && ch->race == victim->race)
-        return TRUE;
-
-    if (IS_SET (ch->off_flags, ASSIST_ALIGN)
-        && !IS_SET (ch->act, ACT_NOALIGN)
-        && !IS_SET (victim->act, ACT_NOALIGN)
-        && ((IS_GOOD (ch) && IS_GOOD (victim))
-            || (IS_EVIL (ch) && IS_EVIL (victim)) || (IS_NEUTRAL (ch)
-                                                      &&
-                                                      IS_NEUTRAL (victim))))
-        return TRUE;
-
-    return FALSE;
-}
-
 /* returns number of people on an object */
 int count_users (OBJ_DATA * obj)
 {
@@ -102,12 +56,6 @@ int count_users (OBJ_DATA * obj)
             count++;
 
     return count;
-}
-
-/* returns material number */
-int material_lookup (const char *name)
-{
-    return 0;
 }
 
 int weapon_lookup (const char *name)
@@ -326,16 +274,6 @@ bool is_same_clan (CHAR_DATA * ch, CHAR_DATA * victim)
         return FALSE;
     else
         return (ch->clan == victim->clan);
-}
-
-/* checks mob format */
-bool is_old_mob (CHAR_DATA * ch)
-{
-    if (ch->pIndexData == NULL)
-        return FALSE;
-    else if (ch->pIndexData->new_format)
-        return FALSE;
-    return TRUE;
 }
 
 /* for returning skill information */
@@ -1460,9 +1398,7 @@ bool is_affected (CHAR_DATA * ch, int sn)
 void affect_join (CHAR_DATA * ch, AFFECT_DATA * paf)
 {
     AFFECT_DATA *paf_old;
-    bool found;
 
-    found = FALSE;
     for (paf_old = ch->affected; paf_old != NULL; paf_old = paf_old->next)
     {
         if (paf_old->type == paf->type)
