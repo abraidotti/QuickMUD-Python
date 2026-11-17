@@ -723,12 +723,60 @@ void game_loop_mac_msdos (void)
 
 
 #if defined(unix)
+/*
+ * SIGTERM and SIGINT ask for a clean shutdown. The handler only records the
+ * signal; the main loop acts on it at the top of the next pulse. -- Charm
+ */
+static volatile sig_atomic_t shutdown_signal = 0;
+
+static void handle_shutdown_signal (int sig)
+{
+    shutdown_signal = sig;
+}
+
+/*
+ * Save every playing character and close every connection. Shared by
+ * do_shutdown, do_reboot and the signal handling above. If message isn't
+ * NULL, it's written to each connection first.
+ *
+ * Only characters in the game are saved: CON_PLAYING, or writing a note
+ * (CON_NOTE_*). A connection still logging in may hold a half-created
+ * character (name and password, no class or level), and saving it took the
+ * name and let it skip creation. -- Charm
+ */
+void shutdown_all (const char *message)
+{
+    DESCRIPTOR_DATA *d, *d_next;
+    CHAR_DATA *vch;
+
+    merc_down = TRUE;
+    for (d = descriptor_list; d != NULL; d = d_next)
+    {
+        d_next = d->next;
+        if (message != NULL)
+            write_to_descriptor (d->descriptor, (char *) message, 0);
+        vch = d->original ? d->original : d->character;
+        if (vch != NULL
+            && (d->connected == CON_PLAYING
+                || (d->connected >= CON_NOTE_TO
+                    && d->connected <= CON_NOTE_FINISH)))
+            save_char_obj (vch);
+        close_socket (d);
+    }
+}
+
 void game_loop_unix (int control)
 {
     static struct timeval null_time;
     struct timeval last_time;
+    struct sigaction sa;
 
     signal (SIGPIPE, SIG_IGN);
+    memset (&sa, 0, sizeof (sa));
+    sa.sa_handler = handle_shutdown_signal;
+    sigemptyset (&sa.sa_mask);
+    sigaction (SIGTERM, &sa, NULL);
+    sigaction (SIGINT, &sa, NULL);
     gettimeofday (&last_time, NULL);
     current_time = (time_t) last_time.tv_sec;
 
@@ -740,6 +788,13 @@ void game_loop_unix (int control)
         fd_set exc_set;
         DESCRIPTOR_DATA *d;
         int maxdesc;
+
+        if (shutdown_signal)
+        {
+            log_f ("Caught signal %d, shutting down.", (int) shutdown_signal);
+            shutdown_all ("\n\rThe game is shutting down.\n\r");
+            break;
+        }
 
 #if defined(MALLOC_DEBUG)
         if (malloc_verify () != 1)
@@ -764,6 +819,8 @@ void game_loop_unix (int control)
 
         if (select (maxdesc + 1, &in_set, &out_set, &exc_set, &null_time) < 0)
         {
+            if (errno == EINTR)    /* a signal; the loop top handles it */
+                continue;
             perror ("Game_loop: select: poll");
             exit (1);
         }
@@ -916,7 +973,8 @@ void game_loop_unix (int control)
 
                 stall_time.tv_usec = usecDelta;
                 stall_time.tv_sec = secDelta;
-                if (select (0, NULL, NULL, NULL, &stall_time) < 0)
+                if (select (0, NULL, NULL, NULL, &stall_time) < 0
+                    && errno != EINTR)    /* a signal cuts the stall short */
                 {
                     perror ("Game_loop: select: stall");
                     exit (1);
@@ -1519,6 +1577,10 @@ void bust_a_prompt (CHAR_DATA * ch)
                          (ch->level + 1) * exp_per_level (ch,
                                                           ch->pcdata->
                                                           points) - ch->exp);
+                i = buf2;
+                break;
+            case 'W':            /* wait state (lag), in pulses -- Charm */
+                sprintf (buf2, "%d", ch->wait);
                 i = buf2;
                 break;
             case 'g':

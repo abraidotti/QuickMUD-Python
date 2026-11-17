@@ -1,4 +1,4 @@
-"""Smoke test for Charm: create a character, save, quit, log back in, copyover.
+"""Smoke test for Charm: create a character, lag, save, quit, log back in, clean shutdown, copyover.
 
 Stdlib only. Exit codes follow the Sim convention: 0 passed, 1 a step failed, 2 couldn't run.
 This is the refactor plan's R0 smoke test; it moves into the charm_tools package in tools-port T0.
@@ -6,17 +6,20 @@ This is the refactor plan's R0 smoke test; it moves into the charm_tools package
     python tools/smoke.py --docker charm      # throwaway container from an image (recommended)
     python tools/smoke.py --port 4100         # a game that's already running (mortal steps only)
 
---docker creates a container on a free port, copies the immortal fixture (tools/fixtures/player/Smokegod) in
-before boot, runs every step and always removes the container. Against a running game, copyover runs only
-if you pass --immortal NAME:PASSWORD for a level-60 character. Either way the test creates a player file, so
+--docker creates a container on a free port, copies the fixtures in before boot (the immortal
+tools/fixtures/player/Smokegod and tools/fixtures/qmconfig.rc, which turns the ANSI question off), runs every step
+and always removes the container. The clean-shutdown steps (docker stop, then start) need --docker. Against a
+running game, copyover runs only if you pass --immortal NAME:PASSWORD for a level-60 character. Either way the test creates a player file, so
 don't point it at your real player/.
 """
 
 import argparse
+import io
 import re
 import socket
 import subprocess
 import sys
+import tarfile
 import time
 from pathlib import Path
 
@@ -36,6 +39,7 @@ class Session:
         self.timeout = timeout
         self.buf = b""
         self.transcript = []
+        self.ansi_question = False  # set by connect(): did the game ask "Do you want ANSI?"
 
     def _recv(self):
         try:
@@ -100,7 +104,8 @@ def connect(host, port, timeout, wait):
     while True:
         try:
             s = Session(host, port, timeout)
-            s.expect(r"ANSI\? \(Y/n\)")  # the game is up only once it greets us
+            # The game is up only once it greets us: the ANSI question, or the name prompt if qmconfig turns it off.
+            s.ansi_question = "ANSI" in s.expect(r"ANSI\? \(Y/n\)|By what name")
             return s
         except (OSError, Fail) as e:
             if time.monotonic() > deadline:
@@ -108,9 +113,15 @@ def connect(host, port, timeout, wait):
             time.sleep(1)
 
 
+def send_name(s, name):
+    if s.ansi_question:
+        s.send("n")
+        s.expect(r"By what name")
+    s.send(name)
+
+
 def new_character(s, name, pw):
-    s.send("n")
-    s.expect(r"[Nn]ame");                 s.send(name)
+    send_name(s, name)
     s.expect(r"right, .*\(Y/N\)");        s.send("y")
     s.expect(r"password");                s.send(pw)
     s.expect(r"[Rr]etype password");      s.send(pw)
@@ -125,8 +136,7 @@ def new_character(s, name, pw):
 
 
 def old_character(s, name, pw):
-    s.send("n")
-    s.expect(r"[Nn]ame");                 s.send(name)
+    send_name(s, name)
     s.expect(r"Password:");               s.send(pw)
     # Immortals see the imotd, then the motd: one [Hit Return to continue] each.
     for _ in range(3):
@@ -139,15 +149,29 @@ def old_character(s, name, pw):
 
 def half_created(s):
     """Stop a new character at the race prompt: logged in far enough to have a char, not playing yet."""
-    s.send("n")
-    s.expect(r"[Nn]ame");                 s.send("Halfway")
+    send_name(s, "Halfway")
     s.expect(r"right, .*\(Y/N\)");        s.send("y")
     s.expect(r"password");                s.send("halfway1")
     s.expect(r"[Rr]etype password");      s.send("halfway1")
     s.expect(r"What is your race")
 
 
-def run_steps(args, port, immortal):
+def lag_shows_on_prompt(s):
+    """save adds WAIT_STATE(4 * PULSE_VIOLENCE): %W should read 48 pulses, then 0 once the lag has passed."""
+    s.send("prompt <smoke %W>")
+    s.expect(r"<smoke 0>")
+    s.send("save")
+    text = s.expect(r"<smoke (\d+)>")
+    lag = int(re.search(r"<smoke (\d+)>", text).group(1))
+    if lag <= 0:
+        raise Fail(f"%W read {lag} right after save; expected lag")
+    t0 = time.monotonic()
+    s.send("")  # queued behind the lag; its prompt prints when the lag is over
+    s.expect(r"<smoke 0>", timeout=lag / 4 + 5)
+    return lag, time.monotonic() - t0
+
+
+def run_steps(args, port, immortal, restart=None):
     steps = []
     sessions = []
 
@@ -170,13 +194,36 @@ def run_steps(args, port, immortal):
             return 2
         name, pw = args.name, args.password
         step("create character", lambda: new_character(s, name, pw))
-        step("save", lambda: (s.send("save"), s.expect(r"Saving")))
-        # do_save adds WAIT_STATE(4 * PULSE_VIOLENCE) = 12s of lag, so quit waits behind it. The prompt can't show
-        # lag yet (refactor R1 adds a wait-state token), so allow for it here.
-        step("quit (after save's 12s lag)", lambda: (s.send("quit"), s.expect_closed(args.timeout + 12)))
+        lag = {}
+        step("%W shows save's lag, then 0", lambda: lag.update(zip(("pulses", "secs"), lag_shows_on_prompt(s))))
+        print(f"      save lag: {lag['pulses']} pulses, cleared after {lag['secs']:.1f}s")
+        step("quit", lambda: (s.send("quit"), s.expect_closed()))
         s = open_session()
         step("log back in", lambda: old_character(s, name, pw))
         step("score shows the character", lambda: (s.send("score"), s.expect(rf"You are {name}")))
+
+        if restart:
+            # A change that isn't saved by hand: the new prompt. SIGTERM should save it.
+            step("change something without saving", lambda: (s.send("prompt <sigterm %W>"), s.expect(r"<sigterm 0>")))
+            pending = open_session()
+            step("a second connection stops mid-creation", lambda: half_created(pending))
+            status = {}
+            step("docker stop: the player is told and disconnected",
+                 lambda: (status.update(zip(("code", "log"), restart.stop())),
+                          s.expect_closed(pattern=r"The game is shutting down")))
+            step("the game shuts itself down and exits 0",
+                 lambda: (_check(status["code"] == 0, f"exit status {status['code']}"),
+                          _check("Caught signal 15" in status["log"] and "Normal termination" in status["log"],
+                                 "game log has no 'Caught signal 15' / 'Normal termination': it was killed")))
+            restart.start()
+            fresh = open_session()
+            # Shutdown used to save the half-created character, taking the name (abraidotti/charm#4).
+            step("the half-created name is still free",
+                 lambda: (send_name(fresh, "Halfway"), fresh.expect(r"right, .*\(Y/N\)")))
+            fresh.close()
+            s = open_session()
+            step("log back in after restart", lambda: old_character(s, name, pw))
+            step("the unsaved change survived", lambda: (s.send("look"), s.expect(r"<sigterm 0>")))
         step("quit again", lambda: (s.send("quit"), s.expect_closed()))
 
         if immortal:
@@ -211,6 +258,11 @@ def run_steps(args, port, immortal):
     return 0
 
 
+def _check(ok, why):
+    if not ok:
+        raise Fail(why)
+
+
 def free_port():
     with socket.socket() as s:
         s.bind(("127.0.0.1", 0))
@@ -232,11 +284,29 @@ def run_docker(args):
     except subprocess.CalledProcessError as e:
         print(f"SKIP can't create a container from {args.docker}: {e.stderr.strip()}")
         return 2
+    class Restart:
+        def stop(self):
+            """docker stop; returns the exit status and the newest game log (to check the game itself shut down)."""
+            docker("stop", container)
+            code = int(docker("inspect", "-f", "{{.State.ExitCode}}", container).stdout.strip())
+            # The log dir is in the stopped container's filesystem: docker cp streams it out as a tar.
+            out = subprocess.run(["docker", "cp", f"{container}:/opt/charm/log/.", "-"], capture_output=True)
+            logs = {}
+            with tarfile.open(fileobj=io.BytesIO(out.stdout)) as tar:
+                for m in tar.getmembers():
+                    if m.isfile() and m.name.endswith(".log"):
+                        logs[m.name] = tar.extractfile(m).read().decode("latin-1")
+            return code, logs[max(logs)] if logs else ""
+
+        def start(self):
+            docker("start", container)
+
     try:
         docker("cp", str(FIXTURES / "player" / IMMORTAL[0]), f"{container}:/opt/charm/player/{IMMORTAL[0]}")
+        docker("cp", str(FIXTURES / "qmconfig.rc"), f"{container}:/opt/charm/area/qmconfig.rc")
         docker("start", container)
         print(f"container {container} on 127.0.0.1:{port}", flush=True)
-        code = run_steps(args, port, IMMORTAL)
+        code = run_steps(args, port, IMMORTAL, Restart())
         if code != 0 or args.verbose:
             log = docker("exec", container, "sh", "-c", "cat /opt/charm/log/*.log", check=False).stdout
             print("---- game log (tail) ----")

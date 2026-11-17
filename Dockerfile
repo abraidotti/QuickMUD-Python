@@ -1,12 +1,15 @@
 # Build stage: compile the game into area/rom.
+# CC picks the compiler: docker build --build-arg CC=clang -t charm:clang .
 FROM ubuntu:26.04 AS build
+ARG CC=gcc
 RUN apt-get update \
  && apt-get install -y --no-install-recommends gcc make libc6-dev libcrypt-dev \
+      $( [ "$CC" = clang ] && echo clang ) \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt/charm
 COPY src/ src/
 COPY area/ area/
-RUN cd src && make -j"$(nproc)"
+RUN cd src && make -j"$(nproc)" CC="$CC"
 
 # Runtime stage: the binary, areas and data dirs, plus the README, credits and
 # licence files every copy must keep (see README.md, Licence terms).
