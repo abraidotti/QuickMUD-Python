@@ -138,13 +138,24 @@ This builds the game from this checkout (Ubuntu 26.04, gcc 15) and runs it on po
 and `notes/` are mounted from the checkout, so they survive restarts; each run's log is `log/NNNN.log`. Stop it with
 `docker compose down`.
 
-To check a build, run the smoke test. It starts a throwaway container from the image, creates a character, saves,
-quits, logs back in, and does a copyover as the level-60 fixture `tools/fixtures/player/Smokegod`. It checks that a
-half-created login is dropped and that the immortal comes back. The container is always removed afterwards.
+`docker compose down` (or `docker stop`) shuts the game down cleanly: players are told, everyone is saved, and the
+game exits 0.
+
+To check a build, run the smoke test. It starts a throwaway container from the image and walks through these steps:
+- create a character, and check that the `%W` prompt token shows `save`'s lag
+- quit and log back in
+- stop the container with a change unsaved, restart it, and check the change survived
+- copyover as the level-60 fixture `tools/fixtures/player/Smokegod`, checking that a half-created login is dropped
+  and that the immortal comes back
+
+The container is always removed afterwards.
 
 ```sh
 docker build -t charm .
 python tools/smoke.py --docker charm   # exit 0 passed, 1 failed, 2 couldn't run
+
+docker build --build-arg CC=clang -t charm:clang .   # the same with clang
+python tools/smoke.py --docker charm:clang
 ```
 
 ### Building from source

@@ -5,7 +5,8 @@
 # Usage: ./startup.sh [port]   (default 4000)
 # Runs the game from area/, logging each run to ../log/NNNN.log, and restarts it
 # after a crash. A 'shutdown' in game (which writes shutdown.txt) stops the loop.
-# SIGTERM or SIGINT stops the game and the loop (for 'docker stop').
+# SIGTERM or SIGINT stops the game and the loop (for 'docker stop'); the game
+# saves everyone first, and the script exits with the game's exit status.
 
 port="${1:-4000}"
 
@@ -15,7 +16,7 @@ cd "$(dirname "$0")" || exit 1
 rm -f shutdown.txt
 
 pid=
-trap 'if [ -n "$pid" ]; then kill -TERM "$pid" 2>/dev/null; wait "$pid"; fi; exit 0' TERM INT
+trap 'status=0; if [ -n "$pid" ]; then kill -TERM "$pid" 2>/dev/null; wait "$pid"; status=$?; fi; exit "$status"' TERM INT
 
 while :; do
     index=1000

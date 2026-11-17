@@ -2027,9 +2027,6 @@ void do_reboo (CHAR_DATA * ch, char *argument)
 void do_reboot (CHAR_DATA * ch, char *argument)
 {
     char buf[MAX_STRING_LENGTH];
-    extern bool merc_down;
-    DESCRIPTOR_DATA *d, *d_next;
-    CHAR_DATA *vch;
 
     if (ch->invis_level < LEVEL_HERO)
     {
@@ -2037,16 +2034,7 @@ void do_reboot (CHAR_DATA * ch, char *argument)
         do_function (ch, &do_echo, buf);
     }
 
-    merc_down = TRUE;
-    for (d = descriptor_list; d != NULL; d = d_next)
-    {
-        d_next = d->next;
-        vch = d->original ? d->original : d->character;
-        if (vch != NULL)
-            save_char_obj (vch);
-        close_socket (d);
-    }
-
+    shutdown_all (NULL);
     return;
 }
 
@@ -2059,9 +2047,6 @@ void do_shutdow (CHAR_DATA * ch, char *argument)
 void do_shutdown (CHAR_DATA * ch, char *argument)
 {
     char buf[MAX_STRING_LENGTH];
-    extern bool merc_down;
-    DESCRIPTOR_DATA *d, *d_next;
-    CHAR_DATA *vch;
 
     if (ch->invis_level < LEVEL_HERO)
         sprintf (buf, "Shutdown by %s.", ch->name);
@@ -2071,15 +2056,7 @@ void do_shutdown (CHAR_DATA * ch, char *argument)
     {
         do_function (ch, &do_echo, buf);
     }
-    merc_down = TRUE;
-    for (d = descriptor_list; d != NULL; d = d_next)
-    {
-        d_next = d->next;
-        vch = d->original ? d->original : d->character;
-        if (vch != NULL)
-            save_char_obj (vch);
-        close_socket (d);
-    }
+    shutdown_all (NULL);
     return;
 }
 

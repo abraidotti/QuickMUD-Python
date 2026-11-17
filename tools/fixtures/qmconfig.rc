@@ -1,0 +1,6 @@
+# Test config for tools: no "Do you want ANSI?" question, no colour codes.
+# Copied over area/qmconfig.rc in a test container (tools/smoke.py --docker).
+Ansiprompt 0
+Ansicolor 0
+Telnetga 1
+END
