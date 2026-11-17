@@ -197,6 +197,7 @@ python -m charm_tools explore parity --docker charm   # compare the loader with 
 python -m charm_tools sim smoke --docker charm   # the smoke test (also: python tools/smoke.py from the root)
 python -m charm_tools port status                # how much of the C game the Python port has ported
 python -m charm_tools port rng --docker charm:build   # the C game's random numbers vs game/tests/data/rng.json
+python -m charm_tools port data                  # regenerate game/charm/data/ from the C tables
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 
