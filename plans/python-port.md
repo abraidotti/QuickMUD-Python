@@ -9,7 +9,9 @@ done (#31): login and player files (`port crypt`, `port login`, `port players`).
 the go/no-go (#34) answered go, with a speed checkpoint when the mob and combat updates run. P2, the differential
 harness, started 2026-11-18 (#35), time box 3 PRs or 2026-11-26: PR 1 of 3 done (#36), the scenario player on both
 sides (`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) and the first golden. PR 2 of 3 done (#37):
-the first scenarios, 14 in all. PR 3 of 3: the guard tests for the divergence classes (`tests/test_guards.py`).
+the first scenarios, 14 in all. PR 3 of 3 done (#38): the guard tests for the divergence classes (`tests/test_guards.py`). P2 done.
+P3, the commands, started 2026-11-18 (#39), time box 8 PRs or 2026-12-02: PR 1 of 8, positions, doors
+and portals (the rest of `act_move.c`, and `act_enter.c`), with `port coverage`.
 
 ## Goal
 
@@ -221,9 +223,9 @@ and line. Ones that cut across the code are here:
 | **P0 Groundwork** | Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-function tracker and `CHARM_SEED` in C. glibc `random()` and `db.c`'s RNG functions in Python, checked against the C game's own. | Tracker lists every C function; RNG matches C for 10k draws per stream on 4 seeds |
 | **P1 Spike** | Move T1's loader into `game/`, then port: `area_update` and resets, the descriptor loop, `nanny.c`, `save.c` (load and save, round-trip with C's files), `interp.c`, `act()`, and the commands the smoke test uses (`look`, movement, `save`, `quit`, `score`, `title`). | `sim smoke` passes its login, save and quit steps on the Python game, or the time box ends. Go/no-go issue written with the numbers. |
 | **P2 Differential harness** | Scenario files, an additive C driver, goldens, pure-Python replay in the tests. Guard tests for the divergence classes. | 10 scenarios replay green; guard tests run in the suite |
-| **P3 Commands without RNG** | The rest of `act_info.c`, `act_move.c`, `act_obj.c`, `act_comm.c`, `act_enter.c`, `alias.c`, `ban.c`, `board.c`, `act_wiz.c`. | Their tracker rows done; full `sim smoke` passes on Python |
+| **P3 Commands** | The rest of `act_info.c`, `act_move.c`, `act_obj.c`, `act_comm.c`, `act_enter.c`, `alias.c`, `ban.c`, `board.c`, `act_wiz.c` (but copyover and the commands that call OLC), with the random draws they make and the small pieces of P4 they need (#39). | Their tracker rows done; every `sim smoke` step but copyover's passes on Python |
 | **P4 RNG systems** | `fight.c`, `magic.c`, `magic2.c`, `skills.c`, `effects.c`, `update.c`, `special.c`, `healer.c`, `music.c`, `mob_prog.c`, `mob_cmds.c`. | Seeded scenarios (fights, spells, ticks, resets over time) match C step for step |
-| **P5 OLC and the rest** | `olc*.c`, `hedit.c`, `string.c`, copyover (re-exec with inherited sockets via `os.execv`). | `asave` output byte-identical to C's for every stock area; copyover steps of `sim smoke` pass |
+| **P5 OLC and the rest** | `olc*.c`, `hedit.c`, `string.c`, `act_wiz.c`'s commands that call OLC, copyover (re-exec with inherited sockets via `os.execv`). | `asave` output byte-identical to C's for every stock area; copyover steps of `sim smoke` pass |
 | **P6 Cut-over** | Sim lobby and churn trials on both games, compared. Docker image switched to Python. Decision 7 for `src/`. | Every tracker row done; trials show no new findings on Python; licence checklist ticked |
 
 Each phase is one or more PRs, each with its parity proof, as for T1.

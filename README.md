@@ -208,6 +208,7 @@ python -m charm_tools port login --docker charm         # the same login session
 python -m charm_tools port players --docker charm       # player files saved by each game load in the other
 python -m charm_tools port commands --docker charm      # the same sessions in the game on both, byte for byte
 python -m charm_tools port scenarios --docker charm:build   # scenario files on both, output and state, step by step
+python -m charm_tools port coverage act_move.c          # lines of the ported functions no test or scenario runs
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 
