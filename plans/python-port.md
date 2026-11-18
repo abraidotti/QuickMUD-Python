@@ -65,7 +65,12 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
     colour code with no `PC_DATA` dereferences NULL. Python can't copy those; it stops there, and raises
     `CWouldCrash` where the C would crash
   - what the transport can't see: the C closes a connection that sends urgent (out-of-band) data, because it polls
-    for exceptional conditions; `selectors` has no such set, so the Python game doesn't (#28)
+    for exceptional conditions; `selectors` has no such set, so the Python game doesn't. Accepted as a known
+    difference (#29)
+
+  Differences kept on purpose:
+  - the startup log line says "Charm is ready to rock on port N", where the C says "ROM is ready to rock" (#29)
+  - a connection that sends out-of-band data stays open (above)
 - **Guard tests that scan the source.** Where a rule is "always go through one function" (the RNG, flag constants,
   wear slots), a test greps the code for anything that bypasses it. A regression then fails the test suite instead of
   waiting to be noticed.

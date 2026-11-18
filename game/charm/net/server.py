@@ -10,8 +10,9 @@ One pulse, as in the C:
 
 All game code is synchronous; the loop is the only part that touches sockets.
 
-One known difference: the C also polls for exceptional conditions, and closes a connection that has some, such as a
-telnet client's urgent (out-of-band) data. selectors has no such set, so that step isn't copied.
+One known difference, accepted in #29: the C also polls for exceptional conditions, and closes a connection that
+has some, such as a telnet client's urgent (out-of-band) data. selectors has no such set, so that step isn't
+copied, and such a connection stays open.
 
 [partial], until login (spike PR 4) and the commands (spike PR 5) are ported:
 - a line of input from a connection that isn't playing goes to nanny, which raises NotPorted
