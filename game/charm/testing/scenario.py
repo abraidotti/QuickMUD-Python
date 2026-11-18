@@ -173,7 +173,7 @@ class Player:
                     d.outbuf = ""
                     close_socket(d)
         self.pulses += 1
-        game.current_time = self.start + self.pulses // C.PULSE_PER_SECOND
+        game.current_time = self.start + self.pulses // C.PULSE_PER_SECOND  # non-negative: a count
 
     # -- output --------------------------------------------------------------------------------------------------
 

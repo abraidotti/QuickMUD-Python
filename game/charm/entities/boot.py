@@ -68,7 +68,7 @@ def boot_db(area_dir: Path, current_time: int | None = None, environ: dict | Non
 
     [partial]: bans and songs aren't loaded, and a board with notes raises NotPorted (load_boards). The skill
     numbers (the gsn globals) are charm.world.lookup.GSN, made from skill_table."""
-    now = int(time.time()) if current_time is None else current_time
+    now = int(time.time()) if current_time is None else current_time  # clock: boot_db's current_time
     log.clock = lambda: now
     init_mm(environ, log.log_string)
     time_info, weather_info = TimeInfo(), WeatherInfo()

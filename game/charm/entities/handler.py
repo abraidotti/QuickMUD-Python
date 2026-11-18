@@ -15,6 +15,7 @@ from __future__ import annotations
 from charm.core.cint import c_div, int32, sh_int
 from charm.core.errors import NotPorted
 from charm.core.log import bug
+from charm.core.strings import str_cmp, str_prefix
 from charm.net.act import act
 from charm.data import constants as C
 from charm.entities.game import Game, WeatherInfo
@@ -556,11 +557,6 @@ def extract_obj(game: Game, obj: Obj) -> None:
     obj.index.count = sh_int(obj.index.count - 1)
 
 
-def _str_prefix(astr: str, bstr: str) -> bool:
-    """``!str_prefix(astr, bstr)``: astr is a case-insensitive prefix of bstr."""
-    return bstr.lower().startswith(astr.lower())
-
-
 # C: handler.c is_name
 def is_name(string: str, namelist: str | None) -> bool:
     from charm.commands.interp import one_argument
@@ -579,9 +575,9 @@ def is_name(string: str, namelist: str | None) -> bool:
             names, name = one_argument(names)
             if name == "":
                 return False
-            if _str_prefix(whole, name):
+            if str_prefix(whole, name):
                 return True  # full pattern match
-            if _str_prefix(part, name):
+            if str_prefix(part, name):
                 break
 
 
@@ -595,7 +591,7 @@ def is_exact_name(string: str, namelist: str | None) -> bool:
         namelist, name = one_argument(namelist)
         if name == "":
             return False
-        if string.lower() == name.lower():
+        if str_cmp(string, name):
             return True
 
 

@@ -26,7 +26,10 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from .lookups import LookupTables, prefix_lookup, str_prefix_matches
+from charm.core.errors import CWouldCrash
+from charm.core.strings import lower, str_prefix, upper
+
+from .lookups import LookupTables, prefix_lookup
 from .model import (
     AreaFile, AreaHeader, Dice, Exit, ExtraDescription, FlagRemoval, Help, Mob, MobProg, MobProgRef, Obj, ObjAffect,
     REV_DIR, Reset, Room, Shop, Social, Special,
@@ -101,7 +104,7 @@ class Boot:
                 word = r.read_word()
                 if word.startswith("$"):
                     break
-                section = word.upper()
+                section = upper(word)
                 af.sections.append(section)
                 if section == "AREA":
                     current_area = self._load_area(r, af)
@@ -188,7 +191,7 @@ class Boot:
         while True:
             # The C reads "End" at feof(); that's true only after a read has hit the end, which this approximates.
             word = "End" if r.at_eof else r.read_word()
-            w = word.lower()
+            w = lower(word)
             if w == "name":
                 h.name = r.read_string()
             elif w == "security":
@@ -292,7 +295,7 @@ class Boot:
                     word = r.read_word()
                     bits = r.read_flag()
                     for prefix in FLAG_FIELDS:
-                        if str_prefix_matches(word, prefix):
+                        if str_prefix(word, prefix):
                             mob.removals.append(FlagRemoval(FLAG_FIELD_NAMES.get(prefix, prefix), bits))
                             break
                     else:
@@ -611,7 +614,9 @@ class Boot:
         """The order the C walks a vnum hash table: bucket 0..1023, newest first within a bucket."""
         buckets: dict[int, list[int]] = {}
         for vnum in order:
-            buckets.setdefault(vnum % MAX_KEY_HASH, []).insert(0, vnum)
+            if vnum < 0:  # the C's vnum % MAX_KEY_HASH is negative, and indexes before its hash table
+                raise CWouldCrash(f"db.c: vnum {vnum} hashes before the start of the hash table")
+            buckets.setdefault(vnum % MAX_KEY_HASH, []).insert(0, vnum)  # non-negative: checked above
         return [v for h in sorted(buckets) for v in buckets[h]]
 
     # C: db.c fix_exits

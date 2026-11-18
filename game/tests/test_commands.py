@@ -18,7 +18,8 @@ from charm.commands import interp
 from charm.commands.interp import interpret, number_argument
 from charm.core import log
 from charm.core.errors import NotPorted
-from charm.core.strings import atoi, str_cmp, str_prefix, str_suffix
+from charm.core.strings import atoi, lower, str_cmp, str_prefix, str_suffix, upper
+from charm.persist.player import capitalize
 from charm.data import constants as C
 from charm.data.commands import CMD_TABLE
 from charm.entities import game as game_module
@@ -33,6 +34,9 @@ class Strings(unittest.TestCase):
     def test_case_is_ascii_only(self):
         self.assertTrue(str_cmp("HeLLo", "hello"))
         self.assertFalse(str_cmp("\xc9", "\xe9"))  # LOWER leaves bytes over 127 alone
+        self.assertEqual(upper("stra\xdfe \xff"), "STRA\xdfE \xff")  # Python's .upper() gives "STRASSE Ÿ"
+        self.assertEqual(lower("\xc9COLE"), "\xc9cole")
+        self.assertEqual(capitalize("\xe9MILE"), "\xe9mile")  # db.c capitalize: UPPER leaves \xe9 alone
         self.assertTrue(str_prefix("", "anything"))
         self.assertTrue(str_prefix("NOR", "north"))
         self.assertFalse(str_prefix("northern", "north"))

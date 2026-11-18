@@ -67,6 +67,23 @@ random numbers drawn.
 edit it by hand: change the C, then from `tools/` run `python -m charm_tools port data`. The tools' tests fail if it's
 out of date, and check that the loader's tables built from it equal the ones read straight from the C.
 
+## Guards
+
+`tests/test_guards.py` also reads the source for the ways Python goes quietly different from the C (#35):
+
+| Guard | The safe way | A line may instead carry |
+|---|---|---|
+| no `random`, `secrets` or `numpy` | `core/rng.py`, the C's `random()` | (nothing) |
+| the real clock (`time.*`, `datetime`) | `game.current_time` | `# clock: <why>` |
+| `//` and `%` on numbers | `c_div` and `c_mod` in `core/cint.py` | `# non-negative: <why>` or `# format: <why>` |
+| `.lower()`, `.upper()` and the like | `lower`, `upper`, `str_cmp`, `str_prefix`, `str_suffix` in `core/strings.py` | `# not LOWER: <why>` |
+| a `@dataclass` without `eq=False` | `@dataclass(eq=False)`: compared by identity, like the C's pointers | `# value: <why>` |
+| `.append`, `.extend` or `+=` on a head-first list (`people`, `contents`, `carrying`, ...) | `.insert(0, ...)` | (nothing) |
+| `async`, `await`, threads | one thread, as the C | (nothing) |
+
+A failure lists every line it found. The area-file model (`world/areafile/`) is values and exempt from the
+dataclass guard.
+
 ## Ported functions
 
 A Python function that ports a C one carries a marker on the line above its `def`:

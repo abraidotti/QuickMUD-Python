@@ -11,6 +11,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.core.log import bug
+from charm.core.strings import upper
 from charm.data import constants as C
 
 HE_SHE = ("it", "he", "she")
@@ -130,7 +131,7 @@ def act_new(fmt: str | None, ch, arg1, arg2, kind: int, min_pos: int) -> None:
         # "Kludge to capitalize first letter of buffer, trying to account for { color codes."
         k = 2 if buf[0] == "{" else 0
         if "a" <= buf[k] <= "z":
-            buf = buf[:k] + buf[k].upper() + buf[k + 1:]
+            buf = buf[:k] + upper(buf[k]) + buf[k + 1:]
         buffer = colourconv(buf, to)
         if to.desc is not None and to.desc.connected == C.CON_PLAYING:
             write_to_buffer(to.desc, buffer)

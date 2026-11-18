@@ -28,6 +28,7 @@ from pathlib import Path
 
 from charm.core import log
 from charm.core.cint import c_div, int32, sh_int
+from charm.core.strings import lower, str_cmp, str_prefix, upper
 from charm.data import constants as C
 from charm.data.boards import BOARDS
 from charm.data.classes import CLASS_TABLE
@@ -57,8 +58,8 @@ class PlayerReader(Reader):
 
 # C: db.c capitalize
 def capitalize(s: str) -> str:
-    low = "".join(chr(ord(c) + 32) if "A" <= c <= "Z" else c for c in s)
-    return (low[0].upper() if "a" <= low[:1] <= "z" else low[:1]) + low[1:]
+    low = lower(s)
+    return upper(low[:1]) + low[1:]
 
 
 # C: save.c print_flags
@@ -392,7 +393,7 @@ def load_char_obj(game: Game, d, name: str) -> bool:
             if letter != "#":
                 log.bug("Load_char_obj: # not found.", 0)
                 break
-            word = r.read_word().lower()
+            word = lower(r.read_word())
             if word == "player":
                 fread_char(game, ch, r)
             elif word in ("object", "o"):
@@ -435,8 +436,7 @@ def load_char_obj(game: Game, d, name: str) -> bool:
 
 
 def _is(word: str, *literals: str) -> bool:
-    w = word.lower()
-    return any(w == x.lower() for x in literals)
+    return any(str_cmp(word, x) for x in literals)
 
 
 def _new_affect(r: Reader, with_where: bool, unknown: str) -> Affect:
@@ -501,7 +501,7 @@ def fread_char(game: Game, ch: Char, r: Reader) -> None:
     longs = {"id", "gold", "played", "exp"}  # long and int fields; the rest are sh_int
     while True:
         word = _word(r)
-        first = word[:1].upper()
+        first = upper(word[:1])
         matched = True
         if first == "*":
             r.read_to_eol()
@@ -553,8 +553,8 @@ def fread_char(game: Game, ch: Char, r: Reader) -> None:
         elif first == "C" and _is(word, "Cnd"):
             for i in range(4):
                 pc.condition[i] = sh_int(r.read_number())
-        elif first == "C" and word.lower() in {k.lower() for k in COLOUR_LINES}:
-            key = next(k for k in COLOUR_LINES if k.lower() == word.lower())
+        elif first == "C" and any(str_cmp(word, k) for k in COLOUR_LINES):
+            key = next(k for k in COLOUR_LINES if str_cmp(word, k))
             for name in COLOUR_LINES[key]:
                 _load_colour(pc, name, r.read_number())
         elif first == "D" and _is(word, "Damroll", "Dam"):
@@ -582,7 +582,7 @@ def fread_char(game: Game, ch: Char, r: Reader) -> None:
                 sh_int(r.read_number()) for _ in range(6))
         elif first == "H" and _is(word, "HpManaMovePerm", "HMVP"):
             pc.perm_hit, pc.perm_mana, pc.perm_move = (sh_int(r.read_number()) for _ in range(3))
-        elif first == "I" and word.lower().startswith("imc") and not any(
+        elif first == "I" and str_prefix("imc", word) and not any(
                 _is(word, lit) for lit, _ in numbers["I"]):
             r.read_to_eol()  # IMC2 was removed in R2 (#21): skip its old keys quietly
         elif first == "L" and _is(word, "LastLevel", "LLev"):
@@ -744,7 +744,7 @@ def fread_obj(game: Game, ch: Char, r: Reader, nest: list) -> None:
             first = False
         else:
             word = "End" if r.at_eof else r.read_word()
-        c = word[:1].upper()
+        c = upper(word[:1])
         matched = True
         if c == "*":
             r.read_to_eol()
