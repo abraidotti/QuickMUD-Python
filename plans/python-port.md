@@ -4,8 +4,11 @@ Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike sta
 5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5 done (#27): the world and
 resets (`charm_tools port world`). PR 3 of 5 done (#29): the loop, connections and output (`port io`, `port
 greeting`); the checkpoint after it estimated 60% of the spike's functions ported, over #25's 40% line. PR 4 of 5
-done (#31): login and player files (`port crypt`, `port login`, `port players`). PR 5 of 5 (#32): the commands
-(`port commands`, `sim smoke --python`, `sim bots`); the C game gained the test-only `CHARM_UPDATES=area`.
+done (#31): login and player files (`port crypt`, `port login`, `port players`). PR 5 of 5 done (#33): the commands
+(`port commands`, `sim smoke --python`, `sim bots`); the C game gained the test-only `CHARM_UPDATES=area`. P1 done:
+the go/no-go (#34) answered go, with a speed checkpoint when the mob and combat updates run. P2, the differential
+harness, started 2026-11-18 (#35), time box 3 PRs or 2026-11-26: PR 1 of 3 is the scenario player on both sides
+(`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) and the first golden.
 
 ## Goal
 

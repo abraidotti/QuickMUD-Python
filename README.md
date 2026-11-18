@@ -207,6 +207,7 @@ python -m charm_tools port crypt --docker charm:build   # the Python game's pass
 python -m charm_tools port login --docker charm         # the same login sessions on both games, byte for byte
 python -m charm_tools port players --docker charm       # player files saved by each game load in the other
 python -m charm_tools port commands --docker charm      # the same sessions in the game on both, byte for byte
+python -m charm_tools port scenarios --docker charm:build   # scenario files on both, output and state, step by step
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 
