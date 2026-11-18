@@ -204,13 +204,17 @@ class Player:
             seen.append(room)
             self.out.append(f"state room {room.vnum} light {room.light} people"
                             + "".join(" mob" if p.is_npc else " player" for p in room.people))
+            for door, ex in enumerate(room.exit):
+                if ex is not None:
+                    self.out.append("state exit %d to %d info %d key %d"
+                                    % (door, ex.to_room.vnum if ex.to_room else 0, ex.exit_info, ex.key))
             for p in room.people:
                 self.out.append(
                     "state char %s %d pos %d hit %d/%d mana %d/%d move %d/%d wait %d daze %d exp %d gold %d silver %d "
-                    "act %d affected_by %d"
+                    "act %d affected_by %d train %d on %d stats %d %d %d %d %d"
                     % ("mob" if p.is_npc else p.name, p.index.vnum if p.is_npc else p.level, p.position, p.hit,
                        p.max_hit, p.mana, p.max_mana, p.move, p.max_move, p.wait, p.daze, p.exp, p.gold, p.silver,
-                       p.act, p.affected_by))
+                       p.act, p.affected_by, p.train, p.on.index.vnum if p.on else 0, *p.perm_stat))
                 for af in p.affected:
                     self.out.append("state   affect %d level %d duration %d location %d modifier %d bitvector %d"
                                     % (af.type, af.level, af.duration, af.location, af.modifier, af.bitvector))
@@ -265,9 +269,11 @@ class Player:
         elif m := re.fullmatch(r"@mob (-?\d+) (-?\d+)", line):
             mob = create_mobile(self.game, ix.get_mob_index(int(m.group(1))))
             char_to_room(mob, ix.get_room_index(int(m.group(2))))
-        elif m := re.fullmatch(r"@obj (-?\d+) (-?\d+)", line):
-            obj_to_room(create_object(self.game, ix.get_obj_index(int(m.group(1))), 0),
-                        ix.get_room_index(int(m.group(2))))
+        elif m := re.fullmatch(r"@obj (-?\d+) (-?\d+)((?: -?\d+){5})?", line):
+            obj = create_object(self.game, ix.get_obj_index(int(m.group(1))), 0)
+            if m.group(3):
+                obj.value = [int(x) for x in m.group(3).split()]
+            obj_to_room(obj, ix.get_room_index(int(m.group(2))))
         elif line == "@state":
             self.state()
         elif line.startswith("@file "):

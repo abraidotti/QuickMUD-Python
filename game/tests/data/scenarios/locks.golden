@@ -1,0 +1,343 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect lock"
+rng 51872 4ba9daca
+step 2 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect knock"
+rng 51895 7f5599b5
+step 6 "Knocker"
+out knock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out knock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out lock "\n\rKnocker has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\rLocksmith the Recruit is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@as lock"
+rng 51895 7f5599b5
+step 10 "open"
+out lock "Open what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "close"
+out lock "Close what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "lock"
+out lock "Lock what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "unlock"
+out lock "Unlock what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "pick"
+out lock "Pick what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "open n"
+out lock "I see no door n here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "open s"
+out lock "That's not a container.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "open u"
+out lock "I see no door u here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "open nothing"
+out lock "I see no nothing here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "open east"
+out lock "It's already open.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "lock east"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "unlock east"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "pick east"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 23 "@pulse 12"
+rng 51896 5ed8996e
+step 24 "open door"
+out lock "It's already open.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 25 "close door"
+out lock "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rLocksmith closes the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 26 "close door"
+out lock "It's already closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 27 "lock east"
+out lock "It can't be locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 28 "unlock east"
+out lock "It can't be unlocked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 29 "pick east"
+out lock "It can't be picked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 30 "@pulse 12"
+rng 51898 d55fddad
+step 31 "open east"
+out lock "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rLocksmith opens the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 32 "open west"
+out lock "It's locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 33 "@as knock"
+rng 51898 d55fddad
+step 34 "unlock west"
+out knock "You lack the key.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 35 "lock west"
+out knock "You lack the key.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 36 "pick west"
+out knock "You failed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 37 "@pulse 12"
+rng 51899 d1eb3d36
+step 38 "@as lock"
+rng 51899 d1eb3d36
+step 39 "unlock west"
+out lock "*Click*\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rLocksmith unlocks the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 40 "unlock west"
+out lock "It's already unlocked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 41 "lock west"
+out lock "*Click*\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rLocksmith locks the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 42 "lock west"
+out lock "It's already locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 43 "pick west"
+out lock "*Click*\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rLocksmith picks the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 44 "@pulse 12"
+rng 51900 e9723077
+step 45 "open west"
+out lock "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out knock "\n\rLocksmith opens the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 46 "@state"
+state room 3110 light 2 people player player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 1 key 3120
+state char Knocker 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 51900 e9723077
+step 47 "west"
+out lock "Captain's Office\n\r  You are in the Office of the Captain of the Guard.  The Midgaard Coat of\n\rArms is hanging on the north wall and a heavy steel door is to the south.\n\r     A safe is placed in a dark corner of the room.\n\r     A desk is set against the western wall.\n\rA cityguard stands here, looking very upset.\n\rA cityguard stands here, looking very upset.\n\rA cityguard stands here, looking very upset.\n\rA cityguard stands here, looking very upset.\n\rThe captain of the guard is looking very upset.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out knock "\n\rLocksmith leaves west.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 48 "close east"
+rng 51900 e9723077
+step 49 "lock east"
+out lock "Ok.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out knock "\n\rThe door closes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 50 "pick east"
+out lock "*Click*\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51900 e9723077
+step 51 "@pulse 12"
+out lock "*Click*\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51901 51250113
+step 52 "unlock east"
+rng 51901 51250113
+step 53 "open east"
+out lock "It's already unlocked.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51901 51250113
+step 54 "east"
+out lock "Ok.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out knock "\n\rThe door opens.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 55 "@as knock"
+rng 51901 51250113
+step 56 "@mob 3060 3110"
+rng 51919 9e0ded87
+step 57 "pick east"
+out lock "Cityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\rA cityguard stands here.\n\rKnocker the Recruit is here.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "The cityguard is standing too close to the lock.\n\rLocksmith has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 58 "@pulse 12"
+rng 51919 9e0ded87
+step 59 "@as lock"
+rng 51919 9e0ded87
+step 60 "@obj 3131 3110 34 1 3120 20 100"
+rng 51919 9e0ded87
+step 61 "@obj 3131 3110 34 0 -1 20 100"
+rng 51919 9e0ded87
+step 62 "@obj 3131 3110 34 5 -1 20 100"
+rng 51919 9e0ded87
+step 63 "@obj 3131 3110 34 4 -1 20 100"
+rng 51919 9e0ded87
+step 64 "@obj 3131 3110 34 15 3123 20 100"
+rng 51919 9e0ded87
+step 65 "open key"
+out lock "That's not a container.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51919 9e0ded87
+step 66 "close key"
+out lock "That's not a container.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51919 9e0ded87
+step 67 "lock key"
+out lock "That's not a container.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51919 9e0ded87
+step 68 "unlock key"
+out lock "That's not a container.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51919 9e0ded87
+step 69 "pick key"
+out lock "That's not a container.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51920 c09b44b3
+step 70 "@pulse 12"
+rng 51920 c09b44b3
+step 71 "open 1.safe"
+out lock "It's locked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51920 c09b44b3
+step 72 "unlock 1.safe"
+out lock "You lack the key.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51920 c09b44b3
+step 73 "lock 1.safe"
+out lock "You lack the key.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51920 c09b44b3
+step 74 "pick 1.safe"
+out lock "You failed.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51921 4f5dc005
+step 75 "@pulse 12"
+rng 51921 4f5dc005
+step 76 "open 2.safe"
+out lock "You can't do that.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51921 4f5dc005
+step 77 "close 2.safe"
+out lock "It's already closed.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51921 4f5dc005
+step 78 "lock 3.safe"
+out lock "It can't be locked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51921 4f5dc005
+step 79 "unlock 3.safe"
+out lock "It can't be unlocked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51921 4f5dc005
+step 80 "pick 3.safe"
+out lock "It can't be unlocked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51923 585652cd
+step 81 "@pulse 12"
+rng 51923 585652cd
+step 82 "close 4.safe"
+out lock "You can't do that.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51923 585652cd
+step 83 "open 4.safe"
+out lock "It's already open.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51923 585652cd
+step 84 "open 5.safe"
+out lock "It's already open.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51923 585652cd
+step 85 "close 5.safe"
+out lock "You close the safe.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "\n\rLocksmith closes the safe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51923 585652cd
+step 86 "close 5.safe"
+out lock "It's already closed.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51923 585652cd
+step 87 "lock 5.safe"
+out lock "You lock the safe.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "\n\rLocksmith locks the safe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51923 585652cd
+step 88 "unlock 5.safe"
+out lock "You unlock the safe.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "\n\rLocksmith unlocks the safe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51923 585652cd
+step 89 "pick 5.safe"
+out lock "It's already unlocked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51924 9fdf4911
+step 90 "@pulse 12"
+rng 51924 9fdf4911
+step 91 "lock 5.safe"
+out lock "You lock the safe.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "\n\rLocksmith locks the safe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51924 9fdf4911
+step 92 "lock 5.safe"
+out lock "It's already locked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51924 9fdf4911
+step 93 "open 5.safe"
+out lock "It's locked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51924 9fdf4911
+step 94 "pick 5.safe"
+out lock "You pick the lock on the safe.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "\n\rLocksmith picks the lock on the safe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 95 "@pulse 12"
+rng 51925 7edc2a82
+step 96 "unlock 5.safe"
+out lock "It's already unlocked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51925 7edc2a82
+step 97 "unlock 5.safe"
+out lock "It's already unlocked.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51925 7edc2a82
+step 98 "open 5.safe"
+out lock "You open the safe.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out knock "\n\rLocksmith opens the safe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 99 "lock 5.safe"
+out lock "It's not closed.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51925 7edc2a82
+step 100 "unlock 5.safe"
+out lock "It's not closed.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51925 7edc2a82
+step 101 "pick 5.safe"
+out lock "It's not closed.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51926 ad863a1b
+step 102 "@pulse 12"
+rng 51926 ad863a1b
+step 103 "@state"
+state room 3110 light 2 people player mob player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 1 key 3120
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 104/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3060 pos 8 hit 272/272 mana 150/150 move 100/100 wait 0 daze 0 exp 0 gold 1 silver 82 act 524357 affected_by 0 train 0 on 0 stats 17 13 14 14 16
+state char Knocker 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 4 -1 20 100
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 5 -1 20 100
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 0 -1 20 100
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 1 3120 20 100
+rng 51926 ad863a1b

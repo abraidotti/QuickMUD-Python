@@ -1,0 +1,11 @@
+# A buggy portal (GATE_BUGGY) goes where it says unless number_percent() comes under 5; then it's a random room.
+# Seed 20 makes that draw come under 5 (found by trying seeds on the Python game; the C must agree), and Locksmith
+# lands in room 6114 instead of the temple.
+@seed 20
+@connect lock
+Locksmith
+psswrd
+@return
+@obj 25 3110 0 0 8 3001 -1
+enter gate
+@state

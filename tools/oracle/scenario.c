@@ -17,6 +17,7 @@
  *   @pulse N             run N pulses with no new input
  *   @mob VNUM ROOM       create_mobile and char_to_room
  *   @obj VNUM ROOM       create_object (level 0) and obj_to_room
+ *   @obj VNUM ROOM V0 V1 V2 V3 V4   the same, then sets its five values (furniture, portals, locks)
  *   @state               dump the characters and objects in every room a connection's character is in
  *   @return              an empty line of input (blank lines are skipped), then one pulse
  *   @file PATH           print a file the game wrote, such as ../player/NAME (relative to the area directory)
@@ -28,7 +29,9 @@
  *   closed NAME          the game closed connection NAME
  *   file PATH "BYTES"    @file's file, or "file PATH missing"
  *   rng DRAWS HASH       random() calls so far, and an FNV-1a hash of every value they returned
- *   state ...            @state's lines
+ *   state ...            @state's lines: for each room, its exits (where each leads, exit_info and key), then each
+ *                        character (position, points, wait, flags, train, the furniture it's on and its five
+ *                        permanent stats) with its affects and what it carries, then the objects on the floor
  *
  * A comment line "# expect: stopped NotPorted" says the Python game is to stop with NotPorted in this scenario
  * (charm.testing.scenario compares only what comes before). The C ignores it, as it does every comment.
@@ -286,13 +289,20 @@ static void state (void)
         for (ch = room->people; ch != NULL; ch = ch->next_in_room)
             printf (" %s", IS_NPC (ch) ? "mob" : "player");
         putchar ('\n');
+        for (j = 0; j < 6; j++)
+            if (room->exit[j] != NULL)
+                printf ("state exit %d to %d info %d key %d\n", j,
+                        room->exit[j]->u1.to_room ? room->exit[j]->u1.to_room->vnum : 0,
+                        room->exit[j]->exit_info, room->exit[j]->key);
         for (ch = room->people; ch != NULL; ch = ch->next_in_room)
         {
             printf ("state char %s %d pos %d hit %d/%d mana %d/%d move %d/%d wait %d daze %d exp %d gold %ld "
-                    "silver %ld act %ld affected_by %ld\n", IS_NPC (ch) ? "mob" : ch->name,
+                    "silver %ld act %ld affected_by %ld train %d on %d stats %d %d %d %d %d\n",
+                    IS_NPC (ch) ? "mob" : ch->name,
                     IS_NPC (ch) ? ch->pIndexData->vnum : ch->level, ch->position, ch->hit, ch->max_hit,
                     ch->mana, ch->max_mana, ch->move, ch->max_move, ch->wait, ch->daze, ch->exp, ch->gold,
-                    ch->silver, ch->act, ch->affected_by);
+                    ch->silver, ch->act, ch->affected_by, ch->train, ch->on ? ch->on->pIndexData->vnum : 0,
+                    ch->perm_stat[0], ch->perm_stat[1], ch->perm_stat[2], ch->perm_stat[3], ch->perm_stat[4]);
             for (af = ch->affected; af != NULL; af = af->next)
                 printf ("state   affect %d level %d duration %d location %d modifier %d bitvector %d\n", af->type,
                         af->level, af->duration, af->location, af->modifier, af->bitvector);
@@ -324,7 +334,8 @@ int main (void)
     while (fgets (line, sizeof line, stdin) != NULL)
     {
         char word[32];
-        long a = 0, b = 0;
+        long a = 0, b = 0, v[5];
+        int n, j;
 
         chomp (line);
         if (line[0] == '#' || line[0] == '\0')
@@ -384,8 +395,15 @@ int main (void)
             CHAR_DATA *mob = create_mobile (get_mob_index (a));
             char_to_room (mob, get_room_index (b));
         }
-        else if (sscanf (line, "@obj %ld %ld", &a, &b) == 2)
-            obj_to_room (create_object (get_obj_index (a), 0), get_room_index (b));
+        else if ((n = sscanf (line, "@obj %ld %ld %ld %ld %ld %ld %ld", &a, &b, &v[0], &v[1], &v[2], &v[3],
+                              &v[4])) == 2 || n == 7)
+        {
+            OBJ_DATA *obj = create_object (get_obj_index (a), 0);
+            if (n == 7)
+                for (j = 0; j < 5; j++)
+                    obj->value[j] = v[j];
+            obj_to_room (obj, get_room_index (b));
+        }
         else if (!strcmp (line, "@state"))
             state ();
         else if (!strncmp (line, "@file ", 6))

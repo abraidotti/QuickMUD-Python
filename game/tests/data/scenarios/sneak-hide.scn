@@ -1,0 +1,29 @@
+# Sneak, hide and visible in the Cityguard HQ (3110). Locksmith (a thief at 60% in both) rolls for each; Knocker
+# (a level-2 warrior) has neither skill and always fails. The state shows the sneak affect and the hide bit.
+@connect lock
+Locksmith
+psswrd
+@return
+@connect knock
+Knocker
+psswrd
+@return
+@as lock
+sneak
+@state
+sneak
+sneak
+sneak
+hide
+@state
+hide
+hide
+hide
+@state
+visible
+@state
+@as knock
+sneak
+hide
+visible
+@state

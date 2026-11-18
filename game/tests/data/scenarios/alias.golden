@@ -1,4 +1,4 @@
-sources b1743cbec66efe12
+sources 4f7804ca4c4d221c
 boot seed 20261117 clock 1763400000 updates area
 rng 51872 4ba9daca
 step 1 "@connect rambler"
@@ -32,13 +32,16 @@ out rambler "Huh?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
 rng 51896 5ed8996e
 step 11 "@state"
 state room 3001 light 1 people player mob
-state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
 state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
 state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
 state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
 state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
 state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
-state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
 state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
 state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
 rng 51896 5ed8996e

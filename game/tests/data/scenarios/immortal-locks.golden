@@ -1,0 +1,55 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect warden"
+rng 51872 4ba9daca
+step 2 "Warden"
+out warden "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out warden "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out warden "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out warden "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "pick east"
+out warden "It's already unlocked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 7 "@pulse 12"
+rng 51896 5ed8996e
+step 8 "close east"
+out warden "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 9 "pick east"
+out warden "It's already unlocked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 10 "@pulse 12"
+rng 51898 d55fddad
+step 11 "@obj 25 3110 0 3 0 3160 -1"
+rng 51898 d55fddad
+step 12 "enter gate"
+out warden "You walk through a shimmering gate and find yourself somewhere else...\n\rMelancholy's Maps\n\r  As you walk in, a sudden gust of wind enters the shop and sends several\n\rscraps of paper fly around the room.  You blink as the dust you've stirred \n\rup stings your eyes, and take a look around the shop.  This shop is cluttered \n\rwith old pieces of parchment, stacks of books, and odd scraps.  A desk with \n\rslightly less clutter than the rest of the shop is in front of you.  A scroll \n\rcase full of scrolls is behind the desk.  A bookcase is to the right of you, \n\rand to the left is a window overlooking the Common Square.  A small door, \n\rhalf hidden by a stack of books, leads to a room in the back of the shop.\n\rA green tree snake is sitting here on a pile of books.\n\rMelancholy is here, digging through a pile of scrolls, papers, and maps.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 13 "pick north"
+out warden "*Click*\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 14 "@pulse 12"
+rng 51899 d1eb3d36
+step 15 "@state"
+state room 3160 light 0 people player mob mob
+state exit 0 to 3161 info 35 key 3161
+state exit 2 to 3024 info 0 key -1
+state char Warden 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3161 pos 8 hit 274/274 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2097155 affected_by 8 train 0 on 0 stats 13 14 14 16 14
+state char mob 3160 pos 8 hit 1000/1000 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 7 silver 383 act 2097155 affected_by 0 train 0 on 0 stats 17 17 17 17 17
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3163 wear -1 timer 0 cost 1500 values 1 0 0 0 0
+state   obj carried 3164 wear -1 timer 0 cost 1000 values 1 0 0 0 0
+state   obj carried 3165 wear -1 timer 0 cost 750 values 1 0 0 0 0
+state   obj carried 3166 wear -1 timer 0 cost 1500 values 1 0 0 0 0
+state   obj carried 3167 wear -1 timer 0 cost 2500 values 1 0 0 0 0
+state   obj carried 3168 wear -1 timer 0 cost 2000 values 1 0 0 0 0
+rng 51899 d1eb3d36

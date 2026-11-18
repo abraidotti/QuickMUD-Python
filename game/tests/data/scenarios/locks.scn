@@ -1,0 +1,111 @@
+# Doors and containers in the Cityguard HQ (3110): open, close, lock, unlock and pick. The east door is closed with
+# no key; the west door to the Captain's Office is closed and locked (key 3120). Locksmith carries keys 3120, 3121
+# and 3133 and picks every lock; Knocker has no key and no pick lock.
+@connect lock
+Locksmith
+psswrd
+@return
+@connect knock
+Knocker
+psswrd
+@return
+@as lock
+open
+close
+lock
+unlock
+pick
+# Objects come first: "open w" would find the war banner Locksmith carries ("That's not a container."), so doors
+# are named in full. "open n" has no exit, "open s" matches the banner too.
+open n
+open s
+open u
+open nothing
+open east
+lock east
+unlock east
+pick east
+@pulse 12
+open door
+close door
+close door
+lock east
+unlock east
+pick east
+@pulse 12
+open east
+open west
+@as knock
+unlock west
+lock west
+pick west
+@pulse 12
+@as lock
+unlock west
+unlock west
+lock west
+lock west
+pick west
+@pulse 12
+open west
+@state
+west
+close east
+lock east
+# The captain (level 17) is more than five levels above Locksmith: too close to the lock.
+pick east
+@pulse 12
+unlock east
+open east
+east
+@as knock
+@mob 3060 3110
+pick east
+@pulse 12
+@as lock
+# Containers, made from the Captain's safe (3131): closeable with key 3120; open and not closeable; closed with no
+# key; closed and not closeable; pickproof and locked. The newest is 1.safe.
+@obj 3131 3110 34 1 3120 20 100
+@obj 3131 3110 34 0 -1 20 100
+@obj 3131 3110 34 5 -1 20 100
+@obj 3131 3110 34 4 -1 20 100
+@obj 3131 3110 34 15 3123 20 100
+open key
+close key
+lock key
+unlock key
+pick key
+@pulse 12
+open 1.safe
+unlock 1.safe
+lock 1.safe
+pick 1.safe
+@pulse 12
+open 2.safe
+close 2.safe
+lock 3.safe
+unlock 3.safe
+pick 3.safe
+@pulse 12
+close 4.safe
+open 4.safe
+open 5.safe
+close 5.safe
+close 5.safe
+lock 5.safe
+unlock 5.safe
+pick 5.safe
+@pulse 12
+lock 5.safe
+lock 5.safe
+open 5.safe
+pick 5.safe
+@pulse 12
+unlock 5.safe
+unlock 5.safe
+open 5.safe
+lock 5.safe
+unlock 5.safe
+pick 5.safe
+@pulse 12
+@state

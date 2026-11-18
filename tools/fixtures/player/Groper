@@ -69,6 +69,15 @@ Gr 'weaponsmaster'
 End
 
 #O
+Vnum 3716
+Nest 0
+Cond 0
+Wear 0
+Cost 0
+Val  0 0 197 0 0
+End
+
+#O
 Vnum 3703
 Nest 0
 Cond 0

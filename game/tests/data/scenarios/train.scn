@@ -1,0 +1,34 @@
+# Training with the sailor in the Abandoned Warehouse (3050). Lifter has four sessions, strength 18 (a human warrior
+# can go to 21) and intelligence 18 (a human's most). Knocker, in the Cityguard HQ, has no trainer. Warden, an
+# immortal, comes by portal: every stat can go to 25.
+@connect lifter
+Lifter
+psswrd
+@return
+@connect knock
+Knocker
+psswrd
+@return
+@as knock
+train
+@as lifter
+train
+train foo
+train str
+train int
+train STR
+train hp
+train mana
+train con
+train
+train hp
+train mana
+@state
+@connect warden
+Warden
+smoke123
+@return
+@return
+@obj 25 3110 0 0 0 3050 -1
+enter gate
+train

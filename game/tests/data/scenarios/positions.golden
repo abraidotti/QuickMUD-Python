@@ -1,0 +1,431 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect sleeper"
+rng 51895 7f5599b5
+step 10 "Sleeper"
+out sleeper "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out sleeper "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleeper "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rYou can't see anything, you're sleeping!\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@obj 3131 3001"
+rng 51895 7f5599b5
+step 14 "@obj 3134 3001"
+rng 51895 7f5599b5
+step 15 "@obj 3134 3001 1 0 2340 0 0"
+rng 51895 7f5599b5
+step 16 "@obj 3134 3001 1 0 1170 0 0"
+rng 51895 7f5599b5
+step 17 "@obj 3134 3001 1 0 585 0 0"
+rng 51895 7f5599b5
+step 18 "@as dec"
+rng 51895 7f5599b5
+step 19 "stand"
+out dec "You are already standing.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "sit"
+out dec "You sit down.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits down on the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "sit"
+out dec "You are already sitting down.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "rest"
+out dec "You rest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "rest"
+out dec "You are already resting.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "sit"
+out dec "You stop resting.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "rest"
+out dec "You rest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "sleep"
+out dec "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "sleep"
+out dec "You are already sleeping.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "stand"
+out dec "You wake and stand up.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 4) A white-painted wooden bench is standing here.\n\r     A safe is placed in a dark corner of the room.\n\rSleeper is sleeping here.\n\rQuintus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "sleep"
+out dec "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "rest"
+out dec "You wake up and start resting.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes up and starts resting.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "sleep"
+out dec "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "sit"
+out dec "You wake and sit up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and sits up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "sit 1.bench"
+out dec "You sit down at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits down at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "@as quin"
+rng 51895 7f5599b5
+step 38 "sit 1.bench"
+out quin "There's no more room on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "rest 1.bench"
+out quin "There's no more room on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "sleep 1.bench"
+out quin "There is no room on the Bench for you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "stand 1.bench"
+out quin "There's no room to stand on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "@as dec"
+rng 51895 7f5599b5
+step 43 "rest"
+out dec "You rest at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus rests at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "sit"
+out dec "You sit at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "stand 1.bench"
+out dec "You stand at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "sleep 1.bench"
+out dec "You go to sleep at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "stand 1.bench"
+out dec "You wake and stand at the Bench.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 4) A white-painted wooden bench is standing here.\n\r     A safe is placed in a dark corner of the room.\n\rSleeper is sleeping here.\n\rQuintus is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and stands at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "sleep"
+out dec "You go to sleep at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "rest 1.bench"
+out dec "You wake up and rest at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes up and rests at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "sleep"
+out dec "You go to sleep at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "sit 1.bench"
+out dec "You wake and sit at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and sits at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "sit 2.bench"
+out dec "You sit on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "rest"
+out dec "You rest on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus rests on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "sit"
+out dec "You sit on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "stand 2.bench"
+out dec "You stand on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "sleep 2.bench"
+out dec "You go to sleep on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "stand 2.bench"
+out dec "You wake and stand on the Bench.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 4) A white-painted wooden bench is standing here.\n\r     A safe is placed in a dark corner of the room.\n\rSleeper is sleeping here.\n\rQuintus is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and stands on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "sleep"
+out dec "You go to sleep on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "rest 2.bench"
+out dec "You wake up and rest on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes up and rests on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "sleep"
+out dec "You go to sleep on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "sit 2.bench"
+out dec "You wake and sit on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and sits at the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "sit 3.bench"
+out dec "You sit down in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits down in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 65 "rest"
+out dec "You rest in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus rests in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 66 "sit"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 67 "stand 3.bench"
+out dec "You stand in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands on the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 68 "sleep 3.bench"
+out dec "You go to sleep in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 69 "stand 3.bench"
+out dec "You wake and stand in the Bench.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 4) A white-painted wooden bench is standing here.\n\r     A safe is placed in a dark corner of the room.\n\rSleeper is sleeping here.\n\rQuintus is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and stands in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 70 "sleep"
+out dec "You go to sleep in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 71 "rest 3.bench"
+out dec "You wake up and rest in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes up and rests in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 72 "sleep"
+out dec "You go to sleep in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus goes to sleep in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "sit 3.bench"
+out dec "You wake and sit in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes and sits in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 75 "rest 1.bench"
+out dec "You sit down at the Bench and rest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits down at the Bench and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 76 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 77 "rest 2.bench"
+out dec "You sit on the Bench and rest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus sits on the Bench and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 78 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 79 "rest 3.bench"
+out dec "You rest in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus rests in the Bench.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 80 "stand"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 81 "@state"
+state room 3001 light 3 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Sleeper 2 pos 4 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 131072 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3134 wear -1 timer 0 cost 0 values 1 0 585 0 0
+state obj floor 3134 wear -1 timer 0 cost 0 values 1 0 1170 0 0
+state obj floor 3134 wear -1 timer 0 cost 0 values 1 0 2340 0 0
+state obj floor 3134 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+rng 51895 7f5599b5
+step 82 "sit 4.bench"
+out dec "You can't sit on that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 83 "rest 4.bench"
+out dec "You can't rest on that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 84 "sleep 4.bench"
+out dec "You can't sleep on that!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 85 "stand 4.bench"
+out dec "You can't seem to find a place to stand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 86 "sit safe"
+out dec "You can't sit on that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 87 "rest safe"
+out dec "You can't rest on that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 88 "sleep safe"
+out dec "You can't sleep on that!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 89 "stand safe"
+out dec "You can't seem to find a place to stand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 90 "sit nothing"
+out dec "You don't see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 91 "rest nothing"
+out dec "You don't see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 92 "sleep nothing"
+out dec "You don't see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 93 "stand nothing"
+out dec "You don't see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 94 "@as sleeper"
+rng 51895 7f5599b5
+step 95 "stand"
+out sleeper "You can't wake up!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 96 "rest"
+out sleeper "You can't wake up!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 97 "sit"
+out sleeper "You can't wake up!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 98 "wake"
+out sleeper "You can't wake up!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 99 "@as dec"
+rng 51895 7f5599b5
+step 100 "wake sleeper"
+out dec "You can't wake him!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 101 "wake nobody"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 102 "wake quintus"
+out dec "Quintus is already awake.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 103 "@as quin"
+rng 51895 7f5599b5
+step 104 "sleep"
+out dec "Quintus goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 105 "wake decimus"
+out quin "You are asleep yourself!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 106 "@as dec"
+rng 51895 7f5599b5
+step 107 "wake quintus"
+out dec "You are already standing.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus wakes you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 108 "@as quin"
+rng 51895 7f5599b5
+step 109 "wake"
+out dec "Quintus wakes and stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You wake and stand up.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 4) A white-painted wooden bench is standing here.\n\r     A safe is placed in a dark corner of the room.\n\rSleeper is sleeping here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 110 "@state"
+state room 3001 light 3 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Sleeper 2 pos 4 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 131072 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3134 wear -1 timer 0 cost 0 values 1 0 585 0 0
+state obj floor 3134 wear -1 timer 0 cost 0 values 1 0 1170 0 0
+state obj floor 3134 wear -1 timer 0 cost 0 values 1 0 2340 0 0
+state obj floor 3134 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+rng 51895 7f5599b5

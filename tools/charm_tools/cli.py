@@ -92,6 +92,9 @@ def main(argv: list[str] | None = None) -> int:
     pscen.add_argument("--docker", metavar="IMAGE", help="the build-stage image: docker build --target build")
     pscen.add_argument("--save", action="store_true", help="with --docker: write the goldens the tests replay")
     pscen.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
+    pcov = port_sub.add_parser("coverage", help="the lines of the ported functions that no test or scenario runs")
+    pcov.add_argument("c_files", nargs="*", metavar="FILE.c", help="only the functions ported from these C files")
+    pcov.add_argument("--scenarios", action="store_true", help="run only the scenarios, not the unit tests")
     pplayers = port_sub.add_parser("players", help="round-trip player files between the two games")
     pplayers.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
     pplayers.add_argument("--save", action="store_true", help="keep the C game's files for the tests")
@@ -142,6 +145,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "scenarios":
             from .port import scenarios
             return scenarios.run(args.docker, args.save, args.only)
+        if args.port_command == "coverage":
+            from .port import coverage
+            return coverage.run(args.c_files, args.scenarios)
         if args.port_command == "players":
             from .port import players
             return players.run(args.docker, args.save)

@@ -1,0 +1,423 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect lock"
+rng 51872 4ba9daca
+step 2 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect cursed"
+rng 51895 7f5599b5
+step 6 "Cursed"
+out cursed "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out cursed "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out lock "\n\rCursed has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\rLocksmith the Recruit is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@as lock"
+rng 51895 7f5599b5
+step 10 "enter"
+out lock "Nope, can't do it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "enter nothing"
+out lock "You don't see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@obj 3131 3110"
+rng 51895 7f5599b5
+step 13 "enter safe"
+out lock "You can't seem to find a way in.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@obj 25 3110 0 0 0 3001 -1"
+rng 51895 7f5599b5
+step 15 "open gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "close gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "lock gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "unlock gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "pick gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 20 "@pulse 12"
+rng 51896 5ed8996e
+step 21 "@obj 25 3110 0 1 0 3001 -1"
+rng 51896 5ed8996e
+step 22 "lock gate"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 23 "unlock gate"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 24 "pick gate"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 25 "@pulse 12"
+rng 51898 d55fddad
+step 26 "close gate"
+out lock "You close a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith closes a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 27 "@obj 25 3110 0 3 0 3001 -1"
+rng 51898 d55fddad
+step 28 "lock gate"
+out lock "It can't be locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 29 "unlock gate"
+out lock "It can't be unlocked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 30 "pick gate"
+out lock "It can't be unlocked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 31 "@pulse 12"
+rng 51899 d1eb3d36
+step 32 "@obj 25 3110 0 1025 0 3001 3120"
+rng 51899 d1eb3d36
+step 33 "close gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 34 "lock gate"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 35 "@obj 25 3110 0 2051 0 3001 3120"
+rng 51899 d1eb3d36
+step 36 "lock gate"
+out lock "It can't be locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 37 "@obj 25 3110 0 39 0 3001 3120"
+rng 51899 d1eb3d36
+step 38 "pick gate"
+out lock "You failed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 39 "@pulse 12"
+rng 51900 e9723077
+step 40 "@obj 25 3110 0 3 0 3001 3120"
+rng 51900 e9723077
+step 41 "enter gate"
+out lock "You can't seem to find a way in.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 42 "close gate"
+out lock "It's already closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 43 "pick gate"
+out lock "You pick the lock on a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith picks the lock on a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 44 "@pulse 12"
+rng 51901 51250113
+step 45 "open gate"
+out lock "You open a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith opens a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 46 "close gate"
+out lock "You close a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith closes a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 47 "lock gate"
+out lock "You lock a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith locks a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 48 "lock gate"
+out lock "It's already locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 49 "open gate"
+out lock "It's locked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 50 "unlock gate"
+out lock "You unlock a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith unlocks a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 51 "unlock gate"
+out lock "It's already unlocked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 52 "lock gate"
+out lock "You lock a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith locks a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 53 "pick gate"
+out lock "You pick the lock on a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith picks the lock on a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 54 "@pulse 12"
+rng 51903 5850559a
+step 55 "open gate"
+out lock "You open a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith opens a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 56 "open gate"
+out lock "It's already open.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 57 "@as cursed"
+rng 51903 5850559a
+step 58 "close gate"
+out lock "Cursed closes a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "You close a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 59 "lock gate"
+out cursed "You lack the key.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 60 "unlock gate"
+out cursed "You lack the key.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 61 "open gate"
+out lock "\n\rCursed opens a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "You open a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 62 "enter gate"
+out cursed "Something prevents you from leaving...\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 63 "@as lock"
+rng 51903 5850559a
+step 64 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 65 "@state"
+state room 3001 light 1 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state room 3110 light 1 people player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Cursed 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 1024 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 39 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 2051 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1025 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+rng 51903 5850559a
+step 66 "@obj 25 3001 0 0 0 0 -1"
+rng 51903 5850559a
+step 67 "enter gate"
+out lock "A shimmering gate doesn't seem to go anywhere.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 68 "@obj 25 3001 0 0 0 3001 -1"
+rng 51903 5850559a
+step 69 "enter gate"
+out lock "A shimmering gate doesn't seem to go anywhere.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 70 "@obj 25 3001 0 0 5 3110 -1"
+rng 51903 5850559a
+step 71 "enter gate"
+out lock "You enter a shimmering gate.\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r( 8) A shimmering black gate rises from the ground, leading to parts unknown.\n\r     A safe is placed in a dark corner of the room.\n\rCursed the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 72 "@state"
+state room 3110 light 2 people player player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Cursed 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 1024 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 5 3110 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 39 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 2051 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1025 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+rng 51903 5850559a
+step 73 "@obj 25 3110 1 0 0 3001 -1"
+rng 51903 5850559a
+step 74 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 2) A shimmering black gate rises from the ground, leading to parts unknown.\n\rHassan is here, waiting to dispense some justice.\n\rA shimmering gate fades out of existence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith steps into a shimmering gate.\n\rA shimmering gate fades out of existence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 75 "@state"
+state room 3001 light 1 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 0 -1
+state room 3110 light 1 people player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Cursed 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 1024 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 5 3110 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 39 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 2051 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1025 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+rng 51903 5850559a
+step 76 "@as cursed"
+rng 51903 5850559a
+step 77 "@obj 25 3110 0 0 0 3001 -1"
+rng 51903 5850559a
+step 78 "enter gate"
+out cursed "Something prevents you from leaving...\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 79 "@obj 25 3110 0 0 2 3001 -1"
+rng 51903 5850559a
+step 80 "enter gate"
+out lock "\n\rCursed has arrived through a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "You walk through a shimmering gate and find yourself somewhere else...\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 2) A shimmering black gate rises from the ground, leading to parts unknown.\n\rLocksmith the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 81 "@state"
+state room 3001 light 2 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Cursed 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 1024 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 0 -1
+rng 51903 5850559a
+step 82 "@as lock"
+rng 51903 5850559a
+step 83 "@obj 25 3001 0 0 16 3001 -1"
+rng 51903 5850559a
+step 84 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rGrassy plains\n\r  You walk in the grassy plains among the herbs which grow here. The wind is\n\rstrong and rough. Far to the north you can see the foothills and further on\n\rmountain peaks are visible. City of Midgaard is to the south but so are some\n\rVERY steep slopes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cursed "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 85 "recall"
+out lock "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 3) A shimmering black gate rises from the ground, leading to parts unknown.\n\rCursed the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 53mv> \xff\xf9"
+out cursed "\n\rLocksmith appears in the room.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 86 "@obj 25 3001 0 0 0 -1 -1"
+rng 51919 9e0ded87
+step 87 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rThe south end of the pool\n\r  You standing in water up to you neck. You can only see water.\n\rThe sea hag is swimming around here.\n\r\n\r<29hp 102m 53mv> \xff\xf9"
+out cursed "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51935 b9fd8a25
+step 88 "recall"
+out lock "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 4) A shimmering black gate rises from the ground, leading to parts unknown.\n\rCursed the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 26mv> \xff\xf9"
+out cursed "\n\rLocksmith appears in the room.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51935 b9fd8a25
+step 89 "@obj 25 3001 0 0 8 3110 -1"
+rng 51935 b9fd8a25
+step 90 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r(10) A shimmering black gate rises from the ground, leading to parts unknown.\n\r     A safe is placed in a dark corner of the room.\n\r\n\r<29hp 102m 26mv> \xff\xf9"
+out cursed "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 91 "@state"
+state room 3110 light 1 people player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 26/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 2 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 5 3110 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 39 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 2051 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 1025 0 3001 3120
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 3 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 3131 wear -1 timer 0 cost 0 values 34 15 3123 20 100
+state room 3001 light 1 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Cursed 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 1024 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 8 3110 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 7444 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 16 317 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3001 -1
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 0 -1
+rng 51937 98fa3ef8

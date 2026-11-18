@@ -1,0 +1,115 @@
+# Standing, sitting, resting and sleeping in the temple (3001), on the ground and on furniture. Three benches made
+# from the park's (3134), one for each word: 1.bench is "at", 2.bench "on" and 3.bench "in", each with room for one;
+# 4.bench is the stock one, with no flags. The safe (3131) isn't furniture. Quintus watches, and tries the benches
+# when they're taken; Sleeper is under a sleep spell.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect sleeper
+Sleeper
+psswrd
+@return
+@obj 3131 3001
+@obj 3134 3001
+@obj 3134 3001 1 0 2340 0 0
+@obj 3134 3001 1 0 1170 0 0
+@obj 3134 3001 1 0 585 0 0
+@as dec
+stand
+sit
+sit
+rest
+rest
+sit
+stand
+rest
+stand
+sleep
+sleep
+stand
+sleep
+rest
+sleep
+sit
+stand
+sit 1.bench
+@as quin
+sit 1.bench
+rest 1.bench
+sleep 1.bench
+stand 1.bench
+@as dec
+rest
+sit
+stand 1.bench
+sleep 1.bench
+stand 1.bench
+sleep
+rest 1.bench
+sleep
+sit 1.bench
+stand
+sit 2.bench
+rest
+sit
+stand 2.bench
+sleep 2.bench
+stand 2.bench
+sleep
+rest 2.bench
+sleep
+sit 2.bench
+stand
+sit 3.bench
+rest
+sit
+stand 3.bench
+sleep 3.bench
+stand 3.bench
+sleep
+rest 3.bench
+sleep
+sit 3.bench
+stand
+rest 1.bench
+stand
+rest 2.bench
+stand
+rest 3.bench
+stand
+@state
+sit 4.bench
+rest 4.bench
+sleep 4.bench
+stand 4.bench
+sit safe
+rest safe
+sleep safe
+stand safe
+sit nothing
+rest nothing
+sleep nothing
+stand nothing
+# Waking: Sleeper can't wake up or be woken; Quintus is woken, but the C stands the waker up instead.
+@as sleeper
+stand
+rest
+sit
+wake
+@as dec
+wake sleeper
+wake nobody
+wake quintus
+@as quin
+sleep
+wake decimus
+@as dec
+wake quintus
+@as quin
+wake
+@state
