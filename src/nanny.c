@@ -728,7 +728,7 @@ void nanny (DESCRIPTOR_DATA * d, char *argument)
             }
 
             write_to_buffer (d,
-                             "\n\rWelcome to ROM 2.4.  Please don't feed the mobiles!\n\r",
+                             "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\r",
                              0);
             ch->next = char_list;
             char_list = ch;

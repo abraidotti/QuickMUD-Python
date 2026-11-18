@@ -29,22 +29,6 @@ from charm.data import constants as C
 
 DEFAULT_SEED, DEFAULT_CLOCK = "20261117", 1763400000
 
-# What the Python game says on purpose where the C says ROM (#30, #32), as they appear in the escaped output:
-# the C's lines are changed to these before comparing.
-SUBSTITUTIONS = (("Welcome to ROM 2.4.", "Welcome to Charm."),
-                 ("Remember that ROM has automatic saving now.", "Remember that Charm has automatic saving now."))
-
-
-def comparable(c_lines: list[str]) -> list[str]:
-    """The C's output lines with the on-purpose differences made as the Python's."""
-    out = []
-    for line in c_lines:
-        for old, new in SUBSTITUTIONS:
-            line = line.replace(old, new)
-        out.append(line)
-    return out
-
-
 def esc(data: bytes) -> str:
     """Bytes on one line: \\\\, \\", \\n, \\r, and \\xNN for anything outside printable ASCII."""
     out = ['"']
@@ -301,12 +285,12 @@ EXPECT_STOP = "# expect: stopped NotPorted"
 
 
 def difference(c_lines: list[str], py_lines: list[str], text: str) -> str | None:
-    """Where the Python's output first differs from the C's (after the on-purpose substitutions), or None.
+    """Where the Python's output first differs from the C's, or None.
 
     A scenario with the comment line "# expect: stopped NotPorted" must make the Python game stop with NotPorted:
     its last line is then the "stopped" line, and only what comes before it is compared, since the C carries on.
     """
-    want = comparable(c_lines)
+    want = c_lines
     got = py_lines
     if EXPECT_STOP in text.splitlines():
         if not got or not got[-1].startswith("stopped NotPorted"):

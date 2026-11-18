@@ -1,8 +1,5 @@
 """act_comm.c's save and quit, and the follower helpers that quitting reaches (nuke_pets, die_follower).
 
-save says "Remember that Charm has automatic saving now." where the C says ROM: the game is never called ROM
-(#32, decision 4). charm_tools port commands substitutes that one line when it compares the two games.
-
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
 (c) 1993-98 Russ Taylor. Ported from src/act_comm.c. Licence terms: README.md#licence-terms and doc/.
@@ -18,7 +15,7 @@ from charm.net.act import act
 from charm.net.output import send_to_char
 from charm.net.wiznet import wiznet
 
-SAVING = "Saving. Remember that Charm has automatic saving now.\n\r"  # the C says ROM (#32, decision 4)
+SAVING = "Saving. Remember that Charm has automatic saving now.\n\r"
 
 
 def wait_state(ch, npulse: int) -> None:

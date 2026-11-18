@@ -1514,7 +1514,7 @@ void do_save (CHAR_DATA * ch, char *argument)
         return;
 
     save_char_obj (ch);
-    send_to_char ("Saving. Remember that ROM has automatic saving now.\n\r",
+    send_to_char ("Saving. Remember that Charm has automatic saving now.\n\r",
                   ch);
     WAIT_STATE (ch, 4 * PULSE_VIOLENCE);
     return;

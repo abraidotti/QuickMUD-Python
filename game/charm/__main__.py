@@ -56,7 +56,6 @@ def main(argv: list[str] | None = None) -> int:
         game.config = config
         log.clock = lambda: game.current_time
         log.log_f("Not ported, not running: %s (#28).", ", ".join(NOT_RUNNING))
-        # The C says "ROM is ready to rock"; the game is Charm (#29). Explore's parity looks for "is ready to rock".
         log.log_f("Charm is ready to rock on port %d (%s).", port, config.ipaddress)
         game_loop(game, control, PulseStats() if args.pulse_stats else None)
     except (NotPorted, CWouldCrash) as e:

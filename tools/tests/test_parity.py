@@ -61,7 +61,7 @@ class ParseTest(unittest.TestCase):
 
     def test_bug_lines_drop_timestamps_and_stop_at_ready(self):
         log = ("Tue Nov 17 18:17:08 2026 :: [*****] BUG: one\n"
-               "Tue Nov 17 18:17:08 2026 :: ROM is ready to rock on port 4000 (0.0.0.0).\n"
+               "Tue Nov 17 18:17:08 2026 :: Charm is ready to rock on port 4000 (0.0.0.0).\n"
                "Tue Nov 17 18:17:09 2026 :: [*****] BUG: later\n")
         self.assertEqual(parity.bug_lines(log), ["[*****] BUG: one"])
 
