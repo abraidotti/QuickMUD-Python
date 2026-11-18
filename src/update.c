@@ -27,6 +27,7 @@
 
 #include <sys/types.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include "merc.h"
@@ -1144,6 +1145,24 @@ void aggr_update (void)
  * Random times to defeat tick-timing clients and players.
  */
 
+/* CHARM_UPDATES=area runs only area_update, as the Python port's spike does, so
+   a test can compare the two games after boot (#32). The pulse counters and the
+   TICK wiznet line carry on as usual. Unset, everything runs. -- Charm */
+static bool area_updates_only (void)
+{
+    static int only = -1;
+
+    if (only < 0)
+    {
+        const char *env = getenv ("CHARM_UPDATES");
+
+        only = env != NULL && !str_cmp (env, "area");
+        if (only)
+            log_string ("CHARM_UPDATES=area: only area_update runs");
+    }
+    return only;
+}
+
 void update_handler (void)
 {
     static int pulse_area;
@@ -1162,19 +1181,22 @@ void update_handler (void)
     if (--pulse_music <= 0)
     {
         pulse_music = PULSE_MUSIC;
-        song_update ();
+        if (!area_updates_only ())
+            song_update ();
     }
 
     if (--pulse_mobile <= 0)
     {
         pulse_mobile = PULSE_MOBILE;
-        mobile_update ();
+        if (!area_updates_only ())
+            mobile_update ();
     }
 
     if (--pulse_violence <= 0)
     {
         pulse_violence = PULSE_VIOLENCE;
-        violence_update ();
+        if (!area_updates_only ())
+            violence_update ();
     }
 
     if (--pulse_point <= 0)
@@ -1182,12 +1204,16 @@ void update_handler (void)
         wiznet ("TICK!", NULL, NULL, WIZ_TICKS, 0, 0);
         pulse_point = PULSE_TICK;
 /* number_range( PULSE_TICK / 2, 3 * PULSE_TICK / 2 ); */
-        weather_update ();
-        char_update ();
-        obj_update ();
+        if (!area_updates_only ())
+        {
+            weather_update ();
+            char_update ();
+            obj_update ();
+        }
     }
 
-    aggr_update ();
+    if (!area_updates_only ())
+        aggr_update ();
     tail_chain ();
     return;
 }
