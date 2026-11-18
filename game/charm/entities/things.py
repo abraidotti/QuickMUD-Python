@@ -115,6 +115,7 @@ class Char:
     in_room: Room | None = None
     was_in_room: Room | None = None
     fighting: "Char | None" = None
+    reply: "Char | None" = None  # who a tell reply goes to
     desc: object | None = None  # the connection (charm.net.descriptor.Descriptor); None for a mob or link-dead
     pcdata: "PCData | None" = None  # a player's; None for a mob
     gen_data: "GenData | None" = None  # while customising a new character

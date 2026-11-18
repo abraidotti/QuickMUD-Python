@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from charm.commands.interp import is_number, one_argument
 from charm.core.cint import c_div
+from charm.core.strings import atoi
 from charm.data import constants as C
 from charm.data.races import PC_RACE_TABLE
 from charm.data.skills import GROUP_TABLE, SKILL_TABLE
@@ -243,17 +244,6 @@ def parse_gen_groups(ch, argument: str) -> bool:
     return False
 
 
-def _atoi(s: str) -> int:
-    sign, i = 1, 0
-    if s[:1] in "+-":
-        sign, i = (-1 if s[0] == "-" else 1), 1
-    digits = ""
-    while i < len(s) and s[i].isdigit():
-        digits += s[i]
-        i += 1
-    return sign * int(digits) if digits else 0
-
-
 # C: skills.c do_skills
 def do_skills(ch, argument: str) -> None:
     if ch.is_npc:
@@ -266,7 +256,7 @@ def do_skills(ch, argument: str) -> None:
             if not is_number(arg):
                 send_to_char("Arguments must be numerical or all.\n\r", ch)
                 return
-            max_lev = _atoi(arg)
+            max_lev = atoi(arg)
             if max_lev < 1 or max_lev > C.LEVEL_HERO:
                 send_to_char("Levels must be between 1 and %d.\n\r" % C.LEVEL_HERO, ch)
                 return
@@ -275,7 +265,7 @@ def do_skills(ch, argument: str) -> None:
                 if not is_number(arg):
                     send_to_char("Arguments must be numerical or all.\n\r", ch)
                     return
-                min_lev, max_lev = max_lev, _atoi(arg)
+                min_lev, max_lev = max_lev, atoi(arg)
                 if max_lev < 1 or max_lev > C.LEVEL_HERO:
                     send_to_char("Levels must be between 1 and %d.\n\r" % C.LEVEL_HERO, ch)
                     return
@@ -324,3 +314,38 @@ def do_groups(ch, argument: str) -> None:
         send_to_char("Type 'groups all' or 'info all' for a full listing.\n\r", ch)
         return
     _columns(ch, ["%-20s " % s for s in GROUP_TABLE[gn].spells if s is not None])
+
+
+# C: skills.c check_improve
+def check_improve(ch, sn: int, success: bool, multiplier: int) -> None:
+    from charm.core.rng import number_percent, number_range
+    from charm.data.attributes import INT_APP
+    from charm.entities.handler import get_curr_stat
+    from charm.systems.update import gain_exp
+
+    if ch.is_npc:
+        return
+    sk, learned = SKILL_TABLE[sn], ch.pcdata.learned
+    if (ch.level < sk.skill_level[ch.class_] or sk.rating[ch.class_] == 0
+            or learned[sn] == 0 or learned[sn] == 100):
+        return  # "skill is not known"
+    # "check to see if the character has a chance to learn"
+    chance = 10 * INT_APP[get_curr_stat(ch, C.STAT_INT)].learn
+    chance = c_div(chance, multiplier * sk.rating[ch.class_] * 4)
+    chance += ch.level
+    if number_range(1, 1000) > chance:
+        return
+    # "now that the character has a CHANCE to learn, see if they really have"
+    if success:
+        chance = max(5, min(100 - learned[sn], 95))  # URANGE(5, 100 - learned, 95)
+        if number_percent() < chance:
+            send_to_char("You have become better at %s!\n\r" % sk.name, ch)
+            learned[sn] += 1
+            gain_exp(ch, 2 * sk.rating[ch.class_])
+    else:
+        chance = max(5, min(c_div(learned[sn], 2), 30))
+        if number_percent() < chance:
+            send_to_char("You learn from your mistakes, and your %s skill improves.\n\r" % sk.name, ch)
+            learned[sn] += number_range(1, 3)
+            learned[sn] = min(learned[sn], 100)
+            gain_exp(ch, 2 * sk.rating[ch.class_])

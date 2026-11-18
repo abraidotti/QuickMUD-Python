@@ -29,16 +29,20 @@ The code is organised by topic, not by C file:
 | `olc/` | the online builder | |
 
 So far there are `core/`, `data/`, `world/`, `entities/`, `net/`, `persist/` (player files and the boards),
-`systems/` (`update_handler` and the skill groups) and `commands/` (what login calls). The import rules for the
+`systems/` (`update_handler`, the skill groups, mob program triggers and the bits of fight.c others reach) and
+`commands/` (the interpreter, and look, movement, score, title, prompt, save and quit). The import rules for the
 first three are checked by `tests/test_guards.py`; the rest get rules once the port shows where the C game's
 circular calls land. The first one has: `equip_char` (`entities/`) calls `act()` (`net/`).
 
 `python -m charm --port N --root DIR` runs the game from DIR (which holds `area/`), as the C does from its run
 directory: it boots, listens, greets connections and stops cleanly on SIGTERM or Ctrl-C (Ctrl-Break on Windows).
-Logging in works up to entering the game: new characters (customised or not), old ones from `player/`, the
-ANSI question, and the C's checks on names and passwords. Entering the game ends in `do_look`, which comes with
-the commands (spike PR 5), so the game stops there with `NotPorted`. Only `area_update` runs of the per-pulse
-updates; the game logs the rest at boot (#28).
+Logging in works: new characters (customised or not), old ones from `player/`, the ANSI question, and the C's
+checks on names and passwords. In the game, the interpreter takes the whole command table (generated, in the C's
+order, so a prefix finds the same command), aliases and socials. The commands ported so far are look, exits,
+score, title, prompt, save, quit, the six directions, and what login calls; any other command raises `NotPorted`,
+which stops the game (#32). Only `area_update` runs of the per-pulse updates; the game logs the rest at boot (#28).
+`charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
+with `CHARM_UPDATES=area` for it, so its other updates are off too.
 
 Player files are `persist/player.py`, line by line from `save.c`, so either game loads the other's files
 (`charm_tools port players` checks it both ways). Passwords use `core/crypt.py`, a stdlib-only port of the DES

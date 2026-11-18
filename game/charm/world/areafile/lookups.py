@@ -63,6 +63,7 @@ def prefix_lookup(name: str, names: list[str]) -> int:
     return -1
 
 
+# LATER: use charm.core.strings, which lowers A-Z only as the C's LOWER does; .lower() also lowers bytes over 127
 # C: db.c str_prefix
 def str_prefix_matches(astr: str, bstr: str) -> bool:
     """``!str_prefix(astr, bstr)``: astr is a case-insensitive prefix of bstr (an empty astr always is). Note the

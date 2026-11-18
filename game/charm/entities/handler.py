@@ -1,13 +1,13 @@
-"""handler.c's functions that move characters and objects about, and apply affects: the ones resets reach.
+"""handler.c's functions: moving characters and objects about, affects, finding things by name, and what a
+character can see, carry and do (skills, trust, age). db.c's get_extra_descr is here too.
 
-Several are [partial]. Each unported branch raises NotPorted instead of doing something else. These are the PC-only
-branch (the wield-weight check in affect_modify), the ones that need spells (plague spreading in char_to_room),
-and unequip_char, which nothing reaches yet. A boot never reaches them; the differential check would fail if it
-did. equip_char's anti-alignment zap is ported: boot reaches it, and its act() messages reach nobody.
+A few are [partial]; each unported branch raises NotPorted instead of doing something else: plague spreading in
+char_to_room (it needs spells), a switched character in extract_char (do_return), and get_skill's daze with
+sn -1, where the C reads before the start of skill_table.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Ported from src/handler.c. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Ported from src/handler.c, src/db.c. Licence terms: README.md#licence-terms and doc/.
 """
 
 from __future__ import annotations
@@ -24,7 +24,11 @@ from charm.world.index import Affect, ObjIndex, Room
 from charm.data.attributes import STR_APP
 from charm.data.classes import CLASS_TABLE
 from charm.data.races import PC_RACE_TABLE
-from charm.world.lookup import race_lookup, skill_lookup
+from charm.world.lookup import GSN, race_lookup, skill_lookup
+from charm.core.rng import number_percent
+from charm.data.attributes import DEX_APP
+from charm.data.skills import SKILL_TABLE
+from charm.entities import game as game_module
 
 
 def is_affected(ch: Char, bit: int) -> bool:
@@ -149,9 +153,13 @@ def affect_to_obj(obj: Obj, paf: Affect) -> None:
 
 # C: handler.c char_to_room [partial]
 def char_to_room(ch: Char, room: Room) -> None:
-    """[partial]: a NULL room (sent to the temple) and plague spreading to the room aren't ported."""
+    """[partial]: plague spreading to the room needs saves_spell and affect_join, which aren't ported."""
     if room is None:
-        raise NotPorted("handler.c char_to_room: NULL room")
+        bug("Char_to_room: NULL.", 0)
+        temple = game_module.current.index.get_room_index(C.ROOM_VNUM_TEMPLE)
+        if temple is not None:
+            char_to_room(ch, temple)
+        return
     ch.in_room = room
     # LATER: lists with insert(0) keep the C's head-first order but are O(n); a deque, or a linked list like the
     # C's, once things leave the world (char_list, object_list, people, contents, carrying, contains)
@@ -246,9 +254,8 @@ def is_evil(ch: Char) -> bool:
     return ch.alignment <= -350
 
 
-# C: handler.c equip_char [partial]
+# C: handler.c equip_char
 def equip_char(ch: Char, obj: Obj, wear: int) -> None:
-    """[partial]: the anti-alignment zap needs act(), which isn't ported."""
     if get_eq_char(ch, wear) is not None:
         bug("Equip_char: already equipped (%d).", wear)
         return
@@ -321,9 +328,8 @@ def is_immortal(ch: Char) -> bool:
     return get_trust(ch) >= C.LEVEL_IMMORTAL
 
 
-# C: handler.c can_see [partial]
+# C: handler.c can_see
 def can_see(ch: Char, victim: Char) -> bool:
-    """[partial]: seeing a sneaking character is a skill roll (get_skill, get_curr_stat), not ported yet."""
     if ch is victim:
         return True
     if get_trust(ch) < victim.invis_level:
@@ -339,7 +345,12 @@ def can_see(ch: Char, victim: Char) -> bool:
     if is_affected(victim, C.AFF_INVISIBLE) and not is_affected(ch, C.AFF_DETECT_INVIS):
         return False
     if is_affected(victim, C.AFF_SNEAK) and not is_affected(ch, C.AFF_DETECT_HIDDEN) and victim.fighting is None:
-        raise NotPorted("handler.c can_see: the roll to notice a sneaking character")
+        chance = get_skill(victim, GSN["gsn_sneak"])
+        chance += c_div(get_curr_stat(victim, C.STAT_DEX) * 3, 2)
+        chance -= get_curr_stat(ch, C.STAT_INT) * 2
+        chance -= ch.level - c_div(victim.level * 3, 2)
+        if number_percent() < chance:
+            return False
     if is_affected(victim, C.AFF_HIDE) and not is_affected(ch, C.AFF_DETECT_HIDDEN) and victim.fighting is None:
         return False
     return True
@@ -669,3 +680,277 @@ def reset_char(ch: Char) -> None:
     if ch.sex < 0 or ch.sex > 2:  # "make sure sex is RIGHT!!!!"
         ch.sex = pc.true_sex
 
+
+
+# C: handler.c get_skill [partial]
+def get_skill(ch: Char, sn: int) -> int:
+    """[partial]: a dazed character with sn -1 reads skill_table[-1] in the C, before the array: raises NotPorted."""
+    if sn == -1:  # "shorthand for level based skills"
+        skill = c_div(ch.level * 5, 2)
+    elif sn < -1 or sn > C.MAX_SKILL:
+        bug("Bad sn %d in get_skill.", sn)
+        skill = 0
+    elif not ch.is_npc:
+        skill = 0 if ch.level < SKILL_TABLE[sn].skill_level[ch.class_] else ch.pcdata.learned[sn]
+    else:  # mobiles
+        g, off, flags = GSN, ch.off_flags, ch.act
+        if SKILL_TABLE[sn].spell_fun != "spell_null":
+            skill = 40 + 2 * ch.level
+        elif sn in (g["gsn_sneak"], g["gsn_hide"]):
+            skill = ch.level * 2 + 20
+        elif (sn == g["gsn_dodge"] and off & C.OFF_DODGE) or (sn == g["gsn_parry"] and off & C.OFF_PARRY):
+            skill = ch.level * 2
+        elif sn == g["gsn_shield_block"]:
+            skill = 10 + 2 * ch.level
+        elif sn == g["gsn_second_attack"] and flags & (C.ACT_WARRIOR | C.ACT_THIEF):
+            skill = 10 + 3 * ch.level
+        elif sn == g["gsn_third_attack"] and flags & C.ACT_WARRIOR:
+            skill = 4 * ch.level - 40
+        elif sn == g["gsn_hand_to_hand"]:
+            skill = 40 + 2 * ch.level
+        elif sn == g["gsn_trip"] and off & C.OFF_TRIP:
+            skill = 10 + 3 * ch.level
+        elif sn == g["gsn_bash"] and off & C.OFF_BASH:
+            skill = 10 + 3 * ch.level
+        elif sn == g["gsn_disarm"] and (off & C.OFF_DISARM or flags & (C.ACT_WARRIOR | C.ACT_THIEF)):
+            skill = 20 + 3 * ch.level
+        elif sn == g["gsn_berserk"] and off & C.OFF_BERSERK:
+            skill = 3 * ch.level
+        elif sn == g["gsn_kick"]:
+            skill = 10 + 3 * ch.level
+        elif sn == g["gsn_backstab"] and flags & C.ACT_THIEF:
+            skill = 20 + 2 * ch.level
+        elif sn in (g["gsn_rescue"], g["gsn_recall"]):
+            skill = 40 + ch.level
+        elif sn in (g["gsn_sword"], g["gsn_dagger"], g["gsn_spear"], g["gsn_mace"], g["gsn_axe"], g["gsn_flail"],
+                    g["gsn_whip"], g["gsn_polearm"]):
+            skill = 40 + c_div(5 * ch.level, 2)
+        else:
+            skill = 0
+    if ch.daze > 0:
+        if sn == -1:
+            raise NotPorted("handler.c get_skill: daze with sn -1 (reads skill_table[-1])")
+        skill = c_div(skill, 2) if SKILL_TABLE[sn].spell_fun != "spell_null" else c_div(2 * skill, 3)
+    if not ch.is_npc and ch.pcdata.condition[C.COND_DRUNK] > 10:
+        skill = c_div(9 * skill, 10)
+    return 0 if skill < 0 else (100 if skill > 100 else skill)
+
+
+# C: handler.c get_age
+def get_age(game: Game, ch: Char) -> int:
+    return 17 + c_div(ch.played + int32(game.current_time - ch.logon), 72000)
+
+
+# C: handler.c can_carry_n
+def can_carry_n(ch: Char) -> int:
+    if not ch.is_npc and ch.level >= C.LEVEL_IMMORTAL:
+        return 1000
+    if ch.is_npc and ch.act & C.ACT_PET:
+        return 0
+    return C.MAX_WEAR + 2 * get_curr_stat(ch, C.STAT_DEX) + ch.level
+
+
+# C: handler.c can_carry_w
+def can_carry_w(ch: Char) -> int:
+    if not ch.is_npc and ch.level >= C.LEVEL_IMMORTAL:
+        return 10000000
+    if ch.is_npc and ch.act & C.ACT_PET:
+        return 0
+    return STR_APP[get_curr_stat(ch, C.STAT_STR)].carry * 10 + ch.level * 25
+
+
+def get_carry_weight(ch: Char) -> int:
+    """get_carry_weight: carried weight plus the coins' (silver / 10 and gold * 2 / 5)."""
+    return ch.carry_weight + c_div(ch.silver, 10) + c_div(ch.gold * 2, 5)
+
+
+def is_awake(ch: Char) -> bool:
+    """IS_AWAKE."""
+    return ch.position > C.POS_SLEEPING
+
+
+def get_ac(ch: Char, kind: int) -> int:
+    """GET_AC: armour, plus the dexterity bonus while awake."""
+    return ch.armor[kind] + (DEX_APP[get_curr_stat(ch, C.STAT_DEX)].defensive if is_awake(ch) else 0)
+
+
+def get_hitroll(ch: Char) -> int:
+    """GET_HITROLL."""
+    return ch.hitroll + STR_APP[get_curr_stat(ch, C.STAT_STR)].tohit
+
+
+def get_damroll(ch: Char) -> int:
+    """GET_DAMROLL."""
+    return ch.damroll + STR_APP[get_curr_stat(ch, C.STAT_STR)].todam
+
+
+def is_builder(ch: Char, area) -> bool:
+    """IS_BUILDER: not switched, and security high enough or named (or "All") in the area's builders."""
+    switched = ch.desc is not None and ch.desc.original is not None
+    return (not ch.is_npc and not switched
+            and (ch.pcdata.security >= area.security or ch.name in area.builders or "All" in area.builders))
+
+
+# C: handler.c char_from_room
+def char_from_room(ch: Char) -> None:
+    room = ch.in_room
+    if room is None:
+        bug("Char_from_room: NULL.", 0)
+        return
+    if not ch.is_npc:
+        room.area.nplayer = sh_int(room.area.nplayer - 1)
+    obj = get_eq_char(ch, C.WEAR_LIGHT)
+    if obj is not None and obj.item_type == C.ITEM_LIGHT and obj.value[2] != 0 and room.light > 0:
+        room.light = sh_int(room.light - 1)
+    if ch in room.people:
+        room.people.remove(ch)
+    else:
+        bug("Char_from_room: ch not found.", 0)
+    ch.in_room = None
+    ch.on = None  # "sanity check!"
+
+
+# C: handler.c extract_char [partial]
+def extract_char(game: Game, ch: Char, f_pull: bool) -> None:
+    """[partial]: a switched character (do_return) raises NotPorted."""
+    from charm.commands.comm import die_follower, nuke_pets
+    from charm.data.clans import CLAN_TABLE
+    from charm.entities.create import free_char
+    from charm.systems.fight import stop_fighting
+
+    nuke_pets(game, ch)
+    ch.pet = None  # "just in case"
+    if f_pull:
+        die_follower(game, ch)
+    stop_fighting(game, ch, True)
+    for obj in list(ch.carrying):
+        extract_obj(game, obj)
+    if ch.in_room is not None:
+        char_from_room(ch)
+    if not f_pull:  # "Death room is set in the clan tabe now"
+        char_to_room(ch, game.index.get_room_index(CLAN_TABLE[ch.clan].hall))
+        return
+    if ch.is_npc:
+        ch.index.count = sh_int(ch.index.count - 1)
+    if ch.desc is not None and ch.desc.original is not None:
+        raise NotPorted("handler.c extract_char: do_return (a switched character)")
+    for wch in game.char_list:
+        if wch.reply is ch:
+            wch.reply = None
+        if ch.mprog_target is wch:
+            wch.mprog_target = None
+    if ch in game.char_list:
+        game.char_list.remove(ch)
+    else:
+        bug("Extract_char: char not found.", 0)
+        return
+    if ch.desc is not None:
+        ch.desc.character = None
+    free_char(game, ch)
+
+
+# C: handler.c get_char_room
+def get_char_room(ch: Char, argument: str) -> Char | None:
+    from charm.commands.interp import number_argument
+    from charm.core.strings import str_cmp
+
+    number, arg = number_argument(argument)
+    if str_cmp(arg, "self"):
+        return ch
+    count = 0
+    for rch in ch.in_room.people:
+        if not can_see(ch, rch) or not is_name(arg, rch.name):
+            continue
+        count += 1
+        if count == number:
+            return rch
+    return None
+
+
+# C: handler.c get_obj_list
+def get_obj_list(ch: Char, argument: str, objs: list[Obj]) -> Obj | None:
+    from charm.commands.interp import number_argument
+
+    number, arg = number_argument(argument)
+    count = 0
+    for obj in objs:
+        if can_see_obj(ch, obj) and is_name(arg, obj.name):
+            count += 1
+            if count == number:
+                return obj
+    return None
+
+
+# C: handler.c get_obj_carry
+def get_obj_carry(ch: Char, argument: str, viewer: Char) -> Obj | None:
+    from charm.commands.interp import number_argument
+
+    number, arg = number_argument(argument)
+    count = 0
+    for obj in ch.carrying:
+        if obj.wear_loc == C.WEAR_NONE and can_see_obj(viewer, obj) and is_name(arg, obj.name):
+            count += 1
+            if count == number:
+                return obj
+    return None
+
+
+# C: handler.c get_obj_wear
+def get_obj_wear(ch: Char, argument: str) -> Obj | None:
+    from charm.commands.interp import number_argument
+
+    number, arg = number_argument(argument)
+    count = 0
+    for obj in ch.carrying:
+        if obj.wear_loc != C.WEAR_NONE and can_see_obj(ch, obj) and is_name(arg, obj.name):
+            count += 1
+            if count == number:
+                return obj
+    return None
+
+
+# C: handler.c get_obj_here
+def get_obj_here(ch: Char, argument: str) -> Obj | None:
+    obj = get_obj_list(ch, argument, ch.in_room.contents)
+    if obj is not None:
+        return obj
+    obj = get_obj_carry(ch, argument, ch)
+    if obj is not None:
+        return obj
+    return get_obj_wear(ch, argument)
+
+
+# C: handler.c room_is_private
+def room_is_private(room: Room) -> bool:
+    if room.owner:
+        return True
+    count = len(room.people)
+    if room.room_flags & C.ROOM_PRIVATE and count >= 2:
+        return True
+    if room.room_flags & C.ROOM_SOLITARY and count >= 1:
+        return True
+    if room.room_flags & C.ROOM_IMP_ONLY:
+        return True
+    return False
+
+
+# C: handler.c is_room_owner
+def is_room_owner(ch: Char, room: Room) -> bool:
+    if not room.owner:
+        return False
+    return is_name(ch.name, room.owner)
+
+
+# C: handler.c affect_strip
+def affect_strip(ch: Char, sn: int) -> None:
+    for paf in list(ch.affected):
+        if paf.type == sn:
+            affect_remove(ch, paf)
+
+
+# C: db.c get_extra_descr
+def get_extra_descr(name: str, eds) -> str | None:
+    for ed in eds:
+        if is_name(name, ed.keyword):
+            return ed.description
+    return None

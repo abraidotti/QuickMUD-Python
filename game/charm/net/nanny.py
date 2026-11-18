@@ -55,6 +55,7 @@ def _upper(c: str) -> str:
     return chr(ord(c) - 32) if "a" <= c <= "z" else c
 
 
+# LATER: use charm.core.strings, which lowers A-Z only as the C's LOWER does; .lower() also lowers bytes over 127
 def _str_cmp(a: str, b: str) -> bool:
     """str_cmp == 0: equal, ignoring case."""
     return a.lower() == b.lower()

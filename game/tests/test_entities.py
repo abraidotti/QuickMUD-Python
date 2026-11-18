@@ -183,10 +183,12 @@ class Resets(unittest.TestCase):
         # value[4] is 50%, applied to each item and truncated each time: 10 + 3 * 3, not 10 + 21 / 2
         self.assertEqual(handler.get_obj_weight(sack), 10 + 3 * (7 * 50 // 100))
 
-    def test_act_trigger_in_the_room_is_not_ported(self):
-        with self.assertRaises(NotPorted) as e:
-            boot_area(trigger="M act 30050 hello~\n", progs=PROGS)
-        self.assertIn("act_new", str(e.exception))
+    def test_act_trigger_runs_only_on_its_phrase(self):
+        # The zap's act() messages reach the guards. A trigger whose phrase isn't in them does nothing, as in the C.
+        boot_area(trigger="M act 30050 hello~\n", progs=PROGS)
+        with self.assertRaises(NotPorted) as e:  # running the program isn't ported
+            boot_area(trigger="M act 30050 zapped~\n", progs=PROGS)
+        self.assertIn("program_flow", str(e.exception))
 
 
 class OwnStrings(unittest.TestCase):

@@ -106,11 +106,19 @@ class Loop(unittest.TestCase):
 
 
 class PulseStats(unittest.TestCase):
-    def test_logs_mean_and_max(self):
+    def test_logs_each_minute_and_the_run(self):
         stats = server.PulseStats(every=0)
         with log.capture() as lines:
             stats.add(0.002)
-        self.assertEqual(lines, ["Pulse work: mean 2.00 ms, max 2.00 ms over 1 pulses"])
+        self.assertEqual(lines, ["Pulse work: median 2.00 ms, p95 2.00 ms, max 2.00 ms, mean 2.00 ms over 1 pulses"])
+        stats.every = 3600
+        for ms in range(1, 101):  # 1 to 100 ms, after the 2 above
+            stats.add(ms / 1000)
+        with log.capture() as lines:
+            stats.finish()
+        # 101 pulses: the median is the 51st, the 95th percentile the 96th (nearest rank on index 0.95 * 100)
+        self.assertEqual(lines, ["Pulse work over the run: median 50.00 ms, p95 95.00 ms, max 100.00 ms, "
+                                 "mean 50.02 ms over 101 pulses"])
 
 
 class QmConfig(unittest.TestCase):
