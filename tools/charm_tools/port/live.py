@@ -1,4 +1,4 @@
-"""Running the C game and the Python game side by side, for port login and port players.
+"""Running the C game and the Python game side by side, for port login, port players and port commands.
 
 A game starts fresh for each use, from the same fixtures (tools/fixtures: qmconfig.rc, the player files) and the
 same CHARM_SEED:
@@ -79,14 +79,17 @@ class Session:
 class CGame:
     """The C game in a container. Use as a context manager; player files can be copied in and out."""
 
-    def __init__(self, image: str, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",)):
+    def __init__(self, image: str, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",),
+                 area_updates_only: bool = False):
         self.image, self.qmconfig, self.players = image, qmconfig, players
+        # CHARM_UPDATES=area (#32): only area_update runs, as in the Python game, so the worlds stay the same
+        self.env = ["-e", "CHARM_UPDATES=area"] if area_updates_only else []
 
     def __enter__(self):
         self.port = free_port()
         self.name = f"charm-port-{self.port}"
         docker("create", "--init", "--name", self.name, "-p", f"127.0.0.1:{self.port}:4000", "-e",
-               f"CHARM_SEED={SEED}", self.image)
+               f"CHARM_SEED={SEED}", *self.env, self.image)
         if self.qmconfig == "fixture":
             docker("cp", str(fixtures() / "qmconfig.rc"), f"{self.name}:/opt/charm/area/qmconfig.rc")
         for who in self.players:
@@ -110,8 +113,9 @@ class CGame:
 class PyGame:
     """The Python game, run as python -m charm from a throwaway root."""
 
-    def __init__(self, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",)):
-        self.qmconfig, self.players = qmconfig, players
+    def __init__(self, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",),
+                 args: tuple[str, ...] = ()):
+        self.qmconfig, self.players, self.args = qmconfig, players, args
 
     def __enter__(self):
         self.root = Path(tempfile.mkdtemp(prefix="charm-port-"))
@@ -126,19 +130,23 @@ class PyGame:
         env = dict(os.environ, CHARM_SEED=SEED, PYTHONPATH=str(game_dir()))
         flags = subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
         self.log = open(self.root / "log" / "python.log", "wb")
-        self.proc = subprocess.Popen([sys.executable, "-m", "charm", "--port", str(self.port), "--root",
-                                      str(self.root)], env=env, stdout=self.log, stderr=subprocess.STDOUT,
-                                     creationflags=flags, start_new_session=os.name != "nt")
+        argv = [sys.executable, "-m", "charm", "--port", str(self.port), "--root", str(self.root), *self.args]
+        self.proc = subprocess.Popen(argv, env=env, stdout=self.log, stderr=subprocess.STDOUT, creationflags=flags,
+                                     start_new_session=os.name != "nt")
         return self
 
     def session(self) -> Session:
         return Session(self.port)
 
     def game_log(self) -> str:
-        self.log.flush()
+        if not self.log.closed:
+            self.log.flush()
         return (self.root / "log" / "python.log").read_text(encoding="latin-1")
 
-    def __exit__(self, *exc):
+    def stop(self) -> None:
+        """Ask the game to stop (SIGTERM, or CTRL_BREAK on Windows); kill the whole process tree if it won't."""
+        if self.log.closed:
+            return
         try:
             if self.proc.poll() is None:
                 self.proc.send_signal(signal.CTRL_BREAK_EVENT if os.name == "nt" else signal.SIGTERM)
@@ -150,4 +158,7 @@ class PyGame:
                 os.killpg(self.proc.pid, signal.SIGKILL)
             self.proc.wait(timeout=10)
         self.log.close()
+
+    def __exit__(self, *exc):
+        self.stop()
         shutil.rmtree(self.root, ignore_errors=True)
