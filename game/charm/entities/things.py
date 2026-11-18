@@ -87,6 +87,10 @@ class Char:
     spec_fun: str | None = None
     mprog_target: "Char | None" = None
     in_room: Room | None = None
+    was_in_room: Room | None = None
+    fighting: "Char | None" = None
+    desc: object | None = None  # the connection (charm.net.descriptor.Descriptor); None for a mob or link-dead
+    pcdata: object | None = None  # PC_DATA, with the player files (spike PR 4)
     carrying: list["Obj"] = field(default_factory=list)  # head first
     affected: list[Affect] = field(default_factory=list)  # head first
 

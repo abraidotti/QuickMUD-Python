@@ -15,6 +15,7 @@ from charm.core.cint import c_div, c_mod
 from charm.core.errors import NotPorted
 from charm.core.rng import init_mm, number_range
 from charm.data import constants as C
+from charm.entities import game as game_module
 from charm.entities.game import Game, TimeInfo, WeatherInfo
 from charm.entities.resets import area_update
 from charm.world.areafile.world import load_world
@@ -79,6 +80,7 @@ def boot_db(area_dir: Path, current_time: int | None = None, environ: dict | Non
         raise BootFailed(str(world.fatal))
 
     game = Game(build_index(world), now, time_info=time_info, weather_info=weather_info)
+    game_module.current = game
     if any(not m.new_format for m in game.index.mobs.values()) or any(
             not o.new_format for o in game.index.objs.values()):
         raise NotPorted("db2.c convert_objects: old-format prototypes")

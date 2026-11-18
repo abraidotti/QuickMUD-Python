@@ -18,6 +18,7 @@ from charm.core.log import bug
 from charm.net.act import act
 from charm.data import constants as C
 from charm.entities.game import Game, WeatherInfo
+from charm.entities.game import weather as game_weather
 from charm.entities.things import Char, Obj
 from charm.world.index import Affect, ObjIndex, Room
 from charm.world.lookup import skill_lookup
@@ -279,7 +280,10 @@ def get_obj_type(game: Game, index: ObjIndex) -> Obj | None:
 
 
 # C: handler.c room_is_dark
-def room_is_dark(room: Room, weather: WeatherInfo) -> bool:
+def room_is_dark(room: Room, weather: WeatherInfo | None = None) -> bool:
+    """weather is weather_info; without it, the current game's."""
+    if weather is None:
+        weather = game_weather()
     if room.light > 0:
         return False
     if room.room_flags & C.ROOM_DARK:
@@ -287,3 +291,84 @@ def room_is_dark(room: Room, weather: WeatherInfo) -> bool:
     if room.sector_type in (C.SECT_INSIDE, C.SECT_CITY):
         return False
     return weather.sunlight in (C.SUN_SET, C.SUN_DARK)
+
+
+# C: handler.c get_trust
+def get_trust(ch: Char) -> int:
+    if ch.desc is not None and getattr(ch.desc, "original", None) is not None:
+        ch = ch.desc.original
+    if ch.trust:
+        return ch.trust
+    if ch.is_npc and ch.level >= C.LEVEL_HERO:
+        return C.LEVEL_HERO - 1
+    return ch.level
+
+
+def is_immortal(ch: Char) -> bool:
+    """IS_IMMORTAL."""
+    return get_trust(ch) >= C.LEVEL_IMMORTAL
+
+
+# C: handler.c can_see [partial]
+def can_see(ch: Char, victim: Char) -> bool:
+    """[partial]: seeing a sneaking character is a skill roll (get_skill, get_curr_stat), not ported yet."""
+    if ch is victim:
+        return True
+    if get_trust(ch) < victim.invis_level:
+        return False
+    if get_trust(ch) < victim.incog_level and ch.in_room is not victim.in_room:
+        return False
+    if (not ch.is_npc and ch.act & C.PLR_HOLYLIGHT) or (ch.is_npc and is_immortal(ch)):
+        return True
+    if is_affected(ch, C.AFF_BLIND):
+        return False
+    if room_is_dark(ch.in_room) and not is_affected(ch, C.AFF_INFRARED):
+        return False
+    if is_affected(victim, C.AFF_INVISIBLE) and not is_affected(ch, C.AFF_DETECT_INVIS):
+        return False
+    if is_affected(victim, C.AFF_SNEAK) and not is_affected(ch, C.AFF_DETECT_HIDDEN) and victim.fighting is None:
+        raise NotPorted("handler.c can_see: the roll to notice a sneaking character")
+    if is_affected(victim, C.AFF_HIDE) and not is_affected(ch, C.AFF_DETECT_HIDDEN) and victim.fighting is None:
+        return False
+    return True
+
+
+# C: handler.c can_see_obj
+def can_see_obj(ch: Char, obj: Obj) -> bool:
+    if not ch.is_npc and ch.act & C.PLR_HOLYLIGHT:
+        return True
+    if obj.extra_flags & C.ITEM_VIS_DEATH:
+        return False
+    if is_affected(ch, C.AFF_BLIND) and obj.item_type != C.ITEM_POTION:
+        return False
+    if obj.item_type == C.ITEM_LIGHT and obj.value[2] != 0:
+        return True
+    if obj.extra_flags & C.ITEM_INVIS and not is_affected(ch, C.AFF_DETECT_INVIS):
+        return False
+    if is_obj_stat(obj, C.ITEM_GLOW):
+        return True
+    if room_is_dark(ch.in_room) and not is_affected(ch, C.AFF_DARK_VISION):
+        return False
+    return True
+
+
+# C: handler.c can_see_room
+def can_see_room(ch: Char, room: Room) -> bool:
+    if room.room_flags & C.ROOM_IMP_ONLY and get_trust(ch) < C.MAX_LEVEL:
+        return False
+    if room.room_flags & C.ROOM_GODS_ONLY and not is_immortal(ch):
+        return False
+    if room.room_flags & C.ROOM_HEROES_ONLY and not is_immortal(ch):
+        return False
+    if room.room_flags & C.ROOM_NEWBIES_ONLY and ch.level > 5 and not is_immortal(ch):
+        return False
+    if not is_immortal(ch) and room.clan and ch.clan != room.clan:
+        return False
+    return True
+
+
+def pers(ch: Char, looker: Char) -> str:
+    """PERS: what looker calls ch."""
+    if can_see(looker, ch):
+        return ch.short_descr if ch.is_npc else ch.name
+    return "someone"
