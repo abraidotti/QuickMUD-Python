@@ -2,8 +2,8 @@
 
 What comm.c's input and output functions do, byte for byte, is compared with the C game by charm_tools port io
 (tools/oracle/iocases.txt), and the live greeting by port greeting. These check the loop itself: a connection gets
-the greeting, a shutdown signal says goodbye and closes it, and a line of input reaches nanny, which isn't ported
-yet, so the game stops with NotPorted (#28, decision 3).
+the greeting, a shutdown signal says goodbye and closes it, and a line of input reaches nanny. Logging in, byte for
+byte, is charm_tools port login's.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -18,7 +18,6 @@ from pathlib import Path
 
 from charm.commands.interp import one_argument
 from charm.core import log
-from charm.core.errors import NotPorted
 from charm.entities.boot import boot_db
 from charm.net import server
 from charm.net.config import Config, qmconfig_read
@@ -64,7 +63,9 @@ class Loop(unittest.TestCase):
                     client(game, s, results)
             except Exception as e:  # noqa: BLE001 (reported by the test)
                 results["error"] = e
-                game.shutdown_signal = 15
+            finally:
+                if not game.shutdown_signal:  # whatever happened, the loop stops: a test can't hang the suite
+                    game.shutdown_signal = 15
 
         t = threading.Thread(target=talk)
         t.start()
@@ -94,14 +95,14 @@ class Loop(unittest.TestCase):
         self.assertEqual(game.descriptor_list, [])
         self.assertTrue(game.merc_down)
 
-    def test_input_reaches_nanny_which_is_not_ported(self):
+    def test_a_name_goes_to_nanny(self):
         def client(game, s, results):
             recv_until(s, b"Hello, test!")
             s.sendall(b"bob\n")
+            results["question"] = recv_until(s, b"(Y/N)? ")
 
-        with self.assertRaises(NotPorted) as e:
-            self.run_loop(client)
-        self.assertIn("nanny", str(e.exception))
+        _, results, _ = self.run_loop(client)
+        self.assertTrue(results["question"].endswith(b"Did I get that right, Bob (Y/N)? "))
 
 
 class PulseStats(unittest.TestCase):

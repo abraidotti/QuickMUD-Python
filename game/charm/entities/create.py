@@ -195,3 +195,20 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     p.count = sh_int(p.count + 1)
     obj.cost = int32(obj.cost)
     return obj
+
+
+# C: recycle.c free_char
+def free_char(game: Game, ch: Char) -> None:
+    """Extract what it carries, remove its affects, and invalidate it (the memory is Python's to free)."""
+    from charm.entities.handler import affect_remove, extract_obj
+
+    if not ch.valid:
+        return
+    if ch.is_npc:
+        game.mobile_count -= 1
+    for obj in list(ch.carrying):
+        extract_obj(game, obj)
+    for paf in list(ch.affected):
+        affect_remove(ch, paf)
+    ch.valid = False
+

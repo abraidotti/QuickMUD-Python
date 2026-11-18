@@ -90,7 +90,14 @@ class Char:
     was_in_room: Room | None = None
     fighting: "Char | None" = None
     desc: object | None = None  # the connection (charm.net.descriptor.Descriptor); None for a mob or link-dead
-    pcdata: object | None = None  # PC_DATA, with the player files (spike PR 4)
+    pcdata: "PCData | None" = None  # a player's; None for a mob
+    gen_data: "GenData | None" = None  # while customising a new character
+    pet: "Char | None" = None
+    leader: "Char | None" = None
+    master: "Char | None" = None
+    on: "Obj | None" = None  # the furniture it's on
+    valid: bool = True  # VALIDATE / INVALIDATE: free_char invalidates
+    own_strings: set[str] = field(default_factory=set)  # a pet's strings that aren't its prototype's (see Obj)
     carrying: list["Obj"] = field(default_factory=list)  # head first
     affected: list[Affect] = field(default_factory=list)  # head first
 
@@ -98,6 +105,55 @@ class Char:
     def is_npc(self) -> bool:
         """IS_NPC."""
         return bool(self.act & C.ACT_IS_NPC)
+
+
+COLOUR_FIELDS = (
+    "text", "auction", "auction_text", "gossip", "gossip_text", "music", "music_text", "question", "question_text",
+    "answer", "answer_text", "quote", "quote_text", "immtalk_text", "immtalk_type", "info", "say", "say_text", "tell",
+    "tell_text", "reply", "reply_text", "gtell_text", "gtell_type", "wiznet", "room_title", "room_text", "room_exits",
+    "room_things", "prompt", "fight_death", "fight_yhit", "fight_ohit", "fight_thit", "fight_skill")
+
+
+@dataclass(eq=False)
+class PCData:
+    """PC_DATA. Each colour setting is [bright, colour, beep], as the C's int field[3]."""
+
+    pwd: str = ""
+    bamfin: str = ""
+    bamfout: str = ""
+    title: str = ""
+    perm_hit: int = 0
+    perm_mana: int = 0
+    perm_move: int = 0
+    true_sex: int = 0
+    last_level: int = 0
+    condition: list[int] = field(default_factory=lambda: [0] * 4)
+    learned: list[int] = field(default_factory=lambda: [0] * C.MAX_SKILL)
+    group_known: list[bool] = field(default_factory=lambda: [False] * C.MAX_GROUP)
+    points: int = 0
+    confirm_delete: bool = False
+    alias: list[str | None] = field(default_factory=lambda: [None] * C.MAX_ALIAS)
+    alias_sub: list[str | None] = field(default_factory=lambda: [None] * C.MAX_ALIAS)
+    board: int = 0  # an index into charm.data.boards.BOARDS (the C keeps a pointer)
+    last_note: list[int] = field(default_factory=lambda: [0] * C.MAX_BOARD)
+    in_progress: object | None = None
+    security: int = 0
+    colours: dict[str, list[int]] = field(default_factory=lambda: {f: [0, 0, 0] for f in COLOUR_FIELDS})
+
+    def __getattr__(self, name):  # pcdata.prompt -> its colour triple, as colour() reads it
+        colours = self.__dict__.get("colours")
+        if colours is not None and name in colours:
+            return colours[name]
+        raise AttributeError(name)
+
+
+@dataclass(eq=False)
+class GenData:
+    """GEN_DATA: what a new character has picked while customising."""
+
+    skill_chosen: list[bool] = field(default_factory=lambda: [False] * C.MAX_SKILL)
+    group_chosen: list[bool] = field(default_factory=lambda: [False] * C.MAX_GROUP)
+    points_chosen: int = 0
 
 
 @dataclass(eq=False)
@@ -128,6 +184,9 @@ class Obj:
     material: str = ""
     timer: int = 0
     value: list[int] = field(default_factory=lambda: [0] * 5)
+    # Which strings are the object's own, not its prototype's: fwrite_obj writes Name, ShD and Desc when the C's
+    # pointers differ, and a string read from a player file is always a new one, even with the same text.
+    own_strings: set[str] = field(default_factory=set)
 
 
 # C: recycle.c new_char
@@ -138,3 +197,13 @@ def new_char(current_time: int) -> Char:
 # C: recycle.c new_obj
 def new_obj() -> Obj:
     return Obj()
+
+
+# C: recycle.c new_pcdata
+def new_pcdata() -> PCData:
+    return PCData()
+
+
+# C: recycle.c new_gen_data
+def new_gen_data() -> GenData:
+    return GenData()

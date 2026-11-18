@@ -18,6 +18,7 @@ from charm.data import constants as C
 from charm.entities import game as game_module
 from charm.entities.game import Game, TimeInfo, WeatherInfo
 from charm.entities.resets import area_update
+from charm.persist.boards import load_boards
 from charm.world.areafile.world import load_world
 from charm.world.index import build_index
 
@@ -65,8 +66,8 @@ def set_time_and_weather(t: TimeInfo, w: WeatherInfo, current_time: int) -> None
 def boot_db(area_dir: Path, current_time: int | None = None, environ: dict | None = None) -> Game:
     """Boot the world from area_dir (the directory holding area.lst), as the C game does from its area/.
 
-    [partial]: skill numbers (the gsn globals) aren't assigned, because nothing ported uses them yet. Notes, bans
-    and songs aren't loaded."""
+    [partial]: bans and songs aren't loaded, and a board with notes raises NotPorted (load_boards). The skill
+    numbers (the gsn globals) are charm.world.lookup.GSN, made from skill_table."""
     now = int(time.time()) if current_time is None else current_time
     log.clock = lambda: now
     init_mm(environ, log.log_string)
@@ -79,10 +80,11 @@ def boot_db(area_dir: Path, current_time: int | None = None, environ: dict | Non
     if world.fatal is not None:
         raise BootFailed(str(world.fatal))
 
-    game = Game(build_index(world), now, time_info=time_info, weather_info=weather_info)
+    game = Game(build_index(world), now, time_info=time_info, weather_info=weather_info, area_dir=Path(area_dir))
     game_module.current = game
     if any(not m.new_format for m in game.index.mobs.values()) or any(
             not o.new_format for o in game.index.objs.values()):
         raise NotPorted("db2.c convert_objects: old-format prototypes")
     area_update(game)
+    load_boards(game)
     return game

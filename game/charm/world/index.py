@@ -117,6 +117,15 @@ class Room:
 
 
 @dataclass(eq=False)
+class Help:
+    """HELP_DATA."""
+
+    level: int
+    keyword: str
+    text: str
+
+
+@dataclass(eq=False)
 class Shop:
     """SHOP_DATA."""
 
@@ -216,6 +225,7 @@ class Index:
     mobs: dict[int, MobIndex]
     objs: dict[int, ObjIndex]
     help_greeting: str | None = None  # the text of the last help whose keyword is "greeting" (load_helps)
+    helps: list["Help"] = field(default_factory=list)  # help_first..help_last, in load order
 
     # C: db.c get_room_index
     def get_room_index(self, vnum: int) -> Room | None:
@@ -347,9 +357,10 @@ def build_index(world: World) -> Index:
                                     e.rs_flags, sh_int(e.key), _s(e.keyword), _s(e.description), d)
         rooms[v].resets = [Reset(rs.command, sh_int(rs.arg1), sh_int(rs.arg2), sh_int(rs.arg3), sh_int(rs.arg4))
                            for rs in world.room_resets.get(v, [])]
-    greeting = None
+    greeting, helps = None, []
     for f in world.files:
         for h in f.helps:
+            helps.append(Help(sh_int(h.level), _s(h.keywords), _s(h.text)))
             if h.keywords.lower() == "greeting":  # load_helps: !str_cmp (pHelp->keyword, "greeting")
-                greeting = _s(h.text)
-    return Index(areas, rooms, mobs, objs, greeting)
+                greeting = helps[-1].text
+    return Index(areas, rooms, mobs, objs, greeting, helps)

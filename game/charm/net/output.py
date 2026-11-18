@@ -225,3 +225,8 @@ def process_output(d: Descriptor, prompt: bool) -> bool:
     ok = write_to_descriptor(d.sock, d.outbuf, d.outtop)
     d.outbuf = ""
     return ok
+
+
+# C: comm.c printf_to_char
+def printf_to_char(ch, fmt: str, *args) -> None:
+    send_to_char(fmt % args if args else fmt, ch)
