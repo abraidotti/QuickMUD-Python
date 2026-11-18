@@ -88,8 +88,13 @@ class RealTree(unittest.TestCase):
         st = status.status()
         partial = {(p.c_file, p.c_name) for p in st.ports if p.partial}
         self.assertIn(("db.c", "boot_db"), partial)
-        self.assertIn(("db2.c", "load_mobiles"), partial)
+        self.assertIn(("db.c", "create_mobile"), partial)
         self.assertNotIn(("db.c", "load_rooms"), partial)
+        self.assertIn(("db.c", "reset_room"), partial)
+        full = {(p.c_file, p.c_name) for p in st.ports if not p.partial}
+        for name in (("db2.c", "load_mobiles"), ("db2.c", "load_objects"), ("db.c", "reset_area"),
+                     ("db.c", "assign_area_vnum"), ("handler.c", "obj_to_obj")):
+            self.assertIn(name, full)
         self.assertTrue(status.MARKER.match("    # C: db2.c load_objects [partial]").group(3))
         self.assertIsNone(status.MARKER.match("# C: db.c load_rooms [partly]"))
 

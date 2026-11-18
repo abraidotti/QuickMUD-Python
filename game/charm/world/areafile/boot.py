@@ -9,12 +9,12 @@ real boot log (see world.py and the ``explore parity`` command).
 Adapted from xania-explorer 90cfc79 areafile/parser.py: the section loop and structure carry over; every loader
 was rewritten from Charm's db.c/db2.c (ROM's formats and checks differ from Xania's throughout).
 
-Not modelled (reported, never guessed): the old #MOBOLD and #OBJOLD formats (no stock area uses them), area.lst's
-"-" (read from stdin), and the first reset pass (area_update) that runs after loading.
+Not modelled (reported, never guessed): the old #MOBOLD and #OBJOLD formats (no stock area uses them), and
+area.lst's "-" (read from stdin). The first reset pass (area_update) is the game's: charm.entities.boot.
 
-load_mobiles and load_objects are marked [partial]: the model keeps what the file says, where the C also changes
-the prototype as it loads (a mob's race flags ORed into its act, aff and other flags, ACT_IS_NPC set, and so on).
-The game needs the C's version; P1's second PR adds it.
+load_mobiles and load_objects come in two halves. This module reads: the model keeps what the file says. Then
+charm.world.index builds the prototypes the C leaves, with a mob's race flags ORed into its own, ACT_IS_NPC set,
+names looked up to numbers, and so on. Both halves carry the C function's marker.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -68,6 +68,7 @@ class Counts:
 class Boot:
     tables: LookupTables
     files: list[AreaFile] = field(default_factory=list)
+    areas: list[AreaHeader] = field(default_factory=list)  # every #AREA and #AREADATA, in load order (area_first)
     rooms: dict[int, Room] = field(default_factory=dict)
     mobs: dict[int, Mob] = field(default_factory=dict)
     objects: dict[int, Obj] = field(default_factory=dict)
@@ -205,9 +206,22 @@ class Boot:
 
     def _add_area(self, af: AreaFile, header: AreaHeader) -> AreaHeader:
         af.header = header  # a second #AREA in one file replaces it here; the game keeps both as areas
+        header.game_min_vnum, header.game_max_vnum = header.min_vnum, header.max_vnum
+        self.areas.append(header)
         self.area_last = header
         self.counts.areas += 1
         return header
+
+    # C: db.c assign_area_vnum
+    def _assign_area_vnum(self, vnum: int) -> None:
+        a = self.area_last
+        if a.game_min_vnum == 0 or a.game_max_vnum == 0:
+            a.game_min_vnum = a.game_max_vnum = vnum
+        if not a.game_min_vnum <= vnum <= a.game_max_vnum:
+            if vnum < a.game_min_vnum:
+                a.game_min_vnum = vnum
+            else:
+                a.game_max_vnum = vnum
 
     # -- #HELPS (load_helps, db.c:603) -------------------------------------------------------------------------
     # C: db.c load_helps
@@ -224,7 +238,7 @@ class Boot:
             self.counts.helps += 1
 
     # -- #MOBILES (load_mobiles, db2.c:190) --------------------------------------------------------------------
-    # C: db2.c load_mobiles [partial]
+    # C: db2.c load_mobiles
     def _load_mobiles(self, r: Reader, af: AreaFile) -> None:
         area = self._need_area(r, "Load_mobiles: no #AREA seen yet.")
         t = self.tables
@@ -297,6 +311,7 @@ class Boot:
                     break
             self.mobs[vnum] = mob
             self._mob_order.append(vnum)
+            self._assign_area_vnum(vnum)
             af.mobs.append(mob)
             self.counts.mobs += 1
             self.counts.mobs_new += 1
@@ -311,7 +326,7 @@ class Boot:
         return Dice(n, s, r.read_number())
 
     # -- #OBJECTS (load_objects, db2.c:379) --------------------------------------------------------------------
-    # C: db2.c load_objects [partial]
+    # C: db2.c load_objects
     def _load_objects(self, r: Reader, af: AreaFile) -> None:
         self._need_area(r, "Load_objects: no #AREA seen yet.")
         t, d = self.tables, self.tables.defines
@@ -380,6 +395,7 @@ class Boot:
                     r.ungetc()
                     break
             self.objects[vnum] = obj
+            self._assign_area_vnum(vnum)
             af.objects.append(obj)
             self.counts.objects += 1
             self.counts.objects_new += 1
@@ -462,7 +478,8 @@ class Boot:
             desc = r.read_string()
             r.read_number()  # area number, ignored
             flags = r.read_flag()
-            room = Room(vnum, name, desc, flags, 0, area=area.name, file=af.filename, line=line)
+            room = Room(vnum, name, desc, flags, 0, area=area.name, area_index=len(self.areas) - 1,
+                        file=af.filename, line=line)
             room.effective_flags = flags | (law if 3000 <= vnum < 3400 else 0)  # "horrible hack"
             room.sector = r.read_number()
             clan_index = 0
@@ -505,6 +522,7 @@ class Boot:
                     raise r.error(f"Load_rooms: vnum {vnum} has flag not 'DES'.")
             self.rooms[vnum] = room
             self._room_order.append(vnum)
+            self._assign_area_vnum(vnum)
             af.rooms.append(room)
             self.counts.rooms += 1
 
