@@ -122,7 +122,7 @@ def _field(text: str) -> Field:
 
 def read_array(path: Path, name: str) -> list[list[Field]]:
     text = _strip_comments(path.read_text(encoding="latin-1"))
-    m = re.search(rf"\b{re.escape(name)}\s*\[[^\]]*\]\s*=\s*\{{", text)
+    m = re.search(rf"\b{re.escape(name)}(?:\s*\[[^\]]*\])+\s*=\s*\{{", text)  # one or more [N]
     if not m:
         raise SourceError(f"no '{name}[] = {{' in {path.name}")
     i, depth, start = m.end(), 1, m.end()
