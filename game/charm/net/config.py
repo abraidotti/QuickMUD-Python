@@ -11,10 +11,11 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from charm.core.log import log_f
+from charm.core.strings import lower, str_cmp, upper
 from charm.world.areafile.reader import Reader
 
 
-@dataclass
+@dataclass  # value: settings read from qmconfig.rc, compared whole by test_net
 class Config:
     """comm.c's mud_ansiprompt, mud_ansicolor, mud_telnetga (0 unless the file sets them) and mud_ipaddress."""
 
@@ -36,14 +37,14 @@ def qmconfig_read(path: Path, config: Config | None = None) -> Config:
     keys = {"ansicolor": "ansicolor", "ansiprompt": "ansiprompt", "telnetga": "telnetga"}
     while True:
         word = "END" if r.at_eof else r.read_word()
-        first = word[:1].upper()
+        first = upper(word[:1])
         if first in ("#", "*"):  # a comment line
             r.read_to_eol()
             continue
-        if first == "E" and word.lower() == "end":
+        if first == "E" and str_cmp(word, "end"):
             return config
         # KEY(): the case's names only, and str_cmp ignores case
-        name = keys.get(word.lower()) if first in ("A", "T") else None
+        name = keys.get(lower(word)) if first in ("A", "T") else None
         if name is not None:
             setattr(config, name, r.read_number())
             continue

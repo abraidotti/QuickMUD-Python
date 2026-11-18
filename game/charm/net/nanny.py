@@ -20,6 +20,7 @@ from charm.commands.wiz import do_outfit
 from charm.core.crypt import crypt
 from charm.core.errors import NotPorted
 from charm.core.log import bug, log_string
+from charm.core.strings import lower, str_cmp, str_prefix, str_suffix
 from charm.data import constants as C
 from charm.data.classes import CLASS_TABLE, TITLE_TABLE
 from charm.data.clans import CLAN_TABLE
@@ -55,12 +56,6 @@ def _upper(c: str) -> str:
     return chr(ord(c) - 32) if "a" <= c <= "z" else c
 
 
-# LATER: use charm.core.strings, which lowers A-Z only as the C's LOWER does; .lower() also lowers bytes over 127
-def _str_cmp(a: str, b: str) -> bool:
-    """str_cmp == 0: equal, ignoring case."""
-    return a.lower() == b.lower()
-
-
 # C: comm.c check_parse_name
 def check_parse_name(game, name: str) -> bool:
     from charm.net.server import close_socket
@@ -68,10 +63,10 @@ def check_parse_name(game, name: str) -> bool:
     if is_exact_name(name, "all auto immortal self someone something the you loner none"):  # reserved words
         return False
     for clan in CLAN_TABLE:  # check clans
-        if clan.name and name[:1].lower() == clan.name[0].lower() and _str_cmp(name, clan.name):
+        if clan.name and lower(name[:1]) == lower(clan.name[0]) and str_cmp(name, clan.name):
             return False
-    if not _str_cmp(capitalize(name), "Alander") and (name.lower().startswith("alan")
-                                                    or name.lower().endswith("alander")):
+    if not str_cmp(capitalize(name), "Alander") and (str_prefix("alan", name)
+                                                    or str_suffix("alander", name)):
         return False
     if len(name) < 2 or len(name) > 12:  # length restrictions
         return False
@@ -87,11 +82,11 @@ def check_parse_name(game, name: str) -> bool:
             adjcaps = True
         else:
             adjcaps = False
-        if c.lower() not in ("i", "l"):
+        if lower(c) not in ("i", "l"):
             ill = False
     if ill:
         return False
-    if cleancaps or (total_caps > len(name) // 2 and len(name) < 3):
+    if cleancaps or (total_caps > len(name) // 2 and len(name) < 3):  # non-negative: a length
         return False
     for m in game.index.mobs.values():  # "Prevent players from naming themselves after mobs."
         if is_name(name, m.player_name):
@@ -100,7 +95,7 @@ def check_parse_name(game, name: str) -> bool:
         count = 0
         for d in list(game.descriptor_list):
             ch = d.character
-            if d.connected != C.CON_PLAYING and ch is not None and ch.name and _str_cmp(ch.name, name):
+            if d.connected != C.CON_PLAYING and ch is not None and ch.name and str_cmp(ch.name, name):
                 count += 1
                 close_socket(d)
         if count:
@@ -112,7 +107,7 @@ def check_parse_name(game, name: str) -> bool:
 # C: comm.c check_reconnect
 def check_reconnect(game, d, name: str, conn: bool) -> bool:
     for ch in game.char_list:
-        if not ch.is_npc and (not conn or ch.desc is None) and _str_cmp(d.character.name, ch.name):
+        if not ch.is_npc and (not conn or ch.desc is None) and str_cmp(d.character.name, ch.name):
             if not conn:
                 d.character.pcdata.pwd = ch.pcdata.pwd
             else:
@@ -136,7 +131,7 @@ def check_playing(game, d, name: str) -> bool:
     for dold in game.descriptor_list:
         who = dold.original if dold.original is not None else dold.character
         if (dold is not d and dold.character is not None and dold.connected != C.CON_GET_NAME
-                and dold.connected != C.CON_GET_OLD_PASSWORD and _str_cmp(name, who.name)):
+                and dold.connected != C.CON_GET_OLD_PASSWORD and str_cmp(name, who.name)):
             write_to_buffer(d, "That character is already playing.\n\r")
             write_to_buffer(d, "Do you wish to connect anyway (Y/N)?")
             d.connected = C.CON_BREAK_CONNECT
@@ -259,7 +254,7 @@ def nanny(game, d, argument: str) -> None:
                 if dold is d or dold.character is None:
                     continue
                 who = dold.original if dold.original is not None else dold.character
-                if not _str_cmp(ch.name, who.name):
+                if not str_cmp(ch.name, who.name):
                     continue
                 close_socket(dold)
             if check_reconnect(game, d, ch.name, True):
@@ -434,7 +429,7 @@ def nanny(game, d, argument: str) -> None:
     elif state == C.CON_GEN_GROUPS:
         send_to_char("\n\r", ch)
         race_points = PC_RACE_TABLE[ch.race].points
-        if _str_cmp(argument, "done"):
+        if str_cmp(argument, "done"):
             if ch.pcdata.points == race_points:
                 send_to_char("You didn't pick anything.\n\r", ch)
                 return
@@ -444,7 +439,7 @@ def nanny(game, d, argument: str) -> None:
             send_to_char("Creation points: %d\n\r" % ch.pcdata.points, ch)
             buf = "Experience per level: %d\n\r" % exp_per_level(ch, ch.gen_data.points_chosen)
             if ch.pcdata.points < 40:
-                ch.train = (40 - ch.pcdata.points + 1) // 2
+                ch.train = (40 - ch.pcdata.points + 1) // 2  # non-negative: points < 40
             ch.gen_data = None
             send_to_char(buf, ch)
             write_to_buffer(d, "\n\r", 2)

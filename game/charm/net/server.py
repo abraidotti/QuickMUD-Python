@@ -180,21 +180,21 @@ class PulseStats:
     whole run when the game stops (#32, decision 5: charm_tools sim bots reads that line)."""
 
     def __init__(self, every: float = 60.0):
-        self.every, self.times, self.since, self.run = every, [], time.monotonic(), []
+        self.every, self.times, self.since, self.run = every, [], time.monotonic(), []  # clock: measures, not game time
 
     @staticmethod
     def summary(t: list[float]) -> str:
         s = sorted(t)
         p95 = s[int(0.95 * (len(s) - 1))]  # nearest rank
         return ("median %.2f ms, p95 %.2f ms, max %.2f ms, mean %.2f ms over %d pulses"
-                % (1000 * s[len(s) // 2], 1000 * p95, 1000 * s[-1], 1000 * sum(s) / len(s), len(s)))
+                % (1000 * s[len(s) // 2], 1000 * p95, 1000 * s[-1], 1000 * sum(s) / len(s), len(s)))  # non-negative: a length
 
     def add(self, seconds: float) -> None:
         self.times.append(seconds)
         self.run.append(seconds)
-        if time.monotonic() - self.since >= self.every:
+        if time.monotonic() - self.since >= self.every:  # clock: measures, not game time
             log_f("Pulse work: %s", self.summary(self.times))
-            self.times, self.since = [], time.monotonic()
+            self.times, self.since = [], time.monotonic()  # clock: measures, not game time
 
     def finish(self) -> None:
         if self.run:
@@ -230,7 +230,7 @@ def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
     from charm.net.nanny import nanny
     from charm.systems.update import update_handler
 
-    last = time.time()
+    last = time.time()  # clock: the loop's, as game_loop_unix's gettimeofday
     game.current_time = int(last)
 
     while not game.merc_down:
@@ -238,7 +238,7 @@ def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
             log_f("Caught signal %d, shutting down.", int(game.shutdown_signal))
             shutdown_all(game, "\n\rThe game is shutting down.\n\r")
             break
-        work = time.perf_counter()
+        work = time.perf_counter()  # clock: measures, not game time
 
         # Poll all active descriptors.
         readable, writable, new_connection = set(), set(), False
@@ -298,11 +298,11 @@ def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
                     _drop(d)
 
         if stats is not None:
-            stats.add(time.perf_counter() - work)
+            stats.add(time.perf_counter() - work)  # clock: measures, not game time
 
         # Synchronize to a clock: sleep(last_time + 1/PULSE_PER_SECOND - now).
-        stall = last + PULSE_SECONDS - time.time()
+        stall = last + PULSE_SECONDS - time.time()  # clock: the loop's pulse
         if stall > 0:
-            time.sleep(stall)
-        last = time.time()
+            time.sleep(stall)  # clock: the loop's pulse
+        last = time.time()  # clock: the loop's pulse
         game.current_time = int(last)

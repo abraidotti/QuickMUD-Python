@@ -20,6 +20,7 @@ from dataclasses import dataclass, field, replace
 from typing import Any
 
 from charm.core.cint import int32, sh_int
+from charm.core.strings import str_cmp, upper
 from charm.data import constants as C
 from charm.data.races import RACE_TABLE
 from charm.world import lookup
@@ -215,7 +216,7 @@ class ObjIndex:
     reset_num: int = 0
 
 
-@dataclass
+@dataclass(eq=False)
 class Index:
     """The prototypes, by vnum, and the area list in load order. Lookups return None for a vnum that isn't there,
     as get_*_index do once booting is over."""
@@ -251,7 +252,7 @@ def _s(s: str | None) -> str | None:
 
 def _upper_first(s: str) -> str:
     """``s[0] = UPPER(s[0])``: ASCII only, like the C macro."""
-    return s[0].upper() + s[1:] if s and "a" <= s[0] <= "z" else s
+    return upper(s[:1]) + s[1:]
 
 
 _REMOVE_FIELD = {"act": "act", "aff": "affected_by", "off": "off_flags", "imm": "imm_flags", "res": "res_flags",
@@ -364,7 +365,7 @@ def build_index(world: World) -> Index:
     for f in world.files:
         for h in f.helps:
             helps.append(Help(sh_int(h.level), _s(h.keywords), _s(h.text)))
-            if h.keywords.lower() == "greeting":  # load_helps: !str_cmp (pHelp->keyword, "greeting")
+            if str_cmp(h.keywords, "greeting"):  # load_helps: !str_cmp (pHelp->keyword, "greeting")
                 greeting = helps[-1].text
     socials = [s for f in world.files for s in f.socials]
     return Index(areas, rooms, mobs, objs, greeting, helps, socials)

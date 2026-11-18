@@ -12,6 +12,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from charm.core.strings import lower, str_prefix
 from charm.data import clans, constants, items, mobprogs, races, specials
 
 
@@ -56,16 +57,8 @@ def prefix_lookup(name: str, names: list[str]) -> int:
     never matches."""
     if not name:
         return -1
-    low = name.lower()
     for i, entry in enumerate(names):
-        if entry and entry[0].lower() == low[0] and entry.lower().startswith(low):
+        if entry and lower(entry[0]) == lower(name[0]) and str_prefix(name, entry):
             return i
     return -1
 
-
-# LATER: use charm.core.strings, which lowers A-Z only as the C's LOWER does; .lower() also lowers bytes over 127
-# C: db.c str_prefix
-def str_prefix_matches(astr: str, bstr: str) -> bool:
-    """``!str_prefix(astr, bstr)``: astr is a case-insensitive prefix of bstr (an empty astr always is). Note the
-    flip: C's str_prefix returns TRUE when astr is *not* a prefix."""
-    return bstr.lower().startswith(astr.lower())

@@ -16,7 +16,7 @@ from charm.entities.things import Char, Obj
 from charm.world.index import Index
 
 
-@dataclass
+@dataclass(eq=False)
 class TimeInfo:
     """time_info_data."""
 
@@ -26,7 +26,7 @@ class TimeInfo:
     year: int = 0
 
 
-@dataclass
+@dataclass(eq=False)
 class WeatherInfo:
     """weather_data."""
 

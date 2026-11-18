@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from charm.commands.interp import is_number, one_argument
 from charm.core.cint import c_div
-from charm.core.strings import atoi
+from charm.core.strings import atoi, str_cmp, str_prefix
 from charm.data import constants as C
 from charm.data.races import PC_RACE_TABLE
 from charm.data.skills import GROUP_TABLE, SKILL_TABLE
@@ -106,9 +106,9 @@ def _columns(ch, entries: list[str]) -> None:
     for text in entries:
         send_to_char(text, ch)
         col += 1
-        if col % 3 == 0:
+        if col % 3 == 0:  # non-negative: a count
             send_to_char("\n\r", ch)
-    if col % 3 != 0:
+    if col % 3 != 0:  # non-negative: a count
         send_to_char("\n\r", ch)
 
 
@@ -146,11 +146,6 @@ def list_group_chosen(ch) -> None:
     send_to_char("Experience per level: %d\n\r" % exp_per_level(ch, gen.points_chosen), ch)
 
 
-def _prefix(astr: str, bstr: str) -> bool:
-    """!str_prefix(astr, bstr)."""
-    return bstr.lower().startswith(astr.lower())
-
-
 # C: skills.c parse_gen_groups
 def parse_gen_groups(ch, argument: str) -> bool:
     from charm.commands.info import do_help
@@ -160,11 +155,11 @@ def parse_gen_groups(ch, argument: str) -> bool:
     argument, arg = one_argument(argument)
     gen, pc, cls = ch.gen_data, ch.pcdata, ch.class_
 
-    if _prefix(arg, "help"):
+    if str_prefix(arg, "help"):
         do_help(ch, "group help" if argument == "" else argument)
         return True
 
-    if _prefix(arg, "add"):
+    if str_prefix(arg, "add"):
         if argument == "":
             send_to_char("You must provide a skill name.\n\r", ch)
             return True
@@ -229,16 +224,16 @@ def parse_gen_groups(ch, argument: str) -> bool:
         send_to_char("You haven't bought any such skill or group.\n\r", ch)
         return True
 
-    if _prefix(arg, "premise"):
+    if str_prefix(arg, "premise"):
         do_help(ch, "premise")
         return True
-    if _prefix(arg, "list"):
+    if str_prefix(arg, "list"):
         list_group_costs(ch)
         return True
-    if _prefix(arg, "learned"):
+    if str_prefix(arg, "learned"):
         list_group_chosen(ch)
         return True
-    if _prefix(arg, "info"):
+    if str_prefix(arg, "info"):
         do_groups(ch, argument)
         return True
     return False
@@ -251,7 +246,7 @@ def do_skills(ch, argument: str) -> None:
     fall, min_lev, max_lev = False, 1, C.LEVEL_HERO
     if argument != "":
         fall = True
-        if not _prefix(argument, "all"):
+        if not str_prefix(argument, "all"):
             argument, arg = one_argument(argument)
             if not is_number(arg):
                 send_to_char("Arguments must be numerical or all.\n\r", ch)
@@ -288,7 +283,7 @@ def do_skills(ch, argument: str) -> None:
                 lists[level] = "\n\rLevel %2d: %s" % (level, buf)
             else:
                 columns[level] += 1
-                if columns[level] % 2 == 0:
+                if columns[level] % 2 == 0:  # non-negative: a count
                     lists[level] += "\n\r          "
                 lists[level] += buf
     if not found:
@@ -305,7 +300,7 @@ def do_groups(ch, argument: str) -> None:
         _columns(ch, ["%-20s " % g.name for gn, g in enumerate(GROUP_TABLE) if ch.pcdata.group_known[gn]])
         send_to_char("Creation points: %d\n\r" % ch.pcdata.points, ch)
         return
-    if argument.lower() == "all":
+    if str_cmp(argument, "all"):
         _columns(ch, ["%-20s " % g.name for g in GROUP_TABLE])
         return
     gn = group_lookup(argument)

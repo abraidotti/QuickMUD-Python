@@ -8,8 +8,8 @@ done (#31): login and player files (`port crypt`, `port login`, `port players`).
 (`port commands`, `sim smoke --python`, `sim bots`); the C game gained the test-only `CHARM_UPDATES=area`. P1 done:
 the go/no-go (#34) answered go, with a speed checkpoint when the mob and combat updates run. P2, the differential
 harness, started 2026-11-18 (#35), time box 3 PRs or 2026-11-26: PR 1 of 3 done (#36), the scenario player on both
-sides (`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) and the first golden. PR 2 of 3: the
-first scenarios, 14 in all.
+sides (`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) and the first golden. PR 2 of 3 done (#37):
+the first scenarios, 14 in all. PR 3 of 3: the guard tests for the divergence classes (`tests/test_guards.py`).
 
 ## Goal
 

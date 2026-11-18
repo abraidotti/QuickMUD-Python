@@ -14,7 +14,7 @@ import contextlib
 import sys
 import time
 
-clock = time.time  # what the timestamp shows; the game sets it to its current_time
+clock = time.time  # clock: what a log line's timestamp shows, until the game sets it to its current_time
 to_stderr = True
 _sinks: list = []
 
@@ -24,7 +24,7 @@ def log_string(text: str) -> None:
     for sink in _sinks:
         sink(text)
     if to_stderr:
-        print(f"{time.ctime(clock())} :: {text}", file=sys.stderr)
+        print(f"{time.ctime(clock())} :: {text}", file=sys.stderr)  # clock: formats clock(), as the C's ctime
 
 
 # C: db.c bug [partial]
@@ -32,7 +32,7 @@ def bug(fmt: str, param: object = 0) -> None:
     """``bug(str, param)``: the format takes at most one argument, as in the C. [partial]: the "[*****] FILE: x
     LINE: n" line bug() adds while an area file is open is the area loader's (areafile Diagnostic)."""
     try:
-        text = fmt % param if "%" in fmt else fmt
+        text = fmt % param if "%" in fmt else fmt  # format: sprintf
     except (TypeError, ValueError):  # bug(word, 0) with a word from a file: sprintf would read garbage, not stop
         text = fmt
     log_string("[*****] BUG: " + text)
@@ -40,7 +40,7 @@ def bug(fmt: str, param: object = 0) -> None:
 
 # C: comm.c log_f
 def log_f(fmt: str, *args: object) -> None:
-    log_string(fmt % args if args else fmt)
+    log_string(fmt % args if args else fmt)  # format: sprintf
 
 
 @contextlib.contextmanager

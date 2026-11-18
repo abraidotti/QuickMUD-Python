@@ -11,11 +11,20 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 _LOWER = str.maketrans("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz")
+_UPPER = str.maketrans("abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+# Python's str.lower and str.upper change letters over 127 too, and some change length ("ß".upper() is "SS"). The
+# C's LOWER and UPPER change a-z and A-Z only, so the game uses these (tests/test_guards.py checks it).
 
 
 def lower(s: str) -> str:
     """LOWER on every character: A-Z only, as the C locale's tolower."""
     return s.translate(_LOWER)
+
+
+def upper(s: str) -> str:
+    """UPPER on every character: a-z only, as the C locale's toupper."""
+    return s.translate(_UPPER)
 
 
 # C: db.c str_cmp

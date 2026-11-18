@@ -16,6 +16,7 @@ import sys
 
 from charm.core.errors import CWouldCrash
 from charm.core.log import bug
+from charm.core.strings import upper
 from charm.data import constants as C
 from charm.net.descriptor import Descriptor, ch_of
 
@@ -205,7 +206,7 @@ def process_output(d: Descriptor, prompt: bool) -> bool:
                 percent = c_div(victim.hit * 100, victim.max_hit) if victim.max_hit > 0 else -1
                 wound = next((w for limit, w in _WOUNDS if percent >= limit), "is bleeding to death.")
                 buf = f"{victim.short_descr if victim.is_npc else victim.name} {wound} \n\r"
-                buf = buf[0].upper() + buf[1:] if "a" <= buf[0] <= "z" else buf
+                buf = upper(buf[0]) + buf[1:]
                 write_to_buffer(d, colourconv(buf, ch_of(d)) or "")
             ch = ch_of(d)
             if not ch.comm & C.COMM_COMPACT:
@@ -229,4 +230,4 @@ def process_output(d: Descriptor, prompt: bool) -> bool:
 
 # C: comm.c printf_to_char
 def printf_to_char(ch, fmt: str, *args) -> None:
-    send_to_char(fmt % args if args else fmt, ch)
+    send_to_char(fmt % args if args else fmt, ch)  # format: sprintf

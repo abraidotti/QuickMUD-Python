@@ -47,7 +47,7 @@ def main(argv: list[str] | None = None) -> int:
         return 1
     area = Path(args.root) / "area"
 
-    now = int(time.time())
+    now = int(time.time())  # clock: the boot time, as the C's main reads it before boot_db
     log.clock = lambda: now
     config = qmconfig_read(area / "qmconfig.rc")
     control = init_socket(port, config.ipaddress)

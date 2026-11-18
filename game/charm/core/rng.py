@@ -92,7 +92,7 @@ def init_mm(environ=None, log=None):
             log(f"Random seed: {seed} (CHARM_SEED)")
             return seed
         log(f"CHARM_SEED={env[:20]} isn't a number from 0 to 4294967295; using the clock.")
-    seed = uint32(int(time.time()) ^ os.getpid())
+    seed = uint32(int(time.time()) ^ os.getpid())  # clock: init_mm's seed when CHARM_SEED isn't set, as the C
     srandom(seed)
     log(f"Random seed: {seed} (clock)")
     return seed

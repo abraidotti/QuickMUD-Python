@@ -12,6 +12,7 @@ import sys
 from charm.commands.interp import one_argument
 from charm.core.errors import NotPorted
 from charm.core.log import bug, log_f
+from charm.core.strings import str_cmp
 from charm.data import constants as C
 from charm.entities import game as game_module
 from charm.entities.handler import get_trust, is_name
@@ -52,7 +53,7 @@ def do_help(ch, argument: str) -> None:
         if is_name(argall, h.keyword):
             if found:
                 out.append(SEPARATOR)
-            if h.level >= 0 and argall.lower() != "imotd":
+            if h.level >= 0 and not str_cmp(argall, "imotd"):
                 out += [h.keyword, "\n\r"]
             out.append(h.text[1:] if h.text.startswith(".") else h.text)  # a leading '.' allows initial blanks
             found = True

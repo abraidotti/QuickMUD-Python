@@ -11,6 +11,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.core.errors import NotPorted
+from charm.core.strings import str_cmp
 from charm.data import constants as C
 from charm.data.boards import BOARDS
 from charm.entities import game as game_module
@@ -33,7 +34,7 @@ def load_boards(game) -> None:
 # C: board.c board_lookup
 def board_lookup(name: str) -> int:
     for i, b in enumerate(BOARDS):
-        if b.short_name.lower() == name.lower():
+        if str_cmp(b.short_name, name):
             return i
     return BOARD_NOTFOUND
 
