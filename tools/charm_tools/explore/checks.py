@@ -11,8 +11,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from .areafile import graph
-from .areafile.world import World
+from . import graph
+from .world import World
 
 
 @dataclass

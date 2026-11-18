@@ -81,7 +81,17 @@ class RealTree(unittest.TestCase):
     def test_report(self):
         text = status.report(status.status())
         self.assertIn("charm/core/rng.py", text)
-        self.assertRegex(text, r"\d+ of \d+ C functions ported")
+        self.assertRegex(text, r"\d+ of \d+ C functions ported \(\d+\.\d%\), \d+ more partly")
+        self.assertIn("All hand-written Python in game/charm", text)
+
+    def test_partial_markers(self):
+        st = status.status()
+        partial = {(p.c_file, p.c_name) for p in st.ports if p.partial}
+        self.assertIn(("db.c", "boot_db"), partial)
+        self.assertIn(("db2.c", "load_mobiles"), partial)
+        self.assertNotIn(("db.c", "load_rooms"), partial)
+        self.assertTrue(status.MARKER.match("    # C: db2.c load_objects [partial]").group(3))
+        self.assertIsNone(status.MARKER.match("# C: db.c load_rooms [partly]"))
 
     def test_use_game_makes_charm_importable(self):
         paths.use_game()

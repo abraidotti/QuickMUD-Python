@@ -74,5 +74,40 @@ class LookupTest(unittest.TestCase):
         self.assertFalse(str_prefix_matches("acts", "act"))
 
 
+class CUnescape(unittest.TestCase):
+    def test_escapes(self):
+        from charm_tools.explore.source.ctables import c_unescape
+        self.assertEqual(c_unescape(r"\e[0m"), "\x1b[0m")  # GCC's \e, used by merc.h's colour codes
+        self.assertEqual(c_unescape(r"a\n\rb\t\\\"\'"), "a\n\rb\t\\\"'")
+        self.assertEqual(c_unescape(r"\101\x42\0"), "AB\0")
+        with self.assertRaises(SourceError):
+            c_unescape(r"\q")
+
+
+class GeneratedData(unittest.TestCase):
+    """game/charm/data/ is generated from the C (charm_tools port data). It must be up to date, and the loader's
+    tables built from it must equal the ones read straight from the C source."""
+
+    def test_up_to_date(self):
+        from charm_tools.port import data
+        out = paths.game_dir() / "charm" / "data"
+        for name, text in data.generate().items():
+            with self.subTest(module=name):
+                self.assertEqual((out / name).read_text(encoding="utf-8"), text,
+                                 "out of date: run python -m charm_tools port data")
+
+    def test_lookup_tables_match_the_source(self):
+        paths.use_game()
+        from charm.world.areafile.lookups import LookupTables as GameTables
+        src, game = LookupTables.from_source(paths.src_dir()), GameTables.from_data()
+        for f in ("item_types", "weapon_types", "liquids", "races", "sizes", "mprog_triggers", "clans", "specials"):
+            with self.subTest(table=f):
+                self.assertEqual(getattr(game, f), getattr(src, f))
+        numbers = {k: v for k, v in game.defines.items() if isinstance(v, int)}
+        self.assertGreater(len(numbers), 700)
+        for name, value in numbers.items():
+            self.assertEqual(value, src.defines[name], name)
+
+
 if __name__ == "__main__":
     unittest.main()

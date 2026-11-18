@@ -6,6 +6,10 @@ mobs, upper-casing the first letter of descriptions), this model keeps the file 
 Adapted from xania-explorer 90cfc79 areafile/model.py for ROM 2.4: ROM has no spell slot numbers, one-way or
 cosmetic exits, or level-band parsing in the loader; it has clans, owners, heal and mana rates, mobprog triggers
 and flag-removal lines on mobs.
+
+Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
+(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
 """
 
 from __future__ import annotations

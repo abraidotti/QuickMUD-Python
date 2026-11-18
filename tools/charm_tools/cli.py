@@ -7,6 +7,7 @@
     sim smoke [ARGS...]    the smoke test (see: python -m charm_tools sim smoke --help)
     port status            how much of the C game the Python game (game/) has ported, function by function
     port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
+    port data [--check]    generate game/charm/data/ from the C tables (--check: fail if it would change)
 """
 
 from __future__ import annotations
@@ -52,6 +53,8 @@ def main(argv: list[str] | None = None) -> int:
     prng.add_argument("--docker", metavar="IMAGE", required=True,
                       help="a build-stage image: docker build --target build -t charm:build .")
     prng.add_argument("--save", action="store_true", help="save the capture as the new fixture")
+    pdata = port_sub.add_parser("data", help="generate game/charm/data/ from the C tables")
+    pdata.add_argument("--check", action="store_true", help="write nothing; exit 1 if regenerating would change it")
 
     args = ap.parse_args(argv)
 
@@ -75,5 +78,8 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "rng":
             from .port import rng
             return rng.run(args.docker, args.save)
+        if args.port_command == "data":
+            from .port import data
+            return data.run(args.check)
     ap.error(f"unknown command {args.command}")  # unreachable: argparse enforces the choices
     return 2

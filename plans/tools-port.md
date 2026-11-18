@@ -1,6 +1,8 @@
 # Plan: bring the Xania tools into Charm
 
-Status: T0 and T1 in review, 2026-11-17 (#16). Decisions 1-4 answered as recommended; Docker replaced WSL as the
+Status: T0 and T1 done (#17, #18), 2026-11-17 (#16). T1's area loader moved into the Python game in P1
+(`game/charm/world/areafile/`, #25); Explore imports it from there. The first of T2's C table readers came with it
+(`charm_tools port data`). Decisions 1-4 answered as recommended; Docker replaced WSL as the
 place the game runs (decision 5, #1). Decisions 6-7 are still open.
 
 ## Goal

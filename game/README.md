@@ -1,8 +1,8 @@
 # game/: Charm's game in Python
 
-This is the Python port of the C game in `src/`, following [plans/python-port.md](../plans/python-port.md). It's at
-phase P0: the package, its rules and the random numbers. There's nothing to play yet. The C game is the real one
-until the port matches it.
+This is the Python port of the C game in `src/`, following [plans/python-port.md](../plans/python-port.md). It's in
+phase P1, the spike (#25): so far the random numbers, the generated tables and the area loader. There's nothing to
+play yet. The C game is the real one until the port matches it.
 
 ## Licence
 
@@ -28,8 +28,12 @@ The code is organised by topic, not by C file:
 | `systems/` | what runs every tick: fighting, magic, updates, specials, mob programs | |
 | `olc/` | the online builder | |
 
-Only `core/` exists so far. The import rules for the first three are checked by `tests/test_guards.py`; the rest get
-rules once the port shows where the C game's circular calls land.
+So far there are `core/`, `data/` and `world/`. The import rules for those three are checked by
+`tests/test_guards.py`; the rest get rules once the port shows where the C game's circular calls land.
+
+`data/` is generated from the C (`const.c`, `tables.c`, `special.c` and `merc.h`), except its `__init__.py`. Don't
+edit it by hand: change the C, then from `tools/` run `python -m charm_tools port data`. The tools' tests fail if it's
+out of date, and check that the loader's tables built from it equal the ones read straight from the C.
 
 ## Ported functions
 
@@ -40,8 +44,16 @@ A Python function that ports a C one carries a marker on the line above its `def
 def number_range(from_, to):
 ```
 
+A function that's only partly ported so far says so, and raises `charm.core.errors.NotPorted` on any branch it
+doesn't cover yet, so it fails loudly instead of doing something different from the C:
+
+```python
+# C: db2.c load_mobiles [partial]
+```
+
 From `tools/`, `python -m charm_tools port status` turns the markers into a report per C file: how many of its
-functions are ported, and which Python modules they went to. A marker that names no C function fails it.
+functions are ported, how many partly, and which Python modules they went to. A marker that names no C function
+fails it.
 
 ## Tests
 

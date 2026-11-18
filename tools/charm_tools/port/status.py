@@ -1,9 +1,10 @@
 """charm_tools port status: how much of the C game the Python game has ported, function by function.
 
 The Python game is organised by topic, not by C file (plans/python-port.md), so the map from C to Python comes from
-marker comments: a line "# C: <file>.c <function>" directly above the Python def that ports it. This reads every C
-function in src/ and every marker in game/charm/, and reports per C file what's ported and where it went, plus
-Python lines per C line for the ported functions. A marker that names no C function is an error.
+marker comments: a line "# C: <file>.c <function>" directly above the Python def that ports it, with " [partial]"
+after it when only part of the function is ported so far (#25, decision 3). This reads every C function in src/
+and every marker in game/charm/, and reports per C file what's ported, what's partial and where it went, plus
+Python lines per C line for the fully ported functions. A marker that names no C function is an error.
 """
 
 from __future__ import annotations
@@ -15,7 +16,7 @@ from pathlib import Path
 
 from ..paths import find_root, game_dir, src_dir
 
-MARKER = re.compile(r"^\s*# C: (\S+\.c) (\w+)\s*$")
+MARKER = re.compile(r"^\s*# C: (\S+\.c) (\w+)( \[partial\])?\s*$")
 # A definition starts in column 0 with a return type, the name and "(". Its body opens with "{" at the end of the
 # parameter list or in column 0 on a following line (ROM's style throughout), and closes with "}" in column 0.
 DEF_START = re.compile(r"^(?!typedef\b|#|/|\s)[A-Za-z_][\w\s*]*?\b([A-Za-z_]\w*)\s*\(")
@@ -45,6 +46,7 @@ class Port:
     def_name: str | None
     lines: int  # lines of the Python def (0 if the marker isn't above a def)
     line: int
+    partial: bool = False
 
 
 @dataclass
@@ -53,6 +55,7 @@ class Status:
     c_lines: dict[str, int]
     ports: list[Port]
     bad_markers: list[str] = field(default_factory=list)
+    python_lines: int = 0  # every line of game/charm/**/*.py outside data/
 
 
 def c_functions(path: Path) -> list[CFunction]:
@@ -109,7 +112,7 @@ def markers(root: Path) -> list[Port]:
             node = defs.get(k)
             ports.append(Port(m.group(1), m.group(2), py.relative_to(pkg).as_posix(),
                               node.name if node else None,
-                              (node.end_lineno - node.lineno + 1) if node else 0, n))
+                              (node.end_lineno - node.lineno + 1) if node else 0, n, bool(m.group(3))))
     return ports
 
 
@@ -125,30 +128,43 @@ def status(root: Path | None = None) -> Status:
            for p in ports if (p.c_file, p.c_name) not in known]
     bad += [f"game/{p.module}:{p.line}: '# C: {p.c_file} {p.c_name}' isn't directly above a def"
             for p in ports if p.def_name is None]
-    return Status(functions, c_lines, ports, bad)
+    pkg = game_dir(root) / "charm"
+    python_lines = sum(len(py.read_text(encoding="utf-8").splitlines()) for py in pkg.rglob("*.py")
+                       if "data" not in py.relative_to(pkg).parts[:1])
+    return Status(functions, c_lines, ports, bad, python_lines)
 
 
 def report(st: Status) -> str:
-    ported = {(p.c_file, p.c_name) for p in st.ports}
+    full = [p for p in st.ports if not p.partial]
+    ported = {(p.c_file, p.c_name) for p in full}
+    partial = {(p.c_file, p.c_name) for p in st.ports if p.partial} - ported
     by_file: dict[str, list[CFunction]] = {}
     for f in st.functions:
         by_file.setdefault(f.file, []).append(f)
-    out = [f"{'C file':<14} {'lines':>6}  {'ported':>9}  Python modules"]
+    out = [f"{'C file':<14} {'lines':>6}  {'ported':>6} {'partial':>7} {'of':>4}  Python modules"]
     for name in sorted(st.c_lines):
         fns = by_file.get(name, [])
         done = [f for f in fns if (f.file, f.name) in ported]
+        part = [f for f in fns if (f.file, f.name) in partial]
         mods = sorted({p.module for p in st.ports if p.c_file == name})
-        out.append(f"{name:<14} {st.c_lines[name]:>6}  {len(done):>4}/{len(fns):<4}  {', '.join(mods)}")
+        out.append(f"{name:<14} {st.c_lines[name]:>6}  {len(done):>6} {len(part):>7} {len(fns):>4}  "
+                   f"{', '.join(mods)}")
     total = len(st.functions)
     done = [f for f in st.functions if (f.file, f.name) in ported]
+    part = [f for f in st.functions if (f.file, f.name) in partial]
     c_done = sum(f.lines for f in done)
-    py_done = sum({(p.module, p.def_name): p.lines for p in st.ports if p.def_name}.values())
+    py_done = sum({(p.module, p.def_name): p.lines for p in full if p.def_name}.values())
     out.append("")
-    out.append(f"{len(done)} of {total} C functions ported ({100 * len(done) / total:.1f}%): "
-               f"{c_done} of {sum(f.lines for f in st.functions)} lines of C functions")
+    out.append(f"{len(done)} of {total} C functions ported ({100 * len(done) / total:.1f}%), {len(part)} more "
+               f"partly: {c_done} + {sum(f.lines for f in part)} of {sum(f.lines for f in st.functions)} lines of C "
+               f"functions")
     if c_done:
         out.append(f"Python lines per C line, for the ported functions: {py_done / c_done:.2f} "
                    f"({py_done} / {c_done})")
+    c_any = c_done + sum(f.lines for f in part)
+    if c_any:
+        out.append(f"All hand-written Python in game/charm (not data/, which is generated), per C line ported or "
+                   f"partly ported: {st.python_lines / c_any:.2f} ({st.python_lines} / {c_any})")
     out += [f"error: {b}" for b in st.bad_markers]
     return "\n".join(out)
 

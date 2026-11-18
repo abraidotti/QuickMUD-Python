@@ -1,7 +1,7 @@
 # Plan: port Charm's game from C to Python
 
-Status: decisions 1-7 answered (#19); R2 done (#22); P0 in review (#23), 2026-11-17. Next: the P1 spike, which ends
-in a go/no-go issue.
+Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike started 2026-11-17 (#25), time box
+5 PRs or 2026-12-08. PR 1 of 5: the tables and the loader move.
 
 ## Goal
 

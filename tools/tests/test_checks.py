@@ -1,8 +1,8 @@
 import unittest
 
 from charm_tools.explore import checks
-from charm_tools.explore.areafile import graph
-from charm_tools.explore.areafile.world import load_world
+from charm_tools.explore import graph
+from charm_tools.explore.world import load_world
 
 
 class ChecksTest(unittest.TestCase):

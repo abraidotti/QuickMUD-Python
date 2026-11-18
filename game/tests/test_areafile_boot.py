@@ -1,20 +1,24 @@
 """The loaders (areafile/boot.py) on small synthetic areas. The real game's behaviour on the stock areas and on
-broken ones is pinned by test_parity.py; these cover the details those don't show."""
+broken ones is pinned by charm_tools' test_parity.py; these cover the details those don't show.
+
+Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
+(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+"""
 
 import unittest
 from functools import lru_cache
 
-from charm_tools import paths
-from charm_tools.explore.areafile.boot import Boot
-from charm_tools.explore.areafile.reader import AreaParseError, Reader
-from charm_tools.explore.source.ctables import LookupTables
+from charm.world.areafile.boot import Boot
+from charm.world.areafile.lookups import LookupTables
+from charm.world.areafile.reader import AreaParseError, Reader
 
 HEADER = "#AREA\nt.are~\nTest~\n{ 1 5} Me  Test~\n30000 30099\n\n"
 
 
 @lru_cache(maxsize=1)
 def tables():
-    return LookupTables.from_source(paths.src_dir())
+    return LookupTables.from_data()
 
 
 def boot(*texts, finish=True):

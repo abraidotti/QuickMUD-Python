@@ -11,8 +11,8 @@ from __future__ import annotations
 from collections import deque
 from dataclasses import dataclass
 
-from .model import DIRECTIONS
-from .world import World
+from .world import World  # noqa: I001  (sets up the charm import)
+from charm.world.areafile.model import DIRECTIONS
 
 
 @dataclass(frozen=True)

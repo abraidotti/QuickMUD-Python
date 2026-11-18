@@ -2,6 +2,10 @@
 
 Adapted from xania-explorer 90cfc79 areafile/world.py. The checks Xania's version made by itself (dangling
 references, bad resets) are part of the boot here, because ROM makes them fatal during boot_db.
+
+Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
+(c) 1993-98 Russ Taylor. Ported from src/db.c. Licence terms: README.md#licence-terms and doc/.
 """
 
 from __future__ import annotations
@@ -9,16 +13,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from ... import paths
-from ..source.ctables import LookupTables
 from .boot import Boot, Counts
+from .lookups import LookupTables
 from .model import AreaFile, Mob, Obj, Reset, Room
 from .reader import AreaParseError, Diagnostic, Reader
 
 
 @dataclass
 class World:
-    root: Path
     area_dir: Path
     area_list: list[str]  # file names, in area.lst order
     files: list[AreaFile]
@@ -54,12 +56,14 @@ def read_area_list(area_dir: Path) -> list[str]:
         names.append(word)
 
 
-def load_world(root: Path | None = None, area_dir: Path | None = None) -> World:
+# C: db.c boot_db [partial]
+def load_world(area_dir: Path, tables: LookupTables | None = None) -> World:
     """Boot every area in area.lst. A fatal condition stops the boot, as in the game: the World is returned with
-    ``fatal`` set and holds what was loaded before it. ``area_dir`` boots another copy of area/ (for tests)."""
-    root = root or paths.find_root()
-    area_dir, src_dir = area_dir or paths.area_dir(root), paths.src_dir(root)
-    tables = LookupTables.from_source(src_dir)
+    ``fatal`` set and holds what was loaded before it.
+
+    [partial]: this is boot_db's area loading only. The rest of boot_db (time and weather, skill numbers, the first
+    area_update, notes, bans and songs) comes with the parts of the game that use it."""
+    tables = tables or LookupTables.from_data()
     boot = Boot(tables)
     names = read_area_list(area_dir)
     fatal = None
@@ -77,5 +81,5 @@ def load_world(root: Path | None = None, area_dir: Path | None = None) -> World:
         fatal = e
     listed = set(names)
     unlisted = sorted(p.name for p in area_dir.glob("*.are") if p.name not in listed)
-    return World(root, area_dir, names, boot.files, boot.rooms, boot.mobs, boot.objects, boot.room_resets,
+    return World(area_dir, names, boot.files, boot.rooms, boot.mobs, boot.objects, boot.room_resets,
                  set(boot.shop_of), boot.counts, boot.diagnostics, tables, fatal, unlisted)

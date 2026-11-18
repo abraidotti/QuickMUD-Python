@@ -18,7 +18,7 @@ CREDIT = ("Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Mic
           "Staerfeldt, Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell "
           "Tse; and ROM 2.4 (c) 1993-98 Russ Taylor.")
 POINTER = "Licence terms: README.md#licence-terms and doc/."
-SOURCE = re.compile(r"(Ported from src/\w+\.c(, src/\w+\.c)*\.|Written for Charm; no single C source\.)")
+SOURCE = re.compile(r"(Ported from src/\w+\.[ch](, src/\w+\.[ch])*\.|Written for Charm; no single C source\.)")
 
 # Which charm packages each layer may import. Rules for the layers after world wait until the port shows where the
 # C game's circular calls land (#23, decision 3).
