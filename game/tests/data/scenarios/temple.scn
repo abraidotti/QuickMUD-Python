@@ -1,0 +1,11 @@
+# Rambler logs in to the temple, looks about, and two pulses pass. The first scenario, to prove the harness.
+@connect rambler
+Rambler
+psswrd
+@return
+@state
+look
+look hassan
+s
+@pulse 4
+@state
