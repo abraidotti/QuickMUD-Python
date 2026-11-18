@@ -162,8 +162,9 @@ def status(root: Path | None = None) -> Status:
     bad += [f"game/{p.module}:{p.line}: '# C: {p.c_file} {p.c_name}' isn't directly above a def"
             for p in ports if p.def_name is None]
     pkg = game_dir(root) / "charm"
+    # Not data/ (generated) or testing/ (the scenario player, #35): neither is ported game code.
     python_lines = sum(len(py.read_text(encoding="utf-8").splitlines()) for py in pkg.rglob("*.py")
-                       if "data" not in py.relative_to(pkg).parts[:1])
+                       if py.relative_to(pkg).parts[0] not in ("data", "testing"))
     later = later_notes(root)
     bad += [f"game/{n.module}:{n.line}: '# LATER:' says nothing" for n in later if not n.text]
     return Status(functions, c_lines, ports, bad, python_lines, later)
@@ -198,8 +199,8 @@ def report(st: Status) -> str:
                    f"({py_done} / {c_done})")
     c_any = c_done + sum(f.lines for f in part)
     if c_any:
-        out.append(f"All hand-written Python in game/charm (not data/, which is generated), per C line ported or "
-                   f"partly ported: {st.python_lines / c_any:.2f} ({st.python_lines} / {c_any})")
+        out.append(f"All hand-written Python in game/charm (not data/, which is generated, or testing/), per C line "
+                   f"ported or partly ported:{st.python_lines / c_any:.2f} ({st.python_lines} / {c_any})")
     notes = [n for n in st.later if n.text]
     if notes:
         out.append("")

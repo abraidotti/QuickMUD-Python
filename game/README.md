@@ -44,6 +44,15 @@ which stops the game (#32). Only `area_update` runs of the per-pulse updates; th
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.
 
+Scenarios (#35) check state as well as output, with no network and no real clock. A scenario is a text file in
+`tests/data/scenarios/` (`NAME.scn`): lines of input for a connection, and `@` lines for the harness (`@connect`,
+`@as`, `@return`, `@pulse N`, `@mob`, `@obj`, `@state`; the format is in `tools/oracle/scenario.c`). The C driver
+plays it through the C game's own code, and `charm.testing.scenario` through the Python game's. Both print each
+step's output, the random numbers drawn so far, and on `@state` the rooms' characters and objects. The C's lines
+are saved as `NAME.golden`, which `tests/test_scenarios.py` replays with no Docker. From `tools/`,
+`python -m charm_tools port scenarios --docker charm:build --save` saves them again after a C change; a golden
+names the C sources it came from, so a stale one fails.
+
 Player files are `persist/player.py`, line by line from `save.c`, so either game loads the other's files
 (`charm_tools port players` checks it both ways). Passwords use `core/crypt.py`, a stdlib-only port of the DES
 `crypt()` the C calls, checked against glibc (`port crypt`).
