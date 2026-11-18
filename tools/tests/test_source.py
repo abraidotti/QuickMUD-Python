@@ -125,8 +125,11 @@ class GeneratedData(unittest.TestCase):
                 self.assertEqual(getattr(game, f), getattr(src, f))
         numbers = {k: v for k, v in game.defines.items() if isinstance(v, int)}
         self.assertGreater(len(numbers), 700)
+        board_h = set(Defines(paths.src_dir() / "board.h").names)  # constants.py has board.h's too
+        self.assertLessEqual({"DEF_INCLUDE", "MAX_BOARD", "DEFAULT_BOARD"}, set(numbers))
         for name, value in numbers.items():
-            self.assertEqual(value, src.defines[name], name)
+            if name not in board_h:
+                self.assertEqual(value, src.defines[name], name)
 
 
 if __name__ == "__main__":

@@ -21,8 +21,10 @@ from charm.data.races import RACE_TABLE
 from charm.entities import handler
 from charm.entities.boot import boot_db
 from charm.entities.resets import _umin_fuzzy
-from charm.entities.things import Obj
+from charm.entities.things import Char, Obj
+from charm.persist import player
 from charm.world import lookup
+from charm.world.areafile.reader import Reader
 from charm.world.index import Affect
 
 BAT = next(r for r in RACE_TABLE if r.name == "bat")
@@ -185,6 +187,42 @@ class Resets(unittest.TestCase):
         with self.assertRaises(NotPorted) as e:
             boot_area(trigger="M act 30050 hello~\n", progs=PROGS)
         self.assertIn("act_new", str(e.exception))
+
+
+class OwnStrings(unittest.TestCase):
+    """The C's pointer comparison in fwrite_obj and fwrite_pet: a string is the object's own once it's assigned."""
+
+    def setUp(self):
+        self.game, _ = boot_area()
+
+    def test_construction_marks_nothing(self):
+        # Fails if own_strings is moved before the string fields: __init__ would mark them.
+        self.assertEqual(Obj(name="a", short_descr="b", description="c").own_strings, set())
+        self.assertEqual(Char(short_descr="a", long_descr="b", description="c").own_strings, set())
+
+    def test_made_from_a_prototype_marks_nothing(self):
+        self.assertTrue(self.game.object_list and self.game.char_list)
+        for thing in self.game.object_list + self.game.char_list:
+            self.assertEqual(thing.own_strings, set())
+
+    def test_assigning_marks_even_the_same_text(self):
+        obj = self.game.object_list[0]
+        obj.short_descr = obj.index.short_descr  # a restring to the same text is still a new pointer in the C
+        self.assertEqual(obj.own_strings, {"short_descr"})
+        mob = self.game.char_list[0]
+        mob.name = "renamed"  # not compared: fwrite_pet always writes Name
+        mob.description = "A neck tag.\n\r"
+        self.assertEqual(mob.own_strings, {"description"})
+
+    def test_read_from_a_player_file_and_written_again(self):
+        ch = Char(level=5)
+        text = "Vnum 30012\nNest 0\nName pebble~\nEnd\n"  # fread_obj has read "#O"; the Name is the prototype's
+        player.fread_obj(self.game, ch, Reader(text), [None] * 100)
+        (pebble,) = ch.carrying
+        self.assertEqual(pebble.own_strings, {"name"})
+        written = player.fwrite_obj(ch, ch.carrying, 0)
+        self.assertIn("Name pebble~\n", written)
+        self.assertNotIn("ShD", written)
 
 
 class Handler(unittest.TestCase):

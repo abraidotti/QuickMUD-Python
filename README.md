@@ -201,6 +201,9 @@ python -m charm_tools port data                  # regenerate game/charm/data/ f
 python -m charm_tools port world --docker charm:build   # boot the C and Python worlds and compare them
 python -m charm_tools port io --docker charm:build      # comm.c's input and output cases, C against Python
 python -m charm_tools port greeting --docker charm      # connect to both games and compare their greetings
+python -m charm_tools port crypt --docker charm:build   # the Python game's password hashing against glibc
+python -m charm_tools port login --docker charm         # the same login sessions on both games, byte for byte
+python -m charm_tools port players --docker charm       # player files saved by each game load in the other
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 

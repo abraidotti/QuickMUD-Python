@@ -14,11 +14,9 @@ One known difference, accepted in #29: the C also polls for exceptional conditio
 has some, such as a telnet client's urgent (out-of-band) data. selectors has no such set, so that step isn't
 copied, and such a connection stays open.
 
-[partial], until login (spike PR 4) and the commands (spike PR 5) are ported:
-- a line of input from a connection that isn't playing goes to nanny, which raises NotPorted
-- one from a player goes to the command interpreter, which raises NotPorted
-- a player's file isn't saved when the connection drops
-NotPorted stops the game (#28, decision 3).
+[partial], until the commands (spike PR 5) are ported: a line of input from a player goes to the command
+interpreter, which raises NotPorted, and so does entering the game, which ends in do_look. NotPorted stops the
+game (#28, decision 3).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -41,6 +39,7 @@ from charm.net.descriptor import Descriptor, ch_of, new_descriptor
 from charm.net.input import read_from_buffer, read_from_descriptor
 from charm.net.output import process_output, send_to_desc, show_string, write_to_buffer, write_to_descriptor
 from charm.net.wiznet import wiznet
+from charm.persist.player import save_char_obj
 
 PULSE_SECONDS = 1 / C.PULSE_PER_SECOND
 
@@ -105,9 +104,10 @@ def init_descriptor(game, control: socket.socket) -> None:
         send_to_desc("Do you want ANSI? (Y/n) ", d)
 
 
-# C: comm.c close_socket [partial]
+# C: comm.c close_socket
 def close_socket(dclose: Descriptor) -> None:
-    """[partial]: closing a character's link (its act() and wiznet lines, or freeing it) comes with login."""
+    from charm.entities.create import free_char
+
     game = dclose.game
     if dclose.closed:
         return
@@ -127,7 +127,7 @@ def close_socket(dclose: Descriptor) -> None:
             wiznet(game, "Net death has claimed $N.", ch, None, C.WIZ_LINKS, 0, 0)
             ch.desc = None
         else:
-            raise NotPorted("recycle.c free_char")
+            free_char(game, dclose.original if dclose.original is not None else dclose.character)
     if dclose in game.descriptor_list:
         game.descriptor_list.remove(dclose)
     else:
@@ -149,7 +149,7 @@ def shutdown_all(game, message: str | None) -> None:
             write_to_descriptor(d.sock, message)
         vch = ch_of(d)
         if vch is not None and d.connected == C.CON_PLAYING:  # IS_IN_GAME
-            raise NotPorted("save.c save_char_obj")
+            save_char_obj(game, vch)
         close_socket(d)
 
 
@@ -165,7 +165,7 @@ def stop_idling(ch) -> None:
 def _drop(d: Descriptor) -> None:
     """The C's save-then-close when a connection fails."""
     if d.character is not None and d.connected == C.CON_PLAYING:
-        raise NotPorted("save.c save_char_obj")
+        save_char_obj(d.game, d.character)
     d.outbuf = ""
     close_socket(d)
 
@@ -209,6 +209,7 @@ def game_loop(game, control: socket.socket, stats: PulseStats | None = None) -> 
 
 
 def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
+    from charm.net.nanny import nanny
     from charm.systems.update import update_handler
 
     last = time.time()
@@ -263,7 +264,7 @@ def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
                 elif d.connected == C.CON_PLAYING:
                     raise NotPorted("interp.c: run_olc_editor / substitute_alias / interpret")
                 else:
-                    raise NotPorted(f"nanny.c nanny: state {d.connected}")
+                    nanny(game, d, d.incomm)
                 d.incomm = ""
 
         # Autonomous game motion.

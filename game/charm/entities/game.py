@@ -46,6 +46,10 @@ class Game:
     weather_info: WeatherInfo = field(default_factory=WeatherInfo)
     mobile_count: int = 0
     last_mob_id: int = 0
+    area_dir: object | None = None  # the directory the C runs in (area/); its paths are relative to it
+    wizlock: bool = False
+    newlock: bool = False
+    last_pc_id: int = 0
     # comm.c's: the connections (head first), and the loop's state
     descriptor_list: list = field(default_factory=list)
     merc_down: bool = False
@@ -68,3 +72,9 @@ current: Game | None = None
 def weather() -> WeatherInfo:
     """weather_info, the C global, for code that isn't passed a Game."""
     return current.weather_info if current is not None else WeatherInfo()
+
+
+def c_path(game: Game, path: str):
+    """A path as the C opens it, relative to the directory it runs in: c_path(game, PLAYER_DIR + "Bob")."""
+    from pathlib import Path
+    return Path(game.area_dir) / path

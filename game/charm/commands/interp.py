@@ -1,4 +1,4 @@
-"""The interpreter's helpers. So far one_argument, which show_string and act() use; interpret comes in spike PR 5.
+"""The interpreter's helpers so far: one_argument and is_number. interpret comes in spike PR 5.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -35,3 +35,12 @@ def one_argument(argument: str) -> tuple[str, str]:
     while i < n and argument[i] in SPACE:
         i += 1
     return argument[i:], "".join(out)
+
+
+# C: interp.c is_number
+def is_number(arg: str) -> bool:
+    if arg == "":
+        return False
+    if arg[0] in "+-":
+        arg = arg[1:]
+    return all("0" <= c <= "9" for c in arg)

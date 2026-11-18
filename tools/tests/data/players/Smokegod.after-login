@@ -1,0 +1,48 @@
+#PLAYER
+Name Smokegod~
+Id   1763337600
+LogO 1794979054
+Vers 5
+Prom <%hhp %mm %vmv> ~
+Race human~
+Sex  1
+Cla  0
+Levl 60
+Sec  0
+Plyd 4
+Scro 22
+Room 3001
+HMV  100 100 100 100 100 100
+Gold 0
+Silv 0
+Exp  0
+Act  Q
+Comm NOP
+Pos  8
+Alig  0
+ACs 100 100 100 100
+Attr 13 13 13 13 13
+AMod 0 0 0 0 0
+Pass SmIJj6Ypaw.rM~
+Titl  the Smoke Test~
+Pnts 40
+TSex 1
+LLev 0
+HMVP 100 100 100
+Cnd  0 48 48 48
+Coloura     007 013 005 001 013
+Colourb     013 003 002 006 003
+Colourc     113 002 002 002 001
+Colourd     006 007 002 006 006
+Coloure     011 002 003 001 017
+Colourf     002 002 012 012 012
+Colourg     017 015 011 017 017
+Boards       5 General 0 Ideas 0 Announce 0 Bugs 0 Personal 0 
+Sk 1 'scrolls'
+Sk 1 'staves'
+Sk 1 'wands'
+Sk 1 'recall'
+Gr 'rom basics'
+End
+
+#END

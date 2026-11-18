@@ -31,7 +31,11 @@ def log_string(text: str) -> None:
 def bug(fmt: str, param: object = 0) -> None:
     """``bug(str, param)``: the format takes at most one argument, as in the C. [partial]: the "[*****] FILE: x
     LINE: n" line bug() adds while an area file is open is the area loader's (areafile Diagnostic)."""
-    log_string("[*****] BUG: " + (fmt % param if "%" in fmt else fmt))
+    try:
+        text = fmt % param if "%" in fmt else fmt
+    except (TypeError, ValueError):  # bug(word, 0) with a word from a file: sprintf would read garbage, not stop
+        text = fmt
+    log_string("[*****] BUG: " + text)
 
 
 # C: comm.c log_f

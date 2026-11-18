@@ -2,8 +2,9 @@
 
 Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike started 2026-11-17 (#25), time box
 5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5 done (#27): the world and
-resets (`charm_tools port world`). PR 3 of 5 (#28): the loop, connections and output (`port io`, `port greeting`);
-the checkpoint after it estimates 60% of the spike's functions ported, over #25's 40% line.
+resets (`charm_tools port world`). PR 3 of 5 done (#29): the loop, connections and output (`port io`, `port
+greeting`); the checkpoint after it estimated 60% of the spike's functions ported, over #25's 40% line. PR 4 of 5
+(#30): login and player files (`port crypt`, `port login`, `port players`).
 
 ## Goal
 
@@ -70,7 +71,16 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
 
   Differences kept on purpose:
   - the startup log line says "Charm is ready to rock on port N", where the C says "ROM is ready to rock" (#29)
+  - the MOTD's last line says "Welcome to Charm.", where the C says "Welcome to ROM 2.4." (#30)
   - a connection that sends out-of-band data stays open (above)
+
+  The pointer identity class above showed up in Charm too (#30): fwrite_obj and fwrite_pet write a string when
+  its pointer differs from the prototype's, and a string read from a player file is always a new one. The port
+  records which strings are an object's own (`own_strings`) instead of comparing Python strings with `is`. The
+  fields mark themselves (a descriptor, `things._OwnString`): assigning one after construction makes it the
+  object's own, as a new pointer would be, and `create_object` and `create_mobile` clear the set. So code ported
+  later (restrings, a pet's neck tag) can't forget to mark it. Reading one of those fields costs about 80 ns more
+  than a plain attribute.
 - **Guard tests that scan the source.** Where a rule is "always go through one function" (the RNG, flag constants,
   wear slots), a test greps the code for anything that bypasses it. A regression then fails the test suite instead of
   waiting to be noticed.
@@ -193,6 +203,9 @@ and line. Ones that cut across the code are here:
   could derive from the other, or both from the JSON look's schema.
 - **Where the game state lives.** `Game` holds what the C keeps in globals. When `net/`, `persist/` and `systems/`
   add theirs, it may split by topic, or become the one place every layer reads from.
+- **A stronger password hash, in both games** (#30). Passwords are traditional DES crypt: 8 characters count, the
+  salt is the first two letters of the name, and the hash is fast to attack. Moving both games to a modern hash
+  (with old hashes upgraded at the next login) needs a C change too, so it goes through the refactor plan.
 
 ## Phases
 

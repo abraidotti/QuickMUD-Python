@@ -45,6 +45,7 @@ def create_mobile(game: Game, p: MobIndex) -> Char:
     mob.short_descr = p.short_descr
     mob.long_descr = p.long_descr
     mob.description = p.description
+    mob.own_strings.clear()  # str_dup hands back a boot string's pointer: these are still the prototype's
     mob.id = get_mob_id(game)
     mob.spec_fun = p.spec_fun
     mob.prompt = None
@@ -167,6 +168,7 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     obj.name = p.name
     obj.short_descr = p.short_descr
     obj.description = p.description
+    obj.own_strings.clear()  # str_dup hands back a boot string's pointer: these are still the prototype's
     obj.material = p.material
     obj.item_type = p.item_type
     obj.extra_flags = p.extra_flags
@@ -195,3 +197,20 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     p.count = sh_int(p.count + 1)
     obj.cost = int32(obj.cost)
     return obj
+
+
+# C: recycle.c free_char
+def free_char(game: Game, ch: Char) -> None:
+    """Extract what it carries, remove its affects, and invalidate it (the memory is Python's to free)."""
+    from charm.entities.handler import affect_remove, extract_obj
+
+    if not ch.valid:
+        return
+    if ch.is_npc:
+        game.mobile_count -= 1
+    for obj in list(ch.carrying):
+        extract_obj(game, obj)
+    for paf in list(ch.affected):
+        affect_remove(ch, paf)
+    ch.valid = False
+

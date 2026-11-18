@@ -70,3 +70,20 @@ def attack_lookup(name: str) -> int:
 # C: magic.c skill_lookup
 def skill_lookup(name: str) -> int:
     return prefix_lookup(name, _SKILLS)
+
+
+# The gsn globals boot_db fills in ("Assign gsn's for skills which have them"): each skill_table row whose pgsn is
+# &gsn_x makes gsn_x its number. weapon_table names its skill that way too ("gsn_dagger").
+GSN = {s.pgsn: sn for sn, s in enumerate(skills.SKILL_TABLE) if s.pgsn}
+
+
+# C: handler.c class_lookup
+def class_lookup(name: str) -> int:
+    from charm.data.classes import CLASS_TABLE
+    return prefix_lookup(name, [c.name for c in CLASS_TABLE])
+
+
+# C: handler.c weapon_lookup
+def weapon_lookup(name: str) -> int:
+    """The weapon_table row (not its WEAPON_ value), or -1."""
+    return prefix_lookup(name, _WEAPONS)

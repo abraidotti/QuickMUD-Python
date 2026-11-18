@@ -50,7 +50,18 @@ TABLES = [
     Table("const.c", "attack_table", "attack_type", "attacks"),
     Table("tables.c", "position_table", "position_type", "characters"),
     Table("tables.c", "sex_table", "sex_type", "characters"),
+    Table("const.c", "pc_race_table", "pc_race_type", "races"),
+    Table("const.c", "class_table", "class_type", "classes"),
+    Table("const.c", "group_table", "group_type", "skills"),
+    Table("const.c", "str_app", "str_app_type", "attributes"),
+    Table("const.c", "int_app", "int_app_type", "attributes"),
+    Table("const.c", "wis_app", "wis_app_type", "attributes"),
+    Table("const.c", "dex_app", "dex_app_type", "attributes"),
+    Table("const.c", "con_app", "con_app_type", "attributes"),
+    Table("board.c", "boards", "board_data", "boards"),
 ]
+# Arrays of strings that aren't tables of structs: (file, C name, dimensions below the first, module).
+STRING_ARRAYS = [("const.c", "title_table", 2, "classes")]
 
 MODULE_TITLES = {
     "items": "Item types, weapon classes and liquids.",
@@ -61,10 +72,14 @@ MODULE_TITLES = {
     "skills": "Skills and spells: skill_table, whose index is a skill's number (sn).",
     "attacks": "Attack types: the damage nouns a mob's or weapon's attack word is looked up in.",
     "characters": "Positions and sexes.",
+    "classes": "Classes, and the titles each class gets at each level (title_table[class][level][male, female]).",
+    "attributes": "What each value of an attribute (0 to 25) gives: str_app, int_app, wis_app, dex_app, con_app.",
+    "boards": "The note boards. Their notes (note_first) are loaded at boot from notes/, not here.",
 }
 
 INT_TYPES = {"int", "sh_int", "long", "bool", "unsigned int", "long int"}
-STRUCT_SOURCES = ("merc.h", "special.c", "tables.h", "magic.h", "interp.h")
+STRUCT_SOURCES = ("merc.h", "special.c", "tables.h", "magic.h", "interp.h", "board.h")
+DEFINE_SOURCES = ("merc.h", "board.h")  # the headers whose #defines go in constants.py
 
 
 @dataclass(frozen=True)
@@ -103,8 +118,9 @@ def struct_fields(src: Path, defines: Defines, struct: str) -> list[Field]:
             raise SourceError(f"struct {struct}: can't read field {decl!r}")
         ctype = d.group("type").replace("const ", "")
         ptr = bool(d.group("ptr"))
-        if ctype == "char" and ptr:
-            kind = "str"
+        char_array = ctype == "char" and not ptr and d.group("len")
+        if (ctype == "char" and ptr) or char_array:
+            kind = "str"  # a char * or a char [N] initialised with a string literal
         elif ptr:
             kind = "ref"
         elif ctype == "bool":
@@ -114,9 +130,10 @@ def struct_fields(src: Path, defines: Defines, struct: str) -> list[Field]:
         else:
             raise SourceError(f"struct {struct}: field {d.group('name')} has type {ctype!r}, which isn't handled")
         length = None
-        if d.group("len"):
+        if d.group("len") and not char_array:
             length = int(d.group("len")) if d.group("len").isdigit() else defines[d.group("len")]
-        fields.append(Field(ctype + (" *" if ptr else ""), d.group("name"), kind, length))
+        ctype_note = f"char [{d.group('len')}]" if char_array else ctype + (" *" if ptr else "")
+        fields.append(Field(ctype_note, d.group("name"), kind, length))
     return fields
 
 
@@ -232,7 +249,7 @@ def generate(root: Path | None = None) -> dict[str, str]:
     """{path under game/charm/data: file text} for every generated module."""
     root = root or find_root()
     src = src_dir(root)
-    defines = Defines(src / "merc.h")
+    defines = Defines(*(src / name for name in DEFINE_SOURCES))
     files: dict[str, str] = {}
 
     # Structs, in first-use order.
@@ -264,8 +281,8 @@ def generate(root: Path | None = None) -> dict[str, str]:
             lines.append(f"{name} = {defines[name]}")
         except SourceError:
             continue
-    files["constants.py"] = (docstring("The C game's #define constants from merc.h: every one that's a number or a "
-                                       "plain string.", ["merc.h"],
+    files["constants.py"] = (docstring("The C game's #define constants from merc.h and board.h: every one that's a "
+                                       "number or a plain string.", list(DEFINE_SOURCES),
                                        "The flag letters (#define A 1 ... #define ee 1073741824) are left out; "
                                        "values that use them are already worked out here.")
                              + "\n" + "\n".join(lines) + "\n")
@@ -295,8 +312,27 @@ def generate(root: Path | None = None) -> dict[str, str]:
                     body += [f"        {k}={py(v)}," for k, v in row.items()]
                     body.append("    ),")
             parts.append(f"\n# {t.c_name}, {t.c_file}\n{t.c_name.upper()} = (\n" + "\n".join(body) + "\n)\n")
+        for c_file, c_name, depth, mod in STRING_ARRAYS:
+            if mod == module:
+                parts.append(f"\n# {c_name}, {c_file}\n{c_name.upper()} = "
+                             + py(string_array(src, c_file, c_name, depth)) + "\n")
         files[f"{module}.py"] = parts[0] + "\n" + "".join(parts[1:])
     return files
+
+
+def string_array(src: Path, c_file: str, c_name: str, depth: int):
+    """A nested array of string literals, as nested tuples: title_table[class] -> ((male, female), ...)."""
+    def nest(raw, level):
+        if level == 0:
+            if not (isinstance(raw, str) and raw.startswith('"') and raw.endswith('"')):
+                raise SourceError(f"{c_file} {c_name}: expected a string, got {raw!r}")
+            return c_unescape(raw[1:-1])
+        if not (isinstance(raw, str) and raw.startswith("{")):
+            raise SourceError(f"{c_file} {c_name}: expected {{...}}, got {raw!r}")
+        return tuple(nest(x, level - 1) for x in _split_top(raw[1:-1]))
+    rows = read_array(src / c_file, c_name)
+    return tuple(tuple(nest(x if not isinstance(x, Str) else '"' + x.value + '"', depth - 1) for x in row)
+                 for row in rows)
 
 
 def run(check: bool) -> int:
