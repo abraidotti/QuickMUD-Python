@@ -11,6 +11,9 @@
     port world             boot both games' worlds and compare them (--docker IMAGE, or the saved capture)
     port io                run comm.c's input and output cases through both games (--docker IMAGE, or saved)
     port greeting --docker IMG  connect to both games and compare what they send first
+    port crypt             the Python game's DES crypt against glibc's (--docker IMAGE, or the saved cases)
+    port login --docker IMG     the same login sessions against both games, byte for byte
+    port players --docker IMG   player files saved by each game load in the other, key by key
 """
 
 from __future__ import annotations
@@ -69,6 +72,15 @@ def main(argv: list[str] | None = None) -> int:
     pio = port_sub.add_parser("io", help="run comm.c's input and output cases through both games and compare")
     pio.add_argument("--docker", metavar="IMAGE", help="a build-stage image (default: the saved capture)")
     pio.add_argument("--save", action="store_true", help="with --docker: save the C results as the fixture")
+    pcrypt = port_sub.add_parser("crypt", help="check the Python game's password hashing against glibc's crypt")
+    pcrypt.add_argument("--docker", metavar="IMAGE", help="a build-stage image (default: the saved cases)")
+    pcrypt.add_argument("--save", action="store_true", help="with --docker: save the cases and answers")
+    plogin = port_sub.add_parser("login", help="run the same login sessions against both games and compare")
+    plogin.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
+    plogin.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
+    pplayers = port_sub.add_parser("players", help="round-trip player files between the two games")
+    pplayers.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
+    pplayers.add_argument("--save", action="store_true", help="keep the C game's files for the tests")
     pgreet = port_sub.add_parser("greeting", help="connect to both games and compare the first bytes they send")
     pgreet.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
 
@@ -102,6 +114,17 @@ def main(argv: list[str] | None = None) -> int:
             if args.save and not args.docker:
                 ap.error("--save needs --docker")
             return io.run(args.docker, args.save)
+        if args.port_command == "crypt":
+            from .port import cryptcheck
+            if args.save and not args.docker:
+                ap.error("--save needs --docker")
+            return cryptcheck.run(args.docker, args.save)
+        if args.port_command == "login":
+            from .port import login
+            return login.run(args.docker, args.only)
+        if args.port_command == "players":
+            from .port import players
+            return players.run(args.docker, args.save)
         if args.port_command == "greeting":
             from .port import greeting
             return greeting.run(args.docker)
