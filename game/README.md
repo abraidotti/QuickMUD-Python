@@ -46,7 +46,8 @@ with `CHARM_UPDATES=area` for it, so its other updates are off too.
 
 Scenarios (#35) check state as well as output, with no network and no real clock. A scenario is a text file in
 `tests/data/scenarios/` (`NAME.scn`): lines of input for a connection, and `@` lines for the harness (`@connect`,
-`@as`, `@return`, `@pulse N`, `@mob`, `@obj`, `@state`; the format is in `tools/oracle/scenario.c`). The C driver
+`@as`, `@return`, `@pulse N`, `@mob`, `@obj`, `@state`, `@file`; the format is in `tools/oracle/scenario.c`). A
+scenario with the comment `# expect: stopped NotPorted` checks that unported code stops the Python game. The C driver
 plays it through the C game's own code, and `charm.testing.scenario` through the Python game's. Both print each
 step's output, the random numbers drawn so far, and on `@state` the rooms' characters and objects. The C's lines
 are saved as `NAME.golden`, which `tests/test_scenarios.py` replays with no Docker. From `tools/`,
