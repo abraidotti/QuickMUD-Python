@@ -199,6 +199,8 @@ python -m charm_tools port status                # how much of the C game the Py
 python -m charm_tools port rng --docker charm:build   # the C game's random numbers vs game/tests/data/rng.json
 python -m charm_tools port data                  # regenerate game/charm/data/ from the C tables
 python -m charm_tools port world --docker charm:build   # boot the C and Python worlds and compare them
+python -m charm_tools port io --docker charm:build      # comm.c's input and output cases, C against Python
+python -m charm_tools port greeting --docker charm      # connect to both games and compare their greetings
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 

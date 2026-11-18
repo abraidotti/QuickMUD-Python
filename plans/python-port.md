@@ -1,8 +1,9 @@
 # Plan: port Charm's game from C to Python
 
 Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike started 2026-11-17 (#25), time box
-5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5: the world and resets, checked
-against the C world line by line (`charm_tools port world`).
+5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5 done (#27): the world and
+resets (`charm_tools port world`). PR 3 of 5 (#28): the loop, connections and output (`port io`, `port greeting`);
+the checkpoint after it estimates 60% of the spike's functions ported, over #25's 40% line.
 
 ## Goal
 
@@ -60,6 +61,11 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
     whenever the first is the smaller, and every reset after it depends on that
   - text read with newline translation: Python turned the stray `\n\r` in two area files into two newlines,
     where the C's `getc()` sees the bytes
+  - undefined behaviour in the C: a `{` or `$` at the end of a string makes the C read past it, and a personal
+    colour code with no `PC_DATA` dereferences NULL. Python can't copy those; it stops there, and raises
+    `CWouldCrash` where the C would crash
+  - what the transport can't see: the C closes a connection that sends urgent (out-of-band) data, because it polls
+    for exceptional conditions; `selectors` has no such set, so the Python game doesn't (#28)
 - **Guard tests that scan the source.** Where a rule is "always go through one function" (the RNG, flag constants,
   wear slots), a test greps the code for anything that bypasses it. A regression then fails the test suite instead of
   waiting to be noticed.

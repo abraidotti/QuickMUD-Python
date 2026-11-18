@@ -28,9 +28,15 @@ The code is organised by topic, not by C file:
 | `systems/` | what runs every tick: fighting, magic, updates, specials, mob programs | |
 | `olc/` | the online builder | |
 
-So far there are `core/`, `data/`, `world/`, `entities/` and `net/` (only `act()` yet). The import rules for the
+So far there are `core/`, `data/`, `world/`, `entities/`, `net/`, `systems/` (only `update_handler`) and
+`commands/` (only `one_argument`). The import rules for the
 first three are checked by `tests/test_guards.py`; the rest get rules once the port shows where the C game's
 circular calls land. The first one has: `equip_char` (`entities/`) calls `act()` (`net/`).
+
+`python -m charm --port N --root DIR` runs the game from DIR (which holds `area/`), as the C does from its run
+directory: it boots, listens, greets connections and stops cleanly on SIGTERM or Ctrl-C (Ctrl-Break on Windows).
+Until login is ported (spike PR 4), the first line anyone types reaches `nanny` and the game stops with
+`NotPorted`. Only `area_update` runs of the per-pulse updates; the game logs the rest at boot (#28).
 
 `charm.entities.boot.boot_db` boots the world the way the C game does: the seed, the clock and weather, the areas,
 then a reset of every area. From `tools/`, `python -m charm_tools port world` boots it next to the C game's (Docker,
