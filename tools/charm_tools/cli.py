@@ -9,6 +9,8 @@
     port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
     port data [--check]    generate game/charm/data/ from the C tables (--check: fail if it would change)
     port world             boot both games' worlds and compare them (--docker IMAGE, or the saved capture)
+    port io                run comm.c's input and output cases through both games (--docker IMAGE, or saved)
+    port greeting --docker IMG  connect to both games and compare what they send first
 """
 
 from __future__ import annotations
@@ -64,6 +66,11 @@ def main(argv: list[str] | None = None) -> int:
     pworld.add_argument("--time", metavar="T", help="current_time at boot (default: the saved capture's)")
     pworld.add_argument("--updates", type=int, help="area_update passes after boot (default: the saved capture's)")
     pworld.add_argument("--save", action="store_true", help="with --docker: save the C capture as the fixture")
+    pio = port_sub.add_parser("io", help="run comm.c's input and output cases through both games and compare")
+    pio.add_argument("--docker", metavar="IMAGE", help="a build-stage image (default: the saved capture)")
+    pio.add_argument("--save", action="store_true", help="with --docker: save the C results as the fixture")
+    pgreet = port_sub.add_parser("greeting", help="connect to both games and compare the first bytes they send")
+    pgreet.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
 
     args = ap.parse_args(argv)
 
@@ -90,6 +97,14 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "data":
             from .port import data
             return data.run(args.check)
+        if args.port_command == "io":
+            from .port import io
+            if args.save and not args.docker:
+                ap.error("--save needs --docker")
+            return io.run(args.docker, args.save)
+        if args.port_command == "greeting":
+            from .port import greeting
+            return greeting.run(args.docker)
         if args.port_command == "world":
             from .port import world
             custom = args.seed or args.time or args.updates is not None
