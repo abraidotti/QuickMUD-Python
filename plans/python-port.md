@@ -76,7 +76,11 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
 
   The pointer identity class above showed up in Charm too (#30): fwrite_obj and fwrite_pet write a string when
   its pointer differs from the prototype's, and a string read from a player file is always a new one. The port
-  records which strings are an object's own (`own_strings`) instead of comparing Python strings with `is`.
+  records which strings are an object's own (`own_strings`) instead of comparing Python strings with `is`. The
+  fields mark themselves (a descriptor, `things._OwnString`): assigning one after construction makes it the
+  object's own, as a new pointer would be, and `create_object` and `create_mobile` clear the set. So code ported
+  later (restrings, a pet's neck tag) can't forget to mark it. Reading one of those fields costs about 80 ns more
+  than a plain attribute.
 - **Guard tests that scan the source.** Where a rule is "always go through one function" (the RNG, flag constants,
   wear slots), a test greps the code for anything that bypasses it. A regression then fails the test suite instead of
   waiting to be noticed.

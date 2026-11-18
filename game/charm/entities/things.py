@@ -17,15 +17,41 @@ from charm.data import constants as C
 from charm.world.index import Affect, ExtraDescr, MobIndex, ObjIndex, Room
 
 
+class _OwnString:
+    """A string field that the C saves only when it isn't the prototype's, which it tells by comparing pointers.
+
+    Python can't compare string identity reliably (it shares short strings), so the instance keeps the names of
+    its own strings in ``own_strings``. Assigning the field after construction adds its name there, as a new
+    pointer would be in the C: a string read from a player file, a restring, a pet's neck tag. create_object and
+    create_mobile clear the set once they've copied the prototype's strings, because str_dup hands back a boot
+    string's own pointer. The generated __init__ assigns the fields before ``own_strings`` exists, so construction
+    marks nothing: ``own_strings`` must stay after the fields that use this (tests check it).
+    """
+
+    def __set_name__(self, owner: type, name: str) -> None:
+        self.name, self.slot = name, "_own_" + name
+
+    def __get__(self, obj: object, owner: type | None = None) -> str:
+        if obj is None:
+            return ""  # the dataclass default
+        return obj.__dict__[self.slot]
+
+    def __set__(self, obj: object, value: str) -> None:
+        own = obj.__dict__.get("own_strings")
+        if own is not None:
+            own.add(self.name)
+        obj.__dict__[self.slot] = value
+
+
 @dataclass(eq=False)
 class Char:
     """CHAR_DATA, with new_char's defaults."""
 
     index: MobIndex | None = None  # pIndexData; None for a player
-    name: str = ""
-    short_descr: str = ""
-    long_descr: str = ""
-    description: str = ""
+    name: str = ""  # fwrite_pet always writes Name, so it isn't an _OwnString
+    short_descr: str = _OwnString()
+    long_descr: str = _OwnString()
+    description: str = _OwnString()
     prompt: str | None = ""
     prefix: str = ""
     material: str = ""
@@ -97,7 +123,7 @@ class Char:
     master: "Char | None" = None
     on: "Obj | None" = None  # the furniture it's on
     valid: bool = True  # VALIDATE / INVALIDATE: free_char invalidates
-    own_strings: set[str] = field(default_factory=set)  # a pet's strings that aren't its prototype's (see Obj)
+    own_strings: set[str] = field(default_factory=set)  # a pet's strings that aren't its prototype's (_OwnString)
     carrying: list["Obj"] = field(default_factory=list)  # head first
     affected: list[Affect] = field(default_factory=list)  # head first
 
@@ -170,9 +196,9 @@ class Obj:
     affected: list[Affect] = field(default_factory=list)  # head first
     enchanted: bool = False
     owner: str | None = None
-    name: str = ""
-    short_descr: str = ""
-    description: str = ""
+    name: str = _OwnString()
+    short_descr: str = _OwnString()
+    description: str = _OwnString()
     item_type: int = 0
     extra_flags: int = 0
     wear_flags: int = 0
@@ -185,7 +211,7 @@ class Obj:
     timer: int = 0
     value: list[int] = field(default_factory=lambda: [0] * 5)
     # Which strings are the object's own, not its prototype's: fwrite_obj writes Name, ShD and Desc when the C's
-    # pointers differ, and a string read from a player file is always a new one, even with the same text.
+    # pointers differ. Kept by _OwnString: assigning one of them after construction marks it.
     own_strings: set[str] = field(default_factory=set)
 
 

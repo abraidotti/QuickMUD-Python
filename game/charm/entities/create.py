@@ -45,6 +45,7 @@ def create_mobile(game: Game, p: MobIndex) -> Char:
     mob.short_descr = p.short_descr
     mob.long_descr = p.long_descr
     mob.description = p.description
+    mob.own_strings.clear()  # str_dup hands back a boot string's pointer: these are still the prototype's
     mob.id = get_mob_id(game)
     mob.spec_fun = p.spec_fun
     mob.prompt = None
@@ -167,6 +168,7 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     obj.name = p.name
     obj.short_descr = p.short_descr
     obj.description = p.description
+    obj.own_strings.clear()  # str_dup hands back a boot string's pointer: these are still the prototype's
     obj.material = p.material
     obj.item_type = p.item_type
     obj.extra_flags = p.extra_flags

@@ -5,7 +5,8 @@ The quirks are kept:
 - KEY matches whole words, ignoring case, in the C's order within each first letter
 - lists are written tail first, so loading (which pushes on the front) gets them back in order
 - an object's Name, ShD and Desc, and a pet's ShD, LnD and Desc, are written when they're its own strings, not
-  its prototype's; the C compares pointers there (own_strings)
+  its prototype's; the C compares pointers there (own_strings, kept by things._OwnString: a string read here is
+  assigned, so it's marked)
 - fwrite_pet writes "Pos 8", and sets the pet standing: "pet->position = POS_FIGHTING ? ..." assigns
 - in a #PET section the "no match" check sits after a break, so an unknown key is skipped a word at a time
 
@@ -711,8 +712,7 @@ def fread_pet(game: Game, ch: Char, r: Reader) -> None:
             pet.race = race_lookup(r.read_string())
         elif any(_is(word, k) for k in strings):
             name = strings[next(k for k in strings if _is(word, k))]
-            setattr(pet, name, r.read_string())
-            pet.own_strings.add(name)
+            setattr(pet, name, r.read_string())  # a new string, so the pet's own (_OwnString marks it)
         elif any(_is(word, k) for k in numbers):
             name = numbers[next(k for k in numbers if _is(word, k))]
             v = r.read_number()
@@ -756,7 +756,6 @@ def fread_obj(game: Game, ch: Char, r: Reader, nest: list) -> None:
             obj.cost = int32(r.read_number())
         elif _is(word, "Description", "Desc"):
             obj.description = r.read_string()
-            obj.own_strings.add("description")
         elif _is(word, "Enchanted"):
             obj.enchanted = True
         elif _is(word, "ExtraFlags", "ExtF"):
@@ -790,7 +789,6 @@ def fread_obj(game: Game, ch: Char, r: Reader, nest: list) -> None:
             obj.level = sh_int(r.read_number())
         elif _is(word, "Name"):
             obj.name = r.read_string()
-            obj.own_strings.add("name")
         elif _is(word, "Nest"):
             i_nest = r.read_number()
             if i_nest < 0 or i_nest >= MAX_NEST:
@@ -803,7 +801,6 @@ def fread_obj(game: Game, ch: Char, r: Reader, nest: list) -> None:
                 make_new = True
         elif _is(word, "ShortDescr", "ShD"):
             obj.short_descr = r.read_string()
-            obj.own_strings.add("short_descr")
         elif _is(word, "Spell"):
             i_value = r.read_number()
             sn = skill_lookup(r.read_word())
