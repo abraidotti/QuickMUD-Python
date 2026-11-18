@@ -46,6 +46,10 @@ TABLES = [
     Table("tables.c", "mprog_flags", "flag_type", "mobprogs"),
     Table("tables.c", "clan_table", "clan_type", "clans"),
     Table("special.c", "spec_table", "spec_type", "specials"),
+    Table("const.c", "skill_table", "skill_type", "skills"),
+    Table("const.c", "attack_table", "attack_type", "attacks"),
+    Table("tables.c", "position_table", "position_type", "characters"),
+    Table("tables.c", "sex_table", "sex_type", "characters"),
 ]
 
 MODULE_TITLES = {
@@ -54,6 +58,9 @@ MODULE_TITLES = {
     "mobprogs": "Mob program triggers.",
     "clans": "Clans.",
     "specials": "Special procedures: the names area files can give a mob in #SPECIALS.",
+    "skills": "Skills and spells: skill_table, whose index is a skill's number (sn).",
+    "attacks": "Attack types: the damage nouns a mob's or weapon's attack word is looked up in.",
+    "characters": "Positions and sexes.",
 }
 
 INT_TYPES = {"int", "sh_int", "long", "bool", "unsigned int", "long int"}
@@ -122,7 +129,7 @@ def value(field: Field, raw, defines: Defines, where: str):
             return raw.value
         raise SourceError(f"{where}: {field.name} should be a string, got {raw!r}")
     if field.kind == "ref":
-        if raw == "NULL":
+        if raw in ("NULL", "0"):  # a null pointer (skill_table's "reserved" row writes 0)
             return None
         name = raw[1:].strip() if raw.startswith("&") else raw
         if not re.fullmatch(r"[A-Za-z_]\w*", name):
@@ -134,8 +141,26 @@ def value(field: Field, raw, defines: Defines, where: str):
     return bool(number) if field.kind == "bool" else number
 
 
+IDENTITY_MACRO = re.compile(r"^#define\s+(\w+)\s*\(\s*(\w+)\s*\)\s+\(?\s*\2\s*\)?\s*$", re.M)
+
+
+def identity_macros(path: Path) -> set[str]:
+    """Function-like macros in a C file that expand to their argument, like const.c's ``#define SLOT(n) n``."""
+    return {m.group(1) for m in IDENTITY_MACRO.finditer(path.read_text(encoding="latin-1"))}
+
+
+def expand(raw, macros: set[str]):
+    """``SLOT (70)`` -> ``70`` for an identity macro; anything else unchanged."""
+    if isinstance(raw, str) and not isinstance(raw, Str):
+        m = re.fullmatch(r"(\w+)\s*\((.*)\)", raw.strip(), re.S)
+        if m and m.group(1) in macros:
+            return m.group(2).strip()
+    return raw
+
+
 def rows(src: Path, defines: Defines, table: Table, fields: list[Field]) -> list[dict]:
     entries = read_array(src / table.c_file, table.c_name)
+    macros = identity_macros(src / table.c_file)
     # A table that ends with a sentinel row (every string field NULL: {NULL, 0, ...} or item_table's {0, NULL}) is
     # scanned up to it in C, so it isn't a row here.
     strings = [i for i, f in enumerate(fields) if f.kind == "str" and f.length is None]
@@ -144,8 +169,11 @@ def rows(src: Path, defines: Defines, table: Table, fields: list[Field]) -> list
     out = []
     for n, entry in enumerate(entries):
         where = f"{table.c_file} {table.c_name}[{n}]"
-        if len(entry) != len(fields):
+        if len(entry) > len(fields):
             raise SourceError(f"{where}: {len(entry)} values for {len(fields)} fields")
+        # C zero-fills the fields a row leaves out (skill_table's spells often stop before msg_obj).
+        entry = [expand(e, macros) for e in entry] + ["NULL" if f.kind in ("str", "ref") else "0"
+                                                      for f in fields[len(entry):]]
         row = {}
         for f, raw in zip(fields, entry):
             if f.length is not None:
