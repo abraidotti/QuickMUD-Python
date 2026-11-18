@@ -16,6 +16,7 @@
     port login --docker IMG     the same login sessions against both games, byte for byte
     port players --docker IMG   player files saved by each game load in the other, key by key
     port commands --docker IMG  the same sessions in the game against both games, byte for byte
+    port scenarios         scenario files through both games, line by line (--docker IMAGE, or the goldens)
 """
 
 from __future__ import annotations
@@ -87,6 +88,10 @@ def main(argv: list[str] | None = None) -> int:
     pcommands = port_sub.add_parser("commands", help="run the same sessions in the game against both games")
     pcommands.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
     pcommands.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
+    pscen = port_sub.add_parser("scenarios", help="play the scenario files through both games and compare")
+    pscen.add_argument("--docker", metavar="IMAGE", help="the build-stage image: docker build --target build")
+    pscen.add_argument("--save", action="store_true", help="with --docker: write the goldens the tests replay")
+    pscen.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
     pplayers = port_sub.add_parser("players", help="round-trip player files between the two games")
     pplayers.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
     pplayers.add_argument("--save", action="store_true", help="keep the C game's files for the tests")
@@ -134,6 +139,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "commands":
             from .port import commands
             return commands.run(args.docker, args.only)
+        if args.port_command == "scenarios":
+            from .port import scenarios
+            return scenarios.run(args.docker, args.save, args.only)
         if args.port_command == "players":
             from .port import players
             return players.run(args.docker, args.save)
