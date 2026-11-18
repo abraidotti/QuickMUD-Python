@@ -1,0 +1,30 @@
+# score at levels 1 (a new character), 10, 25 (armour numbers) and 51 (a hero: no exp to level).
+@connect newcomer
+Newcomer
+y
+secret1
+secret1
+dwarf
+f
+cleric
+g
+n
+mace
+@return
+score
+@connect decimus
+Decimus
+psswrd
+@return
+score
+@connect quintus
+Quintus
+psswrd
+@return
+score
+@connect heroic
+Heroic
+psswrd
+@return
+score
+@state

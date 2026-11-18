@@ -1,0 +1,15 @@
+# Resets over time: area_update every 480 pulses, ageing each area, and Midgaard resetting at age 15 while a
+# player is in it. The random draws, and the temple's state, are compared after each stretch.
+@connect rambler
+Rambler
+psswrd
+@return
+@mob 3011 3001
+@state
+@pulse 2400
+@state
+@pulse 2400
+@state
+@pulse 2400
+@state
+look

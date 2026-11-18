@@ -1,0 +1,16 @@
+# Sneaking mobs: every time Rambler looks, can_see rolls against each elf's sneak skill, so who's seen varies.
+@connect rambler
+Rambler
+psswrd
+@return
+@mob 7801 3001
+@mob 7805 3001
+@mob 7801 3001
+look
+look
+look
+look
+look
+look elf
+look 2.elf
+@state

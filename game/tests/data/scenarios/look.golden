@@ -1,0 +1,111 @@
+sources 8d39252201e8d980
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect rambler"
+rng 51872 4ba9daca
+step 2 "Rambler"
+out rambler "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out rambler "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out rambler "\n\rWelcome to ROM 2.4.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@obj 3011 3001"
+rng 51895 7f5599b5
+step 6 "@obj 3011 3001"
+rng 51895 7f5599b5
+step 7 "@obj 3012 3001"
+rng 51895 7f5599b5
+step 8 "@obj 3032 3001"
+rng 51895 7f5599b5
+step 9 "look"
+out rambler "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\r     A small bag.\n\r     A piping hot cinnamon roll is here. It looks delicious!\n\r( 2) A loaf of bread is here. It doesn't look too stale.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "look hassan"
+out rambler "Big. Very big.\n\rStupid. Very stupid.\n\r\n\rHassan, the guardian of  the Temple of Mota, towers over you.  He's over 12 \n\rfeet tall, every inch of it muscle. It would be a Bad Thing to commit a crime\n\rin his presence.\n\rHassan is in excellent condition.\n\r\n\rHassan is using:\n\r<wielded>           (Humming) Hassan's scimitar\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 11 "look 2.hassan"
+out rambler "You do not see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 12 "look self"
+out rambler "You see nothing special about him.\n\rRambler is in excellent condition.\n\r\n\rRambler is using:\n\r<used as light>     (Glowing) a war banner\n\r<worn on torso>     a sub issue vest\n\r<worn as shield>    a sub issue shield\n\r<wielded>           a sub issue sword\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 13 "look bread"
+out rambler "A loaf of bread is here. It doesn't look too stale.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 14 "look 2.bread"
+out rambler "A loaf of bread is here. It doesn't look too stale.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 15 "look 3.bread"
+out rambler "You only see 2 of those here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 16 "look roll"
+out rambler "A piping hot cinnamon roll is here. It looks delicious!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 17 "look plaque"
+out rambler "This entire world has been integrated, modified, debugged, and enhanced by\n\rHatchet, Kahn, and Furey of MERC Industries to be run by any MERC Mud.\n\r1992 December 17\n\rROM enhancements by Alander.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 18 "look 2.plaque"
+out rambler "You only see one plaque here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 19 "look nothing"
+out rambler "You do not see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 20 "look n"
+out rambler "At the northern end of the temple hall is a statue and a huge altar.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 21 "look w"
+out rambler "A war banner is on the floor here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 22 "look up"
+out rambler "You see the entrance to Mud School.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 23 "look in"
+out rambler "Look in what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 24 "look in bread"
+out rambler "That is not a container.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 25 "look in bag"
+out rambler "A bag holds:\n\r     Nothing.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 26 "look in nothing"
+out rambler "You do not see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 27 "exits"
+out rambler "Obvious exits:\n\rNorth - By the Temple Altar\n\rSouth - The Temple Square\n\rUp    - Entrance to Mud School\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 28 "exits auto"
+out rambler "[Exits: north south up]\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 29 "n"
+out rambler "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r\n\r[Exits: south up]\n\r     A pit for sacrifices is in front of the altar.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 30 "look in pit"
+rng 51896 5ed8996e
+step 31 "look statue"
+out rambler "The donation pit holds:\n\r     Nothing.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 32 "look 2.statue"
+out rambler "The statue represents the Great God Mota, holding a staff.  He has long, grey\n\rhair and beard and a kindly look on his face.  His staff is topped by a painted\n\rcube, the 6 faces of which represent the 6 aspects of his power.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 33 "look 3.statue"
+out rambler "You only see one statue here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 34 "look altar"
+out rambler "You only see one statue here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 35 "@state"
+state room 3054 light 1 people player mob
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 51896 5ed8996e

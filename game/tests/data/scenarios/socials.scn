@@ -1,0 +1,28 @@
+# Socials alone, at players, at self, at nobody, and at a mob, whose reply (copy, slap or nothing) is drawn.
+@connect rambler
+Rambler
+psswrd
+@return
+@connect weary
+Weary
+psswrd
+@return
+@as rambler
+smile
+smile weary
+bow self
+wave nobody
+@as weary
+grin rambler
+@as rambler
+smile hassan
+grin hassan
+bow hassan
+wave hassan
+nod hassan
+hug hassan
+poke hassan
+dance hassan
+@as weary
+xyzzy
+@state

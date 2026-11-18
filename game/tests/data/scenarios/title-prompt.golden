@@ -1,0 +1,65 @@
+sources 8d39252201e8d980
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect shemp"
+rng 51872 4ba9daca
+step 2 "Shemp"
+out shemp "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out shemp "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out shemp "\n\rWelcome to ROM 2.4.  Please don't feed the mobiles!\n\rA Cage\n\r  You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\n\rin the upkeep here!  There is a sign on the wall.  The only exit is east.\n\rThere is a wimpy aggressive monster leashed here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "title"
+out shemp "Change your title to what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "title {"
+out shemp "Change your title to what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "title x"
+out shemp "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "title the Brave{"
+out shemp "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "title the Brave{{"
+out shemp "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "title the Brave"
+out shemp "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "title aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+out shemp "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "score"
+out shemp "You are Shemp aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, level 2, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 29/29 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/47 items with weight 14/230 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2088 exp, and have 0 gold and 0 silver coins.\n\rYou need 912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "prompt"
+out shemp "You will no longer see prompts.\n\r\n\r\xff\xf9"
+rng 51895 7f5599b5
+step 14 "look"
+out shemp "A Cage\n\r  You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\n\rin the upkeep here!  There is a sign on the wall.  The only exit is east.\n\rThere is a wimpy aggressive monster leashed here.\n\r\n\r\xff\xf9"
+rng 51895 7f5599b5
+step 15 "prompt"
+out shemp "You will now see prompts.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "prompt all"
+out shemp "Prompt set to <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "prompt <%h %W>"
+out shemp "Prompt set to <%h %W> \n\r\n\r<29 0> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "prompt <%c"
+out shemp "Prompt set to <%c\n\r\n\r<\n\r\xff\xf9"
+rng 51895 7f5599b5
+step 19 "prompt bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+out shemp "Prompt set to bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb \n\r\n\rbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb \xff\xf9"
+rng 51895 7f5599b5
+step 20 "prompt <%hhp %mm %vmv %W>"
+out shemp "Prompt set to <%hhp %mm %vmv %W> \n\r\n\r<29hp 102m 106mv 0> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "look"
+out shemp "A Cage\n\r  You are in a cage.  Blood and gore are everywhere.  The keepers must be lax\n\rin the upkeep here!  There is a sign on the wall.  The only exit is east.\n\rThere is a wimpy aggressive monster leashed here.\n\r\n\r<29hp 102m 106mv 0> \xff\xf9"
+rng 51895 7f5599b5

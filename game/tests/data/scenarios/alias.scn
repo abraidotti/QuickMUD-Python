@@ -1,0 +1,13 @@
+# Aliases from the player file (gs = score, gl = look), with and without arguments, and what isn't an alias.
+# A prefix isn't here: player files don't save one, and the prefix command isn't ported yet.
+@connect rambler
+Rambler
+psswrd
+@return
+gs
+gl
+gl hassan
+gl  plaque
+gs extra
+gsx
+@state
