@@ -88,10 +88,25 @@ class RealTree(unittest.TestCase):
         st = status.status()
         partial = {(p.c_file, p.c_name) for p in st.ports if p.partial}
         self.assertIn(("db.c", "boot_db"), partial)
-        self.assertIn(("db2.c", "load_mobiles"), partial)
+        self.assertIn(("db.c", "create_mobile"), partial)
         self.assertNotIn(("db.c", "load_rooms"), partial)
+        self.assertIn(("db.c", "reset_room"), partial)
+        full = {(p.c_file, p.c_name) for p in st.ports if not p.partial}
+        for name in (("db2.c", "load_mobiles"), ("db2.c", "load_objects"), ("db.c", "reset_area"),
+                     ("db.c", "assign_area_vnum"), ("handler.c", "obj_to_obj")):
+            self.assertIn(name, full)
         self.assertTrue(status.MARKER.match("    # C: db2.c load_objects [partial]").group(3))
         self.assertIsNone(status.MARKER.match("# C: db.c load_rooms [partly]"))
+
+    def test_later_notes(self):
+        st = status.status()
+        self.assertTrue(st.later)
+        self.assertTrue(all(n.text for n in st.later))
+        self.assertTrue(any(n.module == "charm/entities/handler.py" for n in st.later))
+        self.assertIn("Improvements noted for later", status.report(st))
+        lists = next(n for n in st.later if "insert(0)" in n.text)
+        self.assertTrue(lists.text.endswith("carrying, contains)"))  # joined over its second comment line
+        self.assertEqual(status.LATER.search("    x = 1  # LATER: a deque").group(1).strip(), "a deque")
 
     def test_use_game_makes_charm_importable(self):
         paths.use_game()

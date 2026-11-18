@@ -8,6 +8,7 @@
     port status            how much of the C game the Python game (game/) has ported, function by function
     port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
     port data [--check]    generate game/charm/data/ from the C tables (--check: fail if it would change)
+    port world             boot both games' worlds and compare them (--docker IMAGE, or the saved capture)
 """
 
 from __future__ import annotations
@@ -55,6 +56,14 @@ def main(argv: list[str] | None = None) -> int:
     prng.add_argument("--save", action="store_true", help="save the capture as the new fixture")
     pdata = port_sub.add_parser("data", help="generate game/charm/data/ from the C tables")
     pdata.add_argument("--check", action="store_true", help="write nothing; exit 1 if regenerating would change it")
+    pworld = port_sub.add_parser("world", help="boot the C and Python worlds with one seed and compare them")
+    pworld.add_argument("--docker", metavar="IMAGE",
+                        help="a build-stage image to boot the C world in (default: the saved capture)")
+    pworld.add_argument("--seed", action="append", metavar="N",
+                        help="CHARM_SEED for both sides; repeat for more (default: the saved capture's)")
+    pworld.add_argument("--time", metavar="T", help="current_time at boot (default: the saved capture's)")
+    pworld.add_argument("--updates", type=int, help="area_update passes after boot (default: the saved capture's)")
+    pworld.add_argument("--save", action="store_true", help="with --docker: save the C capture as the fixture")
 
     args = ap.parse_args(argv)
 
@@ -81,5 +90,14 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "data":
             from .port import data
             return data.run(args.check)
+        if args.port_command == "world":
+            from .port import world
+            custom = args.seed or args.time or args.updates is not None
+            if not args.docker and custom:
+                ap.error("--seed, --time and --updates need --docker (the saved capture has its own)")
+            if args.save and (not args.docker or custom):
+                ap.error("--save needs --docker, with the default seed, time and updates")
+            return world.run(args.docker, args.seed or [world.SEED], args.time or world.TIME,
+                             world.UPDATES if args.updates is None else args.updates, args.save)
     ap.error(f"unknown command {args.command}")  # unreachable: argparse enforces the choices
     return 2

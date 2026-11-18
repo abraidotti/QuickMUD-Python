@@ -84,7 +84,8 @@ class Reader:
 
     @classmethod
     def from_path(cls, path: Path) -> "Reader":
-        return cls(path.read_text(encoding="latin-1"), path.name)
+        # Raw bytes, as the C's getc() sees them: read_text() would turn a stray "\r" into a newline.
+        return cls(path.read_bytes().decode("latin-1"), path.name)
 
     # -- primitives ---------------------------------------------------------
     def getc(self) -> str:

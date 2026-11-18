@@ -5,7 +5,9 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 (c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
 """
 
+import tempfile
 import unittest
+from pathlib import Path
 
 from charm.world.areafile.reader import AreaParseError, Reader, int32, sh_int
 
@@ -88,6 +90,14 @@ class StringTest(unittest.TestCase):
 
     def test_empty(self):
         self.assertEqual(r("~").read_string(), "")
+
+    def test_files_are_read_as_raw_bytes(self):
+        # plains.are and newthalos.are have "\n\r" inside strings. The C drops the \r; reading the file as text
+        # would have turned it into a second newline.
+        with tempfile.TemporaryDirectory() as d:
+            path = Path(d, "t.are")
+            path.write_bytes(b"one\n\rtwo~")
+            self.assertEqual(Reader.from_path(path).read_string(), "one\ntwo")
 
     def test_eof_logs_a_bug_and_returns_null(self):
         rd = r("no tilde")

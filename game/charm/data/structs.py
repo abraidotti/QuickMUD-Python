@@ -89,3 +89,46 @@ class SpecType:
 
     name: str | None  # C: char *
     function: str | None  # C: SPEC_FUN *
+
+
+@dataclass(frozen=True)
+class SkillType:
+    """struct skill_type"""
+
+    name: str | None  # C: char *
+    skill_level: tuple[int, ...]  # C: sh_int [4]
+    rating: tuple[int, ...]  # C: sh_int [4]
+    spell_fun: str | None  # C: SPELL_FUN *
+    target: int  # C: sh_int
+    minimum_position: int  # C: sh_int
+    pgsn: str | None  # C: sh_int *
+    slot: int  # C: sh_int
+    min_mana: int  # C: sh_int
+    beats: int  # C: sh_int
+    noun_damage: str | None  # C: char *
+    msg_off: str | None  # C: char *
+    msg_obj: str | None  # C: char *
+
+
+@dataclass(frozen=True)
+class AttackType:
+    """struct attack_type"""
+
+    name: str | None  # C: char *
+    noun: str | None  # C: char *
+    damage: int  # C: int
+
+
+@dataclass(frozen=True)
+class PositionType:
+    """struct position_type"""
+
+    name: str | None  # C: char *
+    short_name: str | None  # C: char *
+
+
+@dataclass(frozen=True)
+class SexType:
+    """struct sex_type"""
+
+    name: str | None  # C: char *

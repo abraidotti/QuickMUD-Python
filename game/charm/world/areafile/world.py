@@ -15,7 +15,7 @@ from pathlib import Path
 
 from .boot import Boot, Counts
 from .lookups import LookupTables
-from .model import AreaFile, Mob, Obj, Reset, Room
+from .model import AreaFile, AreaHeader, Mob, MobProg, Obj, Reset, Room, Shop
 from .reader import AreaParseError, Diagnostic, Reader
 
 
@@ -32,6 +32,9 @@ class World:
     counts: Counts
     diagnostics: list[Diagnostic]
     tables: LookupTables
+    areas: list[AreaHeader] = field(default_factory=list)  # in load order, as the C's area list
+    shops: dict[int, Shop] = field(default_factory=dict)  # keeper vnum -> shop
+    mobprogs: dict[int, MobProg] = field(default_factory=dict)
     fatal: AreaParseError | None = None  # set if boot_db would have stopped; the world is then partial
     unlisted: list[str] = field(default_factory=list)  # *.are files on disk that area.lst doesn't name
 
@@ -82,4 +85,5 @@ def load_world(area_dir: Path, tables: LookupTables | None = None) -> World:
     listed = set(names)
     unlisted = sorted(p.name for p in area_dir.glob("*.are") if p.name not in listed)
     return World(area_dir, names, boot.files, boot.rooms, boot.mobs, boot.objects, boot.room_resets,
-                 set(boot.shop_of), boot.counts, boot.diagnostics, tables, fatal, unlisted)
+                 set(boot.shop_of), boot.counts, boot.diagnostics, tables, boot.areas, dict(boot.shop_of),
+                 boot.mobprogs, fatal, unlisted)

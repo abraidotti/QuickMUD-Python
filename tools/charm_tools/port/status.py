@@ -5,6 +5,10 @@ marker comments: a line "# C: <file>.c <function>" directly above the Python def
 after it when only part of the function is ported so far (#25, decision 3). This reads every C function in src/
 and every marker in game/charm/, and reports per C file what's ported, what's partial and where it went, plus
 Python lines per C line for the fully ported functions. A marker that names no C function is an error.
+
+It also lists the improvements noted for later: "# LATER: <what>" comments, put where a refactor or a faster
+structure would go once the port matches the C (plans/python-port.md, Improvements for later). One with nothing
+after the colon is an error.
 """
 
 from __future__ import annotations
@@ -17,6 +21,8 @@ from pathlib import Path
 from ..paths import find_root, game_dir, src_dir
 
 MARKER = re.compile(r"^\s*# C: (\S+\.c) (\w+)( \[partial\])?\s*$")
+LATER = re.compile(r"#\s*LATER:(.*)$")
+CONTINUED = re.compile(r"^\s*#\s(.*)$")
 # A definition starts in column 0 with a return type, the name and "(". Its body opens with "{" at the end of the
 # parameter list or in column 0 on a following line (ROM's style throughout), and closes with "}" in column 0.
 DEF_START = re.compile(r"^(?!typedef\b|#|/|\s)[A-Za-z_][\w\s*]*?\b([A-Za-z_]\w*)\s*\(")
@@ -50,12 +56,20 @@ class Port:
 
 
 @dataclass
+class Later:
+    module: str  # path under game/
+    line: int
+    text: str
+
+
+@dataclass
 class Status:
     functions: list[CFunction]
     c_lines: dict[str, int]
     ports: list[Port]
     bad_markers: list[str] = field(default_factory=list)
     python_lines: int = 0  # every line of game/charm/**/*.py outside data/
+    later: list[Later] = field(default_factory=list)
 
 
 def c_functions(path: Path) -> list[CFunction]:
@@ -116,6 +130,25 @@ def markers(root: Path) -> list[Port]:
     return ports
 
 
+def later_notes(root: Path) -> list[Later]:
+    pkg = game_dir(root)
+    out = []
+    for py in sorted((pkg / "charm").rglob("*.py")):
+        lines = py.read_text(encoding="utf-8").splitlines()
+        for n, line in enumerate(lines, 1):
+            m = LATER.search(line)
+            if not m:
+                continue
+            text = m.group(1).strip()
+            k = n
+            while k < len(lines) and CONTINUED.match(lines[k]) and not LATER.search(lines[k]) \
+                    and not MARKER.match(lines[k]):  # a note can run on over the comment lines below it
+                text += " " + CONTINUED.match(lines[k]).group(1).strip()
+                k += 1
+            out.append(Later(py.relative_to(pkg).as_posix(), n, text))
+    return out
+
+
 def status(root: Path | None = None) -> Status:
     root = root or find_root()
     functions, c_lines = [], {}
@@ -131,7 +164,9 @@ def status(root: Path | None = None) -> Status:
     pkg = game_dir(root) / "charm"
     python_lines = sum(len(py.read_text(encoding="utf-8").splitlines()) for py in pkg.rglob("*.py")
                        if "data" not in py.relative_to(pkg).parts[:1])
-    return Status(functions, c_lines, ports, bad, python_lines)
+    later = later_notes(root)
+    bad += [f"game/{n.module}:{n.line}: '# LATER:' says nothing" for n in later if not n.text]
+    return Status(functions, c_lines, ports, bad, python_lines, later)
 
 
 def report(st: Status) -> str:
@@ -165,6 +200,12 @@ def report(st: Status) -> str:
     if c_any:
         out.append(f"All hand-written Python in game/charm (not data/, which is generated), per C line ported or "
                    f"partly ported: {st.python_lines / c_any:.2f} ({st.python_lines} / {c_any})")
+    notes = [n for n in st.later if n.text]
+    if notes:
+        out.append("")
+        out.append(f"Improvements noted for later ({len(notes)} '# LATER:' comments; the cross-cutting ones are in "
+                   f"plans/python-port.md):")
+        out += [f"  game/{n.module}:{n.line}  {n.text}" for n in notes]
     out += [f"error: {b}" for b in st.bad_markers]
     return "\n".join(out)
 

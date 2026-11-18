@@ -56,6 +56,11 @@ class AreaHeader:
     builders: str = "None"
     security: int = 9
     olc: bool = False  # True for #AREADATA
+    # The range the game ends up with: OLC's assign_area_vnum widens it to take in every room, mob and object the
+    # area loads, and a range with a 0 at either end starts again from the first vnum loaded. (Limbo's "0 99"
+    # becomes 1-30.)
+    game_min_vnum: int = 0
+    game_max_vnum: int = 0
 
     @property
     def level_band(self) -> tuple[str, str] | None:
@@ -185,6 +190,7 @@ class Room:
     owner: str = ""
     effective_flags: int = 0  # after the loader: the 3000-3399 ROOM_LAW hack, and ROOM_NO_MOB from fix_exits
     area: str = ""
+    area_index: int = -1  # which area (in load order, World.areas) the room belongs to: the C's room->area
     file: str = ""
     line: int = 0
 

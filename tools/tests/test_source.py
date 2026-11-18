@@ -84,6 +84,26 @@ class CUnescape(unittest.TestCase):
             c_unescape(r"\q")
 
 
+class GeneratorRows(unittest.TestCase):
+    def test_identity_macros(self):
+        from charm_tools.port import data
+        p = write("#define SLOT(n)    n\n#define TWICE(n) ((n)*2)\n#define PAREN(x) (x)\n")
+        self.assertEqual(data.identity_macros(p), {"SLOT", "PAREN"})
+        self.assertEqual(data.expand("SLOT (70)", {"SLOT"}), "70")
+        self.assertEqual(data.expand("TWICE (70)", {"SLOT"}), "TWICE (70)")
+        self.assertEqual(data.expand(Str("SLOT (1)"), {"SLOT"}), Str("SLOT (1)"))  # a string stays a string
+
+    def test_skill_table(self):
+        paths.use_game()
+        from charm.data.skills import SKILL_TABLE
+        acid = next(s for s in SKILL_TABLE if s.name == "acid blast")
+        self.assertEqual(acid.slot, 70)  # SLOT (70)
+        self.assertIsNone(acid.msg_obj)  # the row stops before it, and C zero-fills
+        self.assertIsNone(SKILL_TABLE[0].spell_fun)  # "reserved" writes the null pointer as 0
+        self.assertEqual(SKILL_TABLE[0].name, "reserved")
+        self.assertEqual(len(SKILL_TABLE), 135)  # MAX_SKILL is 150; the rest are NULL and not rows
+
+
 class GeneratedData(unittest.TestCase):
     """game/charm/data/ is generated from the C (charm_tools port data). It must be up to date, and the loader's
     tables built from it must equal the ones read straight from the C source."""
