@@ -1,7 +1,8 @@
 # Plan: port Charm's game from C to Python
 
 Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike started 2026-11-17 (#25), time box
-5 PRs or 2026-12-08. PR 1 of 5: the tables and the loader move.
+5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5: the world and resets, checked
+against the C world line by line (`charm_tools port world`).
 
 ## Goal
 
@@ -53,6 +54,12 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
   - flags surviving the load
   - output ordering inside a tick
   - link-dead characters staying in the world
+
+  Found in Charm so far (#25), and added to the list:
+  - macros that evaluate an argument twice: `UMIN(number_fuzzy(level), LEVEL_HERO - 1)` draws two random numbers
+    whenever the first is the smaller, and every reset after it depends on that
+  - text read with newline translation: Python turned the stray `\n\r` in two area files into two newlines,
+    where the C's `getc()` sees the bytes
 - **Guard tests that scan the source.** Where a rule is "always go through one function" (the RNG, flag constants,
   wear slots), a test greps the code for anything that bypasses it. A regression then fails the test suite instead of
   waiting to be noticed.
@@ -145,8 +152,8 @@ Reading it for patterns is fine. Copying code from it isn't.
 game/charm/
   core/       C-faithful primitives: cint, rng, later text and flags       imports nothing else in charm
   data/       static tables: classes, races, skills, liquids, weapons      imports core
-  world/      the static world: areafile/ (T1's loader), model, resets     imports core, data
-  entities/   characters and objects at run time, handler functions
+  world/      the static world: areafile/ (T1's loader), prototypes, lookups imports core, data
+  entities/   characters and objects at run time, handler functions, resets
   net/        the selectors loop, descriptors, act() and output, login
   persist/    player files, notes, bans
   commands/   interp and the commands, one module per topic
@@ -155,7 +162,9 @@ game/charm/
 ```
 
 The import rules for the first three layers are tested. The rest get rules once the port shows where the C game's
-circular calls land (`update.c` calls `do_quit`, for one). Format code stays in three places: `world/areafile/`,
+circular calls land (`update.c` calls `do_quit`, for one). The first to land: `handler.c`'s `equip_char` calls
+`act()` from `comm.c`, so `entities/` imports `net/`. Resets are in `entities/`, not `world/`, because they make
+characters and objects. Format code stays in three places: `world/areafile/`,
 `persist/` and `data/`. A later change of file format only swaps readers and writers there.
 
 ## Phases

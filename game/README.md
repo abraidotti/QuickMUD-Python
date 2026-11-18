@@ -20,16 +20,22 @@ The code is organised by topic, not by C file:
 |---|---|---|
 | `core/` | C-faithful primitives: integer behaviour (`cint`), random numbers (`rng`), later text and flags | nothing else in `charm` |
 | `data/` | static tables: classes, races, skills, liquids, weapons | `core` |
-| `world/` | the static world: area files, rooms, prototypes, resets | `core`, `data` |
-| `entities/` | characters and objects at run time, and moving them around | (rules come with the port) |
-| `net/` | the game loop, descriptors, output, login | |
+| `world/` | the static world: area files, rooms and the prototypes, name lookups | `core`, `data` |
+| `entities/` | characters and objects at run time, moving them around, making them, resets | (rules come with the port) |
+| `net/` | the game loop, descriptors, output, `act()`, login | |
 | `persist/` | player files, notes, bans | |
 | `commands/` | the command table and the commands, by topic | |
 | `systems/` | what runs every tick: fighting, magic, updates, specials, mob programs | |
 | `olc/` | the online builder | |
 
-So far there are `core/`, `data/` and `world/`. The import rules for those three are checked by
-`tests/test_guards.py`; the rest get rules once the port shows where the C game's circular calls land.
+So far there are `core/`, `data/`, `world/`, `entities/` and `net/` (only `act()` yet). The import rules for the
+first three are checked by `tests/test_guards.py`; the rest get rules once the port shows where the C game's
+circular calls land. The first one has: `equip_char` (`entities/`) calls `act()` (`net/`).
+
+`charm.entities.boot.boot_db` boots the world the way the C game does: the seed, the clock and weather, the areas,
+then a reset of every area. From `tools/`, `python -m charm_tools port world` boots it next to the C game's (Docker,
+or the saved capture) and compares the two line by line: every prototype, room, mob and object, the log, and the
+random numbers drawn.
 
 `data/` is generated from the C (`const.c`, `tables.c`, `special.c` and `merc.h`), except its `__init__.py`. Don't
 edit it by hand: change the C, then from `tools/` run `python -m charm_tools port data`. The tools' tests fail if it's
