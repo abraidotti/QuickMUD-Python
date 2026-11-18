@@ -1,0 +1,19 @@
+# What pick lets an immortal skip: Warden (level 60, pick lock 100%) in the Cityguard HQ (3110). The east door is
+# open and has no key: an immortal gets past "It's not closed." and "It can't be picked." to "It's already
+# unlocked.", open or closed. A closed portal (which an immortal may enter) leads to Melancholy's Maps (3160), whose
+# north door is locked and pickproof.
+@connect warden
+Warden
+smoke123
+@return
+@return
+pick east
+@pulse 12
+close east
+pick east
+@pulse 12
+@obj 25 3110 0 3 0 3160 -1
+enter gate
+pick north
+@pulse 12
+@state

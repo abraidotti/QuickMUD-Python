@@ -1,4 +1,4 @@
-sources b1743cbec66efe12
+sources 4f7804ca4c4d221c
 boot seed 20261117 clock 1763400000 updates area
 rng 51872 4ba9daca
 step 1 "@connect delver"
@@ -10,7 +10,7 @@ step 3 "psswrd"
 out delver "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
 rng 51895 7f5599b5
 step 4 "@return"
-out delver "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rIt is pitch black ... \n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out delver "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rOn the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
 rng 51895 7f5599b5
 step 5 "@connect groper"
 rng 51895 7f5599b5
@@ -22,51 +22,60 @@ out groper "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'r
 rng 51895 7f5599b5
 step 8 "@return"
 out delver "\n\rGroper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
-out groper "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rIt is pitch black ... \n\rYou see glowing red eyes watching YOU!\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out groper "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rOn the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\rDelver the Recruit is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
 rng 51895 7f5599b5
 step 9 "@mob 3011 3129"
 rng 51895 7f5599b5
 step 10 "@as delver"
 rng 51895 7f5599b5
 step 11 "look"
-out delver "It is pitch black ... \n\rHassan is here, waiting to dispense some justice.\n\rGroper the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out delver "On the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\rHassan is here, waiting to dispense some justice.\n\rGroper the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
 rng 51895 7f5599b5
 step 12 "look hassan"
-out delver "It is pitch black ... \n\rHassan is here, waiting to dispense some justice.\n\rGroper the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
-rng 51895 7f5599b5
+out delver "Big. Very big.\n\rStupid. Very stupid.\n\r\n\rHassan, the guardian of  the Temple of Mota, towers over you.  He's over 12 \n\rfeet tall, every inch of it muscle. It would be a Bad Thing to commit a crime\n\rin his presence.\n\rHassan is in excellent condition.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out groper "\n\rDelver looks at Hassan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
 step 13 "@as groper"
-rng 51895 7f5599b5
+rng 51896 5ed8996e
 step 14 "look"
-out groper "It is pitch black ... \n\rYou see glowing red eyes watching YOU!\n\rYou see glowing red eyes watching YOU!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
-rng 51895 7f5599b5
+out groper "On the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\rHassan is here, waiting to dispense some justice.\n\rDelver the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
 step 15 "look hassan"
-out groper "It is pitch black ... \n\rYou see glowing red eyes watching YOU!\n\rYou see glowing red eyes watching YOU!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
-rng 51895 7f5599b5
+out delver "\n\rGroper looks at Hassan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out groper "Big. Very big.\n\rStupid. Very stupid.\n\r\n\rHassan, the guardian of  the Temple of Mota, towers over you.  He's over 12 \n\rfeet tall, every inch of it muscle. It would be a Bad Thing to commit a crime\n\rin his presence.\n\rHassan is in excellent condition.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
 step 16 "exits"
 out groper "Obvious exits:\n\rNorth - Park Road\n\rEast  - On the Concourse\n\rWest  - Inside the South Gate of Midgaard\n\r\n\r<29hp 102m 106mv> \xff\xf9"
-rng 51895 7f5599b5
+rng 51898 d55fddad
 step 17 "e"
 out delver "\n\rGroper leaves east.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
 out groper "On the Concourse\n\r  You are at the southeast corner of the city wall.  The Concourse leads\n\rboth north and west.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
-rng 51895 7f5599b5
+rng 51898 d55fddad
 step 18 "look"
-rng 51895 7f5599b5
+rng 51898 d55fddad
 step 19 "w"
 out groper "On the Concourse\n\r  You are at the southeast corner of the city wall.  The Concourse leads\n\rboth north and west.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
-rng 51895 7f5599b5
+rng 51898 d55fddad
 step 20 "@state"
-state room 3129 light 0 people mob player
-state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140
+state room 3129 light 1 people mob player
+state exit 0 to 3126 info 0 key -1
+state exit 1 to 3130 info 0 key -1
+state exit 3 to 3255 info 0 key -1
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
 state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
-state char Delver 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 512
+state char Delver 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 512 train 1 on 0 stats 19 13 13 13 13
 state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
 state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
 state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
 state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
-state room 3130 light 0 people player
-state char Groper 2 pos 8 hit 29/29 mana 102/102 move 104/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state room 3130 light 1 people player
+state exit 0 to 3273 info 0 key -1
+state exit 3 to 3129 info 0 key -1
+state char Groper 2 pos 8 hit 29/29 mana 102/102 move 104/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
 state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
 state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
 state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
 state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
-rng 51895 7f5599b5
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 51898 d55fddad

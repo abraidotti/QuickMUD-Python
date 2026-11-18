@@ -1,0 +1,22 @@
+# Recall: Locksmith from the Cityguard HQ (3110) to the temple, which halves the movement points, and again from the
+# temple, which does nothing. Cursed (AfBy K) is refused. Knocker sees them pray and go.
+@connect lock
+Locksmith
+psswrd
+@return
+@connect knock
+Knocker
+psswrd
+@return
+@connect cursed
+Cursed
+psswrd
+@return
+@as lock
+@state
+recall
+@state
+recall
+@as cursed
+recall
+@state

@@ -1,0 +1,34 @@
+sources 4f7804ca4c4d221c
+boot seed 20 clock 1763400000 updates area
+rng 52082 1eb84fa5
+step 1 "@connect lock"
+rng 52082 1eb84fa5
+step 2 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 52102 a7d29535
+step 3 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 52102 a7d29535
+step 4 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52102 a7d29535
+step 5 "@obj 25 3110 0 0 8 3001 -1"
+rng 52102 a7d29535
+step 6 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rA junction in the deep, dark forest\n\r  You are by a junction where three paths meet.  Ancient grey trees tower above\n\ryou on all sides.  Paths lead north, east and west.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52116 67b520d0
+step 7 "@state"
+state room 6114 light 1 people player
+state exit 0 to 6113 info 0 key -1
+state exit 1 to 6115 info 0 key -1
+state exit 3 to 6122 info 0 key -1
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 52116 67b520d0

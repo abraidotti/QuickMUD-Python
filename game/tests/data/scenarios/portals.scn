@@ -1,0 +1,102 @@
+# Portals, made from Limbo's shimmering gate (vnum 25) with the values each case needs: v0 charges, v1 exit flags,
+# v2 gate flags, v3 the room it leads to, v4 its key. A new one is always 1.gate, so "gate" is the newest.
+# Locksmith (keys 3120, 3121, 3133) starts in the Cityguard HQ (3110) with Cursed (AfBy K); Knocker watches.
+@connect lock
+Locksmith
+psswrd
+@return
+@connect cursed
+Cursed
+psswrd
+@return
+@as lock
+enter
+enter nothing
+@obj 3131 3110
+enter safe
+# Not a door: none of the door commands apply.
+@obj 25 3110 0 0 0 3001 -1
+open gate
+close gate
+lock gate
+unlock gate
+pick gate
+@pulse 12
+# An open door: nothing to lock, unlock or pick until it's closed. Then closed with no key (v4 -1); one that can't
+# be closed (EX_NOCLOSE); one that can't be locked (EX_NOLOCK); and a pickproof one (EX_PICKPROOF).
+@obj 25 3110 0 1 0 3001 -1
+lock gate
+unlock gate
+pick gate
+@pulse 12
+close gate
+@obj 25 3110 0 3 0 3001 -1
+lock gate
+unlock gate
+pick gate
+@pulse 12
+@obj 25 3110 0 1025 0 3001 3120
+close gate
+lock gate
+@obj 25 3110 0 2051 0 3001 3120
+lock gate
+@obj 25 3110 0 39 0 3001 3120
+pick gate
+@pulse 12
+# A closed door with key 3120: the whole round, then through it to the temple.
+@obj 25 3110 0 3 0 3001 3120
+enter gate
+close gate
+# Closed and not locked, yet pick "picks the lock" (the C doesn't check EX_LOCKED for portals).
+pick gate
+@pulse 12
+open gate
+close gate
+lock gate
+lock gate
+open gate
+unlock gate
+unlock gate
+lock gate
+pick gate
+@pulse 12
+open gate
+open gate
+@as cursed
+close gate
+lock gate
+unlock gate
+open gate
+enter gate
+@as lock
+enter gate
+@state
+# In the temple: to nowhere, to the room it's in, a normal exit that goes along, and one with one charge.
+@obj 25 3001 0 0 0 0 -1
+enter gate
+@obj 25 3001 0 0 0 3001 -1
+enter gate
+@obj 25 3001 0 0 5 3110 -1
+enter gate
+@state
+@obj 25 3110 1 0 0 3001 -1
+enter gate
+@state
+# Cursed: refused by an ordinary portal, let through by one with GATE_NOCURSE.
+@as cursed
+@obj 25 3110 0 0 0 3001 -1
+enter gate
+@obj 25 3110 0 0 2 3001 -1
+enter gate
+@state
+# Random (GATE_RANDOM, and a destination of -1) and buggy (GATE_BUGGY): get_random_room draws until it finds a room.
+@as lock
+@obj 25 3001 0 0 16 3001 -1
+enter gate
+recall
+@obj 25 3001 0 0 0 -1 -1
+enter gate
+recall
+@obj 25 3001 0 0 8 3110 -1
+enter gate
+@state

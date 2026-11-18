@@ -1,0 +1,423 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect flier"
+rng 51872 4ba9daca
+step 2 "Flier"
+out flier "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out flier "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out flier "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect slug"
+rng 51895 7f5599b5
+step 6 "Sluggish"
+out slug "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out slug "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out flier "\n\rSluggish has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out slug "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rFlier the Recruit is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 9 "@connect rower"
+rng 51896 5ed8996e
+step 10 "Rower"
+out rower "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51896 5ed8996e
+step 11 "psswrd"
+out rower "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51896 5ed8996e
+step 12 "@return"
+out rower "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rLevee\n\r  You are at the levee.  South of here you see the river gently flowing west.\n\rThe river bank is very low making it possible to enter the river.  Directly\n\racross the river you can see a small boat landing built off of Kate's Diner.\n\rA retired captain stands here, selling boats.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 13 "@connect lock"
+rng 51896 5ed8996e
+step 14 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51896 5ed8996e
+step 15 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51896 5ed8996e
+step 16 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 17 "@connect warden"
+rng 51896 5ed8996e
+step 18 "Warden"
+out warden "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51896 5ed8996e
+step 19 "smoke123"
+out warden "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51896 5ed8996e
+step 20 "@return"
+out warden "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51896 5ed8996e
+step 21 "@return"
+out lock "\n\rWarden has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out warden "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\rLocksmith the Recruit is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 22 "@as slug"
+rng 51896 5ed8996e
+step 23 "up"
+out slug "You can't fly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 24 "sneak"
+out slug "You attempt to move silently.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 25 "@state"
+state room 3005 light 2 people player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Sluggish 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 536903680 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Flier 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 524288 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3049 light 1 people player mob
+state exit 0 to 3045 info 0 key -1
+state exit 2 to 3203 info 0 key -1
+state char Rower 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3050 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3006 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 10 silver 810 act 2621443 affected_by 0 train 0 on 0 stats 19 15 16 16 18
+state   obj carried 3051 wear -1 timer 0 cost 900 values 0 0 0 0 0
+state   obj carried 3050 wear -1 timer 0 cost 400 values 0 0 0 0 0
+state room 3110 light 1 people player player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Warden 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 51896 5ed8996e
+step 26 "east"
+out slug "Entrance to the Grunting Boar Inn\n\r  You are standing in the entrance hall of the Grunting Boar Inn.  The hall\n\rhas been wisely decorated with simple but functional furniture.  A small\n\rstaircase leads up to the defunct reception room and the bar is to the east.\n\rA janitor is walking around, cleaning up.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51896 5ed8996e
+step 27 "@state"
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Flier 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 524288 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3006 light 1 people player mob
+state exit 1 to 3007 info 0 key -1
+state exit 3 to 3005 info 0 key -1
+state exit 4 to 3008 info 0 key -1
+state char Sluggish 2 pos 8 hit 29/29 mana 102/102 move 104/106 wait 1 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 536903680 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3061 pos 8 hit 20/20 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 15 act 193 affected_by 0 train 0 on 0 stats 11 11 11 11 11
+state room 3049 light 1 people player mob
+state exit 0 to 3045 info 0 key -1
+state exit 2 to 3203 info 0 key -1
+state char Rower 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3050 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3006 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 10 silver 810 act 2621443 affected_by 0 train 0 on 0 stats 19 15 16 16 18
+state   obj carried 3051 wear -1 timer 0 cost 900 values 0 0 0 0 0
+state   obj carried 3050 wear -1 timer 0 cost 400 values 0 0 0 0 0
+state room 3110 light 1 people player player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Warden 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 51896 5ed8996e
+step 28 "west"
+rng 51896 5ed8996e
+step 29 "@as flier"
+rng 51896 5ed8996e
+step 30 "up"
+out flier "In the air...\n\r  WOW you can fly!  You are floating in the air above Temple Square of Midgaard.\n\r\n\r<29hp 102m 103mv> \xff\xf9"
+out slug "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rFlier the Recruit is here.\n\rFlier leaves up.\n\r\n\r<29hp 102m 102mv> \xff\xf9"
+rng 51896 5ed8996e
+step 31 "@state"
+state room 3057 light 1 people player
+state exit 4 to 1017 info 0 key 0
+state exit 5 to 3005 info 0 key 0
+state char Flier 2 pos 8 hit 29/29 mana 102/102 move 103/106 wait 1 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 524288 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Sluggish 2 pos 8 hit 29/29 mana 102/102 move 102/106 wait 1 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 536903680 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3049 light 1 people player mob
+state exit 0 to 3045 info 0 key -1
+state exit 2 to 3203 info 0 key -1
+state char Rower 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3050 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3006 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 10 silver 810 act 2621443 affected_by 0 train 0 on 0 stats 19 15 16 16 18
+state   obj carried 3051 wear -1 timer 0 cost 900 values 0 0 0 0 0
+state   obj carried 3050 wear -1 timer 0 cost 400 values 0 0 0 0 0
+state room 3110 light 1 people player player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Warden 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 51896 5ed8996e
+step 32 "down"
+rng 51896 5ed8996e
+step 33 "down"
+out flier "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rSluggish the Recruit is here.\n\r\n\r<29hp 102m 100mv> \xff\xf9"
+out slug "\n\rFlier has arrived.\n\r\n\r<29hp 102m 102mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 34 "@as rower"
+rng 51899 d1eb3d36
+step 35 "south"
+out rower "On the River\n\r  The levee is directly north of here, and a small boat landing for Kate's\n\rDiner is to the south.  The river flows in an east west direction.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 36 "@state"
+state room 3005 light 2 people player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Flier 2 pos 8 hit 29/29 mana 102/102 move 100/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 524288 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sluggish 2 pos 8 hit 29/29 mana 102/102 move 102/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 536903680 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3203 light 1 people player
+state exit 0 to 3049 info 0 key -1
+state exit 1 to 3204 info 0 key -1
+state exit 2 to 3150 info 0 key -1
+state exit 3 to 3202 info 0 key -1
+state char Rower 2 pos 8 hit 29/29 mana 102/102 move 105/106 wait 1 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3050 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state room 3110 light 1 people player player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Warden 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 51899 d1eb3d36
+step 37 "north"
+out flier "Alas, you cannot go that way.\n\r\n\r<29hp 102m 100mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 38 "@as lock"
+rng 51899 d1eb3d36
+step 39 "@obj 25 3110 0 0 0 3049 -1"
+rng 51899 d1eb3d36
+step 40 "enter gate"
+out rower "Levee\n\r  You are at the levee.  South of here you see the river gently flowing west.\n\rThe river bank is very low making it possible to enter the river.  Directly\n\racross the river you can see a small boat landing built off of Kate's Diner.\n\rLocksmith the Recruit is here.\n\rA retired captain stands here, selling boats.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rLevee\n\r  You are at the levee.  South of here you see the river gently flowing west.\n\rThe river bank is very low making it possible to enter the river.  Directly\n\racross the river you can see a small boat landing built off of Kate's Diner.\n\rA retired captain stands here, selling boats.\n\rRower has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out warden "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 41 "south"
+out lock "You need a boat to go there.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 42 "@obj 25 3049 0 0 0 3017 -1"
+rng 51899 d1eb3d36
+step 43 "enter gate"
+out rower "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rEntrance to Mage's Guild\n\r  The entrance hall is a small, poor lighted room.\n\rA cityguard stands here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 44 "south"
+out lock "You aren't allowed in there.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 45 "@obj 25 3017 0 0 0 3160 -1"
+rng 51899 d1eb3d36
+step 46 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rMelancholy's Maps\n\r  As you walk in, a sudden gust of wind enters the shop and sends several\n\rscraps of paper fly around the room.  You blink as the dust you've stirred \n\rup stings your eyes, and take a look around the shop.  This shop is cluttered \n\rwith old pieces of parchment, stacks of books, and odd scraps.  A desk with \n\rslightly less clutter than the rest of the shop is in front of you.  A scroll \n\rcase full of scrolls is behind the desk.  A bookcase is to the right of you, \n\rand to the left is a window overlooking the Common Square.  A small door, \n\rhalf hidden by a stack of books, leads to a room in the back of the shop.\n\rA green tree snake is sitting here on a pile of books.\n\rMelancholy is here, digging through a pile of scrolls, papers, and maps.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 47 "pick north"
+out lock "You failed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 48 "@pulse 12"
+rng 51900 e9723077
+step 49 "@as warden"
+rng 51900 e9723077
+step 50 "@obj 25 3110 0 0 0 3160 -1"
+rng 51900 e9723077
+step 51 "enter gate"
+out lock "\n\rWarden has arrived through a shimmering gate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out warden "You walk through a shimmering gate and find yourself somewhere else...\n\rMelancholy's Maps\n\r  As you walk in, a sudden gust of wind enters the shop and sends several\n\rscraps of paper fly around the room.  You blink as the dust you've stirred \n\rup stings your eyes, and take a look around the shop.  This shop is cluttered \n\rwith old pieces of parchment, stacks of books, and odd scraps.  A desk with \n\rslightly less clutter than the rest of the shop is in front of you.  A scroll \n\rcase full of scrolls is behind the desk.  A bookcase is to the right of you, \n\rand to the left is a window overlooking the Common Square.  A small door, \n\rhalf hidden by a stack of books, leads to a room in the back of the shop.\n\rLocksmith the Recruit is here.\n\rA green tree snake is sitting here on a pile of books.\n\rMelancholy is here, digging through a pile of scrolls, papers, and maps.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51900 e9723077
+step 52 "pick north"
+out lock "\n\rWarden picks the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out warden "*Click*\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 53 "@pulse 12"
+rng 51901 51250113
+step 54 "open north"
+out lock "\n\rWarden opens the door.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out warden "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 55 "@mob 3011 3161"
+rng 51901 51250113
+step 56 "@mob 3011 3161"
+rng 51901 51250113
+step 57 "@as lock"
+rng 51901 51250113
+step 58 "pick north"
+out lock "It's not closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 59 "@pulse 12"
+rng 51903 5850559a
+step 60 "north"
+out lock "That room is private right now.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 61 "@state"
+state room 3005 light 2 people player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Flier 2 pos 8 hit 29/29 mana 102/102 move 100/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 524288 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sluggish 2 pos 8 hit 29/29 mana 102/102 move 102/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 536903680 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3049 light 1 people player mob
+state exit 0 to 3045 info 0 key -1
+state exit 2 to 3203 info 0 key -1
+state char Rower 2 pos 8 hit 29/29 mana 102/102 move 104/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3050 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3006 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 10 silver 810 act 2621443 affected_by 0 train 0 on 0 stats 19 15 16 16 18
+state   obj carried 3051 wear -1 timer 0 cost 900 values 0 0 0 0 0
+state   obj carried 3050 wear -1 timer 0 cost 400 values 0 0 0 0 0
+state obj floor 25 wear -1 timer 0 cost 0 values 0 0 0 3017 -1
+state room 3160 light 1 people player player mob mob
+state exit 0 to 3161 info 33 key 3161
+state exit 2 to 3024 info 0 key -1
+state char Warden 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3161 pos 8 hit 274/274 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2097155 affected_by 8 train 0 on 0 stats 13 14 14 16 14
+state char mob 3160 pos 8 hit 1000/1000 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 7 silver 383 act 2097155 affected_by 0 train 0 on 0 stats 17 17 17 17 17
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3163 wear -1 timer 0 cost 1500 values 1 0 0 0 0
+state   obj carried 3164 wear -1 timer 0 cost 1000 values 1 0 0 0 0
+state   obj carried 3165 wear -1 timer 0 cost 750 values 1 0 0 0 0
+state   obj carried 3166 wear -1 timer 0 cost 1500 values 1 0 0 0 0
+state   obj carried 3167 wear -1 timer 0 cost 2500 values 1 0 0 0 0
+state   obj carried 3168 wear -1 timer 0 cost 2000 values 1 0 0 0 0
+rng 51903 5850559a
+step 62 "@obj 25 3160 0 0 0 3001 -1"
+rng 51903 5850559a
+step 63 "enter gate"
+out lock "You walk through a shimmering gate and find yourself somewhere else...\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out warden "\n\rLocksmith steps into a shimmering gate.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51903 5850559a
+step 64 "open north"
+out lock "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 65 "down"
+out lock "Alas, you cannot go that way.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a

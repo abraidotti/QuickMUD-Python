@@ -1,0 +1,71 @@
+# Where move_char says no, and what flying, haste and slowness cost. In the Temple Square (3005): up is the air
+# (3057). Flier (AfBy T) flies up and pays half; Sluggish (slow and sneaking, AfBy d and P) can't fly, pays double
+# going east, leaves without a word, and sneak stops at once since the bit is already set. On the Levee (3049): south
+# is the river (3203), which needs a boat; Rower carries a raft. Locksmith (a thief) tries the Mage's Bar (3018,
+# south of 3017), and Melancholy's Room (3161), which is private once two are in it.
+@connect flier
+Flier
+psswrd
+@return
+@connect slug
+Sluggish
+psswrd
+@return
+@connect rower
+Rower
+psswrd
+@return
+@connect lock
+Locksmith
+psswrd
+@return
+@connect warden
+Warden
+smoke123
+@return
+@return
+@as slug
+up
+sneak
+@state
+east
+@state
+west
+@as flier
+up
+@state
+down
+down
+@as rower
+south
+@state
+north
+@as lock
+@obj 25 3110 0 0 0 3049 -1
+enter gate
+south
+@obj 25 3049 0 0 0 3017 -1
+enter gate
+south
+@obj 25 3017 0 0 0 3160 -1
+enter gate
+pick north
+@pulse 12
+@as warden
+@obj 25 3110 0 0 0 3160 -1
+enter gate
+pick north
+@pulse 12
+open north
+@mob 3011 3161
+@mob 3011 3161
+@as lock
+pick north
+@pulse 12
+north
+@state
+# The temple: north is an exit but not a door; there's no way down.
+@obj 25 3160 0 0 0 3001 -1
+enter gate
+open north
+down

@@ -930,6 +930,33 @@ def room_is_private(room: Room) -> bool:
     return False
 
 
+def next_in_room(ch: Char) -> Char | None:
+    """``ch->next_in_room``: who comes after ch in its room's list now. A C loop that saves it before moving ch
+    carries on through whatever room that one is in by then; walking a copy of the list wouldn't."""
+    if ch.in_room is None:
+        return None
+    people = ch.in_room.people
+    i = next(k for k, p in enumerate(people) if p is ch)
+    return people[i + 1] if i + 1 < len(people) else None
+
+
+# C: handler.c count_users
+def count_users(obj: Obj) -> int:
+    if obj.in_room is None:
+        return 0
+    return sum(1 for fch in obj.in_room.people if fch.on is obj)
+
+
+# C: handler.c get_max_train
+def get_max_train(ch: Char, stat: int) -> int:
+    if ch.is_npc or ch.level > C.LEVEL_IMMORTAL:
+        return 25
+    max_ = PC_RACE_TABLE[ch.race].max_stats[stat]
+    if CLASS_TABLE[ch.class_].attr_prime == stat:
+        max_ += 3 if ch.race == race_lookup("human") else 2
+    return min(max_, 25)
+
+
 # C: handler.c is_room_owner
 def is_room_owner(ch: Char, room: Room) -> bool:
     if not room.owner:
