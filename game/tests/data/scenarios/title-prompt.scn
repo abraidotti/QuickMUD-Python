@@ -1,0 +1,22 @@
+# title and prompt: the smoke test's title cases, cutting at 45 and 50, and the prompt's switches and codes.
+@connect shemp
+Shemp
+psswrd
+@return
+title
+title {
+title x
+title the Brave{
+title the Brave{{
+title the Brave
+title aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+score
+prompt
+look
+prompt
+prompt all
+prompt <%h %W>
+prompt <%c
+prompt bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+prompt <%hhp %mm %vmv %W>
+look

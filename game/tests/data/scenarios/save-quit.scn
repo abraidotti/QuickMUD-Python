@@ -1,0 +1,18 @@
+# save writes the player file (compared whole: the clock is fixed, so LogO and Plyd are too), lags 48 pulses,
+# and quit saves again and closes the connection.
+@connect rambler
+Rambler
+psswrd
+@return
+title the Saver
+prompt <%W>
+save
+@file ../player/Rambler
+look
+@pulse 47
+@pulse 1
+s
+quit
+@pulse 8
+@file ../player/Rambler
+@state

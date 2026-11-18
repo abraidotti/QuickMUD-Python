@@ -1,0 +1,106 @@
+sources 8d39252201e8d980
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect rambler"
+rng 51872 4ba9daca
+step 2 "Rambler"
+out rambler "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out rambler "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out rambler "\n\rWelcome to ROM 2.4.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect weary"
+rng 51895 7f5599b5
+step 6 "Weary"
+out weary "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out weary "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out rambler "\n\rWeary has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rWelcome to ROM 2.4.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rRambler the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@as rambler"
+rng 51895 7f5599b5
+step 10 "smile"
+out rambler "You smile happily.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler smiles happily.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "smile weary"
+out rambler "You smile at him.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler smiles at you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "bow self"
+out rambler "You kiss your toes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler folds up like a jacknife and kisses his own toes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "wave nobody"
+out rambler "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@as weary"
+rng 51895 7f5599b5
+step 15 "grin rambler"
+out rambler "Weary grins evilly at you.  Hmmm.  Better keep your distance.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "You grin evilly at him.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@as rambler"
+rng 51895 7f5599b5
+step 17 "smile hassan"
+out rambler "You smile at him.\n\rHassan slaps you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler beams a smile at Hassan.\n\rHassan slaps Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 18 "grin hassan"
+out rambler "You grin evilly at him.\n\rHassan grins evilly at you.  Hmmm.  Better keep your distance.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler grins evilly at Hassan.\n\rHassan grins evilly at Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 19 "bow hassan"
+out rambler "You bow before him.\n\rHassan bows before you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler bows before Hassan.\n\rHassan bows before Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 20 "wave hassan"
+out rambler "You wave goodbye to Hassan.\n\rHassan slaps you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler waves goodbye to Hassan.\n\rHassan slaps Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 21 "nod hassan"
+out rambler "You nod at Hassan.\n\rHassan nods at you in agreement.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler nods at Hassan.\n\rHassan nods at Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 22 "hug hassan"
+out rambler "You hug him.\n\rHassan slaps you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler hugs Hassan.\n\rHassan slaps Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 23 "poke hassan"
+out rambler "You poke him in the ribs.\n\rHassan slaps you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler pokes Hassan in the ribs.\n\rHassan slaps Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51902 fdba09ec
+step 24 "dance hassan"
+out rambler "You lead him to the dancefloor.\n\rHassan sends you across the dancefloor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rRambler sends Hassan across the dancefloor.\n\rHassan sends Rambler across the dancefloor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 25 "@as weary"
+rng 51903 5850559a
+step 26 "xyzzy"
+out weary "Huh?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 27 "@state"
+state room 3001 light 2 people player player mob
+state char Weary 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51903 5850559a

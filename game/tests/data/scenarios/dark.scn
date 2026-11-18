@@ -1,0 +1,21 @@
+# A dark room in the city, seen by a dwarf (infravision) and a human, with an infravision mob in it.
+@connect delver
+Delver
+psswrd
+@return
+@connect groper
+Groper
+psswrd
+@return
+@mob 3011 3129
+@as delver
+look
+look hassan
+@as groper
+look
+look hassan
+exits
+e
+look
+w
+@state

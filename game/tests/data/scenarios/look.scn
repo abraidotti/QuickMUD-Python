@@ -1,0 +1,36 @@
+# Looking: the room, a mob, objects by number, directions, containers and extra descriptions.
+@connect rambler
+Rambler
+psswrd
+@return
+@obj 3011 3001
+@obj 3011 3001
+@obj 3012 3001
+@obj 3032 3001
+look
+look hassan
+look 2.hassan
+look self
+look bread
+look 2.bread
+look 3.bread
+look roll
+look plaque
+look 2.plaque
+look nothing
+look n
+look w
+look up
+look in
+look in bread
+look in bag
+look in nothing
+exits
+exits auto
+n
+look in pit
+look statue
+look 2.statue
+look 3.statue
+look altar
+@state

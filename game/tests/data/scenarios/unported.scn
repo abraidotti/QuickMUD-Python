@@ -1,0 +1,10 @@
+# An unported command stops the Python game: "sc" is scan, before score in the table, and scan isn't ported.
+# Everything before it must match; the C carries on.
+# expect: stopped NotPorted
+@connect rambler
+Rambler
+psswrd
+@return
+look
+sc
+look

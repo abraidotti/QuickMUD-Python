@@ -1,0 +1,10 @@
+# Out of movement points: every step is refused, and nothing is spent.
+@connect weary
+Weary
+psswrd
+@return
+s
+north
+u
+score
+@state

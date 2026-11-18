@@ -65,15 +65,11 @@ def py_play(text: str, root: Path | None = None) -> list[str]:
     return play_fresh(text, root)
 
 
-def first_difference(a: list[str], b: list[str]) -> str | None:
-    for i, (x, y) in enumerate(zip(a, b)):
-        if x != y:
-            step = next((a[j] for j in range(i, -1, -1) if a[j].startswith("step ")), "(before the first step)")
-            return f"line {i + 1}, at {step}:\n    C:      {x[:300]}\n    Python: {y[:300]}"
-    if len(a) != len(b):
-        more = (a if len(a) > len(b) else b)[min(len(a), len(b))]
-        return f"{len(a)} lines from C, {len(b)} from Python; the longer goes on with: {more[:300]}"
-    return None
+def difference(c: list[str], py: list[str], text: str = "") -> str | None:
+    """charm.testing.scenario's comparison, which the game's tests use too."""
+    use_game()
+    from charm.testing.scenario import difference as game_difference
+    return game_difference(c, py, text)
 
 
 def run(image: str | None, save: bool = False, only: str | None = None) -> int:
@@ -104,10 +100,11 @@ def run(image: str | None, save: bool = False, only: str | None = None) -> int:
                 print(f"STALE     {f.stem}: the golden is from other C sources ({lines[0]}); rerun with --save")
             c = lines[1:]
         py = py_play(text, root)
-        from charm.testing.scenario import comparable
-        diff = first_difference(comparable(c), py)
+        diff = difference(c, py, text)
         steps = sum(1 for x in c if x.startswith("step "))
-        print(f"{'SAME' if diff is None else 'DIFFERENT':9} {f.stem} ({steps} steps, {len(c)} lines)", flush=True)
+        stop = " (stops on NotPorted, as expected)" if diff is None and py and py[-1].startswith("stopped") else ""
+        print(f"{'SAME' if diff is None else 'DIFFERENT':9} {f.stem} ({steps} steps, {len(c)} lines){stop}",
+              flush=True)
         if diff:
             print("    " + diff)
             failed += 1

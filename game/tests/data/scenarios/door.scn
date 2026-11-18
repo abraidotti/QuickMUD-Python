@@ -1,0 +1,12 @@
+# A closed door in the Cityguard Head Quarters: looking at it, walking into it, and what exits shows.
+@connect knocker
+Knocker
+psswrd
+@return
+look
+look w
+look e
+w
+e
+exits
+@state

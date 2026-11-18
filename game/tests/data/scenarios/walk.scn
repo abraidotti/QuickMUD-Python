@@ -1,0 +1,18 @@
+# Walking a loop through Midgaard and back, the movement points it costs, and a wall.
+@connect rambler
+Rambler
+psswrd
+@return
+w
+s
+look in fountain
+s
+w
+w
+e
+east
+north
+n
+u
+d
+@state
