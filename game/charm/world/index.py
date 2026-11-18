@@ -226,6 +226,9 @@ class Index:
     objs: dict[int, ObjIndex]
     help_greeting: str | None = None  # the text of the last help whose keyword is "greeting" (load_helps)
     helps: list["Help"] = field(default_factory=list)  # help_first..help_last, in load order
+    # social_table, in load order: name, then char_no_arg, others_no_arg, char_found, others_found, vict_found,
+    # char_not_found, char_auto, others_auto (None for "$")
+    socials: list = field(default_factory=list)
 
     # C: db.c get_room_index
     def get_room_index(self, vnum: int) -> Room | None:
@@ -363,4 +366,5 @@ def build_index(world: World) -> Index:
             helps.append(Help(sh_int(h.level), _s(h.keywords), _s(h.text)))
             if h.keywords.lower() == "greeting":  # load_helps: !str_cmp (pHelp->keyword, "greeting")
                 greeting = helps[-1].text
-    return Index(areas, rooms, mobs, objs, greeting, helps)
+    socials = [s for f in world.files for s in f.socials]
+    return Index(areas, rooms, mobs, objs, greeting, helps, socials)

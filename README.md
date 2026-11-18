@@ -195,6 +195,8 @@ python -m charm_tools explore areas              # load every area as the game d
 python -m charm_tools explore check              # data checks: never-spawned mobs, unreachable rooms, ...
 python -m charm_tools explore parity --docker charm   # compare the loader with the real game
 python -m charm_tools sim smoke --docker charm   # the smoke test (also: python tools/smoke.py from the root)
+python -m charm_tools sim smoke --python         # its mortal steps against the Python game
+python -m charm_tools sim bots --python --quick  # bots playing while the Python game times its pulses
 python -m charm_tools port status                # how much of the C game the Python port has ported
 python -m charm_tools port rng --docker charm:build   # the C game's random numbers vs game/tests/data/rng.json
 python -m charm_tools port data                  # regenerate game/charm/data/ from the C tables
@@ -204,6 +206,7 @@ python -m charm_tools port greeting --docker charm      # connect to both games 
 python -m charm_tools port crypt --docker charm:build   # the Python game's password hashing against glibc
 python -m charm_tools port login --docker charm         # the same login sessions on both games, byte for byte
 python -m charm_tools port players --docker charm       # player files saved by each game load in the other
+python -m charm_tools port commands --docker charm      # the same sessions in the game on both, byte for byte
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 

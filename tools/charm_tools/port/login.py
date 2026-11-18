@@ -4,8 +4,8 @@ Each scenario starts a fresh game on each side and sends the same lines; what co
 compared. One difference is expected and substituted before comparing: the MOTD's last line says "Welcome to
 Charm." in Python where the C says "Welcome to ROM 2.4." (#30, decision 5).
 
-Until spike PR 5 the Python game stops at do_look on entering the game, so the scenarios end before that, at the
-MOTD's "[Hit Return to continue]".
+Most scenarios end at the MOTD's "[Hit Return to continue]"; "already playing" goes into the game, because
+check_playing needs someone there. port commands (#32) checks what happens in the game.
 """
 
 from __future__ import annotations
@@ -49,10 +49,13 @@ SCENARIOS = [
         "x", "someone", "Alan", "IllIll", "ABc", "Thisnameistoolong", "R2d2", "hassan", "the", "Newbie", "n",
         "Other", "y"])),
     # The name check closes the other connection's half-logged-in Shemp ("Double newbie alert"), so "already
-    # playing" (check_playing) needs someone in the game: spike PR 5.
+    # playing" (check_playing) needs someone in the game: the next scenario.
     Scenario("a second connection's name closes the first one's half-login", [
         (0, "Shemp"), (0, "psswrd"), (1, "Shemp"), (1, "psswrd"), (1, "x"), (1, "n"), (1, "Shemp"),
         (1, "psswrd")]),
+    Scenario("already playing: no, then yes, which takes the character over", [
+        (0, "Shemp"), (0, "psswrd"), (0, ""), (1, "Shemp"), (1, "psswrd"), (1, "x"), (1, "n"), (1, "Shemp"),
+        (1, "psswrd"), (1, "y"), (1, "look"), (0, "look")]),
     Scenario("two half-made newbies with one name", [(0, "Twin"), (0, "y"), (1, "Twin"), (1, "Twin"), (1, "y")]),
     Scenario("an empty name closes the connection", _one([""])),
 ]
@@ -77,7 +80,11 @@ def run_scenario(game, sc: Scenario) -> Transcript:
     return t
 
 
-def compare(c: Transcript, py: Transcript, sc: Scenario) -> list[str]:
+SUBSTITUTIONS = ((WELCOME_C, WELCOME_PY),)
+
+
+def compare(c: Transcript, py: Transcript, sc: Scenario, subs=SUBSTITUTIONS) -> list[str]:
+    """What differs, step by step, after making the C's output say what the Python's says on purpose (subs)."""
     diffs = []
     labels = []
     seen = set()
@@ -87,7 +94,8 @@ def compare(c: Transcript, py: Transcript, sc: Scenario) -> list[str]:
             labels.append(f"session {who} connects")
         labels.append(f"session {who} sends {line!r}")
     for label, a, b in zip(labels, c.steps, py.steps):
-        a = a.replace(WELCOME_C, WELCOME_PY)
+        for old, new in subs:
+            a = a.replace(old, new)
         if a != b:
             at = next((i for i, (x, y) in enumerate(zip(a, b)) if x != y), min(len(a), len(b)))
             diffs.append(f"after '{label}', at byte {at}:\n    C:      {a[max(0, at - 60):at + 100]!r}\n"
@@ -102,7 +110,9 @@ def run(image: str, only: str | None = None) -> int:
     for sc in SCENARIOS:
         if only and only.lower() not in sc.name.lower():
             continue
-        c = run_scenario(CGame(image, sc.qmconfig), sc)
+        # Only area_update runs in the C game, as in the Python game (#32): "already playing" goes into the game,
+        # where mobs would otherwise wander and the aggressive one in Shemp's cage would attack.
+        c = run_scenario(CGame(image, sc.qmconfig, area_updates_only=True), sc)
         py = run_scenario(PyGame(sc.qmconfig), sc)
         diffs = compare(c, py, sc)
         size = sum(len(x) for x in c.steps)

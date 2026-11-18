@@ -5,6 +5,7 @@
     explore check          data checks on the loaded world
     explore parity         compare the loader with the real game (--docker IMAGE, or the saved capture)
     sim smoke [ARGS...]    the smoke test (see: python -m charm_tools sim smoke --help)
+    sim bots [ARGS...]     bots playing while the Python game times its pulses (sim bots --help)
     port status            how much of the C game the Python game (game/) has ported, function by function
     port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
     port data [--check]    generate game/charm/data/ from the C tables (--check: fail if it would change)
@@ -14,6 +15,7 @@
     port crypt             the Python game's DES crypt against glibc's (--docker IMAGE, or the saved cases)
     port login --docker IMG     the same login sessions against both games, byte for byte
     port players --docker IMG   player files saved by each game load in the other, key by key
+    port commands --docker IMG  the same sessions in the game against both games, byte for byte
 """
 
 from __future__ import annotations
@@ -28,6 +30,9 @@ def main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else list(argv)
     # Commands with their own argument parser get everything after their name, untouched. (argparse.REMAINDER
     # drops a leading "--help" or "--docker", so they're dispatched before the top-level parser sees them.)
+    if argv[:2] == ["sim", "bots"]:
+        from .sim import bots as bots_mod
+        return bots_mod.main(argv[2:], prog="python -m charm_tools sim bots")
     if argv[:2] == ["sim", "smoke"]:
         from .sim import smoke as smoke_mod
         return smoke_mod.main(argv[2:], prog="python -m charm_tools sim smoke")
@@ -51,6 +56,7 @@ def main(argv: list[str] | None = None) -> int:
     sim = sub.add_parser("sim", help="testing against a running game")
     sim_sub = sim.add_subparsers(dest="sim_command", required=True, metavar="sim-command")
     sim_sub.add_parser("smoke", help="the smoke test (handled above; listed here for --help)")
+    sim_sub.add_parser("bots", help="bots playing while the game times its pulses (handled above)")
 
     port = sub.add_parser("port", help="the Python port of the game")
     port_sub = port.add_subparsers(dest="port_command", required=True, metavar="port-command")
@@ -78,6 +84,9 @@ def main(argv: list[str] | None = None) -> int:
     plogin = port_sub.add_parser("login", help="run the same login sessions against both games and compare")
     plogin.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
     plogin.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
+    pcommands = port_sub.add_parser("commands", help="run the same sessions in the game against both games")
+    pcommands.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
+    pcommands.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
     pplayers = port_sub.add_parser("players", help="round-trip player files between the two games")
     pplayers.add_argument("--docker", metavar="IMAGE", required=True, help="a runtime image: docker build -t charm .")
     pplayers.add_argument("--save", action="store_true", help="keep the C game's files for the tests")
@@ -122,6 +131,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "login":
             from .port import login
             return login.run(args.docker, args.only)
+        if args.port_command == "commands":
+            from .port import commands
+            return commands.run(args.docker, args.only)
         if args.port_command == "players":
             from .port import players
             return players.run(args.docker, args.save)

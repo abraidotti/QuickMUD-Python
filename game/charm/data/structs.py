@@ -228,3 +228,15 @@ class BoardData:
     purge_days: int  # C: int
     note_first: str | None  # C: NOTE_DATA *
     changed: bool  # C: bool
+
+
+@dataclass(frozen=True)
+class CmdType:
+    """struct cmd_type"""
+
+    name: str | None  # C: char *
+    do_fun: str | None  # C: DO_FUN *
+    position: int  # C: sh_int
+    level: int  # C: sh_int
+    log: int  # C: sh_int
+    show: int  # C: sh_int

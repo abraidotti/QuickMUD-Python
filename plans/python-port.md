@@ -4,7 +4,8 @@ Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike sta
 5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5 done (#27): the world and
 resets (`charm_tools port world`). PR 3 of 5 done (#29): the loop, connections and output (`port io`, `port
 greeting`); the checkpoint after it estimated 60% of the spike's functions ported, over #25's 40% line. PR 4 of 5
-(#30): login and player files (`port crypt`, `port login`, `port players`).
+done (#31): login and player files (`port crypt`, `port login`, `port players`). PR 5 of 5 (#32): the commands
+(`port commands`, `sim smoke --python`, `sim bots`); the C game gained the test-only `CHARM_UPDATES=area`.
 
 ## Goal
 
@@ -72,6 +73,7 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
   Differences kept on purpose:
   - the startup log line says "Charm is ready to rock on port N", where the C says "ROM is ready to rock" (#29)
   - the MOTD's last line says "Welcome to Charm.", where the C says "Welcome to ROM 2.4." (#30)
+  - save says "Remember that Charm has automatic saving now.", where the C says ROM (#32)
   - a connection that sends out-of-band data stays open (above)
 
   The pointer identity class above showed up in Charm too (#30): fwrite_obj and fwrite_pet write a string when

@@ -5,6 +5,7 @@ This began as the refactor plan's R0 smoke test (tools/smoke.py) and is the seed
 
     python -m charm_tools sim smoke --docker charm   # throwaway container from an image (recommended)
     python -m charm_tools sim smoke --port 4100      # a game that's already running (mortal steps only)
+    python -m charm_tools sim smoke --python         # the Python game, from a throwaway copy (mortal steps only)
     python tools/smoke.py --docker charm             # the same, from the repo root
 
 --docker creates a container on a free port, copies the fixtures in before boot (the immortal
@@ -429,11 +430,26 @@ def run_docker(args):
         docker("rm", "-f", container, check=False)
 
 
+def run_python(args):
+    """The Python game (#25, decision 5): a throwaway root with the same fixtures and CHARM_SEED as --docker, on a
+    free port; the mortal steps (the 7 the spike's go/no-go counts, #32); then the whole process tree is stopped."""
+    from ..port.live import PyGame
+
+    with PyGame("fixture", (IMMORTAL[0], OLD_FILE[0])) as game:
+        print(f"python game on 127.0.0.1:{game.port}", flush=True)
+        code = run_steps(args, game.port, None)
+        if code != 0 or args.verbose:
+            print("---- game log (tail) ----")
+            print("\n".join(game.game_log().splitlines()[-30:]))
+        return code
+
+
 def main(argv=None, prog=None):
     ap = argparse.ArgumentParser(prog=prog, description=__doc__.splitlines()[0])
     where = ap.add_mutually_exclusive_group(required=True)
     where.add_argument("--docker", metavar="IMAGE", help="run against a throwaway container from IMAGE")
     where.add_argument("--port", type=int, help="run against a game already listening on this port")
+    where.add_argument("--python", action="store_true", help="run against the Python game (mortal steps only)")
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--name", default="Smokey")
     ap.add_argument("--password", default="smoke123")
@@ -445,6 +461,8 @@ def main(argv=None, prog=None):
 
     if args.docker:
         return run_docker(args)
+    if args.python:
+        return run_python(args)
     immortal = tuple(args.immortal.split(":", 1)) if args.immortal else None
     return run_steps(args, args.port, immortal)
 

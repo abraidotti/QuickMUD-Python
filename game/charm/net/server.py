@@ -14,9 +14,8 @@ One known difference, accepted in #29: the C also polls for exceptional conditio
 has some, such as a telnet client's urgent (out-of-band) data. selectors has no such set, so that step isn't
 copied, and such a connection stays open.
 
-[partial], until the commands (spike PR 5) are ported: a line of input from a player goes to the command
-interpreter, which raises NotPorted, and so does entering the game, which ends in do_look. NotPorted stops the
-game (#28, decision 3).
+A line of input from a player goes to the command interpreter. A command that isn't ported yet raises
+NotPorted, which stops the game (#28, decision 3; #32, decision 3).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -31,6 +30,7 @@ import socket
 import sys
 import time
 
+from charm.commands.interp import run_olc_editor, substitute_alias
 from charm.core.errors import CWouldCrash, NotPorted
 from charm.core.log import bug, log_f, log_string
 from charm.data import constants as C
@@ -153,13 +153,18 @@ def shutdown_all(game, message: str | None) -> None:
         close_socket(d)
 
 
-# C: comm.c stop_idling [partial]
+# C: comm.c stop_idling
 def stop_idling(ch) -> None:
-    """[partial]: bringing a character back from the void needs char_from_room."""
+    from charm.entities.handler import char_from_room, char_to_room
+
     if (ch is None or ch.desc is None or ch.desc.connected != C.CON_PLAYING or ch.was_in_room is None
             or ch.in_room is not ch.desc.game.index.get_room_index(C.ROOM_VNUM_LIMBO)):
         return
-    raise NotPorted("comm.c stop_idling: char_from_room")
+    ch.timer = 0
+    char_from_room(ch)
+    char_to_room(ch, ch.was_in_room)
+    ch.was_in_room = None
+    act("$n has returned from the void.", ch, None, None, C.TO_ROOM)
 
 
 def _drop(d: Descriptor) -> None:
@@ -171,18 +176,29 @@ def _drop(d: Descriptor) -> None:
 
 
 class PulseStats:
-    """--pulse-stats (#28, decision 4): each pulse's work (not its sleep), logged every 60 seconds."""
+    """--pulse-stats (#28, decision 4): each pulse's work (not its sleep), logged every 60 seconds, and for the
+    whole run when the game stops (#32, decision 5: charm_tools sim bots reads that line)."""
 
     def __init__(self, every: float = 60.0):
-        self.every, self.times, self.since = every, [], time.monotonic()
+        self.every, self.times, self.since, self.run = every, [], time.monotonic(), []
+
+    @staticmethod
+    def summary(t: list[float]) -> str:
+        s = sorted(t)
+        p95 = s[int(0.95 * (len(s) - 1))]  # nearest rank
+        return ("median %.2f ms, p95 %.2f ms, max %.2f ms, mean %.2f ms over %d pulses"
+                % (1000 * s[len(s) // 2], 1000 * p95, 1000 * s[-1], 1000 * sum(s) / len(s), len(s)))
 
     def add(self, seconds: float) -> None:
         self.times.append(seconds)
+        self.run.append(seconds)
         if time.monotonic() - self.since >= self.every:
-            t = self.times
-            log_f("Pulse work: mean %.2f ms, max %.2f ms over %d pulses", 1000 * sum(t) / len(t), 1000 * max(t),
-                  len(t))
+            log_f("Pulse work: %s", self.summary(self.times))
             self.times, self.since = [], time.monotonic()
+
+    def finish(self) -> None:
+        if self.run:
+            log_f("Pulse work over the run: %s", self.summary(self.run))
 
 
 # C: comm.c handle_shutdown_signal
@@ -202,6 +218,8 @@ def game_loop(game, control: socket.socket, stats: PulseStats | None = None) -> 
     try:
         _loop(game, control, sel, stats)
     finally:
+        if stats is not None:
+            stats.finish()
         for sig, handler in saved.items():  # put them back, for a caller that carries on (the tests)
             signal.signal(sig, handler)
         sel.close()
@@ -262,7 +280,8 @@ def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
                 elif d.pString is not None:
                     raise NotPorted("string.c string_add")
                 elif d.connected == C.CON_PLAYING:
-                    raise NotPorted("interp.c: run_olc_editor / substitute_alias / interpret")
+                    if not run_olc_editor(d):
+                        substitute_alias(d, d.incomm)
                 else:
                     nanny(game, d, d.incomm)
                 d.incomm = ""

@@ -1,7 +1,7 @@
 """act() and act_new: the game's "$n does something to $N" messages, sent to everyone in a room who should see one.
 
-Ported line by line, the $ codes included. [partial]: a message that reaches a mob with an ACT trigger, or a
-player who isn't playing yet, goes to the mob program's trigger (mp_act_trigger), which isn't ported.
+Ported line by line, the $ codes included. A message that reaches a mob with an ACT trigger goes to
+mp_act_trigger (charm.systems.mobprog), which raises NotPorted if a program would run.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -10,7 +10,6 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 
 from __future__ import annotations
 
-from charm.core.errors import NotPorted
 from charm.core.log import bug
 from charm.data import constants as C
 
@@ -96,7 +95,7 @@ def _code(code: str, to, ch, arg1, arg2) -> str:
     return i
 
 
-# C: comm.c act_new [partial]
+# C: comm.c act_new
 def act_new(fmt: str | None, ch, arg1, arg2, kind: int, min_pos: int) -> None:
     from charm.net.output import colourconv, write_to_buffer
 
@@ -136,7 +135,8 @@ def act_new(fmt: str | None, ch, arg1, arg2, kind: int, min_pos: int) -> None:
         if to.desc is not None and to.desc.connected == C.CON_PLAYING:
             write_to_buffer(to.desc, buffer)
         elif MOB_TRIGGER[0]:
-            raise NotPorted("comm.c act_new: mp_act_trigger (mob programs)")
+            from charm.systems.mobprog import mp_act_trigger
+            mp_act_trigger(buf, to, ch, arg1, arg2, C.TRIG_ACT)
 
 
 def act(fmt: str | None, ch, arg1, arg2, kind: int) -> None:

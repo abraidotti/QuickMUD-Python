@@ -35,6 +35,8 @@ class Table:
     c_name: str  # the array's name in C
     struct: str  # the struct it's an array of
     module: str  # data module it goes to (without .py)
+    headers: tuple[str, ...] = ()  # more headers whose #defines its values use (not written to constants.py)
+    empty_sentinel: bool = False  # it ends with a row whose name is "" (cmd_table: the C scans to name[0] == 0)
 
 
 TABLES = [
@@ -59,6 +61,7 @@ TABLES = [
     Table("const.c", "dex_app", "dex_app_type", "attributes"),
     Table("const.c", "con_app", "con_app_type", "attributes"),
     Table("board.c", "boards", "board_data", "boards"),
+    Table("interp.c", "cmd_table", "cmd_type", "commands", headers=("interp.h", "interp.c"), empty_sentinel=True),
 ]
 # Arrays of strings that aren't tables of structs: (file, C name, dimensions below the first, module).
 STRING_ARRAYS = [("const.c", "title_table", 2, "classes")]
@@ -75,6 +78,7 @@ MODULE_TITLES = {
     "classes": "Classes, and the titles each class gets at each level (title_table[class][level][male, female]).",
     "attributes": "What each value of an attribute (0 to 25) gives: str_app, int_app, wis_app, dex_app, con_app.",
     "boards": "The note boards. Their notes (note_first) are loaded at boot from notes/, not here.",
+    "commands": "The command table, in the C's order: interpret takes the first entry the word is a prefix of.",
 }
 
 INT_TYPES = {"int", "sh_int", "long", "bool", "unsigned int", "long int"}
@@ -94,7 +98,7 @@ class Field:
         return f"tuple[{base.split(' |')[0]}, ...]" if self.length is not None else base
 
 
-DECL = re.compile(r"^(?P<type>(?:const\s+|unsigned\s+)?[A-Za-z_]\w*)\s*(?P<ptr>\*?)\s*(?P<name>[A-Za-z_]\w*)"
+DECL = re.compile(r"^(?P<type>(?:const\s+|unsigned\s+)?[A-Za-z_]\w*)\s*(?P<ptr>\*?)\s*(?:const\s+)?(?P<name>[A-Za-z_]\w*)"
                   r"\s*(?:\[(?P<len>[^\]]+)\])?$")
 
 
@@ -182,6 +186,10 @@ def rows(src: Path, defines: Defines, table: Table, fields: list[Field]) -> list
     # scanned up to it in C, so it isn't a row here.
     strings = [i for i, f in enumerate(fields) if f.kind == "str" and f.length is None]
     if entries and strings and all(i < len(entries[-1]) and entries[-1][i] == "NULL" for i in strings):
+        entries = entries[:-1]
+    elif table.empty_sentinel:
+        if not (entries and isinstance(entries[-1][0], Str) and entries[-1][0].value == ""):
+            raise SourceError(f"{table.c_file} {table.c_name}: no closing row with an empty name")
         entries = entries[:-1]
     out = []
     for n, entry in enumerate(entries):
@@ -296,13 +304,17 @@ def generate(root: Path | None = None) -> dict[str, str]:
         names = ", ".join(f"{t.c_name} ({t.c_file})" for t in tables)
         extra = (f"Tables: {names}. A C table that ends with a NULL sentinel row is scanned up to it; that row "
                  f"isn't here.")
+        if any(t.empty_sentinel for t in tables):
+            extra = (f"Tables: {names}. The C scans the table up to its closing row, whose name is empty; that row "
+                     f"isn't here.")
         parts = [docstring(MODULE_TITLES[module], sources, extra),
                  "from charm.data.structs import " + ", ".join(sorted({class_name(t.struct) for t in tables})) + "\n"]
         for t in tables:
             fields = structs[t.struct]
             cls = class_name(t.struct)
             body = []
-            for row in rows(src, defines, t, fields):
+            table_defines = Defines(*(src / n for n in DEFINE_SOURCES + t.headers)) if t.headers else defines
+            for row in rows(src, table_defines, t, fields):
                 args = ", ".join(f"{k}={py(v)}" for k, v in row.items())
                 one = f"    {cls}({args}),"
                 if len(one) <= 120:

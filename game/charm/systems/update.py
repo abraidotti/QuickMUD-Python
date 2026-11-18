@@ -50,3 +50,16 @@ def update_handler(game) -> None:
         game.pulse_point = C.PULSE_TICK  # weather_update, char_update, obj_update: not running
 
     # aggr_update: not running
+
+
+# C: update.c gain_exp [partial]
+def gain_exp(ch, gain: int) -> None:
+    """[partial]: gaining a level (advance_level) raises NotPorted."""
+    from charm.core.errors import NotPorted
+    from charm.systems.skills import exp_per_level
+
+    if ch.is_npc or ch.level >= C.LEVEL_HERO:
+        return
+    ch.exp = max(exp_per_level(ch, ch.pcdata.points), ch.exp + gain)
+    if ch.level < C.LEVEL_HERO and ch.exp >= exp_per_level(ch, ch.pcdata.points) * (ch.level + 1):
+        raise NotPorted("update.c gain_exp: raising a level (advance_level)")
