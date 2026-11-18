@@ -98,6 +98,16 @@ class RealTree(unittest.TestCase):
         self.assertTrue(status.MARKER.match("    # C: db2.c load_objects [partial]").group(3))
         self.assertIsNone(status.MARKER.match("# C: db.c load_rooms [partly]"))
 
+    def test_later_notes(self):
+        st = status.status()
+        self.assertTrue(st.later)
+        self.assertTrue(all(n.text for n in st.later))
+        self.assertTrue(any(n.module == "charm/entities/handler.py" for n in st.later))
+        self.assertIn("Improvements noted for later", status.report(st))
+        lists = next(n for n in st.later if "insert(0)" in n.text)
+        self.assertTrue(lists.text.endswith("carrying, contains)"))  # joined over its second comment line
+        self.assertEqual(status.LATER.search("    x = 1  # LATER: a deque").group(1).strip(), "a deque")
+
     def test_use_game_makes_charm_importable(self):
         paths.use_game()
         from charm.core import rng as game_rng  # noqa: F401  (the import is the test)

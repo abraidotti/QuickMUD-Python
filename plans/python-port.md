@@ -167,6 +167,22 @@ circular calls land (`update.c` calls `do_quit`, for one). The first to land: `h
 characters and objects. Format code stays in three places: `world/areafile/`,
 `persist/` and `data/`. A later change of file format only swaps readers and writers there.
 
+## Improvements for later
+
+Refactors and better structures noticed while porting. They wait until the port matches the C: until then every
+change has to pass the line-by-line checks against the C game (`port world`, and P2's scenarios), and a cleanup
+that changes behaviour would hide real divergences. Then they're weighed like the refactor plan's items, by impact
+and effort.
+
+Ones with a place in the code are `# LATER:` comments there, and `charm_tools port status` lists them with file
+and line. Ones that cut across the code are here:
+
+- **One model for the world, not two.** `world/areafile/` reads area files into Explorer's model (what the file
+  says), and `world/index.py` copies that into the game's prototypes (what the C keeps). Once both are settled, one
+  could derive from the other, or both from the JSON look's schema.
+- **Where the game state lives.** `Game` holds what the C keeps in globals. When `net/`, `persist/` and `systems/`
+  add theirs, it may split by topic, or become the one place every layer reads from.
+
 ## Phases
 
 | Phase | What | Done when |

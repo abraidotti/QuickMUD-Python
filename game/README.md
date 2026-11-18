@@ -57,9 +57,12 @@ doesn't cover yet, so it fails loudly instead of doing something different from 
 # C: db2.c load_mobiles [partial]
 ```
 
+Something worth improving once the port matches the C gets a `# LATER: <what>` comment where the change would
+go; the cross-cutting ones are listed in the plan, under Improvements for later.
+
 From `tools/`, `python -m charm_tools port status` turns the markers into a report per C file: how many of its
-functions are ported, how many partly, and which Python modules they went to. A marker that names no C function
-fails it.
+functions are ported, how many partly, and which Python modules they went to. It ends with the `# LATER:` list. A
+marker that names no C function fails it, and so does an empty `# LATER:`.
 
 ## Tests
 

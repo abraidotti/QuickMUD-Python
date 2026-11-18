@@ -229,6 +229,7 @@ class Index:
         return self.objs.get(vnum)
 
 
+# LATER: keep plain "\n" in memory and write "\n\r" on output, once every reader of these strings is ported
 def _s(s: str | None) -> str | None:
     """A string as fread_string stores it: areafile keeps plain newlines, the game has "\\n\\r" for each."""
     return None if s is None else s.replace("\n", "\n\r")

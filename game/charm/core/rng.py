@@ -62,7 +62,7 @@ class GlibcRandom:
 
 
 # The game has one generator, as the C game has one random() state.
-_rng = GlibcRandom()
+_rng = GlibcRandom()  # LATER: a module global, while the rest of the game state is passed in as Game
 
 
 def srandom(seed):

@@ -86,6 +86,8 @@ def affect_modify(ch: Char, paf: Affect, add: bool) -> None:
             setattr(ch, name, getattr(ch, name) & ~paf.bitvector)
         mod = -mod
     loc = paf.location
+    # LATER: sh_int(...) wraps are written out at every assignment; fields that wrap themselves (a descriptor
+    # carrying the C width) would make a missed one impossible
     if loc in _STAT:
         ch.mod_stat[_STAT[loc]] = sh_int(ch.mod_stat[_STAT[loc]] + mod)
     elif loc in _NOTHING:
@@ -137,6 +139,8 @@ def char_to_room(ch: Char, room: Room) -> None:
     if room is None:
         raise NotPorted("handler.c char_to_room: NULL room")
     ch.in_room = room
+    # LATER: lists with insert(0) keep the C's head-first order but are O(n); a deque, or a linked list like the
+    # C's, once things leave the world (char_list, object_list, people, contents, carrying, contains)
     room.people.insert(0, ch)
     if not ch.is_npc:
         if room.area.empty:
@@ -267,6 +271,7 @@ def count_obj_list(index: ObjIndex, objs: list[Obj]) -> int:
 
 # C: handler.c get_obj_type
 def get_obj_type(game: Game, index: ObjIndex) -> Obj | None:
+    # LATER: this scans every object, as the C does; an index of instances by prototype would make it O(1)
     for obj in game.object_list:
         if obj.index is index:
             return obj
