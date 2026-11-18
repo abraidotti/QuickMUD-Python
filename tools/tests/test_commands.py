@@ -1,7 +1,7 @@
 """charm_tools port commands and sim bots without a game: the comparison and the pulse line they read.
 
-port commands needs Docker and sim bots runs the game, so these check the parts that decide pass or fail: the lines
-substituted on purpose, and that sim bots reads the line the game's --pulse-stats writes.
+port commands needs Docker and sim bots runs the game, so these check the parts that decide pass or fail: a difference
+shows, and sim bots reads the line the game's --pulse-stats writes.
 """
 
 import sys
@@ -14,15 +14,9 @@ from charm_tools.sim import bots
 
 
 class Compare(unittest.TestCase):
-    def test_save_and_motd_lines_are_substituted(self):
-        sc = Scenario("x", [(0, "save")])
-        c = Transcript([b"Welcome to ROM 2.4.", commands.SAVING_C + b"\n\r"])
-        py = Transcript([b"Welcome to Charm.", commands.SAVING_PY + b"\n\r"])
-        self.assertEqual(compare(c, py, sc, commands.SUBS), [])
-
     def test_any_other_difference_shows(self):
         sc = Scenario("x", [(0, "look")])
-        diffs = compare(Transcript([b"hi", b"A room"]), Transcript([b"hi", b"A rook"]), sc, commands.SUBS)
+        diffs = compare(Transcript([b"hi", b"A room"]), Transcript([b"hi", b"A rook"]), sc)
         self.assertEqual(len(diffs), 1)
         self.assertIn("session 0 sends 'look'", diffs[0])
 

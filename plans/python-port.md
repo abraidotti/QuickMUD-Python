@@ -75,10 +75,11 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
     difference (#29)
 
   Differences kept on purpose:
-  - the startup log line says "Charm is ready to rock on port N", where the C says "ROM is ready to rock" (#29)
-  - the MOTD's last line says "Welcome to Charm.", where the C says "Welcome to ROM 2.4." (#30)
-  - save says "Remember that Charm has automatic saving now.", where the C says ROM (#32)
   - a connection that sends out-of-band data stays open (above)
+
+  The Python game said "Charm" in three lines where the C said "ROM" (the startup log, the MOTD's last line and
+  save; #29, #30, #32). The ROM licence forbids calling the game ROM, so the C now says Charm there too, and in
+  `do_time` (#40). The checks no longer substitute anything.
 
   The pointer identity class above showed up in Charm too (#30): fwrite_obj and fwrite_pet write a string when
   its pointer differs from the prototype's, and a string read from a player file is always a new one. The port

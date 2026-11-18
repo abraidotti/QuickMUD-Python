@@ -45,7 +45,7 @@ def parse_memory(text: str) -> Counts:
 
 
 def bug_lines(log: str) -> list[str]:
-    """The bug() lines of a boot log, without timestamps, up to the end of boot ("ROM is ready to rock")."""
+    """The bug() lines of a boot log, without timestamps, up to the end of boot ("Charm is ready to rock")."""
     out = []
     for line in log.splitlines():
         line = _TIMESTAMP.sub("", line)

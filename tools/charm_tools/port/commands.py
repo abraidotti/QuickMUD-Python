@@ -4,9 +4,6 @@ Like port login, each scenario starts a fresh game on each side and compares, by
 after every line. The C game runs with CHARM_UPDATES=area, so only area_update runs, as in the Python game, and
 the two worlds stay the same: no mob wanders, no weather message arrives, and the random numbers stay in step.
 
-Two lines differ on purpose and are substituted before comparing: the MOTD's "Welcome to Charm." (#30, decision 5)
-and save's "Remember that Charm has automatic saving now." (#32, decision 4).
-
 The scenarios stay in Midgaard's temple and city rooms, which are never dark, so the game hour (from the clock,
 which differs by a few seconds between the two games) doesn't change what they see.
 
@@ -19,11 +16,8 @@ The fixture players (tools/fixtures/player):
 from __future__ import annotations
 
 from .live import CGame, PyGame
-from .login import SUBSTITUTIONS, Scenario, compare, run_scenario
+from .login import Scenario, compare, run_scenario
 
-SAVING_C = b"Saving. Remember that ROM has automatic saving now."
-SAVING_PY = b"Saving. Remember that Charm has automatic saving now."
-SUBS = SUBSTITUTIONS + ((SAVING_C, SAVING_PY),)
 PLAYERS = ("Shemp", "Rambler", "Weary")
 
 
@@ -65,7 +59,7 @@ def run(image: str, only: str | None = None) -> int:
             continue
         c = run_scenario(CGame(image, sc.qmconfig, PLAYERS, area_updates_only=True), sc)
         py = run_scenario(PyGame(sc.qmconfig, PLAYERS), sc)
-        diffs = compare(c, py, sc, SUBS)
+        diffs = compare(c, py, sc)
         size = sum(len(x) for x in c.steps)
         print(f"{'SAME' if not diffs else 'DIFFERENT':9} {sc.name} ({len(sc.steps)} lines, {size} bytes)",
               flush=True)

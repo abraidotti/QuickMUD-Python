@@ -253,7 +253,7 @@ int main (int argc, char **argv)
         control = init_socket (port);
 
     boot_db ();
-    log_f ("ROM is ready to rock on port %d (%s).", port, mud_ipaddress);
+    log_f ("Charm is ready to rock on port %d (%s).", port, mud_ipaddress);
 
 
     if (fCopyOver)

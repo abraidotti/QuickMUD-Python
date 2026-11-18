@@ -1,8 +1,7 @@
 """charm_tools port login: the same login sessions against the C game and the Python game, byte for byte (#30).
 
 Each scenario starts a fresh game on each side and sends the same lines; what comes back after each line is
-compared. One difference is expected and substituted before comparing: the MOTD's last line says "Welcome to
-Charm." in Python where the C says "Welcome to ROM 2.4." (#30, decision 5).
+compared. Both say "Welcome to Charm." at the end of the MOTD (the C said ROM until #40).
 
 Most scenarios end at the MOTD's "[Hit Return to continue]"; "already playing" goes into the game, because
 check_playing needs someone there. port commands (#32) checks what happens in the game.
@@ -14,8 +13,6 @@ from dataclasses import dataclass, field
 
 from .live import CGame, PyGame, Session
 
-WELCOME_C = b"Welcome to ROM 2.4."
-WELCOME_PY = b"Welcome to Charm."
 NEW = ["Newbie", "y", "secret1", "secret1", "human", "m", "mage", "n", "n", "dagger"]
 
 
@@ -80,11 +77,8 @@ def run_scenario(game, sc: Scenario) -> Transcript:
     return t
 
 
-SUBSTITUTIONS = ((WELCOME_C, WELCOME_PY),)
-
-
-def compare(c: Transcript, py: Transcript, sc: Scenario, subs=SUBSTITUTIONS) -> list[str]:
-    """What differs, step by step, after making the C's output say what the Python's says on purpose (subs)."""
+def compare(c: Transcript, py: Transcript, sc: Scenario) -> list[str]:
+    """What differs, step by step."""
     diffs = []
     labels = []
     seen = set()
@@ -94,8 +88,6 @@ def compare(c: Transcript, py: Transcript, sc: Scenario, subs=SUBSTITUTIONS) -> 
             labels.append(f"session {who} connects")
         labels.append(f"session {who} sends {line!r}")
     for label, a, b in zip(labels, c.steps, py.steps):
-        for old, new in subs:
-            a = a.replace(old, new)
         if a != b:
             at = next((i for i, (x, y) in enumerate(zip(a, b)) if x != y), min(len(a), len(b)))
             diffs.append(f"after '{label}', at byte {at}:\n    C:      {a[max(0, at - 60):at + 100]!r}\n"

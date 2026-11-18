@@ -2,7 +2,7 @@
 
 Each game/tests/data/scenarios/NAME.scn has a NAME.golden: what the C game printed for it, through
 tools/oracle/scenario.c (charm_tools port scenarios --docker charm:build --save). Here the Python game plays the
-same file, and every line must match, after the on-purpose differences (charm.testing.scenario.SUBSTITUTIONS).
+same file, and every line must match.
 A golden whose first line names other C sources is stale: change the C, then save it again.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
@@ -43,11 +43,12 @@ class Goldens(unittest.TestCase):
 
 
 class Difference(unittest.TestCase):
-    C = ['step 1 "look"', 'out a "Welcome to ROM 2.4."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]
+    C = ['step 1 "look"', 'out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]
 
-    def test_substituted_lines_match(self):
-        py = self.C[:1] + ['out a "Welcome to Charm."'] + self.C[2:]
-        self.assertIsNone(difference(self.C, py, ""))
+    def test_lines_must_match(self):
+        self.assertIsNone(difference(self.C, list(self.C), ""))
+        py = self.C[:1] + ['out a "Welcome to ROM 2.4."'] + self.C[2:]
+        self.assertIn("line 2", difference(self.C, py, ""))
 
     def test_a_stop_is_a_difference_unless_expected(self):
         py = self.C[:1] + ['out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', "stopped NotPorted: do_scan"]

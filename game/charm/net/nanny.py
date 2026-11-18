@@ -1,8 +1,7 @@
 """nanny: a connection's way from the name prompt into the game, one line of input at a time.
 
 Ported line by line from nanny.c, with the checks it calls from comm.c (check_parse_name, check_reconnect,
-check_playing). One difference on purpose (#30, decision 5): the MOTD's last line says "Welcome to Charm."
-where the C says "Welcome to ROM 2.4.".
+check_playing).
 
 [partial] until spike PR 5: entering the game ends in do_look, which raises NotPorted, and so the lines after it
 (the wiznet line, the pet, the boards) aren't reached yet. The note-writing states raise NotPorted too.
@@ -40,7 +39,7 @@ from charm.world.lookup import GSN, class_lookup, race_lookup, weapon_lookup
 
 ECHO_OFF = "\xff\xfb\x01"  # echo_off_str: IAC WILL TELOPT_ECHO
 ECHO_ON = "\xff\xfc\x01"  # echo_on_str: IAC WONT TELOPT_ECHO
-WELCOME = "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\r"  # the C: "Welcome to ROM 2.4.  ..."
+WELCOME = "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\r"
 
 
 def _crypt(key: str, salt: str) -> str:
