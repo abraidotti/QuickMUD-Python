@@ -12,12 +12,11 @@ class Difference(unittest.TestCase):
     def test_names_the_step(self):
         c = ["boot x", "step 1 \"look\"", "out a \"room\"", "rng 1 00000000"]
         py = ["boot x", "step 1 \"look\"", "out a \"rook\"", "rng 1 00000000"]
-        diff = scenarios.first_difference(c, py)
-        self.assertIn('line 3, at step 1 "look"', diff)
+        self.assertIn('line 3, at step 1 "look"', scenarios.difference(c, py))
 
     def test_lengths(self):
-        self.assertIsNone(scenarios.first_difference(["a"], ["a"]))
-        self.assertIn("1 lines from C, 2 from Python", scenarios.first_difference(["a"], ["a", "b"]))
+        self.assertIsNone(scenarios.difference(["a"], ["a"]))
+        self.assertIn("1 lines from C, 2 from Python", scenarios.difference(["a"], ["a", "b"]))
 
 
 class Goldens(unittest.TestCase):

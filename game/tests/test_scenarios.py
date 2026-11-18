@@ -13,7 +13,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 import unittest
 from pathlib import Path
 
-from charm.testing.scenario import comparable, esc, play_fresh, source_hash
+from charm.testing.scenario import EXPECT_STOP, difference, esc, play_fresh, source_hash
 
 REPO = Path(__file__).resolve().parents[2]
 SCENARIOS = Path(__file__).parent / "data" / "scenarios"
@@ -37,11 +37,23 @@ class Goldens(unittest.TestCase):
             if not golden.exists():
                 continue
             with self.subTest(scenario=scn.stem):
-                want = comparable(golden.read_text(encoding="latin-1").splitlines()[1:])
-                got = play_fresh(scn.read_text(encoding="latin-1"), REPO)
-                for i, (a, b) in enumerate(zip(want, got)):
-                    self.assertEqual(b, a, f"line {i + 1} of {scn.stem}")
-                self.assertEqual(len(got), len(want))
+                text = scn.read_text(encoding="latin-1")
+                c = golden.read_text(encoding="latin-1").splitlines()[1:]
+                self.assertIsNone(difference(c, play_fresh(text, REPO), text))
+
+
+class Difference(unittest.TestCase):
+    C = ['step 1 "look"', 'out a "Welcome to ROM 2.4."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]
+
+    def test_substituted_lines_match(self):
+        py = self.C[:1] + ['out a "Welcome to Charm."'] + self.C[2:]
+        self.assertIsNone(difference(self.C, py, ""))
+
+    def test_a_stop_is_a_difference_unless_expected(self):
+        py = self.C[:1] + ['out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', "stopped NotPorted: do_scan"]
+        self.assertIn("line 5", difference(self.C, py, ""))
+        self.assertIsNone(difference(self.C, py, EXPECT_STOP + "\n"))
+        self.assertIn("didn't", difference(self.C, self.C, EXPECT_STOP))
 
 
 class Format(unittest.TestCase):

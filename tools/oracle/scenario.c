@@ -19,14 +19,19 @@
  *   @obj VNUM ROOM       create_object (level 0) and obj_to_room
  *   @state               dump the characters and objects in every room a connection's character is in
  *   @return              an empty line of input (blank lines are skipped), then one pulse
+ *   @file PATH           print a file the game wrote, such as ../player/NAME (relative to the area directory)
  *   anything else        a line of input for the current connection, then one pulse
  *
  * The output, for every step (a line or an @ line):
  *   step N TEXT          what the step was
  *   out NAME "BYTES"     what connection NAME was sent during the step (escaped: see esc)
  *   closed NAME          the game closed connection NAME
+ *   file PATH "BYTES"    @file's file, or "file PATH missing"
  *   rng DRAWS HASH       random() calls so far, and an FNV-1a hash of every value they returned
  *   state ...            @state's lines
+ *
+ * A comment line "# expect: stopped NotPorted" says the Python game is to stop with NotPorted in this scenario
+ * (charm.testing.scenario compares only what comes before). The C ignores it, as it does every comment.
  *
  * Part of charm_tools (MIT, tools/LICENSE). It calls the game's code but contains none of it.
  */
@@ -383,6 +388,21 @@ int main (void)
             obj_to_room (create_object (get_obj_index (a), 0), get_room_index (b));
         else if (!strcmp (line, "@state"))
             state ();
+        else if (!strncmp (line, "@file ", 6))
+        {
+            static unsigned char fbuf[262144];
+            FILE *fp = fopen (line + 6, "rb");
+            if (fp == NULL)
+                printf ("file %s missing\n", line + 6);
+            else
+            {
+                size_t n = fread (fbuf, 1, sizeof fbuf, fp);
+                fclose (fp);
+                printf ("file %s ", line + 6);
+                esc (fbuf, n);
+                putchar ('\n');
+            }
+        }
         else
         {
             fprintf (stderr, "scenario: step %ld: unknown line %s\n", step, line);

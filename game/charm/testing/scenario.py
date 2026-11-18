@@ -286,9 +286,42 @@ class Player:
                         ix.get_room_index(int(m.group(2))))
         elif line == "@state":
             self.state()
+        elif line.startswith("@file "):
+            path = self.area / line[6:]
+            if path.is_file():
+                self.out.append(f"file {line[6:]} {esc(path.read_bytes()[:262144])}")
+            else:
+                self.out.append(f"file {line[6:]} missing")
         else:
             raise SystemExit(f"scenario: step {n}: unknown line {line}")
         self.collect()
+
+
+EXPECT_STOP = "# expect: stopped NotPorted"
+
+
+def difference(c_lines: list[str], py_lines: list[str], text: str) -> str | None:
+    """Where the Python's output first differs from the C's (after the on-purpose substitutions), or None.
+
+    A scenario with the comment line "# expect: stopped NotPorted" must make the Python game stop with NotPorted:
+    its last line is then the "stopped" line, and only what comes before it is compared, since the C carries on.
+    """
+    want = comparable(c_lines)
+    got = py_lines
+    if EXPECT_STOP in text.splitlines():
+        if not got or not got[-1].startswith("stopped NotPorted"):
+            return "the Python game was to stop with NotPorted, and didn't"
+        got = got[:-1]
+        want = want[:len(got)]
+    # Otherwise a "stopped" line has no match in the C's output, so it shows as the difference below.
+    for i, (a, b) in enumerate(zip(want, got)):
+        if a != b:
+            step = next((want[j] for j in range(i, -1, -1) if want[j].startswith("step ")), "(before any step)")
+            return f"line {i + 1}, at {step}:\n    C:      {a[:300]}\n    Python: {b[:300]}"
+    if len(want) != len(got):
+        more = (want if len(want) > len(got) else got)[min(len(want), len(got))]
+        return f"{len(want)} lines from C, {len(got)} from Python; the longer goes on with: {more[:300]}"
+    return None
 
 
 def source_hash(repo: Path) -> str:
