@@ -1,0 +1,332 @@
+new 0
+send
+read 1 inbuf=look\r\n recv=
+buffer incomm=look inlast=look repeat=0 inbuf= recv=
+buffer incomm= inlast=look repeat=0 inbuf= recv=
+send
+read 1 inbuf=north\nsouth\n recv=
+buffer incomm=north inlast=north repeat=0 inbuf=south\n recv=
+buffer incomm=south inlast=south repeat=0 inbuf= recv=
+send
+read 1 inbuf=one\rtwo\n\rthree\n recv=
+buffer incomm=one inlast=one repeat=0 inbuf=two\n\rthree\n recv=
+buffer incomm=two inlast=two repeat=0 inbuf=three\n recv=
+buffer incomm=three inlast=three repeat=0 inbuf= recv=
+send
+read 1 inbuf=partial recv=
+buffer incomm= inlast=three repeat=0 inbuf=partial recv=
+send
+read 1 inbuf=partial  line\n recv=
+buffer incomm=partial  line inlast=partial  line repeat=0 inbuf= recv=
+send
+read 1 inbuf=ab\x08c\n recv=
+buffer incomm=ac inlast=ac repeat=0 inbuf= recv=
+send
+read 1 inbuf=\x08\x08xy\x01\xffz\x7f!\n recv=
+buffer incomm=xyz! inlast=xyz! repeat=0 inbuf= recv=
+send
+read 1 inbuf=\x09\n recv=
+buffer incomm=  inlast=  repeat=0 inbuf= recv=
+send
+read 1 inbuf=\n recv=
+buffer incomm=  inlast=  repeat=0 inbuf= recv=
+send
+read 1 inbuf=say hi\n recv=
+buffer incomm=say hi inlast=say hi repeat=0 inbuf= recv=
+send
+read 1 inbuf=!\n recv=
+buffer incomm=say hi inlast=say hi repeat=1 inbuf= recv=
+send
+read 1 inbuf=!!\n recv=
+buffer incomm=say hi inlast=say hi repeat=2 inbuf= recv=
+send
+read 1 inbuf=say hi\n recv=
+buffer incomm=say hi inlast=say hi repeat=3 inbuf= recv=
+send
+read 1 inbuf=x\n recv=
+buffer incomm=x inlast=x repeat=3 inbuf= recv=
+send
+read 1 inbuf=x\n recv=
+buffer incomm=x inlast=x repeat=3 inbuf= recv=
+inbuf
+buffer incomm=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx inlast=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx repeat=0 inbuf= recv=Line too long.\n\r
+buffer incomm= inlast=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx repeat=0 inbuf= recv=
+inbuf
+buffer incomm=wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww inlast=wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww repeat=0 inbuf= recv=
+inbuf
+buffer incomm=wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww inlast=wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww repeat=0 inbuf= recv=
+new 1
+send
+read 1 inbuf=ab recv=
+buffer incomm= inlast= repeat=0 inbuf=ab recv=
+send
+read 1 inbuf=abef\n recv=
+buffer incomm=abef inlast=abef repeat=0 inbuf= recv=
+inbuf
+read 0 inbuf=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy recv=\n\r*** PUT A LID ON IT!!! ***\n\r
+new 2
+inbuf
+send
+read 0 inbuf=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyq recv=
+buffer incomm= inlast= repeat=0 inbuf=yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyq recv=
+new 3
+pc 0
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=0 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=1 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=2 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=3 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=4 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=5 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=6 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=7 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=8 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=9 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=10 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=11 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=12 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=13 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=14 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=15 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=16 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=17 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=18 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=19 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=20 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=21 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=22 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=23 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=24 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=0 inbuf= recv=
+send
+read 1 inbuf=look\n recv=
+buffer incomm=look inlast=look repeat=1 inbuf= recv=
+new 4
+out outtop=7 outsize=2000
+flush 1 recv=\n\rhello
+fcommand
+out outtop=2 outsize=2000
+flush 1 recv=hi
+fcommand
+out outtop=5 outsize=2000
+out outtop=10 outsize=2000
+flush 1 recv=\n\rabcab\x00\x00\x00
+out outtop=1992 outsize=2000
+out outtop=3982 outsize=4000
+out outtop=5972 outsize=8000
+flush 1 recv=\n\rzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+flush 1 recv=
+new 5
+desc
+flush 1 recv=\n\rplain  red  brace  slash  tilde  bell  personal  unknown
+ansi
+desc
+flush 1 recv=\n\r\x1b[1;31mred\x1b[0m \x1b[0;34mblue \x1b[1;30mdark { brace \n\r slash ~ tilde \x07 bell \x1b[0m unknown \x1b[0m newline
+colour x=\x1b[0m b=\x1b[0;34m c=\x1b[0;36m g=\x1b[0;32m m=\x1b[0;35m r=\x1b[0;31m w=\x1b[0;37m y=\x1b[0;33m B=\x1b[1;34m C=\x1b[1;36m G=\x1b[1;32m M=\x1b[1;35m R=\x1b[1;31m W=\x1b[1;37m Y=\x1b[1;33m D=\x1b[1;30m *=\x07 /=\n\r -=~ {={ ?=\x1b[0m
+new 6
+npc 1
+colour x= R= p=
+new 7
+pc 2
+flush 1 recv=\n\r\n\r
+out outtop=6 outsize=2000
+flush 1 recv=\n\rtext\n\r
+set
+out outtop=6 outsize=2000
+flush 1 recv=\n\rtext\n\r<20hp 100m 100mv> 
+set
+set
+set
+set
+set
+set
+set
+set
+set
+set
+set
+set
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<12hp 56m 90mv> 
+str
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<12/34 56/78 90/99 1234 7 8 good 3 none %>\n\r[A Test Room| | | ]!
+set
+set
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<12/34 56/78 90/99 1234 7 8 -900 3 none %>\n\r[A Test Room| | | ]!
+set
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<12/34 56/78 90/99 1234 7 8 -900 3 none %>\n\r[A Test Room|1|Test| ]!
+str
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<12/34 56/78 90/99 1234 7 8 -900 3 none %>\n\r[A Test Room|1|Test| ]!pre:
+set
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx<12/34 56/78 90/99 1234 7 8 -900 3 none %>\n\r[A Test Room|1|Test| ]!pre:\xff\xf9
+set
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<AFK> 
+str
+str
+set
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r<12hp 56m 90mv> 
+str
+room
+sun
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r12 darkness
+sun
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r12 A Test Room
+room
+out outtop=3 outsize=2000
+flush 1 recv=\n\rx\n\r12 darkness
+room
+set
+char
+flush 1 recv=\n\rred  and   ok
+set
+char
+flush 1 recv=\n\r\x1b[1;31mred\x1b[0m { \n\r ok \x1b[0m done
+new 8
+pc 3
+set
+set
+page more=1
+flush 1 recv=\n\rline 1\n\rline 2\n\rline 3\n[Hit Return to continue]\n\r
+show more=1
+flush 1 recv=\n\r\rline 4\n\rline 5\n\r[Hit Return to continue]\n\r
+show more=0
+flush 1 recv=\n\rline 6\n\rline 7\n\rline 8\n
+show more=0
+flush 1 recv=
+set
+page more=0
+flush 1 recv=\n\rline 1\n\rline 2\n\rline 3\n\rline 4\n\rline 5\n\rline 6\n\rline 7\n\rline 8\n\r
+set
+page more=0
+flush 1 recv=\n\rshort\n\r
+new 9
+pc 4
+str
+set
+new 10
+pc 5
+str
+set
+npc 6
+obj 0
+obj 1
+use
+act
+use
+flush 1 recv=\n\rAlice smiles.\n\r
+use
+flush 1 recv=
+act
+flush 1 recv=\n\rYou smile at  <@@@> .\n\r
+act
+use
+flush 1 recv=\n\rAlice pokes Bob: she her her, he him his.\n\r
+use
+act
+use
+flush 1 recv=
+use
+act
+act
+use
+flush 1 recv=\n\rAlice drops a shiny sword.\n\rAlice drops something.\n\r
+use
+actt
+actt
+actt
+actt
+act
+act
+use
+flush 1 recv=\n\rAlice says 'hello'.\n\rAlice opens the north.\n\rAlice opens the door.\n\rAlice opens the .\n\rLowerAlice and  <@@@> .\n\rA goblin grunts.\n\r
+use
+set
+act
+use
+flush 1 recv=\n\rSomeone is invisible.\n\r
+set
+use
+act
+use
+flush 1 recv=\n\rAlice is seen now.\n\r
+set
+room
+sun
+use
+act
+use
+flush 1 recv=\n\rIn the dark, someone drops something.\n\r
+set
+use
+act
+use
+flush 1 recv=
+=== log
+test input overflow!
+EOF encountered on read.
+test input spamming!
+[*****] BUG: Act: missing arg2 for code 78.
+[*****] BUG: Act: bad code 113.
+[*****] BUG: Act: bad code 113.
+[*****] BUG: Act: bad code 113.
+[*****] BUG: Act: bad code 113.

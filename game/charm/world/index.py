@@ -215,6 +215,7 @@ class Index:
     rooms: dict[int, Room]
     mobs: dict[int, MobIndex]
     objs: dict[int, ObjIndex]
+    help_greeting: str | None = None  # the text of the last help whose keyword is "greeting" (load_helps)
 
     # C: db.c get_room_index
     def get_room_index(self, vnum: int) -> Room | None:
@@ -346,4 +347,9 @@ def build_index(world: World) -> Index:
                                     e.rs_flags, sh_int(e.key), _s(e.keyword), _s(e.description), d)
         rooms[v].resets = [Reset(rs.command, sh_int(rs.arg1), sh_int(rs.arg2), sh_int(rs.arg3), sh_int(rs.arg4))
                            for rs in world.room_resets.get(v, [])]
-    return Index(areas, rooms, mobs, objs)
+    greeting = None
+    for f in world.files:
+        for h in f.helps:
+            if h.keywords.lower() == "greeting":  # load_helps: !str_cmp (pHelp->keyword, "greeting")
+                greeting = _s(h.text)
+    return Index(areas, rooms, mobs, objs, greeting)

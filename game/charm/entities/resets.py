@@ -24,6 +24,7 @@ from charm.entities.handler import (
     char_to_room,
 )
 from charm.entities.things import Char
+from charm.net.wiznet import wiznet
 from charm.world.index import Area, Room
 
 REV_DIR = (2, 3, 0, 1, 5, 4)  # act_move.c rev_dir[]
@@ -43,9 +44,8 @@ def _umin_fuzzy(level: int) -> int:
     return cap
 
 
-# C: db.c area_update [partial]
+# C: db.c area_update
 def area_update(game: Game) -> None:
-    """[partial]: the "<area> has just been reset." wiznet line isn't sent; there are no connections yet."""
     school = game.index.get_room_index(C.ROOM_VNUM_SCHOOL)
     for area in game.index.areas:
         area.age = sh_int(area.age + 1)
@@ -53,6 +53,7 @@ def area_update(game: Game) -> None:
             continue
         if (not area.empty and (area.nplayer == 0 or area.age >= 15)) or area.age >= 31:
             reset_area(game, area)
+            wiznet(game, f"{area.name} has just been reset.", None, None, C.WIZ_RESETS, 0, 0)
             area.age = number_range(0, 3)
             if school is not None and area is school.area:
                 area.age = 15 - 2

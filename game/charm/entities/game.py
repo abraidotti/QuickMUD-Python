@@ -46,3 +46,25 @@ class Game:
     weather_info: WeatherInfo = field(default_factory=WeatherInfo)
     mobile_count: int = 0
     last_mob_id: int = 0
+    # comm.c's: the connections (head first), and the loop's state
+    descriptor_list: list = field(default_factory=list)
+    merc_down: bool = False
+    shutdown_signal: int = 0
+    config: object | None = None  # charm.net.config.Config
+    selector: object | None = None
+    # update_handler's static counters; they start at 0, so every update is due on the first pulse
+    pulse_area: int = 0
+    pulse_music: int = 0
+    pulse_mobile: int = 0
+    pulse_violence: int = 0
+    pulse_point: int = 0
+
+
+# LATER: the C reads its globals from anywhere; a few functions that don't take a Game (room_is_dark, called from
+# can_see) read this one instead. Decide where game state lives (plans/python-port.md) and drop it.
+current: Game | None = None
+
+
+def weather() -> WeatherInfo:
+    """weather_info, the C global, for code that isn't passed a Game."""
+    return current.weather_info if current is not None else WeatherInfo()
