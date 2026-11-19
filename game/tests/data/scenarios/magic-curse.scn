@@ -1,0 +1,26 @@
+# A wand of curse (a small wand, 106, with curse: a spell for a character or an object, offensive) zapped at a
+# character needs fight.c's is_safe_spell, so the Python game stops there. In the temple (3001): Pickpocket (13,
+# wands at 75%) and Decimus. The wand has five charges, as the rolls can fail.
+# expect: stopped NotPorted
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as pick
+@obj 106 3001 5 5 5 29 0
+get wand
+hold wand
+zap decimus
+@pulse 24
+zap decimus
+@pulse 24
+zap decimus
+@pulse 24
+zap decimus
+@pulse 24
+zap decimus

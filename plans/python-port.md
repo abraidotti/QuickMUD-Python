@@ -12,8 +12,9 @@ sides (`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) an
 the first scenarios, 14 in all. PR 3 of 3 done (#38): the guard tests for the divergence classes (`tests/test_guards.py`). P2 done.
 P3, the commands, started 2026-11-18 (#39), time box 8 PRs or 2026-12-02: PR 1 of 8 done (#45), positions, doors
 and portals (the rest of `act_move.c`, and `act_enter.c`), with `port coverage`. PR 2 of 8 done (#48), information:
-the rest of `act_info.c`. PR 3 of 8 done (#56), talking: `act_comm.c` and `alias.c`. PR 4 of 8, objects part 1:
-get, put, drop, give, wear and remove.
+the rest of `act_info.c`. PR 3 of 8 done (#56), talking: `act_comm.c` and `alias.c`. PR 4 of 8 done (#59), objects part 1:
+get, put, drop, give, wear and remove. PR 5 of 8, objects part 2: the rest of `act_obj.c` (food and drink,
+shops, sacrifice, steal, and the magic items up to the spell).
 
 ## Goal
 

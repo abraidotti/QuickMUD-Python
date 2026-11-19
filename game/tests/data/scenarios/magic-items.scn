@@ -1,0 +1,128 @@
+# quaff, recite, brandish and zap, up to the spell: obj_cast_spell's checks run, and casting a real spell stops the
+# Python game (the spells are P4). In the temple (3001): Pickpocket (13, scrolls, staves and wands at 75%: an 80%
+# chance) and Decimus (10, in no clan). Each object is made and picked up just before it's used, mostly with its
+# values set: pink potions (105) with no spell and with sword (a skill, so "That's not a spell!"), a potion of divine
+# protection (3082, level 16: too high), old scrolls (1362) with no spell, a scroll of recall (3042, level 17), burnt
+# staves (1327) with no charges, with identify (a target brandish can't use), with spell 140 (a row of skill_table
+# past its end, all zeros) and with sword, small wands (106) with no charges, with sword and with kick (an offensive
+# skill, so Decimus, in no clan, is safe from it, and a box has no victim: zapped or recited at), a box (3033), and a
+# pink potion of identify, which needs an object. A staff or wand above its holder's level can't be held (wear_obj),
+# so brandish's and zap's own level checks never fail. Last, a pink potion casts invisibility (a spell for a character
+# or an object), and the Python game stops there.
+# expect: stopped NotPorted
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as pick
+@obj 3033 3001
+get box
+quaff
+quaff nothing
+quaff box
+@obj 3082 3001
+get divine
+quaff divine
+@obj 105 3001 6 -1 -1 -1 -1
+get pink
+quaff pink
+@obj 105 3001 6 105 -1 -1 -1
+get pink
+quaff pink
+recite
+recite box
+@obj 3042 3001
+get recall
+recite recall
+@obj 1362 3001 10 -1 -1 -1 -1
+@obj 1362 3001 10 -1 -1 -1 -1
+@obj 1362 3001 10 -1 -1 -1 -1
+@obj 1362 3001 10 -1 -1 -1 -1
+get all.old
+recite old nobody
+recite old decimus
+recite old box
+recite old
+recite old
+brandish
+zap
+zap decimus
+@obj 106 3001 5 5 0 5 0
+get wand
+hold wand
+brandish
+zap decimus
+@pulse 24
+@obj 1327 3001 20 4 0 4 0
+get staff
+hold staff
+zap decimus
+brandish
+@pulse 24
+@obj 1327 3001 20 4 4 60 0
+get staff
+hold staff
+brandish
+@pulse 24
+brandish
+@pulse 24
+brandish
+@pulse 24
+@obj 1327 3001 20 4 4 140 0
+get staff
+hold staff
+brandish
+@obj 1327 3001 20 4 4 105 0
+get staff
+hold staff
+brandish
+@pulse 24
+brandish
+@pulse 24
+brandish
+@pulse 24
+brandish
+@pulse 24
+@obj 106 3001 5 5 5 105 0
+get wand
+hold wand
+zap nothing
+zap decimus
+@pulse 24
+zap box
+@pulse 24
+zap
+zap decimus
+@pulse 24
+zap decimus
+@pulse 24
+@obj 106 3001 5 5 5 116 0
+get wand
+hold wand
+zap decimus
+@pulse 24
+zap decimus
+@pulse 24
+zap box
+@pulse 24
+@obj 1362 3001 10 116 -1 -1 -1
+get old
+recite old box
+@obj 1362 3001 10 116 -1 -1 -1
+get old
+recite old box
+@obj 1362 3001 10 116 -1 -1 -1
+get old
+recite old box
+@obj 105 3001 6 60 -1 -1 -1
+get pink
+quaff pink
+@state
+@obj 105 3001 6 62 -1 -1 -1
+get pink
+quaff pink

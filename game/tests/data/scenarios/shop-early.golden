@@ -1,0 +1,53 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763399340 updates area
+rng 51872 4ba9daca
+step 1 "@connect purse"
+rng 51872 4ba9daca
+step 2 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@return"
+out purse "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "south"
+out purse "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@pulse 1"
+rng 51895 7f5599b5
+step 8 "south"
+out purse "Market Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rA cityguard stands here.\n\r\n\r<29hp 102m 103mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@pulse 1"
+rng 51895 7f5599b5
+step 10 "south"
+out purse "The Common Square\n\r  The common square, people pass you, talking to each other.  To the west is\n\rthe poor alley and to the east is the dark alley.  To the north, this square\n\ris connected to the market square.  From the south you notice a nasty smell.\n\rA beastly fido is here.\n\r\n\r<29hp 102m 101mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@pulse 1"
+rng 51895 7f5599b5
+step 12 "east"
+out purse "The Dark Alley\n\r  The dark alley, to the west is the common square and to the south is the\n\rGuild of Thieves.  Grebe's Tavern, the famous sailor's dive, is north.\n\rThe alley continues east.\n\rAn alley cat hisses at you.\n\rA vagabond is here, looking for victims.\n\r\n\r<29hp 102m 99mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@pulse 1"
+rng 51895 7f5599b5
+step 14 "east"
+out purse "Alley at Levee\n\r  You are standing in the alley which continues east and west.  South of\n\rhere you see the levee.  North is the Pet Shop.\n\r\n\r<29hp 102m 97mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@pulse 1"
+rng 51895 7f5599b5
+step 16 "south"
+out purse "Levee\n\r  You are at the levee.  South of here you see the river gently flowing west.\n\rThe river bank is very low making it possible to enter the river.  Directly\n\racross the river you can see a small boat landing built off of Kate's Diner.\n\rA retired captain stands here, selling boats.\n\r\n\r<29hp 102m 95mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@pulse 1"
+rng 51895 7f5599b5
+step 18 "list"
+out purse "The captain says 'Sorry, I am closed. Come back later.'\n\r\n\r<29hp 102m 95mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "buy canoe"
+out purse "The captain says 'Sorry, I am closed. Come back later.'\n\r\n\r<29hp 102m 95mv> \xff\xf9"
+rng 51895 7f5599b5

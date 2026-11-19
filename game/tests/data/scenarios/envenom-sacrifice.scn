@@ -1,0 +1,159 @@
+# envenom and sacrifice. In the temple (3001): Pickpocket (13, a thief with envenom at 85%), Decimus (10, a warrior,
+# who has no envenom) and Clansman (20). Envenom lags 36 pulses. Objects to poison: a bread (3011) and a bottle of ale
+# (3002); daggers (3020, which stab); one with a negative attack (-1) and one with attack 40, the closing row of
+# attack_table, whose damage is 0; a mace (3024, which pounds: bash), a meat cleaver (1355, sharp), a sparking
+# lightning sword (9207, already poisoned) and a box (3033), with enough tries for some to fail. Then sacrifice: the
+# fountain (3135, no take), a rope (5011) that someone sits on, wild flowers (304: level 0 and worth nothing, so Mota
+# gives 0 silver), leather pants (3062: one silver coin), a battle axe (3026: level 5, so 15 silver) and a mob's
+# corpse (10). With autosplit, Pickpocket splits with Decimus; then, with only a charmed fido following, the split
+# says "Just keep it all" (#61). Fresh breads at the end of the envenoming, so one can fail before it's poisoned.
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect clan
+Clansman
+psswrd
+@return
+@return
+@obj 3011 3001
+@obj 3002 3001
+@obj 3020 3001
+@obj 3020 3001
+@obj 3020 3001 2 1 4 -1 0
+@obj 3020 3001 2 1 4 40 0
+@obj 3024 3001
+@obj 1355 3001
+@obj 9207 3001
+@obj 3033 3001
+@as dec
+get bread
+envenom bread
+drop bread
+@as pick
+get all
+envenom
+envenom nothing
+envenom box
+envenom mace
+envenom cleaver
+envenom lightning
+envenom 3.dagger
+envenom 4.dagger
+@pulse 36
+envenom dagger
+@pulse 36
+envenom 2.dagger
+@pulse 36
+envenom dagger
+@pulse 36
+envenom 2.dagger
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+@obj 3020 3001
+get dagger
+envenom dagger
+@pulse 36
+@obj 3020 3001
+get dagger
+envenom dagger
+@pulse 36
+@obj 3020 3001
+get dagger
+envenom dagger
+@pulse 36
+@obj 3020 3001
+get dagger
+envenom dagger
+@pulse 36
+@obj 3020 3001
+get dagger
+envenom dagger
+@pulse 36
+@obj 3020 3001
+get dagger
+envenom dagger
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+envenom bread
+@pulse 36
+envenom ale
+@pulse 36
+@obj 3011 3001
+get bread
+envenom bread
+@pulse 36
+@obj 3011 3001
+get bread
+envenom bread
+@pulse 36
+@obj 3011 3001
+get bread
+envenom bread
+@pulse 36
+@obj 3011 3001
+get bread
+envenom bread
+@pulse 36
+@state
+drop all
+sacrifice
+sacrifice pickpocket
+sacrifice nothing
+@obj 3135 3001
+sacrifice fountain
+@obj 5011 3001 2 1000 16 100 100
+@as dec
+sit rope
+@as pick
+sacrifice rope
+@as dec
+stand
+@as pick
+sacrifice rope
+@obj 304 3001
+sacrifice flowers
+@obj 3062 3001
+sacrifice pants
+@obj 10 3001
+sacrifice corpse
+autosplit
+@as dec
+follow pickpocket
+@as pick
+group decimus
+@obj 3026 3001
+sacrifice axe
+@state
+group decimus
+@mob 3062 3001
+@charm
+@obj 3026 3001
+sacrifice axe
+@state

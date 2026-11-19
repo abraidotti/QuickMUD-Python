@@ -1,0 +1,108 @@
+# steal. In the temple (3001), which isn't a safe room: Pickpocket (13, a thief in clan rom, steal at 95%), Yeoman (5,
+# rom: 8 levels below, so is_safe lets Pickpocket try and steal's own 7-level rule fails it), Clansman (20, rom), Seer
+# (20, in no clan, so is_safe refuses), Decimus (10, a warrior in no clan, who can't steal) and Smokegod. The mayor
+# (3143) sleeps, so stealing from him always works at 95% (the roll drops by 10). Pickpocket gives him 30 gold to take
+# back, and Smokegod gives him leather pants (3062), a meat cleaver (1355, level 17: too high), a strange amulet (307,
+# no drop) and a mob's corpse (10, 1000 weight), which Pickpocket, already carrying two, can't hold. By the altar
+# (3054, a safe room) stealing from a mob is refused. A failed steal makes Pickpocket a THIEF and is saved. Last,
+# Unseen (5, invisible, in no clan) fails to steal from an awake fido, which can't see it and attacks (fight.c's
+# multi_hit): the Python game stops there. Before that, Pickpocket's own charmed fido, ordered to sleep, has no coins
+# to steal; Unseen tries the second, awake fido.
+# expect: stopped NotPorted
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@connect clan
+Clansman
+psswrd
+@return
+@connect seer
+Seer
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@mob 3143 3001
+@as pick
+steal
+steal coins
+steal coins nobody
+steal coins pickpocket
+steal coins seer
+@state
+steal coins mayor
+@pulse 24
+steal gold mayor
+@pulse 24
+give 30 gold mayor
+steal coins mayor
+@pulse 24
+@obj 3062 3001
+@obj 1355 3001
+@obj 307 3001
+@obj 10 3001
+@obj 10 3001
+@obj 10 3001
+@as god
+get pants
+get cleaver
+get amulet
+get corpse
+give pants mayor
+give cleaver mayor
+give amulet mayor
+give corpse mayor
+@as pick
+steal pants mayor
+@pulse 24
+steal nothing mayor
+@pulse 24
+steal cleaver mayor
+@pulse 24
+steal amulet mayor
+@pulse 24
+get all.corpse
+steal corpse mayor
+@pulse 24
+@state
+@as yeo
+sleep
+@as pick
+steal coins yeoman
+@pulse 24
+@file ../player/Pickpocket
+steal coins clansman
+@pulse 24
+steal coins clansman
+@pulse 24
+north
+@pulse 1
+steal coins healer
+@state
+south
+@pulse 1
+@mob 3062 3001
+@charm
+order fido sleep
+@pulse 12
+steal coins fido
+@pulse 24
+@mob 3062 3001
+@connect unseen
+Unseen
+psswrd
+@return
+@return
+steal coins fido

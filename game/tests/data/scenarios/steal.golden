@@ -1,0 +1,516 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect pick"
+rng 51872 4ba9daca
+step 2 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect yeo"
+rng 51895 7f5599b5
+step 6 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out pick "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect clan"
+rng 51895 7f5599b5
+step 10 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out pick "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rYeoman the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect seer"
+rng 51895 7f5599b5
+step 14 "Seer"
+out seer "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out seer "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out pick "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rClansman the Recruit is here.\n\rYeoman the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect dec"
+rng 51895 7f5599b5
+step 18 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out pick "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeer the Recruit is here.\n\rClansman the Recruit is here.\n\rYeoman the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@connect god"
+rng 51895 7f5599b5
+step 22 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 23 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 24 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 25 "@return"
+out pick "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSeer the Recruit is here.\n\rClansman the Recruit is here.\n\rYeoman the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "@mob 3143 3001"
+rng 51907 f84fac3e
+step 27 "@as pick"
+rng 51907 f84fac3e
+step 28 "steal"
+out pick "Steal what from whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 29 "steal coins"
+out pick "Steal what from whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 30 "steal coins nobody"
+out pick "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 31 "steal coins pickpocket"
+out pick "That's pointless.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 32 "steal coins seer"
+out pick "They aren't in a clan, leave them alone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 33 "@state"
+state room 3001 light 5 people mob player player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3143 pos 4 hit 540/540 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 3 silver 340 act 3 affected_by 8192 train 0 on 0 stats 16 16 16 16 16
+state   affect 74 level 23 duration -1 location 20 modifier -1 bitvector 8192
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51907 f84fac3e
+step 34 "steal coins mayor"
+out pick "Bingo!  You got 11 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51912 93eb034d
+step 35 "@pulse 24"
+rng 51912 93eb034d
+step 36 "steal gold mayor"
+out pick "Bingo!  You got 54 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 37 "@pulse 24"
+rng 51917 64c4bf17
+step 38 "give 30 gold mayor"
+out pick "You give the mayor 30 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rPickpocket gives the mayor some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gives the mayor some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket gives the mayor some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gives the mayor some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket gives the mayor some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51917 64c4bf17
+step 39 "steal coins mayor"
+out pick "Bingo!  You got 45 silver and 4 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51923 585652cd
+step 40 "@pulse 24"
+rng 51923 585652cd
+step 41 "@obj 3062 3001"
+rng 51923 585652cd
+step 42 "@obj 1355 3001"
+rng 51923 585652cd
+step 43 "@obj 307 3001"
+rng 51923 585652cd
+step 44 "@obj 10 3001"
+rng 51923 585652cd
+step 45 "@obj 10 3001"
+rng 51923 585652cd
+step 46 "@obj 10 3001"
+rng 51923 585652cd
+step 47 "@as god"
+rng 51923 585652cd
+step 48 "get pants"
+out pick "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You get a pair of leather pants.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 49 "get cleaver"
+out pick "\n\rSmokegod gets a meat cleaver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gets a meat cleaver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gets a meat cleaver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gets a meat cleaver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets a meat cleaver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You get a meat cleaver.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 50 "get amulet"
+out pick "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You get a strange amulet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 51 "get corpse"
+out pick "\n\rSmokegod gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You get the corpse of %s.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 52 "give pants mayor"
+out pick "\n\rSmokegod gives a pair of leather pants to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gives a pair of leather pants to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gives a pair of leather pants to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gives a pair of leather pants to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gives a pair of leather pants to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You give a pair of leather pants to the mayor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 53 "give cleaver mayor"
+out pick "\n\rSmokegod gives a meat cleaver to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gives a meat cleaver to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gives a meat cleaver to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gives a meat cleaver to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gives a meat cleaver to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You give a meat cleaver to the mayor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 54 "give amulet mayor"
+out pick "\n\rSmokegod gives a strange amulet to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gives a strange amulet to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gives a strange amulet to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gives a strange amulet to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gives a strange amulet to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You give a strange amulet to the mayor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 55 "give corpse mayor"
+out pick "\n\rSmokegod gives the corpse of %s to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gives the corpse of %s to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod gives the corpse of %s to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod gives the corpse of %s to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gives the corpse of %s to the mayor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You give the corpse of %s to the mayor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51923 585652cd
+step 56 "@as pick"
+rng 51923 585652cd
+step 57 "steal pants mayor"
+out pick "You pocket a pair of leather pants.\n\rGot it!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 58 "@pulse 24"
+rng 51925 7edc2a82
+step 59 "steal nothing mayor"
+out pick "You can't find it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 60 "@pulse 24"
+rng 51926 ad863a1b
+step 61 "steal cleaver mayor"
+out pick "You can't pry it away.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 62 "@pulse 24"
+rng 51927 ac0787c3
+step 63 "steal amulet mayor"
+out pick "You can't pry it away.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51928 bc29c08d
+step 64 "@pulse 24"
+rng 51928 bc29c08d
+step 65 "get all.corpse"
+out pick "You get the corpse of %s.\n\rYou get the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rPickpocket gets the corpse of %s.\n\rPickpocket gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets the corpse of %s.\n\rPickpocket gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket gets the corpse of %s.\n\rPickpocket gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets the corpse of %s.\n\rPickpocket gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket gets the corpse of %s.\n\rPickpocket gets the corpse of %s.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51928 bc29c08d
+step 66 "steal corpse mayor"
+out pick "You can't carry that much weight.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51931 d3e928be
+step 67 "@pulse 24"
+rng 51931 d3e928be
+step 68 "@state"
+state room 3001 light 5 people mob player player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3143 pos 4 hit 540/540 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 29 silver 230 act 3 affected_by 8192 train 0 on 0 stats 16 16 16 16 16
+state   affect 74 level 23 duration -1 location 20 modifier -1 bitvector 8192
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 1355 wear -1 timer 0 cost 840 values 2 3 5 21 8
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 4 silver 310 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51931 d3e928be
+step 69 "@as yeo"
+rng 51931 d3e928be
+step 70 "sleep"
+out pick "\n\rYeoman goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rYeoman goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYeoman goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rYeoman goes to sleep.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51931 d3e928be
+step 71 "@as pick"
+rng 51931 d3e928be
+step 72 "steal coins yeoman"
+out pick "Oops.\n\rYeoman wakes and stands up.\n\rYeoman yells 'Pickpocket tried to rob me!'\n\r*** You are now a THIEF!! ***\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rYou wake and stand up.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rThe mayor is here.  He shakes your hand.\n\rSmokegod the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rSeer the Recruit is here.\n\rClansman the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\rYou yell 'Pickpocket tried to rob me!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket tried to steal from Yeoman.\n\r\n\rYeoman wakes and stands up.\n\rYeoman yells 'Pickpocket tried to rob me!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket tried to steal from Yeoman.\n\r\n\rYeoman wakes and stands up.\n\rYeoman yells 'Pickpocket tried to rob me!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket tried to steal from Yeoman.\n\r\n\rYeoman wakes and stands up.\n\rYeoman yells 'Pickpocket tried to rob me!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket tried to steal from Yeoman.\n\r\n\rYeoman wakes and stands up.\n\rYeoman yells 'Pickpocket tried to rob me!'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51933 af6a286b
+step 73 "@pulse 24"
+rng 51933 af6a286b
+step 74 "@file ../player/Pickpocket"
+file ../player/Pickpocket "#PLAYER\nName Pickpocket~\nId   1763400012\nLogO 1763400058\nVers 5\nProm <%hhp %mm %vmv> ~\nRace human~\nClan rom~\nSex  1\nCla  2\nLevl 13\nSec  0\nPlyd 322\nScro 22\nRoom 3001\nHMV  29 29 102 102 106 106\nGold 4\nSilv 310\nExp  2088\nAct  QZ\nComm NOP\nPos  8\nPrac 1\nTrai 1\nSave  -1\nAlig  750\nHit   1\nACs 95 95 95 99\nAttr 19 13 13 13 13\nAMod 0 0 0 0 0\nPass ShdJkE29AGHGg~\nTitl  the Recruit~\nPnts 40\nTSex 1\nLLev 0\nHMVP 29 102 106\nCnd  0 10 2 0\nColoura     007 013 005 001 013\nColourb     013 003 002 006 003\nColourc     113 002 002 002 001\nColourd     006 007 002 006 006\nColoure     011 002 003 001 017\nColourf     002 002 012 012 012\nColourg     017 015 011 017 017\nBoards       5 General 0 Ideas 0 Announce 0 Bugs 0 Personal 0 \nSk 1 'axe'\nSk 1 'dagger'\nSk 1 'flail'\nSk 1 'mace'\nSk 1 'polearm'\nSk 1 'shield block'\nSk 1 'spear'\nSk 75 'sword'\nSk 1 'whip'\nSk 1 'bash'\nSk 1 'disarm'\nSk 17 'enhanced damage'\nSk 85 'envenom'\nSk 1 'parry'\nSk 1 'rescue'\nSk 1 'second attack'\nSk 1 'third attack'\nSk 95 'haggle'\nSk 95 'steal'\nSk 75 'scrolls'\nSk 75 'staves'\nSk 75 'wands'\nSk 50 'recall'\nGr 'rom basics'\nGr 'warrior basics'\nGr 'warrior default'\nGr 'weaponsmaster'\nEnd\n\n#O\nVnum 3716\nNest 0\nCond 0\nWear 0\nCost 0\nVal  0 0 197 0 0\nEnd\n\n#O\nVnum 3703\nNest 0\nCond 0\nWear 5\nCost 0\nEnd\n\n#O\nVnum 3702\nNest 0\nCond 0\nWear 16\nCost 360\nEnd\n\n#O\nVnum 3704\nNest 0\nCond 0\nWear 11\nCost 0\nEnd\n\n#O\nVnum 3162\nNest 0\nCond 0\nWear -1\nCost 500\nEnd\n\n#O\nVnum 3062\nNest 0\nCond 0\nWear -1\nCost 136\nEnd\n\n#O\nVnum 10\nNest 0\nCond 0\nWear -1\nCost 0\nEnd\n\n#O\nVnum 10\nNest 0\nCond 0\nWear -1\nCost 0\nEnd\n\n#END\n"
+rng 51933 af6a286b
+step 75 "steal coins clansman"
+out pick "Oops.\n\rClansman yells 'Pickpocket is a lousy thief!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Pickpocket is a lousy thief!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket tried to steal from you.\n\r\n\rYou yell 'Pickpocket is a lousy thief!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Pickpocket is a lousy thief!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Pickpocket is a lousy thief!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Pickpocket is a lousy thief!'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51935 b9fd8a25
+step 76 "@pulse 24"
+rng 51935 b9fd8a25
+step 77 "steal coins clansman"
+out pick "Oops.\n\rClansman yells 'Keep your hands out of there, Pickpocket!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Keep your hands out of there, Pickpocket!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket tried to steal from you.\n\r\n\rYou yell 'Keep your hands out of there, Pickpocket!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Keep your hands out of there, Pickpocket!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Keep your hands out of there, Pickpocket!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket tried to steal from Clansman.\n\r\n\rClansman yells 'Keep your hands out of there, Pickpocket!'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51938 1f8c2006
+step 78 "@pulse 24"
+rng 51938 1f8c2006
+step 79 "north"
+out pick "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r     A pit for sacrifices is in front of the altar.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out yeo "\n\rPickpocket leaves north.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket leaves north.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket leaves north.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket leaves north.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket leaves north.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51938 1f8c2006
+step 80 "@pulse 1"
+rng 51938 1f8c2006
+step 81 "steal coins healer"
+out pick "Not in this room.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51938 1f8c2006
+step 82 "@state"
+state room 3054 light 1 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 4 silver 310 act 33619968 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state room 3001 light 4 people mob player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3143 pos 4 hit 540/540 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 29 silver 230 act 3 affected_by 8192 train 0 on 0 stats 16 16 16 16 16
+state   affect 74 level 23 duration -1 location 20 modifier -1 bitvector 8192
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 1355 wear -1 timer 0 cost 840 values 2 3 5 21 8
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51938 1f8c2006
+step 83 "south"
+out pick "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rThe mayor is here.  He shakes your hand.\n\rSmokegod the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rSeer the Recruit is here.\n\rClansman the Recruit is here.\n\rYeoman the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out yeo "\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket has arrived.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51938 1f8c2006
+step 84 "@pulse 1"
+rng 51938 1f8c2006
+step 85 "@mob 3062 3001"
+rng 51940 58237e7d
+step 86 "@charm"
+rng 51940 58237e7d
+step 87 "order fido sleep"
+out pick "\n\rThe beastly fido now follows you.\n\rThe beastly fido goes to sleep.\n\rOk.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out yeo "\n\rThe beastly fido goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe beastly fido goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe beastly fido goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe beastly fido goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rThe beastly fido goes to sleep.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51940 58237e7d
+step 88 "@pulse 12"
+rng 51940 58237e7d
+step 89 "steal coins fido"
+out pick "You couldn't get any coins.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51945 a2c49ca0
+step 90 "@pulse 24"
+rng 51945 a2c49ca0
+step 91 "@mob 3062 3001"
+rng 51947 452c3f8e
+step 92 "@connect unseen"
+rng 51947 452c3f8e
+step 93 "Unseen"
+out unseen "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51947 452c3f8e
+step 94 "psswrd"
+out unseen "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51947 452c3f8e
+step 95 "@return"
+out pick "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out yeo "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rUnseen has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rSomeone has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out unseen "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA beastly fido is here.\n\r(Charmed) the beastly fido is sleeping here.\n\r(THIEF) Pickpocket the Recruit is here.\n\rThe mayor is here.  He shakes your hand.\n\rSmokegod the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rSeer the Recruit is here.\n\rClansman the Recruit is here.\n\rYeoman the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51947 452c3f8e
+step 96 "@return"
+out unseen "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51947 452c3f8e
+step 97 "steal coins fido"
+out pick "\n\rSomeone tried to steal from the beastly fido.\n\r\n\rThe beastly fido's bite grazes someone.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out yeo "\n\rSomeone tried to steal from the beastly fido.\n\r\n\rThe beastly fido's bite grazes someone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSomeone tried to steal from the beastly fido.\n\r\n\rThe beastly fido's bite grazes someone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rUnseen tried to steal from the beastly fido.\n\r\n\rThe beastly fido's bite grazes Unseen.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSomeone tried to steal from the beastly fido.\n\r\n\rThe beastly fido's bite grazes someone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rSomeone tried to steal from the beastly fido.\n\r\n\rThe beastly fido's bite grazes someone.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out unseen "Oops.\n\rThe beastly fido's bite grazes you.\n\rThe beastly fido is in excellent condition. \n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 51960 b6faed5d

@@ -812,6 +812,36 @@ def can_drop_obj(ch: Char, obj: Obj) -> bool:
     return not ch.is_npc and ch.level >= C.LEVEL_IMMORTAL
 
 
+# C: handler.c affect_join
+def affect_join(ch: Char, paf: Affect) -> None:
+    for old in ch.affected:
+        if old.type == paf.type:
+            # The C comment: averaging was "(paf->level += ...) / 2", undefined behaviour, fixed in Charm (#8).
+            paf.level = c_div(paf.level + old.level, 2)
+            paf.duration += old.duration
+            paf.modifier += old.modifier
+            affect_remove(ch, old)
+            break
+    affect_to_char(ch, paf)
+
+
+# C: handler.c deduct_cost
+def deduct_cost(ch: Char, cost: int) -> None:
+    silver = min(ch.silver, cost)
+    gold = 0
+    if silver < cost:
+        gold = c_div(cost - silver + 99, 100)
+        silver = cost - 100 * gold
+    ch.gold -= gold
+    ch.silver -= silver
+    if ch.gold < 0:
+        bug("deduct costs: gold %d < 0", ch.gold)
+        ch.gold = 0
+    if ch.silver < 0:
+        bug("deduct costs: silver %d < 0", ch.silver)
+        ch.silver = 0
+
+
 # C: handler.c get_age
 def get_age(game: Game, ch: Char) -> int:
     return 17 + c_div(ch.played + int32(game.current_time - ch.logon), 72000)
