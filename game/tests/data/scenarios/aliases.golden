@@ -1,0 +1,169 @@
+sources e18a42ba37481b3d
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect weary"
+rng 51872 4ba9daca
+step 2 "Weary"
+out weary "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out weary "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out weary "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "alias"
+out weary "You have no aliases defined.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "alia"
+out weary "I'm sorry, alias must be entered in full.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "alias una"
+out weary "Sorry, that word is reserved.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "alias unalias"
+out weary "Sorry, that word is reserved.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "alias alias"
+out weary "Sorry, that word is reserved.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "alias \"two words\" look"
+out weary "The word to be aliased should not contain a space, a tick or a double-quote.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "alias it's look"
+out weary "The word to be aliased should not contain a space, a tick or a double-quote.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "alias l"
+out weary "That alias is not defined.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "alias l look"
+out weary "l is now aliased to 'look'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "alias l"
+out weary "l aliases to 'look'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "alias L"
+out weary "l aliases to 'look'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "alias x delete"
+out weary "That shall not be done!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "alias x d"
+out weary "That shall not be done!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "alias x pre"
+out weary "That shall not be done!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "alias x Prefix"
+out weary "That shall not be done!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "alias x del me"
+out weary "x is now aliased to 'del me'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "alias l look ~tilde~"
+out weary "l is now realiased to 'look -tilde-'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "alias l"
+out weary "l aliases to 'look -tilde-'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "alias l look"
+out weary "l is now realiased to 'look'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "alias s score"
+out weary "s is now aliased to 'score'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "alias w who"
+out weary "w is now aliased to 'who'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "alias e exits"
+out weary "e is now aliased to 'exits'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "alias i inventory"
+out weary "Sorry, you have reached the alias limit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "alias n north"
+out weary "Sorry, you have reached the alias limit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "alias"
+out weary "Your current aliases are:\n\r    l:  look\n\r    x:  del me\n\r    s:  score\n\r    w:  who\n\r    e:  exits\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "l"
+out weary "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "l me"
+out weary "You see a sub issue shield here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "s"
+out weary "You are Weary the Recruit, level 2, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 29/29 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/47 items with weight 14/230 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2088 exp, and have 0 gold and 0 silver coins.\n\rYou need 912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "e"
+out weary "Obvious exits:\n\rNorth - By the Temple Altar\n\rSouth - The Temple Square\n\rUp    - Entrance to Mud School\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "@pulse 1"
+rng 51895 7f5599b5
+step 35 "unalias"
+out weary "Unalias what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "unalias nothing"
+out weary "No alias of that name to remove.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "unalias S"
+out weary "Alias removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "unalias s"
+out weary "No alias of that name to remove.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "alias"
+out weary "Your current aliases are:\n\r    l:  look\n\r    x:  del me\n\r    w:  who\n\r    e:  exits\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "unalias w"
+out weary "Alias removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "alias"
+out weary "Your current aliases are:\n\r    l:  look\n\r    x:  del me\n\r    e:  exits\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "alias n north"
+out weary "n is now aliased to 'north'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "alias"
+out weary "Your current aliases are:\n\r    l:  look\n\r    x:  del me\n\r    e:  exits\n\r    n:  north\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "n"
+out weary "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r     A pit for sacrifices is in front of the altar.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "@pulse 1"
+rng 51895 7f5599b5
+step 46 "unalias x"
+out weary "Alias removed.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "alias x say aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+out weary "x is now aliased to 'say aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "x bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+out weary "Alias substitution too long. Truncated.\r\nYou say 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "@pulse 1"
+rng 51895 7f5599b5
+step 50 "save"
+out weary "Saving. Remember that Charm has automatic saving now.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "@pulse 48"
+rng 51895 7f5599b5
+step 52 "@file ../player/Weary"
+file ../player/Weary "#PLAYER\nName Weary~\nId   1526675897\nLogO 1763400012\nVers 5\nProm <%hhp %mm %vmv> ~\nRace human~\nSex  1\nCla  3\nLevl 2\nSec  0\nPlyd 276\nScro 22\nRoom 3054\nHMV  29 29 102 102 105 106\nGold 0\nSilv 0\nExp  2088\nAct  Q\nComm NOP\nPos  8\nPrac 1\nTrai 1\nSave  -1\nAlig  750\nHit   1\nACs 95 95 95 99\nAttr 19 13 13 13 13\nAMod 0 0 0 0 0\nPass ShdJkE29AGHGg~\nTitl  the Recruit~\nPnts 40\nTSex 1\nLLev 0\nHMVP 29 102 106\nCnd  0 42 45 45\nColoura     007 013 005 001 013\nColourb     013 003 002 006 003\nColourc     113 002 002 002 001\nColourd     006 007 002 006 006\nColoure     011 002 003 001 017\nColourf     002 002 012 012 012\nColourg     017 015 011 017 017\nAlias l look~\nAlias e exits~\nAlias n north~\nAlias x say aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa~\nBoards       5 General 0 Ideas 0 Announce 0 Bugs 0 Personal 0 \nSk 1 'axe'\nSk 1 'dagger'\nSk 1 'flail'\nSk 1 'mace'\nSk 1 'polearm'\nSk 1 'shield block'\nSk 1 'spear'\nSk 75 'sword'\nSk 1 'whip'\nSk 1 'bash'\nSk 1 'disarm'\nSk 17 'enhanced damage'\nSk 1 'parry'\nSk 1 'rescue'\nSk 1 'second attack'\nSk 1 'third attack'\nSk 1 'scrolls'\nSk 1 'staves'\nSk 1 'wands'\nSk 50 'recall'\nGr 'rom basics'\nGr 'warrior basics'\nGr 'warrior default'\nGr 'weaponsmaster'\nEnd\n\n#O\nVnum 3716\nNest 0\nCond 0\nWear 0\nCost 0\nVal  0 0 197 0 0\nEnd\n\n#O\nVnum 3703\nNest 0\nCond 0\nWear 5\nCost 0\nEnd\n\n#O\nVnum 3702\nNest 0\nCond 0\nWear 16\nCost 360\nEnd\n\n#O\nVnum 3704\nNest 0\nCond 0\nWear 11\nCost 0\nEnd\n\n#O\nVnum 3162\nNest 0\nCond 0\nWear -1\nCost 500\nEnd\n\n#END\n"
+rng 51895 7f5599b5
+step 53 "unalias l"
+out weary "Alias removed.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "unalias e"
+out weary "Alias removed.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "unalias i"
+out weary "No alias of that name to remove.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "unalias n"
+out weary "Alias removed.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "alias"
+out weary "Your current aliases are:\n\r    x:  say aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5

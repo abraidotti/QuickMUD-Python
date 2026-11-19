@@ -1,0 +1,60 @@
+# alias and unalias: listing, the reserved words, quotes and spaces, showing one, redefining, the limit of five,
+# using them, removing from the middle, a substitution past the longest line, and the saved file. Weary (2) is
+# in the temple (3001).
+@connect weary
+Weary
+psswrd
+@return
+alias
+alia
+alias una
+alias unalias
+alias alias
+alias "two words" look
+alias it's look
+alias l
+alias l look
+alias l
+alias L
+alias x delete
+alias x d
+alias x pre
+alias x Prefix
+alias x del me
+alias l look ~tilde~
+alias l
+alias l look
+alias s score
+alias w who
+alias e exits
+alias i inventory
+alias n north
+alias
+l
+l me
+s
+e
+@pulse 1
+unalias
+unalias nothing
+unalias S
+unalias s
+alias
+unalias w
+alias
+alias n north
+alias
+n
+@pulse 1
+unalias x
+alias x say aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+x bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+@pulse 1
+save
+@pulse 48
+@file ../player/Weary
+unalias l
+unalias e
+unalias i
+unalias n
+alias

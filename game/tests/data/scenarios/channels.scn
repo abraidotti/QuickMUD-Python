@@ -1,0 +1,147 @@
+# The public channels, the clan and immortal channels, shout and yell, and quiet, deaf and AFK, with channels
+# listing each state. In the temple (3001): Decimus (10), Quintus (25), Clansman and Yeoman (clan rom), Outlaw (a
+# loner), Muzzled (5, rom, with every flag the gods set), Sleeper (asleep) and Smokegod (an immortal). Sluggish is in
+# the Temple Square (3005), in the same area; Recluse is in the Void (8699), in another, so it hears shouts but not
+# yells.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect clan
+Clansman
+psswrd
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@connect out
+Outlaw
+psswrd
+@return
+@connect muz
+Muzzled
+psswrd
+@return
+@connect sleep
+Sleeper
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect slug
+Sluggish
+psswrd
+@return
+@connect rec
+Recluse
+psswrd
+@return
+@as dec
+channels
+gossip hello all
+grats well done
+quote "a quote" and more
+question what is this?
+answer it is that
+music la la la
+auction a sword
+# Each with no text turns the channel off; text turns it back on.
+gossip
+grats
+quote
+question
+answer
+music
+channels
+gossip back again
+grats
+quote
+music
+channels
+# auction with no text turns it off, then auctions nothing to everyone all the same.
+auction
+auction
+@as quin
+gossip
+@as dec
+gossip quintus has gossip off
+@as quin
+gossip
+quiet
+channels
+gossip hi
+auction hi
+@as dec
+gossip quintus is quiet
+shout quintus is quiet
+@pulse 12
+@as quin
+quiet
+shout
+@as dec
+shout quintus has shouts off
+@pulse 12
+yell
+yell over here
+@as rec
+yell anyone here?
+@as quin
+shout
+shout everyone hears this
+@pulse 12
+@as clan
+clan hello clan
+clan
+clan text turns it back on
+clan so yeoman hears this
+@as yeo
+clan
+@as clan
+clan yeoman has it off
+@as yeo
+clan
+@as out
+clan a loner
+@as dec
+clan not in one
+@as god
+immtalk hello gods
+immtalk
+immtalk back on
+: the short form
+channels
+@as dec
+immtalk mortals can't
+@as muz
+channels
+gossip hi
+gossip
+gossip
+clan hi
+shout hi
+yell hi
+tell decimus hi
+reply hi
+emote waves
+pmote waves
+gtell hi
+@as dec
+deaf
+channels
+tell quintus hi
+deaf
+afk
+channels
+afk
+scroll 10
+channels
+scroll 0
+channels

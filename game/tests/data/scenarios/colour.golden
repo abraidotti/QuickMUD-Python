@@ -1,0 +1,208 @@
+sources e18a42ba37481b3d
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "colour"
+out quin "ColoUr is now ON, Way Cool!\n\rFurther syntax:\n\r   colour \x1b[0;36m<\x1b[0mfield\x1b[0;36m> <\x1b[0mcolour\x1b[0;36m>\x1b[0m\n\r   colour \x1b[0;36m<\x1b[0mfield\x1b[0;36m>\x1b[0m \x1b[0;36mbeep\x1b[0m|\x1b[0;36mnobeep\x1b[0m\n\rType help \x1b[0;36mcolour\x1b[0m and \x1b[0;36mcolour2\x1b[0m for details.\n\rColoUr is brought to you by Lope, ant@solace.mh.se.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 10 "@as dec"
+rng 51895 7f5599b5
+step 11 "say colour off"
+out dec "You say 'colour off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\r\x1b[0;32mDecimus says '\x1b[1;32mcolour off\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 12 "colour"
+out dec "ColoUr is now ON, Way Cool!\n\rFurther syntax:\n\r   colour \x1b[0;36m<\x1b[0mfield\x1b[0;36m> <\x1b[0mcolour\x1b[0;36m>\x1b[0m\n\r   colour \x1b[0;36m<\x1b[0mfield\x1b[0;36m>\x1b[0m \x1b[0;36mbeep\x1b[0m|\x1b[0;36mnobeep\x1b[0m\n\rType help \x1b[0;36mcolour\x1b[0m and \x1b[0;36mcolour2\x1b[0m for details.\n\rColoUr is brought to you by Lope, ant@solace.mh.se.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 13 "say colour on"
+out dec "\x1b[0;32mYou say '\x1b[1;32mcolour on\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+out quin "\n\r\x1b[0;32mDecimus says '\x1b[1;32mcolour on\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 14 "colour"
+out dec "ColoUr is now OFF, <sigh>\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "colour"
+out dec "ColoUr is now ON, Way Cool!\n\rFurther syntax:\n\r   colour \x1b[0;36m<\x1b[0mfield\x1b[0;36m> <\x1b[0mcolour\x1b[0;36m>\x1b[0m\n\r   colour \x1b[0;36m<\x1b[0mfield\x1b[0;36m>\x1b[0m \x1b[0;36mbeep\x1b[0m|\x1b[0;36mnobeep\x1b[0m\n\rType help \x1b[0;36mcolour\x1b[0m and \x1b[0;36mcolour2\x1b[0m for details.\n\rColoUr is brought to you by Lope, ant@solace.mh.se.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 16 "colour say hi-red"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 17 "colour say_text blue"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 18 "say red and blue"
+out dec "\x1b[1;31mYou say '\x1b[0;34mred and blue\x1b[1;31m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+out quin "\n\r\x1b[0;32mDecimus says '\x1b[1;32mred and blue\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 19 "colour say red"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 20 "colour say green"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 21 "colour say hi-green"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 22 "colour say yellow"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 23 "colour say hi-yellow"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 24 "colour say hi-blue"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 25 "colour say magenta"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 26 "colour say hi-magenta"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 27 "colour say cyan"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 28 "colour say hi-cyan"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 29 "colour say white"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 30 "colour say hi-white"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 31 "colour say grey"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 32 "colour say hi-m"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 33 "colour say Cy"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 34 "colour say"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 35 "say red, from nothing"
+out dec "\x1b[0;31mYou say '\x1b[0;34mred, from nothing\x1b[0;31m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+out quin "\n\r\x1b[0;32mDecimus says '\x1b[1;32mred, from nothing\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 36 "colour say beep"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 37 "say with a beep"
+out dec "\x1b[0;31m\x07You say '\x1b[0;34mwith a beep\x1b[0;31m\x07'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+out quin "\n\r\x1b[0;32mDecimus says '\x1b[1;32mwith a beep\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 38 "colour say nobeep"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 39 "colour say purple"
+out dec "Unrecognised colour, unchanged.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 40 "colour say red please"
+out dec "Unrecognised colour, unchanged.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 41 "colour nothing red"
+out dec "Unrecognised Colour Parameter Not Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 42 "colour SAY_TEXT white"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 43 "colour prompt hi-yellow"
+out dec "New Colour Parameter Set.\n\r\n\r\x1b[1;33m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 44 "colour default"
+out dec "ColoUr setting set to default values.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 45 "say back to the defaults"
+out dec "\x1b[0;32mYou say '\x1b[1;32mback to the defaults\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+out quin "\n\r\x1b[0;32mDecimus says '\x1b[1;32mback to the defaults\x1b[0;32m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 46 "colour all"
+out dec "\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 47 "colour all red"
+out dec "Unrecognised colour, unchanged.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 48 "colour all r"
+out dec "Unrecognised colour, unchanged.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 49 "colour all hi-red"
+out dec "All Colour settings set to Red.\n\r\n\r\x1b[1;31m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 50 "gossip all hi-red but gossip's text, one of the five all skips"
+out dec "\x1b[1;31mYou gossip '\x1b[1;35mall hi-red but gossip's text, one of the five all skips\x1b[1;31m'\x1b[0m\n\r\n\r\x1b[1;31m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+out quin "\n\r\x1b[0;35mDecimus gossips '\x1b[1;35mall hi-red but gossip's text, one of the five all skips\x1b[0;35m'\x1b[0m\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 51 "colour all green"
+out dec "All Colour settings set to Green.\n\r\n\r\x1b[0;32m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 52 "colour all purple"
+out dec "Unrecognised colour, unchanged.\n\r\n\r\x1b[0;32m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 53 "colour all grey"
+out dec "All Colour settings set to White.\n\r\n\r\x1b[1;30m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 54 "colour all hi-white"
+out dec "All Colour settings set to White.\n\r\n\r\x1b[1;37m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 55 "colour all cyan"
+out dec "All Colour settings set to Cyan.\n\r\n\r\x1b[0;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 56 "colour all hi-cyan"
+out dec "All Colour settings set to Cyan.\n\r\n\r\x1b[1;36m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 57 "colour all magenta"
+out dec "All Colour settings set to Magenta.\n\r\n\r\x1b[0;35m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 58 "colour all yellow"
+out dec "All Colour settings set to Yellow.\n\r\n\r\x1b[0;33m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 59 "colour all blue"
+out dec "All Colour settings set to Blue.\n\r\n\r\x1b[0;34m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 60 "colour all hi-blue"
+out dec "All Colour settings set to Blue.\n\r\n\r\x1b[1;34m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 61 "colour all white"
+out dec "All Colour settings set to White.\n\r\n\r\x1b[0;37m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 62 "colour all hi-green"
+out dec "All Colour settings set to Green.\n\r\n\r\x1b[1;32m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 63 "colour all hi-yellow"
+out dec "All Colour settings set to Yellow.\n\r\n\r\x1b[1;33m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 64 "colour all hi-magenta"
+out dec "All Colour settings set to Magenta.\n\r\n\r\x1b[1;35m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 65 "save"
+out dec "Saving. Remember that Charm has automatic saving now.\n\r\n\r\x1b[1;35m<29hp 102m 106mv> \x1b[0m\xff\xf9"
+rng 51895 7f5599b5
+step 66 "@pulse 48"
+rng 51895 7f5599b5
+step 67 "@file ../player/Decimus"
+file ../player/Decimus "#PLAYER\nName Decimus~\nId   1526675897\nLogO 1763400015\nVers 5\nProm <%hhp %mm %vmv> ~\nRace human~\nSex  1\nCla  3\nLevl 10\nSec  0\nPlyd 279\nScro 22\nRoom 3001\nHMV  29 29 102 102 106 106\nGold 0\nSilv 0\nExp  2088\nAct  QT\nComm NOP\nPos  8\nPrac 1\nTrai 1\nSave  -1\nAlig  750\nHit   1\nACs 95 95 95 99\nAttr 19 13 13 13 13\nAMod 0 0 0 0 0\nPass ShdJkE29AGHGg~\nTitl  the Recruit~\nPnts 40\nTSex 1\nLLev 0\nHMVP 29 102 106\nCnd  0 42 45 45\nColoura     015 015 015 015 015\nColourb     015 015 015 015 015\nColourc     115 015 015 015 015\nColourd     015 015 015 015 015\nColoure     015 015 015 015 015\nColourf     015 015 015 015 015\nColourg     017 015 011 017 017\nBoards       5 General 0 Ideas 0 Announce 0 Bugs 0 Personal 0 \nSk 1 'axe'\nSk 1 'dagger'\nSk 1 'flail'\nSk 1 'mace'\nSk 1 'polearm'\nSk 1 'shield block'\nSk 1 'spear'\nSk 75 'sword'\nSk 1 'whip'\nSk 1 'bash'\nSk 1 'disarm'\nSk 17 'enhanced damage'\nSk 1 'parry'\nSk 1 'rescue'\nSk 1 'second attack'\nSk 1 'third attack'\nSk 1 'scrolls'\nSk 1 'staves'\nSk 1 'wands'\nSk 50 'recall'\nGr 'rom basics'\nGr 'warrior basics'\nGr 'warrior default'\nGr 'weaponsmaster'\nEnd\n\n#O\nVnum 3716\nNest 0\nCond 0\nWear 0\nCost 0\nVal  0 0 197 0 0\nEnd\n\n#O\nVnum 3703\nNest 0\nCond 0\nWear 5\nCost 0\nEnd\n\n#O\nVnum 3702\nNest 0\nCond 0\nWear 16\nCost 360\nEnd\n\n#O\nVnum 3704\nNest 0\nCond 0\nWear 11\nCost 0\nEnd\n\n#O\nVnum 3162\nNest 0\nCond 0\nWear -1\nCost 500\nEnd\n\n#END\n"
+rng 51895 7f5599b5

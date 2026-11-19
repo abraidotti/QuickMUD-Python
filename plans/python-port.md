@@ -11,8 +11,8 @@ harness, started 2026-11-18 (#35), time box 3 PRs or 2026-11-26: PR 1 of 3 done 
 sides (`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) and the first golden. PR 2 of 3 done (#37):
 the first scenarios, 14 in all. PR 3 of 3 done (#38): the guard tests for the divergence classes (`tests/test_guards.py`). P2 done.
 P3, the commands, started 2026-11-18 (#39), time box 8 PRs or 2026-12-02: PR 1 of 8 done (#45), positions, doors
-and portals (the rest of `act_move.c`, and `act_enter.c`), with `port coverage`. PR 2 of 8, information: the rest
-of `act_info.c`.
+and portals (the rest of `act_move.c`, and `act_enter.c`), with `port coverage`. PR 2 of 8 done (#48), information:
+the rest of `act_info.c`. PR 3 of 8, talking: `act_comm.c` and `alias.c`.
 
 ## Goal
 

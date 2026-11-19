@@ -18,6 +18,8 @@
  *   @mob VNUM ROOM       create_mobile and char_to_room
  *   @obj VNUM ROOM       create_object (level 0) and obj_to_room
  *   @obj VNUM ROOM V0 V1 V2 V3 V4   the same, then sets its five values (furniture, portals, locks)
+ *   @charm               charm the last @mob: it follows the current connection's character, in its group
+ *   @charm pet           the same, and it's that character's pet, as do_buy makes one
  *   @state               dump the characters and objects in every room a connection's character is in
  *   @return              an empty line of input (blank lines are skipped), then one pulse
  *   @file PATH           print a file the game wrote, such as ../player/NAME (relative to the area directory)
@@ -330,6 +332,7 @@ int main (void)
     long clock = 1763400000;
     bool booted = FALSE;
     long step = 0;
+    CHAR_DATA *last_mob = NULL;
 
     while (fgets (line, sizeof line, stdin) != NULL)
     {
@@ -394,6 +397,24 @@ int main (void)
         {
             CHAR_DATA *mob = create_mobile (get_mob_index (a));
             char_to_room (mob, get_room_index (b));
+            last_mob = mob;
+        }
+        else if (!strcmp (line, "@charm") || !strcmp (line, "@charm pet"))
+        {
+            CHAR_DATA *ch;
+            if (last_mob == NULL || current < 0 || conns[current].closed || !listed (conns[current].d)
+                || (ch = conns[current].d->character) == NULL)
+            {
+                fprintf (stderr, "scenario: step %ld: @charm needs a @mob and a character\n", step);
+                return 2;
+            }
+            if (line[6] == ' ')
+                SET_BIT (last_mob->act, ACT_PET);
+            SET_BIT (last_mob->affected_by, AFF_CHARM);
+            add_follower (last_mob, ch);
+            last_mob->leader = ch;
+            if (line[6] == ' ')
+                ch->pet = last_mob;
         }
         else if ((n = sscanf (line, "@obj %ld %ld %ld %ld %ld %ld %ld", &a, &b, &v[0], &v[1], &v[2], &v[3],
                               &v[4])) == 2 || n == 7)

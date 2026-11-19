@@ -1,0 +1,560 @@
+sources e18a42ba37481b3d
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect clan"
+rng 51895 7f5599b5
+step 10 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect yeo"
+rng 51895 7f5599b5
+step 14 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect out"
+rng 51895 7f5599b5
+step 18 "Outlaw"
+out out "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out out "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out dec "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rYeoman the Recruit is here.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@connect muz"
+rng 51895 7f5599b5
+step 22 "Muzzled"
+out muz "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 23 "psswrd"
+out muz "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 24 "@return"
+out dec "\n\rMuzzled has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rMuzzled has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rMuzzled has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rMuzzled has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rMuzzled has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rYeoman the Recruit is here.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@connect sleep"
+rng 51895 7f5599b5
+step 26 "Sleeper"
+out sleep "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 27 "psswrd"
+out sleep "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 28 "@return"
+out dec "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rYou can't see anything, you're sleeping!\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "@connect god"
+rng 51895 7f5599b5
+step 30 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 31 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 32 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 33 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSleeper is sleeping here.\n\rMuzzled the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rYeoman the Recruit is here.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "@connect slug"
+rng 51895 7f5599b5
+step 35 "Sluggish"
+out slug "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 36 "psswrd"
+out slug "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 37 "@return"
+out slug "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "@connect rec"
+rng 51895 7f5599b5
+step 39 "Recluse"
+out rec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 40 "psswrd"
+out rec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 41 "@return"
+out rec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Void\n\r  You are suspended in cool electric space above a translucent plain.  You feel\n\rsynesthesia invading your nerves and reshuffling your senses.  The sky is the\n\rsame obsidian color as the ground and you can't find a horizon.\n\rThe keeper of the Morris equipment is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "@as dec"
+rng 51895 7f5599b5
+step 43 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "gossip hello all"
+out dec "You gossip 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gossips 'hello all'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus gossips 'hello all'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "grats well done"
+out dec "You grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus grats 'well done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus grats 'well done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "quote \"a quote\" and more"
+out dec "You quote '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus quotes '\"a quote\" and more'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "question what is this?"
+out dec "You question 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus questions 'what is this?'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus questions 'what is this?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "answer it is that"
+out dec "You answer 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus answers 'it is that'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus answers 'it is that'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "music la la la"
+out dec "You MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus MUSIC: 'la la la'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "auction a sword"
+out dec "You auction 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus auctions 'a sword'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus auctions 'a sword'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "gossip"
+out dec "Gossip channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "grats"
+out dec "Grats channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "quote"
+out dec "Quote channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "question"
+out dec "Q/A channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "answer"
+out dec "Q/A channel is now ON.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "music"
+out dec "Music channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         OFF\n\rauction        ON\n\rmusic          OFF\n\rQ/A            ON\n\rQuote          OFF\n\rgrats          OFF\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "gossip back again"
+out dec "You gossip 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gossips 'back again'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus gossips 'back again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "grats"
+out dec "Grats channel is now ON.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "quote"
+out dec "Quote channel is now ON.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "music"
+out dec "Music channel is now ON.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "auction"
+out dec "Auction channel is now OFF.\n\rYou auction ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus auctions ''\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "auction"
+out dec "Auction channel is now ON.\n\rYou auction ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus auctions ''\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus auctions ''\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 65 "@as quin"
+rng 51895 7f5599b5
+step 66 "gossip"
+out quin "Gossip channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 67 "@as dec"
+rng 51895 7f5599b5
+step 68 "gossip quintus has gossip off"
+out dec "You gossip 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus gossips 'quintus has gossip off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 69 "@as quin"
+rng 51895 7f5599b5
+step 70 "gossip"
+out quin "Gossip channel is now ON.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 71 "quiet"
+out quin "From now on, you will only hear says and emotes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 72 "channels"
+out quin "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     ON\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "gossip hi"
+out quin "You must turn off quiet mode first.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "auction hi"
+out quin "You must turn off quiet mode first.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 75 "@as dec"
+rng 51895 7f5599b5
+step 76 "gossip quintus is quiet"
+out dec "You gossip 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus gossips 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 77 "shout quintus is quiet"
+out dec "You shout 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus shouts 'quintus is quiet'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 78 "@pulse 12"
+rng 51895 7f5599b5
+step 79 "@as quin"
+rng 51895 7f5599b5
+step 80 "quiet"
+out quin "Quiet mode removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 81 "shout"
+out quin "You will no longer hear shouts.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 82 "@as dec"
+rng 51895 7f5599b5
+step 83 "shout quintus has shouts off"
+out dec "You shout 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rDecimus shouts 'quintus has shouts off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 84 "@pulse 12"
+rng 51895 7f5599b5
+step 85 "yell"
+out dec "Yell what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 86 "yell over here"
+out dec "You yell 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus yells 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus yells 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus yells 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus yells 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rDecimus yells 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus yells 'over here'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rDecimus yells 'over here'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 87 "@as rec"
+rng 51895 7f5599b5
+step 88 "yell anyone here?"
+out rec "You yell 'anyone here?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 89 "@as quin"
+rng 51895 7f5599b5
+step 90 "shout"
+out quin "You can hear shouts again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 91 "shout everyone hears this"
+out dec "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You shout 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out slug "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out rec "\n\rQuintus shouts 'everyone hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 92 "@pulse 12"
+rng 51895 7f5599b5
+step 93 "@as clan"
+rng 51895 7f5599b5
+step 94 "clan hello clan"
+out clan "You clan 'hello clan'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rClansman clans 'hello clan'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rClansman clans 'hello clan'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 95 "clan"
+out clan "Clan channel is now OFF\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 96 "clan text turns it back on"
+out clan "You clan 'text turns it back on'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rClansman clans 'text turns it back on'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rClansman clans 'text turns it back on'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 97 "clan so yeoman hears this"
+out clan "You clan 'so yeoman hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rClansman clans 'so yeoman hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rClansman clans 'so yeoman hears this'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 98 "@as yeo"
+rng 51895 7f5599b5
+step 99 "clan"
+out yeo "Clan channel is now OFF\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 100 "@as clan"
+rng 51895 7f5599b5
+step 101 "clan yeoman has it off"
+out clan "You clan 'yeoman has it off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out muz "\n\rClansman clans 'yeoman has it off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 102 "@as yeo"
+rng 51895 7f5599b5
+step 103 "clan"
+out yeo "Clan channel is now ON\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 104 "@as out"
+rng 51895 7f5599b5
+step 105 "clan a loner"
+out out "You aren't in a clan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 106 "@as dec"
+rng 51895 7f5599b5
+step 107 "clan not in one"
+out dec "You aren't in a clan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 108 "@as god"
+rng 51895 7f5599b5
+step 109 "immtalk hello gods"
+out god "[Smokegod]: hello gods\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 110 "immtalk"
+out god "Immortal channel is now OFF\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 111 "immtalk back on"
+out god "[Smokegod]: back on\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 112 ": the short form"
+out god "[Smokegod]: the short form\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 113 "channels"
+out god "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rgod channel    ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 114 "@as dec"
+rng 51895 7f5599b5
+step 115 "immtalk mortals can't"
+out dec "Huh?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 116 "@as muz"
+rng 51895 7f5599b5
+step 117 "channels"
+out muz "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYou are immune to snooping.\n\rYour current prompt is: <%hhp %mm %vmv> \n\rYou cannot shout.\n\rYou cannot use tell.\n\rYou cannot use channels.\n\rYou cannot show emotions.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 118 "gossip hi"
+out muz "The gods have revoked your channel priviliges.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 119 "gossip"
+out muz "Gossip channel is now OFF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 120 "gossip"
+out muz "Gossip channel is now ON.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 121 "clan hi"
+out muz "The gods have revoked your channel priviliges.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 122 "shout hi"
+out muz "You can't shout.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 123 "yell hi"
+out muz "You can't yell.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 124 "tell decimus hi"
+out muz "Your message didn't get through.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 125 "reply hi"
+out muz "Your message didn't get through.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 126 "emote waves"
+out muz "You can't show your emotions.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 127 "pmote waves"
+out muz "You can't show your emotions.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 128 "gtell hi"
+out muz "Your message didn't get through!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 129 "@as dec"
+rng 51895 7f5599b5
+step 130 "deaf"
+out dec "From now on, you won't hear tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 131 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          OFF\n\rquiet mode     OFF\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 132 "tell quintus hi"
+out dec "Your message didn't get through.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 133 "deaf"
+out dec "You can now hear tells again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 134 "afk"
+out dec "You are now in AFK mode.\n\r\n\r<AFK> \xff\xf9"
+rng 51895 7f5599b5
+step 135 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYou are AFK.\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<AFK> \xff\xf9"
+rng 51895 7f5599b5
+step 136 "afk"
+out dec "AFK mode removed. Type 'replay' to see tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 137 "scroll 10"
+out dec "Scroll set to 10 lines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 138 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rYou display 10 lines of scroll.\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 139 "scroll 0"
+out dec "Paging disabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 140 "channels"
+out dec "   channel     status\n\r---------------------\n\rgossip         ON\n\rauction        ON\n\rmusic          ON\n\rQ/A            ON\n\rQuote          ON\n\rgrats          ON\n\rshouts         ON\n\rtells          ON\n\rquiet mode     OFF\n\rScroll buffering is off.\n\rYour current prompt is: <%hhp %mm %vmv> \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5

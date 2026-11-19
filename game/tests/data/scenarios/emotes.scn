@@ -1,0 +1,65 @@
+# say, emote, pmote and pose, and typo, rent, qui and delet. In the temple (3001): Decimus (10, a warrior),
+# Quintus (25, a warrior), Heroic (51, a warrior) and Smokegod (60, a mage). pmote shows each player their own
+# name as "you" and "Name's" as "your"; its match count carries over from one player to the next.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@as dec
+say
+say hello, temple
+' the short form
+say a $n and a $t
+emote
+emote waves.
+emote 'waves
+emote  waves
+, nods.
+pmote
+pmote 1waves
+pmote waves at Quintus.
+pmote pats Quintus's head, and Heroic's too.
+pmote thinks Quintus is a Quintuses and Heroics are fine.
+pmote smiles at Quint
+pmote likes Quintus Quintus Quin
+pmote waves to Heroic and Quin
+pmote hugs Quintus and Heroic and Hero
+pmote waves at quintus in lower case.
+pmote 'quotes Quintus' work.
+pose
+pose
+pose
+@as quin
+pose
+pose
+@as hero
+pose
+pose
+pose
+pose
+@as god
+pose
+pose
+pose
+@as dec
+typo there's a typo here
+typo
+@file typos.txt
+rent
+qui
+delet
+# Decimus, Quintus and Heroic are copies of Knocker's file, with its Id: quitting closes all three.
+quit

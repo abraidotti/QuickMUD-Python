@@ -141,6 +141,57 @@ COLOUR_FIELDS = (
     "room_things", "prompt", "fight_death", "fight_yhit", "fight_ohit", "fight_thit", "fight_skill")
 
 
+BUF_SIZE = (16, 32, 64, 128, 256, 1024, 2048, 4096, 8192, 16384)  # recycle.c buf_size
+BASE_BUF, BUFFER_SAFE, BUFFER_OVERFLOW = 1024, 0, 1  # recycle.h
+
+
+@dataclass(eq=False)
+class Buffer:
+    """BUFFER: a string that grows through the sizes in BUF_SIZE, and stops taking more once it would pass the last."""
+
+    string: str = ""
+    size: int = 1024  # get_size(BASE_BUF)
+    state: int = BUFFER_SAFE
+
+
+# C: recycle.c get_size
+def get_size(val: int) -> int:
+    for size in BUF_SIZE:
+        if size >= val:
+            return size
+    return -1
+
+
+# C: recycle.c new_buf
+def new_buf() -> Buffer:
+    return Buffer(size=get_size(BASE_BUF))
+
+
+# C: recycle.c add_buf
+def add_buf(buffer: Buffer, string: str) -> bool:
+    from charm.core.log import bug
+
+    oldsize = buffer.size
+    if buffer.state == BUFFER_OVERFLOW:  # "don't waste time on bad strings!"
+        return False
+    n = len(buffer.string) + len(string) + 1
+    while n >= buffer.size:  # "increase the buffer size"
+        buffer.size = get_size(buffer.size + 1)
+        if buffer.size == -1:  # "overflow"
+            buffer.size = oldsize
+            buffer.state = BUFFER_OVERFLOW
+            bug("buffer overflow past size %d", buffer.size)
+            return False
+    buffer.string += string
+    return True
+
+
+# C: recycle.c clear_buf
+def clear_buf(buffer: Buffer) -> None:
+    buffer.string = ""
+    buffer.state = BUFFER_SAFE
+
+
 @dataclass(eq=False)
 class PCData:
     """PC_DATA. Each colour setting is [bright, colour, beep], as the C's int field[3]."""
@@ -165,6 +216,7 @@ class PCData:
     last_note: list[int] = field(default_factory=lambda: [0] * C.MAX_BOARD)
     in_progress: object | None = None
     security: int = 0
+    buffer: Buffer = field(default_factory=new_buf)  # tells kept for replay
     colours: dict[str, list[int]] = field(default_factory=lambda: {f: [0, 0, 0] for f in COLOUR_FIELDS})
 
     def __getattr__(self, name):  # pcdata.prompt -> its colour triple, as colour() reads it
