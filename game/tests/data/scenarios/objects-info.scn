@@ -1,0 +1,56 @@
+# inventory, equipment, compare, examine and read, with Hoarder in the temple. Hoarder wears a large metal shield,
+# wields a long sword and wears an invisible leather cap (so equipment says "something."); carries two daggers, a
+# small sword, two shields, a bag with a cup of water in it, a bottle of beer and a water skin.
+@connect hoard
+Hoarder
+psswrd
+@return
+inventory
+combine
+inventory
+combine
+equipment
+# compare: nothing, what Hoarder hasn't got, what Hoarder wears (get_obj_carry skips it), each to what's worn, to
+# itself, to an object of another type, two drink containers (a type compare doesn't rank), and better, worse and the
+# same.
+compare
+compare zz
+compare cap
+compare dagger
+compare wooden
+compare bag
+compare dagger zz
+compare dagger dagger
+compare dagger 2.dagger
+compare dagger bag
+compare bottle skin
+compare sword dagger
+compare wooden small
+compare metal wooden
+compare 2.small wooden
+# examine: nothing, what isn't here, and each kind it says more about. Coin piles (3132) with values set: no coins,
+# one gold, gold, one silver, silver, and both.
+examine
+examine zz
+examine dagger
+examine bag
+examine bottle
+examine skin
+@obj 3132 3001 0 0 0 0 0
+examine coins
+@obj 3132 3001 0 1 0 0 0
+examine coins
+@obj 3132 3001 0 7 0 0 0
+examine coins
+@obj 3132 3001 1 0 0 0 0
+examine coins
+@obj 3132 3001 9 0 0 0 0
+examine coins
+@obj 3132 3001 4 3 0 0 0
+examine coins
+# The container branch looks "in" the whole argument, not just its first word.
+examine bag foo
+@obj 3010 3001 10000 0 0 1000 100
+examine pit
+read dagger
+read

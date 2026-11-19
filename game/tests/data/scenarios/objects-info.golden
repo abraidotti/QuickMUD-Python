@@ -1,0 +1,136 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect hoard"
+rng 51872 4ba9daca
+step 2 "Hoarder"
+out hoard "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out hoard "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out hoard "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "inventory"
+out hoard "You are carrying:\n\r     a buffalo water skin\n\r     a bottle of beer\n\r     a bag\n\r     a small metal shield\n\r     a small wooden shield\n\r     a small sword\n\r( 2) a dagger\n\r     a map of the city of Midgaard\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "combine"
+out hoard "Long inventory selected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "inventory"
+out hoard "You are carrying:\n\ra buffalo water skin\n\ra bottle of beer\n\ra bag\n\ra small metal shield\n\ra small wooden shield\n\ra small sword\n\ra dagger\n\ra dagger\n\ra map of the city of Midgaard\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "combine"
+out hoard "Combined inventory selected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "equipment"
+out hoard "You are using:\n\r<used as light>     (Glowing) a war banner\n\r<worn on torso>     a sub issue vest\n\r<worn on head>      something.\n\r<worn as shield>    a large metal shield\n\r<wielded>           a long sword\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "compare"
+out hoard "Compare what to what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "compare zz"
+out hoard "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "compare cap"
+out hoard "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "compare dagger"
+out hoard "A dagger looks worse than a long sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "compare wooden"
+out hoard "A small wooden shield looks worse than a large metal shield.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "compare bag"
+out hoard "You aren't wearing anything comparable.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "compare dagger zz"
+out hoard "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "compare dagger dagger"
+out hoard "You compare a dagger to itself.  It looks about the same.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "compare dagger 2.dagger"
+out hoard "A dagger and a dagger look about the same.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "compare dagger bag"
+out hoard "You can't compare a dagger and a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "compare bottle skin"
+out hoard "You can't compare a bottle of beer and a buffalo water skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "compare sword dagger"
+out hoard "A small sword looks better than a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "compare wooden small"
+out hoard "A small wooden shield looks worse than a small metal shield.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "compare metal wooden"
+out hoard "A small metal shield looks better than a small wooden shield.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "compare 2.small wooden"
+out hoard "You compare a small wooden shield to itself.  It looks about the same.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "examine"
+out hoard "Examine what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "examine zz"
+out hoard "You do not see that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "examine dagger"
+out hoard "A dagger with a long thin blade is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "examine bag"
+out hoard "A small bag.\n\rA bag holds:\n\r     a cup of water\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "examine bottle"
+out hoard "A beer bottle has been left here.\n\rIt's more than half-filled with  a amber liquid.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "examine skin"
+out hoard "A bloated dead buffalo is on the floor.\n\rIt's more than half-filled with  a clear liquid.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "@obj 3132 3001 0 0 0 0 0"
+rng 51895 7f5599b5
+step 32 "examine coins"
+out hoard "A lot of silver is here.\n\rOdd...there's no coins in the pile.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "@obj 3132 3001 0 1 0 0 0"
+rng 51895 7f5599b5
+step 34 "examine coins"
+out hoard "A lot of silver is here.\n\rWow. One gold coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "@obj 3132 3001 0 7 0 0 0"
+rng 51895 7f5599b5
+step 36 "examine coins"
+out hoard "A lot of silver is here.\n\rThere are 7 gold coins in the pile.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "@obj 3132 3001 1 0 0 0 0"
+rng 51895 7f5599b5
+step 38 "examine coins"
+out hoard "A lot of silver is here.\n\rWow. One silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "@obj 3132 3001 9 0 0 0 0"
+rng 51895 7f5599b5
+step 40 "examine coins"
+out hoard "A lot of silver is here.\n\rThere are 9 silver coins in the pile.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "@obj 3132 3001 4 3 0 0 0"
+rng 51895 7f5599b5
+step 42 "examine coins"
+out hoard "A lot of silver is here.\n\rThere are 3 gold and 4 silver coins in the pile.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "examine bag foo"
+out hoard "A small bag.\n\rA bag holds:\n\r     a cup of water\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "@obj 3010 3001 10000 0 0 1000 100"
+rng 51895 7f5599b5
+step 45 "examine pit"
+out hoard "This is where you put money and items to help Doz expand this shrine and\n\rconvert more people to the belief of Mota, lord of the gods.\n\rThe donation pit holds:\n\r     Nothing.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "read dagger"
+out hoard "A dagger with a long thin blade is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "read"
+out hoard "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A pit for sacrifices is in front of the altar.\n\r( 6) A lot of silver is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5

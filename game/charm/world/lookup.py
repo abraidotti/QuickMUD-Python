@@ -1,4 +1,5 @@
-"""Name lookups over the game's tables: race, position, sex, size, item type, liquid, weapon class, attack, skill.
+"""Name lookups over the game's tables: race, position, sex, size, item type, liquid, weapon class, attack, skill,
+clan, and the spell a character can use.
 
 All of them are ROM's idiom (first letters equal ignoring case, and the name a prefix of the entry); they differ in
 what they return when nothing matches, which is kept exactly.
@@ -81,6 +82,27 @@ GSN = {s.pgsn: sn for sn, s in enumerate(skills.SKILL_TABLE) if s.pgsn}
 def class_lookup(name: str) -> int:
     from charm.data.classes import CLASS_TABLE
     return prefix_lookup(name, [c.name for c in CLASS_TABLE])
+
+
+# C: lookup.c clan_lookup
+def clan_lookup(name: str) -> int:
+    from charm.data.clans import CLAN_TABLE
+    return max(prefix_lookup(name, [c.name for c in CLAN_TABLE]), 0)  # not found: 0, no clan
+
+
+# C: magic.c find_spell
+def find_spell(ch, name: str) -> int:
+    """A skill ch can use if one matches; failing that, the first that matches; or -1."""
+    if ch.is_npc:
+        return skill_lookup(name)
+    found = -1
+    for sn, skill in enumerate(skills.SKILL_TABLE):
+        if prefix_lookup(name, [skill.name]) == 0:
+            if found == -1:
+                found = sn
+            if ch.level >= skill.skill_level[ch.class_] and ch.pcdata.learned[sn] > 0:
+                return sn
+    return found
 
 
 # C: handler.c weapon_lookup

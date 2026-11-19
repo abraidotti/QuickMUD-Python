@@ -1,0 +1,71 @@
+# The settings players toggle, each both ways, with autolist before and after: the auto commands, autoall, brief,
+# compact, show, combine, noloot, nofollow, nosummon and telnetga. Then scroll and wimpy with each of their checks.
+# Weary is a level-2 warrior (29 hit points at most) in the temple.
+@connect weary
+Weary
+psswrd
+@return
+autolist
+autoassist
+autoexit
+autogold
+autoloot
+autosac
+autosplit
+autolist
+autoassist
+autoexit
+autogold
+autoloot
+autosac
+autosplit
+# autoall takes "on" or "off" exactly (strcmp): case and extra words matter.
+autoall on
+autolist
+autoall off
+autoall ON
+autoall on now
+autoall
+brief
+look
+brief
+compact
+compact
+show
+score
+show
+combine
+combine
+noloot
+autolist
+noloot
+nofollow
+nosummon
+telnetga
+autolist
+nofollow
+nosummon
+telnetga
+@state
+# scroll: what it is, paging off, the bounds, then a number past an int (atoi keeps its low 32 bits: 4294967306 is
+# 10) and one past a long (clamped to LONG_MAX, whose low 32 bits are -1).
+scroll
+scroll foo
+scroll 0
+scroll
+scroll 9
+scroll 101
+scroll 10
+scroll 100
+scroll 4294967306
+scroll 99999999999999999999
+scroll
+scroll 24
+# wimpy: a fifth of the most hit points by default, never more than half, never below 0.
+wimpy
+wimpy -1
+wimpy 15
+wimpy 14
+wimpy 0
+wimpy foo
+score

@@ -1,0 +1,198 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "scroll 0"
+out dec "Paging disabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "time"
+out dec "It is 2 o'clock pm, Day of the Moon, 21st the Month of the Winter Wolf.\n\rCharm started up at \n\rThe system time is Mon Nov 17 17:20:01 2025\n.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "weather"
+out dec "You can't see the weather indoors.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "south"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@pulse 1"
+rng 51895 7f5599b5
+step 10 "weather"
+out dec "The sky is cloudless and a warm southerly breeze blows.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "north"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@pulse 1"
+rng 51895 7f5599b5
+step 13 "@connect quin"
+rng 51895 7f5599b5
+step 14 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@as dec"
+rng 51895 7f5599b5
+step 18 "report"
+out dec "You say 'I have 29/29 hp 102/102 mana 104/106 mv 2088 xp.'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rDecimus says 'I have 29/29 hp 102/102 mana 104/106 mv 2088 xp.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "worth"
+out dec "You have 0 gold, 0 silver, and 2088 experience (8912 exp to level).\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "affects"
+out dec "You are not affected by any spells.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "socials"
+out dec "gack        kiss        bounce      smile       dance       cackle      \n\rlaugh       giggle      shake       puke        growl       scream      \n\rcomfort     sigh        sulk        hug         snuggle     cuddle      \n\rnuzzle      cry         poke        accuse      grin        bow         \n\rapplaud     blush       burp        chuckle     clap        cough       \n\rcurtsey     fart        flip        fondle      frown       gasp        \n\rglare       groan       grope       hiccup      lick        love        \n\rmoan        nibble      pout        ruffle      shiver      shrug       \n\rsing        slap        smirk       snap        sneeze      snicker     \n\rsniff       snore       squeeze     stare       strut       thank       \n\rtwiddle     wave        whistle     wiggle      wink        yawn        \n\rsnowball    french      comb        massage     tickle      pat         \n\rcurse       pray        beg         cringe      daydream    fume        \n\rgrovel      hop         nudge       ponder      punch       snarl       \n\rspank       hand        yodel       faint       pinch       stroke      \n\rapologize   caress      stagger     snort       slobber     blink       \n\rtease       knee        flirt       tip         lust        flutter     \n\rbark        howl        babble      ramble      hush        threaten    \n\rroll        swoon       bird        eyebrow     serenade    grimace     \n\rboggle      beckon      wonder      worry       drool       nod         \n\rpurr        point       rub         bleed       highfive    propose     \n\rpeer        worship     bearhug     innocent    collapse    stretch     \n\rspam        boast       squirm      moo         moon        goose       \n\rwince       type        brb         mutter      rofl        sob         \n\rpant        whine       flex        embrace     duck        bonk        \n\rsqueal      tackle      spit        life        mosh        flinch      \n\rair         tweak       peck        explode     raspberry   flash       \n\rstrip       undress     tongue      view        grumble     cheer       \n\rplead       charge      criticize   run         judge       insane      \n\rcover       flare       head        pie         cower       noogie      \n\ryeehaw      pissed      passout     adjust      scratch     meditate    \n\rbkiss       beer        bcatch      claw        rose        laces       \n\rtag         tank        starve      aargh       homework    puff        \n\ryae         lightbulb   voodoo      ogg         confused    beam        \n\rbite        discodance  scuff       whap        lag         chortle     \n\rzerbert     twitch      leer        polite      mischievous accept      \n\ranticipate  shudder     powertrip   mull        wait        bat         \n\rsage        contemplate agree       toast       conspire    support     \n\rpound       wrist       romeo       camel       whip        cramp       \n\rmake        sweep       buff        liver       wrestle     tie         \n\rtight       fatality    yowl        silly       \n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "motd"
+out dec "* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "imotd"
+out dec "Huh?\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "rules"
+out dec "These are the rules of ROM.  For other matters, use common sense.\n\r\n\r* Limited player stealing or player killing.\n\r\n\r* Your presence here is a privilege not a right. Obey any orders from gods, and\n\r  you will be fine.  Deletion does not require a reason, appeals are to be sent\n\r  to the implementors.\n\r \n\r* Sitting around idle with a client is hazardous to your health. If we catch\n\r  you doing it, you will lose half your playing time.\n\r\n\r* No multiple logins, multiple playing, or helping your own characters with \n\r  other characters you own -- by any arrangment.\n\r \n\r* No kill stealing.  This means you cannot attack a mob someone else is \n\r  fighting, unless they ask you to. Also avoid attacking fleeing mobs.\n\r\n\r* Cheating will not be tolerated.  This includes accepting favors from gods\n\r  and exploiting bugs. If you find a bug, report it, then do not use it.\n\r\n\r* Changes to these rules are at the discretion of the immortals, and may be\n\rdone without warning, notice, or even evidence of sanity. Walk softly,\n\rand carry a black stick.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "story"
+out dec "No help on that word.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "wizlist"
+out dec "\n\r        ________            *********************           ________\n\r      /+_+_+_+_+_\\          ** The Gods of ROM **         /+_+_+_+_+_\\\n\r      \\__________/          *********************         \\__________/\n\r        |::XXXX|                                            |::XXXX|\n\r        |X::XXX|              Implementors [60]             |X::XXX|\n\r        |XX::XX|              *****************             |XX::XX|\n\r        |XXX::X|     \x09\x09\x09\x09            |XXX::X|\n\r        |XXXX::|                                            |XXXX::|\n\r        |::XXXX|                                            |::XXXX|\n\r        |X::XXX|                Creators [59]               |X::XXX|\n\r        |XX::XX|                *************               |XX::XX|\n\r        |XXXX::|         \x09\x09\x09            |XXXX::|\n\r        |::XXXX|                                            |::XXXX|\n\r/<<>>\\/<<>>\\/<<>>\\/<<>>\\                            /<<>>\\/<<>>\\/<<>>\\/<<>>\\\n\r\\<<>>/\\<<>>/\\<<>>/\\<<>>/      Supremacies [58]      \\<<>>/\\<<>>/\\<<>>/\\<<>>/\n\r       |.  /  . |             ****************             |.  /  . |\n\r       | .//\\.  |            \x09\x09                   | .//\\.  |\n\r       |.  /  . |            \x09\x09                   |.  /  . |\n\r       | .//\\.  |                                          | .//\\.  |\n\r       |.  /  . |               Deities [57]               |.  /  . |\n\r       | .//\\.  |               ************               | .//\\.  |\n\r       |.  /  . |           \x09\x09      \x09           |.  /  . |\n\r       | .//\\.  |                                          | .//\\.  |\n\r       | .//\\.  |                Gods [56]                 | .//\\.  |\n\r       |.  /  . |                *********                 |.  /  . |\n\r       | .//\\.  |              \x09                           | .//\\.  |\n\r       | .//\\.  |                                          | .//\\.  |\n\r       |.  /\\ . |              Immortals [55]              |.  /  . |\n\r       | .//\\.  |              **************              | .//\\.  |\n\r       |.  /  . |              \x09\x09                   |.  /  . |\n\r       | .//\\.  |                                          | .//\\.  |\n\r       |.  /  . |               DemiGods [54]              |.  /  . |\n\r       | .//\\.  |               *************              | .//\\.  |\n\r       |.  /\\ . |                  \x09  \x09           |.  /  . |\n\r       |.  /  . |                                          |.  /  . |\n\r       | .//\\.  |               Angels [53]                | .//\\.  |\n\r       |.  /  . |               ***********                |.  /  . |\n\r       |.  /  . |             \x09   \x09                   |.  /  . |\n\r       | .//\\.  |             \x09\x09                   | .//\\.  |\n\r       | .//\\.  |                                          | .//\\.  |\n\r       |.  /  . |               Avatars [52]               |.  /  . |\n\r       | .//\\.  |               ************               | .//\\.  |\n\r       |.  /  . |                 \x09                   |.  /  . |\n\r       |.  /  . |                  \x09                   |.  /  . |\n\r        \\ //\\. /                                            \\ //\\. /\n\r         \\ /. /                                              \\ /. /\n\r          \\ //                                                \\ //\n\r           \\/                                                  \\/\n\r-By Liralen\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "credits"
+out dec "                    Original game idea, concept, and design:\n\r\n\r          Katja Nyboe               [Superwoman] (katz@freja.diku.dk)\n\r          Tom Madsen              [Stormbringer] (noop@freja.diku.dk)\n\r          Hans Henrik Staerfeldt           [God] (bombman@freja.diku.dk)\n\r          Michael Seifert                 [Papi] (seifert@freja.diku.dk)\n\r          Sebastian Hammer               [Quinn] (quinn@freja.diku.dk)\n\r\n\r\n\rDeveloped at: DIKU -- The Department of Computer Science\n\r                      at the University of Copenhagen.\n\r\n\r\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "@connect lock"
+rng 51895 7f5599b5
+step 29 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 30 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 31 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "affects"
+out lock "You are not affected by any spells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "sneak"
+out lock "You attempt to move silently.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 34 "affects"
+out lock "You are affected by the following spells:\n\rSpell: sneak          : modifies none by 0 for 30 hours\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 35 "practice"
+out lock "axe                  1%  dagger               1%  flail                1%  \n\rmace                 1%  polearm              1%  shield block         1%  \n\rspear                1%  sword               75%  whip                 1%  \n\rdisarm               1%  enhanced damage     17%  parry                1%  \n\rsecond attack        1%  third attack         1%  hide                60%  \n\rpick lock          100%  sneak               60%  scrolls              1%  \n\rstaves               1%  wands                1%  recall              50%  \n\rYou have 1 practice sessions left.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 36 "@connect slug"
+rng 51897 86bbd2a0
+step 37 "Sluggish"
+out slug "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51897 86bbd2a0
+step 38 "psswrd"
+out slug "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 39 "@return"
+out slug "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 40 "affects"
+out slug "You are not affected by any spells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 41 "@connect recluse"
+rng 51897 86bbd2a0
+step 42 "Recluse"
+out recluse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51897 86bbd2a0
+step 43 "psswrd"
+out recluse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 44 "@return"
+out recluse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Void\n\r  You are suspended in cool electric space above a translucent plain.  You feel\n\rsynesthesia invading your nerves and reshuffling your senses.  The sky is the\n\rsame obsidian color as the ground and you can't find a horizon.\n\rThe keeper of the Morris equipment is here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 45 "where"
+out recluse "Players near you:\n\rNone\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 46 "@connect clan"
+rng 51897 86bbd2a0
+step 47 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51897 86bbd2a0
+step 48 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 49 "@return"
+out dec "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 50 "affects"
+out clan "You are affected by the following spells:\n\rSpell: bless          : modifies save vs spell by -2 for 26 hours\n\r                      : modifies hit roll by 2 for 26 hours\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 51 "@connect yeo"
+rng 51897 86bbd2a0
+step 52 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51897 86bbd2a0
+step 53 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 54 "@return"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 55 "affects"
+out yeo "You are affected by the following spells:\n\rSpell: bless          \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 56 "@connect god"
+rng 51897 86bbd2a0
+step 57 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51897 86bbd2a0
+step 58 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 59 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 60 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rYeoman the Recruit is here.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 61 "imotd"
+out god "Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 62 "worth"
+out god "You have 0 gold, 0 silver, and 0 experience (61000 exp to level).\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 63 "equipment"
+out god "You are using:\n\rNothing.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 64 "practice"
+out god "scrolls              1%  staves               1%  wands                1%  \n\rrecall               1%  \n\rYou have 0 practice sessions left.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 65 "time"
+out god "It is 2 o'clock pm, Day of the Moon, 21st the Month of the Winter Wolf.\n\rCharm started up at \n\rThe system time is Mon Nov 17 17:20:13 2025\n.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0

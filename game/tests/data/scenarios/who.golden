@@ -1,0 +1,267 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect hero"
+rng 51895 7f5599b5
+step 10 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect clan"
+rng 51895 7f5599b5
+step 14 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHeroic the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect out"
+rng 51895 7f5599b5
+step 18 "Outlaw"
+out out "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out out "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out dec "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rClansman the Recruit is here.\n\rHeroic the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@connect yeo"
+rng 51895 7f5599b5
+step 22 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 23 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 24 "@return"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rClansman the Recruit is here.\n\rHeroic the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@connect god"
+rng 51895 7f5599b5
+step 26 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 27 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 28 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 29 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rYeoman the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rClansman the Recruit is here.\n\rHeroic the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "@connect slug"
+rng 51895 7f5599b5
+step 31 "Sluggish"
+out slug "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 32 "psswrd"
+out slug "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 33 "@return"
+out slug "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "@connect unseen"
+rng 51895 7f5599b5
+step 35 "Unseen"
+out unseen "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 36 "psswrd"
+out unseen "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 37 "@return"
+out dec "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rSomeone has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out unseen "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rYeoman the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rClansman the Recruit is here.\n\rHeroic the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "@connect half"
+rng 51895 7f5599b5
+step 39 "Pupil"
+out half "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 40 "@as dec"
+rng 51895 7f5599b5
+step 41 "who"
+out dec "[ 2  Human War] Sluggish the Recruit\n\r[60  Human IMP] Smokegod the Smoke Test\n\r[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[51  Human War] Heroic the Recruit\n\r[25  Human War] Quintus the Recruit\n\r[10  Human War] Decimus the Recruit\n\r\n\rPlayers found: 8\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 42 "who 20"
+out dec "[60  Human IMP] Smokegod the Smoke Test\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[51  Human War] Heroic the Recruit\n\r[25  Human War] Quintus the Recruit\n\r\n\rPlayers found: 4\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 43 "who 1 20"
+out dec "[ 2  Human War] Sluggish the Recruit\n\r[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[10  Human War] Decimus the Recruit\n\r\n\rPlayers found: 5\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 44 "who 20 1"
+out dec "\n\rPlayers found: 0\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51905 d4471b28
+step 45 "who 1 20 30"
+out dec "Only two level numbers allowed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51905 d4471b28
+step 46 "who 51"
+out dec "[60  Human IMP] Smokegod the Smoke Test\n\r[51  Human War] Heroic the Recruit\n\r\n\rPlayers found: 2\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 47 "who immortals"
+out dec "[60  Human IMP] Smokegod the Smoke Test\n\r\n\rPlayers found: 1\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51911 df511cc4
+step 48 "who imm"
+out dec "[60  Human IMP] Smokegod the Smoke Test\n\r\n\rPlayers found: 1\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51914 918dbc6e
+step 49 "who warrior"
+out dec "[ 2  Human War] Sluggish the Recruit\n\r[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[51  Human War] Heroic the Recruit\n\r[25  Human War] Quintus the Recruit\n\r[10  Human War] Decimus the Recruit\n\r\n\rPlayers found: 7\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51916 2850a178
+step 50 "who mage"
+out dec "[60  Human IMP] Smokegod the Smoke Test\n\r\n\rPlayers found: 1\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 51 "who human"
+out dec "[ 2  Human War] Sluggish the Recruit\n\r[60  Human IMP] Smokegod the Smoke Test\n\r[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[51  Human War] Heroic the Recruit\n\r[25  Human War] Quintus the Recruit\n\r[10  Human War] Decimus the Recruit\n\r\n\rPlayers found: 8\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51921 4f5dc005
+step 52 "who elf"
+out dec "\n\rPlayers found: 0\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51924 9fdf4911
+step 53 "who clan"
+out dec "[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r\n\rPlayers found: 3\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 54 "who rom"
+out dec "[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r\n\rPlayers found: 2\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51928 bc29c08d
+step 55 "who loner"
+out dec "[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r\n\rPlayers found: 1\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51932 eaa24604
+step 56 "who dragon"
+out dec "That's not a valid race, class, or clan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51932 eaa24604
+step 57 "who foo"
+out dec "That's not a valid race, class, or clan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51932 eaa24604
+step 58 "who warrior 1 20"
+out dec "[ 2  Human War] Sluggish the Recruit\n\r[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[10  Human War] Decimus the Recruit\n\r\n\rPlayers found: 5\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51934 7bba79b5
+step 59 "who 'clan' human"
+out dec "[ 5  Human War] [  ROM  ] Yeoman the Recruit\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r\n\rPlayers found: 3\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 60 "whois"
+out dec "You must provide a name.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 61 "whois d"
+out dec "[10  Human War] Decimus the Recruit\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51940 58237e7d
+step 62 "whois s"
+out dec "[ 2  Human War] Sluggish the Recruit\n\r[60  Human IMP] Smokegod the Smoke Test\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51943 60eeef0b
+step 63 "whois zz"
+out dec "No one of that name is playing.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51945 a2c49ca0
+step 64 "whois CLANS"
+out dec "[20  Human War] [  ROM  ] Clansman the Recruit\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51947 452c3f8e
+step 65 "count"
+out dec "There are 8 characters on, the most so far today.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51948 32afb1e5
+step 66 "@as god"
+rng 51948 32afb1e5
+step 67 "count"
+out god "There are 8 characters on, the most so far today.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51950 3b52a66a
+step 68 "where"
+out god "Players near you:\n\rSluggish                     The Temple Square\n\rSmokegod                     The Temple Of Mota\n\rYeoman                       The Temple Of Mota\n\rOutlaw                       The Temple Of Mota\n\rClansman                     The Temple Of Mota\n\rHeroic                       The Temple Of Mota\n\rQuintus                      The Temple Of Mota\n\rDecimus                      The Temple Of Mota\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 69 "where hassan"
+out god "Hassan                       The Temple Of Mota\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 70 "where quintus"
+out god "Quintus                      The Temple Of Mota\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 71 "where sluggish"
+out god "You didn't find any sluggish.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 72 "where zz"
+out god "You didn't find any zz.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 73 "where fido"
+out god "the beastly fido             The Common Square\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 74 "@as slug"
+rng 51951 33711aee
+step 75 "where"
+out slug "Players near you:\n\rSluggish                     The Temple Square\n\rSmokegod                     The Temple Of Mota\n\rYeoman                       The Temple Of Mota\n\rOutlaw                       The Temple Of Mota\n\rClansman                     The Temple Of Mota\n\rHeroic                       The Temple Of Mota\n\rQuintus                      The Temple Of Mota\n\rDecimus                      The Temple Of Mota\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51951 33711aee
+step 76 "where decimus"
+out slug "Decimus                      The Temple Of Mota\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51951 33711aee
+step 77 "@as yeo"
+rng 51951 33711aee
+step 78 "quit"
+out dec "\n\rYeoman has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYeoman has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYeoman has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rYeoman has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "Alas, all good things must come to an end.\n\r"
+closed yeo
+out god "\n\rYeoman has left the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out unseen "\n\rYeoman has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51951 33711aee
+step 79 "@as god"
+rng 51951 33711aee
+step 80 "count"
+out god "There are 7 characters on, the most on today was 8.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51952 e641a48b
+step 81 "who"
+out god "[ 2  Human War] Sluggish the Recruit\n\r[60  Human IMP] Smokegod the Smoke Test\n\r[18  Human War] [ Loner ] (KILLER) (THIEF) Outlaw the Recruit\n\r[20  Human War] [  ROM  ] Clansman the Recruit\n\r[51  Human War] Heroic the Recruit\n\r[25  Human War] Quintus the Recruit\n\r[10  Human War] Decimus the Recruit\n\r\n\rPlayers found: 7\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51954 838facd4

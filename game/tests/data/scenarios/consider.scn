@@ -1,0 +1,82 @@
+# consider, and through it fight.c's is_safe. Decimus (level 10, no clan) in the temple, with mobs put there at each
+# step of the level difference: the fido (0), the beggar (1), the vagabond (5), a lumberjack (6, from another area;
+# Midgaard's level-8 thief hides), the wolf (9), the secretary (12), the cityguard (15) and Hassan (45, already there).
+@connect dec
+Decimus
+psswrd
+@return
+consider
+consider zz
+consider self
+@mob 3062 3001
+consider fido
+@mob 3065 3001
+consider beggar
+@mob 3063 3001
+consider vagabond
+@mob 6000 3001
+consider lumberjack
+@mob 3094 3001
+consider wolf
+@mob 3142 3001
+consider secretary
+@mob 3060 3001
+consider cityguard
+consider hassan
+# The mobs is_safe protects: a shopkeeper (the baker), a trainer (the sailor), a practicer (the guildmaster), a
+# healer, a changer (Otho) and a pet (the eagle).
+@mob 3001 3001
+consider baker
+@mob 3007 3001
+consider sailor
+@mob 3023 3001
+consider guildmaster
+@mob 3012 3001
+consider healer
+@mob 3162 3001
+consider otho
+@mob 3095 3001
+consider eagle
+# A safe room: By the Temple Altar (3054), north, with the healer who lives there. (A move lags its mover one
+# pulse, so a pulse follows each.)
+north
+@pulse 1
+consider healer
+south
+@pulse 1
+# Players: Decimus has no clan. Clansman (20, rom) on Decimus (no clan), on Outlaw (18, a loner, but a KILLER and
+# THIEF, so fair game) and on Yeoman (5, rom: more than 8 levels below). Smokegod, an immortal, may consider anyone.
+@connect quin
+Quintus
+psswrd
+@return
+@as dec
+consider quintus
+@connect clan
+Clansman
+psswrd
+@return
+@connect out
+Outlaw
+psswrd
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@as clan
+consider decimus
+consider outlaw
+consider yeoman
+@as yeo
+consider clansman
+@as out
+consider yeoman
+@connect god
+Smokegod
+smoke123
+@return
+@return
+consider hassan
+consider decimus
+consider baker

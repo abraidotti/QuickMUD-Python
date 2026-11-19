@@ -1,0 +1,90 @@
+# who, whois, count and where with nine players on. In the temple (3001): Decimus (warrior, level 10), Quintus
+# (25), Heroic (51), Clansman (20, clan rom), Outlaw (18, a loner, KILLER and THIEF), Yeoman (5, rom) and Smokegod
+# (60, an immortal mage). Sluggish (2) sneaks in the Temple Square (3005), in the same area. Unseen (5) is
+# invisible, and no one here can see it.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@connect clan
+Clansman
+psswrd
+@return
+@connect out
+Outlaw
+psswrd
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect slug
+Sluggish
+psswrd
+@return
+@connect unseen
+Unseen
+psswrd
+@return
+# Pupil has typed a name but not the password yet, so isn't playing.
+@connect half
+Pupil
+@as dec
+who
+# Levels: one bound, two, upside down, and a third number.
+who 20
+who 1 20
+who 20 1
+who 1 20 30
+who 51
+# Immortals, a class, a race (and one no player has), a clan, any clan, and things that are none of those.
+who immortals
+who imm
+who warrior
+who mage
+who human
+who elf
+who clan
+who rom
+who loner
+who dragon
+who foo
+who warrior 1 20
+who 'clan' human
+whois
+whois d
+whois s
+whois zz
+whois CLANS
+count
+@as god
+count
+where
+where hassan
+where quintus
+where sluggish
+where zz
+where fido
+@as slug
+where
+where decimus
+# Yeoman leaves, so count falls below the most seen today. (Yeoman has an Id of its own: quit closes every
+# connection whose character shares the quitter's, and Decimus, Quintus, Heroic and Sluggish share Knocker's.)
+@as yeo
+quit
+@as god
+count
+who

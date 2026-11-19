@@ -1,0 +1,212 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "consider"
+out dec "Consider killing whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "consider zz"
+out dec "They're not here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "consider self"
+out dec "The perfect match!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "@mob 3062 3001"
+rng 51897 86bbd2a0
+step 9 "consider fido"
+out dec "You can kill the beastly fido naked and weaponless.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 10 "@mob 3065 3001"
+rng 51899 d1eb3d36
+step 11 "consider beggar"
+out dec "The beggar is no match for you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 12 "@mob 3063 3001"
+rng 51902 fdba09ec
+step 13 "consider vagabond"
+out dec "The vagabond is no match for you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51902 fdba09ec
+step 14 "@mob 6000 3001"
+rng 51912 93eb034d
+step 15 "consider lumberjack"
+out dec "John the Lumberjack looks like an easy kill.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51912 93eb034d
+step 16 "@mob 3094 3001"
+rng 51921 4f5dc005
+step 17 "consider wolf"
+out dec "The perfect match!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51921 4f5dc005
+step 18 "@mob 3142 3001"
+rng 51928 bc29c08d
+step 19 "consider secretary"
+out dec "The secretary says 'Do you feel lucky, punk?'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51928 bc29c08d
+step 20 "@mob 3060 3001"
+rng 51946 d8f44296
+step 21 "consider cityguard"
+out dec "The cityguard laughs at you mercilessly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51946 d8f44296
+step 22 "consider hassan"
+out dec "Death will thank you for your gift.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51946 d8f44296
+step 23 "@mob 3001 3001"
+rng 51948 32afb1e5
+step 24 "consider baker"
+out dec "The shopkeeper wouldn't like that.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51948 32afb1e5
+step 25 "@mob 3007 3001"
+rng 51949 b59a2a2b
+step 26 "consider sailor"
+out dec "I don't think Mota would approve.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51949 b59a2a2b
+step 27 "@mob 3023 3001"
+rng 51949 b59a2a2b
+step 28 "consider guildmaster"
+out dec "I don't think Mota would approve.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51949 b59a2a2b
+step 29 "@mob 3012 3001"
+rng 51952 e641a48b
+step 30 "consider healer"
+out dec "I don't think Mota would approve.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51952 e641a48b
+step 31 "@mob 3162 3001"
+rng 51954 838facd4
+step 32 "consider otho"
+out dec "I don't think Mota would approve.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51954 838facd4
+step 33 "@mob 3095 3001"
+rng 51964 b60256bc
+step 34 "consider eagle"
+out dec "But the eagle looks so cute and cuddly...\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 35 "north"
+out dec "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r     A pit for sacrifices is in front of the altar.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51964 b60256bc
+step 36 "@pulse 1"
+rng 51964 b60256bc
+step 37 "consider healer"
+out dec "Not in this room.\n\rDon't even think about it.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51964 b60256bc
+step 38 "south"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA loyal eagle circles overhead.\n\rOtho the Money Changer sits behind his desk, waiting for your coins.\n\r(White Aura) A healer is here, selling spells.\n\rYour guildmaster is standing here.\n\rA sailor stands here, waiting to train you.\n\rThe baker looks at you calmly, wiping flour from his face with one hand.\n\rA cityguard stands here.\n\rA secretary is sitting at the desk.\n\rA large, trained wolf is here.\n\rJohn the Lumberjack is here, looking for some trees to chop down.\n\rA vagabond is here, looking for victims.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51964 b60256bc
+step 39 "@pulse 1"
+rng 51964 b60256bc
+step 40 "@connect quin"
+rng 51964 b60256bc
+step 41 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51964 b60256bc
+step 42 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51964 b60256bc
+step 43 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rA loyal eagle circles overhead.\n\rOtho the Money Changer sits behind his desk, waiting for your coins.\n\r(White Aura) A healer is here, selling spells.\n\rYour guildmaster is standing here.\n\rA sailor stands here, waiting to train you.\n\rThe baker looks at you calmly, wiping flour from his face with one hand.\n\rA cityguard stands here.\n\rA secretary is sitting at the desk.\n\rA large, trained wolf is here.\n\rJohn the Lumberjack is here, looking for some trees to chop down.\n\rA vagabond is here, looking for victims.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 44 "@as dec"
+rng 51964 b60256bc
+step 45 "consider quintus"
+out dec "Join a clan if you want to kill players.\n\rDon't even think about it.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51964 b60256bc
+step 46 "@connect clan"
+rng 51964 b60256bc
+step 47 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51964 b60256bc
+step 48 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51964 b60256bc
+step 49 "@return"
+out dec "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rA loyal eagle circles overhead.\n\rOtho the Money Changer sits behind his desk, waiting for your coins.\n\r(White Aura) A healer is here, selling spells.\n\rYour guildmaster is standing here.\n\rA sailor stands here, waiting to train you.\n\rThe baker looks at you calmly, wiping flour from his face with one hand.\n\rA cityguard stands here.\n\rA secretary is sitting at the desk.\n\rA large, trained wolf is here.\n\rJohn the Lumberjack is here, looking for some trees to chop down.\n\rA vagabond is here, looking for victims.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 50 "@connect out"
+rng 51964 b60256bc
+step 51 "Outlaw"
+out out "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51964 b60256bc
+step 52 "psswrd"
+out out "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51964 b60256bc
+step 53 "@return"
+out dec "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rA loyal eagle circles overhead.\n\rOtho the Money Changer sits behind his desk, waiting for your coins.\n\r(White Aura) A healer is here, selling spells.\n\rYour guildmaster is standing here.\n\rA sailor stands here, waiting to train you.\n\rThe baker looks at you calmly, wiping flour from his face with one hand.\n\rA cityguard stands here.\n\rA secretary is sitting at the desk.\n\rA large, trained wolf is here.\n\rJohn the Lumberjack is here, looking for some trees to chop down.\n\rA vagabond is here, looking for victims.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 54 "@connect yeo"
+rng 51964 b60256bc
+step 55 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51964 b60256bc
+step 56 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51964 b60256bc
+step 57 "@return"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rA loyal eagle circles overhead.\n\rOtho the Money Changer sits behind his desk, waiting for your coins.\n\r(White Aura) A healer is here, selling spells.\n\rYour guildmaster is standing here.\n\rA sailor stands here, waiting to train you.\n\rThe baker looks at you calmly, wiping flour from his face with one hand.\n\rA cityguard stands here.\n\rA secretary is sitting at the desk.\n\rA large, trained wolf is here.\n\rJohn the Lumberjack is here, looking for some trees to chop down.\n\rA vagabond is here, looking for victims.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 58 "@as clan"
+rng 51964 b60256bc
+step 59 "consider decimus"
+out clan "They aren't in a clan, leave them alone.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 60 "consider outlaw"
+out clan "Outlaw looks like an easy kill.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 61 "consider yeoman"
+out clan "Pick on someone your own size.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 62 "@as yeo"
+rng 51964 b60256bc
+step 63 "consider clansman"
+out yeo "Death will thank you for your gift.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 64 "@as out"
+rng 51964 b60256bc
+step 65 "consider yeoman"
+out out "Pick on someone your own size.\n\rDon't even think about it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51964 b60256bc
+step 66 "@connect god"
+rng 51964 b60256bc
+step 67 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51964 b60256bc
+step 68 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51964 b60256bc
+step 69 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51964 b60256bc
+step 70 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rYeoman the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rClansman the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rA loyal eagle circles overhead.\n\rOtho the Money Changer sits behind his desk, waiting for your coins.\n\r(White Aura) A healer is here, selling spells.\n\rYour guildmaster is standing here.\n\rA sailor stands here, waiting to train you.\n\rThe baker looks at you calmly, wiping flour from his face with one hand.\n\rA cityguard stands here.\n\rA secretary is sitting at the desk.\n\rA large, trained wolf is here.\n\rJohn the Lumberjack is here, looking for some trees to chop down.\n\rA vagabond is here, looking for victims.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51964 b60256bc
+step 71 "consider hassan"
+out god "You can kill Hassan naked and weaponless.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51964 b60256bc
+step 72 "consider decimus"
+out god "You can kill Decimus naked and weaponless.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51964 b60256bc
+step 73 "consider baker"
+out god "You can kill the baker naked and weaponless.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51964 b60256bc

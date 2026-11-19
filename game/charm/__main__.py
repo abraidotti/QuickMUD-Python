@@ -54,6 +54,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         game = boot_db(area, now)
         game.config = config
+        game.str_boot_time = log.ctime(now)
         log.clock = lambda: game.current_time
         log.log_f("Not ported, not running: %s (#28).", ", ".join(NOT_RUNNING))
         log.log_f("Charm is ready to rock on port %d (%s).", port, config.ipaddress)
