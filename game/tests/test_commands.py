@@ -149,3 +149,25 @@ class Commands(unittest.TestCase):
         self.game.index.socials = [type("Social", (), {"name": "smile", "messages": [
             "You smile.", "$n smiles.", None, None, None, None, None, None]})()]
         self.assertEqual(self.say("smi"), "You smile.\n\r")
+
+
+class Buffers(unittest.TestCase):
+    """recycle.c's BUFFER, which keeps tells for replay: it grows through buf_size, and holds 16382 characters at most."""
+
+    def test_grows_then_overflows_and_stays_overflowed(self):
+        from charm.entities.things import BUFFER_OVERFLOW, add_buf, clear_buf, new_buf
+
+        buf = new_buf()
+        self.assertEqual(buf.size, 1024)
+        self.assertTrue(add_buf(buf, "x" * 1024))  # 1025 bytes with the NUL: the next size up
+        self.assertEqual(buf.size, 2048)
+        self.assertTrue(add_buf(buf, "x" * (16382 - 1024)))  # it grows while the length with the NUL is >= the size
+        self.assertEqual(buf.size, 16384)
+        with mock.patch.object(log, "log_string") as logged:
+            self.assertFalse(add_buf(buf, "x"))
+        logged.assert_called_once_with("[*****] BUG: buffer overflow past size 16384")
+        self.assertEqual((buf.size, buf.state, len(buf.string)), (16384, BUFFER_OVERFLOW, 16382))
+        self.assertFalse(add_buf(buf, ""))  # an overflowed buffer takes nothing more
+        clear_buf(buf)
+        self.assertTrue(add_buf(buf, "again"))
+        self.assertEqual(buf.string, "again")

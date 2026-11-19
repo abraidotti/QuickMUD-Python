@@ -271,6 +271,21 @@ class Player:
         elif m := re.fullmatch(r"@mob (-?\d+) (-?\d+)", line):
             mob = create_mobile(self.game, ix.get_mob_index(int(m.group(1))))
             char_to_room(mob, ix.get_room_index(int(m.group(2))))
+            self.last_mob = mob
+        elif line in ("@charm", "@charm pet"):
+            from charm.commands.comm import add_follower
+
+            c, mob = self.current, getattr(self, "last_mob", None)
+            if mob is None or c is None or c.closed or not self._listed(c) or c.d.character is None:
+                raise SystemExit(f"scenario: step {n}: @charm needs a @mob and a character")
+            ch = c.d.character
+            if line == "@charm pet":
+                mob.act |= C.ACT_PET
+            mob.affected_by |= C.AFF_CHARM
+            add_follower(self.game, mob, ch)
+            mob.leader = ch
+            if line == "@charm pet":
+                ch.pet = mob
         elif m := re.fullmatch(r"@obj (-?\d+) (-?\d+)((?: -?\d+){5})?", line):
             obj = create_object(self.game, ix.get_obj_index(int(m.group(1))), 0)
             if m.group(3):

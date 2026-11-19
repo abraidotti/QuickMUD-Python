@@ -1,0 +1,267 @@
+sources e18a42ba37481b3d
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect hero"
+rng 51895 7f5599b5
+step 10 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect god"
+rng 51895 7f5599b5
+step 14 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 17 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHeroic the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@as dec"
+rng 51895 7f5599b5
+step 19 "say"
+out dec "Say what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "say hello, temple"
+out dec "You say 'hello, temple'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus says 'hello, temple'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus says 'hello, temple'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus says 'hello, temple'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "' the short form"
+out dec "You say 'the short form'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus says 'the short form'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus says 'the short form'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus says 'the short form'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "say a $n and a $t"
+out dec "You say 'a $n and a $t'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus says 'a $n and a $t'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus says 'a $n and a $t'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus says 'a $n and a $t'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "emote"
+out dec "Emote what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "emote waves."
+out dec "Decimus waves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus waves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus waves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus waves.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "emote 'waves"
+out dec "Moron!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "emote  waves"
+out dec "Decimus waves\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus waves\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus waves\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus waves\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 ", nods."
+out dec "Decimus nods.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus nods.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus nods.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus nods.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "pmote"
+out dec "Emote what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "pmote 1waves"
+out dec "Moron!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "pmote waves at Quintus."
+out dec "Decimus waves at Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus waves at you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus waves at Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus waves at Quintus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "pmote pats Quintus's head, and Heroic's too."
+out dec "Decimus pats Quintus's head, and Heroic's too.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus pats your head, and Heroic's too.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus pats Quintus's head, and your too.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus pats Quintus's head, and Heroic's too.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "pmote thinks Quintus is a Quintuses and Heroics are fine."
+out dec "Decimus thinks Quintus is a Quintuses and Heroics are fine.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus thinks you is a youes and Heroics are fine.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus thinks Quintus is a Quintuses and you are fine.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus thinks Quintus is a Quintuses and Heroics are fine.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "pmote smiles at Quint"
+out dec "Decimus smiles at Quint\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus smiles at Quint\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus smiles at Quint\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus smiles at Quint\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "pmote likes Quintus Quintus Quin"
+out dec "Decimus likes Quintus Quintus Quin\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus likes you you \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus likes Quintus Quintus Quin\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus likes Quintus Quintus Quin\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "pmote waves to Heroic and Quin"
+out dec "Decimus waves to Heroic and Quin\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus waves to Heroic and Quin\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus waves to you and Quin\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus waves to Heroic and Quin\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "pmote hugs Quintus and Heroic and Hero"
+out dec "Decimus hugs Quintus and Heroic and Hero\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus hugs yountus and Heroic and Hero\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus hugs Quintus and you and \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus hugs Quintus and Heroic and Hero\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "pmote waves at quintus in lower case."
+out dec "Decimus waves at quintus in lower case.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus waves at quintus in lower case.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus waves at quintus in lower case.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus waves at quintus in lower case.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "pmote 'quotes Quintus' work."
+out dec "Moron!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "pose"
+out dec "Oomph!  You squeeze water out of a granite boulder.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rOomph!  Decimus squeezes water out of a granite boulder.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOomph!  Decimus squeezes water out of a granite boulder.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rOomph!  Decimus squeezes water out of a granite boulder.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 40 "pose"
+out dec "Crunch, crunch -- you munch a bottle.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rCrunch, crunch -- Decimus munches a bottle.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rCrunch, crunch -- Decimus munches a bottle.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rCrunch, crunch -- Decimus munches a bottle.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 41 "pose"
+out dec "Oomph!  You squeeze water out of a granite boulder.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rOomph!  Decimus squeezes water out of a granite boulder.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOomph!  Decimus squeezes water out of a granite boulder.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rOomph!  Decimus squeezes water out of a granite boulder.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51900 e9723077
+step 42 "@as quin"
+rng 51900 e9723077
+step 43 "pose"
+out dec "You are swept off your feet by Quintus's hug.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "Everyone is swept off their foot by your hug.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou are swept off your feet by Quintus's hug.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rYou are swept off your feet by Quintus's hug.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 44 "pose"
+out dec "\n\rQuintus's karate chop splits a tree.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "Your karate chop splits a tree.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rQuintus's karate chop splits a tree.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus's karate chop splits a tree.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51902 fdba09ec
+step 45 "@as hero"
+rng 51902 fdba09ec
+step 46 "pose"
+out dec "\n\rHeroic hits his head, and his eyes roll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "Heroic hits his head, and his eyes roll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You hit your head, and your eyes roll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rHeroic hits his head, and his eyes roll.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51904 da7aaa40
+step 47 "pose"
+out dec "\n\rHeroic picks his teeth with a spear.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rHeroic picks his teeth with a spear.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You pick your teeth with a spear.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rHeroic picks his teeth with a spear.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51905 d4471b28
+step 48 "pose"
+out dec "\n\rYou are swept off your feet by Heroic's hug.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYou are swept off your feet by Heroic's hug.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Everyone is swept off their foot by your hug.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rYou are swept off your feet by Heroic's hug.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51906 1b2d656f
+step 49 "pose"
+out dec "\n\rHeroic grizzles his teeth and looks mean.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rHeroic grizzles his teeth and looks mean.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You grizzle your teeth and look mean.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rHeroic grizzles his teeth and looks mean.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51909 3b8e3587
+step 50 "@as god"
+rng 51909 3b8e3587
+step 51 "pose"
+out dec "\n\rSmokegod turns into a butterfly, then returns to his normal shape.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod turns into a butterfly, then returns to his normal shape.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Smokegod turns into a butterfly, then returns to his normal shape.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You turn into a butterfly, then return to your normal shape.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51911 df511cc4
+step 52 "pose"
+out dec "\n\rA small ball of light dances on Smokegod's fingertips.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rA small ball of light dances on Smokegod's fingertips.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rA small ball of light dances on Smokegod's fingertips.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "A small ball of light dances on your fingertips.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51917 64c4bf17
+step 53 "pose"
+out dec "\n\rThe light flickers as Smokegod raps in magical languages.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rThe light flickers as Smokegod raps in magical languages.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe light flickers as Smokegod raps in magical languages.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "The light flickers as you rap in magical languages.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51920 c09b44b3
+step 54 "@as dec"
+rng 51920 c09b44b3
+step 55 "typo there's a typo here"
+out dec "Typo logged.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 56 "typo"
+out dec "Typo logged.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 57 "@file typos.txt"
+file typos.txt "[ 3001] Decimus: there's a typo here\n"
+rng 51920 c09b44b3
+step 58 "rent"
+out dec "There is no rent here.  Just save and quit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 59 "qui"
+out dec "From now on, you will only hear says and emotes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 60 "delet"
+out dec "You must type the full command to delete yourself.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 61 "quit"
+out dec "Alas, all good things must come to an end.\n\r"
+closed dec
+out quin "\n\rDecimus has left the game.\n\r"
+closed quin
+out hero "\n\rDecimus has left the game.\n\r"
+closed hero
+out god "\n\rDecimus has left the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51920 c09b44b3

@@ -1,0 +1,82 @@
+# tell, reply and replay. In the temple (3001): Decimus (10), Quintus (25), Sleeper (asleep) and Smokegod (an
+# immortal past LEVEL_IMMORTAL, who reaches the sleeping and the quiet). The mayor (3143) is made asleep in the
+# temple, and a fido (3062) in the Temple Square. A tell to an awake mob crashes the C game (it reads the mob's
+# connection, which it hasn't: #49), so none is here; tests/test_scenarios.py covers that.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect sleep
+Sleeper
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@mob 3143 3001
+@mob 3062 3005
+@as dec
+reply no one yet
+tell
+tell quintus
+tell nobody hello
+tell fido hello
+tell mayor hello
+tell quintus hello there
+tell quin by a prefix
+tell self talking to myself
+reply myself again
+@as quin
+reply hello back
+@as dec
+reply and again
+tell sleeper wake up
+@as god
+tell sleeper from a god
+@as sleep
+reply thanks, god
+@as quin
+sleep
+reply in my sleep
+@as dec
+reply are you asleep?
+@as quin
+wake
+@pulse 1
+quiet
+tell decimus I'm quiet
+@as dec
+tell quintus are you quiet?
+@as god
+tell quintus a god gets through
+@as quin
+quiet
+deaf
+@as dec
+tell quintus are you deaf?
+reply deaf too?
+@as god
+reply god to deaf
+@as quin
+deaf
+afk
+@as dec
+tell quintus are you there?
+tell quintus second
+reply third, by reply
+@as quin
+afk
+replay
+replay
+reply got them
+@as god
+tell quintus I'm off
+quit
+@as quin
+reply gone?

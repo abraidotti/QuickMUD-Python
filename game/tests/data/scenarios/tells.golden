@@ -1,0 +1,234 @@
+sources e18a42ba37481b3d
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect sleep"
+rng 51895 7f5599b5
+step 10 "Sleeper"
+out sleep "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out sleep "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSleeper has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sleep "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rYou can't see anything, you're sleeping!\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect god"
+rng 51895 7f5599b5
+step 14 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 17 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSleeper is sleeping here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@mob 3143 3001"
+rng 51907 f84fac3e
+step 19 "@mob 3062 3005"
+rng 51909 3b8e3587
+step 20 "@as dec"
+rng 51909 3b8e3587
+step 21 "reply no one yet"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 22 "tell"
+out dec "Tell whom what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 23 "tell quintus"
+out dec "Tell whom what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 24 "tell nobody hello"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 25 "tell fido hello"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 26 "tell mayor hello"
+out dec "He can't hear you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 27 "tell quintus hello there"
+out dec "You tell Quintus 'hello there'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus tells you 'hello there'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 28 "tell quin by a prefix"
+out dec "You tell Quintus 'by a prefix'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus tells you 'by a prefix'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 29 "tell self talking to myself"
+out dec "You tell Decimus 'talking to myself'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 30 "reply myself again"
+out dec "You tell Decimus 'myself again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 31 "@as quin"
+rng 52173 8e8c0850
+step 32 "reply hello back"
+out dec "Quintus tells you 'hello back'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You tell Decimus 'hello back'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 33 "@as dec"
+rng 52173 8e8c0850
+step 34 "reply and again"
+out dec "You tell Quintus 'and again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus tells you 'and again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 35 "tell sleeper wake up"
+out dec "He can't hear you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 36 "@as god"
+rng 52173 8e8c0850
+step 37 "tell sleeper from a god"
+out sleep "\n\rSmokegod tells you 'from a god'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You tell Sleeper 'from a god'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 38 "@as sleep"
+rng 52173 8e8c0850
+step 39 "reply thanks, god"
+out sleep "You tell Smokegod 'thanks, god'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rSleeper tells you 'thanks, god'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 40 "@as quin"
+rng 52173 8e8c0850
+step 41 "sleep"
+out dec "\n\rQuintus goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus goes to sleep.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 42 "reply in my sleep"
+out quin "In your dreams, or what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 43 "@as dec"
+rng 52173 8e8c0850
+step 44 "reply are you asleep?"
+out dec "He can't hear you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 45 "@as quin"
+rng 52173 8e8c0850
+step 46 "wake"
+out dec "Quintus wakes and stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You wake and stand up.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rThe mayor is here.  He shakes your hand.\n\rSmokegod the Smoke Test is here.\n\rSleeper is sleeping here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus wakes and stands up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 47 "@pulse 1"
+rng 52173 8e8c0850
+step 48 "quiet"
+out quin "From now on, you will only hear says and emotes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 49 "tell decimus I'm quiet"
+out quin "You must turn off quiet mode first.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 50 "@as dec"
+rng 52173 8e8c0850
+step 51 "tell quintus are you quiet?"
+out dec "He is not receiving tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 52 "@as god"
+rng 52173 8e8c0850
+step 53 "tell quintus a god gets through"
+out quin "\n\rSmokegod tells you 'a god gets through'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You tell Quintus 'a god gets through'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 54 "@as quin"
+rng 52173 8e8c0850
+step 55 "quiet"
+out quin "Quiet mode removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 56 "deaf"
+out quin "From now on, you won't hear tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 57 "@as dec"
+rng 52173 8e8c0850
+step 58 "tell quintus are you deaf?"
+out dec "He is not receiving tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 59 "reply deaf too?"
+out dec "He is not receiving tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 60 "@as god"
+rng 52173 8e8c0850
+step 61 "reply god to deaf"
+out sleep "\n\rSmokegod tells you 'god to deaf'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You tell Sleeper 'god to deaf'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 62 "@as quin"
+rng 52173 8e8c0850
+step 63 "deaf"
+out quin "You can now hear tells again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 64 "afk"
+out quin "You are now in AFK mode.\n\r\n\r<AFK> \xff\xf9"
+rng 52173 8e8c0850
+step 65 "@as dec"
+rng 52173 8e8c0850
+step 66 "tell quintus are you there?"
+out dec "He is AFK, but your tell will go through when he returns.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 67 "tell quintus second"
+out dec "He is AFK, but your tell will go through when he returns.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 68 "reply third, by reply"
+out dec "He is AFK, but your tell will go through when he returns.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 69 "@as quin"
+rng 52173 8e8c0850
+step 70 "afk"
+out quin "AFK mode removed. Type 'replay' to see tells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 71 "replay"
+out quin "Decimus tells you 'are you there?'\n\rDecimus tells you 'second'\n\rDecimus tells you 'third, by reply'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 72 "replay"
+out quin "You have no tells to replay.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 73 "reply got them"
+out quin "You tell Smokegod 'got them'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus tells you 'got them'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 74 "@as god"
+rng 52173 8e8c0850
+step 75 "tell quintus I'm off"
+out quin "Smokegod tells you 'I'm off'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You tell Quintus 'I'm off'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 76 "quit"
+out dec "\n\rSmokegod has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "Alas, all good things must come to an end.\n\r"
+closed god
+rng 52173 8e8c0850
+step 77 "@as quin"
+rng 52173 8e8c0850
+step 78 "reply gone?"
+out quin "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850

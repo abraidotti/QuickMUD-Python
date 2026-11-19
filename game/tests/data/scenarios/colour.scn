@@ -1,0 +1,71 @@
+# colour: turning it off and on, setting one field to each colour word (cut short too, and empty), beep and nobeep,
+# the bad words, default, and all with each colour, red among them. Decimus (10) and Quintus (25) are in the
+# temple (3001), both with colour turned on (the fixtures have it off). Decimus says something after a change, so
+# Quintus shows the default say colours and Decimus his own. The saved file has the settings.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+colour
+@as dec
+say colour off
+colour
+say colour on
+colour
+colour
+colour say hi-red
+colour say_text blue
+say red and blue
+colour say red
+colour say green
+colour say hi-green
+colour say yellow
+colour say hi-yellow
+colour say hi-blue
+colour say magenta
+colour say hi-magenta
+colour say cyan
+colour say hi-cyan
+colour say white
+colour say hi-white
+colour say grey
+colour say hi-m
+colour say Cy
+colour say
+say red, from nothing
+colour say beep
+say with a beep
+colour say nobeep
+colour say purple
+colour say red please
+colour nothing red
+colour SAY_TEXT white
+colour prompt hi-yellow
+colour default
+say back to the defaults
+colour all
+colour all red
+colour all r
+colour all hi-red
+gossip all hi-red but gossip's text, one of the five all skips
+colour all green
+colour all purple
+colour all grey
+colour all hi-white
+colour all cyan
+colour all hi-cyan
+colour all magenta
+colour all yellow
+colour all blue
+colour all hi-blue
+colour all white
+colour all hi-green
+colour all hi-yellow
+colour all hi-magenta
+save
+@pulse 48
+@file ../player/Decimus

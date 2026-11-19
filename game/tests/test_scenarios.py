@@ -42,6 +42,18 @@ class Goldens(unittest.TestCase):
                 self.assertIsNone(difference(c, play_fresh(text, REPO), text))
 
 
+class WhereTheCCrashes(unittest.TestCase):
+    """Steps that crash the C game, so they can't have a golden: the Python stops with CWouldCrash there instead."""
+
+    def test_a_tell_to_an_awake_mob(self):
+        # do_tell reads victim->desc->connected, and a mob has no connection (abraidotti/charm#49). The C
+        # driver dies with a segmentation fault on this step.
+        text = "@connect dec\nDecimus\npsswrd\n@return\n@mob 3011 3001\ntell hassan hello\nlook\n"
+        out = play_fresh(text, REPO)
+        self.assertEqual(out[-2], 'step 6 "tell hassan hello"')
+        self.assertTrue(out[-1].startswith("stopped CWouldCrash: act_comm.c do_tell: a tell to a mob"), out[-1])
+
+
 class Difference(unittest.TestCase):
     C = ['step 1 "look"', 'out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]
 

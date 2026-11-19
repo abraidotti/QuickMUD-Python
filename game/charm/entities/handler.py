@@ -969,6 +969,99 @@ def is_clan(ch: Char) -> bool:
     return bool(ch.clan)
 
 
+# C: handler.c is_same_clan
+def is_same_clan(ch: Char, victim: Char) -> bool:
+    from charm.data.clans import CLAN_TABLE
+
+    if CLAN_TABLE[ch.clan].independent:
+        return False
+    return ch.clan == victim.clan
+
+
+# C: handler.c get_char_world
+def get_char_world(game: Game, ch: Char, argument: str) -> Char | None:
+    from charm.commands.interp import number_argument
+
+    wch = get_char_room(ch, argument)
+    if wch is not None:
+        return wch
+    number, arg = number_argument(argument)
+    count = 0
+    for wch in game.char_list:
+        if wch.in_room is None or not can_see(ch, wch) or not is_name(arg, wch.name):
+            continue
+        count += 1
+        if count == number:
+            return wch
+    return None
+
+
+# handler.c default_colour's settings: (bright, colour, beep). Not save.c's defaults for a file with no colours.
+_DEFAULT_COLOUR = {
+    "text": (C.NORMAL, C.WHITE, 0), "auction": (C.BRIGHT, C.YELLOW, 0), "auction_text": (C.BRIGHT, C.WHITE, 0),
+    "gossip": (C.NORMAL, C.MAGENTA, 0), "gossip_text": (C.BRIGHT, C.MAGENTA, 0), "music": (C.NORMAL, C.RED, 0),
+    "music_text": (C.BRIGHT, C.RED, 0), "question": (C.BRIGHT, C.YELLOW, 0), "question_text": (C.BRIGHT, C.WHITE, 0),
+    "answer": (C.BRIGHT, C.YELLOW, 0), "answer_text": (C.BRIGHT, C.WHITE, 0), "quote": (C.NORMAL, C.GREEN, 0),
+    "quote_text": (C.BRIGHT, C.GREEN, 0), "immtalk_text": (C.NORMAL, C.CYAN, 0),
+    "immtalk_type": (C.NORMAL, C.YELLOW, 0), "info": (C.NORMAL, C.YELLOW, 1), "tell": (C.NORMAL, C.GREEN, 0),
+    "tell_text": (C.BRIGHT, C.GREEN, 0), "say": (C.NORMAL, C.GREEN, 0), "say_text": (C.BRIGHT, C.GREEN, 0),
+    "reply": (C.NORMAL, C.GREEN, 0), "reply_text": (C.BRIGHT, C.GREEN, 0), "gtell_text": (C.NORMAL, C.GREEN, 0),
+    "gtell_type": (C.NORMAL, C.RED, 0), "wiznet": (C.NORMAL, C.GREEN, 0), "room_title": (C.NORMAL, C.CYAN, 0),
+    "room_text": (C.NORMAL, C.WHITE, 0), "room_exits": (C.NORMAL, C.GREEN, 0), "room_things": (C.NORMAL, C.CYAN, 0),
+    "prompt": (C.NORMAL, C.CYAN, 0), "fight_death": (C.NORMAL, C.RED, 0), "fight_yhit": (C.NORMAL, C.GREEN, 0),
+    "fight_ohit": (C.NORMAL, C.YELLOW, 0), "fight_thit": (C.NORMAL, C.RED, 0), "fight_skill": (C.NORMAL, C.WHITE, 0),
+}
+
+
+# C: handler.c default_colour
+def default_colour(ch: Char) -> None:
+    if ch.is_npc or ch.pcdata is None:
+        return
+    for name, triple in _DEFAULT_COLOUR.items():
+        ch.pcdata.colours[name][:] = triple
+
+
+# all_colour's choices, in the C's order: (word, colour, bright, the name it reports). sic: no "red". The C tests
+# it with an if, not an else-if, so the chain after it says "Unrecognised" for red (#51). And grey
+# reports "White".
+_ALL_COLOURS = (
+    ("hi-red", C.RED, C.BRIGHT, "Red"), ("green", C.GREEN, C.NORMAL, "Green"),
+    ("hi-green", C.GREEN, C.BRIGHT, "Green"), ("yellow", C.YELLOW, C.NORMAL, "Yellow"),
+    ("hi-yellow", C.YELLOW, C.BRIGHT, "Yellow"), ("blue", C.BLUE, C.NORMAL, "Blue"),
+    ("hi-blue", C.BLUE, C.BRIGHT, "Blue"), ("magenta", C.MAGENTA, C.NORMAL, "Magenta"),
+    ("hi-magenta", C.MAGENTA, C.BRIGHT, "Magenta"), ("cyan", C.CYAN, C.NORMAL, "Cyan"),
+    ("hi-cyan", C.CYAN, C.BRIGHT, "Cyan"), ("white", C.WHITE, C.NORMAL, "White"),
+    ("hi-white", C.WHITE, C.BRIGHT, "White"), ("grey", C.BLACK, C.BRIGHT, "White"),
+)
+# The settings all_colour changes: every one but the five channels' _text ones after auction_text.
+_ALL_COLOUR_FIELDS = (
+    "text", "auction", "gossip", "music", "question", "answer", "quote", "quote_text", "immtalk_text", "immtalk_type",
+    "info", "say", "say_text", "tell", "tell_text", "reply", "reply_text", "gtell_text", "gtell_type", "wiznet",
+    "room_title", "room_text", "room_exits", "room_things", "prompt", "fight_death", "fight_yhit", "fight_ohit",
+    "fight_thit", "fight_skill")
+
+
+# C: handler.c all_colour
+def all_colour(ch: Char, argument: str) -> None:
+    from charm.net.output import send_to_char_bw
+
+    if ch.is_npc or ch.pcdata is None:
+        return
+    if argument == "":
+        return
+    for word, colour, bright, name in _ALL_COLOURS:
+        if str_prefix(argument, word):
+            break
+    else:
+        send_to_char_bw("Unrecognised colour, unchanged.\n\r", ch)
+        return
+    for field in _ALL_COLOUR_FIELDS:
+        ch.pcdata.colours[field][1] = colour
+    for field in _ALL_COLOUR_FIELDS:
+        ch.pcdata.colours[field][0] = bright
+    send_to_char_bw("All Colour settings set to %s.\n\r" % name, ch)
+
+
 _LOC_NAMES = {
     C.APPLY_NONE: "none", C.APPLY_STR: "strength", C.APPLY_DEX: "dexterity", C.APPLY_INT: "intelligence",
     C.APPLY_WIS: "wisdom", C.APPLY_CON: "constitution", C.APPLY_SEX: "sex", C.APPLY_CLASS: "class",

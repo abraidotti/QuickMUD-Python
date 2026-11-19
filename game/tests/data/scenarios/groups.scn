@@ -1,0 +1,165 @@
+# follow, group, gtell and split, then order and groups with charmed mobs. In the temple (3001): Purser (10, with
+# 100 gold and 503 silver), Decimus (10), Quintus (25) and Weary (2). Then a fido (3062) and a beggar (3065) are
+# charmed to follow Purser, and a wolf (3094) is made its pet. Ordered mobs run the commands' NPC branches; what
+# they're told goes to no one, as mobs have no connection, and a mob can't tell (create_mobile sets NOTELL).
+@connect purse
+Purser
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect weary
+Weary
+psswrd
+@return
+@as dec
+order all say hi
+group nobody
+follow
+follow nobody
+follow self
+follow purser
+group
+@as purse
+group
+group decimus
+group
+nofollow
+group
+nofollow
+@as dec
+follow purser
+@as quin
+follow purser
+@as purse
+nofollow
+@as weary
+follow purser
+@as purse
+nofollow
+@as dec
+follow purser
+@as quin
+follow purser
+@as weary
+follow decimus
+follow quintus
+@as purse
+group decimus
+group quintus
+group weary
+group purser
+group
+@as dec
+group
+group quintus
+gtell hello, group
+;the short form
+gtell
+@as weary
+gtell no group
+@as quin
+group weary
+@as purse
+split
+split 0
+split -5
+split 0 0
+split 1000
+split 503 100
+split 2
+split 9
+split 0 3
+@state
+group decimus
+group
+@as dec
+follow self
+follow self
+split 5
+@as weary
+nofollow
+nofollow
+@as purse
+@mob 3062 3001
+@charm
+@mob 3065 3001
+@charm
+@mob 3094 3001
+@charm pet
+group
+order
+order fido
+order fido delete
+order fido mob echo
+order nobody say hi
+order self say hi
+order decimus say hi
+order fido say woof
+@pulse 12
+order all say together
+@pulse 12
+order fido emote bows to $n.
+@pulse 12
+order fido follow decimus
+@pulse 12
+order fido order beggar say hi
+@pulse 12
+order fido tell decimus woof
+@pulse 12
+order fido gtell woof
+@pulse 12
+order fido replay
+@pulse 12
+order fido autolist
+@pulse 12
+order fido autoall on
+@pulse 12
+order fido nofollow
+@pulse 12
+order fido nosummon
+@pulse 12
+order fido worth
+@pulse 12
+order fido practice
+@pulse 12
+order fido password a b
+@pulse 12
+order fido telnetga
+@pulse 12
+order fido colour
+@pulse 12
+order fido alias
+@pulse 12
+order fido unalias x
+@pulse 12
+order fido pose
+@pulse 12
+order fido save
+@pulse 12
+order fido quit
+@pulse 12
+order fido split 5
+@pulse 12
+group fido
+split 6
+order beggar follow self
+@pulse 12
+# nofollow sends every follower away, the charmed ones too: that takes their charm, and the wolf stops being a pet.
+nofollow
+@state
+order beggar say free
+nofollow
+# A new pet fades away when its owner quits.
+@mob 3094 3001
+@charm pet
+@pulse 12
+quit
+@as dec
+look

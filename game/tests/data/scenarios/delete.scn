@@ -1,0 +1,25 @@
+# delete: with an argument, asking to confirm, undoing it, then deleting for real, which quits and removes the
+# player file. Doomed (2) is in the temple (3001) with Smokegod (an immortal, who sees the wiznet lines if it has
+# them on) and Decimus. Afterwards the name is free for a new character.
+@connect dec
+Decimus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect doom
+Doomed
+psswrd
+@return
+@file ../player/Doomed
+delete now
+delete
+delete no, wait
+delete
+delete
+@file ../player/Doomed
+@connect again
+Doomed

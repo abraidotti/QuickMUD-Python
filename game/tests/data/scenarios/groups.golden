@@ -1,0 +1,547 @@
+sources e18a42ba37481b3d
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect purse"
+rng 51872 4ba9daca
+step 2 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect dec"
+rng 51895 7f5599b5
+step 6 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out purse "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect quin"
+rng 51895 7f5599b5
+step 10 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out purse "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect weary"
+rng 51895 7f5599b5
+step 14 "Weary"
+out weary "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out weary "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out purse "\n\rWeary has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWeary has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWeary has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@as dec"
+rng 51895 7f5599b5
+step 18 "order all say hi"
+out dec "You have no followers here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "group nobody"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "follow"
+out dec "Follow whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "follow nobody"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "follow self"
+out dec "You already follow yourself.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "follow purser"
+out purse "\n\rDecimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "group"
+out dec "Decimus's group:\n\r[10 War] Decimus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@as purse"
+rng 51895 7f5599b5
+step 26 "group"
+out purse "Purser's group:\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "group decimus"
+out purse "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou join Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rDecimus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "group"
+out purse "Purser's group:\n\r[10 War] Decimus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "nofollow"
+out purse "You no longer accept followers.\n\rDecimus stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou stop following Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "group"
+out purse "Purser's group:\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "nofollow"
+out purse "You now accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "@as dec"
+rng 51895 7f5599b5
+step 33 "follow purser"
+out purse "Decimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "@as quin"
+rng 51895 7f5599b5
+step 35 "follow purser"
+out purse "\n\rQuintus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "@as purse"
+rng 51895 7f5599b5
+step 37 "nofollow"
+out purse "You no longer accept followers.\n\rQuintus stops following you.\n\rDecimus stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou stop following Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYou stop following Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "@as weary"
+rng 51895 7f5599b5
+step 39 "follow purser"
+out weary "Purser doesn't seem to want any followers.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "@as purse"
+rng 51895 7f5599b5
+step 41 "nofollow"
+out purse "You now accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "@as dec"
+rng 51895 7f5599b5
+step 43 "follow purser"
+out purse "Decimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "@as quin"
+rng 51895 7f5599b5
+step 45 "follow purser"
+out purse "\n\rQuintus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "@as weary"
+rng 51895 7f5599b5
+step 47 "follow decimus"
+out dec "\n\rWeary now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "You now follow Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "follow quintus"
+out dec "\n\rWeary stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWeary now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "You stop following Decimus.\n\rYou now follow Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "@as purse"
+rng 51895 7f5599b5
+step 50 "group decimus"
+out purse "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou join Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rDecimus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "group quintus"
+out purse "Quintus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rQuintus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYou join Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rQuintus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "group weary"
+out purse "Weary isn't following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "group purser"
+out purse "Purser joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rPurser joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "group"
+out purse "Purser's group:\n\r[25 War] Quintus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Decimus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "@as dec"
+rng 51895 7f5599b5
+step 56 "group"
+out dec "Purser's group:\n\r[25 War] Quintus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Decimus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "group quintus"
+out dec "But you are following someone else!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "gtell hello, group"
+out purse "\n\rDecimus tells the group 'hello, group'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus tells the group 'hello, group'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 ";the short form"
+out purse "\n\rDecimus tells the group 'the short form'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus tells the group 'the short form'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "gtell"
+out dec "Tell your group what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "@as weary"
+rng 51895 7f5599b5
+step 62 "gtell no group"
+out weary "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "@as quin"
+rng 51895 7f5599b5
+step 64 "group weary"
+out quin "But you are following someone else!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 65 "@as purse"
+rng 51895 7f5599b5
+step 66 "split"
+out purse "Split how much?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 67 "split 0"
+out purse "You hand out zero coins, but no one notices.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 68 "split -5"
+out purse "Your group wouldn't like that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 69 "split 0 0"
+out purse "You hand out zero coins, but no one notices.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 70 "split 1000"
+out purse "You don't have that much to split.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 71 "split 503 100"
+out purse "You split 503 silver coins. Your share is 169 silver.\n\rYou split 100 gold coins. Your share is 34 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser splits 503 silver and 100 gold coins, giving you 167 silver and 33 gold.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser splits 503 silver and 100 gold coins, giving you 167 silver and 33 gold.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 72 "split 2"
+out purse "Don't even bother, cheapskate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "split 9"
+out purse "You split 9 silver coins. Your share is 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser splits 9 silver coins. Your share is 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser splits 9 silver coins. Your share is 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "split 0 3"
+out purse "You split 3 gold coins. Your share is 1 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser splits 3 gold coins. Your share is 1 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser splits 3 gold coins. Your share is 1 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 75 "@state"
+state room 3001 light 4 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Weary 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 34 silver 170 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 34 silver 170 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 32 silver 163 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 76 "group decimus"
+out purse "You remove Decimus from your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser removes you from his group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser removes Decimus from his group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rPurser removes Decimus from his group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 77 "group"
+out purse "Purser's group:\n\r[25 War] Quintus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 78 "@as dec"
+rng 51895 7f5599b5
+step 79 "follow self"
+out purse "Decimus stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You stop following Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 80 "follow self"
+out dec "You already follow yourself.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 81 "split 5"
+out dec "Just keep it all.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 82 "@as weary"
+rng 51895 7f5599b5
+step 83 "nofollow"
+out quin "\n\rWeary stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "You no longer accept followers.\n\rYou stop following Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 84 "nofollow"
+out weary "You now accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 85 "@as purse"
+rng 51895 7f5599b5
+step 86 "@mob 3062 3001"
+rng 51897 86bbd2a0
+step 87 "@charm"
+rng 51897 86bbd2a0
+step 88 "@mob 3065 3001"
+rng 51899 d1eb3d36
+step 89 "@charm"
+rng 51899 d1eb3d36
+step 90 "@mob 3094 3001"
+rng 51909 3b8e3587
+step 91 "@charm pet"
+rng 51909 3b8e3587
+step 92 "group"
+out purse "\n\rThe beastly fido now follows you.\n\rThe beggar now follows you.\n\rThe wolf now follows you.\n\rPurser's group:\n\r[ 9 Mob] The wolf          120/ 120 hp  100/ 100 mana  100/ 100 mv     0 xp\n\r[ 1 Mob] The beggar         20/  20 hp  100/ 100 mana  100/ 100 mv     0 xp\n\r[ 0 Mob] The beastly fido    9/   9 hp  100/ 100 mana  100/ 100 mv     0 xp\n\r[25 War] Quintus            29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r[10 War] Purser             29/  29 hp  102/ 102 mana  106/ 106 mv  2088 xp\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 93 "order"
+out purse "Order whom to do what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 94 "order fido"
+out purse "Order whom to do what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 95 "order fido delete"
+out purse "That will NOT be done.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 96 "order fido mob echo"
+out purse "That will NOT be done.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 97 "order nobody say hi"
+out purse "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 98 "order self say hi"
+out purse "Aye aye, right away!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 99 "order decimus say hi"
+out purse "Do it yourself!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 100 "order fido say woof"
+out purse "The beastly fido says 'woof'\n\rOk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe beastly fido says 'woof'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rThe beastly fido says 'woof'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rThe beastly fido says 'woof'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 101 "@pulse 12"
+rng 51909 3b8e3587
+step 102 "order all say together"
+out purse "The wolf says 'together'\n\rThe beggar says 'together'\n\rThe beastly fido says 'together'\n\rOk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe wolf says 'together'\n\rThe beggar says 'together'\n\rThe beastly fido says 'together'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rThe wolf says 'together'\n\rThe beggar says 'together'\n\rThe beastly fido says 'together'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rThe wolf says 'together'\n\rThe beggar says 'together'\n\rThe beastly fido says 'together'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 103 "@pulse 12"
+rng 51909 3b8e3587
+step 104 "order fido emote bows to $n."
+out purse "The beastly fido bows to $n.\n\rOk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe beastly fido bows to $n.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rThe beastly fido bows to $n.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rThe beastly fido bows to $n.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 105 "@pulse 12"
+rng 51909 3b8e3587
+step 106 "order fido follow decimus"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 107 "@pulse 12"
+rng 51909 3b8e3587
+step 108 "order fido order beggar say hi"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 109 "@pulse 12"
+rng 51909 3b8e3587
+step 110 "order fido tell decimus woof"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 111 "@pulse 12"
+rng 51909 3b8e3587
+step 112 "order fido gtell woof"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 113 "@pulse 12"
+rng 51909 3b8e3587
+step 114 "order fido replay"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 115 "@pulse 12"
+rng 51909 3b8e3587
+step 116 "order fido autolist"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 117 "@pulse 12"
+rng 51909 3b8e3587
+step 118 "order fido autoall on"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 119 "@pulse 12"
+rng 51909 3b8e3587
+step 120 "order fido nofollow"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 121 "@pulse 12"
+rng 51909 3b8e3587
+step 122 "order fido nosummon"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 123 "@pulse 12"
+rng 51909 3b8e3587
+step 124 "order fido worth"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 125 "@pulse 12"
+rng 51909 3b8e3587
+step 126 "order fido practice"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 127 "@pulse 12"
+rng 51909 3b8e3587
+step 128 "order fido password a b"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 129 "@pulse 12"
+rng 51909 3b8e3587
+step 130 "order fido telnetga"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 131 "@pulse 12"
+rng 51909 3b8e3587
+step 132 "order fido colour"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 133 "@pulse 12"
+rng 51909 3b8e3587
+step 134 "order fido alias"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 135 "@pulse 12"
+rng 51909 3b8e3587
+step 136 "order fido unalias x"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 137 "@pulse 12"
+rng 51909 3b8e3587
+step 138 "order fido pose"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 139 "@pulse 12"
+rng 51909 3b8e3587
+step 140 "order fido save"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 141 "@pulse 12"
+rng 51909 3b8e3587
+step 142 "order fido quit"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 143 "@pulse 12"
+rng 51909 3b8e3587
+step 144 "order fido split 5"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 145 "@pulse 12"
+rng 51909 3b8e3587
+step 146 "group fido"
+out purse "You can't remove charmed mobs from your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 147 "split 6"
+out purse "You split 6 silver coins. Your share is 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser splits 6 silver coins. Your share is 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 148 "order beggar follow self"
+out purse "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 149 "@pulse 12"
+rng 51909 3b8e3587
+step 150 "nofollow"
+out purse "You no longer accept followers.\n\rThe wolf stops following you.\n\rThe beggar stops following you.\n\rThe beastly fido stops following you.\n\rQuintus stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rYou stop following Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 151 "@state"
+state room 3001 light 4 people mob mob mob player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3094 pos 8 hit 120/120 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048835 affected_by 33554464 train 0 on 0 stats 13 13 13 15 13
+state char mob 3065 pos 8 hit 20/20 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 3 affected_by 0 train 0 on 0 stats 11 11 11 11 11
+state char mob 3062 pos 8 hit 9/9 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 0 train 0 on 0 stats 10 11 11 11 11
+state char Weary 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 34 silver 173 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 34 silver 170 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 32 silver 160 act 196608 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51909 3b8e3587
+step 152 "order beggar say free"
+out purse "Do it yourself!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 153 "nofollow"
+out purse "You now accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 154 "@mob 3094 3001"
+rng 51917 64c4bf17
+step 155 "@charm pet"
+rng 51917 64c4bf17
+step 156 "@pulse 12"
+out purse "The wolf now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 157 "quit"
+out purse "Alas, all good things must come to an end.\n\rThe wolf stops following you.\n\r"
+closed purse
+out dec "\n\rPurser has left the game.\n\rThe wolf slowly fades away.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser has left the game.\n\rThe wolf slowly fades away.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out weary "\n\rPurser has left the game.\n\rThe wolf slowly fades away.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 158 "@as dec"
+rng 51917 64c4bf17
+step 159 "look"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA large, trained wolf is here.\n\rA beggar is here, asking for a few coins.\n\rA beastly fido is here.\n\rWeary the Recruit is here.\n\rQuintus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17

@@ -64,7 +64,7 @@ TABLES = [
     Table("interp.c", "cmd_table", "cmd_type", "commands", headers=("interp.h", "interp.c"), empty_sentinel=True),
 ]
 # Arrays of strings that aren't tables of structs: (file, C name, dimensions below the first, module).
-STRING_ARRAYS = [("const.c", "title_table", 2, "classes")]
+STRING_ARRAYS = [("const.c", "title_table", 2, "classes"), ("act_comm.c", "pose_table", 2, "classes")]
 
 MODULE_TITLES = {
     "items": "Item types, weapon classes and liquids.",
@@ -75,7 +75,7 @@ MODULE_TITLES = {
     "skills": "Skills and spells: skill_table, whose index is a skill's number (sn).",
     "attacks": "Attack types: the damage nouns a mob's or weapon's attack word is looked up in.",
     "characters": "Positions and sexes.",
-    "classes": "Classes, and the titles each class gets at each level (title_table[class][level][male, female]).",
+    "classes": "Classes, titles (title_table[class][level][male, female]) and poses (pose_table[pose][0][message]).",
     "attributes": "What each value of an attribute (0 to 25) gives: str_app, int_app, wis_app, dex_app, con_app.",
     "boards": "The note boards. Their notes (note_first) are loaded at boot from notes/, not here.",
     "commands": "The command table, in the C's order: interpret takes the first entry the word is a prefix of.",
@@ -300,7 +300,7 @@ def generate(root: Path | None = None) -> dict[str, str]:
     for t in TABLES:
         modules.setdefault(t.module, []).append(t)
     for module, tables in modules.items():
-        sources = sorted({t.c_file for t in tables})
+        sources = sorted({t.c_file for t in tables} | {a[0] for a in STRING_ARRAYS if a[3] == module})
         names = ", ".join(f"{t.c_name} ({t.c_file})" for t in tables)
         extra = (f"Tables: {names}. A C table that ends with a NULL sentinel row is scanned up to it; that row "
                  f"isn't here.")
