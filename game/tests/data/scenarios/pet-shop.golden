@@ -1,0 +1,205 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect purse"
+rng 51872 4ba9daca
+step 2 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect pick"
+rng 51895 7f5599b5
+step 6 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out purse "\n\rPickpocket has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect dec"
+rng 51895 7f5599b5
+step 10 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out purse "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect yeo"
+rng 51895 7f5599b5
+step 14 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out purse "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@return"
+out yeo "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@as pick"
+rng 51895 7f5599b5
+step 19 "follow purser"
+out purse "\n\rPickpocket now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@as dec"
+rng 51895 7f5599b5
+step 21 "follow purser"
+out purse "\n\rDecimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@as yeo"
+rng 51895 7f5599b5
+step 23 "follow purser"
+out purse "\n\rYeoman now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "@as purse"
+rng 51895 7f5599b5
+step 25 "give 10 gold yeoman"
+out purse "You give Yeoman 10 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rPurser gives Yeoman some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser gives Yeoman some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rPurser gives you 10 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "south"
+out purse "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rYeoman has arrived.\n\rDecimus has arrived.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out pick "\n\rPurser leaves south.\n\rYeoman leaves south.\n\rDecimus leaves south.\n\rYou follow Purser.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\rYeoman the Recruit is here.\n\rPurser the Recruit is here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPurser leaves south.\n\rYeoman leaves south.\n\rYou follow Purser.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rYeoman the Recruit is here.\n\rPurser the Recruit is here.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out yeo "\n\rPurser leaves south.\n\rYou follow Purser.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rPurser the Recruit is here.\n\rDecimus has arrived.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "@pulse 1"
+rng 51895 7f5599b5
+step 28 "south"
+out purse "Market Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rA cityguard stands here.\n\rPickpocket has arrived.\n\rDecimus has arrived.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 103mv> \xff\xf9"
+out pick "\n\rPurser leaves south.\n\rYou follow Purser.\n\rMarket Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rPurser the Recruit is here.\n\rA cityguard stands here.\n\rDecimus has arrived.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 103mv> \xff\xf9"
+out dec "\n\rPurser leaves south.\n\rPickpocket leaves south.\n\rYou follow Purser.\n\rMarket Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rA cityguard stands here.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 103mv> \xff\xf9"
+out yeo "\n\rPurser leaves south.\n\rPickpocket leaves south.\n\rDecimus leaves south.\n\rYou follow Purser.\n\rMarket Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rA cityguard stands here.\n\r\n\r<29hp 102m 103mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "@pulse 1"
+rng 51895 7f5599b5
+step 30 "south"
+out purse "The Common Square\n\r  The common square, people pass you, talking to each other.  To the west is\n\rthe poor alley and to the east is the dark alley.  To the north, this square\n\ris connected to the market square.  From the south you notice a nasty smell.\n\rA beastly fido is here.\n\rYeoman has arrived.\n\rDecimus has arrived.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 101mv> \xff\xf9"
+out pick "\n\rPurser leaves south.\n\rYeoman leaves south.\n\rDecimus leaves south.\n\rYou follow Purser.\n\rThe Common Square\n\r  The common square, people pass you, talking to each other.  To the west is\n\rthe poor alley and to the east is the dark alley.  To the north, this square\n\ris connected to the market square.  From the south you notice a nasty smell.\n\rDecimus the Recruit is here.\n\rYeoman the Recruit is here.\n\rPurser the Recruit is here.\n\rA beastly fido is here.\n\r\n\r<29hp 102m 101mv> \xff\xf9"
+out dec "\n\rPurser leaves south.\n\rYeoman leaves south.\n\rYou follow Purser.\n\rThe Common Square\n\r  The common square, people pass you, talking to each other.  To the west is\n\rthe poor alley and to the east is the dark alley.  To the north, this square\n\ris connected to the market square.  From the south you notice a nasty smell.\n\rYeoman the Recruit is here.\n\rPurser the Recruit is here.\n\rA beastly fido is here.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 101mv> \xff\xf9"
+out yeo "\n\rPurser leaves south.\n\rYou follow Purser.\n\rThe Common Square\n\r  The common square, people pass you, talking to each other.  To the west is\n\rthe poor alley and to the east is the dark alley.  To the north, this square\n\ris connected to the market square.  From the south you notice a nasty smell.\n\rPurser the Recruit is here.\n\rA beastly fido is here.\n\rDecimus has arrived.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 101mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "@pulse 1"
+rng 51895 7f5599b5
+step 32 "east"
+out purse "The Dark Alley\n\r  The dark alley, to the west is the common square and to the south is the\n\rGuild of Thieves.  Grebe's Tavern, the famous sailor's dive, is north.\n\rThe alley continues east.\n\rAn alley cat hisses at you.\n\rA vagabond is here, looking for victims.\n\rPickpocket has arrived.\n\rDecimus has arrived.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 99mv> \xff\xf9"
+out pick "\n\rPurser leaves east.\n\rYou follow Purser.\n\rThe Dark Alley\n\r  The dark alley, to the west is the common square and to the south is the\n\rGuild of Thieves.  Grebe's Tavern, the famous sailor's dive, is north.\n\rThe alley continues east.\n\rPurser the Recruit is here.\n\rAn alley cat hisses at you.\n\rA vagabond is here, looking for victims.\n\rDecimus has arrived.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 99mv> \xff\xf9"
+out dec "\n\rPurser leaves east.\n\rPickpocket leaves east.\n\rYou follow Purser.\n\rThe Dark Alley\n\r  The dark alley, to the west is the common square and to the south is the\n\rGuild of Thieves.  Grebe's Tavern, the famous sailor's dive, is north.\n\rThe alley continues east.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rAn alley cat hisses at you.\n\rA vagabond is here, looking for victims.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 99mv> \xff\xf9"
+out yeo "\n\rPurser leaves east.\n\rPickpocket leaves east.\n\rDecimus leaves east.\n\rYou follow Purser.\n\rThe Dark Alley\n\r  The dark alley, to the west is the common square and to the south is the\n\rGuild of Thieves.  Grebe's Tavern, the famous sailor's dive, is north.\n\rThe alley continues east.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rAn alley cat hisses at you.\n\rA vagabond is here, looking for victims.\n\r\n\r<29hp 102m 99mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "@pulse 1"
+rng 51895 7f5599b5
+step 34 "east"
+out purse "Alley at Levee\n\r  You are standing in the alley which continues east and west.  South of\n\rhere you see the levee.  North is the Pet Shop.\n\rYeoman has arrived.\n\rDecimus has arrived.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 97mv> \xff\xf9"
+out pick "\n\rPurser leaves east.\n\rYeoman leaves east.\n\rDecimus leaves east.\n\rYou follow Purser.\n\rAlley at Levee\n\r  You are standing in the alley which continues east and west.  South of\n\rhere you see the levee.  North is the Pet Shop.\n\rDecimus the Recruit is here.\n\rYeoman the Recruit is here.\n\rPurser the Recruit is here.\n\r\n\r<29hp 102m 97mv> \xff\xf9"
+out dec "\n\rPurser leaves east.\n\rYeoman leaves east.\n\rYou follow Purser.\n\rAlley at Levee\n\r  You are standing in the alley which continues east and west.  South of\n\rhere you see the levee.  North is the Pet Shop.\n\rYeoman the Recruit is here.\n\rPurser the Recruit is here.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 97mv> \xff\xf9"
+out yeo "\n\rPurser leaves east.\n\rYou follow Purser.\n\rAlley at Levee\n\r  You are standing in the alley which continues east and west.  South of\n\rhere you see the levee.  North is the Pet Shop.\n\rPurser the Recruit is here.\n\rDecimus has arrived.\n\rPickpocket has arrived.\n\r\n\r<29hp 102m 97mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "@pulse 1"
+rng 51895 7f5599b5
+step 36 "north"
+out purse "The Pet Shop\n\r  The Pet Shop is a small crowded store, full of cages and animals of\n\rvarious sorts and sizes.  There is a sign on the wall.\n\rA pet shop boy is here, humming gently.\n\rPickpocket has arrived.\n\rDecimus has arrived.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out pick "\n\rPurser leaves north.\n\rYou follow Purser.\n\rThe Pet Shop\n\r  The Pet Shop is a small crowded store, full of cages and animals of\n\rvarious sorts and sizes.  There is a sign on the wall.\n\rPurser the Recruit is here.\n\rA pet shop boy is here, humming gently.\n\rDecimus has arrived.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out dec "\n\rPurser leaves north.\n\rPickpocket leaves north.\n\rYou follow Purser.\n\rThe Pet Shop\n\r  The Pet Shop is a small crowded store, full of cages and animals of\n\rvarious sorts and sizes.  There is a sign on the wall.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rA pet shop boy is here, humming gently.\n\rYeoman has arrived.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out yeo "\n\rPurser leaves north.\n\rPickpocket leaves north.\n\rDecimus leaves north.\n\rYou follow Purser.\n\rThe Pet Shop\n\r  The Pet Shop is a small crowded store, full of cages and animals of\n\rvarious sorts and sizes.  There is a sign on the wall.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\rPurser the Recruit is here.\n\rA pet shop boy is here, humming gently.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "@pulse 1"
+rng 51895 7f5599b5
+step 38 "list"
+out purse "Pets for sale:\n\r[ 9]      810 - the wolf\n\r[ 7]      490 - the rottweiler\n\r[ 5]      250 - the beagle\n\r[ 3]       90 - the puppy\n\r[ 1]       10 - the kitten\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "buy"
+out purse "Buy what?\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "buy nothing"
+out purse "Sorry, you can't buy that here.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "buy kitten"
+out purse "The kitten now follows you.\n\rEnjoy your pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out pick "\n\rPurser bought the kitten as a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out dec "\n\rPurser bought the kitten as a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out yeo "\n\rPurser bought the kitten as a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 42 "buy puppy"
+out purse "You already own a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 43 "@as dec"
+rng 51899 d1eb3d36
+step 44 "buy kitten"
+out dec "You can't afford it.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 45 "@as yeo"
+rng 51899 d1eb3d36
+step 46 "buy rottweiler"
+out yeo "You're not powerful enough to master this pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 47 "@as pick"
+rng 51899 d1eb3d36
+step 48 "buy beagle fluffy"
+out purse "\n\rPickpocket bought the beagle as a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out pick "You haggle the price down to 159 coins.\n\rThe beagle now follows you.\n\rEnjoy your pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out dec "\n\rPickpocket bought the beagle as a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out yeo "\n\rPickpocket bought the beagle as a pet.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51905 d4471b28
+step 49 "look fluffy"
+out purse "\n\rPickpocket looks at the beagle.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out pick "The beagle looks like a fierce fighter.\n\rA neck tag says 'I belong to Pickpocket'.\n\rThe beagle is in excellent condition.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out dec "\n\rPickpocket looks at the beagle.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+out yeo "\n\rPickpocket looks at the beagle.\n\r\n\r<29hp 102m 96mv> \xff\xf9"
+rng 51906 1b2d656f
+step 50 "@state"
+state room 3031 light 4 people mob mob player player player player mob
+state exit 2 to 3045 info 0 key -1
+state char mob 3092 pos 8 hit 70/70 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048835 affected_by 262176 train 0 on 0 stats 11 12 12 14 12
+state char mob 3090 pos 8 hit 17/17 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048835 affected_by 33816576 train 0 on 0 stats 9 11 11 13 10
+state char Yeoman 5 pos 8 hit 29/29 mana 102/102 move 96/106 wait 0 daze 0 exp 2088 gold 10 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 96/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 96/106 wait 0 daze 0 exp 2088 gold 30 silver 41 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 96/106 wait 0 daze 0 exp 2088 gold 90 silver 493 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3008 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 33 silver 62 act 2097155 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+rng 51906 1b2d656f

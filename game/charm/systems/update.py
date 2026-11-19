@@ -52,6 +52,25 @@ def update_handler(game) -> None:
     # aggr_update: not running
 
 
+# C: update.c gain_condition
+def gain_condition(ch, i_cond: int, value: int) -> None:
+    from charm.net.output import send_to_char
+
+    if value == 0 or ch.is_npc or ch.level >= C.LEVEL_IMMORTAL:
+        return
+    condition = ch.pcdata.condition[i_cond]
+    if condition == -1:
+        return
+    ch.pcdata.condition[i_cond] = max(0, min(condition + value, 48))  # URANGE(0, condition + value, 48)
+    if ch.pcdata.condition[i_cond] == 0:
+        if i_cond == C.COND_HUNGER:
+            send_to_char("You are hungry.\n\r", ch)
+        elif i_cond == C.COND_THIRST:
+            send_to_char("You are thirsty.\n\r", ch)
+        elif i_cond == C.COND_DRUNK and condition != 0:
+            send_to_char("You are sober.\n\r", ch)
+
+
 # C: update.c gain_exp [partial]
 def gain_exp(ch, gain: int) -> None:
     """[partial]: gaining a level (advance_level) raises NotPorted."""

@@ -1,0 +1,50 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect pick"
+rng 51872 4ba9daca
+step 2 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@return"
+out pick "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@mob 3062 3001"
+rng 51897 86bbd2a0
+step 7 "@obj 106 3001 5 5 5 116 0"
+rng 51897 86bbd2a0
+step 8 "get wand"
+out pick "You get a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 9 "hold wand"
+out pick "You hold a small wand in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 10 "zap fido"
+out pick "You zap the beastly fido with a small wand.\n\rThat's not a spell!\n\rThe beastly fido's bite misses you.\n\rThe beastly fido is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51908 82a9c727
+step 11 "@pulse 24"
+rng 51908 82a9c727
+step 12 "zap fido"
+out pick "You zap the beastly fido with a small wand.\n\rThat's not a spell!\n\rThe beastly fido is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51910 fbea3747
+step 13 "@pulse 24"
+rng 51910 fbea3747
+step 14 "zap fido"
+out pick "You zap the beastly fido with a small wand.\n\rThat's not a spell!\n\rThe beastly fido is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51912 93eb034d
+step 15 "@pulse 24"
+rng 51912 93eb034d
+step 16 "zap fido"
+out pick "You zap the beastly fido with a small wand.\n\rYour efforts with a small wand produce only smoke and sparks.\n\rThe beastly fido is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 17 "@pulse 24"
+rng 51915 4fc7cf4e
+step 18 "zap fido"
+out pick "You zap the beastly fido with a small wand.\n\rYour efforts with a small wand produce only smoke and sparks.\n\rYour a small wand explodes into fragments.\n\rThe beastly fido is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17

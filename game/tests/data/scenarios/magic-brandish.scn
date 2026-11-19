@@ -1,0 +1,40 @@
+# brandish's targets. In the bakery (3009), south, south, west and north of the temple, with the baker (a shopkeeper,
+# so is_safe protects him): Pickpocket (13, staves at 75%) brandishes a burnt staff (1327) of kick, an offensive
+# skill: it passes over players and tries the baker, who's safe. Then a burnt staff of heal, a defensive spell: it
+# passes over mobs and heals Pickpocket, and the Python game stops at the spell (P4). Each staff has four charges, as
+# the rolls can fail. A fido (3062) comes in before the heal staff, so it's first in the room and the staff passes
+# over it.
+# expect: stopped NotPorted
+@connect pick
+Pickpocket
+psswrd
+@return
+@return
+south
+@pulse 1
+south
+@pulse 1
+west
+@pulse 1
+north
+@pulse 1
+@obj 1327 3009 20 4 4 116 0
+get staff
+hold staff
+brandish
+@pulse 24
+brandish
+@pulse 24
+brandish
+@pulse 24
+@mob 3062 3009
+@obj 1327 3009 20 4 4 57 0
+get staff
+hold staff
+brandish
+@pulse 24
+brandish
+@pulse 24
+brandish
+@pulse 24
+brandish

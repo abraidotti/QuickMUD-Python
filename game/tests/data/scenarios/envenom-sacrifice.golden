@@ -1,0 +1,625 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect pick"
+rng 51872 4ba9daca
+step 2 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect dec"
+rng 51895 7f5599b5
+step 6 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out pick "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect clan"
+rng 51895 7f5599b5
+step 10 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out pick "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@return"
+out clan "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@obj 3011 3001"
+rng 51895 7f5599b5
+step 15 "@obj 3002 3001"
+rng 51895 7f5599b5
+step 16 "@obj 3020 3001"
+rng 51895 7f5599b5
+step 17 "@obj 3020 3001"
+rng 51895 7f5599b5
+step 18 "@obj 3020 3001 2 1 4 -1 0"
+rng 51895 7f5599b5
+step 19 "@obj 3020 3001 2 1 4 40 0"
+rng 51895 7f5599b5
+step 20 "@obj 3024 3001"
+rng 51895 7f5599b5
+step 21 "@obj 1355 3001"
+rng 51895 7f5599b5
+step 22 "@obj 9207 3001"
+rng 51895 7f5599b5
+step 23 "@obj 3033 3001"
+rng 51895 7f5599b5
+step 24 "@as dec"
+rng 51895 7f5599b5
+step 25 "get bread"
+out pick "\n\rDecimus gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You get a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "envenom bread"
+out dec "Are you crazy? You'd poison yourself!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "drop bread"
+out pick "\n\rDecimus drops a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You drop a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus drops a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "@as pick"
+rng 51895 7f5599b5
+step 29 "get all"
+out pick "You get a bread.\n\rYou get a box.\n\rYou get a sparking lightning sword.\n\rYou get a meat cleaver.\n\rYou get a mace.\n\rYou get a dagger.\n\rYou get a dagger.\n\rYou get a dagger.\n\rYou get a dagger.\n\rYou get a bottle of ale.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a bread.\n\rPickpocket gets a box.\n\rPickpocket gets a sparking lightning sword.\n\rPickpocket gets a meat cleaver.\n\rPickpocket gets a mace.\n\rPickpocket gets a dagger.\n\rPickpocket gets a dagger.\n\rPickpocket gets a dagger.\n\rPickpocket gets a dagger.\n\rPickpocket gets a bottle of ale.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a bread.\n\rPickpocket gets a box.\n\rPickpocket gets a sparking lightning sword.\n\rPickpocket gets a meat cleaver.\n\rPickpocket gets a mace.\n\rPickpocket gets a dagger.\n\rPickpocket gets a dagger.\n\rPickpocket gets a dagger.\n\rPickpocket gets a dagger.\n\rPickpocket gets a bottle of ale.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "envenom"
+out pick "Envenom what item?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "envenom nothing"
+out pick "You don't have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "envenom box"
+out pick "You can't poison a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "envenom mace"
+out pick "You can only envenom edged weapons.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "envenom cleaver"
+out pick "You can't seem to envenom a meat cleaver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "envenom lightning"
+out pick "A sparking lightning sword is already envenomed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "envenom 3.dagger"
+out pick "You can only envenom edged weapons.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "envenom 4.dagger"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 38 "@pulse 36"
+rng 51897 86bbd2a0
+step 39 "envenom dagger"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 40 "@pulse 36"
+rng 51899 d1eb3d36
+step 41 "envenom 2.dagger"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 42 "@pulse 36"
+rng 51901 51250113
+step 43 "envenom dagger"
+out pick "A dagger is already envenomed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 44 "@pulse 36"
+rng 51901 51250113
+step 45 "envenom 2.dagger"
+out pick "A dagger is already envenomed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 46 "@pulse 36"
+rng 51901 51250113
+step 47 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 48 "@pulse 36"
+rng 51904 da7aaa40
+step 49 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 50 "@pulse 36"
+rng 51906 1b2d656f
+step 51 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 52 "@pulse 36"
+rng 51907 f84fac3e
+step 53 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 54 "@pulse 36"
+rng 51909 3b8e3587
+step 55 "@obj 3020 3001"
+rng 51909 3b8e3587
+step 56 "get dagger"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 57 "envenom dagger"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51912 93eb034d
+step 58 "@pulse 36"
+rng 51912 93eb034d
+step 59 "@obj 3020 3001"
+rng 51912 93eb034d
+step 60 "get dagger"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51912 93eb034d
+step 61 "envenom dagger"
+out pick "You fail to envenom a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 62 "@pulse 36"
+rng 51915 4fc7cf4e
+step 63 "@obj 3020 3001"
+rng 51915 4fc7cf4e
+step 64 "get dagger"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 65 "envenom dagger"
+out pick "You fail to envenom a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 66 "@pulse 36"
+rng 51917 64c4bf17
+step 67 "@obj 3020 3001"
+rng 51917 64c4bf17
+step 68 "get dagger"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 69 "envenom dagger"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 70 "@pulse 36"
+rng 51929 534cb46e
+step 71 "@obj 3020 3001"
+rng 51929 534cb46e
+step 72 "get dagger"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 73 "envenom dagger"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 74 "@pulse 36"
+rng 51933 af6a286b
+step 75 "@obj 3020 3001"
+rng 51933 af6a286b
+step 76 "get dagger"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 77 "envenom dagger"
+out pick "You fail to envenom a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51935 b9fd8a25
+step 78 "@pulse 36"
+rng 51935 b9fd8a25
+step 79 "envenom bread"
+out pick "You fail to poison a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 80 "@pulse 36"
+rng 51937 98fa3ef8
+step 81 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51938 1f8c2006
+step 82 "@pulse 36"
+rng 51938 1f8c2006
+step 83 "envenom bread"
+out pick "You fail to poison a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51940 58237e7d
+step 84 "@pulse 36"
+rng 51940 58237e7d
+step 85 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51941 1855638d
+step 86 "@pulse 36"
+rng 51941 1855638d
+step 87 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51943 60eeef0b
+step 88 "@pulse 36"
+rng 51943 60eeef0b
+step 89 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 90 "@pulse 36"
+rng 51944 0b11b767
+step 91 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51945 a2c49ca0
+step 92 "@pulse 36"
+rng 51945 a2c49ca0
+step 93 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51946 d8f44296
+step 94 "@pulse 36"
+rng 51946 d8f44296
+step 95 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51947 452c3f8e
+step 96 "@pulse 36"
+rng 51947 452c3f8e
+step 97 "envenom ale"
+out pick "You treat a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bottle of ale with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51948 32afb1e5
+step 98 "@pulse 36"
+rng 51948 32afb1e5
+step 99 "@obj 3011 3001"
+rng 51948 32afb1e5
+step 100 "get bread"
+out pick "You get a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51948 32afb1e5
+step 101 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51951 33711aee
+step 102 "@pulse 36"
+rng 51953 714ef537
+step 103 "@obj 3011 3001"
+rng 51953 714ef537
+step 104 "get bread"
+out pick "You get a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51953 714ef537
+step 105 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51955 03d258ba
+step 106 "@pulse 36"
+rng 51955 03d258ba
+step 107 "@obj 3011 3001"
+rng 51955 03d258ba
+step 108 "get bread"
+out pick "You get a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51955 03d258ba
+step 109 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51957 7f61faf9
+step 110 "@pulse 36"
+rng 51957 7f61faf9
+step 111 "@obj 3011 3001"
+rng 51957 7f61faf9
+step 112 "get bread"
+out pick "You get a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51957 7f61faf9
+step 113 "envenom bread"
+out pick "You treat a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket treats a bread with deadly poison.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 114 "@pulse 36"
+rng 51959 3d04cb6a
+step 115 "@state"
+state room 3001 light 3 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3002 wear -1 timer 0 cost 6 values 16 16 3 1 0
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 -1 0
+state   obj carried 3020 wear -1 timer 0 cost 157 values 2 1 4 40 128
+state   obj carried 3024 wear -1 timer 0 cost 390 values 4 2 4 7 0
+state   obj carried 1355 wear -1 timer 0 cost 840 values 2 3 5 21 8
+state   obj carried 9207 wear -1 timer 0 cost 2200 values 1 5 4 3 128
+state   obj carried 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51959 3d04cb6a
+step 116 "drop all"
+out pick "You drop a bread.\n\rYou drop a bread.\n\rYou drop a bread.\n\rYou drop a bread.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a bottle of ale.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a dagger.\n\rYou drop a mace.\n\rYou drop a meat cleaver.\n\rYou drop a sparking lightning sword.\n\rYou drop a box.\n\rYou drop a bread.\n\rYou drop a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket drops a bread.\n\rPickpocket drops a bread.\n\rPickpocket drops a bread.\n\rPickpocket drops a bread.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a bottle of ale.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a mace.\n\rPickpocket drops a meat cleaver.\n\rPickpocket drops a sparking lightning sword.\n\rPickpocket drops a box.\n\rPickpocket drops a bread.\n\rPickpocket drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket drops a bread.\n\rPickpocket drops a bread.\n\rPickpocket drops a bread.\n\rPickpocket drops a bread.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a bottle of ale.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a dagger.\n\rPickpocket drops a mace.\n\rPickpocket drops a meat cleaver.\n\rPickpocket drops a sparking lightning sword.\n\rPickpocket drops a box.\n\rPickpocket drops a bread.\n\rPickpocket drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 117 "sacrifice"
+out pick "Mota appreciates your offer and may accept it later.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket offers himself to Mota, who graciously declines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket offers himself to Mota, who graciously declines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 118 "sacrifice pickpocket"
+out pick "Mota appreciates your offer and may accept it later.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket offers himself to Mota, who graciously declines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket offers himself to Mota, who graciously declines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 119 "sacrifice nothing"
+out pick "You can't find it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 120 "@obj 3135 3001"
+rng 51959 3d04cb6a
+step 121 "sacrifice fountain"
+out pick "A fountain is not an acceptable sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 122 "@obj 5011 3001 2 1000 16 100 100"
+rng 51959 3d04cb6a
+step 123 "@as dec"
+rng 51959 3d04cb6a
+step 124 "sit rope"
+out pick "Decimus sits on a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You sit on a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus sits on a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 125 "@as pick"
+rng 51959 3d04cb6a
+step 126 "sacrifice rope"
+out pick "Decimus appears to be using a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 127 "@as dec"
+rng 51959 3d04cb6a
+step 128 "stand"
+out pick "Decimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 129 "@as pick"
+rng 51959 3d04cb6a
+step 130 "sacrifice rope"
+out pick "Mota gives you one silver coin for your sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket sacrifices a coil of rope to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket sacrifices a coil of rope to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 131 "@obj 304 3001"
+rng 51959 3d04cb6a
+step 132 "sacrifice flowers"
+out pick "Mota gives you 0 silver coins for your sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket sacrifices wild flowers to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket sacrifices wild flowers to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 133 "@obj 3062 3001"
+rng 51959 3d04cb6a
+step 134 "sacrifice pants"
+out pick "Mota gives you one silver coin for your sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket sacrifices a pair of leather pants to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket sacrifices a pair of leather pants to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 135 "@obj 10 3001"
+rng 51959 3d04cb6a
+step 136 "sacrifice corpse"
+out pick "Mota gives you one silver coin for your sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket sacrifices the corpse of %s to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket sacrifices the corpse of %s to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 137 "autosplit"
+out pick "Automatic gold splitting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 138 "@as dec"
+rng 51959 3d04cb6a
+step 139 "follow pickpocket"
+out pick "Decimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You now follow Pickpocket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 140 "@as pick"
+rng 51959 3d04cb6a
+step 141 "group decimus"
+out pick "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou join Pickpocket's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus joins Pickpocket's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 142 "@obj 3026 3001"
+rng 51959 3d04cb6a
+step 143 "sacrifice axe"
+out pick "Mota gives you 15 silver coins for your sacrifice.\n\rYou split 15 silver coins. Your share is 8 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket splits 15 silver coins. Your share is 7 silver.\n\rPickpocket sacrifices a battle axe to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket sacrifices a battle axe to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 144 "@state"
+state room 3001 light 3 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 7 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 211 act 65664 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 9207 wear -1 timer 0 cost 2200 values 1 5 4 3 128
+state obj floor 1355 wear -1 timer 0 cost 840 values 2 3 5 21 8
+state obj floor 3024 wear -1 timer 0 cost 390 values 4 2 4 7 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 40 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 -1 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3002 wear -1 timer 0 cost 6 values 16 16 3 1 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+rng 51959 3d04cb6a
+step 145 "group decimus"
+out pick "You remove Decimus from your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket removes you from his group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket removes Decimus from his group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51959 3d04cb6a
+step 146 "@mob 3062 3001"
+rng 51961 d424e269
+step 147 "@charm"
+rng 51961 d424e269
+step 148 "@obj 3026 3001"
+rng 51961 d424e269
+step 149 "sacrifice axe"
+out pick "The beastly fido now follows you.\n\rMota gives you 15 silver coins for your sacrifice.\n\rJust keep it all.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket sacrifices a battle axe to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rPickpocket sacrifices a battle axe to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51961 d424e269
+step 150 "@state"
+state room 3001 light 3 people mob player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3062 pos 8 hit 9/9 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 262144 train 0 on 0 stats 10 11 11 11 11
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 7 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 226 act 65664 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 9207 wear -1 timer 0 cost 2200 values 1 5 4 3 128
+state obj floor 1355 wear -1 timer 0 cost 840 values 2 3 5 21 8
+state obj floor 3024 wear -1 timer 0 cost 390 values 4 2 4 7 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 40 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 -1 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3002 wear -1 timer 0 cost 6 values 16 16 3 1 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 128
+state obj floor 3020 wear -1 timer 0 cost 157 values 2 1 4 2 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+state obj floor 3011 wear -1 timer 0 cost 9 values 18 12 0 1 0
+rng 51961 d424e269

@@ -63,6 +63,17 @@ def number_argument(argument: str) -> tuple[int, str]:
     return atoi(argument[:dot]), argument[dot + 1:]
 
 
+# C: interp.c mult_argument
+def mult_argument(argument: str) -> tuple[int, str]:
+    """(the number, the rest): "3*bread" is (3, "bread"); with no star, (1, argument). The number is atoi's."""
+    from charm.core.strings import atoi
+
+    star = argument.find("*")
+    if star < 0:
+        return 1, argument
+    return atoi(argument[:star]), argument[star + 1:]
+
+
 LOG_NORMAL, LOG_ALWAYS, LOG_NEVER = 0, 1, 2  # interp.c
 _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no command matched
 LOG_ALL = [False]  # fLogAll: the 'log all' switch (do_log, not ported, is the only thing that sets it)

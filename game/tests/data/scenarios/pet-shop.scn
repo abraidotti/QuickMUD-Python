@@ -1,0 +1,54 @@
+# The pet shop (3031): its pets wait in the next room (3032): a kitten (level 1), a puppy (3), a beagle (5), a
+# rottweiler (7) and a wolf (9), at 10 x level x level. Purser (10, with 100 gold and 503 silver) leads; Pickpocket
+# (13, haggle at 95%), Decimus (10, with no money) and Yeoman (5, given 10 gold, too weak for a rottweiler) follow
+# from the temple. Pickpocket names its beagle "fluffy", which the neck tag in its description shows.
+@connect purse
+Purser
+psswrd
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@return
+@as pick
+follow purser
+@as dec
+follow purser
+@as yeo
+follow purser
+@as purse
+give 10 gold yeoman
+south
+@pulse 1
+south
+@pulse 1
+south
+@pulse 1
+east
+@pulse 1
+east
+@pulse 1
+north
+@pulse 1
+list
+buy
+buy nothing
+buy kitten
+buy puppy
+@as dec
+buy kitten
+@as yeo
+buy rottweiler
+@as pick
+buy beagle fluffy
+look fluffy
+@state

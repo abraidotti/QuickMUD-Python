@@ -1,0 +1,728 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect pick"
+rng 51872 4ba9daca
+step 2 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect sot"
+rng 51895 7f5599b5
+step 6 "Sot"
+out sot "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out sot "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out pick "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect glut"
+rng 51895 7f5599b5
+step 10 "Glutton"
+out glut "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out glut "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out pick "\n\rGlutton has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rGlutton has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out glut "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSot the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect dec"
+rng 51895 7f5599b5
+step 14 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out pick "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out glut "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rGlutton the Recruit is here.\n\rSot the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect god"
+rng 51895 7f5599b5
+step 18 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 21 "@return"
+out pick "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out glut "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rGlutton the Recruit is here.\n\rSot the Recruit is here.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@obj 3138 3001"
+rng 51895 7f5599b5
+step 23 "@obj 3003 3001"
+rng 51895 7f5599b5
+step 24 "@obj 3102 3001 10 0 0 0 0"
+rng 51895 7f5599b5
+step 25 "@obj 3011 3001"
+rng 51895 7f5599b5
+step 26 "@obj 3153 3001"
+rng 51895 7f5599b5
+step 27 "@obj 1305 3001"
+rng 51895 7f5599b5
+step 28 "@obj 1351 3001"
+rng 51895 7f5599b5
+step 29 "@obj 1351 3001"
+rng 51895 7f5599b5
+step 30 "@as pick"
+rng 51895 7f5599b5
+step 31 "get all"
+out pick "You get a herbal brew.\n\rYou get a herbal brew.\n\rYou get a large chunk of meat.\n\rYou get a biscuit.\n\rYou get a bread.\n\rYou get a cup of water.\n\rYou get a bottle of firebreather.\n\rYou get a buffalo water skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a large chunk of meat.\n\rPickpocket gets a biscuit.\n\rPickpocket gets a bread.\n\rPickpocket gets a cup of water.\n\rPickpocket gets a bottle of firebreather.\n\rPickpocket gets a buffalo water skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out glut "\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a large chunk of meat.\n\rPickpocket gets a biscuit.\n\rPickpocket gets a bread.\n\rPickpocket gets a cup of water.\n\rPickpocket gets a bottle of firebreather.\n\rPickpocket gets a buffalo water skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a large chunk of meat.\n\rPickpocket gets a biscuit.\n\rPickpocket gets a bread.\n\rPickpocket gets a cup of water.\n\rPickpocket gets a bottle of firebreather.\n\rPickpocket gets a buffalo water skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a herbal brew.\n\rPickpocket gets a large chunk of meat.\n\rPickpocket gets a biscuit.\n\rPickpocket gets a bread.\n\rPickpocket gets a cup of water.\n\rPickpocket gets a bottle of firebreather.\n\rPickpocket gets a buffalo water skin.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "drink"
+out pick "Drink what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "fill"
+out pick "Fill what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "fill nothing"
+out pick "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "fill skin"
+out pick "There is no fountain here!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "south"
+out pick "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rPickpocket leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out glut "\n\rPickpocket leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPickpocket leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "@pulse 1"
+rng 51895 7f5599b5
+step 38 "fill bread"
+out pick "You can't fill that.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "fill skin"
+out pick "Your container is full.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "fill firebreather"
+out pick "There is already another liquid in it.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "pour"
+out pick "Pour what into what?\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "pour skin"
+out pick "Pour what into what?\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "pour nothing out"
+out pick "You don't have that item.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "pour bread out"
+out pick "That's not a drink container.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "pour skin out"
+out pick "You invert a buffalo water skin, spilling water all over the ground.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "pour skin out"
+out pick "It's already empty.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "fill skin"
+out pick "You fill a buffalo water skin with water from a fountain.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "pour skin skin"
+out pick "You cannot change the laws of physics!\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "pour skin bread"
+out pick "You can only pour into other drink containers.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "pour skin nobody"
+out pick "Pour into what?\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "pour firebreather skin"
+out pick "They don't hold the same liquid.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "drink cup"
+out pick "It is already empty.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "pour cup skin"
+out pick "There's nothing in a cup of water to pour.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "pour firebreather cup"
+out pick "You pour firebreather from a bottle of firebreather into a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "pour firebreather cup"
+out pick "A cup of water is already filled to the top.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "@state"
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3138 wear -1 timer 0 cost 24 values 64 64 0 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 2 7 0 0
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 10 7 0 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 0 0
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 1305 wear -1 timer 0 cost 24 values 24 24 0 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 6 11 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 6 11 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Glutton 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 20 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 57 "@as dec"
+rng 51895 7f5599b5
+step 58 "south"
+out pick "Decimus has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rDecimus leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out glut "\n\rDecimus leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rPickpocket the Recruit is here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "\n\rDecimus leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "@pulse 1"
+rng 51895 7f5599b5
+step 60 "@as pick"
+rng 51895 7f5599b5
+step 61 "pour skin decimus"
+out pick "They aren't holding anything.\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "@obj 3417 3005 20 0 0 0 0"
+rng 51895 7f5599b5
+step 63 "@as dec"
+rng 51895 7f5599b5
+step 64 "get flask"
+out pick "Decimus gets a wineflask.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "You get a wineflask.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 65 "hold flask"
+out pick "\n\rDecimus holds a wineflask in his hand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "You hold a wineflask in your hand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 66 "@as pick"
+rng 51895 7f5599b5
+step 67 "pour skin decimus"
+out pick "You pour some water for Decimus.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket pours you some water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 68 "@as dec"
+rng 51895 7f5599b5
+step 69 "drink flask"
+out pick "Decimus drinks water from a wineflask.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "You drink water from a wineflask.\n\rYou are full.\n\rYour thirst is quenched.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 70 "@state"
+state room 3005 light 2 people player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3417 wear 17 timer 0 cost 400 values 20 4 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3138 wear -1 timer 0 cost 24 values 64 44 0 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 2 7 0 0
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 10 7 0 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 0 0
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 1305 wear -1 timer 0 cost 24 values 24 24 0 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 6 11 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 6 11 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3001 light 2 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Glutton 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 20 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 71 "@as pick"
+rng 51895 7f5599b5
+step 72 "drink"
+out pick "You drink water from a fountain.\n\rYour thirst is quenched.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket drinks water from a fountain.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "drink nothing"
+out pick "You can't find it.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "drink bread"
+out pick "You can't drink from that.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 75 "drink brew"
+out pick "You drink tea from a herbal brew.\n\rYour thirst is quenched.\n\rYou choke and gag.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket drinks tea from a herbal brew.\n\rPickpocket chokes and gags.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 76 "drink 2.brew"
+out pick "You drink tea from a herbal brew.\n\rYour thirst is quenched.\n\rYou choke and gag.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket drinks tea from a herbal brew.\n\rPickpocket chokes and gags.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 77 "@state"
+state room 3005 light 2 people player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3417 wear 17 timer 0 cost 400 values 20 4 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 4096 train 1 on 0 stats 19 13 13 13 13
+state   affect 72 level 5 duration 36 location 0 modifier 0 bitvector 4096
+state   obj carried 3138 wear -1 timer 0 cost 24 values 64 44 0 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 2 7 0 0
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 10 7 0 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 0 0
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 1305 wear -1 timer 0 cost 24 values 24 24 0 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3001 light 2 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Glutton 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 20 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51897 86bbd2a0
+step 78 "drink cup"
+out pick "You drink firebreather from a cup of water.\n\rYour thirst is quenched.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket drinks firebreather from a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 79 "drink cup"
+out pick "You drink firebreather from a cup of water.\n\rYou feel drunk.\n\rYour thirst is quenched.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket drinks firebreather from a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 80 "drink cup"
+out pick "You fail to reach your mouth.  *Hic*\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 81 "@as sot"
+rng 51897 86bbd2a0
+step 82 "south"
+out pick "Sot has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSot leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSot has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "\n\rSot leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 83 "@pulse 1"
+rng 51897 86bbd2a0
+step 84 "drink"
+out sot "You fail to reach your mouth.  *Hic*\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 85 "@as glut"
+rng 51897 86bbd2a0
+step 86 "south"
+out pick "\n\rGlutton has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "Glutton has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rSot the Recruit is here.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rGlutton has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "\n\rGlutton leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 87 "@pulse 1"
+rng 51897 86bbd2a0
+step 88 "@obj 3011 3005"
+rng 51897 86bbd2a0
+step 89 "@obj 3153 3005"
+rng 51897 86bbd2a0
+step 90 "get all"
+out pick "\n\rGlutton gets a biscuit.\n\rGlutton gets a bread.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rGlutton gets a biscuit.\n\rGlutton gets a bread.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "You get a biscuit.\n\rYou get a bread.\n\rYou can't take that.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rGlutton gets a biscuit.\n\rGlutton gets a bread.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 91 "eat bread"
+out pick "\n\rGlutton eats a bread.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rGlutton eats a bread.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "You eat a bread.\n\rYou are full.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rGlutton eats a bread.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 92 "eat biscuit"
+out glut "You are too full to eat more.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 93 "drink"
+out glut "You're too full to drink more.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 94 "drink"
+out glut "You're too full to drink more.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 95 "@state"
+state room 3005 light 4 people player player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Glutton 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 20 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3417 wear 17 timer 0 cost 400 values 20 4 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 4096 train 1 on 0 stats 19 13 13 13 13
+state   affect 72 level 5 duration 36 location 0 modifier 0 bitvector 4096
+state   obj carried 3138 wear -1 timer 0 cost 24 values 64 44 0 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 2 7 0 0
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 6 7 0 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 0 0
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 1305 wear -1 timer 0 cost 24 values 24 24 0 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3001 light 0 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51897 86bbd2a0
+step 96 "@as pick"
+rng 51897 86bbd2a0
+step 97 "eat"
+out pick "Eat what?\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 98 "eat nothing"
+out pick "You do not have that item.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 99 "eat skin"
+out pick "That's not edible.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 100 "eat biscuit"
+out pick "You eat a biscuit.\n\rYou are no longer hungry.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rPickpocket eats a biscuit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rPickpocket eats a biscuit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket eats a biscuit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 101 "eat meat"
+out pick "You eat a large chunk of meat.\n\rYou are full.\n\rYou choke and gag.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rPickpocket eats a large chunk of meat.\n\rPickpocket chokes and gags.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rPickpocket eats a large chunk of meat.\n\rPickpocket chokes and gags.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rPickpocket eats a large chunk of meat.\n\rPickpocket chokes and gags.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51898 d55fddad
+step 102 "@state"
+state room 3005 light 4 people player player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Glutton 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 20 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3417 wear 17 timer 0 cost 400 values 20 4 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 4096 train 1 on 0 stats 19 13 13 13 13
+state   affect 72 level 14 duration 84 location 0 modifier 0 bitvector 4096
+state   obj carried 3138 wear -1 timer 0 cost 24 values 64 44 0 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 2 7 0 0
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 6 7 0 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 0 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3001 light 0 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51898 d55fddad
+step 103 "@as god"
+rng 51898 d55fddad
+step 104 "south"
+out pick "Smokegod has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rGlutton the Recruit is here.\n\rSot the Recruit is here.\n\rDecimus the Recruit is here.\n\rPickpocket the Recruit is here.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 105 "@pulse 1"
+rng 51898 d55fddad
+step 106 "@obj 3062 3005"
+rng 51898 d55fddad
+step 107 "get pants"
+out pick "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod gets a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get a pair of leather pants.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 108 "eat pants"
+out pick "\n\rSmokegod eats a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod eats a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod eats a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod eats a pair of leather pants.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You eat a pair of leather pants.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 109 "@obj 3135 3005 0 0 -1 0 0"
+rng 51898 d55fddad
+step 110 "drink"
+out pick "\n\rSmokegod drinks water from a fountain.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod drinks water from a fountain.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod drinks water from a fountain.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod drinks water from a fountain.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You drink water from a fountain.\n\rYou are full.\n\rYour thirst is quenched.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 111 "@obj 3102 3005 10 10 -1 0 0"
+rng 51898 d55fddad
+step 112 "get cup"
+out pick "\n\rSmokegod gets a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod gets a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod gets a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod gets a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get a cup of water.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 113 "drink cup"
+out pick "\n\rSmokegod drinks water from a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod drinks water from a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod drinks water from a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod drinks water from a cup of water.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You drink water from a cup of water.\n\rYou are full.\n\rYour thirst is quenched.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 114 "@obj 918 3005 24 -1 -1 -1 0"
+rng 51898 d55fddad
+step 115 "get apple"
+out pick "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get an apple.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 116 "eat apple"
+out pick "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You eat an apple.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 117 "@obj 918 3005 24 140 -1 -1 0"
+rng 51898 d55fddad
+step 118 "get apple"
+out pick "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get an apple.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 119 "eat apple"
+out pick "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You eat an apple.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 120 "@obj 918 3005 24 105 -1 -1 0"
+rng 51898 d55fddad
+step 121 "get apple"
+out pick "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get an apple.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 122 "eat apple"
+out pick "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You eat an apple.\n\rThat's not a spell!\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 123 "@obj 918 3005 24 116 -1 -1 0"
+rng 51898 d55fddad
+step 124 "get apple"
+out pick "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod gets an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get an apple.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 125 "eat apple"
+out pick "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out sot "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out glut "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "\n\rSmokegod eats an apple.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You eat an apple.\n\rThat's not a spell!\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51898 d55fddad
+step 126 "@state"
+state room 3005 light 4 people player player player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 0 0 0 0
+state char Glutton 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 20 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3153 wear -1 timer 0 cost 5 values 4 3 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3417 wear 17 timer 0 cost 400 values 20 4 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 4096 train 1 on 0 stats 19 13 13 13 13
+state   affect 72 level 14 duration 84 location 0 modifier 0 bitvector 4096
+state   obj carried 3138 wear -1 timer 0 cost 24 values 64 44 0 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 2 7 0 0
+state   obj carried 3102 wear -1 timer 0 cost 1 values 10 6 7 0 0
+state   obj carried 3011 wear -1 timer 0 cost 9 values 18 12 0 0 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 1351 wear -1 timer 0 cost 12 values 6 0 11 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51898 d55fddad

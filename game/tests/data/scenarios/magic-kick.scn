@@ -1,0 +1,22 @@
+# A wand of kick (a small wand, 106, with kick: an offensive skill, not a spell) zapped at a fido (3062), which
+# isn't safe: "That's not a spell!", and then the fido fights back (fight.c's check_killer and multi_hit), so the
+# Python game stops there. In the temple (3001): Pickpocket (13, wands at 75%). Five charges, as the rolls can fail.
+# expect: stopped NotPorted
+@connect pick
+Pickpocket
+psswrd
+@return
+@return
+@mob 3062 3001
+@obj 106 3001 5 5 5 116 0
+get wand
+hold wand
+zap fido
+@pulse 24
+zap fido
+@pulse 24
+zap fido
+@pulse 24
+zap fido
+@pulse 24
+zap fido

@@ -1,0 +1,134 @@
+# fill, pour, drink and eat. Pickpocket (13, thirst 2 and hunger 0), Glutton (10, full 40, no need for drink or
+# food: thirst and hunger -1), Sot (10, too drunk to drink), Decimus (10, full 42) and Smokegod (an immortal, who
+# eats anything) start in the temple (3001); the fountain (3135) is in the Temple Square (3005), south. Objects: a
+# water skin (3138, full of water), a bottle of firebreather (3003), an empty cup (3102), a bread (3011), a biscuit
+# (3153), a poisoned chunk of meat (1305), two poisoned herbal brews (1351), an empty wineflask (3417, which can be
+# held), and apples (918, pills, which Smokegod eats) with no spell, a bad spell number, and skills that aren't
+# spells (sword, and kick, an offensive one). A second fountain and a cup with a bad liquid number (-1) are mended
+# with a bug() line. Salt water can't make anyone thirsty: its -2 thirst rounds to 0 for any amount a cup holds.
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect sot
+Sot
+psswrd
+@return
+@connect glut
+Glutton
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@obj 3138 3001
+@obj 3003 3001
+@obj 3102 3001 10 0 0 0 0
+@obj 3011 3001
+@obj 3153 3001
+@obj 1305 3001
+@obj 1351 3001
+@obj 1351 3001
+@as pick
+get all
+drink
+fill
+fill nothing
+fill skin
+south
+@pulse 1
+fill bread
+fill skin
+fill firebreather
+pour
+pour skin
+pour nothing out
+pour bread out
+pour skin out
+pour skin out
+fill skin
+pour skin skin
+pour skin bread
+pour skin nobody
+pour firebreather skin
+drink cup
+pour cup skin
+pour firebreather cup
+pour firebreather cup
+@state
+@as dec
+south
+@pulse 1
+@as pick
+pour skin decimus
+@obj 3417 3005 20 0 0 0 0
+@as dec
+get flask
+hold flask
+@as pick
+pour skin decimus
+@as dec
+drink flask
+@state
+@as pick
+drink
+drink nothing
+drink bread
+drink brew
+drink 2.brew
+@state
+drink cup
+drink cup
+drink cup
+@as sot
+south
+@pulse 1
+drink
+@as glut
+south
+@pulse 1
+@obj 3011 3005
+@obj 3153 3005
+get all
+eat bread
+eat biscuit
+drink
+drink
+@state
+@as pick
+eat
+eat nothing
+eat skin
+eat biscuit
+eat meat
+@state
+@as god
+south
+@pulse 1
+@obj 3062 3005
+get pants
+eat pants
+@obj 3135 3005 0 0 -1 0 0
+drink
+@obj 3102 3005 10 10 -1 0 0
+get cup
+drink cup
+@obj 918 3005 24 -1 -1 -1 0
+get apple
+eat apple
+@obj 918 3005 24 140 -1 -1 0
+get apple
+eat apple
+@obj 918 3005 24 105 -1 -1 0
+get apple
+eat apple
+@obj 918 3005 24 116 -1 -1 0
+get apple
+eat apple
+@state

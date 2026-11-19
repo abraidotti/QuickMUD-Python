@@ -1,0 +1,389 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect pick"
+rng 51872 4ba9daca
+step 2 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect dec"
+rng 51895 7f5599b5
+step 6 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out pick "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPickpocket the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@as pick"
+rng 51895 7f5599b5
+step 11 "@obj 3033 3001"
+rng 51895 7f5599b5
+step 12 "get box"
+out pick "You get a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "quaff"
+out pick "Quaff what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "quaff nothing"
+out pick "You do not have that potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "quaff box"
+out pick "You can quaff only potions.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@obj 3082 3001"
+rng 51895 7f5599b5
+step 17 "get divine"
+out pick "You get a potion of divine protection.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a potion of divine protection.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "quaff divine"
+out pick "This liquid is too powerful for you to drink.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@obj 105 3001 6 -1 -1 -1 -1"
+rng 51895 7f5599b5
+step 20 "get pink"
+out pick "You get a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "quaff pink"
+out pick "You quaff a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket quaffs a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@obj 105 3001 6 105 -1 -1 -1"
+rng 51895 7f5599b5
+step 23 "get pink"
+out pick "You get a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "quaff pink"
+out pick "You quaff a pink potion.\n\rThat's not a spell!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket quaffs a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "recite"
+out pick "You do not have that scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "recite box"
+out pick "You can recite only scrolls.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "@obj 3042 3001"
+rng 51895 7f5599b5
+step 28 "get recall"
+out pick "You get a scroll of recall.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a scroll of recall.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "recite recall"
+out pick "This scroll is too complex for you to comprehend.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "@obj 1362 3001 10 -1 -1 -1 -1"
+rng 51895 7f5599b5
+step 31 "@obj 1362 3001 10 -1 -1 -1 -1"
+rng 51895 7f5599b5
+step 32 "@obj 1362 3001 10 -1 -1 -1 -1"
+rng 51895 7f5599b5
+step 33 "@obj 1362 3001 10 -1 -1 -1 -1"
+rng 51895 7f5599b5
+step 34 "get all.old"
+out pick "You get an old scroll.\n\rYou get an old scroll.\n\rYou get an old scroll.\n\rYou get an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets an old scroll.\n\rPickpocket gets an old scroll.\n\rPickpocket gets an old scroll.\n\rPickpocket gets an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "recite old nobody"
+out pick "You can't find it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "recite old decimus"
+out pick "You recite an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 37 "recite old box"
+out pick "You recite an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 38 "recite old"
+out pick "You recite an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 39 "recite old"
+out pick "You recite an old scroll.\n\rYou mispronounce a syllable.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 40 "brandish"
+out pick "You hold nothing in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 41 "zap"
+out pick "Zap whom or what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 42 "zap decimus"
+out pick "You hold nothing in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 43 "@obj 106 3001 5 5 0 5 0"
+rng 51904 da7aaa40
+step 44 "get wand"
+out pick "You get a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 45 "hold wand"
+out pick "You hold a small wand in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket holds a small wand in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 46 "brandish"
+out pick "You can brandish only with a staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 47 "zap decimus"
+out pick "Your a small wand explodes into fragments.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket's a small wand explodes into fragments.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 48 "@pulse 24"
+rng 51904 da7aaa40
+step 49 "@obj 1327 3001 20 4 0 4 0"
+rng 51904 da7aaa40
+step 50 "get staff"
+out pick "You get a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 51 "hold staff"
+out pick "You hold a burnt staff in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket holds a burnt staff in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 52 "zap decimus"
+out pick "You can zap only with a wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 53 "brandish"
+out pick "Your a burnt staff blazes bright and is gone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket's a burnt staff blazes bright and is gone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 54 "@pulse 24"
+rng 51904 da7aaa40
+step 55 "@obj 1327 3001 20 4 4 60 0"
+rng 51904 da7aaa40
+step 56 "get staff"
+out pick "You get a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 57 "hold staff"
+out pick "You hold a burnt staff in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket holds a burnt staff in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 58 "brandish"
+out pick "You brandish a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51905 d4471b28
+step 59 "@pulse 24"
+rng 51905 d4471b28
+step 60 "brandish"
+out pick "You brandish a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 61 "@pulse 24"
+rng 51906 1b2d656f
+step 62 "brandish"
+out pick "You brandish a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 63 "@pulse 24"
+rng 51907 f84fac3e
+step 64 "@obj 1327 3001 20 4 4 140 0"
+rng 51907 f84fac3e
+step 65 "get staff"
+out pick "You get a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 66 "hold staff"
+out pick "You stop using a burnt staff.\n\rYou hold a burnt staff in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket stops using a burnt staff.\n\rPickpocket holds a burnt staff in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 67 "brandish"
+out pick "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 68 "@obj 1327 3001 20 4 4 105 0"
+rng 51907 f84fac3e
+step 69 "get staff"
+out pick "You get a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 70 "hold staff"
+out pick "You stop using a burnt staff.\n\rYou hold a burnt staff in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket stops using a burnt staff.\n\rPickpocket holds a burnt staff in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 71 "brandish"
+out pick "You brandish a burnt staff.\n\rThat's not a spell!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51910 fbea3747
+step 72 "@pulse 24"
+rng 51910 fbea3747
+step 73 "brandish"
+out pick "You brandish a burnt staff.\n\rThat's not a spell!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51912 93eb034d
+step 74 "@pulse 24"
+rng 51912 93eb034d
+step 75 "brandish"
+out pick "You brandish a burnt staff.\n\rYou fail to invoke a burnt staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r...and nothing happens.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 76 "@pulse 24"
+rng 51915 4fc7cf4e
+step 77 "brandish"
+out pick "You brandish a burnt staff.\n\rYou fail to invoke a burnt staff.\n\rYour a burnt staff blazes bright and is gone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket brandishes a burnt staff.\n\r...and nothing happens.\n\rPickpocket's a burnt staff blazes bright and is gone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 78 "@pulse 24"
+rng 51917 64c4bf17
+step 79 "@obj 106 3001 5 5 5 105 0"
+rng 51917 64c4bf17
+step 80 "get wand"
+out pick "You get a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 81 "hold wand"
+out pick "You hold a small wand in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket holds a small wand in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 82 "zap nothing"
+out pick "You can't find it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 83 "zap decimus"
+out pick "You zap Decimus with a small wand.\n\rThat's not a spell!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps you with a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 84 "@pulse 24"
+rng 51919 9e0ded87
+step 85 "zap box"
+out pick "You zap a box with a small wand.\n\rThat's not a spell!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps a box with a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51921 4f5dc005
+step 86 "@pulse 24"
+rng 51921 4f5dc005
+step 87 "zap"
+out pick "Zap whom or what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51921 4f5dc005
+step 88 "zap decimus"
+out pick "You zap Decimus with a small wand.\n\rYour efforts with a small wand produce only smoke and sparks.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps you with a small wand.\n\rPickpocket's efforts with a small wand produce only smoke and sparks.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51924 9fdf4911
+step 89 "@pulse 24"
+rng 51924 9fdf4911
+step 90 "zap decimus"
+out pick "You zap Decimus with a small wand.\n\rYour efforts with a small wand produce only smoke and sparks.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps you with a small wand.\n\rPickpocket's efforts with a small wand produce only smoke and sparks.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 91 "@pulse 24"
+rng 51926 ad863a1b
+step 92 "@obj 106 3001 5 5 5 116 0"
+rng 51926 ad863a1b
+step 93 "get wand"
+out pick "You get a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 94 "hold wand"
+out pick "You stop using a small wand.\n\rYou hold a small wand in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket stops using a small wand.\n\rPickpocket holds a small wand in his hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 95 "zap decimus"
+out pick "You zap Decimus with a small wand.\n\rThey aren't in a clan, leave them alone.\n\rSomething isn't right...\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps you with a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51928 bc29c08d
+step 96 "@pulse 24"
+rng 51928 bc29c08d
+step 97 "zap decimus"
+out pick "You zap Decimus with a small wand.\n\rThey aren't in a clan, leave them alone.\n\rSomething isn't right...\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps you with a small wand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 98 "@pulse 24"
+rng 51933 af6a286b
+step 99 "zap box"
+out pick "You zap a box with a small wand.\n\rYour efforts with a small wand produce only smoke and sparks.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket zaps a box with a small wand.\n\rPickpocket's efforts with a small wand produce only smoke and sparks.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51935 b9fd8a25
+step 100 "@pulse 24"
+rng 51935 b9fd8a25
+step 101 "@obj 1362 3001 10 116 -1 -1 -1"
+rng 51935 b9fd8a25
+step 102 "get old"
+out pick "You get an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51935 b9fd8a25
+step 103 "recite old box"
+out pick "You recite an old scroll.\n\rYou mispronounce a syllable.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51938 1f8c2006
+step 104 "@obj 1362 3001 10 116 -1 -1 -1"
+rng 51938 1f8c2006
+step 105 "get old"
+out pick "You get an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51938 1f8c2006
+step 106 "recite old box"
+out pick "You recite an old scroll.\n\rYou mispronounce a syllable.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51941 1855638d
+step 107 "@obj 1362 3001 10 116 -1 -1 -1"
+rng 51941 1855638d
+step 108 "get old"
+out pick "You get an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51941 1855638d
+step 109 "recite old box"
+out pick "You recite an old scroll.\n\rYou can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket recites an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 110 "@obj 105 3001 6 60 -1 -1 -1"
+rng 51944 0b11b767
+step 111 "get pink"
+out pick "You get a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 112 "quaff pink"
+out pick "You quaff a pink potion.\n\rYou can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket quaffs a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 113 "@state"
+state room 3001 light 2 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 106 wear 17 timer 0 cost 540 values 5 5 2 116 0
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 5 1 105 0
+state   obj carried 1327 wear -1 timer 0 cost 1720 values 20 4 4 140 0
+state   obj carried 1327 wear -1 timer 0 cost 1720 values 20 4 4 60 0
+state   obj carried 3042 wear -1 timer 0 cost 2900 values 20 90 -1 -1 -1
+state   obj carried 3082 wear -1 timer 0 cost 1800 values 35 80 85 2 -1
+state   obj carried 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51944 0b11b767
+step 114 "@obj 105 3001 6 62 -1 -1 -1"
+rng 51944 0b11b767
+step 115 "get pink"
+out pick "You get a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket gets a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 116 "quaff pink"
+out pick "You quaff a pink potion.\n\rYou fade out of existence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPickpocket quaffs a pink potion.\n\rPickpocket fades out of existence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767

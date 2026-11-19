@@ -1,0 +1,22 @@
+# Shop hours: at game hour 23, after it closes (22), the captain at the Levee (3049, open 6 to 22) won't trade. Purser
+# walks there from the temple.
+@clock 1763400540
+@connect purse
+Purser
+psswrd
+@return
+@return
+south
+@pulse 1
+south
+@pulse 1
+south
+@pulse 1
+east
+@pulse 1
+east
+@pulse 1
+south
+@pulse 1
+list
+buy canoe

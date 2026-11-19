@@ -1,0 +1,162 @@
+# Shops: list, buy, sell and value. Purser (10, with 100 gold and 503 silver) leads; Pickpocket (13, haggle at 95%),
+# Decimus (10, with no money; it sells the sword it wields), Unseen (5, invisible) and Seer (20, who carries an
+# invisible ivory staff, 905) follow, from the temple through the bakery (3009, the baker buys nothing and can't see
+# invisible people), the general store (3010, the grocer buys lights, treasure, trash, containers and food: 849
+# silver's worth), the weapon shop (3011), the jeweller's (3034, gems are sold to be destroyed: no haggling) and the
+# magic shop (3033: the wizard sees invisible things). Purser also has a strange amulet (307, no drop), a druish
+# staff (308, trash), a gold nugget (917, worth more than the grocer has), a small pearl (3373), a lantern (3031,
+# which the grocer stocks without limit) and two small wands (106), one with no maximum charge. Purser's pet fido
+# can't carry what it buys.
+@connect purse
+Purser
+psswrd
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect unseen
+Unseen
+psswrd
+@return
+@connect seer
+Seer
+psswrd
+@return
+@return
+@obj 905 3001
+get staff
+@as pick
+follow purser
+@as dec
+follow purser
+@as unseen
+follow purser
+@as seer
+follow purser
+@as purse
+@obj 307 3001
+@obj 308 3001
+@obj 917 3001
+@obj 3373 3001
+@obj 3031 3001
+@obj 106 3001 5 0 1 5 0
+@obj 106 3001
+get all
+@as dec
+buy bread
+list
+sell
+sell sword
+value
+value sword
+@as purse
+south
+@pulse 1
+south
+@pulse 1
+west
+@pulse 1
+north
+@pulse 1
+list
+list bread
+list nothing
+buy
+buy nothing
+buy 0*bread
+buy 100*bread
+buy bread
+buy 3*bread
+@as dec
+buy bread
+buy 2*bread
+@as unseen
+buy bread
+@as pick
+buy bread
+@as purse
+sell nothing
+sell bread
+value nothing
+value bread
+@mob 3062 3009
+@charm pet
+give 50 silver fido
+order fido buy bread
+@pulse 12
+south
+@pulse 1
+east
+@pulse 1
+east
+@pulse 1
+north
+@pulse 1
+sell bread
+sell bread
+list
+buy 2.bread
+buy 3*bread
+buy 2*bread
+sell lantern
+sell nugget
+sell amulet
+value amulet
+sell staff
+buy box
+value box
+@state
+@as seer
+sell staff
+value staff
+@as pick
+buy lantern
+sell lantern
+@as purse
+south
+@pulse 1
+east
+@pulse 1
+north
+@pulse 1
+@as dec
+remove sword
+value sword
+sell sword
+@as purse
+list sword
+buy 2*sub
+buy sub
+@state
+south
+@pulse 1
+west
+@pulse 1
+south
+@pulse 1
+sell pearl
+@state
+north
+@pulse 1
+west
+@pulse 1
+west
+@pulse 1
+west
+@pulse 1
+north
+@pulse 1
+value wand
+sell wand
+value wand
+sell wand
+buy recall
+@as seer
+sell staff
+@as purse
+@state
