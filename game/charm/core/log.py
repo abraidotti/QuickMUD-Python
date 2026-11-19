@@ -1,4 +1,5 @@
-"""The game's log: log_string, bug and log_f. Every line goes to stderr as "<ctime> :: <text>", as in the C.
+"""The game's log: log_string, bug and log_f, and ctime. Every line goes to stderr as "<ctime> :: <text>", as in
+the C.
 
 Tests and tools can add a sink to collect the lines (``capture()``), and set the clock the timestamps read
 (``clock``; the C prints current_time, the game's own clock).
@@ -15,6 +16,8 @@ import sys
 import time
 
 clock = time.time  # clock: what a log line's timestamp shows, until the game sets it to its current_time
+# The time zone ctime formats in. The C uses the host's; the scenario harness sets this to the oracle's (UTC).
+localtime = time.localtime  # clock: converts a time it's given, and reads no clock
 to_stderr = True
 _sinks: list = []
 
@@ -24,7 +27,13 @@ def log_string(text: str) -> None:
     for sink in _sinks:
         sink(text)
     if to_stderr:
-        print(f"{time.ctime(clock())} :: {text}", file=sys.stderr)  # clock: formats clock(), as the C's ctime
+        print(f"{ctime(clock())[:-1]} :: {text}", file=sys.stderr)
+
+
+# C: (libc) ctime
+def ctime(t: float) -> str:
+    """The C library's ctime: "Wed Jun 30 21:49:08 1993\\n", in localtime's zone."""
+    return time.asctime(localtime(t)) + "\n"  # clock: formats the time it's given
 
 
 # C: db.c bug [partial]

@@ -1,0 +1,35 @@
+# practice with Pupil (level 10 warrior, intelligence 18, four sessions) by the warriors' guildmaster (3023), and with
+# Decimus in the temple, where no one teaches. A session adds 40 over the skill's rating: dagger (rating 2) goes from
+# 50 to 70, then to the warriors' adept of 75; axe (rating 4) from 1 to 11.
+@connect pupil
+Pupil
+psswrd
+@return
+practice
+@connect dec
+Decimus
+psswrd
+@return
+practice
+practice dagger
+@as pupil
+sleep
+practice dagger
+wake
+# What can't be practised: no such skill, one Pupil doesn't know (kick), one above Pupil's level (third attack, 12).
+practice foo
+practice kick
+practice third attack
+practice dagger
+practice dagger
+practice dagger
+# find_spell takes the first skill a prefix names that Pupil can use: "d" passes spells starting with d to reach
+# dagger, "ax" is the axe.
+practice d
+practice ax
+# practice takes its whole argument as the name, quotes and all, so this one names nothing.
+practice 'second attack'
+practice recall
+practice axe
+practice
+@state

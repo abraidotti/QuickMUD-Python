@@ -56,7 +56,8 @@ def smash_dollar(s: str) -> str:
 
 
 def atoi(s: str) -> int:
-    """The C library's atoi: leading whitespace, an optional sign, then digits; 0 if there are none."""
+    """The C library's atoi: leading whitespace, an optional sign, then digits; 0 if there are none. glibc's is
+    (int) strtol, so a number past a 64-bit long is clamped to it, then cut to its low 32 bits."""
     i, n = 0, len(s)
     while i < n and s[i] in " \t\n\v\f\r":
         i += 1
@@ -67,4 +68,7 @@ def atoi(s: str) -> int:
     j = i
     while j < n and "0" <= s[j] <= "9":
         j += 1
-    return sign * int(s[i:j]) if j > i else 0
+    if j == i:
+        return 0
+    n = max(-(1 << 63), min(sign * int(s[i:j]), (1 << 63) - 1)) & 0xFFFFFFFF
+    return n - (1 << 32) if n & 0x80000000 else n

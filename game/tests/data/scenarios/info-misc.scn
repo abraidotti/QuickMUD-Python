@@ -1,0 +1,72 @@
+# The rest of act_info.c: time and weather (indoors in the temple, then out in the Temple Square, 3005), report, worth,
+# affects (a level-30 thief's sneak shows what it modifies; below level 20 it doesn't), socials, and the commands
+# that show a help entry: motd, imotd (immortals only), rules, story, wizlist and credits. Decimus turns paging off
+# first: a paged entry would make the pager take the next command as its own input. A move lags its mover a pulse.
+@connect dec
+Decimus
+psswrd
+@return
+scroll 0
+time
+weather
+south
+@pulse 1
+weather
+north
+@pulse 1
+@connect quin
+Quintus
+psswrd
+@return
+@as dec
+report
+worth
+affects
+socials
+motd
+imotd
+rules
+story
+wizlist
+credits
+@connect lock
+Locksmith
+psswrd
+@return
+affects
+sneak
+affects
+practice
+@connect slug
+Sluggish
+psswrd
+@return
+affects
+# Recluse is alone in the Void (8699), a solitary room: a room with anyone in it is private, so where leaves
+# Recluse out.
+@connect recluse
+Recluse
+psswrd
+@return
+where
+# Clansman (20) and Yeoman (5) are blessed: two affects of one spell.
+@connect clan
+Clansman
+psswrd
+@return
+affects
+@connect yeo
+Yeoman
+psswrd
+@return
+affects
+@connect god
+Smokegod
+smoke123
+@return
+@return
+imotd
+worth
+equipment
+practice
+time

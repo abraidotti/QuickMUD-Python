@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import re
 import socket
+import time
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -238,6 +239,7 @@ class Player:
         game.config = config
         game_module.current = game
         log.clock = lambda: game.current_time
+        log.localtime = time.gmtime  # clock: the oracle's container has no time zone, so its ctime is UTC
         self.start = clock
         self.out.append(f"boot seed {seed} clock {clock} updates {updates}")
         self.collect()

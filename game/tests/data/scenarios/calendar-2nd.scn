@@ -1,0 +1,8 @@
+# time on the 2nd at midnight: 12 am. The clock is set so db.c's boot puts the hour and day there (a mud hour is a minute
+# from 650336715); the default clock is the 21st, at 2 pm.
+@clock 1763371755
+@connect dec
+Decimus
+psswrd
+@return
+time

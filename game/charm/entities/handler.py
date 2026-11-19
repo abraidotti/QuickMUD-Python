@@ -964,6 +964,30 @@ def is_room_owner(ch: Char, room: Room) -> bool:
     return is_name(ch.name, room.owner)
 
 
+# C: handler.c is_clan
+def is_clan(ch: Char) -> bool:
+    return bool(ch.clan)
+
+
+_LOC_NAMES = {
+    C.APPLY_NONE: "none", C.APPLY_STR: "strength", C.APPLY_DEX: "dexterity", C.APPLY_INT: "intelligence",
+    C.APPLY_WIS: "wisdom", C.APPLY_CON: "constitution", C.APPLY_SEX: "sex", C.APPLY_CLASS: "class",
+    C.APPLY_LEVEL: "level", C.APPLY_AGE: "age", C.APPLY_MANA: "mana", C.APPLY_HIT: "hp", C.APPLY_MOVE: "moves",
+    C.APPLY_GOLD: "gold", C.APPLY_EXP: "experience", C.APPLY_AC: "armor class", C.APPLY_HITROLL: "hit roll",
+    C.APPLY_DAMROLL: "damage roll", C.APPLY_SAVES: "saves", C.APPLY_SAVING_ROD: "save vs rod",
+    C.APPLY_SAVING_PETRI: "save vs petrification", C.APPLY_SAVING_BREATH: "save vs breath",
+    C.APPLY_SAVING_SPELL: "save vs spell", C.APPLY_SPELL_AFFECT: "none",
+}
+
+
+# C: handler.c affect_loc_name
+def affect_loc_name(location: int) -> str:
+    if location in _LOC_NAMES:
+        return _LOC_NAMES[location]
+    bug("Affect_location_name: unknown location %d.", location)
+    return "(unknown)"
+
+
 # C: handler.c affect_strip
 def affect_strip(ch: Char, sn: int) -> None:
     for paf in list(ch.affected):

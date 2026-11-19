@@ -1,0 +1,206 @@
+sources 4f7804ca4c4d221c
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect weary"
+rng 51872 4ba9daca
+step 2 "Weary"
+out weary "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out weary "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out weary "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "autolist"
+out weary "   action     status\n\r---------------------\n\rautoassist     OFF\n\rautoexit       OFF\n\rautogold       OFF\n\rautoloot       OFF\n\rautosac        OFF\n\rautosplit      OFF\n\rtelnetga       ON\n\rcompact mode   OFF\n\rprompt         ON\n\rcombine items  ON\n\rYour corpse is safe from thieves.\n\rYou cannot be summoned.\n\rYou accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "autoassist"
+out weary "You will now assist when needed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "autoexit"
+out weary "Exits will now be displayed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "autogold"
+out weary "Automatic gold looting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "autoloot"
+out weary "Automatic corpse looting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "autosac"
+out weary "Automatic corpse sacrificing set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "autosplit"
+out weary "Automatic gold splitting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "autolist"
+out weary "   action     status\n\r---------------------\n\rautoassist     ON\n\rautoexit       ON\n\rautogold       ON\n\rautoloot       ON\n\rautosac        ON\n\rautosplit      ON\n\rtelnetga       ON\n\rcompact mode   OFF\n\rprompt         ON\n\rcombine items  ON\n\rYour corpse is safe from thieves.\n\rYou cannot be summoned.\n\rYou accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "autoassist"
+out weary "Autoassist removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "autoexit"
+out weary "Exits will no longer be displayed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "autogold"
+out weary "Autogold removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "autoloot"
+out weary "Autolooting removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "autosac"
+out weary "Autosacrificing removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "autosplit"
+out weary "Autosplitting removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "autoall on"
+out weary "All autos turned on.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "autolist"
+out weary "   action     status\n\r---------------------\n\rautoassist     ON\n\rautoexit       ON\n\rautogold       ON\n\rautoloot       ON\n\rautosac        ON\n\rautosplit      ON\n\rtelnetga       ON\n\rcompact mode   OFF\n\rprompt         ON\n\rcombine items  ON\n\rYour corpse is safe from thieves.\n\rYou cannot be summoned.\n\rYou accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "autoall off"
+out weary "All autos turned off.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "autoall ON"
+out weary "Usage: autoall [on|off]\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "autoall on now"
+out weary "Usage: autoall [on|off]\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "autoall"
+out weary "Usage: autoall [on|off]\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "brief"
+out weary "Short descriptions activated.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "look"
+out weary "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "brief"
+out weary "Full descriptions activated.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "compact"
+out weary "Compact mode set.\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "compact"
+out weary "Compact mode removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "show"
+out weary "Affects will now be shown in score.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "score"
+out weary "You are Weary the Recruit, level 2, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 29/29 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/47 items with weight 14/230 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2088 exp, and have 0 gold and 0 silver coins.\n\rYou need 912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\rYou are not affected by any spells.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "show"
+out weary "Affects will no longer be shown in score.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "combine"
+out weary "Long inventory selected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "combine"
+out weary "Combined inventory selected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "noloot"
+out weary "Your corpse may now be looted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "autolist"
+out weary "   action     status\n\r---------------------\n\rautoassist     OFF\n\rautoexit       OFF\n\rautogold       OFF\n\rautoloot       OFF\n\rautosac        OFF\n\rautosplit      OFF\n\rtelnetga       ON\n\rcompact mode   OFF\n\rprompt         ON\n\rcombine items  ON\n\rYour corpse may be looted.\n\rYou cannot be summoned.\n\rYou accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "noloot"
+out weary "Your corpse is now safe from thieves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "nofollow"
+out weary "You no longer accept followers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "nosummon"
+out weary "You are no longer immune to summon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "telnetga"
+out weary "Telnet GA removed.\n\r\n\r<29hp 102m 106mv> "
+rng 51895 7f5599b5
+step 41 "autolist"
+out weary "   action     status\n\r---------------------\n\rautoassist     OFF\n\rautoexit       OFF\n\rautogold       OFF\n\rautoloot       OFF\n\rautosac        OFF\n\rautosplit      OFF\n\rtelnetga       OFF\n\rcompact mode   OFF\n\rprompt         ON\n\rcombine items  ON\n\rYour corpse is safe from thieves.\n\rYou can be summoned.\n\rYou do not welcome followers.\n\r\n\r<29hp 102m 106mv> "
+rng 51895 7f5599b5
+step 42 "nofollow"
+out weary "You now accept followers.\n\r\n\r<29hp 102m 106mv> "
+rng 51895 7f5599b5
+step 43 "nosummon"
+out weary "You are now immune to summoning.\n\r\n\r<29hp 102m 106mv> "
+rng 51895 7f5599b5
+step 44 "telnetga"
+out weary "Telnet GA enabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "@state"
+state room 3001 light 1 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Weary 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 46 "scroll"
+out weary "You currently display 24 lines per page.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "scroll foo"
+out weary "You must provide a number.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "scroll 0"
+out weary "Paging disabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "scroll"
+out weary "You do not page long messages.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "scroll 9"
+out weary "You must provide a reasonable number.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "scroll 101"
+out weary "You must provide a reasonable number.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "scroll 10"
+out weary "Scroll set to 10 lines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "scroll 100"
+out weary "Scroll set to 100 lines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "scroll 4294967306"
+out weary "Scroll set to 10 lines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "scroll 99999999999999999999"
+out weary "You must provide a reasonable number.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "scroll"
+out weary "You currently display 10 lines per page.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "scroll 24"
+out weary "Scroll set to 24 lines.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "wimpy"
+out weary "Wimpy set to 5 hit points.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "wimpy -1"
+out weary "Your courage exceeds your wisdom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "wimpy 15"
+out weary "Such cowardice ill becomes you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "wimpy 14"
+out weary "Wimpy set to 14 hit points.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "wimpy 0"
+out weary "Wimpy set to 0 hit points.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "wimpy foo"
+out weary "Wimpy set to 0 hit points.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "score"
+out weary "You are Weary the Recruit, level 2, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 29/29 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/47 items with weight 14/230 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2088 exp, and have 0 gold and 0 silver coins.\n\rYou need 912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
