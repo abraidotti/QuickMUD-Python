@@ -291,6 +291,12 @@ class Player:
             if m.group(3):
                 obj.value = [int(x) for x in m.group(3).split()]
             obj_to_room(obj, ix.get_room_index(int(m.group(2))))
+            self.last_obj = obj
+        elif m := re.fullmatch(r"@owner (\S+)", line):
+            obj = getattr(self, "last_obj", None)
+            if obj is None:
+                raise SystemExit(f"scenario: step {n}: @owner needs an @obj")
+            obj.owner = m.group(1)[:31]  # the C reads it with %31s
         elif line == "@state":
             self.state()
         elif line.startswith("@file "):

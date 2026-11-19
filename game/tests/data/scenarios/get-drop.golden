@@ -1,0 +1,762 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect purse"
+rng 51895 7f5599b5
+step 10 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rPurser has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect god"
+rng 51895 7f5599b5
+step 14 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 17 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@obj 3062 3001"
+rng 51895 7f5599b5
+step 19 "@obj 3063 3001"
+rng 51895 7f5599b5
+step 20 "@obj 3135 3001"
+rng 51895 7f5599b5
+step 21 "@obj 5011 3001 2 1000 16 100 100"
+rng 51895 7f5599b5
+step 22 "@as dec"
+rng 51895 7f5599b5
+step 23 "get"
+out dec "Get what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "get nothing"
+out dec "I see no nothing here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "get pants all"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "get pants"
+out dec "You get a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather pants.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "get all.nothing"
+out dec "I see no nothing here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "get all.boots"
+out dec "You get a pair of leather boots.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather boots.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a pair of leather boots.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather boots.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "@as quin"
+rng 51895 7f5599b5
+step 30 "sit rope"
+out dec "Quintus sits on a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You sit on a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rQuintus sits on a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus sits on a coil of rope.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "@as dec"
+rng 51895 7f5599b5
+step 32 "get rope"
+out dec "Quintus appears to be using a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "get all"
+out dec "Quintus appears to be using a coil of rope.\n\rYou can't take that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 6 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 5011 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 35 "@as quin"
+rng 51895 7f5599b5
+step 36 "stand"
+out dec "Quintus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You stand up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rQuintus stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus stands up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "@as dec"
+rng 51895 7f5599b5
+step 38 "get all.rope"
+out dec "You get a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a coil of rope.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a coil of rope.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "drop"
+out dec "Drop what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "drop nothing"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "drop all.nothing"
+out dec "You are not carrying any nothing.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "drop all.pants"
+out dec "You drop a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus drops a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus drops a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus drops a pair of leather pants.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "drop all"
+out dec "You drop a coil of rope.\n\rYou drop a pair of leather boots.\n\rYou drop a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus drops a coil of rope.\n\rDecimus drops a pair of leather boots.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus drops a coil of rope.\n\rDecimus drops a pair of leather boots.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus drops a coil of rope.\n\rDecimus drops a pair of leather boots.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 45 "get all"
+out dec "You get a map of the city of Midgaard.\n\rYou get a pair of leather boots.\n\rYou get a coil of rope.\n\rYou get a pair of leather pants.\n\rYou can't take that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a map of the city of Midgaard.\n\rDecimus gets a pair of leather boots.\n\rDecimus gets a coil of rope.\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a map of the city of Midgaard.\n\rDecimus gets a pair of leather boots.\n\rDecimus gets a coil of rope.\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a map of the city of Midgaard.\n\rDecimus gets a pair of leather boots.\n\rDecimus gets a coil of rope.\n\rDecimus gets a pair of leather pants.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "@obj 10 3001"
+rng 51895 7f5599b5
+step 47 "@obj 10 3001"
+rng 51895 7f5599b5
+step 48 "@obj 10 3001"
+rng 51895 7f5599b5
+step 49 "get all.corpse"
+out dec "You get the corpse of %s.\n\rYou get the corpse of %s.\n\rCorpse: you can't carry that much weight.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets the corpse of %s.\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets the corpse of %s.\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets the corpse of %s.\n\rDecimus gets the corpse of %s.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state   obj carried 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 51 "drop all.corpse"
+out dec "You drop the corpse of %s.\n\rYou drop the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus drops the corpse of %s.\n\rDecimus drops the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus drops the corpse of %s.\n\rDecimus drops the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus drops the corpse of %s.\n\rDecimus drops the corpse of %s.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "@obj 3700 3001"
+rng 51895 7f5599b5
+step 53 "@obj 307 3001"
+rng 51895 7f5599b5
+step 54 "get mace"
+out dec "You get a sub issue mace.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a sub issue mace.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a sub issue mace.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a sub issue mace.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "get amulet"
+out dec "You get a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a strange amulet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "drop mace"
+out dec "You drop a sub issue mace.\n\rA sub issue mace dissolves into smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus drops a sub issue mace.\n\rA sub issue mace dissolves into smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus drops a sub issue mace.\n\rA sub issue mace dissolves into smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus drops a sub issue mace.\n\rA sub issue mace dissolves into smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "drop amulet"
+out dec "You can't let go of it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "get mace"
+out dec "I see no mace here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "drop all"
+out dec "You drop a pair of leather pants.\n\rYou drop a coil of rope.\n\rYou drop a pair of leather boots.\n\rYou drop a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus drops a pair of leather pants.\n\rDecimus drops a coil of rope.\n\rDecimus drops a pair of leather boots.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus drops a pair of leather pants.\n\rDecimus drops a coil of rope.\n\rDecimus drops a pair of leather boots.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus drops a pair of leather pants.\n\rDecimus drops a coil of rope.\n\rDecimus drops a pair of leather boots.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "@obj 307 3001"
+rng 51895 7f5599b5
+step 61 "@as god"
+rng 51895 7f5599b5
+step 62 "get amulet"
+out dec "Smokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You get a strange amulet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "drop amulet"
+out dec "\n\rSmokegod drops a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod drops a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod drops a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You drop a strange amulet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "@as dec"
+rng 51895 7f5599b5
+step 65 "drop all"
+out dec "You are not carrying anything.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 66 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 67 "@as purse"
+rng 51895 7f5599b5
+step 68 "drop 0 coins"
+out purse "Sorry, you can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 69 "drop 5 bananas"
+out purse "Sorry, you can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 70 "drop -3 silver"
+out purse "Sorry, you can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 71 "drop 99999 silver"
+out purse "You don't have that much silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 72 "drop 9999 gold"
+out purse "You don't have that much gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "drop 1 silver"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 502 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 1 wear -1 timer 0 cost 0 values 1 0 0 0 0
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 75 "get coin"
+out dec "\n\rPurser gets a silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gets a silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You get a silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser gets a silver coin.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 76 "drop 1 gold"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 77 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 99 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 2 wear -1 timer 0 cost 0 values 0 1 0 0 0
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 78 "get coin"
+out dec "\n\rPurser gets a gold coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gets a gold coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You get a gold coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser gets a gold coin.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 79 "drop 5 gold"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 80 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 95 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3 wear -1 timer 0 cost 5 values 0 5 0 0 0
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 81 "get coins"
+out dec "\n\rPurser gets 5 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gets 5 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You get 5 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser gets 5 gold coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 82 "drop 20 silver"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 83 "drop 3 coin"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 84 "drop 3 gold"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 85 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 97 silver 480 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 5 wear -1 timer 0 cost 323 values 23 3 0 0 0
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 86 "@obj 1 3001"
+rng 51895 7f5599b5
+step 87 "@obj 2 3001"
+rng 51895 7f5599b5
+step 88 "@obj 3 3001 0 25 0 0 0"
+rng 51895 7f5599b5
+step 89 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 97 silver 480 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3 wear -1 timer 0 cost 0 values 0 25 0 0 0
+state obj floor 2 wear -1 timer 0 cost 0 values 0 1 0 0 0
+state obj floor 1 wear -1 timer 0 cost 0 values 1 0 0 0 0
+state obj floor 5 wear -1 timer 0 cost 323 values 23 3 0 0 0
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 90 "drop 1 silver"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 91 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 97 silver 479 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 5 wear -1 timer 0 cost 2925 values 25 29 0 0 0
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5
+step 92 "get coins"
+out dec "\n\rPurser gets 25 silver coins and 29 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gets 25 silver coins and 29 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You get 25 silver coins and 29 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser gets 25 silver coins and 29 gold coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 93 "@as dec"
+rng 51895 7f5599b5
+step 94 "follow purser"
+out dec "You now follow Purser.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 95 "@as purse"
+rng 51895 7f5599b5
+step 96 "group decimus"
+out dec "You join Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus joins Purser's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus joins Purser's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 97 "autosplit"
+out purse "Automatic gold splitting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 98 "drop 1 silver"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 99 "get coin"
+out dec "\n\rPurser gets a silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gets a silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You get a silver coin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser gets a silver coin.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 100 "drop 30 silver"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 101 "drop 4 gold"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser drops some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 102 "get coins"
+out dec "\n\rPurser gets 30 silver coins and 4 gold coins.\n\rPurser splits 30 silver and 4 gold coins, giving you 15 silver and 2 gold.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gets 30 silver coins and 4 gold coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You get 30 silver coins and 4 gold coins.\n\rYou split 30 silver coins. Your share is 15 silver.\n\rYou split 4 gold coins. Your share is 2 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rPurser gets 30 silver coins and 4 gold coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 103 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 124 silver 489 act 65664 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 2 silver 15 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5011 wear -1 timer 0 cost 20 values 2 1000 16 100 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51895 7f5599b5

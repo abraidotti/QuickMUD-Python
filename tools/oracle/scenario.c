@@ -18,6 +18,7 @@
  *   @mob VNUM ROOM       create_mobile and char_to_room
  *   @obj VNUM ROOM       create_object (level 0) and obj_to_room
  *   @obj VNUM ROOM V0 V1 V2 V3 V4   the same, then sets its five values (furniture, portals, locks)
+ *   @owner NAME          the last @obj's owner, as make_corpse sets a player's corpse's (can_loot)
  *   @charm               charm the last @mob: it follows the current connection's character, in its group
  *   @charm pet           the same, and it's that character's pet, as do_buy makes one
  *   @state               dump the characters and objects in every room a connection's character is in
@@ -333,6 +334,7 @@ int main (void)
     bool booted = FALSE;
     long step = 0;
     CHAR_DATA *last_mob = NULL;
+    OBJ_DATA *last_obj = NULL;
 
     while (fgets (line, sizeof line, stdin) != NULL)
     {
@@ -424,6 +426,17 @@ int main (void)
                 for (j = 0; j < 5; j++)
                     obj->value[j] = v[j];
             obj_to_room (obj, get_room_index (b));
+            last_obj = obj;
+        }
+        else if (sscanf (line, "@owner %31s", word) == 1)
+        {
+            if (last_obj == NULL)
+            {
+                fprintf (stderr, "scenario: step %ld: @owner needs an @obj\n", step);
+                return 2;
+            }
+            free_string (last_obj->owner);
+            last_obj->owner = str_dup (word);
         }
         else if (!strcmp (line, "@state"))
             state ();

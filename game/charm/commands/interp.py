@@ -70,12 +70,12 @@ LOG_ALL = [False]  # fLogAll: the 'log all' switch (do_log, not ported, is the o
 
 def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
-    from charm.commands import alias, comm, info, move
+    from charm.commands import alias, comm, info, move, obj
     from charm.commands.wiz import do_outfit
     from charm.persist.boards import do_board
     from charm.systems.skills import do_groups, do_skills
 
-    found = {name: getattr(mod, name) for mod in (alias, comm, info, move) for name in dir(mod)
+    found = {name: getattr(mod, name) for mod in (alias, comm, info, move, obj) for name in dir(mod)
              if name.startswith("do_")}
     found.update(do_outfit=do_outfit, do_board=do_board, do_groups=do_groups, do_skills=do_skills)
     return found

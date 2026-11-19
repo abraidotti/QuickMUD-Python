@@ -1,0 +1,669 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect god"
+rng 51895 7f5599b5
+step 6 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@obj 606 3001"
+rng 51895 7f5599b5
+step 11 "@obj 1344 3001"
+rng 51895 7f5599b5
+step 12 "@obj 1713 3001"
+rng 51895 7f5599b5
+step 13 "@obj 2230 3001"
+rng 51895 7f5599b5
+step 14 "@obj 608 3001"
+rng 51895 7f5599b5
+step 15 "@obj 104 3001"
+rng 51895 7f5599b5
+step 16 "@obj 307 3001"
+rng 51895 7f5599b5
+step 17 "@obj 616 3001"
+rng 51895 7f5599b5
+step 18 "@obj 102 3001"
+rng 51895 7f5599b5
+step 19 "@obj 618 3001"
+rng 51895 7f5599b5
+step 20 "@obj 619 3001"
+rng 51895 7f5599b5
+step 21 "@obj 3064 3001"
+rng 51895 7f5599b5
+step 22 "@obj 617 3001"
+rng 51895 7f5599b5
+step 23 "@obj 3361 3001"
+rng 51895 7f5599b5
+step 24 "@obj 1374 3001"
+rng 51895 7f5599b5
+step 25 "@obj 3052 3001"
+rng 51895 7f5599b5
+step 26 "@obj 3363 3001"
+rng 51895 7f5599b5
+step 27 "@obj 2326 3001"
+rng 51895 7f5599b5
+step 28 "@obj 2104 3001"
+rng 51895 7f5599b5
+step 29 "@obj 3026 3001"
+rng 51895 7f5599b5
+step 30 "@obj 308 3001"
+rng 51895 7f5599b5
+step 31 "@obj 8720 3001"
+rng 51895 7f5599b5
+step 32 "@obj 5230 3001"
+rng 51895 7f5599b5
+step 33 "@obj 5231 3001"
+rng 51895 7f5599b5
+step 34 "@obj 1112 3001"
+rng 51895 7f5599b5
+step 35 "@as dec"
+rng 51895 7f5599b5
+step 36 "get all"
+out dec "You get a lantern.\n\rYou get a scarlet and blue stone.\n\rYou get a pale blue stone.\n\rYou get the curse of the mummy.\n\rYou get a druish staff.\n\rYou get a battle axe.\n\rYou get a metal shield.\n\rYou get a thick marble bracelet.\n\rYou get a standard issue bracer.\n\rYou get a leather bracer.\n\rYou get a holstered belt.\n\rYou get a standard issue cape.\n\rYou get some leather sleeves.\n\rYou get a pair of leather gloves.\n\rYou get some leather boots.\n\rYou get some leather leggings.\n\rYou get a smurf hat.\n\rYou get a leather vest.\n\rYou get a strange amulet.\n\rYou get a small necklace.\n\rYou get a golden necklace.\n\rYou get a copper ring.\n\rYou get a bronze ring.\n\rYou get a seashell ring.\n\rYou get an emerald ring.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a lantern.\n\rDecimus gets a scarlet and blue stone.\n\rDecimus gets a pale blue stone.\n\rDecimus gets the curse of the mummy.\n\rDecimus gets a druish staff.\n\rDecimus gets a battle axe.\n\rDecimus gets a metal shield.\n\rDecimus gets a thick marble bracelet.\n\rDecimus gets a standard issue bracer.\n\rDecimus gets a leather bracer.\n\rDecimus gets a holstered belt.\n\rDecimus gets a standard issue cape.\n\rDecimus gets some leather sleeves.\n\rDecimus gets a pair of leather gloves.\n\rDecimus gets some leather boots.\n\rDecimus gets some leather leggings.\n\rDecimus gets a smurf hat.\n\rDecimus gets a leather vest.\n\rDecimus gets a strange amulet.\n\rDecimus gets a small necklace.\n\rDecimus gets a golden necklace.\n\rDecimus gets a copper ring.\n\rDecimus gets a bronze ring.\n\rDecimus gets a seashell ring.\n\rDecimus gets an emerald ring.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "wear"
+out dec "Wear, wield, or hold what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "wear nothing"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "wear map"
+out dec "You can't wear, wield, or hold that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "wear copper"
+out dec "You must be level 15 to use this object.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus tries to use a copper ring, but is too inexperienced.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "wear emerald"
+out dec "You wear an emerald ring on your left finger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears an emerald ring on his left finger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "wear seashell"
+out dec "You wear a seashell ring on your right finger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a seashell ring on his right finger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "wear bronze"
+out dec "You stop using an emerald ring.\n\rYou wear a bronze ring on your left finger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using an emerald ring.\n\rDecimus wears a bronze ring on his left finger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "wear golden"
+out dec "You wear a golden necklace around your neck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a golden necklace around his neck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "wear necklace"
+out dec "You wear a small necklace around your neck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a small necklace around his neck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "wear amulet"
+out dec "You stop using a golden necklace.\n\rYou wear a strange amulet around your neck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a golden necklace.\n\rDecimus wears a strange amulet around his neck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "wear vest"
+out dec "You stop using a sub issue vest.\n\rYou wear a leather vest on your torso.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a sub issue vest.\n\rDecimus wears a leather vest on his torso.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "wear smurf"
+out dec "You wear a smurf hat on your head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a smurf hat on his head.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "wear leggings"
+out dec "You wear some leather leggings on your legs.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears some leather leggings on his legs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "wear boots"
+out dec "You wear some leather boots on your feet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears some leather boots on his feet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "wear gloves"
+out dec "You wear a pair of leather gloves on your hands.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a pair of leather gloves on his hands.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "wear sleeves"
+out dec "You wear some leather sleeves on your arms.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears some leather sleeves on his arms.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "wear cape"
+out dec "You wear a standard issue cape about your torso.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a standard issue cape about his torso.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "wear belt"
+out dec "You wear a holstered belt about your waist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a holstered belt about his waist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "wear strong"
+out dec "You wear a leather bracer around your left wrist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a leather bracer around his left wrist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "wear standard"
+out dec "You wear a standard issue bracer around your right wrist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a standard issue bracer around his right wrist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "wear marble"
+out dec "You stop using a leather bracer.\n\rYou wear a thick marble bracelet around your left wrist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a leather bracer.\n\rDecimus wears a thick marble bracelet around his left wrist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "wield axe"
+out dec "You stop using a sub issue sword.\n\rYou need two hands free for that weapon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a sub issue sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/107 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 606 wear -1 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1344 wear 2 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1713 wear 1 timer 0 cost 55 values 0 0 0 0 0
+state   obj carried 2230 wear -1 timer 0 cost 2600 values 0 0 0 0 0
+state   obj carried 608 wear -1 timer 0 cost 500 values 0 0 0 0 0
+state   obj carried 104 wear 4 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 307 wear 3 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 616 wear 5 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 102 wear 6 timer 0 cost 310 values 3 3 3 0 0
+state   obj carried 618 wear 7 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 619 wear 8 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3064 wear 9 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 617 wear 10 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3361 wear 12 timer 0 cost 380 values 3 4 3 1 1
+state   obj carried 1374 wear 13 timer 0 cost 100 values 20 0 0 4 100
+state   obj carried 3052 wear -1 timer 0 cost 112 values 0 2 2 0 0
+state   obj carried 3363 wear 15 timer 0 cost 390 values 2 4 4 1 0
+state   obj carried 2326 wear 14 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 2104 wear -1 timer 0 cost 500 values 3 3 3 1 0
+state   obj carried 3026 wear -1 timer 0 cost 650 values 5 2 5 25 32
+state   obj carried 308 wear -1 timer 0 cost 10 values 0 0 0 0 0
+state   obj carried 8720 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 5230 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 5231 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 1112 wear -1 timer 0 cost 60 values 0 0 200 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 60 "remove sub"
+out dec "You stop using a sub issue shield.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a sub issue shield.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "wield axe"
+out dec "You wield a battle axe.\n\rYou don't even know which end is up on a battle axe.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wields a battle axe.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "wear metal"
+out dec "Your hands are tied up with your weapon!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "wield sword"
+out dec "You stop using a battle axe.\n\rYou wield a sub issue sword.\n\rYou are skilled with a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a battle axe.\n\rDecimus wields a sub issue sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "wear metal"
+out dec "You wear a metal shield as a shield.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears a metal shield as a shield.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 65 "hold staff"
+out dec "You hold a druish staff in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus holds a druish staff in his hand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 66 "hold curse"
+out dec "You stop using a druish staff.\n\rYou hold the curse of the mummy in your hand.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a druish staff.\n\rDecimus holds the curse of the mummy in his hand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 67 "hold staff"
+out dec "You can't remove the curse of the mummy.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 68 "remove curse"
+out dec "You can't remove the curse of the mummy.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 69 "wear stone"
+out dec "You release a pale blue stone and it floats next to you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus releases a pale blue stone to float next to him.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 70 "wear lantern"
+out dec "You stop using a war banner.\n\rYou light a lantern and hold it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a war banner.\n\rDecimus lights a lantern and holds it.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 71 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/-21 mana 102/107 move 106/6 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 606 wear -1 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1344 wear 2 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1713 wear 1 timer 0 cost 55 values 0 0 0 0 0
+state   obj carried 2230 wear -1 timer 0 cost 2600 values 0 0 0 0 0
+state   obj carried 608 wear -1 timer 0 cost 500 values 0 0 0 0 0
+state   obj carried 104 wear 4 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 307 wear 3 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 616 wear 5 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 102 wear 6 timer 0 cost 310 values 3 3 3 0 0
+state   obj carried 618 wear 7 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 619 wear 8 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3064 wear 9 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 617 wear 10 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3361 wear 12 timer 0 cost 380 values 3 4 3 1 1
+state   obj carried 1374 wear 13 timer 0 cost 100 values 20 0 0 4 100
+state   obj carried 3052 wear -1 timer 0 cost 112 values 0 2 2 0 0
+state   obj carried 3363 wear 15 timer 0 cost 390 values 2 4 4 1 0
+state   obj carried 2326 wear 14 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 2104 wear 11 timer 0 cost 500 values 3 3 3 1 0
+state   obj carried 3026 wear -1 timer 0 cost 650 values 5 2 5 25 32
+state   obj carried 308 wear -1 timer 0 cost 10 values 0 0 0 0 0
+state   obj carried 8720 wear 17 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 5230 wear 18 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 5231 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 1112 wear 0 timer 0 cost 60 values 0 0 200 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 72 "remove"
+out dec "Remove what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "remove nothing"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "remove all"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 75 "remove stone"
+out dec "You stop using a pale blue stone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a pale blue stone.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 76 "remove lantern"
+out dec "You stop using a lantern.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a lantern.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 77 "remove emerald"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 78 "remove bronze"
+out dec "You stop using a bronze ring.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus stops using a bronze ring.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 79 "remove golden"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 80 "@state"
+state room 3001 light 0 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/-21 mana 102/102 move 106/6 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 606 wear -1 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1344 wear 2 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1713 wear -1 timer 0 cost 55 values 0 0 0 0 0
+state   obj carried 2230 wear -1 timer 0 cost 2600 values 0 0 0 0 0
+state   obj carried 608 wear -1 timer 0 cost 500 values 0 0 0 0 0
+state   obj carried 104 wear 4 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 307 wear 3 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 616 wear 5 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 102 wear 6 timer 0 cost 310 values 3 3 3 0 0
+state   obj carried 618 wear 7 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 619 wear 8 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3064 wear 9 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 617 wear 10 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3361 wear 12 timer 0 cost 380 values 3 4 3 1 1
+state   obj carried 1374 wear 13 timer 0 cost 100 values 20 0 0 4 100
+state   obj carried 3052 wear -1 timer 0 cost 112 values 0 2 2 0 0
+state   obj carried 3363 wear 15 timer 0 cost 390 values 2 4 4 1 0
+state   obj carried 2326 wear 14 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 2104 wear 11 timer 0 cost 500 values 3 3 3 1 0
+state   obj carried 3026 wear -1 timer 0 cost 650 values 5 2 5 25 32
+state   obj carried 308 wear -1 timer 0 cost 10 values 0 0 0 0 0
+state   obj carried 8720 wear 17 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 5230 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 5231 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 1112 wear -1 timer 0 cost 60 values 0 0 200 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 81 "wear all"
+out dec "You wear an emerald ring on your left finger.\n\rYou must be level 15 to use this object.\n\rYou release a pale blue stone and it floats next to you.\n\rYou light a lantern and hold it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus wears an emerald ring on his left finger.\n\rDecimus tries to use a copper ring, but is too inexperienced.\n\rDecimus releases a pale blue stone to float next to him.\n\rDecimus lights a lantern and holds it.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 82 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/-21 mana 102/102 move 106/6 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 606 wear 1 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1344 wear 2 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1713 wear -1 timer 0 cost 55 values 0 0 0 0 0
+state   obj carried 2230 wear -1 timer 0 cost 2600 values 0 0 0 0 0
+state   obj carried 608 wear -1 timer 0 cost 500 values 0 0 0 0 0
+state   obj carried 104 wear 4 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 307 wear 3 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 616 wear 5 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 102 wear 6 timer 0 cost 310 values 3 3 3 0 0
+state   obj carried 618 wear 7 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 619 wear 8 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3064 wear 9 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 617 wear 10 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3361 wear 12 timer 0 cost 380 values 3 4 3 1 1
+state   obj carried 1374 wear 13 timer 0 cost 100 values 20 0 0 4 100
+state   obj carried 3052 wear -1 timer 0 cost 112 values 0 2 2 0 0
+state   obj carried 3363 wear 15 timer 0 cost 390 values 2 4 4 1 0
+state   obj carried 2326 wear 14 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 2104 wear 11 timer 0 cost 500 values 3 3 3 1 0
+state   obj carried 3026 wear -1 timer 0 cost 650 values 5 2 5 25 32
+state   obj carried 308 wear -1 timer 0 cost 10 values 0 0 0 0 0
+state   obj carried 8720 wear 17 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 5230 wear 18 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 5231 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 1112 wear 0 timer 0 cost 60 values 0 0 200 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51895 7f5599b5
+step 83 "@as god"
+rng 51895 7f5599b5
+step 84 "@obj 1503 3001"
+rng 51895 7f5599b5
+step 85 "get staff"
+out dec "Smokegod gets a gnarled staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You get a gnarled staff.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 86 "wield staff"
+out god "It is too heavy for you to wield.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 87 "@connect delv"
+rng 51895 7f5599b5
+step 88 "Delver"
+out delv "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 89 "psswrd"
+out delv "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 90 "@return"
+out delv "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rOn the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 91 "@return"
+out delv "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 92 "@obj 666 3129"
+rng 51895 7f5599b5
+step 93 "get broom"
+out delv "You get a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 94 "wield broom"
+out delv "You stop using a sub issue sword.\n\rYou wield a broom.\n\rYou fumble and almost drop a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 95 "get all"
+out delv "I see nothing here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 96 "@connect out"
+rng 51895 7f5599b5
+step 97 "Outlaw"
+out out "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 98 "psswrd"
+out out "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 99 "@return"
+out dec "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rOutlaw has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 100 "@return"
+out out "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 101 "@obj 666 3001"
+rng 51895 7f5599b5
+step 102 "get broom"
+out dec "\n\rOutlaw gets a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rOutlaw gets a broom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "You get a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 103 "wield broom"
+out dec "\n\rOutlaw stops using a sub issue sword.\n\rOutlaw wields a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rOutlaw stops using a sub issue sword.\n\rOutlaw wields a broom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "You stop using a sub issue sword.\n\rYou wield a broom.\n\rYour skill with a broom is adequate.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 104 "@connect lock"
+rng 51895 7f5599b5
+step 105 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 106 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 107 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 108 "@return"
+out lock "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 109 "@obj 666 3110"
+rng 51895 7f5599b5
+step 110 "get broom"
+out lock "You get a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 111 "wield broom"
+out lock "You stop using a sub issue sword.\n\rYou wield a broom.\n\rYou feel quite confident with a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 112 "@connect hero"
+rng 51895 7f5599b5
+step 113 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 114 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 115 "@return"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 116 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 117 "@obj 666 3001"
+rng 51895 7f5599b5
+step 118 "get broom"
+out dec "\n\rHeroic gets a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rHeroic gets a broom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rHeroic gets a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You get a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 119 "wield broom"
+out dec "\n\rHeroic stops using a sub issue sword.\n\rHeroic wields a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rHeroic stops using a sub issue sword.\n\rHeroic wields a broom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rHeroic stops using a sub issue sword.\n\rHeroic wields a broom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You stop using a sub issue sword.\n\rYou wield a broom.\n\rA broom feels like a part of you!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 120 "@connect pupil"
+rng 51895 7f5599b5
+step 121 "Pupil"
+out pupil "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 122 "psswrd"
+out pupil "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 123 "@return"
+out pupil "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Tournament and Practice Yard\n\r  The practice yard of the fighters.  To the north is the bar.  A well leads\n\rdown into darkness.\n\rYour guildmaster is standing here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 124 "@return"
+out pupil "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 125 "@obj 3701 3023"
+rng 51895 7f5599b5
+step 126 "get dagger"
+out pupil "You get a sub issue dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 127 "wield dagger"
+out pupil "You stop using a sub issue sword.\n\rYou wield a sub issue dagger.\n\rA sub issue dagger feels a little clumsy in your hands.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 128 "@mob 3062 3023"
+rng 51897 86bbd2a0
+step 129 "@charm"
+rng 51897 86bbd2a0
+step 130 "@obj 9590 3023"
+rng 51897 86bbd2a0
+step 131 "@obj 3701 3023"
+rng 51897 86bbd2a0
+step 132 "get chessboard"
+out pupil "The beastly fido now follows you.\n\rYou get a chessboard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 133 "get dagger"
+out pupil "You get a sub issue dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 134 "give chessboard fido"
+out pupil "You give a chessboard to the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 135 "order fido wield chessboard"
+out pupil "The beastly fido wields a chessboard.\n\rOk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 136 "@pulse 12"
+rng 51897 86bbd2a0
+step 137 "give dagger fido"
+out pupil "You give a sub issue dagger to the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 138 "order fido wield dagger"
+out pupil "The beastly fido stops using a chessboard.\n\rThe beastly fido wields a sub issue dagger.\n\rOk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 139 "@pulse 12"
+rng 51897 86bbd2a0
+step 140 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Heroic 51 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 666 wear 16 timer 0 cost 760 values 0 2 3 13 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Outlaw 18 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 100728832 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 666 wear 16 timer 0 cost 760 values 0 2 3 13 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 1503 wear -1 timer 0 cost 730 values 0 1 9 7 0
+state char Decimus 10 pos 8 hit 29/-21 mana 102/102 move 106/6 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 606 wear 1 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1344 wear 2 timer 0 cost 1000 values 0 0 0 0 0
+state   obj carried 1713 wear -1 timer 0 cost 55 values 0 0 0 0 0
+state   obj carried 2230 wear -1 timer 0 cost 2600 values 0 0 0 0 0
+state   obj carried 608 wear -1 timer 0 cost 500 values 0 0 0 0 0
+state   obj carried 104 wear 4 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 307 wear 3 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 616 wear 5 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 102 wear 6 timer 0 cost 310 values 3 3 3 0 0
+state   obj carried 618 wear 7 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 619 wear 8 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3064 wear 9 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 617 wear 10 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3361 wear 12 timer 0 cost 380 values 3 4 3 1 1
+state   obj carried 1374 wear 13 timer 0 cost 100 values 20 0 0 4 100
+state   obj carried 3052 wear -1 timer 0 cost 112 values 0 2 2 0 0
+state   obj carried 3363 wear 15 timer 0 cost 390 values 2 4 4 1 0
+state   obj carried 2326 wear 14 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 2104 wear 11 timer 0 cost 500 values 3 3 3 1 0
+state   obj carried 3026 wear -1 timer 0 cost 650 values 5 2 5 25 32
+state   obj carried 308 wear -1 timer 0 cost 10 values 0 0 0 0 0
+state   obj carried 8720 wear 17 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 5230 wear 18 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 5231 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj carried 1112 wear 0 timer 0 cost 60 values 0 0 200 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state room 3129 light 1 people player
+state exit 0 to 3126 info 0 key -1
+state exit 1 to 3130 info 0 key -1
+state exit 3 to 3255 info 0 key -1
+state char Delver 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 512 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 666 wear 16 timer 0 cost 760 values 0 2 3 13 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state room 3110 light 1 people player
+state exit 1 to 3111 info 1 key -1
+state exit 3 to 3142 info 7 key 3120
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 666 wear 16 timer 0 cost 760 values 0 2 3 13 0
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state room 3023 light 1 people mob player mob
+state exit 0 to 3022 info 0 key -1
+state exit 5 to 7048 info 0 key -1
+state char mob 3062 pos 8 hit 9/9 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 262144 train 0 on 0 stats 10 11 11 11 11
+state   obj carried 3701 wear 16 timer 0 cost 210 values 2 1 4 11 0
+state   obj carried 9590 wear -1 timer 0 cost 380 values 0 1 5 37 0
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3701 wear 16 timer 0 cost 210 values 2 1 4 11 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3023 pos 8 hit 2000/2000 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2622467 affected_by 552 train 0 on 0 stats 23 19 20 20 22
+rng 51897 86bbd2a0

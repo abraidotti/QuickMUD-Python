@@ -42,7 +42,7 @@ order, so a prefix finds the same command), aliases and socials. The commands po
 `act_info.c`'s (look, examine, who, where, score, practice, the auto toggles and the rest), all of `act_move.c`'s
 and `act_enter.c`'s (the directions, the doors, the positions, sneak, recall, train, enter), all of `act_comm.c`'s
 and `alias.c`'s (the channels, say, tell, emote, pose, follow, group, order, split, colour, alias, delete, save,
-quit), and what login calls; any other command raises `NotPorted`,
+quit), `act_obj.c`'s get, put, drop, give, wear and remove, and what login calls; any other command raises `NotPorted`,
 which stops the game (#32). Only `area_update` runs of the per-pulse updates; the game logs the rest at boot (#28).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.
@@ -50,7 +50,8 @@ with `CHARM_UPDATES=area` for it, so its other updates are off too.
 Scenarios (#35) check state as well as output, with no network and no real clock. A scenario is a text file in
 `tests/data/scenarios/` (`NAME.scn`): lines of input for a connection, and `@` lines for the harness (`@connect`,
 `@as`, `@return`, `@pulse N`, `@mob`, `@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too),
-`@obj` (with the object's five values, if given), `@state`, `@file`; the
+`@obj` (with the object's five values, if given), `@owner` (the last object's owner, as a player's
+corpse has), `@state`, `@file`; the
 format is in `tools/oracle/scenario.c`). A
 scenario with the comment `# expect: stopped NotPorted` checks that unported code stops the Python game. The C driver
 plays it through the C game's own code, and `charm.testing.scenario` through the Python game's. Both print each

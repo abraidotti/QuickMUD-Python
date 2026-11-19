@@ -1,0 +1,442 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect purse"
+rng 51895 7f5599b5
+step 10 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out dec "\n\rPurser has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect seer"
+rng 51895 7f5599b5
+step 14 "Seer"
+out seer "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out seer "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect unseen"
+rng 51895 7f5599b5
+step 18 "Unseen"
+out unseen "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out unseen "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out dec "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rUnseen has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeer the Recruit is here.\n\rPurser the Recruit is here.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@return"
+out unseen "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@mob 3162 3001"
+rng 51897 86bbd2a0
+step 23 "@mob 3001 3001"
+rng 51899 d1eb3d36
+step 24 "@as dec"
+rng 51899 d1eb3d36
+step 25 "@mob 3062 3001"
+rng 51901 51250113
+step 26 "@charm pet"
+rng 51901 51250113
+step 27 "@obj 3062 3001"
+rng 51901 51250113
+step 28 "@obj 307 3001"
+rng 51901 51250113
+step 29 "@obj 905 3001"
+rng 51901 51250113
+step 30 "@obj 10 3001"
+rng 51901 51250113
+step 31 "@obj 10 3001"
+rng 51901 51250113
+step 32 "@obj 10 3001"
+rng 51901 51250113
+step 33 "give"
+out dec "\n\rThe beastly fido now follows you.\n\rGive what to whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 34 "give pants"
+out dec "Give what to whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 35 "give pants quintus"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 36 "get pants"
+out dec "You get a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 37 "get amulet"
+out dec "You get a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 38 "give pants nobody"
+out dec "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 39 "give sword quintus"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 40 "give pants baker"
+out dec "The baker tells you 'Sorry, you'll have to sell that.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 41 "give amulet quintus"
+out dec "You can't let go of it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 42 "give pants fido"
+out dec "The beastly fido has his hands full.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 43 "give pants quintus"
+out dec "You give a pair of leather pants to Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gives you a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gives a pair of leather pants to Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus gives a pair of leather pants to Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rDecimus gives a pair of leather pants to Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 44 "@obj 3062 3001"
+rng 51901 51250113
+step 45 "@obj 3033 3001"
+rng 51901 51250113
+step 46 "order fido get pants"
+out dec "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 47 "@pulse 12"
+rng 51901 51250113
+step 48 "order fido get box"
+out dec "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 49 "@pulse 12"
+rng 51901 51250113
+step 50 "@state"
+state room 3001 light 5 people mob mob mob player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3062 pos 8 hit 5/5 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1049057 affected_by 262144 train 0 on 0 stats 10 11 11 11 11
+state char mob 3001 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 2 silver 358 act 2097155 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+state char mob 3162 pos 8 hit 1000/1000 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 3 silver 340 act 538968067 affected_by 40 train 0 on 0 stats 17 17 17 17 17
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 2 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 905 wear -1 timer 0 cost 5800 values 30 3 3 80 0
+rng 51901 51250113
+step 51 "@as quin"
+rng 51901 51250113
+step 52 "give pants seer"
+out dec "\n\rQuintus gives a pair of leather pants to Seer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You give a pair of leather pants to Seer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rQuintus gives a pair of leather pants to Seer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rQuintus gives you a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rQuintus gives a pair of leather pants to Seer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 53 "@as seer"
+rng 51901 51250113
+step 54 "get staff"
+out dec "\n\rSeer gets something.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "Seer gets something.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSeer gets something.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "You get an ivory staff.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rSeer gets something.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 55 "give staff decimus"
+out seer "Decimus can't see it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 56 "give staff quintus"
+out seer "Quintus can't see it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 57 "@as dec"
+rng 51901 51250113
+step 58 "get corpse"
+out dec "You get the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 59 "get corpse"
+out dec "You get the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rDecimus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 60 "@as quin"
+rng 51901 51250113
+step 61 "get corpse"
+out dec "Quintus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You get the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rQuintus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rQuintus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rQuintus gets the corpse of %s.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 62 "give corpse decimus"
+out quin "Decimus can't carry that much weight.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 63 "@as purse"
+rng 51901 51250113
+step 64 "give 5"
+out purse "Give what to whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 65 "give 0 coins decimus"
+out purse "Sorry, you can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 66 "give 5 bananas decimus"
+out purse "Sorry, you can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 67 "give 5 coins"
+out purse "Give what to whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 68 "give 5 coins nobody"
+out purse "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 69 "give 9999 gold decimus"
+out purse "You haven't got that much.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 70 "give 9999 silver decimus"
+out purse "You haven't got that much.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 71 "give 10 coins decimus"
+out dec "\n\rPurser gives you 10 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You give Decimus 10 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 72 "give 2 gold decimus"
+out dec "\n\rPurser gives you 2 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You give Decimus 2 gold.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 73 "give 3 coin decimus"
+out dec "\n\rPurser gives you 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You give Decimus 3 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser gives Decimus some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 74 "give 5 silver otho"
+out dec "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You give Otho the Changer 5 silver.\n\rOtho the Changer tells you 'I'm sorry, you did not give me enough to change.'\n\rOtho the Changer gives you 5 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 75 "give 480 silver otho"
+out dec "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You give Otho the Changer 480 silver.\n\rOtho the Changer gives you 4 gold.\n\rOtho the Changer gives you 56 silver.\n\rOtho the Changer tells you 'Thank you, come again.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 76 "give 9 gold otho"
+out dec "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "You give Otho the Changer 9 gold.\n\rOtho the Changer gives you 855 silver.\n\rOtho the Changer tells you 'Thank you, come again.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser gives Otho the Changer some coins.\n\rOtho the Changer gives Purser some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 77 "@state"
+state room 3001 light 5 people mob mob mob player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3062 pos 8 hit 5/5 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1049057 affected_by 262144 train 0 on 0 stats 10 11 11 11 11
+state char mob 3001 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 2 silver 358 act 2097155 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+state char mob 3162 pos 8 hit 1000/1000 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 12 silver 764 act 538968067 affected_by 40 train 0 on 0 stats 17 17 17 17 17
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 2 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 905 wear -1 timer 0 cost 5800 values 30 3 3 80 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 93 silver 921 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 2 silver 13 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+rng 51901 51250113
+step 78 "drop 20 silver"
+out dec "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "OK.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "\n\rPurser drops some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 79 "@as unseen"
+rng 51901 51250113
+step 80 "get coins"
+out dec "\n\rSomeone gets 20 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSomeone gets 20 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "Someone gets 20 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rUnseen gets 20 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "You get 20 silver coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 81 "give 20 silver otho"
+out dec "\n\rSomeone gives Otho the Changer some coins.\n\rOtho the Changer gives someone some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSomeone gives Otho the Changer some coins.\n\rOtho the Changer gives someone some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSomeone gives Otho the Changer some coins.\n\rOtho the Changer gives someone some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rUnseen gives Otho the Changer some coins.\n\rOtho the Changer gives Unseen some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out unseen "You give Otho the Changer 20 silver.\n\rOtho the Changer tells you 'I'm sorry, you did not give me enough to change.'\n\rOtho the Changer gives you 20 silver.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 82 "@state"
+state room 3001 light 5 people mob mob mob player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3062 pos 8 hit 5/5 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1049057 affected_by 262144 train 0 on 0 stats 10 11 11 11 11
+state char mob 3001 pos 8 hit 1000/1000 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 2 silver 358 act 2097155 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+state char mob 3162 pos 8 hit 1000/1000 mana 200/200 move 100/100 wait 0 daze 0 exp 0 gold 12 silver 764 act 538968067 affected_by 40 train 0 on 0 stats 17 17 17 17 17
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 20 act 65536 affected_by 2 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 905 wear -1 timer 0 cost 5800 values 30 3 3 80 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 93 silver 901 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 2 silver 13 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+rng 51901 51250113

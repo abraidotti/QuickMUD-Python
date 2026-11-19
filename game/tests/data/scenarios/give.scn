@@ -1,0 +1,90 @@
+# give: objects and coins, the refusals, shopkeepers, and Otho the changer. In the temple (3001): Decimus (10, who
+# carries 2,500), Quintus (25), Purser (10, with 100 gold and 503 silver), Seer (20, who sees invisible things) and
+# Unseen (5, invisible, though Otho sees it and changes its coins). Mobs: Otho the changer (3162), the baker (3001, a
+# shopkeeper) and a fido (3062), Decimus's pet, which carries nothing (it's ordered to get leather pants and a box,
+# 3033, which counts as no item but weighs 10). Objects: leather pants (3062), a strange amulet (307, no drop), an
+# ivory staff (905, invisible) and three corpses (10, 1000 weight each). Otho starts with 3 gold and 340 silver, so
+# 480 silver (change: 4 gold) and then 9 gold (855 silver) are more than he has, and he makes up the difference.
+# Worn things can't be given: get_obj_carry skips them, so "You must remove it first" never shows.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect purse
+Purser
+psswrd
+@return
+@connect seer
+Seer
+psswrd
+@return
+@connect unseen
+Unseen
+psswrd
+@return
+@return
+@mob 3162 3001
+@mob 3001 3001
+@as dec
+@mob 3062 3001
+@charm pet
+@obj 3062 3001
+@obj 307 3001
+@obj 905 3001
+@obj 10 3001
+@obj 10 3001
+@obj 10 3001
+give
+give pants
+give pants quintus
+get pants
+get amulet
+give pants nobody
+give sword quintus
+give pants baker
+give amulet quintus
+give pants fido
+give pants quintus
+@obj 3062 3001
+@obj 3033 3001
+order fido get pants
+@pulse 12
+order fido get box
+@pulse 12
+@state
+@as quin
+give pants seer
+@as seer
+get staff
+give staff decimus
+give staff quintus
+@as dec
+get corpse
+get corpse
+@as quin
+get corpse
+give corpse decimus
+@as purse
+give 5
+give 0 coins decimus
+give 5 bananas decimus
+give 5 coins
+give 5 coins nobody
+give 9999 gold decimus
+give 9999 silver decimus
+give 10 coins decimus
+give 2 gold decimus
+give 3 coin decimus
+give 5 silver otho
+give 480 silver otho
+give 9 gold otho
+@state
+drop 20 silver
+@as unseen
+get coins
+give 20 silver otho
+@state

@@ -1,0 +1,618 @@
+sources 09f1b681d1636caf
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect god"
+rng 51895 7f5599b5
+step 10 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@obj 3033 3001"
+rng 51895 7f5599b5
+step 15 "@obj 5007 3001"
+rng 51895 7f5599b5
+step 16 "@obj 1345 3001"
+rng 51895 7f5599b5
+step 17 "@obj 23 3001 100 16 0 50 100"
+rng 51895 7f5599b5
+step 18 "@obj 3062 3001"
+rng 51895 7f5599b5
+step 19 "@obj 3063 3001"
+rng 51895 7f5599b5
+step 20 "@obj 3064 3001"
+rng 51895 7f5599b5
+step 21 "@obj 616 3001"
+rng 51895 7f5599b5
+step 22 "@obj 307 3001"
+rng 51895 7f5599b5
+step 23 "@as dec"
+rng 51895 7f5599b5
+step 24 "get pants"
+out dec "You get a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather pants.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "get boots"
+out dec "You get a pair of leather boots.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather boots.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather boots.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "get gloves"
+out dec "You get a pair of leather gloves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather gloves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather gloves.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "get vest"
+out dec "You get a leather vest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a leather vest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a leather vest.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "get backpack"
+out dec "You get a leather backpack.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a leather backpack.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a leather backpack.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "get amulet"
+out dec "You get a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a strange amulet.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a strange amulet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "put"
+out dec "Put what in what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "put pants"
+out dec "Put what in what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "put pants in"
+out dec "Put what in what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "put pants all"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "put pants all.box"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "put pants nothing"
+out dec "I see no nothing here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "put pants vest"
+out dec "That's not a container.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "put pants basket"
+out dec "The basket is closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "put nothing box"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "put amulet box"
+out dec "You can't let go of it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "put backpack backpack"
+out dec "You can't fold it into itself.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "put backpack box"
+out dec "You have a feeling that would be a bad idea.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "put vest box"
+out dec "It won't fit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "put all.pants box"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "@state"
+state room 3001 light 2 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 1345 wear -1 timer 0 cost 1000 values 750 0 0 50 50
+state   obj carried 616 wear -1 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 3064 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 23 wear -1 timer 0 cost 0 values 100 16 0 50 100
+state obj floor 5007 wear -1 timer 0 cost 20 values 100 5 0 10 100
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+rng 51895 7f5599b5
+step 45 "put pants box"
+out dec "You put a pair of leather pants in a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather pants in a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus puts a pair of leather pants in a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "put pants box"
+out dec "You do not have that item.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "put all box"
+out dec "You put a pair of leather gloves in a box.\n\rYou put a pair of leather boots in a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather gloves in a box.\n\rDecimus puts a pair of leather boots in a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus puts a pair of leather gloves in a box.\n\rDecimus puts a pair of leather boots in a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "@state"
+state room 3001 light 2 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 1345 wear -1 timer 0 cost 1000 values 750 0 0 50 50
+state   obj carried 616 wear -1 timer 0 cost 270 values 1 2 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 23 wear -1 timer 0 cost 0 values 100 16 0 50 100
+state obj floor 5007 wear -1 timer 0 cost 20 values 100 5 0 10 100
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state   obj in 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj in 3064 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj in 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+rng 51895 7f5599b5
+step 49 "get"
+out dec "Get what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "get pants all"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "get pants all.box"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "get pants nothing"
+out dec "I see no nothing here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "get pants vest"
+out dec "That's not a container.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "get pants basket"
+out dec "The basket is closed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "open basket"
+out dec "You open a small wicker basket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus opens a small wicker basket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus opens a small wicker basket.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "get all basket"
+out dec "I see nothing in the basket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 57 "get all.pants basket"
+out dec "I see nothing like that in the basket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "get pants basket"
+out dec "I see nothing like that in the basket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "get nothing box"
+out dec "I see nothing like that in the box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "get all.nothing box"
+out dec "I see nothing like that in the box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "get pants from box"
+out dec "You get a pair of leather pants from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather pants from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather pants from a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "get all.boots box"
+out dec "You get a pair of leather boots from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather boots from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather boots from a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "get all box"
+out dec "You get a pair of leather gloves from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather gloves from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather gloves from a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "get all box"
+out dec "I see nothing in the box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 65 "get box"
+out dec "You get a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 66 "put boots box"
+out dec "You put a pair of leather boots in a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather boots in a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus puts a pair of leather boots in a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 67 "put gloves on disc"
+out dec "You put a pair of leather gloves on a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather gloves on a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus puts a pair of leather gloves on a floating disc.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 68 "put vest on disc"
+out dec "You put a leather vest on a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus puts a leather vest on a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus puts a leather vest on a floating disc.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 69 "@state"
+state room 3001 light 2 people player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state     obj in 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 3062 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 1345 wear -1 timer 0 cost 1000 values 750 0 0 50 50
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 23 wear -1 timer 0 cost 0 values 100 16 0 50 100
+state   obj in 616 wear -1 timer 0 cost 270 values 1 2 2 0 0
+state   obj in 3064 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 5007 wear -1 timer 0 cost 20 values 100 1 0 10 100
+rng 51895 7f5599b5
+step 70 "get all disc"
+out dec "You get a leather vest from a floating disc.\n\rYou get a pair of leather gloves from a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus gets a leather vest from a floating disc.\n\rDecimus gets a pair of leather gloves from a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a leather vest from a floating disc.\n\rDecimus gets a pair of leather gloves from a floating disc.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 71 "@obj 10 3001"
+rng 51895 7f5599b5
+step 72 "get all corpse"
+out dec "I see nothing in the corpse.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "get bone corpse"
+out dec "I see nothing like that in the corpse.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 74 "put boots corpse"
+out dec "That's not a container.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 75 "@obj 11 3001"
+rng 51895 7f5599b5
+step 76 "@owner Quintus"
+rng 51895 7f5599b5
+step 77 "get all corpse"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 78 "get corpse"
+out dec "Corpse looting is not permitted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 79 "@as quin"
+rng 51895 7f5599b5
+step 80 "noloot"
+out quin "Your corpse may now be looted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 81 "@as dec"
+rng 51895 7f5599b5
+step 82 "get all corpse"
+out dec "I see nothing in the corpse.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 83 "@as quin"
+rng 51895 7f5599b5
+step 84 "noloot"
+out quin "Your corpse is now safe from thieves.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 85 "@as dec"
+rng 51895 7f5599b5
+step 86 "follow quintus"
+out dec "You now follow Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 87 "@as quin"
+rng 51895 7f5599b5
+step 88 "group decimus"
+out dec "You join Quintus's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus joins Quintus's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 89 "@as dec"
+rng 51895 7f5599b5
+step 90 "get all corpse"
+out dec "I see nothing in the corpse.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 91 "follow self"
+out dec "You stop following Quintus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus stops following you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 92 "get all corpse"
+out dec "You can't do that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 93 "@as quin"
+rng 51895 7f5599b5
+step 94 "get all corpse"
+out quin "I see nothing in the corpse.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 95 "@as god"
+rng 51895 7f5599b5
+step 96 "get all corpse"
+out god "I see nothing in the corpse.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 97 "@obj 11 3001"
+rng 51895 7f5599b5
+step 98 "@owner Nobody"
+rng 51895 7f5599b5
+step 99 "@as dec"
+rng 51895 7f5599b5
+step 100 "get all corpse"
+out dec "I see nothing in the corpse.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 101 "drop all"
+out dec "You drop a pair of leather gloves.\n\rYou drop a leather vest.\n\rYou drop a box.\n\rYou drop a pair of leather pants.\n\rYou drop a leather backpack.\n\rYou drop a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus drops a pair of leather gloves.\n\rDecimus drops a leather vest.\n\rDecimus drops a box.\n\rDecimus drops a pair of leather pants.\n\rDecimus drops a leather backpack.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus drops a pair of leather gloves.\n\rDecimus drops a leather vest.\n\rDecimus drops a box.\n\rDecimus drops a pair of leather pants.\n\rDecimus drops a leather backpack.\n\rDecimus drops a map of the city of Midgaard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 102 "@as quin"
+rng 51895 7f5599b5
+step 103 "north"
+out dec "Quintus leaves north.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r     A pit for sacrifices is in front of the altar.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "\n\rQuintus leaves north.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 104 "@pulse 1"
+rng 51895 7f5599b5
+step 105 "@as dec"
+rng 51895 7f5599b5
+step 106 "get pants"
+out dec "You get a pair of leather pants.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather pants.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 107 "get boots box"
+out dec "You get a pair of leather boots from a box.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus gets a pair of leather boots from a box.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 108 "north"
+out dec "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r     A pit for sacrifices is in front of the altar.\n\rQuintus the Recruit is here.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rDecimus has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "\n\rDecimus leaves north.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 109 "@pulse 1"
+rng 51895 7f5599b5
+step 110 "put pants pit"
+out dec "You put a pair of leather pants in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather pants in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 111 "@state"
+state room 3054 light 2 people player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state   obj in 3062 wear -1 timer 112 cost 0 values 1 2 2 0 0
+state room 3001 light 0 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 1345 wear -1 timer 0 cost 1000 values 750 0 0 50 50
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 616 wear -1 timer 0 cost 270 values 1 2 2 0 0
+state obj floor 3064 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 11 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 11 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 23 wear -1 timer 0 cost 0 values 100 16 0 50 100
+state obj floor 5007 wear -1 timer 0 cost 20 values 100 1 0 10 100
+rng 51896 5ed8996e
+step 112 "get pants pit"
+out dec "You get a pair of leather pants from the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rDecimus gets a pair of leather pants from the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51896 5ed8996e
+step 113 "@state"
+state room 3054 light 2 people player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3062 wear -1 timer 0 cost 0 values 1 2 2 0 0
+state   obj carried 3063 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state room 3001 light 0 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 1345 wear -1 timer 0 cost 1000 values 750 0 0 50 50
+state obj floor 3033 wear -1 timer 0 cost 30 values 10 0 0 5 100
+state obj floor 616 wear -1 timer 0 cost 270 values 1 2 2 0 0
+state obj floor 3064 wear -1 timer 0 cost 136 values 1 2 2 0 0
+state obj floor 11 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 11 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 0 cost 0 values 0 0 0 1 0
+state obj floor 23 wear -1 timer 0 cost 0 values 100 16 0 50 100
+state obj floor 5007 wear -1 timer 0 cost 20 values 100 1 0 10 100
+rng 51896 5ed8996e
+step 114 "put pants pit"
+out dec "You put a pair of leather pants in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather pants in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51898 d55fddad
+step 115 "put boots pit"
+out dec "You put a pair of leather boots in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rDecimus puts a pair of leather boots in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 116 "get all pit"
+out dec "Don't be so greedy!\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 117 "get all.boots pit"
+out dec "Don't be so greedy!\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 118 "@as quin"
+rng 51899 d1eb3d36
+step 119 "@obj 1105 3054"
+rng 51899 d1eb3d36
+step 120 "get ring"
+out dec "Quintus gets the One Ring.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "You get the One Ring.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 121 "put ring pit"
+out dec "\n\rQuintus puts the One Ring in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "You put the One Ring in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51900 e9723077
+step 122 "@as dec"
+rng 51900 e9723077
+step 123 "get ring pit"
+out dec "You are not powerful enough to use it.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51900 e9723077
+step 124 "@as god"
+rng 51900 e9723077
+step 125 "north"
+out dec "Smokegod has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rSmokegod has arrived.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r     A pit for sacrifices is in front of the altar.\n\rDecimus the Recruit is here.\n\rQuintus the Recruit is here.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51900 e9723077
+step 126 "@pulse 1"
+rng 51900 e9723077
+step 127 "get all pit"
+out dec "\n\rSmokegod gets the One Ring from the donation pit.\n\rSmokegod gets a pair of leather boots from the donation pit.\n\rSmokegod gets a pair of leather pants from the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rSmokegod gets the One Ring from the donation pit.\n\rSmokegod gets a pair of leather boots from the donation pit.\n\rSmokegod gets a pair of leather pants from the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You get the One Ring from the donation pit.\n\rYou get a pair of leather boots from the donation pit.\n\rYou get a pair of leather pants from the donation pit.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51900 e9723077
+step 128 "@state"
+state room 3054 light 2 people player player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3062 wear -1 timer 0 cost 0 values 1 2 2 0 0
+state   obj carried 3063 wear -1 timer 0 cost 0 values 1 2 2 0 0
+state   obj carried 1105 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 51900 e9723077
+step 129 "put all pit"
+out dec "\n\rSmokegod puts a pair of leather pants in the donation pit.\n\rSmokegod puts a pair of leather boots in the donation pit.\n\rSmokegod puts the One Ring in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out quin "\n\rSmokegod puts a pair of leather pants in the donation pit.\n\rSmokegod puts a pair of leather boots in the donation pit.\n\rSmokegod puts the One Ring in the donation pit.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out god "You put a pair of leather pants in the donation pit.\n\rYou put a pair of leather boots in the donation pit.\n\rYou put the One Ring in the donation pit.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51900 e9723077
+step 130 "@state"
+state room 3054 light 2 people player player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 307 wear -1 timer 0 cost 1 values 0 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Quintus 25 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state   obj in 1105 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj in 3063 wear -1 timer 0 cost 0 values 1 2 2 0 0
+state   obj in 3062 wear -1 timer 0 cost 0 values 1 2 2 0 0
+rng 51900 e9723077
