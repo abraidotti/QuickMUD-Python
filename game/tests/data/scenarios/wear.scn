@@ -1,0 +1,147 @@
+# wear, wield, hold and remove: every place, replacing what's there, the refusals, 'wear all', and wield's skill
+# messages. In the temple (3001): Decimus (10, a warrior wearing a vest, a shield, a sword and a light, with sword
+# at 75% and axe at 1%), and Smokegod (an immortal, too weak for a gnarled staff, 1503). Then, each where they log
+# in, to wield a broom (666, an exotic weapon: 3 x level): Delver (2, in 3129), Outlaw (18), Locksmith (30, in
+# 3110) and Heroic (51). Pupil (10, in 3023) has dagger at 50%; with Pupil, a charmed fido (3062, level 0) wields a
+# chessboard (9590, exotic) and a dagger (3701), which reaches the mobs' weapon skill. A second floating stone (5231)
+# finds the float taken in 'wear all'; Delver tries 'get all' where nothing's left.
+@connect dec
+Decimus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@obj 606 3001
+@obj 1344 3001
+@obj 1713 3001
+@obj 2230 3001
+@obj 608 3001
+@obj 104 3001
+@obj 307 3001
+@obj 616 3001
+@obj 102 3001
+@obj 618 3001
+@obj 619 3001
+@obj 3064 3001
+@obj 617 3001
+@obj 3361 3001
+@obj 1374 3001
+@obj 3052 3001
+@obj 3363 3001
+@obj 2326 3001
+@obj 2104 3001
+@obj 3026 3001
+@obj 308 3001
+@obj 8720 3001
+@obj 5230 3001
+@obj 5231 3001
+@obj 1112 3001
+@as dec
+get all
+wear
+wear nothing
+wear map
+wear copper
+wear emerald
+wear seashell
+wear bronze
+wear golden
+wear necklace
+wear amulet
+wear vest
+wear smurf
+wear leggings
+wear boots
+wear gloves
+wear sleeves
+wear cape
+wear belt
+wear strong
+wear standard
+wear marble
+wield axe
+@state
+remove sub
+wield axe
+wear metal
+wield sword
+wear metal
+hold staff
+hold curse
+hold staff
+remove curse
+wear stone
+wear lantern
+@state
+remove
+remove nothing
+remove all
+remove stone
+remove lantern
+remove emerald
+remove bronze
+remove golden
+@state
+wear all
+@state
+@as god
+@obj 1503 3001
+get staff
+wield staff
+@connect delv
+Delver
+psswrd
+@return
+@return
+@obj 666 3129
+get broom
+wield broom
+get all
+@connect out
+Outlaw
+psswrd
+@return
+@return
+@obj 666 3001
+get broom
+wield broom
+@connect lock
+Locksmith
+psswrd
+@return
+@return
+@obj 666 3110
+get broom
+wield broom
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@obj 666 3001
+get broom
+wield broom
+@connect pupil
+Pupil
+psswrd
+@return
+@return
+@obj 3701 3023
+get dagger
+wield dagger
+@mob 3062 3023
+@charm
+@obj 9590 3023
+@obj 3701 3023
+get chessboard
+get dagger
+give chessboard fido
+order fido wield chessboard
+@pulse 12
+give dagger fido
+order fido wield dagger
+@pulse 12
+@state

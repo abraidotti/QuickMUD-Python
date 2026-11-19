@@ -1,0 +1,108 @@
+# get and drop, from and to the floor. In the temple (3001): Decimus (10, who carries 2,500), Quintus (25), Purser
+# (10, with 100 gold and 503 silver) and Smokegod (an immortal). Objects: leather pants (3062) and boots (3063), a
+# fountain (3135, no take), a rope (5011) made into furniture to sit on, three corpses (10, 1000 weight each), a
+# sub issue mace (3700, melts when dropped), a strange amulet (307, no drop), and coins (1, 2 and 3). At the end
+# Purser leads Decimus and splits what it picks up (autosplit), but not a single silver coin.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect purse
+Purser
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@obj 3062 3001
+@obj 3063 3001
+@obj 3135 3001
+@obj 5011 3001 2 1000 16 100 100
+@as dec
+get
+get nothing
+get pants all
+get pants
+get all.nothing
+get all.boots
+@as quin
+sit rope
+@as dec
+get rope
+get all
+@state
+@as quin
+stand
+@as dec
+get all.rope
+drop
+drop nothing
+drop all.nothing
+drop all.pants
+drop all
+@state
+get all
+@obj 10 3001
+@obj 10 3001
+@obj 10 3001
+get all.corpse
+@state
+drop all.corpse
+@obj 3700 3001
+@obj 307 3001
+get mace
+get amulet
+drop mace
+drop amulet
+get mace
+drop all
+@obj 307 3001
+@as god
+get amulet
+drop amulet
+@as dec
+drop all
+@state
+@as purse
+drop 0 coins
+drop 5 bananas
+drop -3 silver
+drop 99999 silver
+drop 9999 gold
+drop 1 silver
+@state
+get coin
+drop 1 gold
+@state
+get coin
+drop 5 gold
+@state
+get coins
+drop 20 silver
+drop 3 coin
+drop 3 gold
+@state
+@obj 1 3001
+@obj 2 3001
+@obj 3 3001 0 25 0 0 0
+@state
+drop 1 silver
+@state
+get coins
+@as dec
+follow purser
+@as purse
+group decimus
+autosplit
+drop 1 silver
+get coin
+drop 30 silver
+drop 4 gold
+get coins
+@state

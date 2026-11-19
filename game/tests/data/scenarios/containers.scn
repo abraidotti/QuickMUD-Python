@@ -1,0 +1,137 @@
+# put and get with containers, corpses and the donation pit. In the temple (3001): Decimus (10), Quintus (25) and
+# Smokegod (an immortal). A box (3033: holds 100, nothing over 50), a closed wicker basket (5007), a leather
+# backpack (1345: its contents weigh half), a floating disc (23) made into something to put things on, leather
+# pants (3062, 50: exactly the box's limit, #57), boots (3063), gloves (3064) and a leather vest (616, 100: too
+# heavy for the box), and a strange amulet (307, no drop). Then corpses: a mob's (10), and a player's (11) with an owner (@owner). Then the pit (3010, by
+# the altar, 3054): it has no take flag, so what's put in one at a time gets a timer (a random number), but not what
+# 'put all' puts in (#58); only immortals can 'get all' from it, and only those of the object's level can get it.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@obj 3033 3001
+@obj 5007 3001
+@obj 1345 3001
+@obj 23 3001 100 16 0 50 100
+@obj 3062 3001
+@obj 3063 3001
+@obj 3064 3001
+@obj 616 3001
+@obj 307 3001
+@as dec
+get pants
+get boots
+get gloves
+get vest
+get backpack
+get amulet
+put
+put pants
+put pants in
+put pants all
+put pants all.box
+put pants nothing
+put pants vest
+put pants basket
+put nothing box
+put amulet box
+put backpack backpack
+put backpack box
+put vest box
+put all.pants box
+@state
+put pants box
+put pants box
+put all box
+@state
+get
+get pants all
+get pants all.box
+get pants nothing
+get pants vest
+get pants basket
+open basket
+get all basket
+get all.pants basket
+get pants basket
+get nothing box
+get all.nothing box
+get pants from box
+get all.boots box
+get all box
+get all box
+get box
+put boots box
+put gloves on disc
+put vest on disc
+@state
+get all disc
+@obj 10 3001
+get all corpse
+get bone corpse
+put boots corpse
+@obj 11 3001
+@owner Quintus
+get all corpse
+get corpse
+@as quin
+noloot
+@as dec
+get all corpse
+@as quin
+noloot
+@as dec
+follow quintus
+@as quin
+group decimus
+@as dec
+get all corpse
+follow self
+get all corpse
+@as quin
+get all corpse
+@as god
+get all corpse
+@obj 11 3001
+@owner Nobody
+@as dec
+get all corpse
+drop all
+@as quin
+north
+@pulse 1
+@as dec
+get pants
+get boots box
+north
+@pulse 1
+put pants pit
+@state
+get pants pit
+@state
+put pants pit
+put boots pit
+get all pit
+get all.boots pit
+@as quin
+@obj 1105 3054
+get ring
+put ring pit
+@as dec
+get ring pit
+@as god
+north
+@pulse 1
+get all pit
+@state
+put all pit
+@state

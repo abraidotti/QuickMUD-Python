@@ -151,6 +151,40 @@ class Commands(unittest.TestCase):
         self.assertEqual(self.say("smi"), "You smile.\n\r")
 
 
+class Money(unittest.TestCase):
+    """handler.c's create_money: the five coin objects of limbo.are, and zero money mended to 1 gold and 1 silver
+    (drop and the rest never ask for zero, so no scenario reaches it)."""
+
+    @classmethod
+    def setUpClass(cls):
+        with log.capture():
+            cls.game = boot_db(Path(__file__).resolve().parents[2] / "area", 1763400000, {"CHARM_SEED": "1"})
+
+    def test_each_shape(self):
+        from charm.entities.handler import create_money
+
+        def made(gold, silver):
+            o = create_money(self.game, gold, silver)
+            return o.index.vnum, o.short_descr, o.value[:2], o.cost, o.weight
+
+        self.assertEqual(made(0, 1), (C.OBJ_VNUM_SILVER_ONE, "a silver coin", [1, 0], 0, 10))  # limbo.are's weight
+        self.assertEqual(made(1, 0), (C.OBJ_VNUM_GOLD_ONE, "a gold coin", [0, 1], 0, 10))
+        self.assertEqual(made(12, 0), (C.OBJ_VNUM_GOLD_SOME, "12 gold coins", [0, 12], 12, 2))
+        self.assertEqual(made(0, 45), (C.OBJ_VNUM_SILVER_SOME, "45 silver coins", [45, 0], 45, 2))
+        self.assertEqual(made(7, 41), (C.OBJ_VNUM_COINS, "41 silver coins and 7 gold coins", [41, 7], 741, 3))
+
+    def test_zero_or_negative_money_is_mended_and_logged(self):
+        from charm.entities.handler import create_money
+
+        with mock.patch.object(log, "log_string") as logged:
+            o = create_money(self.game, 0, 0)
+        logged.assert_called_once_with("[*****] BUG: Create_money: zero or negative money.")
+        self.assertEqual((o.index.vnum, o.value[:2]), (C.OBJ_VNUM_COINS, [1, 1]))
+        with mock.patch.object(log, "log_string") as logged:
+            create_money(self.game, -5, 3)
+        logged.assert_called_once_with("[*****] BUG: Create_money: zero or negative money.")
+
+
 class Buffers(unittest.TestCase):
     """recycle.c's BUFFER, which keeps tells for replay: it grows through buf_size, and holds 16382 characters at most."""
 

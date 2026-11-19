@@ -732,6 +732,86 @@ def get_skill(ch: Char, sn: int) -> int:
     return 0 if skill < 0 else (100 if skill > 100 else skill)
 
 
+_WEAPON_GSN = {C.WEAPON_SWORD: "gsn_sword", C.WEAPON_DAGGER: "gsn_dagger", C.WEAPON_SPEAR: "gsn_spear",
+               C.WEAPON_MACE: "gsn_mace", C.WEAPON_AXE: "gsn_axe", C.WEAPON_FLAIL: "gsn_flail",
+               C.WEAPON_WHIP: "gsn_whip", C.WEAPON_POLEARM: "gsn_polearm"}
+
+
+# C: handler.c get_weapon_sn
+def get_weapon_sn(ch: Char) -> int:
+    wield = get_eq_char(ch, C.WEAR_WIELD)
+    if wield is None or wield.item_type != C.ITEM_WEAPON:
+        return GSN["gsn_hand_to_hand"]
+    name = _WEAPON_GSN.get(wield.value[0])
+    return GSN[name] if name else -1  # -1 is exotic
+
+
+# C: handler.c get_weapon_skill
+def get_weapon_skill(ch: Char, sn: int) -> int:
+    if ch.is_npc:
+        if sn == -1:  # "-1 is exotic"
+            skill = 3 * ch.level
+        elif sn == GSN["gsn_hand_to_hand"]:
+            skill = 40 + 2 * ch.level
+        else:
+            skill = 40 + c_div(5 * ch.level, 2)
+    elif sn == -1:
+        skill = 3 * ch.level
+    else:
+        skill = ch.pcdata.learned[sn]
+    return 0 if skill < 0 else (100 if skill > 100 else skill)  # URANGE(0, skill, 100)
+
+
+# C: handler.c create_money
+def create_money(game: Game, gold: int, silver: int) -> Obj:
+    from charm.entities.create import create_object
+
+    if gold < 0 or silver < 0 or (gold == 0 and silver == 0):
+        bug("Create_money: zero or negative money.", min(gold, silver))
+        gold = max(1, gold)
+        silver = max(1, silver)
+    ix = game.index
+    if gold == 0 and silver == 1:
+        obj = create_object(game, ix.get_obj_index(C.OBJ_VNUM_SILVER_ONE), 0)
+    elif gold == 1 and silver == 0:
+        obj = create_object(game, ix.get_obj_index(C.OBJ_VNUM_GOLD_ONE), 0)
+    elif silver == 0:
+        obj = create_object(game, ix.get_obj_index(C.OBJ_VNUM_GOLD_SOME), 0)
+        obj.short_descr = obj.short_descr % gold  # format: sprintf (limbo.are's "%d gold coins")
+        obj.value[1] = gold
+        obj.cost = gold
+        obj.weight = gold // 5  # non-negative: gold > 0 here
+    elif gold == 0:
+        obj = create_object(game, ix.get_obj_index(C.OBJ_VNUM_SILVER_SOME), 0)
+        obj.short_descr = obj.short_descr % silver  # format: sprintf (limbo.are's "%d silver coins")
+        obj.value[0] = silver
+        obj.cost = silver
+        obj.weight = silver // 20  # non-negative: silver > 0 here
+    else:
+        obj = create_object(game, ix.get_obj_index(C.OBJ_VNUM_COINS), 0)
+        obj.short_descr = obj.short_descr % (silver, gold)  # format: sprintf ("%d silver coins and %d gold coins")
+        obj.value[0] = silver
+        obj.value[1] = gold
+        obj.cost = int32(100 * gold + silver)
+        obj.weight = gold // 5 + silver // 20  # non-negative: both > 0 here
+    return obj
+
+
+# C: handler.c get_true_weight
+def get_true_weight(obj: Obj) -> int:
+    weight = obj.weight
+    for o in obj.contains:
+        weight += get_obj_weight(o)
+    return int32(weight)
+
+
+# C: handler.c can_drop_obj
+def can_drop_obj(ch: Char, obj: Obj) -> bool:
+    if not obj.extra_flags & C.ITEM_NODROP:
+        return True
+    return not ch.is_npc and ch.level >= C.LEVEL_IMMORTAL
+
+
 # C: handler.c get_age
 def get_age(game: Game, ch: Char) -> int:
     return 17 + c_div(ch.played + int32(game.current_time - ch.logon), 72000)

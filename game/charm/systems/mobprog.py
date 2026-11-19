@@ -75,3 +75,35 @@ def mp_exit_trigger(ch, door: int) -> bool:
                     program_flow(prg.vnum, prg.code, mob, ch, None, None)
                     return True
     return False
+
+
+# C: mob_prog.c mp_bribe_trigger
+def mp_bribe_trigger(mob, ch, amount: int) -> None:
+    # "Original MERC 2.2 MOBprograms used to create a money object and give it to the mobile. WFT was that? Funcs
+    # in act_obj() handle it just fine."
+    for prg in mob.index.mprogs:
+        if prg.trig_type == C.TRIG_BRIBE and amount >= atoi(prg.trig_phrase):
+            program_flow(prg.vnum, prg.code, mob, ch, None, None)
+            break
+
+
+# C: mob_prog.c mp_give_trigger
+def mp_give_trigger(mob, ch, obj) -> None:
+    from charm.commands.interp import is_number, one_argument
+    from charm.core.strings import str_cmp
+    from charm.entities.handler import is_name
+
+    for prg in mob.index.mprogs:
+        if prg.trig_type != C.TRIG_GIVE:
+            continue
+        p = prg.trig_phrase
+        if is_number(p):  # "Vnum argument"
+            if obj.index.vnum == atoi(p):
+                program_flow(prg.vnum, prg.code, mob, ch, obj, None)
+                return
+        else:  # "Object name argument, e.g. 'sword'"
+            while p:
+                p, buf = one_argument(p)
+                if is_name(buf, obj.name) or str_cmp("all", buf):
+                    program_flow(prg.vnum, prg.code, mob, ch, obj, None)
+                    return
