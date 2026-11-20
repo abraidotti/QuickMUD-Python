@@ -495,6 +495,31 @@ def affect_remove(ch: Char, paf: Affect) -> None:
     affect_check(ch, where, vector)
 
 
+# C: handler.c affect_remove_obj
+def affect_remove_obj(obj: Obj, paf: Affect) -> None:
+    if not obj.affected:
+        bug("Affect_remove_object: no affect.", 0)
+        return
+    if obj.carried_by is not None and obj.wear_loc != -1:
+        affect_modify(obj.carried_by, paf, False)
+    where, vector = paf.where, paf.bitvector
+    # "remove flags from the object if needed"
+    if paf.bitvector:
+        if paf.where == C.TO_OBJECT:
+            obj.extra_flags &= ~paf.bitvector
+        elif paf.where == C.TO_WEAPON and obj.item_type == C.ITEM_WEAPON:
+            obj.value[4] &= ~paf.bitvector
+    for i, a in enumerate(obj.affected):
+        if a is paf:
+            del obj.affected[i]
+            break
+    else:
+        bug("Affect_remove_object: cannot find paf.", 0)
+        return
+    if obj.carried_by is not None and obj.wear_loc != -1:
+        affect_check(obj.carried_by, where, vector)
+
+
 # C: handler.c obj_from_room
 def obj_from_room(obj: Obj) -> None:
     room = obj.in_room
