@@ -812,6 +812,67 @@ def can_drop_obj(ch: Char, obj: Obj) -> bool:
     return not ch.is_npc and ch.level >= C.LEVEL_IMMORTAL
 
 
+_IMM_BIT = {C.DAM_BASH: C.IMM_BASH, C.DAM_PIERCE: C.IMM_PIERCE, C.DAM_SLASH: C.IMM_SLASH, C.DAM_FIRE: C.IMM_FIRE,
+            C.DAM_COLD: C.IMM_COLD, C.DAM_LIGHTNING: C.IMM_LIGHTNING, C.DAM_ACID: C.IMM_ACID,
+            C.DAM_POISON: C.IMM_POISON, C.DAM_NEGATIVE: C.IMM_NEGATIVE, C.DAM_HOLY: C.IMM_HOLY,
+            C.DAM_ENERGY: C.IMM_ENERGY, C.DAM_MENTAL: C.IMM_MENTAL, C.DAM_DISEASE: C.IMM_DISEASE,
+            C.DAM_DROWNING: C.IMM_DROWNING, C.DAM_LIGHT: C.IMM_LIGHT, C.DAM_CHARM: C.IMM_CHARM,
+            C.DAM_SOUND: C.IMM_SOUND}  # "VULN etc. must ALL be the same or this will fail"
+
+
+# C: handler.c check_immune
+def check_immune(ch: Char, dam_type: int) -> int:
+    """IS_IMMUNE, IS_RESISTANT, IS_VULNERABLE or IS_NORMAL; -1 for DAM_NONE."""
+    immune = -1
+    default = C.IS_NORMAL
+    if dam_type == C.DAM_NONE:
+        return immune
+    if dam_type <= 3:
+        if ch.imm_flags & C.IMM_WEAPON:
+            default = C.IS_IMMUNE
+        elif ch.res_flags & C.RES_WEAPON:
+            default = C.IS_RESISTANT
+        elif ch.vuln_flags & C.VULN_WEAPON:
+            default = C.IS_VULNERABLE
+    else:  # "magical attack"
+        if ch.imm_flags & C.IMM_MAGIC:
+            default = C.IS_IMMUNE
+        elif ch.res_flags & C.RES_MAGIC:
+            default = C.IS_RESISTANT
+        elif ch.vuln_flags & C.VULN_MAGIC:
+            default = C.IS_VULNERABLE
+    bit = _IMM_BIT.get(dam_type)
+    if bit is None:
+        return default
+    # sic: as in the C, immune is still -1 on each test below, so the vulnerable branch's first two cases never
+    # happen (#75)
+    if ch.imm_flags & bit:
+        immune = C.IS_IMMUNE
+    elif ch.res_flags & bit and immune != C.IS_IMMUNE:
+        immune = C.IS_RESISTANT
+    elif ch.vuln_flags & bit:
+        if immune == C.IS_IMMUNE:
+            immune = C.IS_RESISTANT
+        elif immune == C.IS_RESISTANT:
+            immune = C.IS_NORMAL
+        else:
+            immune = C.IS_VULNERABLE
+    return default if immune == -1 else immune
+
+
+# C: handler.c affect_find
+def affect_find(affects: list[Affect], sn: int) -> Affect | None:
+    for paf in affects:
+        if paf.type == sn:
+            return paf
+    return None
+
+
+# C: db.c interpolate
+def interpolate(level: int, value_00: int, value_32: int) -> int:
+    return value_00 + c_div(level * (value_32 - value_00), 32)
+
+
 # C: handler.c affect_join
 def affect_join(ch: Char, paf: Affect) -> None:
     for old in ch.affected:

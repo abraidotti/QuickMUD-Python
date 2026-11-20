@@ -1,0 +1,127 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect dec"
+rng 51895 7f5599b5
+step 7 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@mob 3064 3001"
+rng 51898 d55fddad
+step 12 "@mob 3124 3001"
+rng 51901 51250113
+step 13 "@connect ram"
+rng 51901 51250113
+step 14 "Rambler"
+out ram "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51901 51250113
+step 15 "psswrd"
+out ram "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51901 51250113
+step 16 "@return"
+out god "\n\rRambler has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rA duck is here, quacking happily.\n\rA singing, happy drunk wanders around, singing about Moria.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 17 "@return"
+out ram "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 18 "@as dec"
+rng 51901 51250113
+step 19 "kill drunk"
+out god "\n\rDecimus's slash wounds the drunk.\n\rThe drunk's beating misses Decimus.\n\rDecimus's slash injures the drunk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "Your slash wounds the drunk.\n\rThe drunk's beating misses you.\n\rYour slash injures the drunk.\n\rThe drunk has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus's slash wounds the drunk.\n\rThe drunk's beating misses Decimus.\n\rDecimus's slash injures the drunk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 20 "@as ram"
+rng 51937 98fa3ef8
+step 21 "kill duck"
+out god "\n\rRambler's slash DISEMBOWELS the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "Rambler's slash DISEMBOWELS the duck!\n\rThe drunk has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "Your slash DISEMBOWELS the duck!\n\rThe duck has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51946 d8f44296
+step 22 "@pulse until 400 is DEAD!!"
+pulses 11
+out god "\n\rRambler's slash DISEMBOWELS the duck!\n\rThe duck is DEAD!!\n\rThe duck spills his guts all over the floor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler's slash DISEMBOWELS the duck!\n\rThe duck is DEAD!!\n\rThe duck spills his guts all over the floor.\n\rThe drunk has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rYour slash DISEMBOWELS the duck!\n\rThe duck is DEAD!!\n\rYou receive 296 experience points.\n\rThe duck spills his guts all over the floor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51957 7f61faf9
+step 23 "@state"
+state room 3001 light 2 people player mob player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 1 daze 0 exp 2384 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3064 pos 7 hit 17/28 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 44 act 65 affected_by 0 train 0 on 0 stats 11 11 11 11 11
+state char Decimus 10 pos 7 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 16 wear -1 timer 5 cost 0 values 5 5 0 1 0
+rng 51957 7f61faf9
+step 24 "@pulse 12"
+out god "\n\rThe drunk's beating injures Decimus.\n\rDecimus's slash injures the drunk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe drunk's beating injures you.\n\rYour slash injures the drunk.\n\rThe drunk has some big nasty wounds and scratches. \n\r\n\r<24hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe drunk's beating injures Decimus.\n\rDecimus's slash injures the drunk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51977 ffb3740e
+step 25 "@state"
+state room 3001 light 2 people player mob player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2384 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3064 pos 7 hit 12/28 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 44 act 65 affected_by 0 train 0 on 0 stats 11 11 11 11 11
+state char Decimus 10 pos 7 hit 24/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 16 wear -1 timer 5 cost 0 values 5 5 0 1 0
+rng 51977 ffb3740e

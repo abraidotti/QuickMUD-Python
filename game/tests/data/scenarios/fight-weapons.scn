@@ -1,0 +1,57 @@
+# Weapons with flags, in whole fights with violence_update on. In the temple (3001), with Hassan and Smokegod (60):
+# - Decimus (10) wields a small sword made sharp, vampiric and poisoned (values 1 2 4 1 140) against a goblin (3501,
+#   which parries): sharpness can double a hit, the vampiric bite heals Decimus and makes him a little more evil, and
+#   the poison (no affect on the sword, so at its level) can poison the goblin if it fails its save
+# - Pickpocket (13, envenom at 85%) envenoms a dagger, and fights a lizard (3710), which resists poison: the
+#   dagger's own poison affect sets the level, and weakens with each poisoning until it wears off
+# - Rambler (2) wields a sword of 100d100 against a duck: more than 1200 damage is logged as a bug, and the sword is
+#   taken away ("You really shouldn't cheat.")
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@return
+@connect ram
+Rambler
+psswrd
+@return
+@return
+@as dec
+@obj 3021 3001 1 2 4 1 140
+get sword
+wield sword
+@mob 3501 3001
+kill goblin
+@pulse until 600 is DEAD!!
+@state
+@as pick
+@obj 3020 3001
+get dagger
+envenom dagger
+envenom dagger
+envenom dagger
+wield dagger
+@pulse 12
+@mob 3710 3001
+kill lizard
+@pulse until 600 is DEAD!!
+@state
+@as ram
+@obj 3021 3001 1 100 100 1 0
+get sword
+wield sword
+@mob 3124 3001
+kill duck
+@pulse 12
+@state

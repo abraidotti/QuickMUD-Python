@@ -1145,22 +1145,60 @@ void aggr_update (void)
  * Random times to defeat tick-timing clients and players.
  */
 
-/* CHARM_UPDATES=area runs only area_update, as the Python port's spike does, so
-   a test can compare the two games after boot (#32). The pulse counters and the
-   TICK wiznet line carry on as usual. Unset, everything runs. -- Charm */
-static bool area_updates_only (void)
-{
-    static int only = -1;
+/* CHARM_UPDATES picks which updates update_handler runs, so a test can compare
+   the C and Python games while the port has only some of them (#32, #74). It's
+   a comma-separated list of names: area, song, mobile, violence, weather, char,
+   obj and aggr, or all. Unset, everything runs. The pulse counters and the TICK
+   wiznet line carry on whatever it says. -- Charm */
+#define UPD_AREA     (1 << 0)
+#define UPD_SONG     (1 << 1)
+#define UPD_MOBILE   (1 << 2)
+#define UPD_VIOLENCE (1 << 3)
+#define UPD_WEATHER  (1 << 4)
+#define UPD_CHAR     (1 << 5)
+#define UPD_OBJ      (1 << 6)
+#define UPD_AGGR     (1 << 7)
 
-    if (only < 0)
+static bool update_runs (int which)
+{
+    static const struct { const char *name; int bit; } names[] = {
+        {"area", UPD_AREA}, {"song", UPD_SONG}, {"mobile", UPD_MOBILE},
+        {"violence", UPD_VIOLENCE}, {"weather", UPD_WEATHER},
+        {"char", UPD_CHAR}, {"obj", UPD_OBJ}, {"aggr", UPD_AGGR},
+        {"all", -1}, {NULL, 0}
+    };
+    static int on = 0;
+    static bool parsed = FALSE;
+
+    if (!parsed)
     {
         const char *env = getenv ("CHARM_UPDATES");
+        char list[MAX_INPUT_LENGTH], *name;
+        int i;
 
-        only = env != NULL && !str_cmp (env, "area");
-        if (only)
-            log_string ("CHARM_UPDATES=area: only area_update runs");
+        parsed = TRUE;
+        if (env == NULL)
+            on = -1;
+        else
+        {
+            strncpy (list, env, sizeof (list) - 1);
+            list[sizeof (list) - 1] = '\0';
+            for (name = strtok (list, ","); name != NULL;
+                 name = strtok (NULL, ","))
+            {
+                for (i = 0; names[i].name != NULL; i++)
+                    if (!str_cmp (name, names[i].name))
+                        break;
+                if (names[i].name == NULL)
+                    bug ("CHARM_UPDATES: no update called that", 0);
+                else
+                    on |= names[i].bit;
+            }
+            sprintf (log_buf, "CHARM_UPDATES=%s: only those updates run", env);
+            log_string (log_buf);
+        }
     }
-    return only;
+    return (on & which) != 0;
 }
 
 void update_handler (void)
@@ -1175,27 +1213,28 @@ void update_handler (void)
     {
         pulse_area = PULSE_AREA;
         /* number_range( PULSE_AREA / 2, 3 * PULSE_AREA / 2 ); */
-        area_update ();
+        if (update_runs (UPD_AREA))
+            area_update ();
     }
 
     if (--pulse_music <= 0)
     {
         pulse_music = PULSE_MUSIC;
-        if (!area_updates_only ())
+        if (update_runs (UPD_SONG))
             song_update ();
     }
 
     if (--pulse_mobile <= 0)
     {
         pulse_mobile = PULSE_MOBILE;
-        if (!area_updates_only ())
+        if (update_runs (UPD_MOBILE))
             mobile_update ();
     }
 
     if (--pulse_violence <= 0)
     {
         pulse_violence = PULSE_VIOLENCE;
-        if (!area_updates_only ())
+        if (update_runs (UPD_VIOLENCE))
             violence_update ();
     }
 
@@ -1204,15 +1243,15 @@ void update_handler (void)
         wiznet ("TICK!", NULL, NULL, WIZ_TICKS, 0, 0);
         pulse_point = PULSE_TICK;
 /* number_range( PULSE_TICK / 2, 3 * PULSE_TICK / 2 ); */
-        if (!area_updates_only ())
-        {
+        if (update_runs (UPD_WEATHER))
             weather_update ();
+        if (update_runs (UPD_CHAR))
             char_update ();
+        if (update_runs (UPD_OBJ))
             obj_update ();
-        }
     }
 
-    if (!area_updates_only ())
+    if (update_runs (UPD_AGGR))
         aggr_update ();
     tail_chain ();
     return;

@@ -29,7 +29,7 @@ The code is organised by topic, not by C file:
 | `olc/` | the online builder | |
 
 So far there are `core/`, `data/`, `world/`, `entities/`, `net/`, `persist/` (player files and the boards),
-`systems/` (`update_handler`, the skill groups, mob program triggers and the bits of fight.c others reach) and
+`systems/` (`update_handler`, the skill groups, mob program triggers, and fighting: `fight.c` but its skills) and
 `commands/` (the interpreter, and the information, movement and talking commands). The import rules for the
 first three are checked by `tests/test_guards.py`; the rest get rules once the port shows where the C game's
 circular calls land. The first one has: `equip_char` (`entities/`) calls `act()` (`net/`).
@@ -47,14 +47,17 @@ and the magic items up to the spell, which raises `NotPorted`), all of `board.c`
 writing a note; ban, permban and allow), all of `act_wiz.c`'s but copyover, which comes with OLC in P5 (goto,
 at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix, wiznet; deny, disconnect, freeze,
 the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
-string, force, the locks, shutdown, reboot and qmconfig), and what login calls; any other command raises `NotPorted`,
-which stops the game (#32). Only `area_update` runs of the per-pulse updates; the game logs the rest at boot (#28).
+string, force, the locks, shutdown, reboot and qmconfig), `fight.c`'s kill, murder, flee, surrender and slay, and
+what login calls; any other command raises `NotPorted`, which stops the game (#32). Of the per-pulse updates,
+`area_update` and `violence_update` run; the game logs the rest at boot (#28). `CHARM_UPDATES` names the ones to run
+in both games (`area,violence`, or `all`; unset, everything ported), as `@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.
 
 Scenarios (#35) check state as well as output, with no network and no real clock. A scenario is a text file in
 `tests/data/scenarios/` (`NAME.scn`): lines of input for a connection, and `@` lines for the harness (`@connect`,
-`@as`, `@return`, `@pulse N`, `@mob`, `@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too),
+`@as`, `@return`, `@pulse N`, `@pulse until N TEXT` (pulses until a connection is sent TEXT, at most N), `@mob`,
+`@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too),
 `@obj` (with the object's five values, if given), `@owner` (the last object's owner, as a player's
 corpse has), `@state`, `@file`, and before boot `@seed`, `@clock`, `@updates` and `@place` (a file from
 `tools/fixtures/files`, such as a board's notes or a ban list, put where boot reads it); the

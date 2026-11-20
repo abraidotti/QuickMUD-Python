@@ -63,6 +63,8 @@ class Game:
     pulse_mobile: int = 0
     pulse_violence: int = 0
     pulse_point: int = 0
+    # the updates update_handler runs: CHARM_UPDATES's names (charm.systems.update.updates_named); all by default
+    updates: frozenset = frozenset(("area", "song", "mobile", "violence", "weather", "char", "obj", "aggr"))
     str_boot_time: str = ""  # comm.c's, ctime of the boot; main sets it (the scenario oracle doesn't, so it's "")
     max_on: int = 0  # act_info.c's, the most players do_count has seen on
     # board.c's: each board's notes (note_first, oldest first) and whether it needs saving (changed), and

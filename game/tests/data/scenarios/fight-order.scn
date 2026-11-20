@@ -1,0 +1,32 @@
+# violence_update walks char_list by the next pointer it took before each fighter's round. New characters go at the
+# head of char_list, so making a duck (3124) and then connecting Rambler (2) puts Rambler just before the duck, and
+# after them a drunk (3064, made earlier) and Decimus (10, connected first). In the temple (3001), with Hassan and
+# Smokegod (60), Decimus fights the drunk and Rambler the duck. In the pulse whose round kills the duck, the C's next
+# pointer is the freed duck, whose next is recycle.c's free list: the loop ends there, so Decimus and the drunk get
+# no round that pulse (sic, #75). The next pulse of violence, they fight on.
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@mob 3064 3001
+@mob 3124 3001
+@connect ram
+Rambler
+psswrd
+@return
+@return
+@as dec
+kill drunk
+@as ram
+kill duck
+@pulse until 400 is DEAD!!
+@state
+@pulse 12
+@state

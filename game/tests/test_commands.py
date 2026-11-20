@@ -205,3 +205,24 @@ class Buffers(unittest.TestCase):
         clear_buf(buf)
         self.assertTrue(add_buf(buf, "again"))
         self.assertEqual(buf.string, "again")
+
+
+class Updates(unittest.TestCase):
+    """CHARM_UPDATES's names, read as update.c's update_runs reads them (#74)."""
+
+    def test_names_pick_the_updates(self):
+        from charm.systems.update import UPDATES, updates_named
+
+        self.assertEqual(updates_named(None), frozenset(UPDATES))
+        self.assertEqual(updates_named("all"), frozenset(UPDATES))
+        self.assertEqual(updates_named("area"), {"area"})
+        self.assertEqual(updates_named("Area,,VIOLENCE"), {"area", "violence"})
+        with log.capture():
+            self.assertEqual(updates_named("area,nonsense"), {"area"})
+
+    def test_a_scenario_naming_an_unported_update_stops(self):
+        from charm.testing.scenario import play
+
+        with tempfile.TemporaryDirectory() as tmp:
+            out = play("@updates area,mobile\n@pulse 1\n", Path(tmp))
+        self.assertEqual(out, ["stopped NotPorted: update_handler: mobile (@updates area,mobile)"])

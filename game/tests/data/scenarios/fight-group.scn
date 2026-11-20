@@ -1,0 +1,67 @@
+# A group fight, with violence_update on. In the temple (3001), with Hassan: Smokegod (60), Rambler (2, the leader,
+# wearing wild flowers that are anti-evil, then made evil by Smokegod), Yeoman (5, with autoassist on) and a duck
+# charmed to follow Rambler. Decimus (10) is in the group too, but waits in the temple square (3005). Three lizards
+# (3710, level 2) assist their race. Rambler attacks one lizard, and then another:
+# - each round, check_assist brings in Yeoman (autoassist) and the duck (charmed), and another lizard may join
+#   against a random member of Rambler's group. The C picks it from the room's first character on through char_list
+#   (vch->next), not the room, so Decimus next door can be picked: the lizard screams, and its attack misses the room
+#   (#75)
+# - the kill shares experience among the group in the room (the duck counts half its level), and each member's share
+#   checks Rambler's gear for the flowers' zap, not the member's own: Yeoman, also wearing flowers and made evil,
+#   keeps them (#75)
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@return
+autoassist
+@connect ram
+Rambler
+psswrd
+@return
+@return
+@as god
+load obj 304
+give flowers rambler
+load obj 304
+give flowers yeoman
+@as ram
+wear flowers
+@as yeo
+wear flowers
+@as god
+set char rambler align -750
+set char yeoman align -750
+@as dec
+follow rambler
+@as yeo
+follow rambler
+@as ram
+group decimus
+group yeoman
+@mob 3124 3001
+@charm
+@as dec
+south
+@as ram
+@mob 3710 3001
+@mob 3710 3001
+@mob 3710 3001
+kill lizard
+@pulse until 400 is DEAD!!
+@state
+kill lizard
+@pulse until 400 is DEAD!!
+@state
+score

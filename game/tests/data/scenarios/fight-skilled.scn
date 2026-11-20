@@ -1,0 +1,26 @@
+# A skilled fighter, with violence_update on. In the temple (3001), with Hassan: Smokegod (60) sets every skill of
+# Heroic (51, a warrior) to 100, so each round has a second and a third attack, enhanced damage, and parries, dodges
+# and shield blocks against the mobs. Heroic kills a kitten (3090, fast: an extra attack each round) and then fights a
+# septon (9006), each fight running until someone is DEAD. At 51, Heroic is a hero: no experience is gained.
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+set skill heroic all 100
+@as hero
+@mob 3090 3001
+kill kitten
+@pulse until 400 is DEAD!!
+@state
+@mob 9006 3001
+kill septon
+@pulse until 600 is DEAD!!
+@state

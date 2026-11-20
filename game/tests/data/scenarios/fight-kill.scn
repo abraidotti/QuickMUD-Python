@@ -1,0 +1,63 @@
+# Whole fights, each to a death, with violence_update on. In the temple (3001), with Hassan: Smokegod (60, with
+# wiznet's levels and mob deaths on) and Rambler (2, a warrior with 29 hit points and 2088 experience of the 3000 that
+# level 3 needs), who turns autoloot, autogold and autosac on. Seraph waits in the temple square (3005), to hear the
+# death cries. Rambler kills four ducks (3124, level 1), each fight running until the duck is DEAD:
+# - the first carries a small sword and 10 gold from Smokegod: autoloot takes both, and autosac then sacrifices the
+#   empty corpse
+# - with autoloot off, the second's 10 gold goes by autogold
+# - Rambler wields the sword for the last two, and the fourth raises a level, which wiznet shows Smokegod
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+wiznet on
+wiznet levels
+wiznet mobdeaths
+set char smokegod gold 100
+@connect ser
+Seraph
+smoke123
+@return
+@return
+south
+@connect ram
+Rambler
+psswrd
+@return
+@return
+autoloot
+autogold
+autosac
+@as god
+@mob 3124 3001
+load obj 3021
+give sword duck
+give 10 gold duck
+@as ram
+kill duck
+@pulse until 400 is DEAD!!
+@state
+look
+autoloot
+@as god
+@mob 3124 3001
+give 10 gold duck
+@as ram
+kill duck
+@pulse until 400 is DEAD!!
+@state
+wield sword
+@as god
+@mob 3124 3001
+@as ram
+kill duck
+@pulse until 400 is DEAD!!
+@as god
+@mob 3124 3001
+@as ram
+kill duck
+@pulse until 400 is DEAD!!
+@state
+score

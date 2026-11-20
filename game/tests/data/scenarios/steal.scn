@@ -6,9 +6,8 @@
 # no drop) and a mob's corpse (10, 1000 weight), which Pickpocket, already carrying two, can't hold. By the altar
 # (3054, a safe room) stealing from a mob is refused. A failed steal makes Pickpocket a THIEF and is saved. Last,
 # Unseen (5, invisible, in no clan) fails to steal from an awake fido, which can't see it and attacks (fight.c's
-# multi_hit): the Python game stops there. Before that, Pickpocket's own charmed fido, ordered to sleep, has no coins
+# multi_hit): one round, as only area_update runs. Before that, Pickpocket's own charmed fido, ordered to sleep, has no coins
 # to steal; Unseen tries the second, awake fido.
-# expect: stopped NotPorted
 @connect pick
 Pickpocket
 psswrd

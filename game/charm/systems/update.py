@@ -1,9 +1,12 @@
 """update_handler: the game's clockwork, run once a pulse (a quarter of a second).
 
-[partial], as #28 decided: the pulse counters are the C's exactly, and area_update runs on its pulse. The other
-updates aren't ported and don't run. That's the one place the spike's game knowingly differs from the C: a running
-Python world stops matching the C's after the first mobile pulse. The game logs what isn't running at boot
-(NOT_RUNNING), and each has a LATER line below, so port status lists them.
+[partial], as #28 decided: the pulse counters are the C's exactly, and area_update and violence_update run on
+their pulses. The other updates aren't ported and don't run. That's the one place the game knowingly differs from
+the C: a running Python world stops matching the C's after the first mobile pulse. The game logs what isn't
+running at boot (NOT_RUNNING), and each has a LATER line below, so port status lists them.
+
+CHARM_UPDATES names the updates that run, in both games (#74): area, song, mobile, violence, weather, char, obj and
+aggr, comma-separated, or all. Unset, everything runs (everything ported, here).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -18,19 +21,46 @@ from charm.net.wiznet import wiznet
 
 # LATER: song_update (music.c) isn't ported and doesn't run (#28)
 # LATER: mobile_update isn't ported and doesn't run (#28): mobs don't move, scavenge or run specials
-# LATER: violence_update (fight.c) isn't ported and doesn't run (#28)
 # LATER: weather_update, char_update and obj_update aren't ported and don't run (#28): no ticks, idling or decay
 # LATER: aggr_update isn't ported and doesn't run (#28): aggressive mobs don't attack
-NOT_RUNNING = ("song_update", "mobile_update", "violence_update", "weather_update", "char_update", "obj_update",
-               "aggr_update")
+NOT_RUNNING = ("song_update", "mobile_update", "weather_update", "char_update", "obj_update", "aggr_update")
+
+UPDATES = ("area", "song", "mobile", "violence", "weather", "char", "obj", "aggr")  # CHARM_UPDATES's names
+PORTED = frozenset({"area", "violence"})
+
+
+def updates_named(value: str | None) -> frozenset[str]:
+    """The updates CHARM_UPDATES names, as update.c's update_runs reads it: None (unset) is all of them."""
+    from charm.core.log import bug
+    from charm.core.strings import str_cmp
+
+    if value is None:
+        return frozenset(UPDATES)
+    on: set[str] = set()
+    for name in value[:C.MAX_INPUT_LENGTH - 1].split(","):
+        if name == "":
+            continue  # strtok skips empty fields
+        if str_cmp(name, "all"):
+            on.update(UPDATES)
+            continue
+        found = next((u for u in UPDATES if str_cmp(name, u)), None)
+        if found is None:
+            bug("CHARM_UPDATES: no update called that", 0)
+        else:
+            on.add(found)
+    return frozenset(on)
 
 
 # C: update.c update_handler [partial]
 def update_handler(game) -> None:
+    from charm.systems.fight import violence_update
+
+    on = game.updates
     game.pulse_area -= 1
     if game.pulse_area <= 0:
         game.pulse_area = C.PULSE_AREA
-        area_update(game)
+        if "area" in on:
+            area_update(game)
 
     game.pulse_music -= 1
     if game.pulse_music <= 0:
@@ -42,7 +72,9 @@ def update_handler(game) -> None:
 
     game.pulse_violence -= 1
     if game.pulse_violence <= 0:
-        game.pulse_violence = C.PULSE_VIOLENCE  # violence_update: not running
+        game.pulse_violence = C.PULSE_VIOLENCE
+        if "violence" in on:
+            violence_update(game)
 
     game.pulse_point -= 1
     if game.pulse_point <= 0:
@@ -74,7 +106,7 @@ def gain_condition(ch, i_cond: int, value: int) -> None:
 # C: update.c advance_level
 def advance_level(ch, hide: bool) -> None:
     """A level's gains: the title, then hit points, mana, moves (three random draws, in that order) and practices.
-    do_advance calls it with hide set; gain_exp (not yet) without, to tell the player."""
+    do_advance calls it with hide set; gain_exp without, to tell the player."""
     from charm.commands.info import set_title
     from charm.core.cint import c_div, sh_int
     from charm.core.rng import number_range
@@ -110,14 +142,22 @@ def advance_level(ch, hide: bool) -> None:
                         "" if add_prac == 1 else "s"), ch)
 
 
-# C: update.c gain_exp [partial]
+# C: update.c gain_exp
 def gain_exp(ch, gain: int) -> None:
-    """[partial]: gaining a level (advance_level) raises NotPorted."""
-    from charm.core.errors import NotPorted
+    from charm.core.cint import sh_int
+    from charm.core.log import log_string
+    from charm.entities import game as game_module
+    from charm.net.output import send_to_char
+    from charm.persist.player import save_char_obj
     from charm.systems.skills import exp_per_level
 
     if ch.is_npc or ch.level >= C.LEVEL_HERO:
         return
     ch.exp = max(exp_per_level(ch, ch.pcdata.points), ch.exp + gain)
-    if ch.level < C.LEVEL_HERO and ch.exp >= exp_per_level(ch, ch.pcdata.points) * (ch.level + 1):
-        raise NotPorted("update.c gain_exp: raising a level (advance_level)")
+    while ch.level < C.LEVEL_HERO and ch.exp >= exp_per_level(ch, ch.pcdata.points) * (ch.level + 1):
+        send_to_char("{GYou raise a level!!  {x", ch)
+        ch.level = sh_int(ch.level + 1)
+        log_string("%s gained level %d" % (ch.name, ch.level))
+        wiznet(game_module.current, "$N has attained level %d!" % ch.level, ch, None, C.WIZ_LEVELS, 0, 0)
+        advance_level(ch, False)
+        save_char_obj(game_module.current, ch)
