@@ -228,6 +228,19 @@ def process_output(d: Descriptor, prompt: bool) -> bool:
     return ok
 
 
+def _vsprintf(fmt: str, args: tuple, where: str) -> str:
+    """vsprintf into the C's buf[MAX_STRING_LENGTH]: past its end (a long note, say) overwrites the stack."""
+    text = fmt % args if args else fmt  # format: sprintf
+    if len(text) >= C.MAX_STRING_LENGTH:
+        raise CWouldCrash(f"comm.c {where}: {len(text)} characters overflow its {C.MAX_STRING_LENGTH}-byte buffer")
+    return text
+
+
 # C: comm.c printf_to_char
 def printf_to_char(ch, fmt: str, *args) -> None:
-    send_to_char(fmt % args if args else fmt, ch)  # format: sprintf
+    send_to_char(_vsprintf(fmt, args, "printf_to_char"), ch)
+
+
+# C: comm.c printf_to_desc
+def printf_to_desc(d, fmt: str, *args) -> None:
+    send_to_desc(_vsprintf(fmt, args, "printf_to_desc"), d)

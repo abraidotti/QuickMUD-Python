@@ -1,0 +1,211 @@
+sources 7a80ece42f5ef3ae
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   2] General discussion\n\r( 2)        Ideas [   1] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@file ../notes/General"
+file ../notes/General "Sender  Smokegod~\nDate    Sun Nov 16 12:00:00 2025~\nStamp   1763294400\nExpire  1765000000\nTo      all~\nSubject Welcome to the board~\nText\nHello, everyone.\n\rRead me first.\n\r~\n\nSender  Quintus~\nDate    Sun Nov 16 13:00:00 2025~\nStamp   1763298000\nExpire  1765000000\nTo      Decimus all~\nSubject For Decimus too~\nText\nA second note.\n\r~\n\nSender  Quintus~\nDate    Sun Nov 16 14:00:00 2025~\nStamp   1763301600\nExpire  1765000000\nTo      imm~\nSubject Gods only~\nText\nNot for mortals.\n\r~\n\nSender  Smokegod~\nDate    Sun Nov 16 15:00:00 2025~\nStamp   1763305200\nExpire  1765000000\nTo      20~\nSubject Level 20 and up~\nText\nFor the experienced.\n\r~\n\nSender  Quintus~\nDate    Sun Nov 16 16:00:00 2025~\nStamp   1763308800\nExpire  1765000000\nTo      imp~\nSubject Implementors~\nText\nTop secret.\n\r~\n\n"
+rng 51895 7f5599b5
+step 6 "@file ../notes/General.old"
+file ../notes/General.old "Sender  Smokegod~\nDate    Mon Nov 10 12:00:00 2025~\nStamp   1762776000\nExpire  1763000000\nTo      all~\nSubject An old note~\nText\nThis one has expired, so boot archives it.\n\r~\n\n"
+rng 51895 7f5599b5
+step 7 "@connect quin"
+rng 51895 7f5599b5
+step 8 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   5] General discussion\n\r( 2)        Ideas [   1] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect god"
+rng 51895 7f5599b5
+step 12 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 15 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   5] General discussion\n\r( 2)        Ideas [   1] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@as dec"
+rng 51895 7f5599b5
+step 17 "scroll 0"
+out dec "Paging disabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "board"
+out dec "Num          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   2] General discussion\n\r( 2)        Ideas [   1] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "note list"
+out dec "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Smokegod     Welcome to the board\n\r  2>*Quintus      For Decimus too\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "note list 1"
+out dec "Notes on this board:\n\rNum> Author        Subject\n\r  2>*Quintus      For Decimus too\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "note list x"
+out dec "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Smokegod     Welcome to the board\n\r  2>*Quintus      For Decimus too\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "note"
+out dec "[   1] Smokegod: Welcome to the board\n\rDate:  Sun Nov 16 12:00:00 2025\n\rTo:    all\n\r===========================================================================\n\rHello, everyone.\n\rRead me first.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "note"
+out dec "[   2] Quintus: For Decimus too\n\rDate:  Sun Nov 16 13:00:00 2025\n\rTo:    Decimus all\n\r===========================================================================\n\rA second note.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "note"
+out dec "No new notes in this board.\n\rChanged to next board, Ideas.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "note"
+out dec "[   1] Decimus: An idea\n\rDate:  Sun Nov 16 12:00:01 2025\n\rTo:    all\n\r===========================================================================\n\rMore boards.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "note read 1"
+out dec "[   1] Decimus: An idea\n\rDate:  Sun Nov 16 12:00:01 2025\n\rTo:    all\n\r===========================================================================\n\rMore boards.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "board general"
+out dec "Current board changed to General. You can both read and write here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "note read 99"
+out dec "No such note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "note read 0"
+out dec "No such note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "note read 3"
+out dec "No such note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "note read 1"
+out dec "[   1] Smokegod: Welcome to the board\n\rDate:  Sun Nov 16 12:00:00 2025\n\rTo:    all\n\r===========================================================================\n\rHello, everyone.\n\rRead me first.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "note read again"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "note catchup"
+out dec "All mesages skipped.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "board 4"
+out dec "Current board changed to Bugs. You can both read and write here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "note catchup"
+out dec "Alas, there are no notes in that board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "note"
+out dec "No new notes in this board.\n\rChanged to next board, Personal.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "note"
+out dec "No new notes in this board.\n\rThere are no more boards.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "board 99"
+out dec "No such board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "board 0"
+out dec "No such board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "board nothing"
+out dec "No such board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "board announce"
+out dec "Current board changed to Announce. You can only read here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "board 3"
+out dec "Current board changed to Announce. You can only read here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "board 1"
+out dec "Current board changed to General. You can both read and write here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "note remove"
+out dec "Remove which note?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "note remove x"
+out dec "Remove which note?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "note remove 99"
+out dec "No such note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "note remove 1"
+out dec "You are not authorized to remove this note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "note purge"
+out dec "Obsolete.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "note archive"
+out dec "Obsolete.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "note foo"
+out dec "NOTE 'NOTE WRITE' 'NOTE READ' BOARD 'NOTE SYSTEM' BOARDS\n\rSyntax:\n\r\n\rboard [number|name]                     Shows or changes board.\n\rnote                                    Reads next note.\n\rnote read [number]                      Reads a certain note.\n\rnote remove <number>                    Removes a note written by you.\n\rnote list [number]                      Shows up to number notes.\n\rnote write                              Posts a note.\n\rnote catchup                            Marks all notes in this board read.\n\r\n\rThese commands are used for the new note system. Instead of just one board, \n\rthere are several, each with its special purpose. \n\r\n\rChanging between the boards is accomplished using the BOARD command. BOARD\n\rwithout any arguments gives you a list of all boards together with number of\n\runread message. To change, type BOARD <number> or BOARD <name of the board>.\n\r\n\rTo read next unread note, type NOTE. To read a note with a specified number,\n\rtype NOTE READ <number>. Typing NOTE while in a board with no unread notes\n\rshifts you to the next board. Note that unlike the standard note system, a \n\rnote has the same number in NOTE LIST and NOTE READ.\n\r\n\rPosting a message is as simple as writing NOTE WRITE. You will be moved \n\rinto interactive mode, where all you see are prompts for the fields like \n\rTo:, From: etc. You will be automatically put AFK while writing a note.\n\r\n\rTo see the list of the notes in the current board, type NOTE LIST. Typing\n\rNOTE LIST <number> will list only <number> of the last notes in the area.\n\r\n\rYou can remove your own note by using NOTE REMOVE <number>. Implementors may\n\rremove other people's notes. Implementors can also select how many days\n\rtheir note is kept before being purged. Purging happens automatically at\n\rbootup. Purged notes are not deleted, but saved into a file.\n\r\n\rTo let only immortals see your note, address it to \"imm\". To let players of\n\ra specific level and above, address it to that level (no other recipients may\n\rappear in that case).\n\r\n\rThis board system was created by Erwin S. Andreasen, erwin@pip.dknet.dk, aka\n\rPhunk/Drylock and is freely available. The general outlook was based on\n\rMystic Adventure's note system (mud.gel.ulaval.ca 4000).\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "@as quin"
+rng 51895 7f5599b5
+step 52 "scroll 0"
+out quin "Paging disabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "note list"
+out quin "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Smokegod     Welcome to the board\n\r  2>*Quintus      For Decimus too\n\r  3>*Quintus      Gods only\n\r  4>*Smokegod     Level 20 and up\n\r  5>*Quintus      Implementors\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "note read 3"
+out quin "[   3] Quintus: Gods only\n\rDate:  Sun Nov 16 14:00:00 2025\n\rTo:    imm\n\r===========================================================================\n\rNot for mortals.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "note"
+out quin "[   4] Smokegod: Level 20 and up\n\rDate:  Sun Nov 16 15:00:00 2025\n\rTo:    20\n\r===========================================================================\n\rFor the experienced.\n\r\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 56 "@as god"
+rng 51895 7f5599b5
+step 57 "scroll 0"
+out god "Paging disabled.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 58 "note list"
+out god "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Smokegod     Welcome to the board\n\r  2>*Quintus      For Decimus too\n\r  3>*Quintus      Gods only\n\r  4>*Smokegod     Level 20 and up\n\r  5>*Quintus      Implementors\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 59 "note read 3"
+out god "[   3] Quintus: Gods only\n\rDate:  Sun Nov 16 14:00:00 2025\n\rTo:    imm\n\r===========================================================================\n\rNot for mortals.\n\r\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 60 "note read 4"
+out god "[   4] Smokegod: Level 20 and up\n\rDate:  Sun Nov 16 15:00:00 2025\n\rTo:    20\n\r===========================================================================\n\rFor the experienced.\n\r\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 61 "note read 5"
+out god "[   5] Quintus: Implementors\n\rDate:  Sun Nov 16 16:00:00 2025\n\rTo:    imp\n\r===========================================================================\n\rTop secret.\n\r\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 62 "note remove 3"
+out god "Note removed!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 63 "note list"
+out god "Notes on this board:\n\rNum> Author        Subject\n\r  1> Smokegod     Welcome to the board\n\r  2> Quintus      For Decimus too\n\r  3> Smokegod     Level 20 and up\n\r  4> Quintus      Implementors\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 64 "@file ../notes/General"
+file ../notes/General "Sender  Smokegod~\nDate    Sun Nov 16 12:00:00 2025~\nStamp   1763294400\nExpire  1765000000\nTo      all~\nSubject Welcome to the board~\nText\nHello, everyone.\n\rRead me first.\n\r~\n\nSender  Quintus~\nDate    Sun Nov 16 13:00:00 2025~\nStamp   1763298000\nExpire  1765000000\nTo      Decimus all~\nSubject For Decimus too~\nText\nA second note.\n\r~\n\nSender  Smokegod~\nDate    Sun Nov 16 15:00:00 2025~\nStamp   1763305200\nExpire  1765000000\nTo      20~\nSubject Level 20 and up~\nText\nFor the experienced.\n\r~\n\nSender  Quintus~\nDate    Sun Nov 16 16:00:00 2025~\nStamp   1763308800\nExpire  1765000000\nTo      imp~\nSubject Implementors~\nText\nTop secret.\n\r~\n\n"
+rng 51895 7f5599b5
+step 65 "@as dec"
+rng 51895 7f5599b5
+step 66 "note list"
+out dec "Notes on this board:\n\rNum> Author        Subject\n\r  1> Smokegod     Welcome to the board\n\r  2> Quintus      For Decimus too\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 67 "@mob 3062 3001"
+rng 51897 86bbd2a0
+step 68 "@charm"
+rng 51897 86bbd2a0
+step 69 "order fido note"
+out dec "The beastly fido now follows you.\n\rOk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 70 "@pulse 12"
+rng 51897 86bbd2a0
+step 71 "order fido board"
+out dec "Ok.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 72 "@pulse 12"
+rng 51897 86bbd2a0

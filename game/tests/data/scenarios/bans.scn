@@ -1,0 +1,57 @@
+# Bans. Before boot, ban.txt gets three bans (tools/fixtures/files/bans): badsite.example (all, permanent),
+# highpower.example (newbies, level 61, above anyone, and not permanent, which only a file can make it) and
+# *.old.example (permit, permanent). Every scenario connection's host is "scenario", and these bans are checked as
+# nanny checks them: newbies when a new name is given, permit when an old one is (the connect-time check, for all, is
+# in init_descriptor, which the scenario drivers don't run). Smokegod (60) lists, refuses, lifts and adds bans;
+# ban.txt is rewritten with the permanent ones, and removed when none are left. A ban with no * never matches (#65),
+# so "scenario" for newbies lets Freshling in; *nario for newbies keeps Greenhorn out, though the message is sent to
+# no connection (#65); *cenari* is tested the wrong way round, the host in the name (#65), so Decimus gets in; scenar*
+# for permit keeps Quintus out, and *bigscenarios*, which has the host in it, keeps Seer out. Then scenar* is banned
+# again, which replaces the old ban, and lifted.
+@place bans ban.txt
+@connect god
+Smokegod
+smoke123
+@return
+@return
+scroll 0
+ban
+ban somewhere weird
+ban *
+ban highpower.example
+allow
+allow nowhere
+allow highpower.example
+allow badsite.example
+@file ban.txt
+allow .old.example
+@file ban.txt
+ban scenario newbies
+@connect new1
+Freshling
+@as god
+ban *nario newbies
+@connect new2
+Greenhorn
+@as god
+ban *cenari* permit
+@connect dec
+Decimus
+psswrd
+@return
+@as god
+permban scenar* permit
+@file ban.txt
+@connect quin
+Quintus
+@as god
+ban *bigscenarios* permit
+@connect seer
+Seer
+@as god
+ban
+ban scenar*
+ban
+allow scenar
+ban
+@file ban.txt

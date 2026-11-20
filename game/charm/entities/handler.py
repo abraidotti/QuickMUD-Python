@@ -842,6 +842,19 @@ def deduct_cost(ch: Char, cost: int) -> None:
         ch.silver = 0
 
 
+# C: handler.c is_full_name
+def is_full_name(string: str, namelist: str) -> bool:
+    """Whether a whole word of namelist is string, ignoring case (is_name takes prefixes)."""
+    from charm.commands.interp import one_argument
+
+    while True:
+        namelist, name = one_argument(namelist)
+        if name == "":
+            return False
+        if str_cmp(string, name):
+            return True
+
+
 # C: handler.c get_age
 def get_age(game: Game, ch: Char) -> int:
     return 17 + c_div(ch.played + int32(game.current_time - ch.logon), 72000)

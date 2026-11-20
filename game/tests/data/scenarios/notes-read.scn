@@ -1,0 +1,82 @@
+# Reading notes. Before boot, the General board gets six notes (tools/fixtures/files/notes-general): one expired,
+# which boot moves to General.old and then rewrites General without it; one to all and one to "Decimus all"; and three
+# that reach readers by their level, not their name: one to imm and one to imp, both from Quintus, and one to 20
+# (level 20 and up). The Ideas board gets one good note and then a bad keyword, which boot logs. In the temple (3001):
+# Decimus (10), Quintus (25, who sees the level-20 note) and Smokegod (60, the top level, who sees all of them).
+# Decimus reads, lists, changes board, catches up, reads past the last board and tries to remove; Smokegod removes.
+# The board listing at login shows each player's unread notes. Last, a charmed fido is ordered to use note and board,
+# which mobs can't.
+@place notes-general ../notes/General
+@place notes-bad ../notes/Ideas
+@connect dec
+Decimus
+psswrd
+@return
+@file ../notes/General
+@file ../notes/General.old
+@connect quin
+Quintus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@as dec
+scroll 0
+board
+note list
+note list 1
+note list x
+note
+note
+note
+note
+note read 1
+board general
+note read 99
+note read 0
+note read 3
+note read 1
+note read again
+note catchup
+board 4
+note catchup
+note
+note
+board 99
+board 0
+board nothing
+board announce
+board 3
+board 1
+note remove
+note remove x
+note remove 99
+note remove 1
+note purge
+note archive
+note foo
+@as quin
+scroll 0
+note list
+note read 3
+note
+@as god
+scroll 0
+note list
+note read 3
+note read 4
+note read 5
+note remove 3
+note list
+@file ../notes/General
+@as dec
+note list
+@mob 3062 3001
+@charm
+order fido note
+@pulse 12
+order fido board
+@pulse 12

@@ -60,12 +60,11 @@ def init_socket(port: int, ipaddress: str) -> socket.socket:
     return fd
 
 
-# C: ban.c check_ban [partial]
 def check_ban(game, site: str, kind: int) -> bool:
-    """[partial]: bans aren't loaded yet (boot_db's load_bans), so the list is empty and nobody is banned."""
-    if getattr(game, "ban_list", None):
-        raise NotPorted("ban.c check_ban: a ban list")
-    return False
+    """ban.c's check_ban (charm.persist.bans), which nanny imports from here."""
+    from charm.persist.bans import check_ban as ban_check
+
+    return ban_check(game, site, kind)
 
 
 # C: comm.c init_descriptor

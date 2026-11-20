@@ -1,0 +1,146 @@
+# Writing notes, with every prompt of nanny's CON_NOTE_* states. In the temple (3001): Decimus (10), Quintus (25) and
+# Smokegod (60, an immortal, so it chooses when a note expires). The boards start empty. General must include "all"
+# (it's added), Ideas defaults to "all" on an empty line, Personal must not include "all", and only immortals post on
+# Announce. Then the notes in progress. A tell to someone writing one. A second login as a character who's writing a
+# note closes the writer's connection, as a "double newbie", and says "Illegal name" (#66); the character is left
+# link-dead with its note, so logging in again reconnects it. So Quintus continues its note; Decimus, with no text
+# yet, has its note cancelled; and Smokegod quits with a note in progress. Before that, Decimus, Quintus and Smokegod
+# post notes one pulse apart, so two fall in the same second, and the second one's stamp is the first's plus one.
+@connect dec
+Decimus
+psswrd
+@return
+@connect quin
+Quintus
+psswrd
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@as dec
+note write
+Quintus
+@return
+This subject line is far too long to be accepted by the board, at 61.
+Hello there
+line one
+this line is more than eighty characters long, so the note board rejects it outright
+   indented, and with a ~tilde~
+~
+x
+@return
+v
+c
+END
+p
+@as quin
+board
+note list
+@as dec
+@file ../notes/General
+note list
+note remove 1
+@file ../notes/General
+board ideas
+note write
+@return
+An idea
+more boards
+~
+f
+note write
+Decimus
+Empty
+~
+v
+f
+board announce
+note write
+@as god
+board personal
+note write
+@return
+all
+Decimus
+For you
+x
+0
+3
+a secret line
+~
+p
+note write
+Decimus
+Default expiry
+@return
+another line
+~
+p
+@file ../notes/Personal
+@as dec
+board personal
+note
+note
+@as quin
+note write
+Decimus
+Interrupted
+first line
+@as dec
+tell quintus are you busy?
+@connect quin2
+Quintus
+Quintus
+psswrd
+@return
+board 2
+note write
+second line
+~
+p
+note list
+@as dec
+note write
+@connect dec2
+Decimus
+Decimus
+psswrd
+@return
+note write
+Quintus
+Second try
+~
+f
+note write
+Quintus
+Same second
+~
+@as quin2
+note write
+Decimus
+Same second too
+~
+@as god
+note write
+Decimus
+Same second three
+@return
+~
+@as dec2
+p
+@as quin2
+p
+@as god
+p
+@as quin2
+note list
+@as god
+note write
+@connect god2
+Smokegod
+Smokegod
+smoke123
+@return
+quit

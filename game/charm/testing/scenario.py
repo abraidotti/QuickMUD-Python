@@ -356,12 +356,14 @@ def play_fresh(text: str, repo: Path) -> list[str]:
     tmp = Path(tempfile.mkdtemp(prefix="charm-scenario-"))
     try:
         shutil.copytree(repo / "area", tmp / "area")
-        for d in ("player", "gods", "notes", "log"):
+        for d in ("player", "gods", "notes", "log", "files"):
             (tmp / d).mkdir()
         fixtures = repo / "tools" / "fixtures"
         for f in (fixtures / "player").iterdir():
             shutil.copy(f, tmp / "player" / f.name)
         shutil.copy(fixtures / "qmconfig.rc", tmp / "area" / "qmconfig.rc")
+        for f in (fixtures / "files").iterdir():
+            shutil.copy(f, tmp / "files" / f.name)
         return play(text, tmp / "area")
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
@@ -388,6 +390,12 @@ def play(text: str, area: Path) -> list[str]:
                         continue
                     if m := re.fullmatch(r"@updates (\S+)", line):
                         updates = m.group(1)
+                        continue
+                    if m := re.fullmatch(r"@place (\S+) (\S+)", line):  # a fixture file, before boot reads it
+                        src, dest = area / ".." / "files" / m.group(1)[:63], area / m.group(2)[:127]
+                        if not src.is_file():
+                            raise SystemExit(f"scenario: @place {m.group(1)} {m.group(2)}: can't copy it")
+                        dest.write_bytes(src.read_bytes())
                         continue
                     p.boot(seed, clock, updates)
                 n += 1
