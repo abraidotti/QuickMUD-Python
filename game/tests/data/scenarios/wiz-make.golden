@@ -1,0 +1,456 @@
+sources b411b98fb41461f4
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@obj 3011 3001 18 12 0 1 0"
+rng 51872 4ba9daca
+step 2 "@connect god"
+rng 51872 4ba9daca
+step 3 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 4 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 6 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A loaf of bread is here. It doesn't look too stale.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect ser"
+rng 51895 7f5599b5
+step 8 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A loaf of bread is here. It doesn't look too stale.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@connect dec"
+rng 51895 7f5599b5
+step 13 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 14 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 15 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A loaf of bread is here. It doesn't look too stale.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect pick"
+rng 51895 7f5599b5
+step 18 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out god "\n\rPickpocket has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rPickpocket has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A loaf of bread is here. It doesn't look too stale.\n\rDecimus the Recruit is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@as god"
+rng 51895 7f5599b5
+step 22 "load"
+out god "Syntax:\n\r  load mob <vnum>\n\r  load obj <vnum> <level>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "load xyz"
+out god "Syntax:\n\r  load mob <vnum>\n\r  load obj <vnum> <level>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "load mob"
+out god "Syntax: load mob <vnum>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "load mob x"
+out god "Syntax: load mob <vnum>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "load mob 99999"
+out god "No mob has that vnum.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "load mob 3062"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created the beastly fido!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created the beastly fido!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created the beastly fido!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 28 "load char 3061"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created the janitor!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created the janitor!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created the janitor!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 29 "load obj"
+out god "Syntax: load obj <vnum> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 30 "load obj x"
+out god "Syntax: load obj <vnum> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 31 "load obj 3032 x"
+out god "Syntax: oload <vnum> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 32 "load obj 3032 61"
+out god "Level must be be between 0 and your level.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 33 "load obj 3032 -1"
+out god "Level must be be between 0 and your level.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 34 "load obj 99999"
+out god "No object has that vnum.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 35 "load obj 3032"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a bag!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a bag!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created a bag!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 36 "load obj 3010"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created the donation pit!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created the donation pit!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created the donation pit!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 37 "load obj 3021 5"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a small sword!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a small sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created a small sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 38 "put sword bag"
+out god "You put a small sword in a bag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod puts a small sword in a bag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod puts a small sword in a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod puts a small sword in a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 39 "clone"
+out god "Clone what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 40 "clone nothing"
+out god "You don't see that here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 41 "clone obj nothing"
+out god "You don't see that here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 42 "clone mob nothing"
+out god "You don't see that here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 43 "clone mob decimus"
+out god "You can only clone mobiles.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 44 "clone obj bag"
+out god "You clone a bag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a bag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 45 "inventory"
+out god "You are carrying:\n\r( 2) a bag\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 46 "look in bag"
+out god "A bag holds:\n\r     a small sword\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 47 "look in 2.bag"
+out god "A bag holds:\n\r     a small sword\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 48 "clone fido"
+out god "You clone the beastly fido.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created the beastly fido.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 49 "clone mob hassan"
+out god "You clone Hassan.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created Hassan.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created Hassan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created Hassan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51903 5850559a
+step 50 "look hassan"
+out god "Big. Very big.\n\rStupid. Very stupid.\n\r\n\rHassan, the guardian of  the Temple of Mota, towers over you.  He's over 12 \n\rfeet tall, every inch of it muscle. It would be a Bad Thing to commit a crime\n\rin his presence.\n\rHassan is in excellent condition.\n\r\n\rHassan is using:\n\r<wielded>           (Humming) Hassan's scimitar\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod looks at Hassan.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod looks at Hassan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod looks at Hassan.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 51 "clone pit"
+out god "You clone the donation pit.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created the donation pit.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created the donation pit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created the donation pit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 52 "load obj 3020"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a dagger!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a dagger!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created a dagger!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 53 "give dagger pickpocket"
+out god "You give a dagger to Pickpocket.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod gives a dagger to Pickpocket.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gives a dagger to Pickpocket.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod gives you a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 54 "@as pick"
+rng 51904 da7aaa40
+step 55 "envenom dagger"
+out god "Pickpocket coats a dagger with deadly venom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 56 "@pulse 40"
+rng 51906 1b2d656f
+step 57 "give dagger smokegod"
+out god "\n\rPickpocket gives you a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rPickpocket gives a dagger to Smokegod.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket gives a dagger to Smokegod.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "You give a dagger to Smokegod.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 58 "@as god"
+rng 51906 1b2d656f
+step 59 "string obj dagger ed note A tiny note is tied to it."
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51906 1b2d656f
+step 60 "clone obj dagger"
+out god "You clone a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 61 "stat obj dagger"
+out god "Name(s): dagger\n\rVnum: 3020  Format: new  Type: weapon  Resets: 0\n\rShort description: a dagger\n\rLong description: A dagger with a long thin blade is here.\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 10/10/10 (10th pounds)\n\rLevel: 0  Cost: 157  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: Smokegod  Wear_loc: -1\n\rValues: 2 1 4 2 128\n\rWeapon type is dagger\n\rDamage is 1d4 (average 2)\n\rDamage noun is stab.\n\rWeapons flags: poison\n\rExtra description keywords: 'note'\n\rAffects none by 0, level 5, 2 hours.\n\rAdds poison weapon flags.\n\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51906 1b2d656f
+step 62 "look note"
+out god "A tiny note is tied to it.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51906 1b2d656f
+step 63 "load obj 3022"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a long sword!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a long sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created a long sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 64 "give long seraph"
+out god "You give a long sword to Seraph.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod gives you a long sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gives a long sword to Seraph.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod gives a long sword to Seraph.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 65 "load obj 3005"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created Hassan's scimitar!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created Hassan's scimitar!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has created Hassan's scimitar!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 66 "give scimitar seraph"
+out god "You give Hassan's scimitar to Seraph.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod gives you Hassan's scimitar.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gives Hassan's scimitar to Seraph.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod gives Hassan's scimitar to Seraph.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 67 "trust seraph 55"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51906 1b2d656f
+step 68 "@as ser"
+rng 51906 1b2d656f
+step 69 "clone obj long"
+out god "Seraph has created a long sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "You clone a long sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph has created a long sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSeraph has created a long sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 70 "clone mob hassan"
+out ser "Your powers are not great enough for such a task.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51906 1b2d656f
+step 71 "clone fido"
+out god "\n\rSeraph has created the beastly fido.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "You clone the beastly fido.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph has created the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSeraph has created the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 72 "clone obj scimitar"
+out ser "Your powers are not great enough for such a task.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51909 3b8e3587
+step 73 "@as god"
+rng 51909 3b8e3587
+step 74 "trust seraph 0"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51909 3b8e3587
+step 75 "set char decimus hp 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51909 3b8e3587
+step 76 "set char decimus full 0"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51909 3b8e3587
+step 77 "@as dec"
+rng 51909 3b8e3587
+step 78 "get bread"
+out god "Decimus gets a bread.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus gets a bread.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You get a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rDecimus gets a bread.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 79 "eat bread"
+out god "\n\rDecimus eats a bread.\n\rDecimus chokes and gags.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus eats a bread.\n\rDecimus chokes and gags.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You eat a bread.\n\rYou choke and gag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rDecimus eats a bread.\n\rDecimus chokes and gags.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51910 fbea3747
+step 80 "affects"
+out dec "You are affected by the following spells:\n\rSpell: poison         \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51910 fbea3747
+step 81 "score"
+out dec "You are Decimus the Recruit, level 10, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 29/100 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/55 items with weight 14/250 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2088 exp, and have 0 gold and 0 silver coins.\n\rYou need 8912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rAlignment: 750.  You are saintly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51910 fbea3747
+step 82 "@as god"
+rng 51910 fbea3747
+step 83 "restore nobody"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 84 "restore decimus"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has restored you.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 85 "@as dec"
+rng 52173 8e8c0850
+step 86 "affects"
+out dec "You are not affected by any spells.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 87 "score"
+out dec "You are Decimus the Recruit, level 10, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 100/100 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/55 items with weight 14/250 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2088 exp, and have 0 gold and 0 silver coins.\n\rYou need 8912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rAlignment: 750.  You are saintly.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 88 "@as god"
+rng 52173 8e8c0850
+step 89 "restore"
+out god "Room restored.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has restored you.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has restored you.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has restored you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 90 "restore room"
+out god "Room restored.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has restored you.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has restored you.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has restored you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52173 8e8c0850
+step 91 "@connect half"
+rng 52173 8e8c0850
+step 92 "@as god"
+rng 52173 8e8c0850
+step 93 "restore all"
+out god "All active players restored.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has restored you.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has restored you.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod has restored you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out half "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? "
+rng 52173 8e8c0850
+step 94 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 95 "stat mob fido"
+out god "Name: fido dog\n\rVnum: 3062  Format: new  Race: fido  Group: 0  Sex: male  Room: 3001\n\rCount: 7  Killed: 0\n\rStr: 10(10)  Int: 11(11)  Wis: 11(11)  Dex: 11(11)  Con: 11(11)\n\rHp: 9/9  Mana: 100/100  Move: 100/100  Practices: 0\n\rLv: 0  Class: mobile  Align: -200  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: 100  bash: 100  slash: 100  magic: 100\n\rHit: 0  Dam: 0  Saves: 0  Size: small  Position: standing  Wimpy: 0\n\rDamage: 1d4  Message:  bite\n\rFighting: (none)\n\rCarry number: 0  Carry weight: 0\n\rAct: npc stay_area wimpy no_align\n\rComm: no_shout no_tell no_channels\n\rOffense: dodge assist_race\n\rVulnerable: magic\n\rForm: poison animal mammal\n\rParts: head legs heart brains guts feet ears eyes tail fangs\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: the beastly fido\n\rLong  description: A beastly fido is here.\n\rMobile has special procedure spec_fido.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 96 "advance"
+out god "Syntax: advance <char> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 97 "advance decimus"
+out god "Syntax: advance <char> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 98 "advance decimus x"
+out god "Syntax: advance <char> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52173 8e8c0850
+step 99 "advance nobody 5"
+out god "That player is not here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52413 0bf25e63
+step 100 "advance hassan 5"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52413 0bf25e63
+step 101 "advance decimus 0"
+out god "Level must be 1 to 60.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52413 0bf25e63
+step 102 "advance decimus 61"
+out god "Level must be 1 to 60.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52413 0bf25e63
+step 103 "advance decimus 15"
+out god "Raising a player's level!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\r**** OOOOHHHHHHHHHH  YYYYEEEESSS ****\n\rYou are now level 15.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+rng 52432 cf7f8531
+step 104 "@as dec"
+rng 52432 cf7f8531
+step 105 "score"
+out dec "You are Decimus the Swordmaster, level 15, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 100/160 hit, 102/112 mana, 106/136 movement.\n\rYou have 6 practices and 6 training sessions.\n\rYou are carrying 5/60 items with weight 14/262 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 15000 exp, and have 0 gold and 0 silver coins.\n\rYou need 1000 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rHitroll: 4  Damroll: 4.\n\rAlignment: 750.  You are saintly.\n\r\n\r<100hp 102m 106mv> \xff\xf9"
+rng 52432 cf7f8531
+step 106 "@as god"
+rng 52432 cf7f8531
+step 107 "advance decimus 3"
+out god "Lowering a player's level!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\r**** OOOOHHHHHHHHHH  NNNNOOOO ****\n\rYou are now level 3.\n\r\n\r<10hp 100m 100mv> \xff\xf9"
+rng 52444 6a5d53d3
+step 108 "@as dec"
+rng 52444 6a5d53d3
+step 109 "score"
+out dec "You are Decimus the Sentry, level 3, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 10/41 hit, 100/106 mana, 100/118 movement.\n\rYou have 8 practices and 9 training sessions.\n\rYou are carrying 5/48 items with weight 14/232 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 3000 exp, and have 0 gold and 0 silver coins.\n\rYou need 1000 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\r\n\r<10hp 100m 100mv> \xff\xf9"
+rng 52444 6a5d53d3
+step 110 "@as god"
+rng 52444 6a5d53d3
+step 111 "drop bag"
+out god "You drop a bag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod drops a bag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod drops a bag.\n\r\n\r<10hp 100m 100mv> \xff\xf9"
+out pick "\n\rSmokegod drops a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52444 6a5d53d3
+step 112 "@as ser"
+rng 52444 6a5d53d3
+step 113 "purge nobody"
+out ser "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 114 "purge seraph"
+out ser "Ho ho ho.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 115 "purge smokegod"
+out god "\n\rSeraph tried to purge you!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Maybe that wasn't a good idea...\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 116 "purge janitor"
+out god "\n\rSeraph purges the janitor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph purges the janitor.\n\r\n\r<10hp 100m 100mv> \xff\xf9"
+out pick "\n\rSeraph purges the janitor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 117 "purge"
+out god "\n\rSeraph purges the room!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph purges the room!\n\r\n\r<10hp 100m 100mv> \xff\xf9"
+out pick "\n\rSeraph purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 118 "look"
+out ser "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r( 2) A pit for sacrifices is in front of the altar.\n\rHassan is here, waiting to dispense some justice.\n\rPickpocket the Recruit is here.\n\rDecimus the Sentry is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 119 "purge decimus"
+out god "\n\rSeraph disintegrates Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+closed dec
+out pick "\n\rSeraph disintegrates Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 120 "@as god"
+rng 52696 5e8eee5e
+step 121 "reboo"
+out god "If you want to REBOOT, spell it out.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52696 5e8eee5e
+step 122 "reboot"
+out god "global> Reboot by Smokegod.\n\r"
+closed god
+out ser "\n\rReboot by Smokegod.\n\r"
+closed ser
+out pick "\n\rReboot by Smokegod.\n\r"
+closed pick
+closed half
+rng 52696 5e8eee5e

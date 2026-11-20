@@ -111,6 +111,19 @@ def weapon_lookup(name: str) -> int:
     return prefix_lookup(name, _WEAPONS)
 
 
+# C: special.c spec_lookup
+def spec_lookup(name: str) -> str | None:
+    """The special procedure (its function's name, as a mob's spec_fun holds it) whose spec_table name starts
+    with name, or None."""
+    from charm.core.strings import lower, str_prefix
+    from charm.data.specials import SPEC_TABLE
+
+    for s in SPEC_TABLE:
+        if lower(name[:1]) == lower(s.name[:1]) and str_prefix(name, s.name):
+            return s.function
+    return None
+
+
 # C: special.c spec_name
 def spec_name(function: str) -> str | None:
     """The spec_table name of a special procedure, or None (a mob's spec_fun holds the function's name)."""

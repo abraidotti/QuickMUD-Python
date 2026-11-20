@@ -1,0 +1,133 @@
+# Immortals making and unmaking: load, clone, purge, advance, restore and peace, then reboot. In the temple (3001),
+# with Hassan: Smokegod (60), Seraph (56) and Decimus (10). load puts what can be taken in the inventory and the rest
+# on the floor. clone copies a bag with what's in it, and a mob with what it carries: Hassan's clone shows his
+# scimitar wielded, though it was never equipped (#71). At trust 55 Seraph can clone a long sword and the fido but
+# not the scimitar or Hassan. Pickpocket (13) envenoms a dagger, and its clone has the poison and the extra
+# description Smokegod strings onto it; a clone of the donation pit goes on the floor. Decimus, made hungry and given
+# more hit points than he has, eats a poisoned bread; restore cures and heals him, and his room, and every player
+# (passing over a connection still at the greeting). advance raises Decimus with three random draws a level, then
+# lowers him to level 1 and raises him again. peace calms the aggressive fido. purge empties the room of mobs and
+# objects, and disintegrates a player (who's saved first) but not one of the same trust or above. Last, reboot echoes
+# and closes every connection.
+@obj 3011 3001 18 12 0 1 0
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@as god
+load
+load xyz
+load mob
+load mob x
+load mob 99999
+load mob 3062
+load char 3061
+load obj
+load obj x
+load obj 3032 x
+load obj 3032 61
+load obj 3032 -1
+load obj 99999
+load obj 3032
+load obj 3010
+load obj 3021 5
+put sword bag
+clone
+clone nothing
+clone obj nothing
+clone mob nothing
+clone mob decimus
+clone obj bag
+inventory
+look in bag
+look in 2.bag
+clone fido
+clone mob hassan
+look hassan
+clone pit
+load obj 3020
+give dagger pickpocket
+@as pick
+envenom dagger
+@pulse 40
+give dagger smokegod
+@as god
+string obj dagger ed note A tiny note is tied to it.
+clone obj dagger
+stat obj dagger
+look note
+load obj 3022
+give long seraph
+load obj 3005
+give scimitar seraph
+trust seraph 55
+@as ser
+clone obj long
+clone mob hassan
+clone fido
+clone obj scimitar
+@as god
+trust seraph 0
+set char decimus hp 100
+set char decimus full 0
+@as dec
+get bread
+eat bread
+affects
+score
+@as god
+restore nobody
+restore decimus
+@as dec
+affects
+score
+@as god
+restore
+restore room
+@connect half
+@as god
+restore all
+peace
+stat mob fido
+advance
+advance decimus
+advance decimus x
+advance nobody 5
+advance hassan 5
+advance decimus 0
+advance decimus 61
+advance decimus 15
+@as dec
+score
+@as god
+advance decimus 3
+@as dec
+score
+@as god
+drop bag
+@as ser
+purge nobody
+purge seraph
+purge smokegod
+purge janitor
+purge
+look
+purge decimus
+@as god
+reboo
+reboot

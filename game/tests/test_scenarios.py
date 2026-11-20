@@ -43,7 +43,8 @@ class Goldens(unittest.TestCase):
 
 
 class WhereTheCCrashes(unittest.TestCase):
-    """Steps that crash the C game, so they can't have a golden: the Python stops with CWouldCrash there instead."""
+    """Steps that crash the C game, or read memory it has freed, so they can't have a golden: the Python stops with
+    CWouldCrash there instead."""
 
     def test_a_tell_to_an_awake_mob(self):
         # do_tell reads victim->desc->connected, and a mob has no connection (abraidotti/charm#49). The C
@@ -86,6 +87,19 @@ class WhereTheCCrashes(unittest.TestCase):
         out = play_fresh(text, REPO)
         self.assertEqual(out[-2], 'step 7 "prefix %s"' % ("x" * 235))
         self.assertTrue(out[-1].startswith("stopped CWouldCrash: act_wiz.c do_prefix:"), out[-1])
+
+    def test_forcing_players_to_quit_past_a_pet(self):
+        # A player's pet loads just after them in char_list. force players takes the next character before each
+        # command, so when Decimus quits and his kitten is freed, the loop goes on through freed memory. The C doesn't
+        # crash here: it stops short, and Outlaw, after the kitten, is never forced (abraidotti/charm#72).
+        text = ("@connect out\nOutlaw\npsswrd\n@return\n@return\n"
+                "@connect dec\nDecimus\npsswrd\n@return\n@return\n@mob 3090 3001\n@charm pet\nquit\n"
+                "@connect dec2\nDecimus\npsswrd\n@return\n@return\n"
+                "@connect god\nSmokegod\nsmoke123\n@return\n@return\nforce players quit\nlook\n")
+        out = play_fresh(text, REPO)
+        self.assertEqual(out[-2], 'step 24 "force players quit"')
+        self.assertTrue(out[-1].startswith("stopped CWouldCrash: act_wiz.c do_force: the command freed the next"),
+                        out[-1])
 
 
 class Difference(unittest.TestCase):

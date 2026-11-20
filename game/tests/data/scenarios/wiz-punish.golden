@@ -1,0 +1,516 @@
+sources b411b98fb41461f4
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "wiznet"
+out god "Welcome to Wiznet!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "wiznet penalties"
+out god "You will now see penalties on wiznet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "wiznet snoops"
+out god "You will now see snoops on wiznet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect ser"
+rng 51895 7f5599b5
+step 10 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@connect cher"
+rng 51895 7f5599b5
+step 15 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 16 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 17 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 18 "@return"
+out god "\n\rCherub has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@connect dec"
+rng 51895 7f5599b5
+step 20 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 21 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 22 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "@connect out"
+rng 51895 7f5599b5
+step 25 "Outlaw"
+out out "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 26 "psswrd"
+out out "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 27 "@return"
+out god "\n\rOutlaw has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rOutlaw has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rOutlaw has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rOutlaw has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rCherub the Smoke Test is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "@return"
+out out "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "@as ser"
+rng 51895 7f5599b5
+step 30 "nochannels"
+out ser "Nochannel whom?\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "nochannels nobody"
+out ser "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 32 "nochannels smokegod"
+out ser "You failed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 33 "nochannels cherub"
+out god "\n\rSeraph revokes Cherub's channels.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOCHANNELS set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe gods have revoked your channel priviliges.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 34 "nochannels cherub"
+out god "\n\rSeraph restores channels to Cherub\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOCHANNELS removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe gods have restored your channel priviliges.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 35 "nochannels decimus"
+out god "\n\rSeraph revokes Decimus's channels.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOCHANNELS set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe gods have revoked your channel priviliges.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 36 "@as dec"
+rng 52153 4c8e8fbc
+step 37 "gossip hello"
+out dec "The gods have revoked your channel priviliges.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 38 "@as ser"
+rng 52153 4c8e8fbc
+step 39 "nochannels decimus"
+out god "\n\rSeraph restores channels to Decimus\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOCHANNELS removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe gods have restored your channel priviliges.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 40 "@as dec"
+rng 52153 4c8e8fbc
+step 41 "gossip hello again"
+out god "\n\rDecimus gossips 'hello again'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Decimus gossips 'hello again'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus gossips 'hello again'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You gossip 'hello again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus gossips 'hello again'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 42 "@as ser"
+rng 52153 4c8e8fbc
+step 43 "noemote"
+out ser "Noemote whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 44 "noemote hassan"
+out god "\n\rSeraph revokes Hassan's emotes.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOEMOTE set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 45 "noemote hassan"
+out god "\n\rSeraph restores emotes to Hassan.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOEMOTE removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 46 "noemote decimus"
+out god "\n\rSeraph revokes Decimus's emotes.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOEMOTE set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can't emote!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 47 "@as dec"
+rng 52153 4c8e8fbc
+step 48 "emote waves"
+out dec "You can't show your emotions.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 49 "@as ser"
+rng 52153 4c8e8fbc
+step 50 "noemote decimus"
+out god "\n\rSeraph restores emotes to Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOEMOTE removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can emote again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 51 "noshout"
+out ser "Noshout whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 52 "noshout hassan"
+out ser "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 53 "noshout decimus"
+out god "\n\rSeraph revokes Decimus's shouts.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOSHOUT set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can't shout!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 54 "@as dec"
+rng 52153 4c8e8fbc
+step 55 "shout hello"
+out dec "You can't shout.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 56 "@as ser"
+rng 52153 4c8e8fbc
+step 57 "noshout decimus"
+out god "\n\rSeraph restores shouts to Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOSHOUT removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can shout again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 58 "notell"
+out ser "Notell whom?\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 59 "notell decimus"
+out god "\n\rSeraph revokes Decimus's tells.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOTELL set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can't tell!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 60 "@as dec"
+rng 52153 4c8e8fbc
+step 61 "tell seraph hi"
+out dec "Your message didn't get through.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 62 "@as ser"
+rng 52153 4c8e8fbc
+step 63 "notell decimus"
+out god "\n\rSeraph restores tells to Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "NOTELL removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can tell again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 64 "freeze"
+out ser "Freeze whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 65 "freeze hassan"
+out ser "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 66 "freeze smokegod"
+out ser "You failed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 67 "freeze decimus"
+out god "\n\rSeraph puts Decimus in the deep freeze.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "FREEZE set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can't do ANYthing!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 68 "@as dec"
+rng 52153 4c8e8fbc
+step 69 "say frozen"
+out dec "You're totally frozen!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 70 "@as ser"
+rng 52153 4c8e8fbc
+step 71 "freeze decimus"
+out god "\n\rSeraph thaws Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "FREEZE removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou can play again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 72 "@as dec"
+rng 52153 4c8e8fbc
+step 73 "say thawed"
+out god "\n\rDecimus says 'thawed'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Decimus says 'thawed'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus says 'thawed'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'thawed'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus says 'thawed'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 74 "@as god"
+rng 52153 4c8e8fbc
+step 75 "log"
+out god "Log whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 76 "log nobody"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 77 "log hassan"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 78 "log decimus"
+out god "LOG set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 79 "@as dec"
+rng 52398 7bb10bbf
+step 80 "say I am logged"
+out god "Decimus says 'I am logged'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus says 'I am logged'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus says 'I am logged'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'I am logged'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus says 'I am logged'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 81 "@as god"
+rng 52398 7bb10bbf
+step 82 "log decimus"
+out god "LOG removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 83 "log all"
+out god "Log ALL on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 84 "@as cher"
+rng 52398 7bb10bbf
+step 85 "say everything is logged"
+out god "Cherub says 'everything is logged'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub says 'everything is logged'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You say 'everything is logged'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub says 'everything is logged'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rCherub says 'everything is logged'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 86 "@as god"
+rng 52398 7bb10bbf
+step 87 "log all"
+out god "Log ALL off.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 88 "pardon"
+out god "Syntax: pardon <character> <killer|thief>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 89 "pardon outlaw"
+out god "Syntax: pardon <character> <killer|thief>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 90 "pardon nobody killer"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 91 "pardon hassan killer"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 92 "pardon outlaw killer"
+out god "Killer flag removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rYou are no longer a KILLER.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 93 "pardon outlaw killer"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 94 "pardon outlaw thief"
+out god "Thief flag removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rYou are no longer a THIEF.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 95 "pardon outlaw saint"
+out god "Syntax: pardon <character> <killer|thief>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 96 "protect"
+out god "Protect whom from snooping?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 97 "protect nobody"
+out god "You can't find them.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 98 "protect decimus"
+out god "Decimus is now snoop-proof.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou are now immune to snooping.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 99 "@as ser"
+rng 52893 ea9ce66b
+step 100 "snoop"
+out ser "Snoop whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 101 "snoop nobody"
+out ser "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 102 "snoop hassan"
+out ser "No descriptor to snoop.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 103 "snoop decimus"
+out ser "You failed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 104 "@as god"
+rng 53146 6a43d15f
+step 105 "protect decimus"
+out god "Decimus is no longer snoop-proof.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYour snoop-proofing was just removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53146 6a43d15f
+step 106 "@as ser"
+rng 53146 6a43d15f
+step 107 "snoop decimus"
+out god "Seraph starts snooping on Decimus\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 108 "@as god"
+rng 53146 6a43d15f
+step 109 "snoop decimus"
+out god "Busy already.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 110 "@as dec"
+rng 53146 6a43d15f
+step 111 "say can anyone hear me"
+out god "Decimus says 'can anyone hear me'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\r% say can anyone hear me\n\rDecimus says 'can anyone hear me'\n\rDecimus> You say 'can anyone hear me'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus says 'can anyone hear me'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'can anyone hear me'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus says 'can anyone hear me'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53146 6a43d15f
+step 112 "@as ser"
+rng 53146 6a43d15f
+step 113 "snoop cherub"
+out god "\n\rSeraph starts snooping on Cherub\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 114 "@as god"
+rng 53146 6a43d15f
+step 115 "trust"
+out god "Syntax: trust <char> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 116 "trust cherub"
+out god "Syntax: trust <char> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 117 "trust cherub x"
+out god "Syntax: trust <char> <level>.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 118 "trust nobody 59"
+out god "That player is not here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 119 "trust cherub 61"
+out god "Level must be 0 (reset) or 1 to 60.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 120 "trust cherub 59"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 121 "@as cher"
+rng 53386 7ac5cc5c
+step 122 "snoop seraph"
+out ser "\n\r% snoop seraph\n\rCherub> No snoop loops.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "No snoop loops.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 123 "@as god"
+rng 53386 7ac5cc5c
+step 124 "trust cherub 0"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 125 "@as ser"
+rng 53386 7ac5cc5c
+step 126 "snoop seraph"
+out god "Seraph stops being such a snoop.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Cancelling all snoops.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 127 "@as dec"
+rng 53386 7ac5cc5c
+step 128 "say after the snoops"
+out god "\n\rDecimus says 'after the snoops'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Decimus says 'after the snoops'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus says 'after the snoops'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'after the snoops'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out out "\n\rDecimus says 'after the snoops'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 129 "@as ser"
+rng 53386 7ac5cc5c
+step 130 "guild"
+out ser "Syntax: guild <char> <cln name>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 131 "guild decimus"
+out ser "Syntax: guild <char> <cln name>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 132 "guild nobody rom"
+out ser "They aren't playing.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 133 "guild decimus xyz"
+out ser "No such clan exists.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 134 "guild decimus loner"
+out ser "They are now a loner.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou are now a loner.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 135 "guild decimus rom"
+out ser "They are now a member of clan Rom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 136 "guild decimus none"
+out ser "They are now clanless.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou are now a member of no clan!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 137 "@as god"
+rng 53630 e1cf5db2
+step 138 "wizlock"
+out god "Game wizlocked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 139 "newlock"
+out god "New characters have been locked out.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 140 "@connect shemp"
+rng 53630 e1cf5db2
+step 141 "Shemp"
+out shemp "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? The game is wizlocked.\n\r"
+closed shemp
+rng 53630 e1cf5db2
+step 142 "@connect newbie"
+rng 53630 e1cf5db2
+step 143 "Newbie"
+out newbie "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? The game is wizlocked.\n\r"
+closed newbie
+rng 53630 e1cf5db2
+step 144 "@as god"
+rng 53630 e1cf5db2
+step 145 "wizlock"
+out god "Game un-wizlocked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 146 "newlock"
+out god "Newlock removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 147 "disconnect"
+out god "Disconnect whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 148 "disconnect nobody"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53874 49d44a4a
+step 149 "disconnect hassan"
+out god "Hassan doesn't have a descriptor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53874 49d44a4a
+step 150 "disconnect 104"
+out god "Outlaw has lost his link.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rOutlaw has lost his link.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rOutlaw has lost his link.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rOutlaw has lost his link.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+closed out
+rng 53874 49d44a4a
+step 151 "disconnect cherub"
+out god "Cherub has lost his link.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub has lost his link.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+closed cher
+out dec "\n\rCherub has lost his link.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53874 49d44a4a
+step 152 "deny"
+out god "Deny whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53874 49d44a4a
+step 153 "deny nobody"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 54117 ba178fb7
+step 154 "deny hassan"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 54117 ba178fb7
+step 155 "deny decimus"
+out god "OK.\n\rDecimus has left the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus has left the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou are denied access!\n\rAlas, all good things must come to an end.\n\r"
+closed dec
+rng 54117 ba178fb7
+step 156 "@connect dec2"
+rng 54117 ba178fb7
+step 157 "Decimus"
+out dec2 "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? You are denied access.\n\r"
+closed dec2
+rng 54117 ba178fb7

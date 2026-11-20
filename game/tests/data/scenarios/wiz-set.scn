@@ -1,0 +1,167 @@
+# Immortals setting things: set char (every field, each range, players against mobs), set skill (one and all), set
+# obj (each value, and the fields that wrap into a short), set room (and a private room refused, at trust 58) and
+# string (each field of a character and an object, and extra descriptions). stat, score and look show the results.
+# In the temple (3001), with Hassan: Smokegod (60), Seraph (56) and Decimus (10). The C's small faults show here:
+# strength's range ends ".", after its newline; hunger's range is called Full's; hours has no newline; and a spec
+# that isn't one takes Hassan's away (#71).
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+set
+set xyz
+set char
+set char decimus
+set char decimus str
+set char nobody str 18
+set char decimus str 2
+set char decimus str 99
+set char decimus str 18
+set char decimus int 2
+set char decimus int 18
+set char decimus wis 2
+set char decimus wis 15
+set char decimus dex 2
+set char decimus dex 16
+set char decimus con 2
+set char decimus con 17
+set char decimus security 5
+set char decimus security -1
+set char hassan security 0
+set char decimus security 0
+set char decimus sex 3
+set char decimus sex 2
+set char hassan sex 1
+set char hassan class mage
+set char decimus class xyz
+set char decimus class mage
+set char decimus level 5
+set char hassan level 61
+set char hassan level 50
+set char decimus gold 100
+set char decimus silver x
+set char decimus hp -11
+set char decimus hp 500
+set char hassan hp 900
+set char decimus mana 30001
+set char decimus mana 400
+set char decimus move -1
+set char decimus move 300
+set char decimus practice 251
+set char decimus practice 20
+set char decimus train 51
+set char decimus train 5
+set char decimus align 1001
+set char decimus align -500
+set char hassan thirst 5
+set char decimus thirst 101
+set char decimus thirst 20
+set char decimus drunk -2
+set char decimus drunk 10
+set char decimus full 101
+set char decimus full 30
+set char decimus hunger 101
+set char decimus hunger 40
+set char decimus race xyz
+set char decimus race dragon
+set char decimus race elf
+set char hassan race dragon
+set char decimus group 5
+set char hassan group 7
+set char hassan hours 5
+set char decimus hours x
+set char decimus hours 1000
+set char decimus hours 12
+set char decimus xyz 5
+stat char decimus
+stat mob hassan
+@as dec
+score
+@as god
+set skill
+set skill decimus sword
+set skill nobody sword 50
+set skill hassan sword 50
+set skill decimus xyz 50
+set skill decimus sword x
+set skill decimus sword 101
+set skill decimus all 1
+set spell decimus sword 75
+@as dec
+practice
+@as god
+load obj 3032
+set obj
+set obj nothing v0 1
+set obj bag v0 99
+set obj bag v1 3
+set obj bag value2 4
+set obj bag v3 5
+set obj bag value4 6
+set obj bag extra 64
+set obj bag wear 16385
+set obj bag level 40000
+set obj bag weight 70000
+set obj bag cost 12345
+set obj bag timer 9
+set obj bag xyz 1
+stat obj bag
+set room
+set room nowhere flags 1
+set room 3001 flags x
+set room 3001 flags 1024
+set room 3001 sector 70000
+set room 3001 xyz 1
+stat room 3001
+trust seraph 58
+@as ser
+set room 1205 flags 0
+@as god
+trust seraph 0
+@as ser
+string
+string char nobody name x
+string char decimus name Bob
+string char hassan name hassan bob
+string char hassan short Hassan the Restrung
+string char hassan long Hassan stands here, restrung.
+string char hassan desc He looks restrung.
+string char decimus title the Restrung
+string char hassan title x
+string char decimus spec x
+string char hassan spec spec_cast_mage
+stat mob bob
+string char bob spec nonsense
+string char bob xyz x
+string mob bob xyz x
+string obj nothing name x
+string obj bag name bag sack
+string obj sack short a restrung sack
+string obj sack long A restrung sack lies here.
+string obj sack ed shiny It is very shiny.
+string obj sack extended
+string obj sack ed lonely
+string obj sack xyz x
+string xyz sack name x
+stat mob bob
+look bob
+stat obj sack
+@as god
+drop sack
+@as ser
+look
+look shiny
+@as dec
+score

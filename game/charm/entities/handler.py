@@ -929,9 +929,8 @@ def char_from_room(ch: Char) -> None:
     ch.on = None  # "sanity check!"
 
 
-# C: handler.c extract_char [partial]
+# C: handler.c extract_char
 def extract_char(game: Game, ch: Char, f_pull: bool) -> None:
-    """[partial]: a switched character (do_return) raises NotPorted."""
     from charm.commands.comm import die_follower, nuke_pets
     from charm.data.clans import CLAN_TABLE
     from charm.entities.create import free_char
@@ -952,7 +951,10 @@ def extract_char(game: Game, ch: Char, f_pull: bool) -> None:
     if ch.is_npc:
         ch.index.count = sh_int(ch.index.count - 1)
     if ch.desc is not None and ch.desc.original is not None:
-        raise NotPorted("handler.c extract_char: do_return (a switched character)")
+        from charm.commands.wiz import do_return
+
+        do_return(ch, "")
+        ch.desc = None
     for wch in game.char_list:
         if wch.reply is ch:
             wch.reply = None
@@ -1493,6 +1495,8 @@ def wear_bit_name(wear_flags: int) -> str:
 
 # C: handler.c form_bit_name
 def form_bit_name(form_flags: int) -> str:
+    if form_flags & C.FORM_POISON:  # "else if": a poisonous form isn't called edible as well
+        form_flags &= ~C.FORM_EDIBLE
     return _bit_names(form_flags, _FORM_BITS)
 
 

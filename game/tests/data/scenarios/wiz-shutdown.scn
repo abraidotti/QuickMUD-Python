@@ -1,0 +1,16 @@
+# A visible immortal shuts the game down. Smokegod (60) and Decimus (10) are in the temple (3001). The echo goes to
+# everyone, marked "global> " for Smokegod, and ends in a blank line: shutdown adds "\n\r" to the line before echo
+# adds its own. Every connection closes, and shutdown.txt says who.
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+shutdown
+@file shutdown.txt

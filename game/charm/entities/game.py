@@ -49,6 +49,7 @@ class Game:
     area_dir: object | None = None  # the directory the C runs in (area/); its paths are relative to it
     wizlock: bool = False
     newlock: bool = False
+    log_all: bool = False  # interp.c's fLogAll: 'log all' logs every command
     last_pc_id: int = 0
     # comm.c's: the connections (head first), and the loop's state
     descriptor_list: list = field(default_factory=list)

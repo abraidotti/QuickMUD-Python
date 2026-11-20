@@ -113,6 +113,10 @@ class CGame:
 class PyGame:
     """The Python game, run as python -m charm from a throwaway root."""
 
+    # The signal stop sends, as the game logs it ("Caught signal N"): Windows has no SIGTERM to send a console
+    # program, so CTRL_BREAK arrives as SIGBREAK.
+    STOP_SIGNAL = int(getattr(signal, "SIGBREAK", 21)) if os.name == "nt" else int(signal.SIGTERM)
+
     def __init__(self, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",),
                  args: tuple[str, ...] = ()):
         self.qmconfig, self.players, self.args = qmconfig, players, args
@@ -127,13 +131,17 @@ class PyGame:
         for who in self.players:
             shutil.copy(fixtures() / "player" / who, self.root / "player" / who)
         self.port = free_port()
+        self.start()
+        return self
+
+    def start(self) -> None:
+        """Start the game, or start it again after stop: the same root and port, the log appended to."""
         env = dict(os.environ, CHARM_SEED=SEED, PYTHONPATH=str(game_dir()))
         flags = subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
-        self.log = open(self.root / "log" / "python.log", "wb")
+        self.log = open(self.root / "log" / "python.log", "ab")
         argv = [sys.executable, "-m", "charm", "--port", str(self.port), "--root", str(self.root), *self.args]
         self.proc = subprocess.Popen(argv, env=env, stdout=self.log, stderr=subprocess.STDOUT, creationflags=flags,
                                      start_new_session=os.name != "nt")
-        return self
 
     def session(self) -> Session:
         return Session(self.port)
