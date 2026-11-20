@@ -1,0 +1,86 @@
+# obj_update on its own, with area_update, at the entrance to Mud School (3700). Smokegod (60) casts and sets
+# timers short with `set obj`; Pupil (10) watches; Decimus (10) dies to leave a corpse.
+# - a spring (2 ticks) dries up; two fireproofed swords' auras fade (msg_obj), one on the floor and one carried; a
+#   potion evaporates and a scimitar crumbles; a pie a shopkeeper (6504, in 6535) has for sale goes quietly and
+#   pays him a fifth of its cost; a floating disc, worn and carrying a scroll, flickers and vanishes and spills it
+#   on the floor
+# - a bag holding a bottle made just before it crumbles at the first tick and takes the bottle with it: the bottle
+#   is next in object_list, so the C walks off into freed objects, and the rest of the list (the swords' auras
+#   among them) waits a tick (sic, #85)
+# - a drunk's corpse, with the bottle he carried, decays and takes the bottle with it
+# - a fido's corpse put in a pit decays out of sight
+# - Decimus's corpse decays and leaves what he carried on the floor
+@updates area,obj
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3700
+holylight
+@connect pupil
+Pupil
+psswrd
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+transfer pupil 3700
+transfer decimus 3700
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+cast 'create spring'
+@pulse 24
+set obj spring timer 2
+@obj 3021 3700
+get sword
+cast fireproof sword
+@pulse 24
+drop sword
+@obj 3021 3700
+get sword
+cast fireproof sword
+@pulse 24
+@obj 105 3700
+set obj potion timer 2
+@obj 3001 3700
+@obj 3032 3700
+get bottle
+put bottle bag
+set obj bag timer 1
+@obj 3005 3700
+set obj scimitar timer 3
+cast 'floating disc'
+@pulse 24
+set obj disc timer 3
+set obj pie timer 2
+@obj 1362 3700
+get scroll
+put scroll disc
+@as god
+@mob 3064 3700
+@obj 3001 3700
+force drunk get bottle
+slay drunk
+@obj 3010 3700
+@mob 3062 3700
+slay fido
+get corpse
+put corpse pit
+slay decimus
+@state
+@pulse 2400
+@state
+@pulse 2400
+look
+@state
+@pulse 7200
+look
+@state
+goto 6535
+@state

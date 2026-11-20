@@ -21,8 +21,9 @@ every step but copyover's. P3 done 2026-11-20. P4, the systems that draw random 
 (#74). PR 1 of 8 done (#76), fighting part 1: the core of `fight.c`, with `violence_update` on by name. PR 2 of 8
 done (#78), fighting part 2: the fighting skills, so all of `fight.c`, and `effects.c`. PR 3 of 8 done (#80),
 spells part 1: `do_cast`, `obj_cast_spell` and the first half of the spells (acid blast to fly). PR 4 of 8 done
-(#82), spells part 2: the rest of the spells, and `magic2.c`. PR 5 of 8, specials, the healer and music:
-`special.c`, `healer.c` and `music.c`, with `song_update` on by name.
+(#82), spells part 2: the rest of the spells, and `magic2.c`. PR 5 of 8 done (#84), specials, the healer
+and music: `special.c`, `healer.c` and `music.c`. PR 6 of 8, ticks: the rest of `update.c`, so every update runs,
+and the speed checkpoint.
 
 ## Goal
 

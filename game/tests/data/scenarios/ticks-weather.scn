@@ -1,0 +1,52 @@
+# weather_update on its own, with area_update, from 22:00 on the last day (34) of the last month (16): the night
+# turns into a new day, month and year, then the day comes and goes again. Decimus (10) stands in the temple
+# square (3005), outside; Purser (10) is in the temple (3001), inside; Delver (2) sleeps in the square.
+# - the hour, day, month and year roll over
+# - "The day has begun." at 5 and "The sun rises in the east." at 6 (sic, #85), "The sun slowly disappears in the
+#   west." at 19 and "The night has begun." at 20, only to Decimus
+# - the pressure and the sky change each tick, for 70 ticks, with what Decimus is told of it
+# - time and weather, after
+@clock 1764176595
+@updates area,weather
+@connect dec
+Decimus
+psswrd
+@return
+@return
+south
+@connect purse
+Purser
+psswrd
+@return
+@return
+@connect delver
+Delver
+psswrd
+@return
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+transfer delver 3005
+@as delver
+sleep
+@as dec
+time
+weather
+@pulse 480
+time
+@pulse 1920
+time
+weather
+@pulse 3600
+time
+weather
+@pulse 1440
+time
+weather
+@pulse 9600
+time
+weather
+@state

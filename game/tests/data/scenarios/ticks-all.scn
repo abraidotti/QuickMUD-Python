@@ -1,0 +1,36 @@
+# Every update at once (@updates all), for ten ticks (2400 pulses), with Decimus (10) in the temple square (3005),
+# Purser (10) at the market square (3014), Delver (2) asleep in the temple (3001) and Smokegod (60) at the temple
+# altar (3054): the world as the game runs it, mobs moving and fighting, resets, weather, regeneration and decay.
+@updates all
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3054
+@connect dec
+Decimus
+psswrd
+@return
+@return
+south
+@connect purse
+Purser
+psswrd
+@return
+@return
+@connect delver
+Delver
+psswrd
+@return
+@return
+@as god
+transfer purser 3014
+transfer delver 3001
+@as delver
+sleep
+@as god
+@pulse 1200
+@state
+@pulse 1200
+@state

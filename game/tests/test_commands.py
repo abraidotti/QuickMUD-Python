@@ -221,9 +221,9 @@ class Updates(unittest.TestCase):
         with log.capture():
             self.assertEqual(updates_named("area,nonsense"), {"area"})
 
-    def test_a_scenario_naming_an_unported_update_stops(self):
-        from charm.testing.scenario import play
+    def test_every_update_is_ported(self):
+        # P4 PR 6 (#74): nothing is left for a scenario's @updates to stop at, or for boot to log as not running.
+        from charm.systems.update import NOT_RUNNING, PORTED, UPDATES
 
-        with tempfile.TemporaryDirectory() as tmp:
-            out = play("@updates area,mobile\n@pulse 1\n", Path(tmp))
-        self.assertEqual(out, ["stopped NotPorted: update_handler: mobile (@updates area,mobile)"])
+        self.assertEqual(PORTED, frozenset(UPDATES))
+        self.assertEqual(NOT_RUNNING, ())

@@ -1,0 +1,158 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1764176595 updates area,weather
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51900 e9723077
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51900 e9723077
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 5 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 6 "south"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51900 e9723077
+step 7 "@connect purse"
+rng 51900 e9723077
+step 8 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51900 e9723077
+step 9 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51900 e9723077
+step 10 "@return"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 11 "@return"
+out purse "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 12 "@connect delver"
+rng 51900 e9723077
+step 13 "Delver"
+out delver "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51900 e9723077
+step 14 "psswrd"
+out delver "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51900 e9723077
+step 15 "@return"
+out delver "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rOn the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 16 "@return"
+out delver "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 17 "@connect god"
+rng 51900 e9723077
+step 18 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51900 e9723077
+step 19 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51900 e9723077
+step 20 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51900 e9723077
+step 21 "@return"
+out purse "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51900 e9723077
+step 22 "transfer delver 3005"
+out dec "\n\rDelver arrives from a puff of smoke.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out delver "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51900 e9723077
+step 23 "@as delver"
+rng 51900 e9723077
+step 24 "sleep"
+out dec "\n\rDelver goes to sleep.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out delver "You go to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 25 "@as dec"
+rng 51900 e9723077
+step 26 "time"
+out dec "It is 11 o'clock pm, Day of the Moon, 35th the Month of the Great Evil.\n\rCharm started up at \n\rThe system time is Wed Nov 26 17:03:19 2025\n.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51900 e9723077
+step 27 "weather"
+out dec "The sky is cloudless and a cold northern gust blows.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51900 e9723077
+step 28 "@pulse 480"
+rng 51922 2492442c
+step 29 "time"
+out dec "It is 1 o'clock am, Day of the Bull, 1st the Month of Winter.\n\rCharm started up at \n\rThe system time is Wed Nov 26 17:05:20 2025\n.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51922 2492442c
+step 30 "@pulse 1920"
+out dec "\n\rThe sky is getting cloudy.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe day has begun.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe sun rises in the east.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51974 fb1b8648
+step 31 "time"
+out dec "It is 9 o'clock am, Day of the Bull, 1st the Month of Winter.\n\rCharm started up at \n\rThe system time is Wed Nov 26 17:13:20 2025\n.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51974 fb1b8648
+step 32 "weather"
+out dec "The sky is cloudy and a warm southerly breeze blows.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51974 fb1b8648
+step 33 "@pulse 3600"
+out dec "\n\rThe sun slowly disappears in the west.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe night has begun.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52084 8606f9f1
+step 34 "time"
+out dec "It is 12 o'clock am, Day of Deception, 2nd the Month of Winter.\n\rCharm started up at \n\rThe system time is Wed Nov 26 17:28:21 2025\n.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52084 8606f9f1
+step 35 "weather"
+out dec "The sky is cloudy and a cold northern gust blows.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52084 8606f9f1
+step 36 "@pulse 1440"
+out dec "\n\rThe day has begun.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe sun rises in the east.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52382 7531b87a
+step 37 "time"
+out dec "It is 6 o'clock am, Day of Deception, 2nd the Month of Winter.\n\rCharm started up at \n\rThe system time is Wed Nov 26 17:34:21 2025\n.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52382 7531b87a
+step 38 "weather"
+out dec "The sky is cloudy and a cold northern gust blows.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52382 7531b87a
+step 39 "@pulse 9600"
+out dec "\n\rThe sun slowly disappears in the west.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe night has begun.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe day has begun.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe sun rises in the east.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe clouds disappear.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe sun slowly disappears in the west.\n\r\n\r<29hp 102m 105mv> \xff\xf9\n\rThe night has begun.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 59615 e9336572
+step 40 "time"
+out dec "It is 10 o'clock pm, Day of Thunder, 3rd the Month of Winter.\n\rCharm started up at \n\rThe system time is Wed Nov 26 18:14:22 2025\n.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 59615 e9336572
+step 41 "weather"
+out dec "The sky is cloudless and a cold northern gust blows.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 59615 e9336572
+step 42 "@state"
+state room 3005 light 2 people player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Delver 2 pos 4 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 512 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 59615 e9336572

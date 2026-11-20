@@ -102,10 +102,10 @@ def run(image: str, only: str | None = None) -> int:
     for sc in SCENARIOS:
         if only and only.lower() not in sc.name.lower():
             continue
-        # Only area_update runs in the C game, as in the Python game (#32): "already playing" goes into the game,
+        # Only area_update runs, in both games (#32): "already playing" goes into the game,
         # where mobs would otherwise wander and the aggressive one in Shemp's cage would attack.
         c = run_scenario(CGame(image, sc.qmconfig, area_updates_only=True), sc)
-        py = run_scenario(PyGame(sc.qmconfig), sc)
+        py = run_scenario(PyGame(sc.qmconfig, area_updates_only=True), sc)
         diffs = compare(c, py, sc)
         size = sum(len(x) for x in c.steps)
         print(f"{'SAME' if not diffs else 'DIFFERENT':9} {sc.name} ({len(sc.steps)} lines, {size} bytes)",

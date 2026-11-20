@@ -1,0 +1,56 @@
+# aggr_update on its own, with area_update, at the entrance to Mud School (3700) and in the temple (3001).
+# - a fido (0) and a monster (1), both aggressive and wimpy, leave Decimus (10) and Delver (2) alone while they're
+#   awake, and Smokegod (60) always; once Delver sleeps, he's attacked
+# - a goblin (6, aggressive) in the temple, which is safe, leaves Purser (10) alone
+# - a goblin at the entrance attacks Decimus, Delver awake again; once fighting it doesn't start again
+# - a goblin in a calmed room leaves everyone alone
+@updates area,aggr
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect delver
+Delver
+psswrd
+@return
+@return
+@connect purse
+Purser
+psswrd
+@return
+@return
+@as god
+transfer decimus 3700
+transfer delver 3700
+@mob 3062 3700
+@pulse 40
+@mob 3705 3700
+@pulse 40
+@as delver
+sleep
+@as god
+@pulse 40
+peace
+@mob 3501 3001
+@pulse 40
+@as delver
+wake
+@as god
+@mob 3501 3700
+@pulse 40
+peace
+purge
+@mob 3501 3700
+cast calm
+@pulse 40
+@state

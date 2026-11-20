@@ -1,0 +1,40 @@
+# mobile_update on its own, with area_update, for 50 mobile pulses (800 pulses), with Decimus (10) in the temple
+# square (3005), Purser (10) at the market square (3014) and Smokegod (60) at the temple (3001), so only Midgaard
+# isn't empty: the mobs elsewhere do nothing.
+# - mobs wander in and out, by exits that are open and lead where they may go; sentinels stay
+# - specials run each pulse (the cityguards, the janitor, the fido, Hassan, the mayor asleep), and a special that
+#   acts takes the mob's turn
+# - shopkeepers short of their wealth get some gold and silver
+# - scavengers pick up the best thing they can carry: a sword and a pie left in the square
+# - a charmed mob stays put
+@updates area,mobile
+@connect god
+Smokegod
+smoke123
+@return
+@return
+holylight
+@connect dec
+Decimus
+psswrd
+@return
+@return
+south
+@connect purse
+Purser
+psswrd
+@return
+@return
+@as god
+transfer purser 3014
+@obj 3021 3005
+@obj 3009 3005
+@obj 3021 3014
+@mob 3064 3005
+@as dec
+@charm
+@as god
+@pulse 400
+@state
+@pulse 400
+@state

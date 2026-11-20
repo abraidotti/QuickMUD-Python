@@ -263,6 +263,7 @@ class Obj:
     material: str = ""
     timer: int = 0
     value: list[int] = field(default_factory=lambda: [0] * 5)
+    valid: bool = True  # VALIDATE / INVALIDATE: free_obj (extract_obj) invalidates
     # Which strings are the object's own, not its prototype's: fwrite_obj writes Name, ShD and Desc when the C's
     # pointers differ. Kept by _OwnString: assigning one of them after construction marks it.
     own_strings: set[str] = field(default_factory=set)

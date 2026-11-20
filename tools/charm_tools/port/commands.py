@@ -1,8 +1,8 @@
 """charm_tools port commands: the same sessions in the game, against the C game and the Python game (#32).
 
 Like port login, each scenario starts a fresh game on each side and compares, byte for byte, what comes back
-after every line. The C game runs with CHARM_UPDATES=area, so only area_update runs, as in the Python game, and
-the two worlds stay the same: no mob wanders, no weather message arrives, and the random numbers stay in step.
+after every line. Both games run with CHARM_UPDATES=area, so only area_update runs, and the two worlds stay the
+same: no mob wanders, no weather message arrives, and the random numbers stay in step.
 
 The scenarios stay in Midgaard's temple and city rooms, which are never dark, so the game hour (from the clock,
 which differs by a few seconds between the two games) doesn't change what they see.
@@ -58,7 +58,7 @@ def run(image: str, only: str | None = None) -> int:
         if only and only.lower() not in sc.name.lower():
             continue
         c = run_scenario(CGame(image, sc.qmconfig, PLAYERS, area_updates_only=True), sc)
-        py = run_scenario(PyGame(sc.qmconfig, PLAYERS), sc)
+        py = run_scenario(PyGame(sc.qmconfig, PLAYERS, area_updates_only=True), sc)
         diffs = compare(c, py, sc)
         size = sum(len(x) for x in c.steps)
         print(f"{'SAME' if not diffs else 'DIFFERENT':9} {sc.name} ({len(sc.steps)} lines, {size} bytes)",
