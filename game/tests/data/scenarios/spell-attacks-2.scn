@@ -1,0 +1,109 @@
+# The second half's damage spells and the breaths (mobs' spells, which only an immortal can cast), cast by Smokegod
+# (60, neutral, every skill at 100, mana to spare), with only area_update running, so each victim strikes back once.
+# At the entrance to Mud School (3700), with Decimus (10, good, armed and armoured). Each cast is waited out.
+# - harm (three times), lightning bolt, magic missile, shocking grasp, general purpose and high explosive on a
+#   septon (9006)
+# - heat metal on Decimus (his gear gets dropped or sears him) and on a cityguard with a sword
+# - holy word, neutral: the neutral fido is frenzied and blessed, the others are cursed and struck down
+# - ray of truth on a goblin (evil), a drunk (good: unharmed), and by an evil Smokegod (it explodes inside)
+# - acid, fire, frost, lightning and gas breath, each on a fresh drunk, with potions, scrolls, a drink and food on
+#   the floor and in what the first carries, for the room's and the carried effects
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+transfer decimus 3700
+@mob 9006 3700
+cast harm septon
+@pulse 24
+cast harm septon
+@pulse 24
+cast harm septon
+@pulse 24
+cast 'lightning bolt' septon
+@pulse 24
+cast 'magic missile' septon
+@pulse 24
+cast 'shocking grasp' septon
+@pulse 24
+cast 'general purpose' septon
+@pulse 24
+cast 'high explosive' septon
+@pulse 24
+peace
+slay septon
+cast 'heat metal' decimus
+@pulse 24
+cast 'heat metal' decimus
+@pulse 24
+peace
+@mob 3060 3700
+load obj 3021
+give sword cityguard
+force cityguard wield sword
+cast 'heat metal' cityguard
+@pulse 24
+peace
+slay cityguard
+@mob 3062 3700
+@mob 3501 3700
+@mob 3064 3700
+cast 'holy word'
+@pulse 24
+@state
+peace
+restore smokegod
+@mob 3501 3700
+@mob 3064 3700
+cast 'ray of truth' goblin
+@pulse 24
+cast 'ray of truth' drunk
+@pulse 24
+peace
+set char smokegod align -1000
+cast 'ray of truth' drunk
+@pulse 24
+peace
+set char smokegod align 0
+restore smokegod
+@obj 105 3700
+@obj 1362 3700
+@obj 611 3700 20 10 0 0 0
+@mob 3064 3700
+force drunk get all
+@obj 105 3700
+@obj 1362 3700
+cast 'acid breath' drunk
+@pulse 24
+peace
+@mob 3064 3700
+cast 'fire breath' drunk
+@pulse 24
+peace
+@mob 3064 3700
+@obj 105 3700
+@obj 611 3700 20 10 0 0 0
+cast 'frost breath' drunk
+@pulse 24
+peace
+@mob 3064 3700
+cast 'lightning breath' drunk
+@pulse 24
+peace
+@mob 3064 3700
+@obj 20 3700
+cast 'gas breath'
+@pulse 24
+peace
+@state

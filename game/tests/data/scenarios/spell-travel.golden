@@ -1,0 +1,553 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "set char smokegod mana 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "restore smokegod"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@connect dec"
+rng 51895 7f5599b5
+step 11 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 12 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "south"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect cher"
+rng 51895 7f5599b5
+step 17 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@connect hero"
+rng 51895 7f5599b5
+step 22 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 23 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 24 "@return"
+out cher "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "@as god"
+rng 51895 7f5599b5
+step 27 "set skill heroic all 100"
+out god "\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "set char heroic mana 30000"
+out god "\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "transfer heroic 3700"
+out god "Heroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out cher "\n\rHeroic disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "transfer cherub 3700"
+out god "Cherub arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out cher "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rHeroic the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rCherub arrives from a puff of smoke.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "cast gate"
+out god "You failed.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'gate'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'oahz'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52154 3f991850
+step 33 "@pulse 24"
+rng 52154 3f991850
+step 34 "cast gate nobody"
+out god "You failed.\n\r\n\r<100hp 29840m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'gate'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'oahz'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52402 575ebd42
+step 35 "@pulse 24"
+rng 52402 575ebd42
+step 36 "cast gate decimus"
+out god "You step through a gate and vanish.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\r\n\r<100hp 29760m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has arrived through a gate.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'gate'.\n\rSmokegod steps through a gate and vanishes.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'oahz'.\n\rSmokegod steps through a gate and vanishes.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52403 a19aaa6e
+step 37 "@pulse 24"
+rng 52403 a19aaa6e
+step 38 "cast gate smokegod"
+out god "You failed.\n\r\n\r<100hp 29680m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oahz'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52404 9dc0519b
+step 39 "@pulse 24"
+rng 52404 9dc0519b
+step 40 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rCherub the Smoke Test is here.\n\rHeroic the Recruit is here.\n\r\n\r<100hp 29680m 100mv> \xff\xf9"
+out dec "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52404 9dc0519b
+step 41 "cast summon decimus"
+out god "You failed.\n\r\n\r<100hp 29630m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'summon'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'gjwwai'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52405 005ae656
+step 42 "@pulse 24"
+rng 52405 005ae656
+step 43 "@mob 3064 3005"
+rng 52412 ef2e7a6a
+step 44 "cast summon drunk"
+out god "The drunk arrives suddenly.\n\r\n\r<100hp 29580m 100mv> \xff\xf9"
+out dec "\n\rThe drunk disappears suddenly.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'summon'.\n\rThe drunk arrives suddenly.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'gjwwai'.\n\rThe drunk arrives suddenly.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52414 55a625a9
+step 45 "@pulse 24"
+rng 52414 55a625a9
+step 46 "@mob 3062 3005"
+rng 52416 b8d55232
+step 47 "cast summon fido"
+out god "You failed.\n\r\n\r<100hp 29530m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'summon'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'gjwwai'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52417 2ed59c27
+step 48 "@pulse 24"
+rng 52417 2ed59c27
+step 49 "cast summon baker"
+out god "You failed.\n\r\n\r<100hp 29480m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'summon'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'gjwwai'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52527 a5331de5
+step 50 "@pulse 24"
+rng 52527 a5331de5
+step 51 "cast summon cherub"
+out god "You failed.\n\r\n\r<100hp 29430m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'summon'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'gjwwai'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52528 3d2925c5
+step 52 "@pulse 24"
+rng 52528 3d2925c5
+step 53 "transfer decimus 3005"
+out god "Ok.\n\r\n\r<100hp 29430m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rA beastly fido is here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52528 3d2925c5
+step 54 "cast teleport"
+out god "A Gnome Shop\n\r  You are in one of the several shops of this fine town.  The wares look fine,\n\rbut unfortunately the gnomes don't do business with outsiders.\n\r\n\r<100hp 29395m 100mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'teleport'.\n\rSmokegod vanishes!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'hzrzsafh'.\n\rSmokegod vanishes!\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52595 2e28f3f8
+step 55 "@pulse 24"
+rng 52595 2e28f3f8
+step 56 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rA singing, happy drunk wanders around, singing about Moria.\n\rCherub the Smoke Test is here.\n\rHeroic the Recruit is here.\n\r\n\r<100hp 29395m 100mv> \xff\xf9"
+out cher "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52595 2e28f3f8
+step 57 "cast 'word of recall'"
+out god "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 29390m 50mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'word of recall'.\n\rSmokegod disappears.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'xafe ay candusqarr'.\n\rSmokegod disappears.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52597 0787efd4
+step 58 "@pulse 24"
+rng 52597 0787efd4
+step 59 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rA singing, happy drunk wanders around, singing about Moria.\n\rCherub the Smoke Test is here.\n\rHeroic the Recruit is here.\n\r\n\r<100hp 29390m 50mv> \xff\xf9"
+out cher "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52597 0787efd4
+step 60 "cast curse smokegod"
+out god "\n\r<100hp 29370m 50mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'curse'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'judifgz'.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52599 6ba0b6f6
+step 61 "@pulse 24"
+rng 52599 6ba0b6f6
+step 62 "cast 'word of recall'"
+out god "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 29365m 25mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'word of recall'.\n\rSmokegod disappears.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'xafe ay candusqarr'.\n\rSmokegod disappears.\n\r\n\r<29hp 30000m 106mv> \xff\xf9"
+rng 52600 c9b6531b
+step 63 "@pulse 24"
+rng 52600 c9b6531b
+step 64 "cast 'remove curse'"
+out god "\n\r<100hp 29354m 25mv> \xff\xf9"
+rng 52601 f3f1b3a8
+step 65 "@pulse 24"
+rng 52601 f3f1b3a8
+step 66 "cast portal decimus"
+out god "A shimmering gate rises up before you.\n\r\n\r<100hp 29254m 25mv> \xff\xf9"
+rng 52602 a45ac359
+step 67 "@pulse 24"
+rng 52602 a45ac359
+step 68 "cast nexus decimus"
+out god "A shimmering gate rises up before you.\n\r\n\r<100hp 29104m 25mv> \xff\xf9"
+out dec "\n\rA shimmering gate rises up from the ground.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 52603 e9c7def8
+step 69 "@pulse 24"
+rng 52603 e9c7def8
+step 70 "@as hero"
+rng 52603 e9c7def8
+step 71 "cast portal decimus"
+out cher "\n\rHeroic utters the words, 'safhar'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You lack the proper component for this spell.\n\r\n\r<29hp 29900m 106mv> \xff\xf9"
+rng 52604 a66ef7e4
+step 72 "@pulse 24"
+rng 52604 a66ef7e4
+step 73 "@obj 3611 3700"
+rng 52604 a66ef7e4
+step 74 "get amethyst"
+out cher "\n\rHeroic gets a amethyst.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You get a amethyst.\n\r\n\r<29hp 29900m 106mv> \xff\xf9"
+rng 52604 a66ef7e4
+step 75 "hold amethyst"
+out cher "\n\rHeroic holds a amethyst in his hand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You hold a amethyst in your hand.\n\r\n\r<29hp 29900m 106mv> \xff\xf9"
+rng 52604 a66ef7e4
+step 76 "cast portal decimus"
+out cher "\n\rHeroic utters the words, 'safhar'.\n\rA shimmering gate rises up from the ground.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You draw upon the power of a amethyst.\n\rIt flares brightly and vanishes!\n\rA shimmering gate rises up before you.\n\r\n\r<29hp 29800m 106mv> \xff\xf9"
+rng 52605 e03bf63a
+step 77 "@pulse 24"
+rng 52605 e03bf63a
+step 78 "@obj 3611 3700"
+rng 52605 e03bf63a
+step 79 "get amethyst"
+out cher "\n\rHeroic gets a amethyst.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You get a amethyst.\n\r\n\r<29hp 29800m 106mv> \xff\xf9"
+rng 52605 e03bf63a
+step 80 "hold amethyst"
+out cher "\n\rHeroic holds a amethyst in his hand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You hold a amethyst in your hand.\n\r\n\r<29hp 29800m 106mv> \xff\xf9"
+rng 52605 e03bf63a
+step 81 "cast nexus decimus"
+out dec "\n\rA shimmering gate rises up from the ground.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rHeroic utters the words, 'iznjg'.\n\rA shimmering gate rises up from the ground.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "You draw upon the power of a amethyst.\n\rIt flares brightly and vanishes!\n\rA shimmering gate rises up before you.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52606 44b9a882
+step 82 "@pulse 24"
+rng 52606 44b9a882
+step 83 "@as god"
+rng 52606 44b9a882
+step 84 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r( 2) A shimmering black gate rises from the ground, leading to parts unknown.\n\rA singing, happy drunk wanders around, singing about Moria.\n\rCherub the Smoke Test is here.\n\rHeroic the Recruit is here.\n\r\n\r<100hp 29104m 25mv> \xff\xf9"
+out cher "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52606 44b9a882
+step 85 "cast 'locate object' flute"
+out god "One is carried by bard of Thalos\n\rOne is carried by The lamia\n\r\n\r<100hp 29084m 25mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'locate object'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'hiqahz abyzqh'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52610 30e318e1
+step 86 "@pulse 24"
+rng 52610 30e318e1
+step 87 "cast 'locate object' nothingatall"
+out god "Nothing like that in heaven or earth.\n\r\n\r<100hp 29064m 25mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'locate object'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'hiqahz abyzqh'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52611 426f0838
+step 88 "@pulse 24"
+rng 52611 426f0838
+step 89 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 29064m 25mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r( 2) A shimmering black gate rises from the ground, leading to parts unknown.\n\rSmokegod the Smoke Test is here.\n\rA singing, happy drunk wanders around, singing about Moria.\n\rCherub the Smoke Test is here.\n\rHeroic the Recruit is here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52611 426f0838
+step 90 "cast ventriloquate decimus Hello, everyone."
+out god "Decimus says 'Hello, everyone.'.\n\r\n\r<100hp 29059m 25mv> \xff\xf9"
+out cher "\n\rDecimus says 'Hello, everyone.'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rDecimus says 'Hello, everyone.'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52616 256384a3
+step 91 "@pulse 24"
+rng 52616 256384a3
+step 92 "cast ventriloquate cherub I love you all."
+out god "Cherub says 'I love you all.'.\n\r\n\r<100hp 29054m 25mv> \xff\xf9"
+out dec "\n\rCherub says 'I love you all.'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out hero "\n\rCherub says 'I love you all.'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52621 f66fc4fb
+step 93 "@pulse 24"
+rng 52621 f66fc4fb
+step 94 "@obj 105 3700"
+rng 52621 f66fc4fb
+step 95 "@obj 1362 3700"
+rng 52621 f66fc4fb
+step 96 "@obj 106 3700"
+rng 52621 f66fc4fb
+step 97 "@obj 1378 3700"
+rng 52621 f66fc4fb
+step 98 "@obj 611 3700"
+rng 52621 f66fc4fb
+step 99 "@obj 3032 3700"
+rng 52621 f66fc4fb
+step 100 "@obj 3021 3700 1 2 4 1 8"
+rng 52621 f66fc4fb
+step 101 "@obj 3117 3700"
+rng 52621 f66fc4fb
+step 102 "get all"
+out god "You get a small wooden shield.\n\rYou get a small sword.\n\rYou get a bag.\n\rYou get a bottle of milk.\n\rYou get some sparkling dust.\n\rYou get a small wand.\n\rYou get an old scroll.\n\rYou get a pink potion.\n\rYou can't take that.\n\rYou can't take that.\n\r\n\r<100hp 29054m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wooden shield.\n\rSmokegod gets a small sword.\n\rSmokegod gets a bag.\n\rSmokegod gets a bottle of milk.\n\rSmokegod gets some sparkling dust.\n\rSmokegod gets a small wand.\n\rSmokegod gets an old scroll.\n\rSmokegod gets a pink potion.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wooden shield.\n\rSmokegod gets a small sword.\n\rSmokegod gets a bag.\n\rSmokegod gets a bottle of milk.\n\rSmokegod gets some sparkling dust.\n\rSmokegod gets a small wand.\n\rSmokegod gets an old scroll.\n\rSmokegod gets a pink potion.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wooden shield.\n\rSmokegod gets a small sword.\n\rSmokegod gets a bag.\n\rSmokegod gets a bottle of milk.\n\rSmokegod gets some sparkling dust.\n\rSmokegod gets a small wand.\n\rSmokegod gets an old scroll.\n\rSmokegod gets a pink potion.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52621 f66fc4fb
+step 103 "cast identify potion"
+out god "Object 'pink potion' is type potion, extra flags none.\n\rWeight is 2, value is 160, level is 0.\n\rLevel 6 spells of: 'armor' 'cure blindness'.\n\r\n\r<100hp 29042m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52622 a3fd3397
+step 104 "@pulse 24"
+rng 52622 a3fd3397
+step 105 "cast identify scroll"
+out god "Object 'scroll old' is type scroll, extra flags none.\n\rWeight is 2, value is 400, level is 0.\n\rLevel 10 spells of: 'create food'.\n\r\n\r<100hp 29030m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52623 f48beef6
+step 106 "@pulse 24"
+rng 52623 f48beef6
+step 107 "cast identify wand"
+out god "Object 'wand' is type wand, extra flags none.\n\rWeight is 2, value is 540, level is 3.\n\rHas 1 charges of level 5 'burning hands'.\n\r\n\r<100hp 29018m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52625 cf3bef4b
+step 108 "@pulse 24"
+rng 52625 cf3bef4b
+step 109 "cast identify dust"
+out god "Object 'dust' is type staff, extra flags none.\n\rWeight is 2, value is 1930, level is 5.\n\rHas 1 charges of level 20 'sleep'.\n\r\n\r<100hp 29006m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52626 d9e18840
+step 110 "@pulse 24"
+rng 52626 d9e18840
+step 111 "cast identify milk"
+out god "Object 'milk bottle' is type drink, extra flags none.\n\rWeight is 5, value is 3, level is 0.\n\rIt holds white-colored milk.\n\r\n\r<100hp 28994m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52628 d53a6fee
+step 112 "@pulse 24"
+rng 52628 d53a6fee
+step 113 "cast identify bag"
+out god "Object 'bag' is type container, extra flags none.\n\rWeight is 1, value is 9, level is 0.\n\rCapacity: 50#  Maximum weight: 5#  flags: none\n\r\n\r<100hp 28982m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52630 5f3dba94
+step 114 "@pulse 24"
+rng 52630 5f3dba94
+step 115 "cast identify sword"
+out god "Object 'sword small' is type weapon, extra flags none.\n\rWeight is 3, value is 250, level is 0.\n\rWeapon type is sword.\n\rDamage is 2d4 (average 5).\n\rWeapons flags: sharp\n\r\n\r<100hp 28970m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52631 e2b91703
+step 116 "@pulse 24"
+rng 52631 e2b91703
+step 117 "cast identify shield"
+out god "Object 'shield small wooden' is type armor, extra flags none.\n\rWeight is 2, value is 510, level is 3.\n\rArmor class is 4 pierce, 3 bash, 2 slash, and 1 vs. magic.\n\r\n\r<100hp 28958m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52632 a023b73f
+step 118 "@pulse 24"
+rng 52632 a023b73f
+step 119 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28858m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'unsoqpaih xzasai'.\n\rA small sword glows blue.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'enchant weapon'.\n\rA small sword glows blue.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'unsoqpaih xzasai'.\n\rA small sword glows blue.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52635 af69b81f
+step 120 "@pulse 24"
+rng 52635 af69b81f
+step 121 "cast identify sword"
+out god "Object 'sword small' is type weapon, extra flags magic.\n\rWeight is 3, value is 250, level is 1.\n\rWeapon type is sword.\n\rDamage is 2d4 (average 5).\n\rWeapons flags: sharp\n\rAffects hit roll by 1.\n\rAffects damage roll by 1.\n\r\n\r<100hp 28846m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'identify'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'uoculoihuyl'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52637 f204b736
+step 122 "@pulse 24"
+rng 52637 f204b736
+step 123 "cast recharge sword"
+out god "That item does not carry charges.\n\r\n\r<100hp 28786m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52638 3601902c
+step 124 "@pulse 24"
+rng 52638 3601902c
+step 125 "@obj 106 3700 5 1 1 95 0"
+rng 52638 3601902c
+step 126 "get wand"
+out god "You get a small wand.\n\r\n\r<100hp 28786m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52638 3601902c
+step 127 "cast recharge wand"
+out god "Your skills are not great enough for that.\n\r\n\r<100hp 28726m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52639 7707c7ab
+step 128 "@pulse 24"
+rng 52639 7707c7ab
+step 129 "@obj 106 3700 5 0 1 5 0"
+rng 52639 7707c7ab
+step 130 "get wand"
+out god "You get a small wand.\n\r\n\r<100hp 28726m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52639 7707c7ab
+step 131 "cast recharge wand"
+out god "That item has already been recharged once.\n\r\n\r<100hp 28666m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52640 7144ecd0
+step 132 "@pulse 24"
+rng 52640 7144ecd0
+step 133 "@obj 106 3700 5 5 1 5 0"
+rng 52640 7144ecd0
+step 134 "get wand"
+out god "You get a small wand.\n\r\n\r<100hp 28666m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52640 7144ecd0
+step 135 "cast recharge wand"
+out god "A small wand glows softly.\n\rA small wand glows softly.\n\r\n\r<100hp 28606m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52643 d48bf964
+step 136 "@pulse 24"
+rng 52653 854802e9
+step 137 "@obj 106 3700 5 9 0 5 0"
+rng 52653 854802e9
+step 138 "get wand"
+out god "You get a small wand.\n\r\n\r<100hp 28606m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 139 "cast recharge wand"
+out god "A small wand glows softly.\n\rA small wand glows softly.\n\r\n\r<100hp 28546m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52656 27ad3d68
+step 140 "@pulse 24"
+rng 52656 27ad3d68
+step 141 "@obj 106 3700 5 9 0 5 0"
+rng 52656 27ad3d68
+step 142 "get wand"
+out god "You get a small wand.\n\r\n\r<100hp 28546m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52656 27ad3d68
+step 143 "cast recharge wand"
+out god "A small wand glows brightly and explodes!\n\r\n\r<100hp 28486m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\rA small wand glows brightly and explodes!\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\rA small wand glows brightly and explodes!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\rA small wand glows brightly and explodes!\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52659 58e09e2b
+step 144 "@pulse 24"
+rng 52659 58e09e2b
+step 145 "@obj 106 3700 5 9 0 5 0"
+rng 52659 58e09e2b
+step 146 "get wand"
+out god "You get a small wand.\n\r\n\r<100hp 28486m 25mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod gets a small wand.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod gets a small wand.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52659 58e09e2b
+step 147 "cast recharge wand"
+out god "A small wand glows softly.\n\r\n\r<100hp 28426m 25mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\rA small wand glows softly.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'recharge'.\n\rA small wand glows softly.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod utters the words, 'candusqpabraoz'.\n\rA small wand glows softly.\n\r\n\r<29hp 29650m 106mv> \xff\xf9"
+rng 52661 8c97034e
+step 148 "@pulse 24"
+rng 52661 8c97034e
+step 149 "@state"
+state room 3700 light 2 people player player mob player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 28426/30000 move 25/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 0 9 5 0
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 0 4 5 0
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 0 4 5 0
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 0 1 5 0
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 1 1 95 0
+state   obj carried 105 wear -1 timer 0 cost 160 values 6 2 23 -1 -1
+state   obj carried 1362 wear -1 timer 0 cost 400 values 10 19 -1 -1 -1
+state   obj carried 106 wear -1 timer 0 cost 540 values 5 1 1 5 0
+state   obj carried 1378 wear -1 timer 0 cost 1930 values 20 1 1 83 0
+state   obj carried 611 wear -1 timer 0 cost 3 values 20 20 10 0 0
+state   obj carried 3032 wear -1 timer 0 cost 9 values 50 0 0 5 100
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 2 4 1 8
+state   obj carried 3117 wear -1 timer 0 cost 510 values 4 3 2 1 1
+state char mob 3064 pos 8 hit 31/31 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 55 act 65 affected_by 0 train 0 on 0 stats 11 11 11 11 11
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Heroic 51 pos 8 hit 29/29 mana 29650/30000 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 25 wear -1 timer 4 cost 0 values 0 0 0 3005 0
+state obj floor 25 wear -1 timer 3 cost 0 values 0 0 0 3005 0
+rng 52661 8c97034e

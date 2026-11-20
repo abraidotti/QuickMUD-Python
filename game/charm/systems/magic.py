@@ -1,8 +1,7 @@
 """magic.c but the spells: casting (do_cast), the magic items' casting (obj_cast_spell), the words a caster utters,
 and the saving throws.
 
-The spells are in charm.systems.spells, found by the C function's name; one not ported yet raises NotPorted when
-it's cast (#74: the first half in PR 3, the rest in PR 4).
+The spells are in charm.systems.spells, found by the C function's name (#74, PRs 3 and 4).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4

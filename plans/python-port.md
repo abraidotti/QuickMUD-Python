@@ -19,8 +19,9 @@ and `ban.c`, with the files they write. PR 7 of 8 done (#70), immortals part 1: 
 and moving. PR 8 of 8 done (#73), immortals part 2: the rest of `act_wiz.c` but copyover, and `sim smoke --python` runs
 every step but copyover's. P3 done 2026-11-20. P4, the systems that draw random numbers, is 8 PRs or 2026-12-11
 (#74). PR 1 of 8 done (#76), fighting part 1: the core of `fight.c`, with `violence_update` on by name. PR 2 of 8
-done (#78), fighting part 2: the fighting skills, so all of `fight.c`, and `effects.c`. PR 3 of 8, spells part 1:
-`do_cast`, `obj_cast_spell` and the first half of the spells (acid blast to fly).
+done (#78), fighting part 2: the fighting skills, so all of `fight.c`, and `effects.c`. PR 3 of 8 done (#80),
+spells part 1: `do_cast`, `obj_cast_spell` and the first half of the spells (acid blast to fly). PR 4 of 8, spells
+part 2: the rest of the spells, and `magic2.c`.
 
 ## Goal
 

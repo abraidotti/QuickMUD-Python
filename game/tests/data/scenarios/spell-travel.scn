@@ -1,0 +1,161 @@
+# Spells that move people or find things, cast by Smokegod (60, every skill at 100, mana to spare) and Heroic (51, a
+# warrior, every skill at 100, so a mortal), with only area_update running. Smokegod starts at the entrance to Mud
+# School (3700), Decimus (10) in the temple square (3005). Each cast is waited out.
+# - gate with no one named, to no one, to Decimus, and to yourself; summon Decimus (who won't be summoned), a drunk,
+#   a fido (aggressive), the baker (a shopkeeper) and Cherub (an immortal); teleport yourself; word of recall (and
+#   refused when cursed)
+# - portal and nexus to Decimus by Smokegod (an immortal needs no component), and by Heroic without and with a warp
+#   stone (an amethyst, 3611), which flares and vanishes
+# - locate object for golden flutes; ventriloquate, heard by Decimus and Cherub
+# - identify on a potion, a scroll, a wand, a staff, a drink, a bag, a sharp sword, a shield and an enchanted sword;
+#   recharge on a sword, a wand too high for the caster, one recharged once already, and small wands until one
+#   glows, fizzles or explodes
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect dec
+Decimus
+psswrd
+@return
+@return
+south
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+set skill heroic all 100
+set char heroic mana 30000
+restore heroic
+transfer heroic 3700
+transfer cherub 3700
+cast gate
+@pulse 24
+cast gate nobody
+@pulse 24
+cast gate decimus
+@pulse 24
+cast gate smokegod
+@pulse 24
+goto 3700
+cast summon decimus
+@pulse 24
+@mob 3064 3005
+cast summon drunk
+@pulse 24
+@mob 3062 3005
+cast summon fido
+@pulse 24
+cast summon baker
+@pulse 24
+cast summon cherub
+@pulse 24
+transfer decimus 3005
+cast teleport
+@pulse 24
+goto 3700
+cast 'word of recall'
+@pulse 24
+goto 3700
+cast curse smokegod
+@pulse 24
+cast 'word of recall'
+@pulse 24
+cast 'remove curse'
+@pulse 24
+cast portal decimus
+@pulse 24
+cast nexus decimus
+@pulse 24
+@as hero
+cast portal decimus
+@pulse 24
+@obj 3611 3700
+get amethyst
+hold amethyst
+cast portal decimus
+@pulse 24
+@obj 3611 3700
+get amethyst
+hold amethyst
+cast nexus decimus
+@pulse 24
+@as god
+goto 3700
+cast 'locate object' flute
+@pulse 24
+cast 'locate object' nothingatall
+@pulse 24
+transfer decimus 3700
+cast ventriloquate decimus Hello, everyone.
+@pulse 24
+cast ventriloquate cherub I love you all.
+@pulse 24
+@obj 105 3700
+@obj 1362 3700
+@obj 106 3700
+@obj 1378 3700
+@obj 611 3700
+@obj 3032 3700
+@obj 3021 3700 1 2 4 1 8
+@obj 3117 3700
+get all
+cast identify potion
+@pulse 24
+cast identify scroll
+@pulse 24
+cast identify wand
+@pulse 24
+cast identify dust
+@pulse 24
+cast identify milk
+@pulse 24
+cast identify bag
+@pulse 24
+cast identify sword
+@pulse 24
+cast identify shield
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast identify sword
+@pulse 24
+cast recharge sword
+@pulse 24
+@obj 106 3700 5 1 1 95 0
+get wand
+cast recharge wand
+@pulse 24
+@obj 106 3700 5 0 1 5 0
+get wand
+cast recharge wand
+@pulse 24
+@obj 106 3700 5 5 1 5 0
+get wand
+cast recharge wand
+@pulse 24
+@obj 106 3700 5 9 0 5 0
+get wand
+cast recharge wand
+@pulse 24
+@obj 106 3700 5 9 0 5 0
+get wand
+cast recharge wand
+@pulse 24
+@obj 106 3700 5 9 0 5 0
+get wand
+cast recharge wand
+@pulse 24
+@state

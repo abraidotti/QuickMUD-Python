@@ -1,4 +1,4 @@
-"""magic.c's spells, the first half in the C's order (acid blast to fly; #74, PR 3). The rest come in PR 4.
+"""magic.c's spells (#74: acid blast to fly in PR 3, the rest in PR 4), and magic2.c's farsight, portal and nexus.
 
 Each spell takes the C's arguments: the skill number, the caster's level for it, the caster, the target (a
 character, an object, or None) and what the target is (TARGET_CHAR, TARGET_OBJ or TARGET_NONE). magic.cast_spell
@@ -6,13 +6,14 @@ finds them here by the C function's name; one that isn't here raises NotPorted.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Ported from src/magic.c. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Ported from src/magic.c, src/magic2.c. Licence terms: README.md#licence-terms and doc/.
 """
 
 from __future__ import annotations
 
 from charm.core.cint import c_div, sh_int
 from charm.core.rng import dice, number_fuzzy, number_percent, number_range
+from charm.core.strings import upper
 from charm.data import constants as C
 from charm.entities.handler import (affect_find, affect_join, affect_remove_obj, affect_strip, affect_to_char,
                                     affect_to_obj, is_affected, is_affected_by, is_evil, is_good)
@@ -988,6 +989,1093 @@ def spell_fly(sn: int, level: int, ch, vo, target: int) -> None:
     affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, level + 3, 0, 0, C.AFF_FLYING))
     send_to_char("Your feet rise off the ground.\n\r", victim)
     act("$n's feet rise off the ground.", victim, None, None, C.TO_ROOM)
+
+
+# -- the second half (#74, PR 4): frenzy to the breaths, and magic2.c ---------------------------------------------
+
+def _plus_by_level(level: int) -> int:
+    """1 + (level >= 18) + (level >= 25) + (level >= 32): giant strength's and haste's bonus."""
+    return 1 + (level >= 18) + (level >= 25) + (level >= 32)
+
+
+def _same_alignment(ch, victim) -> bool:
+    return ((is_good(ch) and is_good(victim)) or (is_evil(ch) and is_evil(victim))
+            or (_is_neutral(ch) and _is_neutral(victim)))
+
+
+def _look_auto(ch) -> None:
+    from charm.commands.info import do_look
+
+    do_look(ch, "auto")
+
+
+# C: magic.c spell_frenzy
+def spell_frenzy(sn: int, level: int, ch, vo, target: int) -> None:
+    """"RT clerical berserking spell"."""
+    victim = vo
+    if is_affected_by(victim, sn) or is_affected(victim, C.AFF_BERSERK):
+        _already(ch, victim, "You are already in a frenzy.\n\r", "$N is already in a frenzy.")
+        return
+    if is_affected_by(victim, skill_lookup("calm")):
+        _already(ch, victim, "Why don't you just relax for a while?\n\r",
+                 "$N doesn't look like $e wants to fight anymore.")
+        return
+    if ((is_good(ch) and not is_good(victim)) or (_is_neutral(ch) and not _is_neutral(victim))
+            or (is_evil(ch) and not is_evil(victim))):
+        act("Your god doesn't seem to like $N", ch, None, victim, C.TO_CHAR)
+        return
+    for location in (C.APPLY_HITROLL, C.APPLY_DAMROLL):
+        affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, c_div(level, 3), location, c_div(level, 6), 0))
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, c_div(level, 3), C.APPLY_AC, 10 * c_div(level, 12), 0))
+    send_to_char("You are filled with holy wrath!\n\r", victim)
+    act("$n gets a wild look in $s eyes!", victim, None, None, C.TO_ROOM)
+
+
+def _travel_refused(ch, victim, level: int, safe_from: bool, dam_type: int, saves_first: bool) -> bool:
+    """gate's, portal's and nexus's shared refusals (nexus adds its own about the caster's room)."""
+    from charm.entities.handler import can_see_room, is_clan, is_same_clan
+
+    if (victim is None or victim is ch or victim.in_room is None or not can_see_room(ch, victim.in_room)
+            or victim.in_room.room_flags & (C.ROOM_SAFE | C.ROOM_PRIVATE | C.ROOM_SOLITARY | C.ROOM_NO_RECALL)
+            or ch.in_room.room_flags & C.ROOM_NO_RECALL):
+        return True
+    if safe_from and ch.in_room.room_flags & C.ROOM_SAFE:
+        return True
+    if victim.level >= level + 3:
+        return True
+    if saves_first:  # gate: the clan rule before the level and the save
+        if is_clan(victim) and not is_same_clan(ch, victim):
+            return True
+    if not victim.is_npc and victim.level >= C.LEVEL_HERO:  # "NOT trust"
+        return True
+    if victim.is_npc and victim.imm_flags & C.IMM_SUMMON:
+        return True
+    if victim.is_npc and _saves(level, victim, dam_type):
+        return True
+    if not saves_first and is_clan(victim) and not is_same_clan(ch, victim):
+        return True
+    return False
+
+
+# C: magic.c spell_gate
+def spell_gate(sn: int, level: int, ch, vo, target: int) -> None:
+    """"RT ROM-style gate"."""
+    from charm.entities.handler import char_from_room, char_to_room, get_char_world
+
+    victim = get_char_world(_game(), ch, _game().target_name)
+    if _travel_refused(ch, victim, level, False, C.DAM_OTHER, True):
+        send_to_char("You failed.\n\r", ch)
+        return
+    gate_pet = ch.pet is not None and ch.in_room is ch.pet.in_room
+    act("$n steps through a gate and vanishes.", ch, None, None, C.TO_ROOM)
+    send_to_char("You step through a gate and vanish.\n\r", ch)
+    char_from_room(ch)
+    char_to_room(ch, victim.in_room)
+    act("$n has arrived through a gate.", ch, None, None, C.TO_ROOM)
+    _look_auto(ch)
+    if gate_pet:
+        pet = ch.pet
+        act("$n steps through a gate and vanishes.", pet, None, None, C.TO_ROOM)
+        send_to_char("You step through a gate and vanish.\n\r", pet)
+        char_from_room(pet)
+        char_to_room(pet, victim.in_room)
+        act("$n has arrived through a gate.", pet, None, None, C.TO_ROOM)
+        _look_auto(pet)
+
+
+# C: magic.c spell_giant_strength
+def spell_giant_strength(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected_by(victim, sn):
+        _already(ch, victim, "You are already as strong as you can get!\n\r", "$N can't get any stronger.")
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, level, C.APPLY_STR, _plus_by_level(level), 0))
+    send_to_char("Your muscles surge with heightened power!\n\r", victim)
+    act("$n's muscles surge with heightened power.", victim, None, None, C.TO_ROOM)
+
+
+# C: magic.c spell_harm
+def spell_harm(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    # UMAX (20, victim->hit - dice (1, 4)) is a macro: the die is rolled to compare, and again for the result if
+    # it wins (sic, #81)
+    dam = 20 if 20 > victim.hit - dice(1, 4) else victim.hit - dice(1, 4)
+    if _saves(level, victim, C.DAM_HARM):
+        dam = min(50, c_div(dam, 2))
+    dam = min(100, dam)
+    _damage(ch, victim, dam, sn, C.DAM_HARM, True)
+
+
+# C: magic.c spell_haste
+def spell_haste(sn: int, level: int, ch, vo, target: int) -> None:
+    """"RT haste spell"."""
+    from charm.systems.magic import check_dispel
+
+    victim = vo
+    if is_affected_by(victim, sn) or is_affected(victim, C.AFF_HASTE) or victim.off_flags & C.OFF_FAST:
+        _already(ch, victim, "You can't move any faster!\n\r", "$N is already moving as fast as $E can.")
+        return
+    if is_affected(victim, C.AFF_SLOW):
+        if not check_dispel(level, victim, skill_lookup("slow")):
+            if victim is not ch:
+                send_to_char("Spell failed.\n\r", ch)
+            send_to_char("You feel momentarily faster.\n\r", victim)
+            return
+        act("$n is moving less slowly.", victim, None, None, C.TO_ROOM)
+        return
+    duration = c_div(level, 2) if victim is ch else c_div(level, 4)
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, duration, C.APPLY_DEX, _plus_by_level(level), C.AFF_HASTE))
+    send_to_char("You feel yourself moving more quickly.\n\r", victim)
+    act("$n is moving more quickly.", victim, None, None, C.TO_ROOM)
+    if ch is not victim:
+        send_to_char("Ok.\n\r", ch)
+
+
+# C: magic.c spell_heal
+def spell_heal(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.fight import update_pos
+
+    victim = vo
+    victim.hit = sh_int(min(victim.hit + 100, victim.max_hit))
+    update_pos(victim)
+    send_to_char("A warm feeling fills your body.\n\r", victim)
+    if ch is not victim:
+        send_to_char("Ok.\n\r", ch)
+
+
+# C: magic.c spell_heat_metal
+def spell_heat_metal(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.commands.obj import remove_obj
+    from charm.entities.handler import can_drop_obj, get_curr_stat, obj_from_char, obj_to_room
+
+    victim = vo
+    dam = 0
+    fail = True
+    if not _saves(level + 2, victim, C.DAM_FIRE) and not victim.imm_flags & C.IMM_FIRE:
+        for obj_lose in list(victim.carrying):
+            if (number_range(1, 2 * level) > obj_lose.level and not _saves(level, victim, C.DAM_FIRE)
+                    and not obj_lose.extra_flags & (C.ITEM_NONMETAL | C.ITEM_BURN_PROOF)):
+                if obj_lose.item_type == C.ITEM_ARMOR:
+                    if obj_lose.wear_loc != -1:  # "remove the item"
+                        if (can_drop_obj(victim, obj_lose)
+                                and c_div(obj_lose.weight, 10) < number_range(1, 2 * get_curr_stat(victim,
+                                                                                                   C.STAT_DEX))
+                                and remove_obj(victim, obj_lose.wear_loc, True)):
+                            act("$n yelps and throws $p to the ground!", victim, obj_lose, None, C.TO_ROOM)
+                            act("You remove and drop $p before it burns you.", victim, obj_lose, None, C.TO_CHAR)
+                            dam += c_div(number_range(1, obj_lose.level), 3)
+                            obj_from_char(obj_lose)
+                            obj_to_room(obj_lose, victim.in_room)
+                        else:  # "stuck on the body! ouch!"
+                            act("Your skin is seared by $p!", victim, obj_lose, None, C.TO_CHAR)
+                            dam += number_range(1, obj_lose.level)
+                    else:  # "drop it if we can"
+                        dam += _heat_drop(victim, obj_lose, "$n yelps and throws $p to the ground!")
+                    fail = False
+                elif obj_lose.item_type == C.ITEM_WEAPON:
+                    if obj_lose.wear_loc != -1:  # "try to drop it"
+                        if obj_lose.value[4] & C.WEAPON_FLAMING:
+                            continue
+                        if can_drop_obj(victim, obj_lose) and remove_obj(victim, obj_lose.wear_loc, True):
+                            act("$n is burned by $p, and throws it to the ground.", victim, obj_lose, None,
+                                C.TO_ROOM)
+                            send_to_char("You throw your red-hot weapon to the ground!\n\r", victim)
+                            dam += 1
+                            obj_from_char(obj_lose)
+                            obj_to_room(obj_lose, victim.in_room)
+                        else:  # "YOWCH!"
+                            send_to_char("Your weapon sears your flesh!\n\r", victim)
+                            dam += number_range(1, obj_lose.level)
+                    else:  # "drop it if we can"
+                        dam += _heat_drop(victim, obj_lose, "$n throws a burning hot $p to the ground!")
+                    fail = False
+    if fail:
+        send_to_char("Your spell had no effect.\n\r", ch)
+        send_to_char("You feel momentarily warmer.\n\r", victim)
+    else:  # "damage!"
+        if _saves(level, victim, C.DAM_FIRE):
+            dam = c_div(2 * dam, 3)
+        _damage(ch, victim, dam, sn, C.DAM_FIRE, True)
+
+
+def _heat_drop(victim, obj, room_msg: str) -> int:
+    """heat metal on something carried, not worn: dropped if it can be, or it sears. The damage it adds."""
+    from charm.entities.handler import can_drop_obj, obj_from_char, obj_to_room
+
+    if can_drop_obj(victim, obj):
+        act(room_msg, victim, obj, None, C.TO_ROOM)
+        act("You and drop $p before it burns you.", victim, obj, None, C.TO_CHAR)  # sic (#81)
+        dam = c_div(number_range(1, obj.level), 6)
+        obj_from_char(obj)
+        obj_to_room(obj, victim.in_room)
+        return dam
+    act("Your skin is seared by $p!", victim, obj, None, C.TO_CHAR)  # "cannot drop"
+    return c_div(number_range(1, obj.level), 2)
+
+
+# C: magic.c spell_holy_word
+def spell_holy_word(sn: int, level: int, ch, vo, target: int) -> None:
+    """"RT really nasty high-level attack spell"."""
+    from charm.entities.handler import next_in_room
+    from charm.systems.fight import is_safe_spell
+
+    bless_num = skill_lookup("bless")
+    curse_num = skill_lookup("curse")
+    frenzy_num = skill_lookup("frenzy")
+    act("$n utters a word of divine power!", ch, None, None, C.TO_ROOM)
+    send_to_char("You utter a word of divine power.\n\r", ch)
+    people = ch.in_room.people
+    vch = people[0] if people else None
+    while vch is not None:
+        vch_next = next_in_room(vch)
+        if _same_alignment(ch, vch):
+            send_to_char("You feel full more powerful.\n\r", vch)
+            spell_frenzy(frenzy_num, level, ch, vch, C.TARGET_CHAR)
+            spell_bless(bless_num, level, ch, vch, C.TARGET_CHAR)
+        elif (is_good(ch) and is_evil(vch)) or (is_evil(ch) and is_good(vch)):
+            if not is_safe_spell(ch, vch, True):
+                spell_curse(curse_num, level, ch, vch, C.TARGET_CHAR)
+                send_to_char("You are struck down!\n\r", vch)
+                _damage(ch, vch, dice(level, 6), sn, C.DAM_ENERGY, True)
+        elif _is_neutral(ch):
+            if not is_safe_spell(ch, vch, True):
+                spell_curse(curse_num, c_div(level, 2), ch, vch, C.TARGET_CHAR)
+                send_to_char("You are struck down!\n\r", vch)
+                _damage(ch, vch, dice(level, 4), sn, C.DAM_ENERGY, True)
+        vch = vch_next
+    send_to_char("You feel drained.\n\r", ch)
+    ch.move = 0
+    ch.hit = sh_int(c_div(ch.hit, 2))
+
+
+def _skill_name(n: int) -> str:
+    from charm.core.errors import CWouldCrash
+    from charm.data.skills import SKILL_TABLE
+
+    if n >= len(SKILL_TABLE):
+        raise CWouldCrash(f"magic.c spell_identify: skill {n} is a zeroed row of skill_table, and its NULL name is "
+                          "sent")
+    return SKILL_TABLE[n].name
+
+
+def _identify_bit(paf, weapon_too: bool) -> str:
+    """The line for an affect's bit. Sic: the affect, object and weapon lines end in "\\n" alone (#81)."""
+    from charm.entities.handler import affect_bit_name, extra_bit_name, imm_bit_name, weapon_bit_name
+
+    where = paf.where
+    if where == C.TO_AFFECTS:
+        return "Adds %s affect.\n" % affect_bit_name(paf.bitvector)
+    if where == C.TO_OBJECT:
+        return "Adds %s object flag.\n" % extra_bit_name(paf.bitvector)
+    if where == C.TO_WEAPON and weapon_too:
+        return "Adds %s weapon flags.\n" % weapon_bit_name(paf.bitvector)
+    if where == C.TO_IMMUNE:
+        return "Adds immunity to %s.\n" % imm_bit_name(paf.bitvector)
+    if where == C.TO_RESIST:
+        return "Adds resistance to %s.\n\r" % imm_bit_name(paf.bitvector)
+    if where == C.TO_VULN:
+        return "Adds vulnerability to %s.\n\r" % imm_bit_name(paf.bitvector)
+    return "Unknown bit %d: %d\n\r" % (where, paf.bitvector)
+
+
+_WEAPON_KIND = {C.WEAPON_EXOTIC: "exotic", C.WEAPON_SWORD: "sword", C.WEAPON_DAGGER: "dagger",
+                C.WEAPON_SPEAR: "spear/staff", C.WEAPON_MACE: "mace/club", C.WEAPON_AXE: "axe",
+                C.WEAPON_FLAIL: "flail", C.WEAPON_WHIP: "whip", C.WEAPON_POLEARM: "polearm"}
+
+
+# C: magic.c spell_identify
+def spell_identify(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.commands.obj import _liquid
+    from charm.entities.handler import affect_loc_name, cont_bit_name, extra_bit_name, item_name, weapon_bit_name
+
+    obj = vo
+    v = obj.value
+    send_to_char("Object '%s' is type %s, extra flags %s.\n\rWeight is %d, value is %d, level is %d.\n\r"
+                 % (obj.name, item_name(obj.item_type), extra_bit_name(obj.extra_flags), c_div(obj.weight, 10),
+                    obj.cost, obj.level), ch)
+    kind = obj.item_type
+    if kind in (C.ITEM_SCROLL, C.ITEM_POTION, C.ITEM_PILL):
+        send_to_char("Level %d spells of:" % v[0], ch)
+        for n in v[1:5]:
+            if 0 <= n < C.MAX_SKILL:
+                send_to_char(" '", ch)
+                send_to_char(_skill_name(n), ch)
+                send_to_char("'", ch)
+        send_to_char(".\n\r", ch)
+    elif kind in (C.ITEM_WAND, C.ITEM_STAFF):
+        send_to_char("Has %d charges of level %d" % (v[2], v[0]), ch)
+        if 0 <= v[3] < C.MAX_SKILL:
+            send_to_char(" '", ch)
+            send_to_char(_skill_name(v[3]), ch)
+            send_to_char("'", ch)
+        send_to_char(".\n\r", ch)
+    elif kind == C.ITEM_DRINK_CON:
+        liq = _liquid(v[2], "spell_identify")
+        send_to_char("It holds %s-colored %s.\n\r" % (liq.liq_color, liq.liq_name), ch)
+    elif kind == C.ITEM_CONTAINER:
+        send_to_char("Capacity: %d#  Maximum weight: %d#  flags: %s\n\r" % (v[0], v[3], cont_bit_name(v[1])), ch)
+        if v[4] != 100:
+            send_to_char("Weight multiplier: %d%%\n\r" % v[4], ch)
+    elif kind == C.ITEM_WEAPON:
+        send_to_char("Weapon type is ", ch)
+        send_to_char("%s.\n\r" % _WEAPON_KIND.get(v[0], "unknown"), ch)
+        if obj.index.new_format:
+            send_to_char("Damage is %dd%d (average %d).\n\r" % (v[1], v[2], c_div((1 + v[2]) * v[1], 2)), ch)
+        else:
+            send_to_char("Damage is %d to %d (average %d).\n\r" % (v[1], v[2], c_div(v[1] + v[2], 2)), ch)
+        if v[4]:  # "weapon flags"
+            send_to_char("Weapons flags: %s\n\r" % weapon_bit_name(v[4]), ch)
+    elif kind == C.ITEM_ARMOR:
+        send_to_char("Armor class is %d pierce, %d bash, %d slash, and %d vs. magic.\n\r" % (v[0], v[1], v[2], v[3]),
+                     ch)
+    if not obj.enchanted:
+        for paf in obj.index.affected:
+            if paf.location != C.APPLY_NONE and paf.modifier != 0:
+                send_to_char("Affects %s by %d.\n\r" % (affect_loc_name(paf.location), paf.modifier), ch)
+                if paf.bitvector:
+                    send_to_char(_identify_bit(paf, False), ch)
+    for paf in obj.affected:
+        if paf.location != C.APPLY_NONE and paf.modifier != 0:
+            send_to_char("Affects %s by %d" % (affect_loc_name(paf.location), paf.modifier), ch)
+            send_to_char(", %d hours.\n\r" % paf.duration if paf.duration > -1 else ".\n\r", ch)
+            if paf.bitvector:
+                send_to_char(_identify_bit(paf, True), ch)
+
+
+# C: magic.c spell_infravision
+def spell_infravision(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected(victim, C.AFF_INFRARED):
+        _already(ch, victim, "You can already see in the dark.\n\r", "$N already has infravision.\n\r")
+        return
+    act("$n's eyes glow red.\n\r", ch, None, None, C.TO_ROOM)  # sic: act adds a line end of its own too (#81)
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, 2 * level, C.APPLY_NONE, 0, C.AFF_INFRARED))
+    send_to_char("Your eyes glow red.\n\r", victim)
+
+
+# C: magic.c spell_invis
+def spell_invis(sn: int, level: int, ch, vo, target: int) -> None:
+    if target == C.TARGET_OBJ:  # "object invisibility"
+        obj = vo
+        if obj.extra_flags & C.ITEM_INVIS:
+            act("$p is already invisible.", ch, obj, None, C.TO_CHAR)
+            return
+        affect_to_obj(obj, _af(C.TO_OBJECT, sn, level, level + 12, C.APPLY_NONE, 0, C.ITEM_INVIS))
+        act("$p fades out of sight.", ch, obj, None, C.TO_ALL)
+        return
+    victim = vo  # "character invisibility"
+    if is_affected(victim, C.AFF_INVISIBLE):
+        return
+    act("$n fades out of existence.", victim, None, None, C.TO_ROOM)
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, level + 12, C.APPLY_NONE, 0, C.AFF_INVISIBLE))
+    send_to_char("You fade out of existence.\n\r", victim)
+
+
+# C: magic.c spell_know_alignment
+def spell_know_alignment(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    ap = victim.alignment
+    if ap > 700:
+        msg = "$N has a pure and good aura."
+    elif ap > 350:
+        msg = "$N is of excellent moral character."
+    elif ap > 100:
+        msg = "$N is often kind and thoughtful."
+    elif ap > -100:
+        msg = "$N doesn't have a firm moral commitment."
+    elif ap > -350:
+        msg = "$N lies to $S friends."
+    elif ap > -700:
+        msg = "$N is a black-hearted murderer."
+    else:
+        msg = "$N is the embodiment of pure evil!."
+    act(msg, ch, None, victim, C.TO_CHAR)
+
+
+_LIGHTNING_BOLT = (0, 0, 0, 0, 0, 0, 0, 0, 0, 25, 28, 31, 34, 37, 40, 40, 41, 42, 42, 43, 44, 44, 45, 46, 46, 47, 48,
+                   48, 49, 50, 50, 51, 52, 52, 53, 54, 54, 55, 56, 56, 57, 58, 58, 59, 60, 60, 61, 62, 62, 63, 64)
+
+
+# C: magic.c spell_lightning_bolt
+def spell_lightning_bolt(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    level, dam = _table_damage(_LIGHTNING_BOLT, level)
+    if _saves(level, victim, C.DAM_LIGHTNING):
+        dam = c_div(dam, 2)
+    _damage(ch, victim, dam, sn, C.DAM_LIGHTNING, True)
+
+
+# C: magic.c spell_locate_object
+def spell_locate_object(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import can_see, can_see_obj, is_immortal, is_name, pers
+    from charm.net.output import page_to_char
+
+    game = _game()
+    found = False
+    number = 0
+    max_found = 200 if is_immortal(ch) else 2 * level
+    lines = []
+    for obj in list(game.object_list):
+        if (not can_see_obj(ch, obj) or not is_name(game.target_name, obj.name)
+                or obj.extra_flags & C.ITEM_NOLOCATE or number_percent() > 2 * level or ch.level < obj.level):
+            continue
+        found = True
+        number += 1
+        in_obj = obj
+        while in_obj.in_obj is not None:
+            in_obj = in_obj.in_obj
+        if in_obj.carried_by is not None and can_see(ch, in_obj.carried_by):
+            buf = "one is carried by %s\n\r" % pers(in_obj.carried_by, ch)
+        elif is_immortal(ch) and in_obj.in_room is not None:
+            buf = "one is in %s [Room %d]\n\r" % (in_obj.in_room.name, in_obj.in_room.vnum)
+        else:
+            buf = "one is in %s\n\r" % ("somewhere" if in_obj.in_room is None else in_obj.in_room.name)
+        if len(buf) >= C.MAX_INPUT_LENGTH:
+            from charm.core.errors import CWouldCrash
+
+            raise CWouldCrash("magic.c spell_locate_object: a line overflows buf[MAX_INPUT_LENGTH]")
+        lines.append(upper(buf[0]) + buf[1:])  # buf[0] = UPPER (buf[0])
+        if number >= max_found:
+            break
+    if not found:
+        send_to_char("Nothing like that in heaven or earth.\n\r", ch)
+    else:
+        page_to_char("".join(lines), ch)
+
+
+_MAGIC_MISSILE = (0, 3, 3, 4, 4, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 11,
+                  11, 11, 11, 11, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14)
+
+
+# C: magic.c spell_magic_missile
+def spell_magic_missile(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    level, dam = _table_damage(_MAGIC_MISSILE, level)
+    if _saves(level, victim, C.DAM_ENERGY):
+        dam = c_div(dam, 2)
+    _damage(ch, victim, dam, sn, C.DAM_ENERGY, True)
+
+
+# C: magic.c spell_mass_healing
+def spell_mass_healing(sn: int, level: int, ch, vo, target: int) -> None:
+    heal_num = skill_lookup("heal")
+    refresh_num = skill_lookup("refresh")
+    for gch in list(ch.in_room.people):
+        if gch.is_npc == ch.is_npc:
+            spell_heal(heal_num, level, ch, gch, C.TARGET_CHAR)
+            spell_refresh(refresh_num, level, ch, gch, C.TARGET_CHAR)
+
+
+# C: magic.c spell_mass_invis
+def spell_mass_invis(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.commands.comm import is_same_group
+
+    for gch in list(ch.in_room.people):
+        if not is_same_group(gch, ch) or is_affected(gch, C.AFF_INVISIBLE):
+            continue
+        act("$n slowly fades out of existence.", gch, None, None, C.TO_ROOM)
+        send_to_char("You slowly fade out of existence.\n\r", gch)
+        affect_to_char(gch, _af(C.TO_AFFECTS, sn, c_div(level, 2), 24, C.APPLY_NONE, 0, C.AFF_INVISIBLE))
+    send_to_char("Ok.\n\r", ch)
+
+
+# C: magic.c spell_pass_door
+def spell_pass_door(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected(victim, C.AFF_PASS_DOOR):
+        _already(ch, victim, "You are already out of phase.\n\r", "$N is already shifted out of phase.")
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, number_fuzzy(c_div(level, 4)), C.APPLY_NONE, 0,
+                               C.AFF_PASS_DOOR))
+    act("$n turns translucent.", victim, None, None, C.TO_ROOM)
+    send_to_char("You turn translucent.\n\r", victim)
+
+
+# C: magic.c spell_plague
+def spell_plague(sn: int, level: int, ch, vo, target: int) -> None:
+    """"RT plague spell, very nasty"."""
+    victim = vo
+    if _saves(level, victim, C.DAM_DISEASE) or (victim.is_npc and victim.act & C.ACT_UNDEAD):
+        if ch is victim:
+            send_to_char("You feel momentarily ill, but it passes.\n\r", ch)
+        else:
+            act("$N seems to be unaffected.", ch, None, victim, C.TO_CHAR)
+        return
+    affect_join(victim, _af(C.TO_AFFECTS, sn, c_div(level * 3, 4), level, C.APPLY_STR, -5, C.AFF_PLAGUE))
+    send_to_char("You scream in agony as plague sores erupt from your skin.\n\r", victim)
+    act("$n screams in agony as plague sores erupt from $s skin.", victim, None, None, C.TO_ROOM)
+
+
+# C: magic.c spell_poison
+def spell_poison(sn: int, level: int, ch, vo, target: int) -> None:
+    if target == C.TARGET_OBJ:
+        obj = vo
+        if obj.item_type in (C.ITEM_FOOD, C.ITEM_DRINK_CON):
+            if obj.extra_flags & (C.ITEM_BLESS | C.ITEM_BURN_PROOF):
+                act("Your spell fails to corrupt $p.", ch, obj, None, C.TO_CHAR)
+                return
+            obj.value[3] = 1
+            act("$p is infused with poisonous vapors.", ch, obj, None, C.TO_ALL)
+            return
+        if obj.item_type == C.ITEM_WEAPON:
+            if (obj.value[4] & (C.WEAPON_FLAMING | C.WEAPON_FROST | C.WEAPON_VAMPIRIC | C.WEAPON_SHARP
+                                | C.WEAPON_VORPAL | C.WEAPON_SHOCKING)
+                    or obj.extra_flags & (C.ITEM_BLESS | C.ITEM_BURN_PROOF)):
+                act("You can't seem to envenom $p.", ch, obj, None, C.TO_CHAR)
+                return
+            if obj.value[4] & C.WEAPON_POISON:
+                act("$p is already envenomed.", ch, obj, None, C.TO_CHAR)
+                return
+            affect_to_obj(obj, _af(C.TO_WEAPON, sn, c_div(level, 2), c_div(level, 8), 0, 0, C.WEAPON_POISON))
+            act("$p is coated with deadly venom.", ch, obj, None, C.TO_ALL)
+            return
+        act("You can't poison $p.", ch, obj, None, C.TO_CHAR)
+        return
+    victim = vo
+    if _saves(level, victim, C.DAM_POISON):
+        act("$n turns slightly green, but it passes.", victim, None, None, C.TO_ROOM)
+        send_to_char("You feel momentarily ill, but it passes.\n\r", victim)
+        return
+    affect_join(victim, _af(C.TO_AFFECTS, sn, level, level, C.APPLY_STR, -2, C.AFF_POISON))
+    send_to_char("You feel very sick.\n\r", victim)
+    act("$n looks very ill.", victim, None, None, C.TO_ROOM)
+
+
+def _protection(sn: int, level: int, ch, victim, bit: int, feel: str, theirs: str) -> None:
+    if is_affected(victim, C.AFF_PROTECT_EVIL) or is_affected(victim, C.AFF_PROTECT_GOOD):
+        _already(ch, victim, "You are already protected.\n\r", "$N is already protected.")
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, 24, C.APPLY_SAVING_SPELL, -1, bit))
+    send_to_char(feel, victim)
+    if ch is not victim:
+        act(theirs, ch, None, victim, C.TO_CHAR)
+
+
+# C: magic.c spell_protection_evil
+def spell_protection_evil(sn: int, level: int, ch, vo, target: int) -> None:
+    _protection(sn, level, ch, vo, C.AFF_PROTECT_EVIL, "You feel holy and pure.\n\r", "$N is protected from evil.")
+
+
+# C: magic.c spell_protection_good
+def spell_protection_good(sn: int, level: int, ch, vo, target: int) -> None:
+    _protection(sn, level, ch, vo, C.AFF_PROTECT_GOOD, "You feel aligned with darkness.\n\r",
+                "$N is protected from good.")
+
+
+# C: magic.c spell_ray_of_truth
+def spell_ray_of_truth(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.core.cint import int32
+
+    victim = vo
+    if is_evil(ch):
+        victim = ch
+        send_to_char("The energy explodes inside you!\n\r", ch)
+    if victim is not ch:
+        act("$n raises $s hand, and a blinding ray of light shoots forth!", ch, None, None, C.TO_ROOM)
+        send_to_char("You raise your hand and a blinding ray of light shoots forth!\n\r", ch)
+    if is_good(victim):
+        act("$n seems unharmed by the light.", victim, None, victim, C.TO_ROOM)
+        send_to_char("The light seems powerless to affect you.\n\r", victim)
+        return
+    dam = dice(level, 10)
+    if _saves(level, victim, C.DAM_HOLY):
+        dam = c_div(dam, 2)
+    align = victim.alignment
+    align -= 350
+    if align < -1000:
+        align = -1000 + c_div(align + 1000, 3)
+    dam = c_div(int32(int32(dam * align) * align), 1000000)
+    _damage(ch, victim, dam, sn, C.DAM_HOLY, True)
+    spell_blindness(GSN["gsn_blindness"], c_div(3 * level, 4), ch, victim, C.TARGET_CHAR)
+
+
+# C: magic.c spell_recharge
+def spell_recharge(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import extract_obj
+
+    obj = vo
+    v = obj.value
+    if obj.item_type not in (C.ITEM_WAND, C.ITEM_STAFF):
+        send_to_char("That item does not carry charges.\n\r", ch)
+        return
+    if v[3] >= c_div(3 * level, 2):
+        send_to_char("Your skills are not great enough for that.\n\r", ch)
+        return
+    if v[1] == 0:
+        send_to_char("That item has already been recharged once.\n\r", ch)
+        return
+    chance = 40 + 2 * level
+    chance -= v[3]  # "harder to do high-level spells"
+    chance -= (v[1] - v[2]) * (v[1] - v[2])
+    chance = max(c_div(level, 2), chance)
+    percent = number_percent()
+    if percent < c_div(chance, 2):
+        act("$p glows softly.", ch, obj, None, C.TO_CHAR)
+        act("$p glows softly.", ch, obj, None, C.TO_ROOM)
+        v[2] = max(v[1], v[2])
+        v[1] = 0
+    elif percent <= chance:
+        act("$p glows softly.", ch, obj, None, C.TO_CHAR)
+        act("$p glows softly.", ch, obj, None, C.TO_CHAR)  # sic: twice to the caster, not to the room (#81)
+        chargemax = v[1] - v[2]
+        chargeback = max(1, c_div(chargemax * percent, 100)) if chargemax > 0 else 0
+        v[2] += chargeback
+        v[1] = 0
+    elif percent <= min(95, c_div(3 * chance, 2)):
+        send_to_char("Nothing seems to happen.\n\r", ch)
+        if v[1] > 1:
+            v[1] -= 1
+    else:  # "whoops!"
+        act("$p glows brightly and explodes!", ch, obj, None, C.TO_CHAR)
+        act("$p glows brightly and explodes!", ch, obj, None, C.TO_ROOM)
+        extract_obj(_game(), obj)
+
+
+# C: magic.c spell_refresh
+def spell_refresh(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    victim.move = sh_int(min(victim.move + level, victim.max_move))
+    send_to_char("You feel fully refreshed!\n\r" if victim.max_move == victim.move else "You feel less tired.\n\r",
+                 victim)
+    if ch is not victim:
+        send_to_char("Ok.\n\r", ch)
+
+
+# C: magic.c spell_remove_curse
+def spell_remove_curse(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.magic import check_dispel, saves_dispel
+
+    if target == C.TARGET_OBJ:  # "do object cases first"
+        obj = vo
+        if obj.extra_flags & (C.ITEM_NODROP | C.ITEM_NOREMOVE):
+            if not obj.extra_flags & C.ITEM_NOUNCURSE and not saves_dispel(level + 2, obj.level, 0):
+                obj.extra_flags &= ~(C.ITEM_NODROP | C.ITEM_NOREMOVE)
+                act("$p glows blue.", ch, obj, None, C.TO_ALL)
+                return
+            act("The curse on $p is beyond your power.", ch, obj, None, C.TO_CHAR)
+            return
+        act("There doesn't seem to be a curse on $p.", ch, obj, None, C.TO_CHAR)
+        return
+    victim = vo  # "characters"
+    if check_dispel(level, victim, GSN["gsn_curse"]):
+        send_to_char("You feel better.\n\r", victim)
+        act("$n looks more relaxed.", victim, None, None, C.TO_ROOM)
+    for obj in list(victim.carrying):
+        if (obj.extra_flags & (C.ITEM_NODROP | C.ITEM_NOREMOVE)
+                and not obj.extra_flags & C.ITEM_NOUNCURSE):  # "attempt to remove curse"
+            if not saves_dispel(level, obj.level, 0):
+                obj.extra_flags &= ~(C.ITEM_NODROP | C.ITEM_NOREMOVE)
+                act("Your $p glows blue.", victim, obj, None, C.TO_CHAR)
+                act("$n's $p glows blue.", victim, obj, None, C.TO_ROOM)
+                break
+
+
+# C: magic.c spell_sanctuary
+def spell_sanctuary(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected(victim, C.AFF_SANCTUARY):
+        _already(ch, victim, "You are already in sanctuary.\n\r", "$N is already in sanctuary.")
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, c_div(level, 6), C.APPLY_NONE, 0, C.AFF_SANCTUARY))
+    act("$n is surrounded by a white aura.", victim, None, None, C.TO_ROOM)
+    send_to_char("You are surrounded by a white aura.\n\r", victim)
+
+
+# C: magic.c spell_shield
+def spell_shield(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected_by(victim, sn):
+        _already(ch, victim, "You are already shielded from harm.\n\r", "$N is already protected by a shield.")
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, 8 + level, C.APPLY_AC, -20, 0))
+    act("$n is surrounded by a force shield.", victim, None, None, C.TO_ROOM)
+    send_to_char("You are surrounded by a force shield.\n\r", victim)
+
+
+_SHOCKING_GRASP = (0, 0, 0, 0, 0, 0, 0, 20, 25, 29, 33, 36, 39, 39, 39, 40, 40, 41, 41, 42, 42, 43, 43, 44, 44, 45,
+                   45, 46, 46, 47, 47, 48, 48, 49, 49, 50, 50, 51, 51, 52, 52, 53, 53, 54, 54, 55, 55, 56, 56, 57, 57)
+
+
+# C: magic.c spell_shocking_grasp
+def spell_shocking_grasp(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    level, dam = _table_damage(_SHOCKING_GRASP, level)
+    if _saves(level, victim, C.DAM_LIGHTNING):
+        dam = c_div(dam, 2)
+    _damage(ch, victim, dam, sn, C.DAM_LIGHTNING, True)
+
+
+# C: magic.c spell_sleep
+def spell_sleep(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import is_awake
+
+    victim = vo
+    if (is_affected(victim, C.AFF_SLEEP) or (victim.is_npc and victim.act & C.ACT_UNDEAD)
+            or (level + 2) < victim.level or _saves(level - 4, victim, C.DAM_CHARM)):
+        return
+    affect_join(victim, _af(C.TO_AFFECTS, sn, level, 4 + level, C.APPLY_NONE, 0, C.AFF_SLEEP))
+    if is_awake(victim):
+        send_to_char("You feel very sleepy ..... zzzzzz.\n\r", victim)
+        act("$n goes to sleep.", victim, None, None, C.TO_ROOM)
+        victim.position = C.POS_SLEEPING
+
+
+# C: magic.c spell_slow
+def spell_slow(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.magic import check_dispel
+
+    victim = vo
+    if is_affected_by(victim, sn) or is_affected(victim, C.AFF_SLOW):
+        _already(ch, victim, "You can't move any slower!\n\r", "$N can't get any slower than that.")
+        return
+    if _saves(level, victim, C.DAM_OTHER) or victim.imm_flags & C.IMM_MAGIC:
+        if victim is not ch:
+            send_to_char("Nothing seemed to happen.\n\r", ch)
+        send_to_char("You feel momentarily lethargic.\n\r", victim)
+        return
+    if is_affected(victim, C.AFF_HASTE):
+        if not check_dispel(level, victim, skill_lookup("haste")):
+            if victim is not ch:
+                send_to_char("Spell failed.\n\r", ch)
+            send_to_char("You feel momentarily slower.\n\r", victim)
+            return
+        act("$n is moving less quickly.", victim, None, None, C.TO_ROOM)
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, c_div(level, 2), C.APPLY_DEX, -_plus_by_level(level),
+                               C.AFF_SLOW))
+    send_to_char("You feel yourself slowing d o w n...\n\r", victim)
+    act("$n starts to move in slow motion.", victim, None, None, C.TO_ROOM)
+
+
+# C: magic.c spell_stone_skin
+def spell_stone_skin(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected_by(ch, sn):  # the caster's: the spell is for yourself only, so the victim is the caster
+        _already(ch, victim, "Your skin is already as hard as a rock.\n\r", "$N is already as hard as can be.")
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, level, C.APPLY_AC, -40, 0))
+    act("$n's skin turns to stone.", victim, None, None, C.TO_ROOM)
+    send_to_char("Your skin turns to stone.\n\r", victim)
+
+
+# C: magic.c spell_summon
+def spell_summon(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import char_from_room, char_to_room, get_char_world
+
+    victim = get_char_world(_game(), ch, _game().target_name)
+    if (victim is None or victim is ch or victim.in_room is None or ch.in_room.room_flags & C.ROOM_SAFE
+            or victim.in_room.room_flags & (C.ROOM_SAFE | C.ROOM_PRIVATE | C.ROOM_SOLITARY | C.ROOM_NO_RECALL)
+            or (victim.is_npc and victim.act & C.ACT_AGGRESSIVE) or victim.level >= level + 3
+            or (not victim.is_npc and victim.level >= C.LEVEL_IMMORTAL) or victim.fighting is not None
+            or (victim.is_npc and victim.imm_flags & C.IMM_SUMMON)
+            or (victim.is_npc and victim.index.shop is not None)
+            or (not victim.is_npc and victim.act & C.PLR_NOSUMMON)
+            or (victim.is_npc and _saves(level, victim, C.DAM_OTHER))):
+        send_to_char("You failed.\n\r", ch)
+        return
+    act("$n disappears suddenly.", victim, None, None, C.TO_ROOM)
+    char_from_room(victim)
+    char_to_room(victim, ch.in_room)
+    act("$n arrives suddenly.", victim, None, None, C.TO_ROOM)
+    act("$n has summoned you!", ch, None, victim, C.TO_VICT)
+    _look_auto(victim)
+
+
+# C: magic.c spell_teleport
+def spell_teleport(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.commands.move import get_random_room
+    from charm.entities.handler import char_from_room, char_to_room
+
+    victim = vo
+    if (victim.in_room is None or victim.in_room.room_flags & C.ROOM_NO_RECALL
+            or (victim is not ch and victim.imm_flags & C.IMM_SUMMON)
+            or (not ch.is_npc and victim.fighting is not None)
+            or (victim is not ch and _saves(level - 5, victim, C.DAM_OTHER))):
+        send_to_char("You failed.\n\r", ch)
+        return
+    room = get_random_room(victim)
+    if victim is not ch:
+        send_to_char("You have been teleported!\n\r", victim)
+    act("$n vanishes!", victim, None, None, C.TO_ROOM)
+    char_from_room(victim)
+    char_to_room(victim, room)
+    act("$n slowly fades into existence.", victim, None, None, C.TO_ROOM)
+    _look_auto(victim)
+
+
+# C: magic.c spell_ventriloquate
+def spell_ventriloquate(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.commands.interp import one_argument
+    from charm.entities.handler import is_awake, is_exact_name
+
+    game = _game()
+    game.target_name, speaker = one_argument(game.target_name)
+    buf1 = "%s says '%s'.\n\r" % (speaker, game.target_name)
+    buf2 = "Someone makes %s say '%s'.\n\r" % (speaker, game.target_name)
+    buf1 = upper(buf1[0]) + buf1[1:]  # buf1[0] = UPPER (buf1[0])
+    for vch in list(ch.in_room.people):
+        if not is_exact_name(speaker, vch.name) and is_awake(vch):
+            send_to_char(buf2 if _saves(level, vch, C.DAM_OTHER) else buf1, vch)
+
+
+# C: magic.c spell_weaken
+def spell_weaken(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    if is_affected_by(victim, sn) or _saves(level, victim, C.DAM_OTHER):
+        return
+    affect_to_char(victim, _af(C.TO_AFFECTS, sn, level, c_div(level, 2), C.APPLY_STR, -1 * c_div(level, 5),
+                               C.AFF_WEAKEN))
+    send_to_char("You feel your strength slip away.\n\r", victim)
+    act("$n looks tired and weak.", victim, None, None, C.TO_ROOM)
+
+
+# C: magic.c spell_word_of_recall
+def spell_word_of_recall(sn: int, level: int, ch, vo, target: int) -> None:
+    """"RT recall spell is back"."""
+    from charm.entities.handler import char_from_room, char_to_room
+    from charm.systems.fight import stop_fighting
+
+    victim = vo
+    if victim.is_npc:
+        return
+    location = _game().index.get_room_index(C.ROOM_VNUM_TEMPLE)
+    if location is None:
+        send_to_char("You are completely lost.\n\r", victim)
+        return
+    if victim.in_room.room_flags & C.ROOM_NO_RECALL or is_affected(victim, C.AFF_CURSE):
+        send_to_char("Spell failed.\n\r", victim)
+        return
+    if victim.fighting is not None:
+        stop_fighting(_game(), victim, True)
+    ch.move = sh_int(c_div(ch.move, 2))  # the caster's: the spell is for yourself only
+    act("$n disappears.", victim, None, None, C.TO_ROOM)
+    char_from_room(victim)
+    char_to_room(victim, location)
+    act("$n appears in the room.", victim, None, None, C.TO_ROOM)
+    _look_auto(victim)
+
+
+def _breath_damage(ch, hp_floor: int, hp_low: int, hp_high_div: int, dice_size: int, level: int,
+                   fixed_high: int | None = None) -> int:
+    """The breaths' damage: from the breather's hit points and dice, the larger of the two blends."""
+    hpch = max(hp_floor, ch.hit)
+    high = fixed_high if fixed_high is not None else c_div(hpch, hp_high_div)
+    hp_dam = number_range(c_div(hpch, hp_low) + 1, high)
+    dice_dam = dice(level, dice_size)
+    return max(hp_dam + c_div(dice_dam, 10), dice_dam + c_div(hp_dam, 10))
+
+
+# C: magic.c spell_acid_breath
+def spell_acid_breath(sn: int, level: int, ch, vo, target: int) -> None:
+    """"NPC spells."."""
+    from charm.systems.effects import acid_effect
+
+    victim = vo
+    act("$n spits acid at $N.", ch, None, victim, C.TO_NOTVICT)
+    act("$n spits a stream of corrosive acid at you.", ch, None, victim, C.TO_VICT)
+    act("You spit acid at $N.", ch, None, victim, C.TO_CHAR)
+    dam = _breath_damage(ch, 12, 11, 6, 16, level)
+    if _saves(level, victim, C.DAM_ACID):
+        acid_effect(victim, c_div(level, 2), c_div(dam, 4), C.TARGET_CHAR)
+        _damage(ch, victim, c_div(dam, 2), sn, C.DAM_ACID, True)
+    else:
+        acid_effect(victim, level, dam, C.TARGET_CHAR)
+        _damage(ch, victim, dam, sn, C.DAM_ACID, True)
+
+
+def _cone(sn: int, level: int, ch, victim, dam: int, dam_type: int, effect) -> None:
+    """fire breath's and frost breath's cone: the victim takes it all, the rest of the room in part."""
+    from charm.entities.handler import next_in_room
+    from charm.systems.fight import is_safe_spell
+
+    people = victim.in_room.people
+    vch = people[0] if people else None
+    while vch is not None:
+        vch_next = next_in_room(vch)
+        if not (is_safe_spell(ch, vch, True)
+                or (vch.is_npc and ch.is_npc and (ch.fighting is not vch or vch.fighting is not ch))):
+            if vch is victim:  # "full damage"
+                if _saves(level, vch, dam_type):
+                    effect(vch, c_div(level, 2), c_div(dam, 4), C.TARGET_CHAR)
+                    _damage(ch, vch, c_div(dam, 2), sn, dam_type, True)
+                else:
+                    effect(vch, level, dam, C.TARGET_CHAR)
+                    _damage(ch, vch, dam, sn, dam_type, True)
+            else:  # "partial damage"
+                if _saves(level - 2, vch, dam_type):
+                    effect(vch, c_div(level, 4), c_div(dam, 8), C.TARGET_CHAR)
+                    _damage(ch, vch, c_div(dam, 4), sn, dam_type, True)
+                else:
+                    effect(vch, c_div(level, 2), c_div(dam, 4), C.TARGET_CHAR)
+                    _damage(ch, vch, c_div(dam, 2), sn, dam_type, True)
+        vch = vch_next
+
+
+# C: magic.c spell_fire_breath
+def spell_fire_breath(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.effects import fire_effect
+
+    victim = vo
+    act("$n breathes forth a cone of fire.", ch, None, victim, C.TO_NOTVICT)
+    act("$n breathes a cone of hot fire over you!", ch, None, victim, C.TO_VICT)
+    act("You breath forth a cone of fire.", ch, None, None, C.TO_CHAR)
+    dam = _breath_damage(ch, 10, 9, 5, 20, level)
+    fire_effect(victim.in_room, level, c_div(dam, 2), C.TARGET_ROOM)
+    _cone(sn, level, ch, victim, dam, C.DAM_FIRE, fire_effect)
+
+
+# C: magic.c spell_frost_breath
+def spell_frost_breath(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.effects import cold_effect
+
+    victim = vo
+    act("$n breathes out a freezing cone of frost!", ch, None, victim, C.TO_NOTVICT)
+    act("$n breathes a freezing cone of frost over you!", ch, None, victim, C.TO_VICT)
+    act("You breath out a cone of frost.", ch, None, None, C.TO_CHAR)
+    dam = _breath_damage(ch, 12, 11, 6, 16, level)
+    cold_effect(victim.in_room, level, c_div(dam, 2), C.TARGET_ROOM)
+    _cone(sn, level, ch, victim, dam, C.DAM_COLD, cold_effect)
+
+
+# C: magic.c spell_gas_breath
+def spell_gas_breath(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import next_in_room
+    from charm.systems.effects import poison_effect
+    from charm.systems.fight import is_safe_spell
+
+    act("$n breathes out a cloud of poisonous gas!", ch, None, None, C.TO_ROOM)
+    act("You breath out a cloud of poisonous gas.", ch, None, None, C.TO_CHAR)
+    dam = _breath_damage(ch, 16, 15, 1, 12, level, fixed_high=8)
+    poison_effect(ch.in_room, level, dam, C.TARGET_ROOM)
+    people = ch.in_room.people
+    vch = people[0] if people else None
+    while vch is not None:
+        vch_next = next_in_room(vch)
+        # sic: a mob breathing spares the mobs it's fighting, where fire and frost spare those it isn't (#81)
+        if not (is_safe_spell(ch, vch, True)
+                or (ch.is_npc and vch.is_npc and (ch.fighting is vch or vch.fighting is ch))):
+            if _saves(level, vch, C.DAM_POISON):
+                poison_effect(vch, c_div(level, 2), c_div(dam, 4), C.TARGET_CHAR)
+                _damage(ch, vch, c_div(dam, 2), sn, C.DAM_POISON, True)
+            else:
+                poison_effect(vch, level, dam, C.TARGET_CHAR)
+                _damage(ch, vch, dam, sn, C.DAM_POISON, True)
+        vch = vch_next
+
+
+# C: magic.c spell_lightning_breath
+def spell_lightning_breath(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.effects import shock_effect
+
+    victim = vo
+    act("$n breathes a bolt of lightning at $N.", ch, None, victim, C.TO_NOTVICT)
+    act("$n breathes a bolt of lightning at you!", ch, None, victim, C.TO_VICT)
+    act("You breathe a bolt of lightning at $N.", ch, None, victim, C.TO_CHAR)
+    dam = _breath_damage(ch, 10, 9, 5, 20, level)
+    if _saves(level, victim, C.DAM_LIGHTNING):
+        shock_effect(victim, c_div(level, 2), c_div(dam, 4), C.TARGET_CHAR)
+        _damage(ch, victim, c_div(dam, 2), sn, C.DAM_LIGHTNING, True)
+    else:
+        shock_effect(victim, level, dam, C.TARGET_CHAR)
+        _damage(ch, victim, dam, sn, C.DAM_LIGHTNING, True)
+
+
+# C: magic.c spell_general_purpose
+def spell_general_purpose(sn: int, level: int, ch, vo, target: int) -> None:
+    """"Spells for mega1.are from Glop/Erkenbrand."."""
+    victim = vo
+    dam = number_range(25, 100)
+    if _saves(level, victim, C.DAM_PIERCE):
+        dam = c_div(dam, 2)
+    _damage(ch, victim, dam, sn, C.DAM_PIERCE, True)
+
+
+# C: magic.c spell_high_explosive
+def spell_high_explosive(sn: int, level: int, ch, vo, target: int) -> None:
+    victim = vo
+    dam = number_range(30, 120)
+    if _saves(level, victim, C.DAM_PIERCE):
+        dam = c_div(dam, 2)
+    _damage(ch, victim, dam, sn, C.DAM_PIERCE, True)
+
+
+# C: magic2.c spell_farsight
+def spell_farsight(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.systems.fight import _do
+
+    if is_affected(ch, C.AFF_BLIND):
+        send_to_char("Maybe it would help if you could see?\n\r", ch)
+        return
+    _do("do_scan", ch, _game().target_name)
+
+
+def _warp_stone(ch) -> bool:
+    """portal's and nexus's component: a warp stone held, or an immortal; used up if held. False if lacking."""
+    from charm.entities.handler import extract_obj, get_eq_char, is_immortal
+
+    stone = get_eq_char(ch, C.WEAR_HOLD)
+    if not is_immortal(ch) and (stone is None or stone.item_type != C.ITEM_WARP_STONE):
+        send_to_char("You lack the proper component for this spell.\n\r", ch)
+        return False
+    if stone is not None and stone.item_type == C.ITEM_WARP_STONE:
+        act("You draw upon the power of $p.", ch, stone, None, C.TO_CHAR)
+        act("It flares brightly and vanishes!", ch, stone, None, C.TO_CHAR)
+        extract_obj(_game(), stone)
+    return True
+
+
+def _portal(timer: int, to_vnum: int, room):
+    from charm.entities.create import create_object
+    from charm.entities.handler import obj_to_room
+
+    game = _game()
+    portal = create_object(game, game.index.get_obj_index(C.OBJ_VNUM_PORTAL), 0)
+    portal.timer = timer
+    portal.value[3] = to_vnum
+    obj_to_room(portal, room)
+    return portal
+
+
+# C: magic2.c spell_portal
+def spell_portal(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import get_char_world
+
+    victim = get_char_world(_game(), ch, _game().target_name)
+    if _travel_refused(ch, victim, level, False, C.DAM_NONE, False):
+        send_to_char("You failed.\n\r", ch)
+        return
+    if not _warp_stone(ch):
+        return
+    portal = _portal(2 + c_div(level, 25), victim.in_room.vnum, ch.in_room)
+    act("$p rises up from the ground.", ch, portal, None, C.TO_ROOM)
+    act("$p rises up before you.", ch, portal, None, C.TO_CHAR)
+
+
+# C: magic2.c spell_nexus
+def spell_nexus(sn: int, level: int, ch, vo, target: int) -> None:
+    from charm.entities.handler import can_see_room, get_char_world
+
+    from_room = ch.in_room
+    victim = get_char_world(_game(), ch, _game().target_name)
+    if (victim is not None and victim is not ch and victim.in_room is not None
+            and not can_see_room(ch, from_room)):
+        send_to_char("You failed.\n\r", ch)
+        return
+    if _travel_refused(ch, victim, level, True, C.DAM_NONE, False):
+        send_to_char("You failed.\n\r", ch)
+        return
+    to_room = victim.in_room
+    if not _warp_stone(ch):
+        return
+    portal = _portal(1 + c_div(level, 10), to_room.vnum, from_room)  # "portal one"
+    act("$p rises up from the ground.", ch, portal, None, C.TO_ROOM)
+    act("$p rises up before you.", ch, portal, None, C.TO_CHAR)
+    if to_room is from_room:  # "no second portal if rooms are the same"
+        return
+    portal = _portal(1 + c_div(level, 10), from_room.vnum, to_room)  # "portal two"
+    if to_room.people:
+        act("$p rises up from the ground.", to_room.people[0], portal, None, C.TO_ROOM)
+        act("$p rises up from the ground.", to_room.people[0], portal, None, C.TO_CHAR)
 
 
 SPELLS = {name: fn for name, fn in globals().items() if name.startswith("spell_") and callable(fn)}
