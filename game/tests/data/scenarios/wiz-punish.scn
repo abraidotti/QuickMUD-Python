@@ -1,0 +1,164 @@
+# Immortals punishing: nochannels, noemote, noshout, notell, freeze, log, pardon, protect, snoop, guild, the locks,
+# disconnect and deny. In the temple (3001), with Hassan: Smokegod (60), Seraph (56), Cherub (52), Decimus (10) and
+# Outlaw (18, a KILLER and a THIEF). Each no- command toggles, refuses those of the same trust or above, and shows on
+# wiznet's penalties; nochannel's and notell's "whom?" have no newline (#71). Snoop shows what the victim types
+# and sees, refuses a snoop-proof victim, one already snooped and a loop (made with trust), and "snoop self" ends
+# them all. guild into a clan that isn't independent doesn't tell the victim (#71). Last, a denied player is quit
+# and can't come back, and wizlock and newlock turn away a mortal and a new name.
+@connect god
+Smokegod
+smoke123
+@return
+@return
+wiznet
+wiznet penalties
+wiznet snoops
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect out
+Outlaw
+psswrd
+@return
+@return
+@as ser
+nochannels
+nochannels nobody
+nochannels smokegod
+nochannels cherub
+nochannels cherub
+nochannels decimus
+@as dec
+gossip hello
+@as ser
+nochannels decimus
+@as dec
+gossip hello again
+@as ser
+noemote
+noemote hassan
+noemote hassan
+noemote decimus
+@as dec
+emote waves
+@as ser
+noemote decimus
+noshout
+noshout hassan
+noshout decimus
+@as dec
+shout hello
+@as ser
+noshout decimus
+notell
+notell decimus
+@as dec
+tell seraph hi
+@as ser
+notell decimus
+freeze
+freeze hassan
+freeze smokegod
+freeze decimus
+@as dec
+say frozen
+@as ser
+freeze decimus
+@as dec
+say thawed
+@as god
+log
+log nobody
+log hassan
+log decimus
+@as dec
+say I am logged
+@as god
+log decimus
+log all
+@as cher
+say everything is logged
+@as god
+log all
+pardon
+pardon outlaw
+pardon nobody killer
+pardon hassan killer
+pardon outlaw killer
+pardon outlaw killer
+pardon outlaw thief
+pardon outlaw saint
+protect
+protect nobody
+protect decimus
+@as ser
+snoop
+snoop nobody
+snoop hassan
+snoop decimus
+@as god
+protect decimus
+@as ser
+snoop decimus
+@as god
+snoop decimus
+@as dec
+say can anyone hear me
+@as ser
+snoop cherub
+@as god
+trust
+trust cherub
+trust cherub x
+trust nobody 59
+trust cherub 61
+trust cherub 59
+@as cher
+snoop seraph
+@as god
+trust cherub 0
+@as ser
+snoop seraph
+@as dec
+say after the snoops
+@as ser
+guild
+guild decimus
+guild nobody rom
+guild decimus xyz
+guild decimus loner
+guild decimus rom
+guild decimus none
+@as god
+wizlock
+newlock
+@connect shemp
+Shemp
+@connect newbie
+Newbie
+@as god
+wizlock
+newlock
+disconnect
+disconnect nobody
+disconnect hassan
+disconnect 104
+disconnect cherub
+deny
+deny nobody
+deny hassan
+deny decimus
+@connect dec2
+Decimus

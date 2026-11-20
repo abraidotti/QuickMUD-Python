@@ -76,7 +76,6 @@ def mult_argument(argument: str) -> tuple[int, str]:
 
 LOG_NORMAL, LOG_ALWAYS, LOG_NEVER = 0, 1, 2  # interp.c
 _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no command matched
-LOG_ALL = [False]  # fLogAll: the 'log all' switch (do_log, not ported, is the only thing that sets it)
 
 
 def _commands() -> dict:
@@ -167,7 +166,7 @@ def interpret(ch, argument: str) -> None:
     log = entry.log if entry is not None else _SENTINEL_LOG
     if log == LOG_NEVER:
         logline = ""
-    if (not ch.is_npc and ch.act & C.PLR_LOG) or LOG_ALL[0] or log == LOG_ALWAYS:
+    if (not ch.is_npc and ch.act & C.PLR_LOG) or game_module.current.log_all or log == LOG_ALWAYS:
         log_buf = f"Log {ch.name}: {logline}"
         # "Make sure that was is displayed is what is typed"
         shown = log_buf.replace("$", "$$").replace("{", "{{")

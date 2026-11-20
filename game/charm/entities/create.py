@@ -1,4 +1,5 @@
-"""Making mobs and objects from their prototypes: create_mobile and create_object.
+"""Making mobs and objects from their prototypes: create_mobile and create_object, and clone_mobile and
+clone_object for do_clone.
 
 Every random draw is in the C's order, because the draws during resets decide what the world looks like and
 every later draw depends on them. Both are [partial]: the old-format branches (#MOBOLD and #OBJOLD prototypes,
@@ -197,6 +198,51 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     p.count = sh_int(p.count + 1)
     obj.cost = int32(obj.cost)
     return obj
+
+
+# C: db.c clone_mobile
+def clone_mobile(parent: Char | None, clone: Char | None) -> None:
+    """Copy a mob onto a fresh one made from the same prototype (do_clone). The affects go through affect_to_char,
+    which applies their modifiers again on top of the copied stats, as the C does."""
+    if parent is None or clone is None or not parent.is_npc:
+        return
+    # "start fixing values"
+    for f in ("name", "version", "short_descr", "long_descr", "description", "group", "sex", "class_", "race",
+              "level", "timer", "wait", "hit", "max_hit", "mana", "max_mana", "move", "max_move", "gold", "silver",
+              "exp", "act", "comm", "imm_flags", "res_flags", "vuln_flags", "invis_level", "affected_by", "position",
+              "practice", "train", "saving_throw", "alignment", "hitroll", "damroll", "wimpy", "form", "parts",
+              "size", "material", "off_flags", "dam_type", "start_pos", "default_pos", "spec_fun"):
+        setattr(clone, f, getattr(parent, f))
+    clone.trust = 0
+    # str_dup keeps a boot string's pointer, so the clone's strings are the prototype's where the parent's are
+    clone.own_strings = set(parent.own_strings)
+    clone.armor = list(parent.armor)
+    clone.perm_stat = list(parent.perm_stat)
+    clone.mod_stat = list(parent.mod_stat)
+    clone.damage = list(parent.damage)
+    for paf in parent.affected:  # "now add the affects"
+        affect_to_char(clone, paf)
+
+
+# C: db.c clone_object
+def clone_object(parent: Obj | None, clone: Obj | None) -> None:
+    """Copy an object onto a fresh one made from the same prototype (do_clone). affect_to_obj and the extra
+    descriptions each go on the head of the list, so both come out in the reverse order."""
+    from charm.world.index import ExtraDescr
+
+    if parent is None or clone is None:
+        return
+    # "start fixing the object"
+    for f in ("name", "short_descr", "description", "item_type", "extra_flags", "wear_flags", "weight", "cost",
+              "level", "condition", "material", "timer"):
+        setattr(clone, f, getattr(parent, f))
+    clone.own_strings = set(parent.own_strings)
+    clone.value[:5] = parent.value[:5]
+    clone.enchanted = parent.enchanted  # "affects"
+    for paf in parent.affected:
+        affect_to_obj(clone, paf)
+    for ed in parent.extra_descr:  # "extended desc"
+        clone.extra_descr.insert(0, ExtraDescr(ed.keyword, ed.description))
 
 
 # C: recycle.c free_char

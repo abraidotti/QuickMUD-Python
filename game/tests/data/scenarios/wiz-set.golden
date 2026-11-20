@@ -1,0 +1,481 @@
+sources b411b98fb41461f4
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect ser"
+rng 51895 7f5599b5
+step 7 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect dec"
+rng 51895 7f5599b5
+step 12 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@as god"
+rng 51895 7f5599b5
+step 17 "set"
+out god "Syntax:\n\r  set mob       <name> <field> <value>\n\r  set character <name> <field> <value>\n\r  set obj       <name> <field> <value>\n\r  set room      <room> <field> <value>\n\r  set skill     <name> <spell or skill> <value>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "set xyz"
+out god "Syntax:\n\r  set mob       <name> <field> <value>\n\r  set character <name> <field> <value>\n\r  set obj       <name> <field> <value>\n\r  set room      <room> <field> <value>\n\r  set skill     <name> <spell or skill> <value>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "set char"
+out god "Syntax:\n\r  set char <name> <field> <value>\n\r  Field being one of:\n\r    str int wis dex con sex class level\n\r    race group gold silver hp mana move prac\n\r    align train thirst hunger drunk full\n\r    security hours\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "set char decimus"
+out god "Syntax:\n\r  set char <name> <field> <value>\n\r  Field being one of:\n\r    str int wis dex con sex class level\n\r    race group gold silver hp mana move prac\n\r    align train thirst hunger drunk full\n\r    security hours\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "set char decimus str"
+out god "Syntax:\n\r  set char <name> <field> <value>\n\r  Field being one of:\n\r    str int wis dex con sex class level\n\r    race group gold silver hp mana move prac\n\r    align train thirst hunger drunk full\n\r    security hours\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "set char nobody str 18"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 23 "set char decimus str 2"
+out god "Strength range is 3 to 21\n\r.\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 24 "set char decimus str 99"
+out god "Strength range is 3 to 21\n\r.\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 25 "set char decimus str 18"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 26 "set char decimus int 2"
+out god "Intelligence range is 3 to 18.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 27 "set char decimus int 18"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 28 "set char decimus wis 2"
+out god "Wisdom range is 3 to 18.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 29 "set char decimus wis 15"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 30 "set char decimus dex 2"
+out god "Dexterity range is 3 to 18.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 31 "set char decimus dex 16"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 32 "set char decimus con 2"
+out god "Constitution range is 3 to 18.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 33 "set char decimus con 17"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 34 "set char decimus security 5"
+out god "Valid security is 0 only.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 35 "set char decimus security -1"
+out god "Valid security is 0 only.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 36 "set char hassan security 0"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 37 "set char decimus security 0"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 38 "set char decimus sex 3"
+out god "Sex range is 0 to 2.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 39 "set char decimus sex 2"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 40 "set char hassan sex 1"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 41 "set char hassan class mage"
+out god "Mobiles have no class.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 42 "set char decimus class xyz"
+out god "Possible classes are: mage cleric thief warrior.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 43 "set char decimus class mage"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 44 "set char decimus level 5"
+out god "Not on PC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 45 "set char hassan level 61"
+out god "Level range is 0 to 60.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 46 "set char hassan level 50"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 47 "set char decimus gold 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 48 "set char decimus silver x"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 49 "set char decimus hp -11"
+out god "Hp range is -10 to 30,000 hit points.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 50 "set char decimus hp 500"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 51 "set char hassan hp 900"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 52 "set char decimus mana 30001"
+out god "Mana range is 0 to 30,000 mana points.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 53 "set char decimus mana 400"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 54 "set char decimus move -1"
+out god "Move range is 0 to 30,000 move points.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 55 "set char decimus move 300"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 56 "set char decimus practice 251"
+out god "Practice range is 0 to 250 sessions.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 57 "set char decimus practice 20"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 58 "set char decimus train 51"
+out god "Training session range is 0 to 50 sessions.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 59 "set char decimus train 5"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 60 "set char decimus align 1001"
+out god "Alignment range is -1000 to 1000.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 61 "set char decimus align -500"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 62 "set char hassan thirst 5"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 63 "set char decimus thirst 101"
+out god "Thirst range is -1 to 100.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 64 "set char decimus thirst 20"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 65 "set char decimus drunk -2"
+out god "Drunk range is -1 to 100.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 66 "set char decimus drunk 10"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 67 "set char decimus full 101"
+out god "Full range is -1 to 100.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 68 "set char decimus full 30"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 69 "set char decimus hunger 101"
+out god "Full range is -1 to 100.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 70 "set char decimus hunger 40"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 71 "set char decimus race xyz"
+out god "That is not a valid race.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 72 "set char decimus race dragon"
+out god "That is not a valid player race.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 73 "set char decimus race elf"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 74 "set char hassan race dragon"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 75 "set char decimus group 5"
+out god "Only on NPCs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 76 "set char hassan group 7"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 77 "set char hassan hours 5"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 78 "set char decimus hours x"
+out god "Value must be numeric.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 79 "set char decimus hours 1000"
+out god "Value must be between 0 and 999.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 80 "set char decimus hours 12"
+out god "Decimus's hours set to 12.\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 81 "set char decimus xyz 5"
+out god "Syntax:\n\r  set char <name> <field> <value>\n\r  Field being one of:\n\r    str int wis dex con sex class level\n\r    race group gold silver hp mana move prac\n\r    align train thirst hunger drunk full\n\r    security hours\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 82 "stat char decimus"
+out god "Name: Decimus\n\rVnum: 0  Format: pc  Race: elf  Group: 0  Sex: female  Room: 3001\n\rStr: 18(18)  Int: 18(18)  Wis: 15(15)  Dex: 16(16)  Con: 17(17)\n\rHp: 29/500  Mana: 102/400  Move: 106/300  Practices: 20\n\rLv: 10  Class: mage  Align: -500  Gold: 100  Silver: -1  Exp: 2088\n\rArmor: pierce: 80  bash: 80  slash: 80  magic: 84\n\rHit: 3  Dam: 3  Saves: -1  Size: medium  Position: standing  Wimpy: 0\n\rFighting: (none)\n\rThirst: 20  Hunger: 40  Full: 30  Drunk: 10\n\rCarry number: 5  Carry weight: 18\n\rAge: 17  Played: 12  Last Level: 0  Timer: 0\n\rAct: player no_summon\n\rComm: prompt combine\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rSecurity: 0.\n\rShort description: \n\rLong  description: (none)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 83 "stat mob hassan"
+out god "Name: Hassan\n\rVnum: 3011  Format: new  Race: dragon  Group: 7  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/900  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 50  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc sentinel warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 84 "@as dec"
+rng 52153 4c8e8fbc
+step 85 "score"
+out dec "You are Decimus the Recruit, level 10, 17 years old (12 hours).\n\rRace: elf  Sex: female  Class: mage\n\rYou have 29/500 hit, 102/400 mana, 106/300 movement.\n\rYou have 20 practices and 5 training sessions.\n\rYou are carrying 5/61 items with weight 18/225 pounds.\n\rStr: 18(18)  Int: 18(18)  Wis: 15(15)  Dex: 16(16)  Con: 17(17)\n\rYou have scored 2088 exp, and have 100 gold and -1 silver coins.\n\rYou need 8912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rAlignment: -500.  You are evil.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 86 "@as god"
+rng 52153 4c8e8fbc
+step 87 "set skill"
+out god "Syntax:\n\r  set skill <name> <spell or skill> <value>\n\r  set skill <name> all <value>\n\r   (use the name of the skill, not the number)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 88 "set skill decimus sword"
+out god "Syntax:\n\r  set skill <name> <spell or skill> <value>\n\r  set skill <name> all <value>\n\r   (use the name of the skill, not the number)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 89 "set skill nobody sword 50"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 90 "set skill hassan sword 50"
+out god "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 91 "set skill decimus xyz 50"
+out god "No such skill or spell.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 92 "set skill decimus sword x"
+out god "Value must be numeric.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 93 "set skill decimus sword 101"
+out god "Value range is 0 to 100.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 94 "set skill decimus all 1"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 95 "set spell decimus sword 75"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 96 "@as dec"
+rng 52398 7bb10bbf
+step 97 "practice"
+out dec "armor                1%  burning hands        1%  chill touch          1%  \n\rcontinual light      1%  create food          1%  create water         1%  \n\rdetect invis         1%  detect magic         1%  faerie fire          1%  \n\rfly                  1%  floating disc        1%  infravision          1%  \n\rinvisibility         1%  locate object        1%  magic missile        1%  \n\rrecharge             1%  refresh              1%  shocking grasp       1%  \n\rsleep                1%  ventriloquate        1%  axe                  1%  \n\rdagger               1%  flail                1%  mace                 1%  \n\rpolearm              1%  shield block         1%  spear                1%  \n\rsword               75%  whip                 1%  haggle               1%  \n\rlore                 1%  meditation           1%  peek                 1%  \n\rscrolls              1%  staves               1%  wands                1%  \n\rrecall               1%  \n\rYou have 20 practice sessions left.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 98 "@as god"
+rng 52398 7bb10bbf
+step 99 "load obj 3032"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod has created a bag!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a bag!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 100 "set obj"
+out god "Syntax:\n\r  set obj <object> <field> <value>\n\r  Field being one of:\n\r    value0 value1 value2 value3 value4 (v1-v4)\n\r    extra wear level weight cost timer\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 101 "set obj nothing v0 1"
+out god "Nothing like that in heaven or earth.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 102 "set obj bag v0 99"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 103 "set obj bag v1 3"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 104 "set obj bag value2 4"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 105 "set obj bag v3 5"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 106 "set obj bag value4 6"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 107 "set obj bag extra 64"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 108 "set obj bag wear 16385"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 109 "set obj bag level 40000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 110 "set obj bag weight 70000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 111 "set obj bag cost 12345"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 112 "set obj bag timer 9"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 113 "set obj bag xyz 1"
+out god "Syntax:\n\r  set obj <object> <field> <value>\n\r  Field being one of:\n\r    value0 value1 value2 value3 value4 (v1-v4)\n\r    extra wear level weight cost timer\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 114 "stat obj bag"
+out god "Name(s): bag\n\rVnum: 3032  Format: new  Type: container  Resets: 0\n\rShort description: a bag\n\rLong description: A small bag.\n\rWear bits: take hold\n\rExtra bits: magic\n\rNumber: 1/0  Weight: 4464/4464/4464 (10th pounds)\n\rLevel: -25536  Cost: 12345  Condition: 0  Timer: 9\n\rIn room: 0  In object: (none)  Carried by: Smokegod  Wear_loc: -1\n\rValues: 50 3 4 5 6\n\rCapacity: 50#  Maximum weight: 5#  flags: closable pickproof\n\rWeight multiplier: 6%\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 115 "set room"
+out god "Syntax:\n\r  set room <location> <field> <value>\n\r  Field being one of:\n\r    flags sector\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 116 "set room nowhere flags 1"
+out god "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 117 "set room 3001 flags x"
+out god "Value must be numeric.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 118 "set room 3001 flags 1024"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 119 "set room 3001 sector 70000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 120 "set room 3001 xyz 1"
+out god "Syntax:\n\r  set room <location> <field> <value>\n\r  Field being one of:\n\r    flags sector\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 121 "stat room 3001"
+out god "Name: 'The Temple Of Mota'\n\rArea: 'Midgaard'\n\rVnum: 3001  Sector: 4464  Light: 1  Healing: 100  Mana: 100\n\rRoom flags: 1024.\n\rDescription:\n\rYou are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rExtra description keywords: 'plaque'.\n\rCharacters: decimus seraph smokegod hassan.\n\rObjects:   .\n\rDoor: 0.  To: 3054.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: At the northern end of the temple hall is a statue and a huge altar.\n\rDoor: 2.  To: 3005.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the temple square.\n\rDoor: 4.  To: 3700.  Key: 0.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the entrance to Mud School.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 122 "trust seraph 58"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 123 "@as ser"
+rng 52653 854802e9
+step 124 "set room 1205 flags 0"
+out ser "That room is private right now.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 125 "@as god"
+rng 52653 854802e9
+step 126 "trust seraph 0"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 127 "@as ser"
+rng 52653 854802e9
+step 128 "string"
+out ser "Syntax:\n\r  string char <name> <field> <string>\n\r    fields: name short long desc title spec\n\r  string obj  <name> <field> <string>\n\r    fields: name short long extended\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 129 "string char nobody name x"
+out ser "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 130 "string char decimus name Bob"
+out ser "Not on PC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 131 "string char hassan name hassan bob"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 132 "string char hassan short Hassan the Restrung"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 133 "string char hassan long Hassan stands here, restrung."
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 134 "string char hassan desc He looks restrung."
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 135 "string char decimus title the Restrung"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 136 "string char hassan title x"
+out ser "Not on NPC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 137 "string char decimus spec x"
+out ser "Not on PC's.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 138 "string char hassan spec spec_cast_mage"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 139 "stat mob bob"
+out ser "Name: hassan bob\n\rVnum: 3011  Format: new  Race: dragon  Group: 7  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/900  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 50  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc sentinel warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan the Restrung\n\rLong  description: Hassan stands here, restrung.\n\rMobile has special procedure spec_cast_mage.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 140 "string char bob spec nonsense"
+out ser "No such spec fun.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 141 "string char bob xyz x"
+out ser "Syntax:\n\r  string char <name> <field> <string>\n\r    fields: name short long desc title spec\n\r  string obj  <name> <field> <string>\n\r    fields: name short long extended\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 142 "string mob bob xyz x"
+out ser "Syntax:\n\r  string char <name> <field> <string>\n\r    fields: name short long desc title spec\n\r  string obj  <name> <field> <string>\n\r    fields: name short long extended\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 143 "string obj nothing name x"
+out ser "Nothing like that in heaven or earth.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 144 "string obj bag name bag sack"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 145 "string obj sack short a restrung sack"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 146 "string obj sack long A restrung sack lies here."
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 147 "string obj sack ed shiny It is very shiny."
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 148 "string obj sack extended"
+out ser "Syntax:\n\r  string char <name> <field> <string>\n\r    fields: name short long desc title spec\n\r  string obj  <name> <field> <string>\n\r    fields: name short long extended\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 149 "string obj sack ed lonely"
+out ser "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 150 "string obj sack xyz x"
+out ser "Syntax:\n\r  string char <name> <field> <string>\n\r    fields: name short long desc title spec\n\r  string obj  <name> <field> <string>\n\r    fields: name short long extended\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 151 "string xyz sack name x"
+out ser "Syntax:\n\r  string char <name> <field> <string>\n\r    fields: name short long desc title spec\n\r  string obj  <name> <field> <string>\n\r    fields: name short long extended\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 152 "stat mob bob"
+out ser "Name: hassan bob\n\rVnum: 3011  Format: new  Race: dragon  Group: 7  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/900  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 50  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc sentinel warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan the Restrung\n\rLong  description: Hassan stands here, restrung.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 153 "look bob"
+out god "\n\rSeraph looks at Hassan the Restrung.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "He looks restrung.Hassan the Restrung is in excellent condition.\n\r\n\rHassan the Restrung is using:\n\r<wielded>           (Humming) Hassan's scimitar\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph looks at Hassan the Restrung.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52894 babab009
+step 154 "stat obj sack"
+out ser "Name(s): bag sack\n\rVnum: 3032  Format: new  Type: container  Resets: 0\n\rShort description: a restrung sack\n\rLong description: A restrung sack lies here.\n\rWear bits: take hold\n\rExtra bits: magic\n\rNumber: 1/0  Weight: 4464/4464/4464 (10th pounds)\n\rLevel: -25536  Cost: 12345  Condition: 0  Timer: 9\n\rIn room: 0  In object: (none)  Carried by: Smokegod  Wear_loc: -1\n\rValues: 50 3 4 5 6\n\rCapacity: 50#  Maximum weight: 5#  flags: closable pickproof\n\rWeight multiplier: 6%\n\rExtra description keywords: 'lonely shiny'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52894 babab009
+step 155 "@as god"
+rng 52894 babab009
+step 156 "drop sack"
+out god "You drop a restrung sack.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod drops a restrung sack.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod drops a restrung sack.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52894 babab009
+step 157 "@as ser"
+rng 52894 babab009
+step 158 "look"
+out ser "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A restrung sack lies here.\n\rDecimus the Restrung is here.\n\rSmokegod the Smoke Test is here.\n\rHassan stands here, restrung.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52894 babab009
+step 159 "look shiny"
+out ser "It is very shiny.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52894 babab009
+step 160 "@as dec"
+rng 52894 babab009
+step 161 "score"
+out dec "You are Decimus the Restrung, level 10, 17 years old (12 hours).\n\rRace: elf  Sex: female  Class: mage\n\rYou have 29/500 hit, 102/400 mana, 106/300 movement.\n\rYou have 20 practices and 5 training sessions.\n\rYou are carrying 5/61 items with weight 18/225 pounds.\n\rStr: 18(18)  Int: 18(18)  Wis: 15(15)  Dex: 16(16)  Con: 17(17)\n\rYou have scored 2088 exp, and have 100 gold and -1 silver coins.\n\rYou need 8912 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rAlignment: -500.  You are evil.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52894 babab009

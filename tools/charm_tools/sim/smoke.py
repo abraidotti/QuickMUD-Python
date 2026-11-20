@@ -5,15 +5,16 @@ This began as the refactor plan's R0 smoke test (tools/smoke.py) and is the seed
 
     python -m charm_tools sim smoke --docker charm   # throwaway container from an image (recommended)
     python -m charm_tools sim smoke --port 4100      # a game that's already running (mortal steps only)
-    python -m charm_tools sim smoke --python         # the Python game, from a throwaway copy (mortal steps only)
+    python -m charm_tools sim smoke --python         # the Python game, from a throwaway copy (all but copyover)
     python tools/smoke.py --docker charm             # the same, from the repo root
 
 --docker creates a container on a free port, copies the fixtures in before boot (the immortal
 tools/fixtures/player/Smokegod, tools/fixtures/player/Shemp as saved before IMC2 was removed, and
 tools/fixtures/qmconfig.rc, which turns the ANSI question off), sets CHARM_SEED, runs every step
-and always removes the container. The clean-shutdown steps (docker stop, then start) need --docker. Against a
-running game, copyover runs only if you pass --immortal NAME:PASSWORD for a level-60 character. Either way the
-test creates a player file, so don't point it at your real player/.
+and always removes the container. --python does the same with the Python game on this machine: the same fixtures
+and steps, stopped with a signal and started again, but not copyover, which P5 ports. The clean-shutdown steps
+need --docker or --python. Against a running game, copyover runs only if you pass --immortal NAME:PASSWORD for a
+level-60 character. Either way the test creates a player file, so don't point it at your real player/.
 """
 
 import argparse
@@ -191,7 +192,7 @@ def lag_shows_on_prompt(s):
     return lag, time.monotonic() - t0
 
 
-def run_steps(args, port, immortal, restart=None):
+def run_steps(args, port, immortal, restart=None, copyover=True):
     steps = []
     sessions = []
 
@@ -254,8 +255,10 @@ def run_steps(args, port, immortal, restart=None):
                           s.expect_closed(pattern=r"The game is shutting down")))
             step("the game shuts itself down and exits 0",
                  lambda: (_check(status["code"] == 0, f"exit status {status['code']}"),
-                          _check("Caught signal 15" in status["log"] and "Normal termination" in status["log"],
-                                 "game log has no 'Caught signal 15' / 'Normal termination': it was killed")))
+                          _check(f"Caught signal {restart.signal}" in status["log"]
+                                 and "Normal termination" in status["log"],
+                                 f"game log has no 'Caught signal {restart.signal}' / 'Normal termination': it was "
+                                 f"killed")))
             restart.start()
             fresh = open_session()
             # Shutdown used to save the half-created character, taking the name (abraidotti/charm#4).
@@ -296,23 +299,24 @@ def run_steps(args, port, immortal, restart=None):
                     after = restart.open_fds()
                     _check(after == before, f"open files went from {before} to {after} over 5 reads")
                 step("'qmconfig read' doesn't leak files", qmconfig_reads_dont_leak)
-            half = open_session()
-            step("second connection stops mid-creation", lambda: half_created(half))
-            motd = open_session()
-            step("third connection stops at a new character's MOTD", lambda: at_motd(motd, "Motdman"))
-            step("copyover", lambda: (god.send("copyover"), god.expect(rf"COPYOVER by {iname}")))
-            step("half-created connection is dropped",
-                 lambda: half.expect_closed(args.timeout, r"Sorry, we are rebooting"))
-            # Copyover used to keep this one and restore it as a level-0 player (abraidotti/charm#5).
-            step("MOTD connection is dropped too",
-                 lambda: motd.expect_closed(args.timeout, r"Sorry, we are rebooting"))
-            step("immortal is restored", lambda: god.expect(r"Copyover recovery complete", args.timeout + 20))
-            step("immortal can still play", lambda: (god.send("score"), god.expect(rf"You are {iname}")))
-            late = open_session()
-            step("new connections are accepted after copyover", lambda: None)
-            step("the MOTD character's name is still free",
-                 lambda: (send_name(late, "Motdman"), late.expect(r"right, .*\(Y/N\)")))
-            late.close()
+            if copyover:
+                half = open_session()
+                step("second connection stops mid-creation", lambda: half_created(half))
+                motd = open_session()
+                step("third connection stops at a new character's MOTD", lambda: at_motd(motd, "Motdman"))
+                step("copyover", lambda: (god.send("copyover"), god.expect(rf"COPYOVER by {iname}")))
+                step("half-created connection is dropped",
+                     lambda: half.expect_closed(args.timeout, r"Sorry, we are rebooting"))
+                # Copyover used to keep this one and restore it as a level-0 player (abraidotti/charm#5).
+                step("MOTD connection is dropped too",
+                     lambda: motd.expect_closed(args.timeout, r"Sorry, we are rebooting"))
+                step("immortal is restored", lambda: god.expect(r"Copyover recovery complete", args.timeout + 20))
+                step("immortal can still play", lambda: (god.send("score"), god.expect(rf"You are {iname}")))
+                late = open_session()
+                step("new connections are accepted after copyover", lambda: None)
+                step("the MOTD character's name is still free",
+                     lambda: (send_name(late, "Motdman"), late.expect(r"right, .*\(Y/N\)")))
+                late.close()
             step("immortal quits", lambda: (god.send("quit"), god.expect_closed()))
 
             if restart:
@@ -328,9 +332,7 @@ def run_steps(args, port, immortal, restart=None):
                               _check(down["code"] == 0, f"exit status {down['code']} (None: still running, so "
                                                         f"startup didn't find shutdown.txt and restarted)")))
                 step("shutdown.txt said who shut it down",
-                     lambda: _check(f"shutdown.txt: [" in restart.latest_log()
-                                    and f"Shutdown by {iname}." in restart.latest_log(),
-                                    "no 'Shutdown by' line from startup.sh in the game log"))
+                     lambda: _check(restart.shutdown_said(iname), f"shutdown.txt doesn't say 'Shutdown by {iname}.'"))
     except Fail as e:
         print(f"FAIL after {len(steps)} step(s): {e}")
         if args.verbose:
@@ -376,6 +378,8 @@ def run_docker(args):
         print(f"SKIP can't create a container from {args.docker}: {e.stderr.strip()}")
         return 2
     class Restart:
+        signal = 15  # docker stop sends SIGTERM
+
         def stop(self):
             """docker stop; returns the exit status and the newest game log (to check the game itself shut down)."""
             docker("stop", container)
@@ -403,6 +407,11 @@ def run_docker(args):
 
         def player_file(self, name):
             return docker("exec", container, "cat", f"/opt/charm/player/{name}").stdout
+
+        def shutdown_said(self, name):
+            """startup.sh, which then stays down, echoes shutdown.txt into the game log."""
+            log = self.latest_log()
+            return "shutdown.txt: [" in log and f"Shutdown by {name}." in log
 
         def latest_log(self):
             # Works on a stopped container too: docker cp streams the log dir out as a tar.
@@ -432,12 +441,63 @@ def run_docker(args):
 
 def run_python(args):
     """The Python game (#25, decision 5): a throwaway root with the same fixtures and CHARM_SEED as --docker, on a
-    free port; the mortal steps (the 7 the spike's go/no-go counts, #32); then the whole process tree is stopped."""
+    free port; every step but copyover's (P5 ports it), with the restart done by a signal, as docker stop and start
+    do it; then the whole process tree is stopped."""
     from ..port.live import PyGame
+
+    class Restart:
+        """--docker's Restart, for a game on this machine."""
+
+        signal = PyGame.STOP_SIGNAL
+
+        def __init__(self, game):
+            self.game = game
+
+        def stop(self):
+            self.game.stop()
+            return self.game.proc.returncode, self.latest_log()
+
+        def start(self):
+            self.game.start()
+
+        def wait_exit(self, timeout):
+            try:
+                return self.game.proc.wait(timeout=timeout)
+            except subprocess.TimeoutExpired:
+                return None
+
+        def open_fds(self):
+            """How many files the game has open: its /proc fd entries, or its handle count on Windows."""
+            pid = self.game.proc.pid
+            if sys.platform != "win32":
+                return len(list(Path(f"/proc/{pid}/fd").iterdir()))
+            import ctypes
+            from ctypes import wintypes
+
+            kernel32 = ctypes.WinDLL("kernel32", use_last_error=True)
+            handle = kernel32.OpenProcess(0x1000, False, pid)  # PROCESS_QUERY_LIMITED_INFORMATION
+            count = wintypes.DWORD()
+            try:
+                if not kernel32.GetProcessHandleCount(handle, ctypes.byref(count)):
+                    raise OSError(ctypes.get_last_error(), "GetProcessHandleCount")
+            finally:
+                kernel32.CloseHandle(handle)
+            return count.value
+
+        def player_file(self, name):
+            return (self.game.root / "player" / name).read_text(encoding="latin-1")
+
+        def latest_log(self):
+            return self.game.game_log()
+
+        def shutdown_said(self, name):
+            """No startup script runs the Python game, so read shutdown.txt itself (in area/, where the game runs)."""
+            path = self.game.root / "area" / "shutdown.txt"
+            return path.is_file() and f"Shutdown by {name}." in path.read_text(encoding="latin-1")
 
     with PyGame("fixture", (IMMORTAL[0], OLD_FILE[0])) as game:
         print(f"python game on 127.0.0.1:{game.port}", flush=True)
-        code = run_steps(args, game.port, None)
+        code = run_steps(args, game.port, IMMORTAL, Restart(game), copyover=False)
         if code != 0 or args.verbose:
             print("---- game log (tail) ----")
             print("\n".join(game.game_log().splitlines()[-30:]))
@@ -449,7 +509,7 @@ def main(argv=None, prog=None):
     where = ap.add_mutually_exclusive_group(required=True)
     where.add_argument("--docker", metavar="IMAGE", help="run against a throwaway container from IMAGE")
     where.add_argument("--port", type=int, help="run against a game already listening on this port")
-    where.add_argument("--python", action="store_true", help="run against the Python game (mortal steps only)")
+    where.add_argument("--python", action="store_true", help="run against the Python game (all but copyover)")
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--name", default="Smokey")
     ap.add_argument("--password", default="smoke123")

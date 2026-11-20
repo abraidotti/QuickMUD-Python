@@ -71,6 +71,45 @@ def gain_condition(ch, i_cond: int, value: int) -> None:
             send_to_char("You are sober.\n\r", ch)
 
 
+# C: update.c advance_level
+def advance_level(ch, hide: bool) -> None:
+    """A level's gains: the title, then hit points, mana, moves (three random draws, in that order) and practices.
+    do_advance calls it with hide set; gain_exp (not yet) without, to tell the player."""
+    from charm.commands.info import set_title
+    from charm.core.cint import c_div, sh_int
+    from charm.core.rng import number_range
+    from charm.data.attributes import CON_APP, WIS_APP
+    from charm.data.classes import CLASS_TABLE, TITLE_TABLE
+    from charm.entities import game as game_module
+    from charm.entities.handler import get_curr_stat
+    from charm.net.output import send_to_char
+
+    ch.pcdata.last_level = c_div(ch.played + int(game_module.current.current_time - ch.logon), 3600)
+    set_title(ch, "the %s" % TITLE_TABLE[ch.class_][ch.level][1 if ch.sex == C.SEX_FEMALE else 0])
+    cls = CLASS_TABLE[ch.class_]
+    add_hp = CON_APP[get_curr_stat(ch, C.STAT_CON)].hitp + number_range(cls.hp_min, cls.hp_max)
+    add_mana = number_range(2, c_div(2 * get_curr_stat(ch, C.STAT_INT) + get_curr_stat(ch, C.STAT_WIS), 5))
+    if not cls.fMana:
+        add_mana = c_div(add_mana, 2)
+    add_move = number_range(1, c_div(get_curr_stat(ch, C.STAT_CON) + get_curr_stat(ch, C.STAT_DEX), 6))
+    add_prac = WIS_APP[get_curr_stat(ch, C.STAT_WIS)].practice
+    add_hp = max(2, c_div(add_hp * 9, 10))
+    add_mana = max(2, c_div(add_mana * 9, 10))
+    add_move = max(6, c_div(add_move * 9, 10))
+    ch.max_hit = sh_int(ch.max_hit + add_hp)
+    ch.max_mana = sh_int(ch.max_mana + add_mana)
+    ch.max_move = sh_int(ch.max_move + add_move)
+    ch.practice = sh_int(ch.practice + add_prac)
+    ch.train = sh_int(ch.train + 1)
+    ch.pcdata.perm_hit = sh_int(ch.pcdata.perm_hit + add_hp)
+    ch.pcdata.perm_mana = sh_int(ch.pcdata.perm_mana + add_mana)
+    ch.pcdata.perm_move = sh_int(ch.pcdata.perm_move + add_move)
+    if not hide:
+        send_to_char("You gain %d hit point%s, %d mana, %d move, and %d practice%s.\n\r"
+                     % (add_hp, "" if add_hp == 1 else "s", add_mana, add_move, add_prac,
+                        "" if add_prac == 1 else "s"), ch)
+
+
 # C: update.c gain_exp [partial]
 def gain_exp(ch, gain: int) -> None:
     """[partial]: gaining a level (advance_level) raises NotPorted."""
