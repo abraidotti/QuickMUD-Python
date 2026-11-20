@@ -1,0 +1,444 @@
+sources 7a80ece42f5ef3ae
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect dec"
+rng 51872 4ba9daca
+step 2 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 5 "@connect quin"
+rng 51895 7f5599b5
+step 6 "Quintus"
+out quin "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 7 "psswrd"
+out quin "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 8 "@return"
+out dec "\n\rQuintus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect god"
+rng 51895 7f5599b5
+step 10 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out dec "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rQuintus the Recruit is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@as dec"
+rng 51895 7f5599b5
+step 15 "note write"
+out dec "You are now posting a new note on the General board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Decimus\n\r\n\rThe recipient list MUST include \"all\". If not, it will be added automatically.\n\r\n\rTo:      "
+out quin "\n\rDecimus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "Quintus"
+out dec "\n\rYou did not specify all as recipient, so it was automatically added.\n\rNew To :  Quintus all\n\r\n\rSubject: "
+rng 51895 7f5599b5
+step 17 "@return"
+out dec "Please find a meaningful subject!\n\rSubject: "
+rng 51895 7f5599b5
+step 18 "This subject line is far too long to be accepted by the board, at 61."
+out dec "No, no. This is just the Subject. You're note writing the note yet. Twit.\n\r"
+rng 51895 7f5599b5
+step 19 "Hello there"
+out dec "This note will expire Mon Dec  8 17:20:03 2025\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 20 "line one"
+rng 51895 7f5599b5
+step 21 "this line is more than eighty characters long, so the note board rejects it outright"
+out dec "Too long line rejected. Do NOT go over 80 characters!\n\r"
+rng 51895 7f5599b5
+step 22 "   indented, and with a ~tilde~"
+rng 51895 7f5599b5
+step 23 "~"
+out dec "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 24 "x"
+out dec "Huh? Valid answers are:\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 25 "@return"
+out dec "Huh? Valid answers are:\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 26 "v"
+out dec "Text of your note so far:\n\rline one\r\n   indented, and with a -tilde-\r\n(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 27 "c"
+out dec "Continuing note...\n\r"
+rng 51895 7f5599b5
+step 28 "END"
+out dec "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 29 "p"
+out dec "Note posted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rDecimus finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus finishes his note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "@as quin"
+rng 51895 7f5599b5
+step 31 "board"
+out quin "Num          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   1] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "note list"
+out quin "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Decimus      Hello there\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "@as dec"
+rng 51895 7f5599b5
+step 34 "@file ../notes/General"
+file ../notes/General "Sender  Decimus~\nDate    Mon Nov 17 17:20:02 2025~\nStamp   1763400006\nExpire  1765214403\nTo      Quintus all~\nSubject Hello there~\nText\nline one\r\n   indented, and with a -tilde-\r\n~\n\n"
+rng 51895 7f5599b5
+step 35 "note list"
+out dec "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Decimus      Hello there\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "note remove 1"
+out dec "Note removed!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "@file ../notes/General"
+file ../notes/General ""
+rng 51895 7f5599b5
+step 38 "board ideas"
+out dec "Current board changed to Ideas. You can both read and write here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "note write"
+out dec "You are now posting a new note on the Ideas board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Decimus\n\r\n\rIf you press Return, default recipient \"all\" will be chosen.\n\r\n\rTo:      "
+out quin "\n\rDecimus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "@return"
+out dec "Assumed default recipient: all\n\r\n\rSubject: "
+rng 51895 7f5599b5
+step 41 "An idea"
+out dec "This note will expire Fri Jan 16 17:20:08 2026\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 42 "more boards"
+rng 51895 7f5599b5
+step 43 "~"
+out dec "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 44 "f"
+out dec "Note cancelled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "note write"
+out dec "You are now posting a new note on the Ideas board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Decimus\n\r\n\rIf you press Return, default recipient \"all\" will be chosen.\n\r\n\rTo:      "
+out quin "\n\rDecimus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rDecimus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "Decimus"
+out dec "\n\rSubject: "
+rng 51895 7f5599b5
+step 47 "Empty"
+out dec "This note will expire Fri Jan 16 17:20:09 2026\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 48 "~"
+out dec "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 49 "v"
+out dec "You haven't written a thing!\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 50 "f"
+out dec "Note cancelled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "board announce"
+out dec "Current board changed to Announce. You can only read here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "note write"
+out dec "You cannot post notes on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "@as god"
+rng 51895 7f5599b5
+step 54 "board personal"
+out god "Current board changed to Personal. You can both read and write here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 55 "note write"
+out dec "\n\rSmokegod starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Smokegod\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+rng 51895 7f5599b5
+step 56 "@return"
+out god "You must specify a recipient.\n\rTo:      "
+rng 51895 7f5599b5
+step 57 "all"
+out god "You are not allowed to send notes to all on this board. Try again.\n\rTo:      "
+rng 51895 7f5599b5
+step 58 "Decimus"
+out god "\n\rSubject: "
+rng 51895 7f5599b5
+step 59 "For you"
+out god "\n\rHow many days do you want this note to expire in?\n\rPress Enter for default value for this board, 28 days.\n\rExpire:  "
+rng 51895 7f5599b5
+step 60 "x"
+out god "Write the number of days!\n\rExpire:  "
+rng 51895 7f5599b5
+step 61 "0"
+out god "This is a positive MUD. Use positive numbers only! :)\n\rExpire:  "
+rng 51895 7f5599b5
+step 62 "3"
+out god "\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 63 "a secret line"
+rng 51895 7f5599b5
+step 64 "~"
+out god "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 65 "p"
+out dec "\n\rSmokegod finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "Note posted.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 66 "note write"
+out dec "\n\rSmokegod starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "You are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Smokegod\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+rng 51895 7f5599b5
+step 67 "Decimus"
+out god "\n\rSubject: "
+rng 51895 7f5599b5
+step 68 "Default expiry"
+out god "\n\rHow many days do you want this note to expire in?\n\rPress Enter for default value for this board, 28 days.\n\rExpire:  "
+rng 51895 7f5599b5
+step 69 "@return"
+out god "\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 70 "another line"
+rng 51895 7f5599b5
+step 71 "~"
+out god "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 72 "p"
+out dec "\n\rSmokegod finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "\n\rSmokegod finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "Note posted.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 73 "@file ../notes/Personal"
+file ../notes/Personal "Sender  Smokegod~\nDate    Mon Nov 17 17:20:11 2025~\nStamp   1763400013\nExpire  1763659213\nTo      Decimus~\nSubject For you~\nText\na secret line\r\n~\n\nSender  Smokegod~\nDate    Mon Nov 17 17:20:14 2025~\nStamp   1763400015\nExpire  1765819214\nTo      Decimus~\nSubject Default expiry~\nText\nanother line\r\n~\n\n"
+rng 51895 7f5599b5
+step 74 "@as dec"
+rng 51895 7f5599b5
+step 75 "board personal"
+out dec "Current board changed to Personal. You can both read and write here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 76 "note"
+out dec "[   1] Smokegod: For you\n\rDate:  Mon Nov 17 17:20:11 2025\n\rTo:    Decimus\n\r===========================================================================\n\ra secret line\r\n\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 77 "note"
+out dec "[   2] Smokegod: Default expiry\n\rDate:  Mon Nov 17 17:20:14 2025\n\rTo:    Decimus\n\r===========================================================================\n\ranother line\r\n\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 78 "@as quin"
+rng 51895 7f5599b5
+step 79 "note write"
+out dec "Quintus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out quin "You are now posting a new note on the General board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Quintus\n\r\n\rThe recipient list MUST include \"all\". If not, it will be added automatically.\n\r\n\rTo:      "
+out god "\n\rQuintus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 80 "Decimus"
+out quin "\n\rYou did not specify all as recipient, so it was automatically added.\n\rNew To :  Decimus all\n\r\n\rSubject: "
+rng 51895 7f5599b5
+step 81 "Interrupted"
+out quin "This note will expire Mon Dec  8 17:20:17 2025\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 82 "first line"
+rng 51895 7f5599b5
+step 83 "@as dec"
+rng 51895 7f5599b5
+step 84 "tell quintus are you busy?"
+out dec "He is writing a note, but your tell will go through when he returns.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 85 "@connect quin2"
+rng 51895 7f5599b5
+step 86 "Quintus"
+out dec "Quintus has lost his link.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+closed quin
+out god "\n\rQuintus has lost his link.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Illegal name, try another.\n\rName: "
+rng 51895 7f5599b5
+step 87 "Quintus"
+out quin2 "Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 88 "psswrd"
+out dec "\n\rQuintus has reconnected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus has reconnected.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\r\xff\xfc\x01Reconnecting. Type replay to see missed tells.\n\rYou have a note in progress. Type NWRITE to continue it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 89 "@return"
+out quin2 "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 90 "board 2"
+out quin2 "Please finish your interrupted note first.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 91 "note write"
+out dec "\n\rQuintus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "You are now continuing a new note on the General board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Quintus\n\r\n\rTo:      Decimus all\n\rExpires: Mon Dec  8 17:20:17 2025\n\n\rSubject: Interrupted\n\rYour note so far:\n\rfirst line\r\n\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 92 "second line"
+rng 51895 7f5599b5
+step 93 "~"
+out quin2 "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 94 "p"
+out dec "\n\rQuintus finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god "\n\rQuintus finishes his note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "Note posted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 95 "note list"
+out quin2 "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Quintus      Interrupted\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 96 "@as dec"
+rng 51895 7f5599b5
+step 97 "note write"
+out dec "You are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Decimus\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+out god "\n\rDecimus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\rDecimus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 98 "@connect dec2"
+rng 51895 7f5599b5
+step 99 "Decimus"
+closed dec
+out god "\n\rDecimus has lost his link.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\rDecimus has lost his link.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Illegal name, try another.\n\rName: "
+rng 51895 7f5599b5
+step 100 "Decimus"
+out dec2 "Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 101 "psswrd"
+out god "\n\rDecimus has reconnected.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\rDecimus has reconnected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\r\xff\xfc\x01Reconnecting. Type replay to see missed tells.\n\rYou have a note in progress. Type NWRITE to continue it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 102 "@return"
+out dec2 "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 103 "note write"
+out god "\n\rDecimus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\rDecimus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "Note in progress cancelled because you did not manage to write any text \n\rbefore losing link.\n\r\n\rYou are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Decimus\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+rng 51895 7f5599b5
+step 104 "Quintus"
+out dec2 "\n\rSubject: "
+rng 51895 7f5599b5
+step 105 "Second try"
+out dec2 "This note will expire Mon Dec 15 17:20:22 2025\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 106 "~"
+out dec2 "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 107 "f"
+out dec2 "Note cancelled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 108 "note write"
+out god "\n\rDecimus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\rDecimus starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "You are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Decimus\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+rng 51895 7f5599b5
+step 109 "Quintus"
+out dec2 "\n\rSubject: "
+rng 51895 7f5599b5
+step 110 "Same second"
+out dec2 "This note will expire Mon Dec 15 17:20:23 2025\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 111 "~"
+out dec2 "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 112 "@as quin2"
+rng 51895 7f5599b5
+step 113 "note write"
+out god "\n\rQuintus starts writing a note.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "You are now posting a new note on the General board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Quintus\n\r\n\rThe recipient list MUST include \"all\". If not, it will be added automatically.\n\r\n\rTo:      "
+rng 51895 7f5599b5
+step 114 "Decimus"
+out quin2 "\n\rYou did not specify all as recipient, so it was automatically added.\n\rNew To :  Decimus all\n\r\n\rSubject: "
+rng 51895 7f5599b5
+step 115 "Same second too"
+out quin2 "This note will expire Mon Dec  8 17:20:24 2025\n\r\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 116 "~"
+out quin2 "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 117 "@as god"
+rng 51895 7f5599b5
+step 118 "note write"
+out god "You are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Smokegod\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+rng 51895 7f5599b5
+step 119 "Decimus"
+out god "\n\rSubject: "
+rng 51895 7f5599b5
+step 120 "Same second three"
+out god "\n\rHow many days do you want this note to expire in?\n\rPress Enter for default value for this board, 28 days.\n\rExpire:  "
+rng 51895 7f5599b5
+step 121 "@return"
+out god "\n\rEnter text. Type ~ or END on an empty line to end note.\n\r=======================================================\n\r"
+rng 51895 7f5599b5
+step 122 "~"
+out god "\n\r\n\r(C)ontinue, (V)iew, (P)ost or (F)orget it?\n\r"
+rng 51895 7f5599b5
+step 123 "@as dec2"
+rng 51895 7f5599b5
+step 124 "p"
+out dec2 "Note posted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 125 "@as quin2"
+rng 51895 7f5599b5
+step 126 "p"
+out quin2 "Note posted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\rQuintus finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 127 "@as god"
+rng 51895 7f5599b5
+step 128 "p"
+out god "Note posted.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out quin2 "\n\rSmokegod finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\rSmokegod finishes his note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 129 "@as quin2"
+rng 51895 7f5599b5
+step 130 "note list"
+out quin2 "Notes on this board:\n\rNum> Author        Subject\n\r  1>*Quintus      Interrupted\n\r  2>*Quintus      Same second too\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 131 "@as god"
+rng 51895 7f5599b5
+step 132 "note write"
+out god "You are now posting a new note on the Personal board.\n\rIf you are using tintin, type #verbose to turn off alias expansion!\n\r\n\rFrom:    Smokegod\n\r\n\rThe recipient of this note must NOT include: \"all\".\n\rTo:      "
+out quin2 "\n\rSmokegod starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\rSmokegod starts writing a note.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 133 "@connect god2"
+rng 51895 7f5599b5
+step 134 "Smokegod"
+closed god
+out quin2 "\n\rSmokegod has lost his link.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\rSmokegod has lost his link.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god2 "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Illegal name, try another.\n\rName: "
+rng 51895 7f5599b5
+step 135 "Smokegod"
+out god2 "Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 136 "smoke123"
+out quin2 "\n\rSmokegod has reconnected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\rSmokegod has reconnected.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god2 "\n\r\xff\xfc\x01Reconnecting. Type replay to see missed tells.\n\rYou have a note in progress. Type NWRITE to continue it.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 137 "@return"
+out god2 "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 138 "quit"
+out quin2 "\n\rSmokegod has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec2 "\n\rSmokegod has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out god2 "Alas, all good things must come to an end.\n\r"
+closed god2
+rng 51895 7f5599b5

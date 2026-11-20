@@ -1,0 +1,9 @@
+# A misspelled text keyword (tools/fixtures/files/badkey-text) on General: boot logs "Load_notes: bad key word."
+# and the board is empty.
+@place badkey-text ../notes/General
+@connect dec
+Decimus
+psswrd
+@return
+@return
+board

@@ -1,0 +1,15 @@
+# A bad keyword in each place of a note file: the board's file holds one note whose sender, stamp, expire, to or
+# subject keyword is misspelled (tools/fixtures/files/badkey-*), one board each, so boot logs "Load_notes: bad key
+# word." five times and the boards are empty. (A misspelled text keyword, badkey-text, goes on General in
+# notes-badtext.)
+@place badkey-sender ../notes/General
+@place badkey-stamp ../notes/Ideas
+@place badkey-expire ../notes/Announce
+@place badkey-to ../notes/Bugs
+@place badkey-subject ../notes/Personal
+@connect dec
+Decimus
+psswrd
+@return
+@return
+board

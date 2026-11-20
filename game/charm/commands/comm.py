@@ -1,8 +1,6 @@
 """Talking and groups, all of act_comm.c: the channels, say, tell, reply, emote, pose, following, ordering, groups,
 splitting coins, colour settings, delete, save and quit.
 
-do_quit is [partial]: a note being written (board.c's free_note) raises NotPorted.
-
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
 (c) 1993-98 Russ Taylor. Ported from src/act_comm.c. Licence terms: README.md#licence-terms and doc/.
@@ -531,9 +529,8 @@ def do_qui(ch, argument: str) -> None:
     send_to_char("If you want to QUIT, you have to spell it out.\n\r", ch)
 
 
-# C: act_comm.c do_quit [partial]
+# C: act_comm.c do_quit
 def do_quit(ch, argument: str) -> None:
-    """[partial]: a note being written (free_note) raises NotPorted."""
     from charm.entities.handler import extract_char, get_trust
     from charm.net.server import close_socket
     from charm.persist.player import save_char_obj
@@ -553,8 +550,10 @@ def do_quit(ch, argument: str) -> None:
     wiznet(game, "$N rejoins the real world.", ch, None, C.WIZ_LOGINS, 0, get_trust(ch))
     # "After extract_char the ch is no longer valid!"
     save_char_obj(game, ch)
-    if ch.pcdata.in_progress is not None:
-        raise NotPorted("act_comm.c do_quit: free_note (a note in progress)")
+    if ch.pcdata.in_progress is not None:  # "Free note that might be there somehow"
+        from charm.persist.boards import free_note
+
+        free_note(ch.pcdata.in_progress)
     pid, d = ch.id, ch.desc
     extract_char(game, ch, True)
     if d is not None:

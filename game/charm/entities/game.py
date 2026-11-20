@@ -64,6 +64,12 @@ class Game:
     pulse_point: int = 0
     str_boot_time: str = ""  # comm.c's, ctime of the boot; main sets it (the scenario oracle doesn't, so it's "")
     max_on: int = 0  # act_info.c's, the most players do_count has seen on
+    # board.c's: each board's notes (note_first, oldest first) and whether it needs saving (changed), and
+    # last_note_stamp, which keeps notes' date stamps unique
+    notes: list = field(default_factory=list)
+    board_changed: list = field(default_factory=list)
+    last_note_stamp: int = 0
+    ban_list: list = field(default_factory=list)  # ban.c's, head first
 
 
 # LATER: the C reads its globals from anywhere; a few functions that don't take a Game (room_is_dark, called from

@@ -3,8 +3,7 @@
 Ported line by line from nanny.c, with the checks it calls from comm.c (check_parse_name, check_reconnect,
 check_playing).
 
-[partial] until spike PR 5: entering the game ends in do_look, which raises NotPorted, and so the lines after it
-(the wiznet line, the pet, the boards) aren't reached yet. The note-writing states raise NotPorted too.
+The note-writing states (CON_NOTE_*) go to board.c's handlers, in charm.persist.boards.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -17,7 +16,6 @@ from charm.commands.info import do_help, do_look, set_title
 from charm.commands.interp import SPACE, one_argument
 from charm.commands.wiz import do_outfit
 from charm.core.crypt import crypt
-from charm.core.errors import NotPorted
 from charm.core.log import bug, log_string
 from charm.core.strings import lower, str_cmp, str_prefix, str_suffix
 from charm.data import constants as C
@@ -94,6 +92,7 @@ def check_parse_name(game, name: str) -> bool:
         count = 0
         for d in list(game.descriptor_list):
             ch = d.character
+            # sic: someone writing a note isn't CON_PLAYING either, so it's closed too (#66)
             if d.connected != C.CON_PLAYING and ch is not None and ch.name and str_cmp(ch.name, name):
                 count += 1
                 close_socket(d)
@@ -156,7 +155,7 @@ def _weapons(ch) -> str:
     return "".join(w.name + " " for w in WEAPON_TABLE if ch.pcdata.learned[GSN[w.gsn]] > 0) + "\n\rYour choice? "
 
 
-# C: nanny.c nanny [partial]
+# C: nanny.c nanny
 def nanny(game, d, argument: str) -> None:
     from charm.net.server import check_ban, close_socket
 
@@ -215,7 +214,7 @@ def nanny(game, d, argument: str) -> None:
             close_socket(d)
             return
         if check_ban(game, d.host, C.BAN_NEWBIES):
-            send_to_desc("New players are not allowed from your site.\n\r", None)  # the C passes 0 here
+            send_to_desc("New players are not allowed from your site.\n\r", None)  # sic: the C passes 0 (#65)
             close_socket(d)
             return
         send_to_desc(f"Did I get that right, {argument} (Y/N)? ", d)
@@ -456,7 +455,11 @@ def nanny(game, d, argument: str) -> None:
         d.connected = C.CON_READ_MOTD
 
     elif C.CON_NOTE_TO <= state <= C.CON_NOTE_FINISH:
-        raise NotPorted("board.c handle_con_note_*: writing a note")
+        from charm.persist import boards
+
+        {C.CON_NOTE_TO: boards.handle_con_note_to, C.CON_NOTE_SUBJECT: boards.handle_con_note_subject,
+         C.CON_NOTE_EXPIRE: boards.handle_con_note_expire, C.CON_NOTE_TEXT: boards.handle_con_note_text,
+         C.CON_NOTE_FINISH: boards.handle_con_note_finish}[state](d, argument)
 
     elif state == C.CON_READ_MOTD:
         if ch.pcdata is None or ch.pcdata.pwd == "":

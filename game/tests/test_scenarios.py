@@ -53,6 +53,32 @@ class WhereTheCCrashes(unittest.TestCase):
         self.assertEqual(out[-2], 'step 6 "tell hassan hello"')
         self.assertTrue(out[-1].startswith("stopped CWouldCrash: act_comm.c do_tell: a tell to a mob"), out[-1])
 
+    def test_removing_note_0_from_an_empty_board(self):
+        # find_note counts no notes, so count == num == 0, and it calls is_note_to with a NULL note
+        # (abraidotti/charm#63).
+        text = "@connect dec\nDecimus\npsswrd\n@return\n@return\nnote remove 0\nlook\n"
+        out = play_fresh(text, REPO)
+        self.assertEqual(out[-2], 'step 6 "note remove 0"')
+        self.assertTrue(out[-1].startswith("stopped CWouldCrash: board.c find_note: note 0 of an empty board"), out[-1])
+
+    def test_reading_a_long_note(self):
+        # show_note_to_char formats the whole note into printf_to_char's buf[MAX_STRING_LENGTH] (4608), and a note
+        # may hold 17,432 characters: 58 lines of 80 overflow it (abraidotti/charm#63). Posting it is fine.
+        lines = "".join("%02d %s\n" % (i, "x" * 77) for i in range(58))
+        text = "@connect dec\nDecimus\npsswrd\n@return\n@return\nnote write\nall\nLong\n" + lines + "~\np\nnote read 1\n"
+        out = play_fresh(text, REPO)
+        self.assertEqual(out[-2], 'step %d "note read 1"' % (66 + 3))
+        self.assertTrue(out[-1].startswith("stopped CWouldCrash: comm.c printf_to_char:"), out[-1])
+
+    def test_a_long_recipient_list_on_general(self):
+        # General must include "all", and handle_con_note_to strcats " all" onto the 252 characters typed, in a
+        # buf[MAX_INPUT_LENGTH] (256): glibc aborts with "buffer overflow detected" (abraidotti/charm#63).
+        to = " ".join(["Quintus"] * 32)[:252]
+        text = "@connect dec\nDecimus\npsswrd\n@return\n@return\nnote write\n" + to + "\nlook\n"
+        out = play_fresh(text, REPO)
+        self.assertEqual(out[-2], 'step 7 "%s"' % to)
+        self.assertTrue(out[-1].startswith("stopped CWouldCrash: board.c handle_con_note_to:"), out[-1])
+
 
 class Difference(unittest.TestCase):
     C = ['step 1 "look"', 'out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]

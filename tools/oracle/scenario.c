@@ -12,6 +12,8 @@
  *   @seed N              CHARM_SEED (before anything else; default 20261117)
  *   @clock T             current_time at boot (before anything else; default 1763400000)
  *   @updates all|area    which updates update_handler runs (before anything else; default area: CHARM_UPDATES)
+ *   @place NAME DEST     copy tools/fixtures/files/NAME (../files/NAME here) to DEST, relative to the area
+ *                        directory, before boot reads it: a ban list (ban.txt) or a board (../notes/General)
  *   @connect NAME        a new connection, called NAME in the output, which becomes the one lines go to
  *   @as NAME             send the following lines to connection NAME
  *   @pulse N             run N pulses with no new input
@@ -326,6 +328,25 @@ static void chomp (char *s)
         s[--n] = '\0';
 }
 
+/* @place: copy a fixture file byte for byte; 0 if it worked. */
+static int place (const char *from, const char *to)
+{
+    char buf[8192];
+    size_t n;
+    FILE *in = fopen (from, "rb"), *out;
+    if (in == NULL)
+        return -1;
+    if ((out = fopen (to, "wb")) == NULL)
+    {
+        fclose (in);
+        return -1;
+    }
+    while ((n = fread (buf, 1, sizeof buf, in)) > 0)
+        fwrite (buf, 1, n, out);
+    fclose (in);
+    return fclose (out) == 0 ? 0 : -1;
+}
+
 int main (void)
 {
     char line[MAX_STRING_LENGTH];
@@ -351,6 +372,18 @@ int main (void)
             if (sscanf (line, "@seed %31s", seedbuf) == 1) { seed = seedbuf; continue; }
             if (sscanf (line, "@clock %ld", &clock) == 1) continue;
             if (sscanf (line, "@updates %15s", updbuf) == 1) { updates = updbuf; continue; }
+            {
+                char src[96], dest[128], from[128];
+                if (sscanf (line, "@place %63s %127s", src, dest) == 2)
+                {
+                    if (place (strcat (strcpy (from, "../files/"), src), dest) != 0)
+                    {
+                        fprintf (stderr, "scenario: @place %s %s: can't copy it\n", src, dest);
+                        return 2;
+                    }
+                    continue;
+                }
+            }
             setenv ("CHARM_SEED", seed, 1);
             if (!strcmp (updates, "area"))
                 setenv ("CHARM_UPDATES", "area", 1);
