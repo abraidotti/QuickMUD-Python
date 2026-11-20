@@ -1,7 +1,5 @@
-"""fight.c: fights, round by round (violence_update), and what a hit, a death and a kill do.
-
-The fighting skills (backstab, bash, berserk, dirt, trip, kick, disarm, rescue) aren't ported yet (#74, PR 2): a
-mob whose round picks one raises NotPorted, as does a weapon that burns, freezes or shocks (effects.c).
+"""fight.c, all of it: fights, round by round (violence_update), what a hit, a death and a kill do, and the
+fighting skills (backstab, bash, berserk, dirt, trip, kick, disarm, rescue).
 
 The C walks char_list and a room's people by the next pointer it took before each body ran. _char_list_from
 copies that: see its docstring for what the C does when that next character is freed in the meantime.
@@ -291,6 +289,7 @@ def one_hit(ch, victim, dt: int) -> None:
                                         is_awake)
     from charm.net.act import act
     from charm.net.output import send_to_char
+    from charm.systems.effects import cold_effect, fire_effect, shock_effect
     from charm.systems.magic import saves_spell
     from charm.systems.skills import check_improve
     from charm.world.index import Affect
@@ -445,17 +444,20 @@ def one_hit(ch, victim, dt: int) -> None:
             dam = number_range(1, c_div(wield.level, 4) + 1)
             act("$n is burned by $p.", victim, wield, None, C.TO_ROOM)
             act("$p sears your flesh.", victim, wield, None, C.TO_CHAR)
-            raise NotPorted("effects.c fire_effect (a flaming weapon)")
+            fire_effect(victim, c_div(wield.level, 2), dam, C.TARGET_CHAR)
+            damage(ch, victim, dam, 0, C.DAM_FIRE, False)
         if ch.fighting is victim and wield.value[4] & C.WEAPON_FROST:
             dam = number_range(1, c_div(wield.level, 6) + 2)
             act("$p freezes $n.", victim, wield, None, C.TO_ROOM)
             act("The cold touch of $p surrounds you with ice.", victim, wield, None, C.TO_CHAR)
-            raise NotPorted("effects.c cold_effect (a frost weapon)")
+            cold_effect(victim, c_div(wield.level, 2), dam, C.TARGET_CHAR)
+            damage(ch, victim, dam, 0, C.DAM_COLD, False)
         if ch.fighting is victim and wield.value[4] & C.WEAPON_SHOCKING:
             dam = number_range(1, c_div(wield.level, 5) + 2)
             act("$n is struck by lightning from $p.", victim, wield, None, C.TO_ROOM)
             act("You are shocked by $p.", victim, wield, None, C.TO_CHAR)
-            raise NotPorted("effects.c shock_effect (a shocking weapon)")
+            shock_effect(victim, c_div(wield.level, 2), dam, C.TARGET_CHAR)
+            damage(ch, victim, dam, 0, C.DAM_LIGHTNING, False)
 
 
 # C: fight.c damage
@@ -1192,6 +1194,520 @@ def dam_message(ch, victim, dam: int, dt: int, immune: bool) -> None:
         act(buf1, ch, None, victim, C.TO_NOTVICT)
         act(buf2, ch, None, victim, C.TO_CHAR)
         act(buf3, ch, None, victim, C.TO_VICT)
+
+
+# C: fight.c disarm
+def disarm(ch, victim) -> None:
+    """Disarm a creature. "Caller must check for successful attack."."""
+    from charm.commands.obj import get_obj
+    from charm.entities.handler import can_see_obj, get_eq_char, obj_from_char, obj_to_char, obj_to_room
+    from charm.net.act import act
+
+    obj = get_eq_char(victim, C.WEAR_WIELD)
+    if obj is None:
+        return
+    if obj.extra_flags & C.ITEM_NOREMOVE:
+        act("{5$S weapon won't budge!{x", ch, None, victim, C.TO_CHAR)
+        act("{5$n tries to disarm you, but your weapon won't budge!{x", ch, None, victim, C.TO_VICT)
+        act("{5$n tries to disarm $N, but fails.{x", ch, None, victim, C.TO_NOTVICT)
+        return
+    act("{5$n DISARMS you and sends your weapon flying!{x", ch, None, victim, C.TO_VICT)
+    act("{5You disarm $N!{x", ch, None, victim, C.TO_CHAR)
+    act("{5$n disarms $N!{x", ch, None, victim, C.TO_NOTVICT)
+    obj_from_char(obj)
+    if obj.extra_flags & (C.ITEM_NODROP | C.ITEM_INVENTORY):
+        obj_to_char(obj, victim)
+    else:
+        obj_to_room(obj, victim.in_room)
+        if victim.is_npc and victim.wait == 0 and can_see_obj(victim, obj):
+            get_obj(victim, obj, None)
+
+
+def _skill_level(sn: int, ch) -> int:
+    from charm.data.skills import SKILL_TABLE
+
+    return SKILL_TABLE[sn].skill_level[ch.class_]
+
+
+def _beats(sn: int) -> int:
+    from charm.data.skills import SKILL_TABLE
+
+    return SKILL_TABLE[sn].beats
+
+
+def _daze_state(ch, npulse: int) -> None:
+    """DAZE_STATE."""
+    ch.daze = sh_int(max(ch.daze, npulse))
+
+
+def _kill_stealing(ch, victim) -> bool:
+    from charm.commands.comm import is_same_group
+    from charm.net.output import send_to_char
+
+    if victim.is_npc and victim.fighting is not None and not is_same_group(ch, victim.fighting):
+        send_to_char("Kill stealing is not permitted.\n\r", ch)
+        return True
+    return False
+
+
+def _target(ch, arg: str, none_fighting: str):
+    """The skills' victim: whom ch is fighting if no one is named, or the one named in the room."""
+    from charm.entities.handler import get_char_room
+    from charm.net.output import send_to_char
+
+    if arg == "":
+        if ch.fighting is None:
+            send_to_char(none_fighting, ch)
+        return ch.fighting
+    victim = get_char_room(ch, arg)
+    if victim is None:
+        send_to_char("They aren't here.\n\r", ch)
+    return victim
+
+
+# C: fight.c do_berserk
+def do_berserk(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.core.rng import number_fuzzy
+    from charm.entities.handler import affect_to_char, get_skill, is_affected, is_affected_by
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+    from charm.world.index import Affect
+    from charm.world.lookup import skill_lookup
+
+    gsn = _gsn("gsn_berserk")
+    chance = get_skill(ch, gsn)
+    if (chance == 0 or (ch.is_npc and not ch.off_flags & C.OFF_BERSERK)
+            or (not ch.is_npc and ch.level < _skill_level(gsn, ch))):
+        send_to_char("You turn red in the face, but nothing happens.\n\r", ch)
+        return
+    if is_affected(ch, C.AFF_BERSERK) or is_affected_by(ch, gsn) or is_affected_by(ch, skill_lookup("frenzy")):
+        send_to_char("You get a little madder.\n\r", ch)
+        return
+    if is_affected(ch, C.AFF_CALM):
+        send_to_char("You're feeling to mellow to berserk.\n\r", ch)  # sic (#77)
+        return
+    if ch.mana < 50:
+        send_to_char("You can't get up enough energy.\n\r", ch)
+        return
+    # "modifiers": "fighting"
+    if ch.position == C.POS_FIGHTING:
+        chance += 10
+    # "damage -- below 50% of hp helps, above hurts"
+    if ch.max_hit == 0:
+        raise CWouldCrash("fight.c do_berserk: divides by max_hit, which is 0")
+    hp_percent = c_div(100 * ch.hit, ch.max_hit)
+    chance += 25 - c_div(hp_percent, 2)
+    if number_percent() < chance:
+        wait_state(ch, C.PULSE_VIOLENCE)
+        ch.mana = sh_int(ch.mana - 50)
+        ch.move = sh_int(c_div(ch.move, 2))
+        # "heal a little damage"
+        ch.hit = sh_int(ch.hit + ch.level * 2)
+        ch.hit = min(ch.hit, ch.max_hit)
+        send_to_char("Your pulse races as you are consumed by rage!\n\r", ch)
+        act("$n gets a wild look in $s eyes.", ch, None, None, C.TO_ROOM)
+        check_improve(ch, gsn, True, 2)
+        duration = number_fuzzy(c_div(ch.level, 8))
+        modifier = max(1, c_div(ch.level, 5))
+        for location in (C.APPLY_HITROLL, C.APPLY_DAMROLL):
+            affect_to_char(ch, Affect(where=C.TO_AFFECTS, type=gsn, level=ch.level, duration=duration,
+                                      location=location, modifier=modifier, bitvector=C.AFF_BERSERK))
+        affect_to_char(ch, Affect(where=C.TO_AFFECTS, type=gsn, level=ch.level, duration=duration,
+                                  location=C.APPLY_AC, modifier=max(10, 10 * c_div(ch.level, 5)),
+                                  bitvector=C.AFF_BERSERK))
+    else:
+        wait_state(ch, 3 * C.PULSE_VIOLENCE)
+        ch.mana = sh_int(ch.mana - 25)
+        ch.move = sh_int(c_div(ch.move, 2))
+        send_to_char("Your pulse speeds up, but nothing happens.\n\r", ch)
+        check_improve(ch, gsn, False, 2)
+
+
+# C: fight.c do_bash
+def do_bash(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.commands.interp import one_argument
+    from charm.entities.handler import get_ac, get_curr_stat, get_skill, is_affected
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+
+    gsn = _gsn("gsn_bash")
+    _, arg = one_argument(argument)
+    chance = get_skill(ch, gsn)
+    if (chance == 0 or (ch.is_npc and not ch.off_flags & C.OFF_BASH)
+            or (not ch.is_npc and ch.level < _skill_level(gsn, ch))):
+        send_to_char("Bashing? What's that?\n\r", ch)
+        return
+    victim = _target(ch, arg, "But you aren't fighting anyone!\n\r")
+    if victim is None:
+        return
+    if victim.position < C.POS_FIGHTING:
+        act("You'll have to let $M get back up first.", ch, None, victim, C.TO_CHAR)
+        return
+    if victim is ch:
+        send_to_char("You try to bash your brains out, but fail.\n\r", ch)
+        return
+    if is_safe(ch, victim) or _kill_stealing(ch, victim):
+        return
+    if is_affected(ch, C.AFF_CHARM) and ch.master is victim:
+        act("But $N is your friend!", ch, None, victim, C.TO_CHAR)
+        return
+    # "modifiers": "size  and weight"
+    chance += c_div(ch.carry_weight, 250)
+    chance -= c_div(victim.carry_weight, 200)
+    if ch.size < victim.size:
+        chance += (ch.size - victim.size) * 15
+    else:
+        chance += (ch.size - victim.size) * 10
+    # "stats"
+    chance += get_curr_stat(ch, C.STAT_STR)
+    chance -= c_div(get_curr_stat(victim, C.STAT_DEX) * 4, 3)
+    chance -= c_div(get_ac(victim, C.AC_BASH), 25)
+    # "speed"
+    if ch.off_flags & C.OFF_FAST or is_affected(ch, C.AFF_HASTE):
+        chance += 10
+    if victim.off_flags & C.OFF_FAST or is_affected(victim, C.AFF_HASTE):
+        chance -= 30
+    # "level"
+    chance += ch.level - victim.level
+    if not victim.is_npc and chance < get_skill(victim, _gsn("gsn_dodge")):
+        # (the C's own dodge of a bash is commented out; only the penalty is left)
+        chance -= 3 * (get_skill(victim, _gsn("gsn_dodge")) - chance)
+    # "now the attack"
+    if number_percent() < chance:
+        act("{5$n sends you sprawling with a powerful bash!{x", ch, None, victim, C.TO_VICT)
+        act("{5You slam into $N, and send $M flying!{x", ch, None, victim, C.TO_CHAR)
+        act("{5$n sends $N sprawling with a powerful bash.{x", ch, None, victim, C.TO_NOTVICT)
+        check_improve(ch, gsn, True, 1)
+        _daze_state(victim, 3 * C.PULSE_VIOLENCE)
+        wait_state(ch, _beats(gsn))
+        victim.position = C.POS_RESTING
+        damage(ch, victim, number_range(2, 2 + 2 * ch.size + c_div(chance, 20)), gsn, C.DAM_BASH, False)
+    else:
+        damage(ch, victim, 0, gsn, C.DAM_BASH, False)
+        act("{5You fall flat on your face!{x", ch, None, victim, C.TO_CHAR)
+        act("{5$n falls flat on $s face.{x", ch, None, victim, C.TO_NOTVICT)
+        act("{5You evade $n's bash, causing $m to fall flat on $s face.{x", ch, None, victim, C.TO_VICT)
+        check_improve(ch, gsn, False, 1)
+        ch.position = C.POS_RESTING
+        wait_state(ch, c_div(_beats(gsn) * 3, 2))
+    check_killer(ch, victim)
+
+
+_DIRT_TERRAIN = {C.SECT_INSIDE: -20, C.SECT_CITY: -10, C.SECT_FIELD: 5, C.SECT_MOUNTAIN: -10, C.SECT_DESERT: 10}
+
+
+# C: fight.c do_dirt
+def do_dirt(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.commands.interp import one_argument
+    from charm.entities.handler import affect_to_char, get_curr_stat, get_skill, is_affected
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+    from charm.world.index import Affect
+
+    gsn = _gsn("gsn_dirt")
+    _, arg = one_argument(argument)
+    chance = get_skill(ch, gsn)
+    if (chance == 0 or (ch.is_npc and not ch.off_flags & C.OFF_KICK_DIRT)
+            or (not ch.is_npc and ch.level < _skill_level(gsn, ch))):
+        send_to_char("You get your feet dirty.\n\r", ch)
+        return
+    victim = _target(ch, arg, "But you aren't in combat!\n\r")
+    if victim is None:
+        return
+    if is_affected(victim, C.AFF_BLIND):
+        act("$E's already been blinded.", ch, None, victim, C.TO_CHAR)
+        return
+    if victim is ch:
+        send_to_char("Very funny.\n\r", ch)
+        return
+    if is_safe(ch, victim) or _kill_stealing(ch, victim):
+        return
+    if is_affected(ch, C.AFF_CHARM) and ch.master is victim:
+        act("But $N is such a good friend!", ch, None, victim, C.TO_CHAR)
+        return
+    # "modifiers": "dexterity"
+    chance += get_curr_stat(ch, C.STAT_DEX)
+    chance -= 2 * get_curr_stat(victim, C.STAT_DEX)
+    # "speed"
+    if ch.off_flags & C.OFF_FAST or is_affected(ch, C.AFF_HASTE):
+        chance += 10
+    if victim.off_flags & C.OFF_FAST or is_affected(victim, C.AFF_HASTE):
+        chance -= 25
+    # "level"
+    chance += (ch.level - victim.level) * 2
+    # "sloppy hack to prevent false zeroes"
+    if chance % 5 == 0:  # non-negative: a C % is 0 for the same values, signed or not
+        chance += 1
+    # "terrain"
+    sector = ch.in_room.sector_type
+    if sector in (C.SECT_WATER_SWIM, C.SECT_WATER_NOSWIM, C.SECT_AIR):
+        chance = 0
+    else:
+        chance += _DIRT_TERRAIN.get(sector, 0)
+    if chance == 0:
+        send_to_char("There isn't any dirt to kick.\n\r", ch)
+        return
+    # "now the attack"
+    if number_percent() < chance:
+        act("{5$n is blinded by the dirt in $s eyes!{x", victim, None, None, C.TO_ROOM)
+        act("{5$n kicks dirt in your eyes!{x", ch, None, victim, C.TO_VICT)
+        damage(ch, victim, number_range(2, 5), gsn, C.DAM_NONE, False)
+        send_to_char("{5You can't see a thing!{x\n\r", victim)
+        check_improve(ch, gsn, True, 2)
+        wait_state(ch, _beats(gsn))
+        affect_to_char(victim, Affect(where=C.TO_AFFECTS, type=gsn, level=ch.level, duration=0,
+                                      location=C.APPLY_HITROLL, modifier=-4, bitvector=C.AFF_BLIND))
+    else:
+        damage(ch, victim, 0, gsn, C.DAM_NONE, True)
+        check_improve(ch, gsn, False, 2)
+        wait_state(ch, _beats(gsn))
+    check_killer(ch, victim)
+
+
+# C: fight.c do_trip
+def do_trip(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.commands.interp import one_argument
+    from charm.entities.handler import get_curr_stat, get_skill, is_affected
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+
+    gsn = _gsn("gsn_trip")
+    _, arg = one_argument(argument)
+    chance = get_skill(ch, gsn)
+    if (chance == 0 or (ch.is_npc and not ch.off_flags & C.OFF_TRIP)
+            or (not ch.is_npc and ch.level < _skill_level(gsn, ch))):
+        send_to_char("Tripping?  What's that?\n\r", ch)
+        return
+    victim = _target(ch, arg, "But you aren't fighting anyone!\n\r")
+    if victim is None:
+        return
+    if is_safe(ch, victim) or _kill_stealing(ch, victim):
+        return
+    if is_affected(victim, C.AFF_FLYING):
+        act("$S feet aren't on the ground.", ch, None, victim, C.TO_CHAR)
+        return
+    if victim.position < C.POS_FIGHTING:
+        act("$N is already down.", ch, None, victim, C.TO_CHAR)
+        return
+    if victim is ch:
+        send_to_char("{5You fall flat on your face!{x\n\r", ch)
+        wait_state(ch, 2 * _beats(gsn))
+        act("{5$n trips over $s own feet!{x", ch, None, None, C.TO_ROOM)
+        return
+    if is_affected(ch, C.AFF_CHARM) and ch.master is victim:
+        act("$N is your beloved master.", ch, None, victim, C.TO_CHAR)
+        return
+    # "modifiers": "size"
+    if ch.size < victim.size:
+        chance += (ch.size - victim.size) * 10  # "bigger = harder to trip"
+    # "dex"
+    chance += get_curr_stat(ch, C.STAT_DEX)
+    chance -= c_div(get_curr_stat(victim, C.STAT_DEX) * 3, 2)
+    # "speed"
+    if ch.off_flags & C.OFF_FAST or is_affected(ch, C.AFF_HASTE):
+        chance += 10
+    if victim.off_flags & C.OFF_FAST or is_affected(victim, C.AFF_HASTE):
+        chance -= 20
+    # "level"
+    chance += (ch.level - victim.level) * 2
+    # "now the attack"
+    if number_percent() < chance:
+        act("{5$n trips you and you go down!{x", ch, None, victim, C.TO_VICT)
+        act("{5You trip $N and $N goes down!{x", ch, None, victim, C.TO_CHAR)
+        act("{5$n trips $N, sending $M to the ground.{x", ch, None, victim, C.TO_NOTVICT)
+        check_improve(ch, gsn, True, 1)
+        _daze_state(victim, 2 * C.PULSE_VIOLENCE)
+        wait_state(ch, _beats(gsn))
+        victim.position = C.POS_RESTING
+        damage(ch, victim, number_range(2, 2 + 2 * victim.size), gsn, C.DAM_BASH, True)
+    else:
+        damage(ch, victim, 0, gsn, C.DAM_BASH, True)
+        wait_state(ch, c_div(_beats(gsn) * 2, 3))
+        check_improve(ch, gsn, False, 1)
+    check_killer(ch, victim)
+
+
+# C: fight.c do_backstab
+def do_backstab(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.commands.interp import one_argument
+    from charm.entities.handler import get_char_room, get_eq_char, get_skill, is_awake
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+
+    gsn = _gsn("gsn_backstab")
+    _, arg = one_argument(argument)
+    if arg == "":
+        send_to_char("Backstab whom?\n\r", ch)
+        return
+    if ch.fighting is not None:
+        send_to_char("You're facing the wrong end.\n\r", ch)
+        return
+    victim = get_char_room(ch, arg)
+    if victim is None:
+        send_to_char("They aren't here.\n\r", ch)
+        return
+    if victim is ch:
+        send_to_char("How can you sneak up on yourself?\n\r", ch)
+        return
+    if is_safe(ch, victim) or _kill_stealing(ch, victim):
+        return
+    if get_eq_char(ch, C.WEAR_WIELD) is None:
+        send_to_char("You need to wield a weapon to backstab.\n\r", ch)
+        return
+    if victim.hit < c_div(victim.max_hit, 3):
+        act("$N is hurt and suspicious ... you can't sneak up.", ch, None, victim, C.TO_CHAR)
+        return
+    check_killer(ch, victim)
+    wait_state(ch, _beats(gsn))
+    if number_percent() < get_skill(ch, gsn) or (get_skill(ch, gsn) >= 2 and not is_awake(victim)):
+        check_improve(ch, gsn, True, 1)
+        multi_hit(ch, victim, gsn)
+    else:
+        check_improve(ch, gsn, False, 1)
+        damage(ch, victim, 0, gsn, C.DAM_NONE, True)
+
+
+# C: fight.c do_rescue
+def do_rescue(ch, argument: str) -> None:
+    from charm.commands.comm import is_same_group, wait_state
+    from charm.commands.interp import one_argument
+    from charm.entities.handler import get_char_room, get_skill
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+
+    gsn = _gsn("gsn_rescue")
+    _, arg = one_argument(argument)
+    if arg == "":
+        send_to_char("Rescue whom?\n\r", ch)
+        return
+    victim = get_char_room(ch, arg)
+    if victim is None:
+        send_to_char("They aren't here.\n\r", ch)
+        return
+    if victim is ch:
+        send_to_char("What about fleeing instead?\n\r", ch)
+        return
+    if not ch.is_npc and victim.is_npc:
+        send_to_char("Doesn't need your help!\n\r", ch)
+        return
+    if ch.fighting is victim:
+        send_to_char("Too late.\n\r", ch)
+        return
+    fch = victim.fighting
+    if fch is None:
+        send_to_char("That person is not fighting right now.\n\r", ch)
+        return
+    if fch.is_npc and not is_same_group(ch, victim):
+        send_to_char("Kill stealing is not permitted.\n\r", ch)
+        return
+    wait_state(ch, _beats(gsn))
+    if number_percent() > get_skill(ch, gsn):
+        send_to_char("You fail the rescue.\n\r", ch)
+        check_improve(ch, gsn, False, 1)
+        return
+    act("{5You rescue $N!{x", ch, None, victim, C.TO_CHAR)
+    act("{5$n rescues you!{x", ch, None, victim, C.TO_VICT)
+    act("{5$n rescues $N!{x", ch, None, victim, C.TO_NOTVICT)
+    check_improve(ch, gsn, True, 1)
+    game = _game()
+    stop_fighting(game, fch, False)
+    stop_fighting(game, victim, False)
+    check_killer(ch, fch)
+    set_fighting(ch, fch)  # sic: a rescuer already fighting keeps that fight (#77)
+    set_fighting(fch, ch)
+
+
+# C: fight.c do_kick
+def do_kick(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.entities.handler import get_skill
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+
+    gsn = _gsn("gsn_kick")
+    if not ch.is_npc and ch.level < _skill_level(gsn, ch):
+        send_to_char("You better leave the martial arts to fighters.\n\r", ch)
+        return
+    if ch.is_npc and not ch.off_flags & C.OFF_KICK:
+        return
+    victim = ch.fighting
+    if victim is None:
+        send_to_char("You aren't fighting anyone.\n\r", ch)
+        return
+    wait_state(ch, _beats(gsn))
+    if get_skill(ch, gsn) > number_percent():
+        damage(ch, victim, number_range(1, ch.level), gsn, C.DAM_BASH, True)
+        check_improve(ch, gsn, True, 1)
+    else:
+        damage(ch, victim, 0, gsn, C.DAM_BASH, True)
+        check_improve(ch, gsn, False, 1)
+    check_killer(ch, victim)
+
+
+# C: fight.c do_disarm
+def do_disarm(ch, argument: str) -> None:
+    from charm.commands.comm import wait_state
+    from charm.entities.handler import get_curr_stat, get_eq_char, get_skill, get_weapon_skill, get_weapon_sn
+    from charm.net.act import act
+    from charm.net.output import send_to_char
+    from charm.systems.skills import check_improve
+
+    gsn = _gsn("gsn_disarm")
+    hth = 0
+    chance = get_skill(ch, gsn)
+    if chance == 0:
+        send_to_char("You don't know how to disarm opponents.\n\r", ch)
+        return
+    if get_eq_char(ch, C.WEAR_WIELD) is None:
+        hth = get_skill(ch, _gsn("gsn_hand_to_hand"))
+        if hth == 0 or (ch.is_npc and not ch.off_flags & C.OFF_DISARM):
+            send_to_char("You must wield a weapon to disarm.\n\r", ch)
+            return
+    victim = ch.fighting
+    if victim is None:
+        send_to_char("You aren't fighting anyone.\n\r", ch)
+        return
+    if get_eq_char(victim, C.WEAR_WIELD) is None:
+        send_to_char("Your opponent is not wielding a weapon.\n\r", ch)
+        return
+    # "find weapon skills"
+    ch_weapon = get_weapon_skill(ch, get_weapon_sn(ch))
+    vict_weapon = get_weapon_skill(victim, get_weapon_sn(victim))
+    ch_vict_weapon = get_weapon_skill(ch, get_weapon_sn(victim))
+    # "modifiers": "skill"
+    if get_eq_char(ch, C.WEAR_WIELD) is None:
+        chance = c_div(chance * hth, 150)
+    else:
+        chance = c_div(chance * ch_weapon, 100)
+    chance += c_div(c_div(ch_vict_weapon, 2) - vict_weapon, 2)
+    # "dex vs. strength"
+    chance += get_curr_stat(ch, C.STAT_DEX)
+    chance -= 2 * get_curr_stat(victim, C.STAT_STR)
+    # "level"
+    chance += (ch.level - victim.level) * 2
+    # "and now the attack"
+    if number_percent() < chance:
+        wait_state(ch, _beats(gsn))
+        disarm(ch, victim)
+        check_improve(ch, gsn, True, 1)
+    else:
+        wait_state(ch, _beats(gsn))
+        act("{5You fail to disarm $N.{x", ch, None, victim, C.TO_CHAR)
+        act("{5$n tries to disarm you, but fails.{x", ch, None, victim, C.TO_VICT)
+        act("{5$n tries to disarm $N, but fails.{x", ch, None, victim, C.TO_NOTVICT)
+        check_improve(ch, gsn, False, 1)
+    check_killer(ch, victim)
 
 
 # C: fight.c do_kill

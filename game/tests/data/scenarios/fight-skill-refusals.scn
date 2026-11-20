@@ -1,0 +1,132 @@
+# The fighting skills' refusals and misses, with only area_update running, so a fight is the round a command starts.
+# In the temple square (3005), away from Hassan: Smokegod (60), Cherub (52, a mage, who can't use the warriors' and
+# thieves' skills), and a group led by Heroic (51, a warrior with every skill at 100) with
+# Locksmith (30, a thief, every skill at 100) and Decimus (10, a warrior, rescue at 1%).
+# - bash, trip, kick and disarm not known
+# - bash a resting duck (it has to get up), trip it (ducks fly), bash yourself, trip a flying dragon;
+#   backstab with no weapon; rescue a mob; disarm an unarmed foe
+# - Locksmith fights a duck that Decimus fails to rescue them from; Seer (20, outside the group) can't bash a drunk
+#   fighting Decimus (kill stealing)
+# - Heroic fights a pet dragon (350) with a sword that won't come off, then a drunk with one that can't be dropped
+#   (the drunk keeps it), and kicks dirt in the drunk's eyes, and again once it's blind
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3005
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect lock
+Locksmith
+psswrd
+@return
+@return
+@connect seer
+Seer
+psswrd
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+set skill heroic all 100
+set skill locksmith all 100
+transfer cherub 3005
+transfer decimus 3005
+transfer locksmith 3005
+transfer heroic 3005
+transfer seer 3005
+@as lock
+follow heroic
+@as dec
+follow heroic
+@as hero
+group locksmith
+group decimus
+@as cher
+bash
+trip
+kick
+disarm
+@pulse 30
+@as god
+@mob 3124 3005
+force duck rest
+@as hero
+bash duck
+trip duck
+bash heroic
+@as god
+force duck stand
+@mob 350 3005
+@as hero
+trip dragon
+@as lock
+remove sword
+@pulse 4
+backstab duck
+rescue duck
+@as hero
+kill duck
+@pulse 12
+disarm
+@as god
+peace
+@as lock
+wield sword
+@pulse 4
+@as god
+@mob 3124 3005
+force duck kill locksmith
+@as dec
+rescue locksmith
+@pulse 12
+@as god
+peace
+@mob 3064 3005
+force drunk kill decimus
+@as seer
+bash drunk
+@as god
+peace
+slay dragon
+@mob 350 3005
+@obj 3021 3005
+set obj sword extra 4096
+force dragon get sword
+force dragon wield sword
+@as hero
+kill dragon
+@pulse 24
+disarm
+@pulse 24
+@as god
+peace
+slay dragon
+@mob 3064 3005
+@obj 3021 3005
+set obj sword extra 128
+force drunk get sword
+force drunk wield sword
+@as hero
+kill drunk
+@pulse 24
+disarm
+@pulse 24
+dirt
+@pulse 24
+dirt
+@pulse 24
+@state

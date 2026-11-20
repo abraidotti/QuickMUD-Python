@@ -1,0 +1,102 @@
+# The fighting skills, used by players, with violence_update on. Smokegod (60) sets every skill of Heroic (51, a
+# warrior) and Locksmith (30, a thief) to 100 and brings them, and Decimus, to the temple square (3005), away from
+# Hassan, who would join the fights. Heroic groups Locksmith. Decimus (10, a warrior) is too low for berserk. Each
+# skill's refusals come first: no one named or fought, no one here, yourself, and each skill's own.
+# - Heroic berserks (and again: "a little madder"), then fights a cityguard (3060, given a sword), and bashes, kicks
+#   and disarms it; the guard's own skills (bash, berserk, disarm) come up in its rounds
+# - Locksmith backstabs a vagabond (3063) with a dagger, kicks dirt, and trips it
+# - Smokegod sets another cityguard on Locksmith, and Heroic rescues Locksmith
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect lock
+Locksmith
+psswrd
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+set skill heroic all 100
+set skill locksmith all 100
+transfer heroic 3005
+transfer locksmith 3005
+transfer decimus 3005
+goto 3005
+@as lock
+follow heroic
+@as hero
+group locksmith
+bash
+bash nobody
+trip
+dirt
+kick
+disarm
+rescue
+rescue nobody
+rescue self
+rescue locksmith
+backstab
+backstab nobody
+backstab self
+@as dec
+berserk
+bash
+@as lock
+trip self
+@pulse 48
+dirt self
+bash
+rescue heroic
+@as hero
+berserk
+@pulse 24
+berserk
+@as god
+@mob 3060 3005
+load obj 3021
+give sword cityguard
+force cityguard wield sword
+@as hero
+bash cityguard
+@pulse 24
+kick
+@pulse 12
+disarm
+@pulse 24
+bash
+@pulse until 600 is DEAD!!
+@state
+@as god
+@mob 3063 3005
+@as lock
+@obj 3020 3005
+get dagger
+wield dagger
+backstab vagabond
+@pulse 24
+backstab vagabond
+dirt
+@pulse 24
+dirt
+trip
+@pulse 24
+@as god
+@mob 3060 3005
+force cityguard kill locksmith
+@as hero
+rescue locksmith
+@pulse until 600 is DEAD!!
+@state

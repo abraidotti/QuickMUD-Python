@@ -1,0 +1,69 @@
+# Weapons that burn, freeze and shock (effects.c), with violence_update on, in the temple square (3005), away from
+# Hassan. Each hit with such a weapon can blind (fire), chill (cold) or daze (shock) the victim, unless they save,
+# and toasts what they carry: potions, scrolls, wands, staves, pills, drink containers, jewellery and containers
+# (whose contents spill to the floor), each by its own chance.
+# - Heroic (51) wields a small sword made flaming, frost and shocking (values 1 2 4 1 67), set to level 40 by
+#   Smokegod (60), against a pet dragon (350), which picks up one of each
+# - a second dragon wields such a sword at level 10 against Decimus (10), who picks up the same
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3005
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+transfer heroic 3005
+transfer decimus 3005
+@obj 3021 3005 1 2 4 1 67
+set obj sword level 40
+@as hero
+get sword
+wield sword
+@as god
+@mob 350 3005
+@obj 105 3005
+@obj 1362 3005
+@obj 106 3005
+@obj 1378 3005
+@obj 100 3005
+@obj 611 3005
+@obj 104 3005
+@obj 3032 3005
+@obj 105 3005
+put potion bag
+force dragon get all
+@as hero
+kill dragon
+@pulse until 600 is DEAD!!
+@state
+@as god
+sacrifice corpse
+@mob 350 3005
+@obj 3021 3005 1 2 4 1 67
+set obj sword level 10
+force dragon get sword
+force dragon wield sword
+@obj 105 3005
+@obj 1362 3005
+@obj 106 3005
+@obj 1378 3005
+@obj 100 3005
+@obj 611 3005
+@obj 104 3005
+@as dec
+get all
+@as god
+force dragon kill decimus
+@pulse until 600 is DEAD!!
+@state

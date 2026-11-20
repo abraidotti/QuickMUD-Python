@@ -1,0 +1,414 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect dec"
+rng 51895 7f5599b5
+step 7 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect lock"
+rng 51895 7f5599b5
+step 12 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@return"
+out lock "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect hero"
+rng 51895 7f5599b5
+step 17 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out god "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@as god"
+rng 51895 7f5599b5
+step 22 "set skill heroic all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "set skill locksmith all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "transfer heroic 3005"
+out god "Heroic disappears in a mushroom cloud.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "transfer locksmith 3005"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out lock "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rHeroic the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "transfer decimus 3005"
+out god "Decimus disappears in a mushroom cloud.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rLocksmith the Recruit is here.\n\rHeroic the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "goto 3005"
+out god "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\rLocksmith the Recruit is here.\n\rHeroic the Recruit is here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "@as lock"
+rng 51895 7f5599b5
+step 29 "follow heroic"
+out lock "You now follow Heroic.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "@as hero"
+rng 51895 7f5599b5
+step 31 "group locksmith"
+out god "\n\rLocksmith joins Heroic's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith joins Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "You join Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Locksmith joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "bash"
+out hero "But you aren't fighting anyone!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "bash nobody"
+out hero "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "trip"
+out hero "But you aren't fighting anyone!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "dirt"
+out hero "But you aren't in combat!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "kick"
+out hero "You aren't fighting anyone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "disarm"
+out hero "You aren't fighting anyone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "rescue"
+out hero "Rescue whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "rescue nobody"
+out hero "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "rescue self"
+out hero "What about fleeing instead?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "rescue locksmith"
+out hero "That person is not fighting right now.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "backstab"
+out hero "Backstab whom?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "backstab nobody"
+out hero "They aren't here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "backstab self"
+out hero "How can you sneak up on yourself?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "@as dec"
+rng 51895 7f5599b5
+step 46 "berserk"
+out dec "You turn red in the face, but nothing happens.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "bash"
+out dec "But you aren't fighting anyone!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 48 "@as lock"
+rng 51895 7f5599b5
+step 49 "trip self"
+out god "\n\rLocksmith trips over his own feet!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "Locksmith trips over his own feet!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "You fall flat on your face!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith trips over his own feet!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "@pulse 48"
+rng 51895 7f5599b5
+step 51 "dirt self"
+out lock "Very funny.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "bash"
+out lock "Bashing? What's that?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 53 "rescue heroic"
+out lock "That person is not fighting right now.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 54 "@as hero"
+rng 51895 7f5599b5
+step 55 "berserk"
+out god "\n\rHeroic gets a wild look in his eyes.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic gets a wild look in his eyes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "Heroic gets a wild look in his eyes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Your pulse races as you are consumed by rage!\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 56 "@pulse 24"
+rng 51897 86bbd2a0
+step 57 "berserk"
+out hero "You get a little madder.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 58 "@as god"
+rng 51897 86bbd2a0
+step 59 "@mob 3060 3005"
+rng 51915 4fc7cf4e
+step 60 "load obj 3021"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created a small sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rSmokegod has created a small sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has created a small sword!\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 61 "give sword cityguard"
+out god "You give a small sword to the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gives a small sword to the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rSmokegod gives a small sword to the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod gives a small sword to the cityguard.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 62 "force cityguard wield sword"
+out god "The cityguard wields a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe cityguard wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe cityguard wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe cityguard wields a small sword.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 63 "@as hero"
+rng 51915 4fc7cf4e
+step 64 "bash cityguard"
+out god "Heroic sends the cityguard sprawling with a powerful bash.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic sends the cityguard sprawling with a powerful bash.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic sends the cityguard sprawling with a powerful bash.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You slam into the cityguard, and send her flying!\n\rYou dodge the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rYour slash grazes the cityguard.\n\rThe cityguard has some small wounds and bruises. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51944 0b11b767
+step 65 "@pulse 24"
+out god "\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe cityguard falls flat on her face.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard falls flat on her face.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard falls flat on her face.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rYour slash misses the cityguard.\n\rThe cityguard has some small wounds and bruises. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou evade the cityguard's bash, causing her to fall flat on her face.\n\rYour slash grazes the cityguard.\n\rYour slash scratches the cityguard.\n\rThe cityguard has quite a few wounds. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 51998 4a94600f
+step 66 "kick"
+out god "\n\rHeroic's kick hits the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's kick hits the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's kick hits the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Your kick hits the cityguard.\n\rThe cityguard has some big nasty wounds and scratches. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52002 bfac55ae
+step 67 "@pulse 12"
+out god "\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou parry the cityguard's attack.\n\rYour slash scratches the cityguard.\n\rYour slash grazes the cityguard.\n\rThe cityguard has some big nasty wounds and scratches. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52022 b45e5dae
+step 68 "disarm"
+out god "\n\rHeroic disarms the cityguard!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic disarms the cityguard!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic disarms the cityguard!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You disarm the cityguard!\n\rThe cityguard has some big nasty wounds and scratches. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52023 0093f888
+step 69 "@pulse 24"
+out god "\n\rHeroic's slash scratches the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou parry the cityguard's attack.\n\rYour slash scratches the cityguard.\n\rThe cityguard looks pretty hurt. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rYour slash misses the cityguard.\n\rThe cityguard looks pretty hurt. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52074 3162b0e6
+step 70 "bash"
+out god "\n\rHeroic sends the cityguard sprawling with a powerful bash.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic sends the cityguard sprawling with a powerful bash.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic sends the cityguard sprawling with a powerful bash.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You slam into the cityguard, and send her flying!\n\rThe cityguard looks pretty hurt. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52076 8f775e3e
+step 71 "@pulse until 600 is DEAD!!"
+pulses 33
+out god "\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe cityguard falls flat on her face.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou hear the cityguard's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard falls flat on her face.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou hear the cityguard's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard falls flat on her face.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou receive 0 experience points.\n\rYou hear the cityguard's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rYour slash misses the cityguard.\n\rThe cityguard is in awful condition. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou evade the cityguard's bash, causing her to fall flat on her face.\n\rYour slash grazes the cityguard.\n\rThe cityguard is in awful condition. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYour slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou receive 0 experience points.\n\rYou hear the cityguard's death cry.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52145 44b8a04c
+step 72 "@state"
+state room 3005 light 3 people player player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Heroic 51 pos 8 hit 29/29 mana 52/102 move 53/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 67108864 train 1 on 0 stats 19 13 13 13 13
+state   affect 109 level 51 duration 5 location 17 modifier 100 bitvector 67108864
+state   affect 109 level 51 duration 5 location 19 modifier 10 bitvector 67108864
+state   affect 109 level 51 duration 5 location 18 modifier 10 bitvector 67108864
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52145 44b8a04c
+step 73 "@as god"
+rng 52145 44b8a04c
+step 74 "@mob 3063 3005"
+rng 52148 7d4c045d
+step 75 "@as lock"
+rng 52148 7d4c045d
+step 76 "@obj 3020 3005"
+rng 52148 7d4c045d
+step 77 "get dagger"
+out god "\n\rLocksmith gets a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith gets a dagger.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52148 7d4c045d
+step 78 "wield dagger"
+out god "\n\rLocksmith stops using a sub issue sword.\n\rLocksmith wields a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith stops using a sub issue sword.\n\rLocksmith wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "You stop using a sub issue sword.\n\rYou wield a dagger.\n\rA dagger feels like a part of you!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith stops using a sub issue sword.\n\rLocksmith wields a dagger.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52148 7d4c045d
+step 79 "backstab vagabond"
+out god "\n\rLocksmith's backstab MUTILATES the vagabond!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith's backstab MUTILATES the vagabond!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "Your backstab MUTILATES the vagabond!\n\rThe vagabond has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith's backstab MUTILATES the vagabond!\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52152 cec18ac4
+step 80 "@pulse 24"
+out god "\n\rLocksmith's stab grazes the vagabond.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rLocksmith's stab grazes the vagabond.\n\rLocksmith's stab grazes the vagabond.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith's stab grazes the vagabond.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rLocksmith's stab grazes the vagabond.\n\rLocksmith's stab grazes the vagabond.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rYou parry the vagabond's attack.\n\rYour stab grazes the vagabond.\n\rThe vagabond has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the vagabond's attack.\n\rYour stab grazes the vagabond.\n\rYour stab grazes the vagabond.\n\rThe vagabond looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith's stab grazes the vagabond.\n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rLocksmith's stab grazes the vagabond.\n\rLocksmith's stab grazes the vagabond.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52195 3dfe5876
+step 81 "backstab vagabond"
+out lock "You're facing the wrong end.\n\rThe vagabond looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52195 3dfe5876
+step 82 "dirt"
+out god "\n\rThe vagabond is blinded by the dirt in his eyes!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe vagabond is blinded by the dirt in his eyes!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "The vagabond is blinded by the dirt in his eyes!\n\rThe vagabond looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe vagabond is blinded by the dirt in his eyes!\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52197 88c15b42
+step 83 "@pulse 24"
+out god "\n\rThe vagabond's trip misses Locksmith.\n\rLocksmith's stab hits the vagabond.\n\rLocksmith's stab grazes the vagabond.\n\rThe vagabond is DEAD!!\n\rThe vagabond's arm is sliced from his dead body.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe vagabond's trip misses Locksmith.\n\rLocksmith's stab hits the vagabond.\n\rLocksmith's stab grazes the vagabond.\n\rThe vagabond is DEAD!!\n\rThe vagabond's arm is sliced from his dead body.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rYou dodge the vagabond's attack.\n\rThe vagabond's trip misses you.\n\rYour stab hits the vagabond.\n\rYour stab grazes the vagabond.\n\rThe vagabond is DEAD!!\n\rYou receive 0 experience points.\n\rThe vagabond's arm is sliced from his dead body.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe vagabond's trip misses Locksmith.\n\rLocksmith's stab hits the vagabond.\n\rLocksmith's stab grazes the vagabond.\n\rThe vagabond is DEAD!!\n\rYou receive 0 experience points.\n\rThe vagabond's arm is sliced from his dead body.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52223 bf7beb78
+step 84 "dirt"
+out lock "But you aren't in combat!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52223 bf7beb78
+step 85 "trip"
+out lock "But you aren't fighting anyone!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52223 bf7beb78
+step 86 "@pulse 24"
+rng 52223 bf7beb78
+step 87 "@as god"
+rng 52223 bf7beb78
+step 88 "@mob 3060 3005"
+rng 52244 5648aaab
+step 89 "force cityguard kill locksmith"
+out god "The cityguard's punch maims Locksmith.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe cityguard's punch maims Locksmith.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe cityguard's punch maims you.\n\rThat really did HURT!\n\rThe cityguard is in excellent condition. \n\r\n\r<17hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe cityguard's punch maims Locksmith.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52256 a9464dc9
+step 90 "@as hero"
+rng 52256 a9464dc9
+step 91 "rescue locksmith"
+out god "Heroic rescues Locksmith!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic rescues Locksmith!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic rescues you!\n\r\n\r<17hp 102m 106mv> \xff\xf9"
+out hero "You rescue Locksmith!\n\rThe cityguard is in excellent condition. \n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52258 6e90d23c
+step 92 "@pulse until 600 is DEAD!!"
+pulses 135
+out god "\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe cityguard gets a wild look in his eyes.\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou hear the cityguard's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard gets a wild look in his eyes.\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou hear the cityguard's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash misses the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash misses the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rThe cityguard gets a wild look in his eyes.\n\rHeroic's slash scratches the cityguard.\n\rHeroic's slash scratches the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rHeroic's slash grazes the cityguard.\n\r\n\r<17hp 102m 106mv> \xff\xf9\n\rThe cityguard tries to disarm Heroic, but fails.\n\rHeroic's slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou receive 0 experience points.\n\rYou hear the cityguard's death cry.\n\r\n\r<17hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rThe cityguard has a few scratches. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou parry the cityguard's attack.\n\rYour slash scratches the cityguard.\n\rYour slash grazes the cityguard.\n\rYour slash scratches the cityguard.\n\rThe cityguard has quite a few wounds. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rThe cityguard has quite a few wounds. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rThe cityguard has quite a few wounds. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rYour slash misses the cityguard.\n\rYour slash scratches the cityguard.\n\rThe cityguard has some big nasty wounds and scratches. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou parry the cityguard's attack.\n\rYou parry the cityguard's attack.\n\rThe cityguard tries to disarm you, but fails.\n\rYour slash grazes the cityguard.\n\rThe cityguard has some big nasty wounds and scratches. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rYour slash scratches the cityguard.\n\rYour slash misses the cityguard.\n\rThe cityguard looks pretty hurt. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rThe cityguard tries to disarm you, but fails.\n\rYour slash grazes the cityguard.\n\rThe cityguard looks pretty hurt. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYou parry the cityguard's attack.\n\rYour slash scratches the cityguard.\n\rYour slash grazes the cityguard.\n\rThe cityguard is in awful condition. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rThe cityguard gets a wild look in his eyes.\n\rYour slash scratches the cityguard.\n\rYour slash scratches the cityguard.\n\rThe cityguard is in awful condition. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rYour slash grazes the cityguard.\n\rThe cityguard is in awful condition. \n\r\n\r<29hp 52m 53mv> \xff\xf9\n\rYou parry the cityguard's attack.\n\rThe cityguard tries to disarm you, but fails.\n\rYour slash scratches the cityguard.\n\rThe cityguard is DEAD!!\n\rYou receive 0 experience points.\n\rYou hear the cityguard's death cry.\n\r\n\r<29hp 52m 53mv> \xff\xf9"
+rng 52566 ecfc4b2b
+step 93 "@state"
+state room 3005 light 3 people player player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Locksmith 30 pos 8 hit 17/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3020 wear 16 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Heroic 51 pos 8 hit 29/29 mana 52/102 move 53/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 67108864 train 1 on 0 stats 19 13 13 13 13
+state   affect 109 level 51 duration 5 location 17 modifier 100 bitvector 67108864
+state   affect 109 level 51 duration 5 location 19 modifier 10 bitvector 67108864
+state   affect 109 level 51 duration 5 location 18 modifier 10 bitvector 67108864
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 14 wear -1 timer 6 cost 0 values 20 20 0 0 0
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52566 ecfc4b2b
