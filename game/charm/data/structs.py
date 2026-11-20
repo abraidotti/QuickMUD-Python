@@ -135,6 +135,15 @@ class SexType:
 
 
 @dataclass(frozen=True)
+class WiznetType:
+    """struct wiznet_type"""
+
+    name: str | None  # C: char *
+    flag: int  # C: long
+    level: int  # C: int
+
+
+@dataclass(frozen=True)
 class PcRaceType:
     """struct pc_race_type"""
 

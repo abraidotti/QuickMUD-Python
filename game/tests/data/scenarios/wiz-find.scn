@@ -1,0 +1,58 @@
+# Finding things: vnum (mfind, ofind and slookup), owhere, mwhere and sockets. In the temple (3001): Smokegod (60),
+# Cherub (52) and Decimus (10). Smokegod goes invisible at 60 carrying a small wand (106), so Cherub's owhere says
+# it's "somewhere". sockets (level 56, which Cherub isn't) lists each connection's descriptor (the scenario drivers
+# number them 100, 101, ...) and state. Cherub's stat of the wand says it's carried by "someone". With five more small
+# swords (3021), owhere sword finds more than 200 and stops at 200.
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+scroll 0
+vnum
+vnum obj
+vnum obj fountain
+vnum mob hassan
+vnum char nobodyxyz
+vnum obj nothingxyz
+vnum skill
+vnum skill sword
+vnum spell nothingxyz
+vnum skill all
+vnum fido
+owhere
+owhere nothingxyz
+owhere jukebox
+@obj 3021 3001
+@obj 3021 3001
+@obj 3021 3001
+@obj 3021 3001
+@obj 3021 3001
+owhere sword
+@obj 106 3001
+get wand
+invis
+@as cher
+scroll 0
+owhere wand
+stat obj wand
+mwhere
+mwhere hassan
+mwhere nobodyxyz
+sockets
+@as god
+invis
+sockets
+sockets decimus
+sockets nobodyxyz

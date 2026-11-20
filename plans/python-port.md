@@ -14,8 +14,9 @@ P3, the commands, started 2026-11-18 (#39), time box 8 PRs or 2026-12-02: PR 1 o
 and portals (the rest of `act_move.c`, and `act_enter.c`), with `port coverage`. PR 2 of 8 done (#48), information:
 the rest of `act_info.c`. PR 3 of 8 done (#56), talking: `act_comm.c` and `alias.c`. PR 4 of 8 done (#59), objects part 1:
 get, put, drop, give, wear and remove. PR 5 of 8 done (#62), objects part 2: the rest of `act_obj.c` (food and
-drink, shops, sacrifice, steal, and the magic items up to the spell). PR 6 of 8, boards and bans: `board.c` and
-`ban.c`, with the files they write.
+drink, shops, sacrifice, steal, and the magic items up to the spell). PR 6 of 8 done (#67), boards and bans: `board.c`
+and `ban.c`, with the files they write. PR 7 of 8, immortals part 1: `act_wiz.c`'s commands for looking and
+moving.
 
 ## Goal
 

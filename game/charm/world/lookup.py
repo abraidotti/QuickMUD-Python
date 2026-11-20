@@ -109,3 +109,11 @@ def find_spell(ch, name: str) -> int:
 def weapon_lookup(name: str) -> int:
     """The weapon_table row (not its WEAPON_ value), or -1."""
     return prefix_lookup(name, _WEAPONS)
+
+
+# C: special.c spec_name
+def spec_name(function: str) -> str | None:
+    """The spec_table name of a special procedure, or None (a mob's spec_fun holds the function's name)."""
+    from charm.data.specials import SPEC_TABLE
+
+    return next((s.name for s in SPEC_TABLE if s.function == function), None)

@@ -1,0 +1,86 @@
+# stat: rooms, objects and characters. In the temple (3001): Smokegod (60), Seraph (56), Decimus (10), Pickpocket (13,
+# who envenoms a small sword, 3021: an object affect with a duration) and Hassan (3011, a mob with a special procedure
+# and a spell affect). Rooms: the temple, 1206 (with extra descriptions, private and for implementors only, so Seraph
+# is refused) and 3005. Objects, each statted with its own lines: a pink potion (105), a small wand (106), a burnt
+# staff (1327), a water skin (3138, drink), a meat cleaver (1355, a weapon with flags), a dagger with attack 40 (the
+# closing row of attack_table: "(null)"), leather pants (3062, armour), a leather backpack (1345, a container that
+# lightens what's in it), herbs with an extra description (300), glasses (101, a prototype affect with no bits) and
+# winged sandals (904, a prototype affect with bits, and invisible: Smokegod sees them with holylight on). "stat NAME"
+# tries an object, then a character, then a room.
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@return
+@obj 3021 3001
+get sword
+envenom sword
+@pulse 36
+envenom sword
+@pulse 36
+@as god
+scroll 0
+@obj 105 3001
+@obj 106 3001
+@obj 1327 3001
+@obj 3138 3001
+@obj 1355 3001
+@obj 3020 3001 2 1 4 40 0
+@obj 3062 3001
+@obj 1345 3001
+@obj 300 3001
+@obj 101 3001
+@obj 904 3001
+stat
+stat room
+stat room 1206
+stat room 3005
+stat room nowhere
+stat obj
+stat obj nothing
+stat obj potion
+stat obj wand
+stat obj staff
+stat obj skin
+stat obj cleaver
+stat obj dagger
+stat obj pants
+stat obj backpack
+stat obj herbs
+stat obj glasses
+stat obj sandals
+holylight
+stat obj sandals
+holylight
+stat obj small
+stat potion
+stat pickpocket
+stat 3005
+stat nothing
+stat mob
+stat mob nobody
+stat mob decimus
+stat char hassan
+@as pick
+stat obj small
+@as god
+get dagger
+stat obj dagger
+@as ser
+scroll 0
+stat room 1206
+stat obj dagger

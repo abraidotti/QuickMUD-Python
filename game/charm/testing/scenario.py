@@ -94,6 +94,7 @@ class Player:
         peer.setblocking(False)
         d = new_descriptor()
         d.sock, d.game = game_end, self.game
+        d.fd = 100 + len(self.conns)  # the number the C driver dup2s the game's end to, so do_sockets agrees
         d.connected = C.CON_ANSI if self.game.config.ansiprompt else C.CON_GET_NAME
         d.ansi = bool(self.game.config.ansicolor)
         d.host = "scenario"

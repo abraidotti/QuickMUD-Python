@@ -466,35 +466,42 @@ def do_pmote(ch, argument: str) -> None:
             act("$N $t", vch, argument, ch, C.TO_CHAR)
             MOB_TRIGGER[0] = True
             continue
-        temp, last, n = [argument[:at]], [], 0  # n: where the C's name pointer is in vch->name
-        for letter in argument[at:]:
-            if letter == "'" and matches == len(name):
-                temp.append("r")
-                continue
-            if letter == "s" and matches == len(name):
-                matches = 0
-                continue
-            if matches == len(name):
-                matches = 0
-            if n < len(name) and letter == name[n]:  # past the end, the C compares with the NUL
-                matches += 1
-                n += 1
-                if matches == len(name):
-                    temp.append("you")
-                    last = []
-                    n = 0
-                    continue
-                last.append(letter)
-                continue
-            matches = 0
-            temp += last
-            temp.append(letter)
-            last = []
-            n = 0
-        # sic: a partial match left in last at the end is dropped (#54)
+        temp, matches = name_to_you(argument, at, name, matches)
         MOB_TRIGGER[0] = False
-        act("$N $t", vch, "".join(temp), ch, C.TO_CHAR)
+        act("$N $t", vch, temp, ch, C.TO_CHAR)
         MOB_TRIGGER[0] = True
+
+
+def name_to_you(argument: str, at: int, name: str, matches: int) -> tuple[str, int]:
+    """do_pmote's and do_smote's loop: argument with name (first found at `at`) turned into "you", "Name's" into
+    "your" and "Names" into "you", and the match count it ends with (the C's matches outlives one player)."""
+    temp, last, n = [argument[:at]], [], 0  # n: where the C's name pointer is in vch->name
+    for letter in argument[at:]:
+        if letter == "'" and matches == len(name):
+            temp.append("r")
+            continue
+        if letter == "s" and matches == len(name):
+            matches = 0
+            continue
+        if matches == len(name):
+            matches = 0
+        if n < len(name) and letter == name[n]:  # past the end, the C compares with the NUL
+            matches += 1
+            n += 1
+            if matches == len(name):
+                temp.append("you")
+                last = []
+                n = 0
+                continue
+            last.append(letter)
+            continue
+        matches = 0
+        temp += last
+        temp.append(letter)
+        last = []
+        n = 0
+    # sic: a partial match left in last at the end is dropped (#54)
+    return "".join(temp), matches
 
 
 # C: act_comm.c do_pose

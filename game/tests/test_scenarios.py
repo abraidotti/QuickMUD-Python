@@ -79,6 +79,14 @@ class WhereTheCCrashes(unittest.TestCase):
         self.assertEqual(out[-2], 'step 7 "%s"' % to)
         self.assertTrue(out[-1].startswith("stopped CWouldCrash: board.c handle_con_note_to:"), out[-1])
 
+    def test_a_long_prefix(self):
+        # do_prefix sprintfs "Prefix changed to %s.\r\n" into buf[MAX_INPUT_LENGTH] (256), and never sends it: a
+        # 235-character prefix overflows it, and glibc aborts with "buffer overflow detected" (abraidotti/charm#69).
+        text = "@connect god\nSmokegod\nsmoke123\n@return\n@return\nprefix say\nprefix %s\nlook\n" % ("x" * 235)
+        out = play_fresh(text, REPO)
+        self.assertEqual(out[-2], 'step 7 "prefix %s"' % ("x" * 235))
+        self.assertTrue(out[-1].startswith("stopped CWouldCrash: act_wiz.c do_prefix:"), out[-1])
+
 
 class Difference(unittest.TestCase):
     C = ['step 1 "look"', 'out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]

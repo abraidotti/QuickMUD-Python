@@ -134,6 +134,14 @@ static void connect_as (const char *name)
         exit (2);
     }
     fcntl (sv[1], F_SETFL, O_NONBLOCK);
+    /* The game's end gets descriptor 100 + its index, as the Python driver numbers it, so do_sockets agrees. */
+    if (dup2 (sv[0], 100 + nconn) < 0)
+    {
+        fprintf (stderr, "scenario: can't number %s's descriptor\n", name);
+        exit (2);
+    }
+    close (sv[0]);
+    sv[0] = 100 + nconn;
     d = new_descriptor ();
     d->descriptor = sv[0];
     d->connected = mud_ansiprompt ? CON_ANSI : CON_GET_NAME;

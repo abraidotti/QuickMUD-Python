@@ -40,6 +40,7 @@ class Descriptor:
     editor: int = 0  # OLC
     game: object | None = field(default=None, repr=False)  # the Game it belongs to (for descriptor_list)
     closed: bool = field(default=False, repr=False)
+    fd: int | None = field(default=None, repr=False)  # the C's descriptor number, where it isn't the socket's
 
     @property
     def outtop(self) -> int:
@@ -47,7 +48,7 @@ class Descriptor:
 
     @property
     def fileno(self) -> int:
-        return self.sock.fileno()
+        return self.fd if self.fd is not None else self.sock.fileno()
 
 
 # C: recycle.c new_descriptor

@@ -15,7 +15,7 @@ from __future__ import annotations
 from charm.core.cint import c_div, int32, sh_int
 from charm.core.errors import NotPorted
 from charm.core.log import bug
-from charm.core.strings import str_cmp, str_prefix
+from charm.core.strings import lower, str_cmp, str_prefix
 from charm.net.act import act
 from charm.data import constants as C
 from charm.entities.game import Game, WeatherInfo
@@ -1216,4 +1216,345 @@ def get_extra_descr(name: str, eds) -> str | None:
     for ed in eds:
         if is_name(name, ed.keyword):
             return ed.description
+    return None
+
+
+def _bit_names(vector: int, bits) -> str:
+    """The bit-name functions' strcat chains: each set bit's name, in the C's order, or "none"."""
+    names = [name for bit, name in bits if vector & bit]
+    return " ".join(names) if names else "none"
+
+
+# The names handler.c's *_bit_name functions give each bit, in the order they test them.
+_AFFECT_BITS = (
+    (C.AFF_BLIND, "blind"),
+    (C.AFF_INVISIBLE, "invisible"),
+    (C.AFF_DETECT_EVIL, "detect_evil"),
+    (C.AFF_DETECT_GOOD, "detect_good"),
+    (C.AFF_DETECT_INVIS, "detect_invis"),
+    (C.AFF_DETECT_MAGIC, "detect_magic"),
+    (C.AFF_DETECT_HIDDEN, "detect_hidden"),
+    (C.AFF_SANCTUARY, "sanctuary"),
+    (C.AFF_FAERIE_FIRE, "faerie_fire"),
+    (C.AFF_INFRARED, "infrared"),
+    (C.AFF_CURSE, "curse"),
+    (C.AFF_POISON, "poison"),
+    (C.AFF_PROTECT_EVIL, "prot_evil"),
+    (C.AFF_PROTECT_GOOD, "prot_good"),
+    (C.AFF_SLEEP, "sleep"),
+    (C.AFF_SNEAK, "sneak"),
+    (C.AFF_HIDE, "hide"),
+    (C.AFF_CHARM, "charm"),
+    (C.AFF_FLYING, "flying"),
+    (C.AFF_PASS_DOOR, "pass_door"),
+    (C.AFF_BERSERK, "berserk"),
+    (C.AFF_CALM, "calm"),
+    (C.AFF_HASTE, "haste"),
+    (C.AFF_SLOW, "slow"),
+    (C.AFF_PLAGUE, "plague"),
+    (C.AFF_DARK_VISION, "dark_vision"),
+)
+_EXTRA_BITS = (
+    (C.ITEM_GLOW, "glow"),
+    (C.ITEM_HUM, "hum"),
+    (C.ITEM_DARK, "dark"),
+    (C.ITEM_LOCK, "lock"),
+    (C.ITEM_EVIL, "evil"),
+    (C.ITEM_INVIS, "invis"),
+    (C.ITEM_MAGIC, "magic"),
+    (C.ITEM_NODROP, "nodrop"),
+    (C.ITEM_BLESS, "bless"),
+    (C.ITEM_ANTI_GOOD, "anti-good"),
+    (C.ITEM_ANTI_EVIL, "anti-evil"),
+    (C.ITEM_ANTI_NEUTRAL, "anti-neutral"),
+    (C.ITEM_NOREMOVE, "noremove"),
+    (C.ITEM_INVENTORY, "inventory"),
+    (C.ITEM_NOPURGE, "nopurge"),
+    (C.ITEM_VIS_DEATH, "vis_death"),
+    (C.ITEM_ROT_DEATH, "rot_death"),
+    (C.ITEM_NOLOCATE, "no_locate"),
+    (C.ITEM_SELL_EXTRACT, "sell_extract"),
+    (C.ITEM_BURN_PROOF, "burn_proof"),
+    (C.ITEM_NOUNCURSE, "no_uncurse"),
+)
+_ACT_NPC_BITS = (
+    (C.ACT_SENTINEL, "sentinel"),
+    (C.ACT_SCAVENGER, "scavenger"),
+    (C.ACT_AGGRESSIVE, "aggressive"),
+    (C.ACT_STAY_AREA, "stay_area"),
+    (C.ACT_WIMPY, "wimpy"),
+    (C.ACT_PET, "pet"),
+    (C.ACT_TRAIN, "train"),
+    (C.ACT_PRACTICE, "practice"),
+    (C.ACT_UNDEAD, "undead"),
+    (C.ACT_CLERIC, "cleric"),
+    (C.ACT_MAGE, "mage"),
+    (C.ACT_THIEF, "thief"),
+    (C.ACT_WARRIOR, "warrior"),
+    (C.ACT_NOALIGN, "no_align"),
+    (C.ACT_NOPURGE, "no_purge"),
+    (C.ACT_IS_HEALER, "healer"),
+    (C.ACT_IS_CHANGER, "changer"),
+    (C.ACT_GAIN, "skill_train"),
+    (C.ACT_UPDATE_ALWAYS, "update_always"),
+)
+_ACT_PC_BITS = (
+    (C.PLR_AUTOASSIST, "autoassist"),
+    (C.PLR_AUTOEXIT, "autoexit"),
+    (C.PLR_AUTOLOOT, "autoloot"),
+    (C.PLR_AUTOSAC, "autosac"),
+    (C.PLR_AUTOGOLD, "autogold"),
+    (C.PLR_AUTOSPLIT, "autosplit"),
+    (C.PLR_HOLYLIGHT, "holy_light"),
+    (C.PLR_CANLOOT, "loot_corpse"),
+    (C.PLR_NOSUMMON, "no_summon"),
+    (C.PLR_NOFOLLOW, "no_follow"),
+    (C.PLR_FREEZE, "frozen"),
+    (C.PLR_THIEF, "thief"),
+    (C.PLR_KILLER, "killer"),
+)
+_COMM_BITS = (
+    (C.COMM_QUIET, "quiet"),
+    (C.COMM_DEAF, "deaf"),
+    (C.COMM_NOWIZ, "no_wiz"),
+    (C.COMM_NOAUCTION, "no_auction"),
+    (C.COMM_NOGOSSIP, "no_gossip"),
+    (C.COMM_NOQUESTION, "no_question"),
+    (C.COMM_NOMUSIC, "no_music"),
+    (C.COMM_NOQUOTE, "no_quote"),
+    (C.COMM_COMPACT, "compact"),
+    (C.COMM_BRIEF, "brief"),
+    (C.COMM_PROMPT, "prompt"),
+    (C.COMM_COMBINE, "combine"),
+    (C.COMM_NOEMOTE, "no_emote"),
+    (C.COMM_NOSHOUT, "no_shout"),
+    (C.COMM_NOTELL, "no_tell"),
+    (C.COMM_NOCHANNELS, "no_channels"),
+)
+_IMM_BITS = (
+    (C.IMM_SUMMON, "summon"),
+    (C.IMM_CHARM, "charm"),
+    (C.IMM_MAGIC, "magic"),
+    (C.IMM_WEAPON, "weapon"),
+    (C.IMM_BASH, "blunt"),
+    (C.IMM_PIERCE, "piercing"),
+    (C.IMM_SLASH, "slashing"),
+    (C.IMM_FIRE, "fire"),
+    (C.IMM_COLD, "cold"),
+    (C.IMM_LIGHTNING, "lightning"),
+    (C.IMM_ACID, "acid"),
+    (C.IMM_POISON, "poison"),
+    (C.IMM_NEGATIVE, "negative"),
+    (C.IMM_HOLY, "holy"),
+    (C.IMM_ENERGY, "energy"),
+    (C.IMM_MENTAL, "mental"),
+    (C.IMM_DISEASE, "disease"),
+    (C.IMM_DROWNING, "drowning"),
+    (C.IMM_LIGHT, "light"),
+    (C.VULN_IRON, "iron"),
+    (C.VULN_WOOD, "wood"),
+    (C.VULN_SILVER, "silver"),
+)
+_WEAR_BITS = (
+    (C.ITEM_TAKE, "take"),
+    (C.ITEM_WEAR_FINGER, "finger"),
+    (C.ITEM_WEAR_NECK, "neck"),
+    (C.ITEM_WEAR_BODY, "torso"),
+    (C.ITEM_WEAR_HEAD, "head"),
+    (C.ITEM_WEAR_LEGS, "legs"),
+    (C.ITEM_WEAR_FEET, "feet"),
+    (C.ITEM_WEAR_HANDS, "hands"),
+    (C.ITEM_WEAR_ARMS, "arms"),
+    (C.ITEM_WEAR_SHIELD, "shield"),
+    (C.ITEM_WEAR_ABOUT, "body"),
+    (C.ITEM_WEAR_WAIST, "waist"),
+    (C.ITEM_WEAR_WRIST, "wrist"),
+    (C.ITEM_WIELD, "wield"),
+    (C.ITEM_HOLD, "hold"),
+    (C.ITEM_NO_SAC, "nosac"),
+    (C.ITEM_WEAR_FLOAT, "float"),
+)
+_FORM_BITS = (
+    (C.FORM_POISON, "poison"),
+    (C.FORM_EDIBLE, "edible"),
+    (C.FORM_MAGICAL, "magical"),
+    (C.FORM_INSTANT_DECAY, "instant_rot"),
+    (C.FORM_OTHER, "other"),
+    (C.FORM_ANIMAL, "animal"),
+    (C.FORM_SENTIENT, "sentient"),
+    (C.FORM_UNDEAD, "undead"),
+    (C.FORM_CONSTRUCT, "construct"),
+    (C.FORM_MIST, "mist"),
+    (C.FORM_INTANGIBLE, "intangible"),
+    (C.FORM_BIPED, "biped"),
+    (C.FORM_CENTAUR, "centaur"),
+    (C.FORM_INSECT, "insect"),
+    (C.FORM_SPIDER, "spider"),
+    (C.FORM_CRUSTACEAN, "crustacean"),
+    (C.FORM_WORM, "worm"),
+    (C.FORM_BLOB, "blob"),
+    (C.FORM_MAMMAL, "mammal"),
+    (C.FORM_BIRD, "bird"),
+    (C.FORM_REPTILE, "reptile"),
+    (C.FORM_SNAKE, "snake"),
+    (C.FORM_DRAGON, "dragon"),
+    (C.FORM_AMPHIBIAN, "amphibian"),
+    (C.FORM_FISH, "fish"),
+    (C.FORM_COLD_BLOOD, "cold_blooded"),
+)
+_PART_BITS = (
+    (C.PART_HEAD, "head"),
+    (C.PART_ARMS, "arms"),
+    (C.PART_LEGS, "legs"),
+    (C.PART_HEART, "heart"),
+    (C.PART_BRAINS, "brains"),
+    (C.PART_GUTS, "guts"),
+    (C.PART_HANDS, "hands"),
+    (C.PART_FEET, "feet"),
+    (C.PART_FINGERS, "fingers"),
+    (C.PART_EAR, "ears"),
+    (C.PART_EYE, "eyes"),
+    (C.PART_LONG_TONGUE, "long_tongue"),
+    (C.PART_EYESTALKS, "eyestalks"),
+    (C.PART_TENTACLES, "tentacles"),
+    (C.PART_FINS, "fins"),
+    (C.PART_WINGS, "wings"),
+    (C.PART_TAIL, "tail"),
+    (C.PART_CLAWS, "claws"),
+    (C.PART_FANGS, "fangs"),
+    (C.PART_HORNS, "horns"),
+    (C.PART_SCALES, "scales"),
+)
+_WEAPON_BITS = (
+    (C.WEAPON_FLAMING, "flaming"),
+    (C.WEAPON_FROST, "frost"),
+    (C.WEAPON_VAMPIRIC, "vampiric"),
+    (C.WEAPON_SHARP, "sharp"),
+    (C.WEAPON_VORPAL, "vorpal"),
+    (C.WEAPON_TWO_HANDS, "two-handed"),
+    (C.WEAPON_SHOCKING, "shocking"),
+    (C.WEAPON_POISON, "poison"),
+)
+_CONT_BITS = (
+    (C.CONT_CLOSEABLE, "closable"),
+    (C.CONT_PICKPROOF, "pickproof"),
+    (C.CONT_CLOSED, "closed"),
+    (C.CONT_LOCKED, "locked"),
+)
+_OFF_BITS = (
+    (C.OFF_AREA_ATTACK, "area attack"),
+    (C.OFF_BACKSTAB, "backstab"),
+    (C.OFF_BASH, "bash"),
+    (C.OFF_BERSERK, "berserk"),
+    (C.OFF_DISARM, "disarm"),
+    (C.OFF_DODGE, "dodge"),
+    (C.OFF_FADE, "fade"),
+    (C.OFF_FAST, "fast"),
+    (C.OFF_KICK, "kick"),
+    (C.OFF_KICK_DIRT, "kick_dirt"),
+    (C.OFF_PARRY, "parry"),
+    (C.OFF_RESCUE, "rescue"),
+    (C.OFF_TAIL, "tail"),
+    (C.OFF_TRIP, "trip"),
+    (C.OFF_CRUSH, "crush"),
+    (C.ASSIST_ALL, "assist_all"),
+    (C.ASSIST_ALIGN, "assist_align"),
+    (C.ASSIST_RACE, "assist_race"),
+    (C.ASSIST_PLAYERS, "assist_players"),
+    (C.ASSIST_GUARD, "assist_guard"),
+    (C.ASSIST_VNUM, "assist_vnum"),
+)
+
+
+# C: handler.c affect_bit_name
+def affect_bit_name(vector: int) -> str:
+    return _bit_names(vector, _AFFECT_BITS)
+
+
+# C: handler.c extra_bit_name
+def extra_bit_name(extra_flags: int) -> str:
+    return _bit_names(extra_flags, _EXTRA_BITS)
+
+
+# C: handler.c comm_bit_name
+def comm_bit_name(comm_flags: int) -> str:
+    return _bit_names(comm_flags, _COMM_BITS)
+
+
+# C: handler.c imm_bit_name
+def imm_bit_name(imm_flags: int) -> str:
+    return _bit_names(imm_flags, _IMM_BITS)
+
+
+# C: handler.c wear_bit_name
+def wear_bit_name(wear_flags: int) -> str:
+    return _bit_names(wear_flags, _WEAR_BITS)
+
+
+# C: handler.c form_bit_name
+def form_bit_name(form_flags: int) -> str:
+    return _bit_names(form_flags, _FORM_BITS)
+
+
+# C: handler.c part_bit_name
+def part_bit_name(part_flags: int) -> str:
+    return _bit_names(part_flags, _PART_BITS)
+
+
+# C: handler.c weapon_bit_name
+def weapon_bit_name(weapon_flags: int) -> str:
+    return _bit_names(weapon_flags, _WEAPON_BITS)
+
+
+# C: handler.c cont_bit_name
+def cont_bit_name(cont_flags: int) -> str:
+    return _bit_names(cont_flags, _CONT_BITS)
+
+
+# C: handler.c off_bit_name
+def off_bit_name(off_flags: int) -> str:
+    return _bit_names(off_flags, _OFF_BITS)
+
+
+# C: handler.c act_bit_name
+def act_bit_name(act_flags: int) -> str:
+    """A mob's act flags (npc first), or a player's (player first)."""
+    if act_flags & C.ACT_IS_NPC:
+        return " ".join(["npc"] + [name for bit, name in _ACT_NPC_BITS if act_flags & bit])
+    return " ".join(["player"] + [name for bit, name in _ACT_PC_BITS if act_flags & bit])
+
+
+# C: handler.c item_name
+def item_name(item_type: int) -> str:
+    from charm.data.items import ITEM_TABLE
+
+    return next((t.name for t in ITEM_TABLE if t.type == item_type), "none")
+
+
+# C: handler.c wiznet_lookup
+def wiznet_lookup(name: str) -> int:
+    """"returns a flag for wiznet": the index in wiznet_table of the first option name is a prefix of, or -1."""
+    from charm.data.characters import WIZNET_TABLE
+
+    for i, w in enumerate(WIZNET_TABLE):
+        if lower(name[:1]) == lower(w.name[:1]) and str_prefix(name, w.name):
+            return i
+    return -1
+
+
+# C: handler.c get_obj_world
+def get_obj_world(ch: Char, argument: str) -> Obj | None:
+    """The object called argument here (get_obj_here), else the nth such object in the world that ch can see."""
+    from charm.commands.interp import number_argument
+
+    obj = get_obj_here(ch, argument)
+    if obj is not None:
+        return obj
+    number, arg = number_argument(argument)
+    count = 0
+    for obj in game_module.current.object_list:
+        if can_see_obj(ch, obj) and is_name(arg, obj.name):
+            count += 1
+            if count == number:
+                return obj
     return None

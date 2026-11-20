@@ -1,0 +1,384 @@
+sources b411b98fb41461f4
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect ser"
+rng 51895 7f5599b5
+step 7 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect cher"
+rng 51895 7f5599b5
+step 12 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 15 "@return"
+out god "\n\rCherub has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect dec"
+rng 51895 7f5599b5
+step 17 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@as cher"
+rng 51895 7f5599b5
+step 22 "goto"
+out cher "Goto where?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "goto nowhere"
+out cher "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 24 "goto 99999"
+out cher "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 25 "goto 3005"
+out god "\n\rCherub leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub leaves in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 26 "goto decimus"
+out god "\n\rCherub appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 27 "goto fountain"
+out cher "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 28 "goto decimus"
+out god "\n\rCherub leaves in a swirling mist.\n\rCherub appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub leaves in a swirling mist.\n\rCherub appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub leaves in a swirling mist.\n\rCherub appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 29 "at 3005 look"
+out cher "Huh?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 30 "@as ser"
+rng 52398 7bb10bbf
+step 31 "at"
+out ser "At where what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 32 "at 3005"
+out ser "At where what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52398 7bb10bbf
+step 33 "at nowhere look"
+out ser "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 34 "at 3005 look"
+out ser "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 35 "at 1205 look"
+out ser "That room is private right now.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 36 "at decimus say hello from afar"
+out god "\n\rSeraph says 'hello from afar'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "You say 'hello from afar'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSeraph says 'hello from afar'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph says 'hello from afar'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 37 "poofin"
+out ser "Your poofin is \n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 38 "poofin appears"
+out ser "You must include your name.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 39 "poofin Seraph glides in on a sunbeam."
+out ser "Your poofin is now Seraph glides in on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 40 "poofout Seraph glides out on a sunbeam."
+out ser "Your poofout is now Seraph glides out on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 41 "poofin"
+out ser "Your poofin is Seraph glides in on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 42 "goto 3005"
+out god "\n\rSeraph glides out on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSeraph glides out on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph glides out on a sunbeam.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 43 "goto 3001"
+out god "\n\rSeraph glides in on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSeraph glides in on a sunbeam.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph glides in on a sunbeam.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 44 "goto 1205"
+out ser "That room is private right now.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 45 "@as god"
+rng 52653 854802e9
+step 46 "goto 1205"
+out god "The Eye of the Hurricane\n\r  The shrieking winds of a monstrous storm surround you, spinning you around\n\rin an endless web of fury. But then, in the middle of turmoil, you find a\n\rstrange calm. You find yourself hovering in the calm eye of a hurricane. All\n\raround you you can see the desruction caused by the powerful storm. White\n\rhot flashes of lightning flicker from the depths of the hurricane.  But\n\reverything is strangely peaceful in here, with the sun shining in from above\n\rand a flock of birds winging across the sky.  You stretch out and relax, this\n\rstorm is going to be here a while.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 47 "goto 3001"
+out god "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rCherub the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52653 854802e9
+step 48 "violate"
+out god "Goto where?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52653 854802e9
+step 49 "violate nowhere"
+out god "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 50 "violate 3005"
+out god "That room isn't private, use goto.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 51 "violate 1205"
+out god "The Eye of the Hurricane\n\r  The shrieking winds of a monstrous storm surround you, spinning you around\n\rin an endless web of fury. But then, in the middle of turmoil, you find a\n\rstrange calm. You find yourself hovering in the calm eye of a hurricane. All\n\raround you you can see the desruction caused by the powerful storm. White\n\rhot flashes of lightning flicker from the depths of the hurricane.  But\n\reverything is strangely peaceful in here, with the sun shining in from above\n\rand a flock of birds winging across the sky.  You stretch out and relax, this\n\rstorm is going to be here a while.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 52 "goto 3001"
+out god "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rCherub the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 53 "transfer"
+out god "Transfer whom (and where)?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52893 ea9ce66b
+step 54 "transfer nobody"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53146 6a43d15f
+step 55 "transfer decimus nowhere"
+out god "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 56 "transfer decimus 3005"
+out god "Decimus disappears in a mushroom cloud.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 57 "transfer decimus"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rSeraph the Smoke Test is here.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 58 "transfer decimus 1205"
+out god "Decimus disappears in a mushroom cloud.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Eye of the Hurricane\n\r  The shrieking winds of a monstrous storm surround you, spinning you around\n\rin an endless web of fury. But then, in the middle of turmoil, you find a\n\rstrange calm. You find yourself hovering in the calm eye of a hurricane. All\n\raround you you can see the desruction caused by the powerful storm. White\n\rhot flashes of lightning flicker from the depths of the hurricane.  But\n\reverything is strangely peaceful in here, with the sun shining in from above\n\rand a flock of birds winging across the sky.  You stretch out and relax, this\n\rstorm is going to be here a while.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 59 "@as ser"
+rng 53386 7ac5cc5c
+step 60 "transfer decimus 1205"
+out ser "That room is private right now.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 61 "transfer decimus"
+out god "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeraph has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rSeraph the Smoke Test is here.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 62 "@as god"
+rng 53386 7ac5cc5c
+step 63 "transfer all 3005"
+out god "Decimus disappears in a mushroom cloud.\n\rOk.\n\rCherub disappears in a mushroom cloud.\n\rOk.\n\rSeraph disappears in a mushroom cloud.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus disappears in a mushroom cloud.\n\rCherub disappears in a mushroom cloud.\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rCherub the Smoke Test is here.\n\rDecimus the Recruit is here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus disappears in a mushroom cloud.\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\rSeraph arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rCherub arrives from a puff of smoke.\n\rSeraph arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 64 "transfer all"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\rCherub arrives from a puff of smoke.\n\rOk.\n\rSeraph arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus disappears in a mushroom cloud.\n\rCherub disappears in a mushroom cloud.\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus disappears in a mushroom cloud.\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rSeraph arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rCherub arrives from a puff of smoke.\n\rSeraph arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 65 "@as ser"
+rng 53386 7ac5cc5c
+step 66 "gecho"
+out ser "Global echo what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 67 "gecho Hello, world."
+out god "\n\rglobal> Hello, world.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "global> Hello, world.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHello, world.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHello, world.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 68 "echo"
+out ser "Local echo what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 69 "echo Hello, room."
+out god "\n\rlocal> Hello, room.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "local> Hello, room.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHello, room.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHello, room.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 70 "zecho"
+out ser "Zone echo what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 71 "zecho Hello, zone."
+out god "\n\rzone> Hello, zone.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "zone> Hello, zone.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHello, zone.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHello, zone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 72 "pecho"
+out ser "Personal echo what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 73 "pecho decimus"
+out ser "Personal echo what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53386 7ac5cc5c
+step 74 "pecho nobody hello"
+out ser "Target not found.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 75 "pecho decimus hello, Decimus."
+out ser "personal> hello, Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rhello, Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 76 "pecho smokegod hello, Smokegod."
+out god "\n\rpersonal> hello, Smokegod.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "personal> hello, Smokegod.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 77 "@as god"
+rng 53630 e1cf5db2
+step 78 "pecho seraph hello, Seraph."
+out god "personal> hello, Seraph.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rhello, Seraph.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 79 "@as cher"
+rng 53630 e1cf5db2
+step 80 "smote"
+out cher "Emote what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 81 "smote waves"
+out cher "You must include your name in an smote.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 82 "smote Cherub waves at Decimus, and at Decimus's sword."
+out god "\n\rCherub waves at Decimus, and at Decimus's sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub waves at Decimus, and at Decimus's sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "Cherub waves at Decimus, and at Decimus's sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub waves at you, and at your sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 83 "invis"
+out god "\n\rCherub slowly fades into thin air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub slowly fades into thin air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You slowly vanish into thin air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSomeone slowly fades into thin air.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 84 "invis"
+out god "\n\rCherub slowly fades into existence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub slowly fades into existence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You slowly fade back into existence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub slowly fades into existence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 85 "invis 1"
+out cher "Invis level must be between 2 and your level.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 86 "invis 99"
+out cher "Invis level must be between 2 and your level.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 87 "invis 52"
+out god "\n\rCherub slowly fades into thin air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub slowly fades into thin air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You slowly vanish into thin air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSomeone slowly fades into thin air.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 88 "goto 3005"
+out god "\n\rCherub leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 89 "goto 3001"
+out god "\n\rCherub appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub appears in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 90 "invis"
+out god "\n\rCherub slowly fades into existence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub slowly fades into existence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You slowly fade back into existence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub slowly fades into existence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 91 "incognito"
+out god "\n\rCherub cloaks his presence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub cloaks his presence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You cloak your presence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub cloaks his presence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 92 "incognito"
+out god "\n\rCherub is no longer cloaked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub is no longer cloaked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You are no longer cloaked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub is no longer cloaked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 93 "incognito 99"
+out cher "Incog level must be between 2 and your level.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 94 "incognito 52"
+out god "\n\rCherub cloaks his presence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub cloaks his presence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You cloak your presence.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub cloaks his presence.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 95 "incognito"
+out god "\n\rCherub is no longer cloaked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rCherub is no longer cloaked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "You are no longer cloaked.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub is no longer cloaked.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53630 e1cf5db2
+step 96 "@as ser"
+rng 53630 e1cf5db2
+step 97 "at 3005 quit"
+out ser "Alas, all good things must come to an end.\n\r"
+closed ser
+rng 53630 e1cf5db2
+step 98 "@as god"
+rng 53630 e1cf5db2
+step 99 "look"
+out god "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53630 e1cf5db2
