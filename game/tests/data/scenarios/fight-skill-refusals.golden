@@ -1,0 +1,489 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3005"
+out god "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect cher"
+rng 51895 7f5599b5
+step 8 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@connect dec"
+rng 51895 7f5599b5
+step 13 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 14 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 15 "@return"
+out cher "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect lock"
+rng 51895 7f5599b5
+step 18 "Locksmith"
+out lock "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out lock "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out lock "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rCityguard Head Quarters\n\r  You are inside a tidy office.  A big desk made from dark wood is standing\n\rin the centre of the room.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@return"
+out lock "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@connect seer"
+rng 51895 7f5599b5
+step 23 "Seer"
+out seer "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 24 "psswrd"
+out seer "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 25 "@return"
+out cher "\n\rSeer has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "@return"
+out seer "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "@connect hero"
+rng 51895 7f5599b5
+step 28 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 29 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 30 "@return"
+out cher "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeer the Recruit is here.\n\rDecimus the Recruit is here.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "@as god"
+rng 51895 7f5599b5
+step 33 "set skill heroic all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "set skill locksmith all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "transfer cherub 3005"
+out god "Cherub arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCherub disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rCherub disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rCherub disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "transfer decimus 3005"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rCherub the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "transfer locksmith 3005"
+out god "Locksmith arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rLocksmith arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rDecimus the Recruit is here.\n\rCherub the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "transfer heroic 3005"
+out god "Heroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHeroic arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rLocksmith the Recruit is here.\n\rDecimus the Recruit is here.\n\rCherub the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "transfer seer 3005"
+out god "Seer arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSeer arrives from a puff of smoke.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeer arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rSeer arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rHeroic the Recruit is here.\n\rLocksmith the Recruit is here.\n\rDecimus the Recruit is here.\n\rCherub the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSeer arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "@as lock"
+rng 51895 7f5599b5
+step 41 "follow heroic"
+out lock "You now follow Heroic.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "@as dec"
+rng 51895 7f5599b5
+step 43 "follow heroic"
+out dec "You now follow Heroic.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "@as hero"
+rng 51895 7f5599b5
+step 45 "group locksmith"
+out god "\n\rLocksmith joins Heroic's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rLocksmith joins Heroic's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "Locksmith joins Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rYou join Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rLocksmith joins Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Locksmith joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 46 "group decimus"
+out god "\n\rDecimus joins Heroic's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus joins Heroic's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou join Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rDecimus joins Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus joins Heroic's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 47 "@as cher"
+rng 51895 7f5599b5
+step 48 "bash"
+out cher "Bashing? What's that?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 49 "trip"
+out cher "Tripping?  What's that?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 50 "kick"
+out cher "You better leave the martial arts to fighters.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 51 "disarm"
+out cher "You don't know how to disarm opponents.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 52 "@pulse 30"
+rng 51895 7f5599b5
+step 53 "@as god"
+rng 51895 7f5599b5
+step 54 "@mob 3124 3005"
+rng 51898 d55fddad
+step 55 "force duck rest"
+out god "The duck sits down and rests.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe duck sits down and rests.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 56 "@as hero"
+rng 51898 d55fddad
+step 57 "bash duck"
+out hero "You'll have to let him get back up first.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 58 "trip duck"
+out hero "His feet aren't on the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 59 "bash heroic"
+out hero "You try to bash your brains out, but fail.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 60 "@as god"
+rng 51898 d55fddad
+step 61 "force duck stand"
+out god "The duck stands up.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe duck stands up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe duck stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe duck stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 62 "@mob 350 3005"
+rng 51919 9e0ded87
+step 63 "@as hero"
+rng 51919 9e0ded87
+step 64 "trip dragon"
+out hero "Her feet aren't on the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 65 "@as lock"
+rng 51919 9e0ded87
+step 66 "remove sword"
+out god "\n\rLocksmith stops using a sub issue sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rLocksmith stops using a sub issue sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith stops using a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "You stop using a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rLocksmith stops using a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith stops using a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 67 "@pulse 4"
+rng 51919 9e0ded87
+step 68 "backstab duck"
+out lock "You need to wield a weapon to backstab.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 69 "rescue duck"
+out lock "Doesn't need your help!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51919 9e0ded87
+step 70 "@as hero"
+rng 51919 9e0ded87
+step 71 "kill duck"
+out god "\n\rHeroic's slash DISEMBOWELS the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHeroic's slash DISEMBOWELS the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash DISEMBOWELS the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "Heroic's slash DISEMBOWELS the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic's slash DISEMBOWELS the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Your slash DISEMBOWELS the duck!\n\rThe duck has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 72 "@pulse 12"
+rng 51927 ac0787c3
+step 73 "disarm"
+out hero "Your opponent is not wielding a weapon.\n\rThe duck has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 74 "@as god"
+rng 51927 ac0787c3
+step 75 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51927 ac0787c3
+step 76 "@as lock"
+rng 51927 ac0787c3
+step 77 "wield sword"
+out god "Locksmith wields a sub issue sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rLocksmith wields a sub issue sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rLocksmith wields a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out lock "You wield a sub issue sword.\n\rA sub issue sword feels like a part of you!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rLocksmith wields a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rLocksmith wields a sub issue sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 78 "@pulse 4"
+rng 51927 ac0787c3
+step 79 "@as god"
+rng 51927 ac0787c3
+step 80 "@mob 3124 3005"
+rng 51932 eaa24604
+step 81 "force duck kill locksmith"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out lock "\n\rYou parry the duck's attack.\n\rThe duck is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51940 58237e7d
+step 82 "@as dec"
+rng 51940 58237e7d
+step 83 "rescue locksmith"
+out dec "You fail the rescue.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51942 dc85fa41
+step 84 "@pulse 12"
+rng 51942 dc85fa41
+step 85 "@as god"
+rng 51942 dc85fa41
+step 86 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51942 dc85fa41
+step 87 "@mob 3064 3005"
+rng 51945 a2c49ca0
+step 88 "force drunk kill decimus"
+out god "The drunk's beating grazes Decimus.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe drunk's beating grazes Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe drunk's beating grazes you.\n\rThe drunk is in excellent condition. \n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe drunk's beating grazes Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe drunk's beating grazes Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe drunk's beating grazes Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51956 7c15f411
+step 89 "@as seer"
+rng 51956 7c15f411
+step 90 "bash drunk"
+out seer "Kill stealing is not permitted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51956 7c15f411
+step 91 "@as god"
+rng 51956 7c15f411
+step 92 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51956 7c15f411
+step 93 "slay dragon"
+out god "You slay her in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51958 f8bd1d8e
+step 94 "@mob 350 3005"
+rng 51974 fb1b8648
+step 95 "@obj 3021 3005"
+rng 51974 fb1b8648
+step 96 "set obj sword extra 4096"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51974 fb1b8648
+step 97 "force dragon get sword"
+out god "The pet dragon gets a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe pet dragon gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon gets a small sword.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe pet dragon gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe pet dragon gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51974 fb1b8648
+step 98 "force dragon wield sword"
+out god "The pet dragon wields a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe pet dragon wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon wields a small sword.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe pet dragon wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe pet dragon wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51974 fb1b8648
+step 99 "@as hero"
+rng 51974 fb1b8648
+step 100 "kill dragon"
+out god "Heroic's slash scratches the pet dragon.\n\rHeroic's slash scratches the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHeroic's slash scratches the pet dragon.\n\rHeroic's slash scratches the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash scratches the pet dragon.\n\rHeroic's slash scratches the pet dragon.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash scratches the pet dragon.\n\rHeroic's slash scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic's slash scratches the pet dragon.\n\rHeroic's slash scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Your slash scratches the pet dragon.\n\rYour slash scratches the pet dragon.\n\rThe pet dragon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51992 1f9d9919
+step 101 "@pulse 24"
+rng 51992 1f9d9919
+step 102 "disarm"
+out god "\n\rHeroic tries to disarm the pet dragon, but fails.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHeroic tries to disarm the pet dragon, but fails.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic tries to disarm the pet dragon, but fails.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic tries to disarm the pet dragon, but fails.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic tries to disarm the pet dragon, but fails.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Her weapon won't budge!\n\rThe pet dragon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51993 04c2ec02
+step 103 "@pulse 24"
+rng 51993 04c2ec02
+step 104 "@as god"
+rng 51993 04c2ec02
+step 105 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51993 04c2ec02
+step 106 "slay dragon"
+out god "You slay her in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51995 fa6cc523
+step 107 "@mob 3064 3005"
+rng 51998 4a94600f
+step 108 "@obj 3021 3005"
+rng 51998 4a94600f
+step 109 "set obj sword extra 128"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51998 4a94600f
+step 110 "force drunk get sword"
+out god "The drunk gets a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe drunk gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe drunk gets a small sword.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe drunk gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe drunk gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe drunk gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51998 4a94600f
+step 111 "force drunk wield sword"
+out god "The drunk wields a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe drunk wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe drunk wields a small sword.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe drunk wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe drunk wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe drunk wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51998 4a94600f
+step 112 "@as hero"
+rng 51998 4a94600f
+step 113 "kill drunk"
+out god "Heroic's slash mauls the drunk.\n\rHeroic's slash injures the drunk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHeroic's slash mauls the drunk.\n\rHeroic's slash injures the drunk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slash mauls the drunk.\n\rHeroic's slash injures the drunk.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic's slash mauls the drunk.\n\rHeroic's slash injures the drunk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic's slash mauls the drunk.\n\rHeroic's slash injures the drunk.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Your slash mauls the drunk.\n\rYour slash injures the drunk.\n\rThe drunk has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52015 85db0078
+step 114 "@pulse 24"
+rng 52015 85db0078
+step 115 "disarm"
+out god "\n\rHeroic disarms the drunk!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rHeroic disarms the drunk!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic disarms the drunk!\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rHeroic disarms the drunk!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rHeroic disarms the drunk!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You disarm the drunk!\n\rThe drunk has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52016 4d3c1b5b
+step 116 "@pulse 24"
+rng 52016 4d3c1b5b
+step 117 "dirt"
+out god "\n\rThe drunk is blinded by the dirt in his eyes!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rThe drunk is blinded by the dirt in his eyes!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe drunk is blinded by the dirt in his eyes!\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+out lock "\n\rThe drunk is blinded by the dirt in his eyes!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe drunk is blinded by the dirt in his eyes!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "The drunk is blinded by the dirt in his eyes!\n\rThe drunk has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52018 6742c869
+step 118 "@pulse 24"
+rng 52018 6742c869
+step 119 "dirt"
+out hero "He's already been blinded.\n\rThe drunk has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52018 6742c869
+step 120 "@pulse 24"
+rng 52018 6742c869
+step 121 "@state"
+state room 3005 light 4 people mob mob mob mob player player player player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char mob 3064 pos 7 hit 12/29 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 55 act 65 affected_by 1 train 0 on 0 stats 11 11 11 11 11
+state   affect 110 level 51 duration 0 location 18 modifier -4 bitvector 1
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state char mob 3064 pos 8 hit 31/31 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 93 act 65 affected_by 0 train 0 on 0 stats 11 11 11 11 11
+state char mob 3124 pos 8 hit 12/12 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 134742016 train 0 on 0 stats 10 11 11 11 11
+state char mob 3124 pos 8 hit 5/11 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 134742016 train 0 on 0 stats 10 11 11 11 11
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Heroic 51 pos 7 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Locksmith 30 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3133 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3121 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3120 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 27/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state   obj in 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52018 6742c869

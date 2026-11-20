@@ -868,6 +868,24 @@ def affect_find(affects: list[Affect], sn: int) -> Affect | None:
     return None
 
 
+# C: handler.c is_affected
+def is_affected_by(ch: Char, sn: int) -> bool:
+    """handler.c's is_affected: an affect of skill sn. (is_affected here is the IS_AFFECTED macro, for a bit.)"""
+    return any(paf.type == sn for paf in ch.affected)
+
+
+# C: handler.c affect_enchant
+def affect_enchant(obj: Obj) -> None:
+    """"okay, move all the old flags into new vectors if we have to": copy the prototype's affects onto the
+    object, head first as the C pushes each, so the object's own can be changed."""
+    if not obj.enchanted:
+        obj.enchanted = True
+        for paf in obj.index.affected:
+            af_new = paf.copy()
+            af_new.type = max(0, paf.type)
+            obj.affected.insert(0, af_new)
+
+
 # C: db.c interpolate
 def interpolate(level: int, value_00: int, value_32: int) -> int:
     return value_00 + c_div(level * (value_32 - value_00), 32)

@@ -29,8 +29,9 @@ The code is organised by topic, not by C file:
 | `olc/` | the online builder | |
 
 So far there are `core/`, `data/`, `world/`, `entities/`, `net/`, `persist/` (player files and the boards),
-`systems/` (`update_handler`, the skill groups, mob program triggers, and fighting: `fight.c` but its skills) and
-`commands/` (the interpreter, and the information, movement and talking commands). The import rules for the
+`systems/` (`update_handler`, the skill groups, mob program triggers, and fighting: all of `fight.c` and
+`effects.c`) and `commands/` (the interpreter, and the information, movement and talking commands). The import
+rules for the
 first three are checked by `tests/test_guards.py`; the rest get rules once the port shows where the C game's
 circular calls land. The first one has: `equip_char` (`entities/`) calls `act()` (`net/`).
 
@@ -47,8 +48,9 @@ and the magic items up to the spell, which raises `NotPorted`), all of `board.c`
 writing a note; ban, permban and allow), all of `act_wiz.c`'s but copyover, which comes with OLC in P5 (goto,
 at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix, wiznet; deny, disconnect, freeze,
 the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
-string, force, the locks, shutdown, reboot and qmconfig), `fight.c`'s kill, murder, flee, surrender and slay, and
-what login calls; any other command raises `NotPorted`, which stops the game (#32). Of the per-pulse updates,
+string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (kill, murder, flee, surrender,
+slay and the fighting skills), and what login calls; any other command raises `NotPorted`, which stops the game
+(#32). Of the per-pulse updates,
 `area_update` and `violence_update` run; the game logs the rest at boot (#28). `CHARM_UPDATES` names the ones to run
 in both games (`area,violence`, or `all`; unset, everything ported), as `@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs

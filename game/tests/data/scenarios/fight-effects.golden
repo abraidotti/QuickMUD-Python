@@ -1,0 +1,244 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3005"
+out god "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect dec"
+rng 51895 7f5599b5
+step 8 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@connect hero"
+rng 51895 7f5599b5
+step 13 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 14 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 15 "@return"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@as god"
+rng 51895 7f5599b5
+step 18 "transfer heroic 3005"
+out god "Heroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "transfer decimus 3005"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rHeroic the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@obj 3021 3005 1 2 4 1 67"
+rng 51895 7f5599b5
+step 21 "set obj sword level 40"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@as hero"
+rng 51895 7f5599b5
+step 23 "get sword"
+out god "Heroic gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You get a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "wield sword"
+out god "\n\rHeroic stops using a sub issue sword.\n\rHeroic wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic stops using a sub issue sword.\n\rHeroic wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "You stop using a sub issue sword.\n\rYou wield a small sword.\n\rYou are skilled with a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@as god"
+rng 51895 7f5599b5
+step 26 "@mob 350 3005"
+rng 51915 4fc7cf4e
+step 27 "@obj 105 3005"
+rng 51915 4fc7cf4e
+step 28 "@obj 1362 3005"
+rng 51915 4fc7cf4e
+step 29 "@obj 106 3005"
+rng 51915 4fc7cf4e
+step 30 "@obj 1378 3005"
+rng 51915 4fc7cf4e
+step 31 "@obj 100 3005"
+rng 51915 4fc7cf4e
+step 32 "@obj 611 3005"
+rng 51915 4fc7cf4e
+step 33 "@obj 104 3005"
+rng 51915 4fc7cf4e
+step 34 "@obj 3032 3005"
+rng 51915 4fc7cf4e
+step 35 "@obj 105 3005"
+rng 51915 4fc7cf4e
+step 36 "put potion bag"
+out god "You do not have that item.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 37 "force dragon get all"
+out god "The pet dragon gets a pink potion.\n\rThe pet dragon gets a bag.\n\rThe pet dragon gets a small necklace.\n\rThe pet dragon gets a bottle of milk.\n\rThe pet dragon gets a bunch of smurfberries.\n\rThe pet dragon gets some sparkling dust.\n\rThe pet dragon gets a small wand.\n\rThe pet dragon gets an old scroll.\n\rThe pet dragon gets a pink potion.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon gets a pink potion.\n\rThe pet dragon gets a bag.\n\rThe pet dragon gets a small necklace.\n\rThe pet dragon gets a bottle of milk.\n\rThe pet dragon gets a bunch of smurfberries.\n\rThe pet dragon gets some sparkling dust.\n\rThe pet dragon gets a small wand.\n\rThe pet dragon gets an old scroll.\n\rThe pet dragon gets a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon gets a pink potion.\n\rThe pet dragon gets a bag.\n\rThe pet dragon gets a small necklace.\n\rThe pet dragon gets a bottle of milk.\n\rThe pet dragon gets a bunch of smurfberries.\n\rThe pet dragon gets some sparkling dust.\n\rThe pet dragon gets a small wand.\n\rThe pet dragon gets an old scroll.\n\rThe pet dragon gets a pink potion.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 38 "@as hero"
+rng 51915 4fc7cf4e
+step 39 "kill dragon"
+out god "Heroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA pink potion bubbles and boils!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA pink potion bubbles and boils!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "Your slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA pink potion bubbles and boils!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51987 e8bd03fd
+step 40 "@pulse until 600 is DEAD!!"
+pulses 112
+out god "\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's pound mauls Heroic.\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rAn old scroll crackles and burns!\n\rA pink potion bubbles and boils!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rSome sparkling dust overloads and explodes!\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon turns blue and shivers.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rThe pet dragon is blinded by smoke!\n\rA small wand sparks and sputters!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon turns blue and shivers.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's pound misses Heroic.\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's pound misses Heroic.\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is DEAD!!\n\rThe pet dragon hits the ground ... DEAD.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Heroic.\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rAn old scroll crackles and burns!\n\rA pink potion bubbles and boils!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rSome sparkling dust overloads and explodes!\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon turns blue and shivers.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rThe pet dragon is blinded by smoke!\n\rA small wand sparks and sputters!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon turns blue and shivers.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound misses Heroic.\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound misses Heroic.\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rHeroic's slice scratches the pet dragon.\n\rThe pet dragon is DEAD!!\n\rThe pet dragon hits the ground ... DEAD.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rYou dodge the pet dragon's attack.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls you.\n\rThat really did HURT!\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rAn old scroll crackles and burns!\n\rA pink potion bubbles and boils!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rSome sparkling dust overloads and explodes!\n\rThe pet dragon has quite a few wounds. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rYou dodge the pet dragon's attack.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon has quite a few wounds. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rYou block the pet dragon's attack with your shield.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon turns blue and shivers.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon has quite a few wounds. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rYou parry the pet dragon's attack.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rThe pet dragon is blinded by smoke!\n\rA small wand sparks and sputters!\n\rA small sword freezes the pet dragon.\n\rThe pet dragon turns blue and shivers.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon has some big nasty wounds and scratches. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound misses you.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon has some big nasty wounds and scratches. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound misses you.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon looks pretty hurt. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rYou dodge the pet dragon's attack.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon is in awful condition. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rYou parry the pet dragon's attack.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is burned by a small sword.\n\rA small sword freezes the pet dragon.\n\rThe pet dragon is struck by lightning from a small sword.\n\rThe pet dragon is in awful condition. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rYou block the pet dragon's attack with your shield.\n\rYour slice scratches the pet dragon.\n\rThe pet dragon is DEAD!!\n\rYou receive 0 experience points.\n\rThe pet dragon hits the ground ... DEAD.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52585 3af4df85
+step 41 "@state"
+state room 3005 light 2 people player player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Heroic 51 pos 8 hit 21/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 2 4 1 67
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state   obj in 3032 wear -1 timer 0 cost 9 values 50 0 0 5 100
+state   obj in 104 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj in 611 wear -1 timer 0 cost 3 values 20 20 10 0 0
+state   obj in 100 wear -1 timer 0 cost 180 values 8 -1 -1 13 -1
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52585 3af4df85
+step 42 "@as god"
+rng 52585 3af4df85
+step 43 "sacrifice corpse"
+out god "Mota gives you 30 silver coins for your sacrifice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod sacrifices the corpse of the pet dragon to Mota.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod sacrifices the corpse of the pet dragon to Mota.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52585 3af4df85
+step 44 "@mob 350 3005"
+rng 52606 44b9a882
+step 45 "@obj 3021 3005 1 2 4 1 67"
+rng 52606 44b9a882
+step 46 "set obj sword level 10"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52606 44b9a882
+step 47 "force dragon get sword"
+out god "The pet dragon gets a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon gets a small sword.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52606 44b9a882
+step 48 "force dragon wield sword"
+out god "The pet dragon wields a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon wields a small sword.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52606 44b9a882
+step 49 "@obj 105 3005"
+rng 52606 44b9a882
+step 50 "@obj 1362 3005"
+rng 52606 44b9a882
+step 51 "@obj 106 3005"
+rng 52606 44b9a882
+step 52 "@obj 1378 3005"
+rng 52606 44b9a882
+step 53 "@obj 100 3005"
+rng 52606 44b9a882
+step 54 "@obj 611 3005"
+rng 52606 44b9a882
+step 55 "@obj 104 3005"
+rng 52606 44b9a882
+step 56 "@as dec"
+rng 52606 44b9a882
+step 57 "get all"
+out god "Decimus gets a small necklace.\n\rDecimus gets a bottle of milk.\n\rDecimus gets a bunch of smurfberries.\n\rDecimus gets some sparkling dust.\n\rDecimus gets a small wand.\n\rDecimus gets an old scroll.\n\rDecimus gets a pink potion.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You get a small necklace.\n\rYou get a bottle of milk.\n\rYou get a bunch of smurfberries.\n\rYou get some sparkling dust.\n\rYou get a small wand.\n\rYou get an old scroll.\n\rYou get a pink potion.\n\rYou can't take that.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus gets a small necklace.\n\rDecimus gets a bottle of milk.\n\rDecimus gets a bunch of smurfberries.\n\rDecimus gets some sparkling dust.\n\rDecimus gets a small wand.\n\rDecimus gets an old scroll.\n\rDecimus gets a pink potion.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52606 44b9a882
+step 58 "@as god"
+rng 52606 44b9a882
+step 59 "force dragon kill decimus"
+out god "The pet dragon's slice hits Decimus.\n\rDecimus is burned by a small sword.\n\rA pink potion bubbles and boils!\n\rA small sword freezes Decimus.\n\rDecimus is struck by lightning from a small sword.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon's slice hits you.\n\rA small sword sears your flesh.\n\rA pink potion bubbles and boils!\n\rThe cold touch of a small sword surrounds you with ice.\n\rYou are shocked by a small sword.\n\rThe pet dragon is in excellent condition. \n\r\n\r<20hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon's slice hits Decimus.\n\rDecimus is burned by a small sword.\n\rA pink potion bubbles and boils!\n\rA small sword freezes Decimus.\n\rDecimus is struck by lightning from a small sword.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52686 50a17f2d
+step 60 "@pulse until 600 is DEAD!!"
+pulses 54
+out god "\n\rThe pet dragon's slice misses Decimus.\n\rDecimus's slash scratches the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's slice injures Decimus.\n\rDecimus is burned by a small sword.\n\rA small sword freezes Decimus.\n\rDecimus is struck by lightning from a small sword.\n\rDecimus's slash scratches the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's slice misses Decimus.\n\rDecimus's slash misses the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's slice hits Decimus.\n\rDecimus is burned by a small sword.\n\rAn old scroll crackles and burns!\n\rA small sword freezes Decimus.\n\rDecimus turns blue and shivers.\n\rDecimus is struck by lightning from a small sword.\n\rSome sparkling dust overloads and explodes!\n\rDecimus is stunned, but will probably recover.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's slice injures Decimus.\n\rDecimus is mortally wounded, and will die soon, if not aided.\n\rDecimus is burned by a small sword.\n\rDecimus is blinded by smoke!\n\rDecimus is mortally wounded, and will die soon, if not aided.\n\rA small sword freezes Decimus.\n\rDecimus is DEAD!!\n\rYou hear Decimus's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon's slice misses you.\n\rYour slash scratches the pet dragon.\n\rThe pet dragon has a few scratches. \n\r\n\r<20hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice injures you.\n\rA small sword sears your flesh.\n\rThe cold touch of a small sword surrounds you with ice.\n\rYou are shocked by a small sword.\n\rYour slash scratches the pet dragon.\n\rThe pet dragon has a few scratches. \n\r\n\r<9hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice misses you.\n\rYour slash misses the pet dragon.\n\rThe pet dragon has a few scratches. \n\r\n\r<9hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice hits you.\n\rYou sure are BLEEDING!\n\rA small sword sears your flesh.\n\rAn old scroll crackles and burns!\n\rYou sure are BLEEDING!\n\rThe cold touch of a small sword surrounds you with ice.\n\rA chill sinks deep into your bones.\n\rYou sure are BLEEDING!\n\rYou are shocked by a small sword.\n\rSome sparkling dust overloads and explodes!\n\rYou are stunned, but will probably recover.\n\r\n\r<0hp 102m 106mv> \xff\xf9\n\rYou are mortally wounded, and will die soon, if not aided.\n\rYou are mortally wounded, and will die soon, if not aided.\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe pet dragon's slice misses Decimus.\n\rDecimus's slash scratches the pet dragon.\n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice injures Decimus.\n\rDecimus is burned by a small sword.\n\rA small sword freezes Decimus.\n\rDecimus is struck by lightning from a small sword.\n\rDecimus's slash scratches the pet dragon.\n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice misses Decimus.\n\rDecimus's slash misses the pet dragon.\n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice hits Decimus.\n\rDecimus is burned by a small sword.\n\rAn old scroll crackles and burns!\n\rA small sword freezes Decimus.\n\rDecimus turns blue and shivers.\n\rDecimus is struck by lightning from a small sword.\n\rSome sparkling dust overloads and explodes!\n\rDecimus is stunned, but will probably recover.\n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe pet dragon's slice injures Decimus.\n\rDecimus is mortally wounded, and will die soon, if not aided.\n\rDecimus is burned by a small sword.\n\rDecimus is blinded by smoke!\n\rDecimus is mortally wounded, and will die soon, if not aided.\n\rA small sword freezes Decimus.\n\rDecimus is DEAD!!\n\rYou hear Decimus's death cry.\n\r\n\r<21hp 102m 106mv> \xff\xf9"
+rng 52947 01a0f42b
+step 61 "@state"
+state room 3005 light 1 people mob player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char mob 350 pos 8 hit 111/116 mana 157/157 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 131203 affected_by 524936 train 0 on 0 stats 12 16 13 14 13
+state   affect 80 level 10 duration -1 location 0 modifier 0 bitvector 128
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 2 4 1 67
+state char Heroic 51 pos 8 hit 21/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 2 4 1 67
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 30 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 11 wear -1 timer 38 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj in 104 wear -1 timer 0 cost 550 values 0 0 0 0 0
+state   obj in 611 wear -1 timer 0 cost 3 values 20 20 10 0 0
+state   obj in 100 wear -1 timer 0 cost 180 values 8 -1 -1 13 -1
+state   obj in 106 wear -1 timer 0 cost 540 values 5 1 1 5 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52947 01a0f42b
