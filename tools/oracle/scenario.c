@@ -25,6 +25,7 @@
  *   @owner NAME          the last @obj's owner, as make_corpse sets a player's corpse's (can_loot)
  *   @charm               charm the last @mob: it follows the current connection's character, in its group
  *   @charm pet           the same, and it's that character's pet, as do_buy makes one
+ *   @spec [N]            run the last @mob's special N times (default 1), as mobile_update would
  *   @state               dump the characters and objects in every room a connection's character is in
  *   @return              an empty line of input (blank lines are skipped), then one pulse
  *   @file PATH           print a file the game wrote, such as ../player/NAME (relative to the area directory)
@@ -35,6 +36,7 @@
  *   out NAME "BYTES"     what connection NAME was sent during the step (escaped: see esc)
  *   closed NAME          the game closed connection NAME
  *   file PATH "BYTES"    @file's file, or "file PATH missing"
+ *   spec R...            what each @spec run returned (1 or 0), or "gone" once the mob was extracted
  *   pulses K             how many pulses @pulse until ran (", not seen" if TEXT never came)
  *   rng DRAWS HASH       random() calls so far, and an FNV-1a hash of every value they returned
  *   state ...            @state's lines: for each room, its exits (where each leads, exit_info and key), then each
@@ -518,6 +520,29 @@ int main (void)
             }
             free_string (last_obj->owner);
             last_obj->owner = str_dup (word);
+        }
+        else if (!strcmp (line, "@spec") || (sscanf (line, "@spec %ld%n", &a, &n) == 1 && line[n] == '\0'))
+        {
+            long times = line[5] == ' ' ? a : 1;
+            if (last_mob == NULL || last_mob->spec_fun == NULL)
+            {
+                fprintf (stderr, "scenario: step %ld: @spec needs a @mob with a special\n", step);
+                return 2;
+            }
+            printf ("spec");
+            while (times-- > 0)
+            {
+                CHAR_DATA *ch;
+                for (ch = char_list; ch != NULL && ch != last_mob; ch = ch->next)
+                    ;
+                if (ch == NULL)
+                {
+                    printf (" gone");  /* extracted: its memory may be reused, so stop */
+                    break;
+                }
+                printf (" %d", (*last_mob->spec_fun) (last_mob) ? 1 : 0);
+            }
+            putchar ('\n');
         }
         else if (!strcmp (line, "@state"))
             state ();

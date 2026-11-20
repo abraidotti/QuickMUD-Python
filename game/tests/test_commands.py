@@ -70,6 +70,7 @@ def boot_game():
     text = AREA.replace("{trigger}", "").replace("{progs}", "")
     with tempfile.TemporaryDirectory() as d:
         Path(d, "area.lst").write_text("t.are\n$\n")
+        Path(d, "music.txt").write_text("#\n")  # load_songs crashes the C without one
         Path(d, "t.are").write_text(text)
         with log.capture():
             game = boot_db(Path(d), 1763400000, {"CHARM_SEED": "1"})

@@ -1,0 +1,222 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area,song
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect cher"
+rng 51895 7f5599b5
+step 8 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "music"
+out cher "Music channel is now OFF.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect purse"
+rng 51895 7f5599b5
+step 14 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out cher "\n\rPurser has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@return"
+out purse "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "quiet"
+out purse "From now on, you will only hear says and emotes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@connect dec"
+rng 51895 7f5599b5
+step 20 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 21 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 22 "@return"
+out cher "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out purse "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rCherub the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "@as god"
+rng 51895 7f5599b5
+step 25 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out purse "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "transfer cherub 3001"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out purse "\n\rCherub disappears in a mushroom cloud.\n\rCherub arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "@as dec"
+rng 51895 7f5599b5
+step 28 "play"
+out dec "Play what?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "play bullet"
+out dec "You see nothing to play.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "@obj 3200 3700"
+rng 51895 7f5599b5
+step 31 "play list"
+out dec "The juke has the following songs available:\n\rBullet the Blue Sky                 Camarillo Brillo                    \n\rComfortably Numb                    Empire                              \n\rImagine                             I Still Haven't Found What I'm...   \n\rJack the Ripper                     The Joker                           \n\rOne Of My Turns                     Red Hill Mining Town                \n\rRock of Ages                        Silent Lucidity                     \n\rSweet Child O' Mine                 Welcome to the Jungle               \n\rWhere the Streets Have No Name      With or Without You                 \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "play list artist"
+out dec "The juke has the following songs available:\n\rU2                                      Bullet the Blue Sky                    \n\rFrank Zappa                             Camarillo Brillo                       \n\rPink Floyd                              Comfortably Numb                       \n\rQueensryche                             Empire                                 \n\rJohn Lennon                             Imagine                                \n\rU2                                      I Still Haven't Found What I'm...      \n\rMorrissey                               Jack the Ripper                        \n\rSteve Miller Band                       The Joker                              \n\rPink Floyd                              One Of My Turns                        \n\rU2                                      Red Hill Mining Town                   \n\rDef Leppard                             Rock of Ages                           \n\rQueensryche                             Silent Lucidity                        \n\rGuns 'N Roses                           Sweet Child O' Mine                    \n\rGuns 'N Roses                           Welcome to the Jungle                  \n\rU2                                      Where the Streets Have No Name         \n\rU2                                      With or Without You                    \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "play list artist pink"
+out dec "The juke has the following songs available:\n\rPink Floyd                              Comfortably Numb                       \n\rPink Floyd                              One Of My Turns                        \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "play list comfortably"
+out dec "The juke has the following songs available:\n\rBullet the Blue Sky                 Camarillo Brillo                    \n\rComfortably Numb                    Empire                              \n\rImagine                             I Still Haven't Found What I'm...   \n\rJack the Ripper                     The Joker                           \n\rOne Of My Turns                     Red Hill Mining Town                \n\rRock of Ages                        Silent Lucidity                     \n\rSweet Child O' Mine                 Welcome to the Jungle               \n\rWhere the Streets Have No Name      With or Without You                 \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "play list x comf"
+out dec "The juke has the following songs available:\n\rComfortably Numb                    \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "play nosuchsong"
+out dec "That song isn't available.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 37 "examine juke"
+out dec "A neon-lit juke box sits in the corner of the bar.\n\rThe juke has the following songs available:\n\rBullet the Blue Sky                 Camarillo Brillo                    \n\rComfortably Numb                    Empire                              \n\rImagine                             I Still Haven't Found What I'm...   \n\rJack the Ripper                     The Joker                           \n\rOne Of My Turns                     Red Hill Mining Town                \n\rRock of Ages                        Silent Lucidity                     \n\rSweet Child O' Mine                 Welcome to the Jungle               \n\rWhere the Streets Have No Name      With or Without You                 \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "play comfortably"
+out dec "Coming right up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 39 "@pulse 72"
+out god "\n\rThe juke starts playing Pink Floyd, Comfortably Numb.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Hello hello helo...'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Is there anybody in there?'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe juke starts playing Pink Floyd, Comfortably Numb.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Hello hello helo...'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Is there anybody in there?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "play bullet"
+out dec "Coming right up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "play camarillo"
+out dec "Coming right up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 42 "play bullet"
+out dec "Coming right up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 43 "play bullet"
+out dec "The jukebox is full up right now.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "@pulse 1000"
+out god "\n\rThe juke bops: 'Just nod if you can hear me.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Is there anyone home?'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Come on, now.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I hear you're feeling down.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Well I can ease your pain,'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Get you on your feet again.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Relax relax relax...'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I need some information first.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Just the basic facts:'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Can you show me where it hurts?'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'There is no pain, you are receding.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'A distant ship's smoke on the horizon.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'You are only coming through in waves.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Your lips move but I can't hear what you're sayin'.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'When I was a child I had a fever.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'My hands felt just like two balloons.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Now I got that feeling once again.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I can't explain, you would not understand.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'This is not how I am.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I have become comfortably numb.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Ok ok ok...'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Just a little pinprick. <ping>'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'There'll be no more --Aaaaaahhhhh!'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'But you may feel a little sick.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Can you stand up?'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I do believe it's working. Good.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'That'll keep you going for the show.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Come on it's time to go.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'There is no pain, you are receding.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'A distant ship's smoke on the horizon.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'You are only coming through in waves.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Your lips move but I can't hear what you're sayin'.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'When I was a child I caught a fleeting glimpse,'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Out of the corner of my eye.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I turned to look but it was gone.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I cannot put my finger on it now.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'The child is grown, the dream is gone.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'I have become comfortably numb.'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke starts playing U2, Bullet the Blue Sky.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'In the howling wind comes a stinging rain'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'See it driving nails into souls on the tree of pain'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe juke bops: 'Just nod if you can hear me.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Is there anyone home?'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Come on, now.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I hear you're feeling down.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Well I can ease your pain,'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Get you on your feet again.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Relax relax relax...'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I need some information first.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Just the basic facts:'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Can you show me where it hurts?'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'There is no pain, you are receding.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'A distant ship's smoke on the horizon.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'You are only coming through in waves.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Your lips move but I can't hear what you're sayin'.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'When I was a child I had a fever.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'My hands felt just like two balloons.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Now I got that feeling once again.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I can't explain, you would not understand.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'This is not how I am.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I have become comfortably numb.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Ok ok ok...'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Just a little pinprick. <ping>'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'There'll be no more --Aaaaaahhhhh!'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'But you may feel a little sick.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Can you stand up?'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I do believe it's working. Good.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'That'll keep you going for the show.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Come on it's time to go.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'There is no pain, you are receding.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'A distant ship's smoke on the horizon.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'You are only coming through in waves.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Your lips move but I can't hear what you're sayin'.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'When I was a child I caught a fleeting glimpse,'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Out of the corner of my eye.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I turned to look but it was gone.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I cannot put my finger on it now.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'The child is grown, the dream is gone.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'I have become comfortably numb.'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke starts playing U2, Bullet the Blue Sky.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'In the howling wind comes a stinging rain'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'See it driving nails into souls on the tree of pain'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51908 82a9c727
+step 45 "@as god"
+rng 51908 82a9c727
+step 46 "play loud"
+out god "Play what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 47 "play loud bullet"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 48 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 49 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 50 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 51 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 52 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 53 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 54 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 55 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 56 "play loud camarillo"
+out god "Coming right up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 57 "play loud camarillo"
+out god "The jukebox is full up right now.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51908 82a9c727
+step 58 "@pulse 96"
+out god "\n\rMusic: U2, Bullet the Blue Sky\n\rThe juke bops: '>From the firefly, a red orange glow'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'In the howling wind comes a stinging rain'\n\rThe juke bops: 'See the face of fear running scared in the valley below'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'See it driving nails into souls on the tree of pain'\n\rThe juke bops: 'Bullet the blue sky'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: '>From the firefly, a red orange glow'\n\rThe juke bops: 'Bullet the blue'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rMusic: U2, Bullet the Blue Sky\n\rThe juke bops: '>From the firefly, a red orange glow'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'In the howling wind comes a stinging rain'\n\rThe juke bops: 'See the face of fear running scared in the valley below'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'See it driving nails into souls on the tree of pain'\n\rThe juke bops: 'Bullet the blue sky'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: '>From the firefly, a red orange glow'\n\rThe juke bops: 'Bullet the blue'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51908 82a9c727
+step 59 "@obj 3200 3700 -1 25 -1 -1 -1"
+rng 51908 82a9c727
+step 60 "@obj 3200 3700 -1 18 -1 -1 -1"
+rng 51908 82a9c727
+step 61 "@pulse 72"
+out god "\n\rMusic: 'See the face of fear running scared in the valley below'\n\rThe juke starts playing (null), (null).\n\rThe juke bops: 'In the locust wind comes a rattle and hum'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Bullet the blue sky'\n\rThe juke bops: 'Jacob wrestled the angel and the angel was overcome'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Bullet the blue'\n\rThe juke bops: 'Plant a demon seed, you raise a flower of fire'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rMusic: 'See the face of fear running scared in the valley below'\n\rThe juke starts playing (null), (null).\n\rThe juke bops: 'In the locust wind comes a rattle and hum'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Bullet the blue sky'\n\rThe juke bops: 'Jacob wrestled the angel and the angel was overcome'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Bullet the blue'\n\rThe juke bops: 'Plant a demon seed, you raise a flower of fire'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51908 82a9c727
+step 62 "@pulse 720"
+out god "\n\rMusic: 'In the locust wind comes a rattle and hum'\n\rThe juke bops: 'See them burning crosses, see the flames, higher and higher'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Jacob wrestled the angel and the angel was overcome'\n\rThe juke bops: 'Bullet the blue sky'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Plant a demon seed, you raise a flower of fire'\n\rThe juke bops: 'Bullet the blue'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'See them burning crosses, see the flames, higher and higher'\n\rThe juke bops: 'Suit and tie comes up to me'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Bullet the blue sky'\n\rThe juke bops: 'His face red'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Bullet the blue'\n\rThe juke bops: 'Like a rose on a thorn bush'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Suit and tie comes up to me'\n\rThe juke bops: 'Like all the colours of a royal flush'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'His face red'\n\rThe juke bops: 'And he's peeling off those dollar bills'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Like a rose on a thorn bush'\n\rThe juke bops: 'Slapping them down, one hundred, two hundred,'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Like all the colours of a royal flush'\n\rThe juke bops: 'And I can see the fighter planes'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'And he's peeling off those dollar bills'\n\rThe juke bops: 'And I can see the fighter planes'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Slapping them down, one hundred, two hundred,'\n\rThe juke bops: 'Across the mud huts as the children sleep'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'And I can see the fighter planes'\n\rThe juke bops: 'Through the alleys of a quit city street'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'And I can see the fighter planes'\n\rThe juke bops: 'Up the staircase to the first floor'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Across the mud huts as the children sleep'\n\rThe juke bops: 'We turn the key and slowly unlock the door'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Through the alleys of a quit city street'\n\rThe juke bops: 'A man breathes deep into a saxophone'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Up the staircase to the first floor'\n\rThe juke bops: 'Through the walls we hear the city groan'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'We turn the key and slowly unlock the door'\n\rThe juke bops: 'Outside is America'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'A man breathes deep into a saxophone'\n\rThe juke bops: 'Outside is America'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Through the walls we hear the city groan'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Outside is America'\n\rThe juke starts playing Frank Zappa, Camarillo Brillo.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Outside is America'\n\rThe juke bops: 'She had that Camarillo brillo'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe juke bops: 'Flamin' out along her head,'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: Frank Zappa, Camarillo Brillo\n\rThe juke bops: 'I mean her Mendocino bean-o'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'She had that Camarillo brillo'\n\rThe juke bops: 'By where some bugs had made it red'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'Flamin' out along her head,'\n\rThe juke bops: 'She ruled the Toads of the Short Forest'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'I mean her Mendocino bean-o'\n\rThe juke bops: 'And every newt in Idaho'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'By where some bugs had made it red'\n\rThe juke bops: 'And every cricket who had chorused'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'She ruled the Toads of the Short Forest'\n\rThe juke bops: 'By the bush in Buffalo'\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rMusic: 'And every newt in Idaho'\n\rThe juke bops: 'She said she was a Magic Mama'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rMusic: 'In the locust wind comes a rattle and hum'\n\rThe juke bops: 'See them burning crosses, see the flames, higher and higher'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Jacob wrestled the angel and the angel was overcome'\n\rThe juke bops: 'Bullet the blue sky'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Plant a demon seed, you raise a flower of fire'\n\rThe juke bops: 'Bullet the blue'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'See them burning crosses, see the flames, higher and higher'\n\rThe juke bops: 'Suit and tie comes up to me'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Bullet the blue sky'\n\rThe juke bops: 'His face red'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Bullet the blue'\n\rThe juke bops: 'Like a rose on a thorn bush'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Suit and tie comes up to me'\n\rThe juke bops: 'Like all the colours of a royal flush'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'His face red'\n\rThe juke bops: 'And he's peeling off those dollar bills'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Like a rose on a thorn bush'\n\rThe juke bops: 'Slapping them down, one hundred, two hundred,'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Like all the colours of a royal flush'\n\rThe juke bops: 'And I can see the fighter planes'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'And he's peeling off those dollar bills'\n\rThe juke bops: 'And I can see the fighter planes'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Slapping them down, one hundred, two hundred,'\n\rThe juke bops: 'Across the mud huts as the children sleep'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'And I can see the fighter planes'\n\rThe juke bops: 'Through the alleys of a quit city street'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'And I can see the fighter planes'\n\rThe juke bops: 'Up the staircase to the first floor'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Across the mud huts as the children sleep'\n\rThe juke bops: 'We turn the key and slowly unlock the door'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Through the alleys of a quit city street'\n\rThe juke bops: 'A man breathes deep into a saxophone'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Up the staircase to the first floor'\n\rThe juke bops: 'Through the walls we hear the city groan'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'We turn the key and slowly unlock the door'\n\rThe juke bops: 'Outside is America'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'A man breathes deep into a saxophone'\n\rThe juke bops: 'Outside is America'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Through the walls we hear the city groan'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Outside is America'\n\rThe juke starts playing Frank Zappa, Camarillo Brillo.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Outside is America'\n\rThe juke bops: 'She had that Camarillo brillo'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe juke bops: 'Flamin' out along her head,'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: Frank Zappa, Camarillo Brillo\n\rThe juke bops: 'I mean her Mendocino bean-o'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'She had that Camarillo brillo'\n\rThe juke bops: 'By where some bugs had made it red'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'Flamin' out along her head,'\n\rThe juke bops: 'She ruled the Toads of the Short Forest'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'I mean her Mendocino bean-o'\n\rThe juke bops: 'And every newt in Idaho'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'By where some bugs had made it red'\n\rThe juke bops: 'And every cricket who had chorused'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'She ruled the Toads of the Short Forest'\n\rThe juke bops: 'By the bush in Buffalo'\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rMusic: 'And every newt in Idaho'\n\rThe juke bops: 'She said she was a Magic Mama'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51910 fbea3747
+step 63 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3200 wear -1 timer 0 cost 0 values -1 -1 -1 -1 -1
+state obj floor 3200 wear -1 timer 0 cost 0 values -1 -1 -1 -1 -1
+state obj floor 3200 wear -1 timer 0 cost 0 values 9 1 0 -1 -1
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51910 fbea3747

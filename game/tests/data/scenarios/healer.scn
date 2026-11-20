@@ -1,0 +1,78 @@
+# Buying spells from the healer (3012, 40), at the entrance to Mud School (3700), with only area_update running.
+# Purser (10) is given 400 gold; Decimus (10) has none. Smokegod (60) blinds, poisons, curses and plagues Purser
+# first, so the cures have something to cure, and drains his mana and moves.
+# - heal with no healer here; the price list; a word that isn't a service
+# - Decimus can't pay
+# - every service by its words: light, serious, critical, heal, blind, disease, poison, uncurse, curse, mana,
+#   energize, refresh and moves, each lagging Purser a violence pulse
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect purse
+Purser
+psswrd
+@return
+@return
+heal
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+transfer purser 3700
+transfer decimus 3700
+set char purser gold 400
+@mob 3012 3700
+@as purse
+heal
+heal nonsense
+@as dec
+heal light
+@as god
+cast blindness purser
+@pulse 24
+cast poison purser
+@pulse 24
+cast curse purser
+@pulse 24
+cast plague purser
+@pulse 24
+@as purse
+heal light
+@pulse 12
+heal serious
+@pulse 12
+heal critical
+@pulse 12
+heal heal
+@pulse 12
+heal blind
+@pulse 12
+heal disease
+@pulse 12
+heal poison
+@pulse 12
+heal uncurse
+@pulse 12
+@as god
+cast curse purser
+@pulse 24
+@as purse
+heal curse
+@pulse 12
+heal mana
+@pulse 12
+heal energize
+@pulse 12
+heal refresh
+@pulse 12
+heal moves
+@pulse 12
+@state

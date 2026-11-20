@@ -36,6 +36,12 @@ class WeatherInfo:
     sunlight: int = 0
 
 
+def _song_table() -> list:
+    from charm.systems.music import new_song_table
+
+    return new_song_table()
+
+
 @dataclass(eq=False)
 class Game:
     index: Index
@@ -74,6 +80,13 @@ class Game:
     board_changed: list = field(default_factory=list)
     last_note_stamp: int = 0
     ban_list: list = field(default_factory=list)  # ban.c's, head first
+    # music.c's song_table and channel_songs (charm.systems.music); the C's globals start at zero
+    songs: list = field(default_factory=lambda: _song_table())
+    channel_songs: list = field(default_factory=lambda: [0] * 11)  # MAX_GLOBAL + 1
+    # special.c spec_mayor's statics: the path he's on, his place on it, and whether he's walking
+    mayor_path: str | None = None
+    mayor_pos: int = 0
+    mayor_move: bool = False
 
 
 # LATER: the C reads its globals from anywhere; a few functions that don't take a Game (room_is_dark, called from

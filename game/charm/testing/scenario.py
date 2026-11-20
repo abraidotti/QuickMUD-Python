@@ -322,6 +322,22 @@ class Player:
             if obj is None:
                 raise SystemExit(f"scenario: step {n}: @owner needs an @obj")
             obj.owner = m.group(1)[:31]  # the C reads it with %31s
+        elif m := re.fullmatch(r"@spec(?: (-?\d+))?", line):
+            from charm.systems.specials import SPECIALS
+
+            mob = getattr(self, "last_mob", None)
+            if mob is None or mob.spec_fun is None:
+                raise SystemExit(f"scenario: step {n}: @spec needs a @mob with a special")
+            results = ["spec"]
+            for _ in range(int(m.group(1)) if m.group(1) else 1):
+                if mob not in self.game.char_list:
+                    results.append("gone")  # extracted: its memory may be reused, so stop
+                    break
+                fn = SPECIALS.get(mob.spec_fun)
+                if fn is None:
+                    raise NotPorted(f"special.c {mob.spec_fun}")
+                results.append("1" if fn(mob) else "0")
+            self.out.append(" ".join(results))
         elif line == "@state":
             self.state()
         elif line.startswith("@file "):

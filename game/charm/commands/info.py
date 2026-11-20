@@ -12,7 +12,6 @@ from __future__ import annotations
 import sys
 
 from charm.commands.interp import one_argument
-from charm.core.errors import NotPorted
 from charm.core.log import bug, log_f
 from charm.core.strings import str_cmp
 from charm.data import constants as C
@@ -900,9 +899,8 @@ def do_read(ch, argument: str) -> None:
     do_look(ch, argument)
 
 
-# C: act_info.c do_examine [partial]
+# C: act_info.c do_examine
 def do_examine(ch, argument: str) -> None:
-    """[partial]: examining a jukebox lists its songs with music.c's do_play (P4), which raises NotPorted."""
     from charm.entities.handler import get_obj_here
 
     _, arg = one_argument(argument)
@@ -914,8 +912,10 @@ def do_examine(ch, argument: str) -> None:
     if obj is None:
         return
     if obj.item_type == C.ITEM_JUKEBOX:
-        raise NotPorted("act_info.c do_examine: music.c do_play (a jukebox)")
-    if obj.item_type == C.ITEM_MONEY:
+        from charm.systems.music import do_play
+
+        do_play(ch, "list")
+    elif obj.item_type == C.ITEM_MONEY:
         silver, gold = obj.value[0], obj.value[1]
         if silver == 0:
             if gold == 0:

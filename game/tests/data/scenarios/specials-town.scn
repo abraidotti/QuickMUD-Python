@@ -1,0 +1,104 @@
+# The town mobs' specials, run with @spec as mobile_update would (it isn't ported until P4 PR 6), at the entrance
+# to Mud School (3700), with only area_update running. Smokegod (60) sets things up. Outlaw (18) is a killer and a
+# thief, Purser (10) has coins, Decimus (10) is broke, and Heroic (51) is the one a drunk picks a fight with.
+# - fido devours a drunk's corpse and drops the bottle that was in it, then finds no more
+# - the janitor, asleep, does nothing; awake, it picks up a bottle of beer, not a scimitar or a pie
+# - Hassan (executioner) yells that Outlaw is a KILLER and attacks, then, fighting, does nothing more; a
+#   cityguard, once Outlaw is pardoned of that, yells THIEF; pardoned of both, there's no one, until a fido (-200)
+#   and a drunk (400) attack Heroic (750), and a guard goes for the fido, the most evil of those fighting under 300
+# - a thief (8) works the room 100 times, taking coins or caught at it
+# - the nasty thief (30) finds no one between 31 and 39; set to level 10, it backstabs Outlaw, with no weapon, so
+#   murders him, then robs him or flees
+# - the adept (30) casts at the players under 11 it can see
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3700
+holylight
+@connect out
+Outlaw
+psswrd
+@return
+@return
+@connect purse
+Purser
+psswrd
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+transfer outlaw 3700
+transfer purser 3700
+transfer heroic 3700
+set char outlaw hp 5000
+restore outlaw
+set char heroic hp 30000
+restore heroic
+@mob 3064 3700
+@obj 3001 3700
+force drunk get bottle
+slay drunk
+@mob 3062 3700
+@spec 2
+purge
+@obj 3001 3700
+@obj 3005 3700
+@obj 3009 3700
+@mob 3061 3700
+force janitor sleep
+@spec
+force janitor wake
+@spec 3
+purge
+@mob 3011 3700
+@spec
+@spec
+peace
+@pulse 12
+pardon outlaw killer
+@mob 3060 3700
+@spec
+peace
+@pulse 12
+pardon outlaw thief
+@spec
+@mob 3062 3700
+force fido kill heroic
+@mob 3064 3700
+force drunk kill heroic
+@pulse 12
+@mob 3060 3700
+@spec
+peace
+@pulse 12
+purge
+restore outlaw
+restore heroic
+@mob 3005 3700
+@spec 100
+purge
+set char outlaw gold 100
+@mob 3163 3700
+@spec
+set char thief level 10
+@spec 12
+purge
+goto 3700
+transfer outlaw 3700
+restore outlaw
+transfer decimus 3700
+@mob 3707 3700
+@spec 60
+purge
+@state

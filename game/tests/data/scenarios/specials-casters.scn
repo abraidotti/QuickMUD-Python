@@ -1,0 +1,83 @@
+# Mobs that cast in a fight, run with @spec as mobile_update would, at the entrance to Mud School (3700), with only
+# area_update running. Each mob starts a fight with Heroic (51, 30000 hit points); Smokegod (60) breaks it up,
+# fetches Heroic back from wherever a teleport sent him, restores him and purges the room between fights.
+# - an elven wizard (cast_mage, 18), a captain (cast_mage, 27: teleport, plague and acid blast too)
+# - Gargamel (cast_cleric, 10) and Zeus (cast_cleric, 60, the whole list)
+# - a spectre (cast_undead, 19), a rookie judge (cast_judge, 20)
+# - the darkenbeast (poison, 24): a bite half the time
+# - each of them, not fighting, does nothing
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3700
+holylight
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+transfer heroic 3700
+set char heroic hp 30000
+restore heroic
+@mob 1100 3700
+@spec
+force wizard kill heroic
+@spec 8
+peace
+transfer heroic 3700
+restore heroic
+purge
+@pulse 12
+@mob 603 3700
+force jacklyn kill heroic
+@spec 12
+peace
+transfer heroic 3700
+restore heroic
+purge
+@pulse 12
+@mob 111 3700
+force gargamel kill heroic
+@spec 8
+peace
+transfer heroic 3700
+restore heroic
+purge
+@pulse 12
+@mob 901 3700
+force zeus kill heroic
+@spec 12
+peace
+transfer heroic 3700
+restore heroic
+purge
+@pulse 12
+@mob 1617 3700
+@spec
+force spectre kill heroic
+@spec 10
+peace
+transfer heroic 3700
+restore heroic
+purge
+@pulse 12
+@mob 8006 3700
+@spec
+force judge kill heroic
+@spec 20
+peace
+transfer heroic 3700
+restore heroic
+purge
+@pulse 12
+@mob 2017 3700
+@spec
+force darkenbeast kill heroic
+@spec 6
+peace
+restore heroic
+purge
+@state

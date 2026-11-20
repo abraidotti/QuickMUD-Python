@@ -49,9 +49,12 @@ writing a note; ban, permban and allow), all of `act_wiz.c`'s but copyover, whic
 at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix, wiznet; deny, disconnect, freeze,
 the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
 string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (kill, murder, flee, surrender,
-slay and the fighting skills), `cast` and every spell (`magic.c` and `magic2.c`), and what login calls; any other
-command raises `NotPorted`, which stops the game (#32). Of the per-pulse updates, `area_update` and `violence_update` run; the game logs the rest at boot (#28). `CHARM_UPDATES` names the ones to run
-in both games (`area,violence`, or `all`; unset, everything ported), as `@updates` does in a scenario (#74).
+slay and the fighting skills), `cast` and every spell (`magic.c` and `magic2.c`), `heal` (`healer.c`), `play`
+(`music.c`), and what login calls; any other command raises `NotPorted`, which stops the game (#32). The mobs'
+special procedures (`special.c`) are ported, but nothing runs them until `mobile_update` is. Of the per-pulse
+updates, `area_update`, `song_update` and `violence_update` run; the game logs the rest at boot (#28).
+`CHARM_UPDATES` names the ones to run in both games (`area,violence`, or `all`; unset, everything ported), as
+`@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.
 
@@ -60,10 +63,9 @@ Scenarios (#35) check state as well as output, with no network and no real clock
 `@as`, `@return`, `@pulse N`, `@pulse until N TEXT` (pulses until a connection is sent TEXT, at most N), `@mob`,
 `@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too),
 `@obj` (with the object's five values, if given), `@owner` (the last object's owner, as a player's
-corpse has), `@state`, `@file`, and before boot `@seed`, `@clock`, `@updates` and `@place` (a file from
-`tools/fixtures/files`, such as a board's notes or a ban list, put where boot reads it); the
-format is in `tools/oracle/scenario.c`). A
-scenario with the comment `# expect: stopped NotPorted` checks that unported code stops the Python game. The C driver
+corpse has), `@spec` (runs the last mob's special, as `mobile_update` would), `@state`, `@file`, and before
+boot `@seed`, `@clock`, `@updates` and `@place` (a file from `tools/fixtures/files`, such as a board's notes or a
+ban list, put where boot reads it); the format is in `tools/oracle/scenario.c`). A scenario with the comment `# expect: stopped NotPorted` checks that unported code stops the Python game. The C driver
 plays it through the C game's own code, and `charm.testing.scenario` through the Python game's. Both print each
 step's output, the random numbers drawn so far, and on `@state` the rooms' characters and objects. The C's lines
 are saved as `NAME.golden`, which `tests/test_scenarios.py` replays with no Docker. From `tools/`,

@@ -3,7 +3,7 @@
 The stock areas are compared with the C game line by line by ``charm_tools port world`` (and its test, which uses
 the saved capture). These cover what the stock areas don't reach, or reach too rarely to pin down: the 'F' line
 after the race flags, the anti-alignment zap, a dark room's infrared, nested container weights, the UMIN double
-draw, an area range of "0 0", and the NotPorted branches.
+draw, an area range of "0 0", the NotPorted branches, and the music file's edge cases.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -120,10 +120,12 @@ S
 PROGS = "#MOBPROGS\n#30050\nsay hi~\n#0\n\n"
 
 
-def boot_area(trigger: str = "", progs: str = "", seed: str = "1"):
+def boot_area(trigger: str = "", progs: str = "", seed: str = "1", music: str | None = "#\n"):
     text = AREA.replace("{trigger}", trigger).replace("{progs}", progs)
     with tempfile.TemporaryDirectory() as d:
         Path(d, "area.lst").write_text("t.are\n$\n")
+        if music is not None:
+            Path(d, "music.txt").write_text(music)  # load_songs crashes the C without one
         Path(d, "t.are").write_text(text)
         with log.capture() as lines:
             game = boot_db(Path(d), 1763400000, {"CHARM_SEED": seed})
@@ -276,6 +278,36 @@ class Lookups(unittest.TestCase):
     def test_first_prefix_match_wins(self):
         self.assertEqual(lookup.position_lookup("st"), C.POS_STUNNED)  # before "standing" in position_table
         self.assertEqual(lookup.skill_lookup("sanct"), lookup.skill_lookup("sanctuary"))
+
+
+class Songs(unittest.TestCase):
+    """music.c load_songs, on files the stock music.txt doesn't stand for."""
+
+    def test_songs_up_to_the_hash(self):
+        game, _ = boot_area(music="Band~\nFirst~\n  one\ntwo\n~\nOther~\nSecond~\n~\n#\n")
+        first, second, third = game.songs[:3]
+        self.assertEqual((first.group, first.name, first.lines, first.lyrics[:2]), ("Band", "First", 2, ["one", "two"]))
+        self.assertEqual((second.name, second.lines), ("Second", 0))
+        self.assertIsNone(third.name)  # do_play's lists stop here
+        self.assertEqual(game.channel_songs, [-1] * 11)
+
+    def test_too_many_lines(self):
+        # The 101st line logs a bug and stops the song without setting its lines (abraidotti/charm#83), so it can't
+        # be played, and the next song starts where the lyrics were cut off.
+        lyrics = "".join("line %d\n" % i for i in range(101))
+        game, lines = boot_area(music="Band~\nLong~\n" + lyrics + "~\nSong~\nx\n~\n#\n")
+        self.assertTrue(any("Too many lines in a song -- limit is  100." in line for line in lines), lines)
+        self.assertEqual(game.songs[0].lines, 0)
+        second = game.songs[1]
+        self.assertTrue(second.group.startswith("line 100"), second.group)  # the 101st line and the ~ after it
+        self.assertEqual((second.name, second.lines, second.lyrics[0]), ("Song", 1, "x"))
+
+    def test_no_music_file(self):
+        # fopen fails, and the C calls fclose (NULL) (abraidotti/charm#83).
+        from charm.core.errors import CWouldCrash
+
+        with self.assertRaises(CWouldCrash):
+            boot_area(music=None)
 
 
 if __name__ == "__main__":
