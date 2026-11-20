@@ -1,0 +1,37 @@
+# Mob programs from the fixture area that go wrong, with only area_update running, in the temple (3001): the
+# broken golem (30004) and the herald (30000), with Decimus (10).
+# - ping: pong; iffy: an if never closed, which does no harm
+# - dollar: if-checks with the wrong words (a missing comparison, a missing actor, a bad $-code, a word that isn't
+#   a comparison) log a bug each, count as false, and the program goes on
+# - elsewhere, endless, orphan, nested: an else, endif or or without an if, and ifs nested past 12, each log a bug
+#   and end the program without counting the call off (sic, #87); ping still answers after four of them
+# - bogus: an if-check that doesn't exist, the fifth; now every mob program in the game is past MAX_CALL_LEVEL:
+#   ping, also and the herald's greeting do nothing
+@place mobprog.are mobprog.are
+@place area-mobprog.lst area.lst
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@mob 30004 3001
+@mob 30000 3001
+@connect dec
+Decimus
+psswrd
+@return
+@return
+say ping
+say iffy
+say dollar
+say elsewhere
+say endless
+say orphan
+say nested
+say ping
+say bogus
+say ping
+say also
+south
+north
+@state

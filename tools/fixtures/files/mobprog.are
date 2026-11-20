@@ -1,0 +1,530 @@
+#AREA
+mobprog.are~
+Mob program tests~
+{ 1 5} Charm  Mob programs~
+30000 30099
+
+#MOBILES
+#30000
+herald~
+the herald~
+A herald stands here, ready to announce you.
+~
+A herald in a tabard, with a scroll of names.
+~
+human~
+B 0 400 0
+20 0 10d10+100 1d1+99 1d4+0 punch
+5 5 5 5
+0 0 0 0
+stand stand male 100
+0 0 medium flesh
+M greet 30000 100~
+M speech 30001 check~
+M speech 30002 codes~
+M act 30003 smiles~
+M give 30004 all~
+M bribe 30005 10~
+#30001
+doorman~
+the doorman~
+A doorman guards the way north.
+~
+A big doorman who says who goes where.
+~
+human~
+B 0 0 0
+20 0 10d10+100 1d1+99 1d4+0 punch
+5 5 5 5
+0 0 0 0
+stand stand male 100
+0 0 medium flesh
+M exit 30006 0~
+M exall 30007 1~
+M grall 30008 100~
+M give 30009 3001~
+#30002
+sparring partner~
+the sparring partner~
+A sparring partner waits for a fight.
+~
+A sturdy sparring partner.
+~
+human~
+B 0 -400 0
+5 0 2d10+40 1d1+99 1d2+0 punch
+5 5 5 5
+0 0 0 0
+stand stand male 100
+0 0 medium flesh
+M fight 30010 100~
+M hpcnt 30011 60~
+M kill 30012 100~
+M death 30013 100~
+M surr 30014 100~
+#30003
+wanderer~
+the wanderer~
+A wanderer passes through.
+~
+A wanderer who never stays.
+~
+human~
+0 0 0 0
+5 0 10d10+100 1d1+99 1d4+0 punch
+5 5 5 5
+0 0 0 0
+stand stand female 100
+0 0 medium flesh
+M random 30015 50~
+M entry 30016 100~
+#30004
+broken golem~
+the broken golem~
+A broken golem creaks here.
+~
+Its programs are full of mistakes.
+~
+human~
+B 0 0 0
+5 0 10d10+100 1d1+99 1d4+0 punch
+5 5 5 5
+0 0 0 0
+stand stand none 100
+0 0 medium flesh
+M speech 30017 ping~
+M speech 30018 iffy~
+M speech 30019 elsewhere~
+M speech 30020 endless~
+M speech 30021 orphan~
+M speech 30022 also~
+M speech 30023 bogus~
+M speech 30024 nested~
+M speech 30025 dollar~
+#0
+
+#MOBPROGS
+#30000
+* greet: who has come in
+if ispc $n
+  say Welcome, $n. I'll announce you as $N.
+  if level $n >= 51
+    say Make way for a hero!
+  else
+    if level $n > 50
+      say Unreachable.
+    else
+      say Make way for $n, of level less than 51.
+    endif
+  endif
+  if isimmort $n
+    bow $n
+  endif
+endif
+~
+#30001
+* speech "check": every if-check on whoever spoke, and on the herald
+if rand 50
+  say rand: yes
+else
+  say rand: no
+endif
+if mobhere doorman
+  say mobhere doorman: yes
+else
+  say mobhere doorman: no
+endif
+if mobhere 30001
+  say mobhere 30001: yes
+else
+  say mobhere 30001: no
+endif
+if objhere banner
+  say objhere banner: yes
+else
+  say objhere banner: no
+endif
+if objhere 3716
+  say objhere 3716: yes
+else
+  say objhere 3716: no
+endif
+if mobexists hassan
+  say mobexists hassan: yes
+endif
+if objexists nosuchthing
+  say objexists nosuchthing: yes
+else
+  say objexists nosuchthing: no
+endif
+if people > 1
+  say people > 1: yes
+endif
+if players == 1
+  say players == 1: yes
+else
+  say players == 1: no
+endif
+if mobs >= 1
+  say mobs >= 1: yes
+endif
+if clones != 0
+  say clones != 0: yes
+else
+  say clones != 0: no
+endif
+if order == 0
+  say order == 0: yes
+endif
+if hour < 12
+  say hour < 12: yes
+else
+  say hour < 12: no
+endif
+if ispc $n
+  say ispc: yes
+endif
+if isnpc $i
+  say isnpc: yes
+endif
+if isgood $n
+  say isgood: yes
+endif
+if isevil $n
+  say isevil: yes
+else
+  say isevil: no
+endif
+if isneutral $i
+  say isneutral: yes
+else
+  say isneutral: no
+endif
+if isimmort $n
+  say isimmort: yes
+else
+  say isimmort: no
+endif
+if ischarm $n
+  say ischarm: yes
+else
+  say ischarm: no
+endif
+if isfollow $n
+  say isfollow: yes
+else
+  say isfollow: no
+endif
+if isactive $n
+  say isactive: yes
+endif
+if isdelay $i
+  say isdelay: yes
+else
+  say isdelay: no
+endif
+if isvisible $n
+  say isvisible: yes
+endif
+if hastarget $i
+  say hastarget: yes
+endif
+if istarget $n
+  say istarget: yes
+endif
+if exists $n
+  say exists: yes
+else
+  say exists: no
+endif
+if affected $n sanctuary
+  say affected sanctuary: yes
+else
+  say affected sanctuary: no
+endif
+if affected $n nosuchflag
+  say affected nosuchflag: yes
+else
+  say affected nosuchflag: no
+endif
+if act $i sentinel
+  say act sentinel: yes
+endif
+if off $i bash
+  say off bash: yes
+else
+  say off bash: no
+endif
+if imm $i fire
+  say imm fire: yes
+else
+  say imm fire: no
+endif
+if carries $n banner
+  say carries banner: yes
+endif
+if carries $n 3716
+  say carries 3716: yes
+endif
+if wears $n banner
+  say wears banner: yes
+else
+  say wears banner: no
+endif
+if wears $n 3704
+  say wears 3704: yes
+else
+  say wears 3704: no
+endif
+if has $n light
+  say has light: yes
+endif
+if has $n nosuchtype
+  say has nosuchtype: yes
+else
+  say has nosuchtype: no
+endif
+if uses $n armor
+  say uses armor: yes
+else
+  say uses armor: no
+endif
+if name $n decimus
+  say name decimus: yes
+else
+  say name decimus: no
+endif
+if pos $n standing
+  say pos standing: yes
+else
+  say pos standing: no
+endif
+if clan $n rom
+  say clan rom: yes
+else
+  say clan rom: no
+endif
+if race $n human
+  say race human: yes
+else
+  say race human: no
+endif
+if class $n warrior
+  say class warrior: yes
+else
+  say class warrior: no
+endif
+if vnum $i == 30000
+  say vnum 30000: yes
+endif
+if hpcnt $n > 50
+  say hpcnt > 50: yes
+else
+  say hpcnt > 50: no
+endif
+if room $i == 3700
+  say room 3700: yes
+else
+  say room 3700: no
+endif
+if sex $n == 1
+  say sex 1: yes
+else
+  say sex 1: no
+endif
+if align $n > 0
+  say align > 0: yes
+else
+  say align > 0: no
+endif
+if money $n > 1000
+  say money > 1000: yes
+else
+  say money > 1000: no
+endif
+if grpsize $n >= 0
+  say grpsize >= 0: yes
+endif
+if ispc $n
+or isnpc $n
+  say or: yes
+endif
+if ispc $n
+and isnpc $n
+  say and: yes
+else
+  say and: no
+endif
+if isnpc $n
+  say not reached
+else
+  if ispc $n
+    say nested else: yes
+  endif
+endif
+say done
+break
+say after break
+~
+#30002
+* speech "codes": every $-code, then a break inside an if
+say i=$i I=$I n=$n N=$N t=$t T=$T q=$q Q=$Q
+say j=$j e=$e E=$E X=$X k=$k m=$m M=$M Y=$Y l=$l s=$s S=$S Z=$Z
+say o=$o O=$O p=$p P=$P J=$J
+say r=$r K=$K L=$L
+say R=$R
+say bad=$w
+if ispc $n
+  say before the break
+  break
+endif
+say not reached
+~
+#30003
+* act "smiles"
+emote smiles back at $n.
+~
+#30004
+* give "all": what was given
+if objtype $o light
+  say A light! $O, with $o for a name.
+else
+  say Thanks for $O.
+endif
+if objval2 $o > 100
+  say Its third value is over 100.
+endif
+if vnum $o == 3716
+  say That's object 3716.
+endif
+if name $o banner
+  say It's a banner.
+endif
+if isvisible $o
+  say I can see it.
+endif
+~
+#30005
+* bribe "10": ten silver or more
+say Thank you for the money, $n.
+smile $n
+~
+#30006
+* exit north (0): the doorman stops whoever he can see
+say You shall not pass north, $n!
+~
+#30007
+* exall east (1): everyone, busy or not, whether or not there's a way east
+say Not east, $n.
+~
+#30008
+* grall: everyone who comes in
+nod $n
+~
+#30009
+* give 3001: a bottle of beer, by vnum
+say A beer! Thank you, $n.
+~
+#30010
+* fight
+say Take that, $n!
+~
+#30011
+* hpcnt 60: under 60% of its hit points
+say I'm hurt, $n!
+~
+#30012
+* kill: attacked
+say So you want a fight, $n?
+~
+#30013
+* death
+say Avenge me!
+~
+#30014
+* surr: someone surrenders to it
+say I accept your surrender, $n.
+~
+#30015
+* random
+emote looks around.
+~
+#30016
+* entry: it walks into a room
+emote strides in.
+~
+#30017
+say pong
+~
+#30018
+if ispc $n
+if ispc $n
+  say inside two ifs, one never closed
+endif
+~
+#30019
+else
+say not reached
+~
+#30020
+endif
+say not reached
+~
+#30021
+or ispc $n
+say not reached
+~
+#30022
+and ispc $n
+say not reached
+~
+#30023
+if nosuchcheck $n
+  say not reached
+endif
+~
+#30024
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+if ispc $n
+  say not reached
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+endif
+~
+#30025
+if money $n
+  say not reached
+endif
+if level
+  say not reached
+endif
+if level $z == 1
+  say not reached
+endif
+if level $n is 1
+  say not reached
+endif
+say done
+~
+#0
+
+#$

@@ -1,0 +1,174 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51873 51be72ed
+step 1 "@connect god"
+rng 51873 51be72ed
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect dec"
+rng 51895 7f5599b5
+step 8 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@as god"
+rng 51895 7f5599b5
+step 13 "@mob 30000 3001"
+rng 51910 fbea3747
+step 14 "@mob 30001 3001"
+rng 51925 7edc2a82
+step 15 "set char decimus silver 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51925 7edc2a82
+step 16 "@as dec"
+rng 51925 7edc2a82
+step 17 "south"
+out god "Decimus leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51925 7edc2a82
+step 18 "north"
+rng 51925 7edc2a82
+step 19 "say check"
+out god "\n\rDecimus has arrived.\n\rThe doorman nods at Decimus.\n\rThe herald says 'Welcome, Decimus. I'll announce you as Decimus.'\n\rThe herald says 'Make way for Decimus, of level less than 51.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA doorman guards the way north.\n\rA herald stands here, ready to announce you.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rThe doorman nods at you in agreement.\n\rThe herald says 'Welcome, Decimus. I'll announce you as Decimus.'\n\rThe herald says 'Make way for Decimus, of level less than 51.'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51927 ac0787c3
+step 20 "say codes"
+rng 51927 ac0787c3
+step 21 "smile"
+out god "\n\rDecimus says 'check'\n\rThe herald says 'rand: yes'\n\rThe herald says 'mobhere doorman: yes'\n\rThe herald says 'mobhere 30001: yes'\n\rThe herald says 'objhere banner: no'\n\rThe herald says 'objhere 3716: no'\n\rThe herald says 'mobexists hassan: yes'\n\rThe herald says 'objexists nosuchthing: no'\n\rThe herald says 'people > 1: yes'\n\rThe herald says 'players == 1: no'\n\rThe herald says 'mobs >= 1: yes'\n\rThe herald says 'clones != 0: no'\n\rThe herald says 'order == 0: yes'\n\rThe herald says 'hour < 12: no'\n\rThe herald says 'ispc: yes'\n\rThe herald says 'isnpc: yes'\n\rThe herald says 'isgood: yes'\n\rThe herald says 'isevil: no'\n\rThe herald says 'isneutral: no'\n\rThe herald says 'isimmort: no'\n\rThe herald says 'ischarm: no'\n\rThe herald says 'isfollow: no'\n\rThe herald says 'isactive: yes'\n\rThe herald says 'isdelay: no'\n\rThe herald says 'isvisible: yes'\n\rThe herald says 'hastarget: yes'\n\rThe herald says 'istarget: yes'\n\rThe herald says 'exists: no'\n\rThe herald says 'affected sanctuary: no'\n\rThe herald says 'affected nosuchflag: no'\n\rThe herald says 'act sentinel: yes'\n\rThe herald says 'off bash: no'\n\rThe herald says 'imm fire: no'\n\rThe herald says 'carries 3716: yes'\n\rThe herald says 'wears banner: yes'\n\rThe herald says 'wears 3704: yes'\n\rThe herald says 'has light: yes'\n\rThe herald says 'has nosuchtype: yes'\n\rThe herald says 'uses armor: yes'\n\rThe herald says 'name decimus: yes'\n\rThe herald says 'pos standing: yes'\n\rThe herald says 'clan rom: no'\n\rThe herald says 'race human: yes'\n\rThe herald says 'class warrior: yes'\n\rThe herald says 'vnum 30000: yes'\n\rThe herald says 'hpcnt > 50: yes'\n\rThe herald says 'room 3700: no'\n\rThe herald says 'sex 1: yes'\n\rThe herald says 'align > 0: yes'\n\rThe herald says 'money > 1000: yes'\n\rThe herald says 'grpsize >= 0: yes'\n\rThe herald says 'or: yes'\n\rThe herald says 'and: no'\n\rThe herald says 'nested else: yes'\n\rThe herald says 'done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'check'\n\rThe herald says 'rand: yes'\n\rThe herald says 'mobhere doorman: yes'\n\rThe herald says 'mobhere 30001: yes'\n\rThe herald says 'objhere banner: no'\n\rThe herald says 'objhere 3716: no'\n\rThe herald says 'mobexists hassan: yes'\n\rThe herald says 'objexists nosuchthing: no'\n\rThe herald says 'people > 1: yes'\n\rThe herald says 'players == 1: no'\n\rThe herald says 'mobs >= 1: yes'\n\rThe herald says 'clones != 0: no'\n\rThe herald says 'order == 0: yes'\n\rThe herald says 'hour < 12: no'\n\rThe herald says 'ispc: yes'\n\rThe herald says 'isnpc: yes'\n\rThe herald says 'isgood: yes'\n\rThe herald says 'isevil: no'\n\rThe herald says 'isneutral: no'\n\rThe herald says 'isimmort: no'\n\rThe herald says 'ischarm: no'\n\rThe herald says 'isfollow: no'\n\rThe herald says 'isactive: yes'\n\rThe herald says 'isdelay: no'\n\rThe herald says 'isvisible: yes'\n\rThe herald says 'hastarget: yes'\n\rThe herald says 'istarget: yes'\n\rThe herald says 'exists: no'\n\rThe herald says 'affected sanctuary: no'\n\rThe herald says 'affected nosuchflag: no'\n\rThe herald says 'act sentinel: yes'\n\rThe herald says 'off bash: no'\n\rThe herald says 'imm fire: no'\n\rThe herald says 'carries 3716: yes'\n\rThe herald says 'wears banner: yes'\n\rThe herald says 'wears 3704: yes'\n\rThe herald says 'has light: yes'\n\rThe herald says 'has nosuchtype: yes'\n\rThe herald says 'uses armor: yes'\n\rThe herald says 'name decimus: yes'\n\rThe herald says 'pos standing: yes'\n\rThe herald says 'clan rom: no'\n\rThe herald says 'race human: yes'\n\rThe herald says 'class warrior: yes'\n\rThe herald says 'vnum 30000: yes'\n\rThe herald says 'hpcnt > 50: yes'\n\rThe herald says 'room 3700: no'\n\rThe herald says 'sex 1: yes'\n\rThe herald says 'align > 0: yes'\n\rThe herald says 'money > 1000: yes'\n\rThe herald says 'grpsize >= 0: yes'\n\rThe herald says 'or: yes'\n\rThe herald says 'and: no'\n\rThe herald says 'nested else: yes'\n\rThe herald says 'done'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51928 bc29c08d
+step 22 "remove banner"
+out god "\n\rDecimus says 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 23 "give banner herald"
+out god "\n\rThe herald smiles back at Decimus.\n\rDecimus smiles happily.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The herald smiles back at Decimus.\n\rYou smile happily.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 24 "give 5 silver herald"
+out god "\n\rDecimus stops using a war banner.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You stop using a war banner.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 25 "give 10 silver herald"
+out god "\n\rDecimus gives a war banner to the herald.\n\rThe herald says 'A light! a war banner, with banner for a name.'\n\rThe herald says 'Its third value is over 100.'\n\rThe herald says 'That's object 3716.'\n\rThe herald says 'It's a banner.'\n\rThe herald says 'I can see it.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You give a war banner to the herald.\n\rThe herald says 'A light! a war banner, with banner for a name.'\n\rThe herald says 'Its third value is over 100.'\n\rThe herald says 'That's object 3716.'\n\rThe herald says 'It's a banner.'\n\rThe herald says 'I can see it.'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 26 "@obj 3001 3001"
+rng 51934 7bba79b5
+step 27 "get bottle"
+out god "\n\rDecimus gives the herald some coins.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You give the herald 5 silver.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 28 "give bottle doorman"
+out god "\n\rDecimus gives the herald some coins.\n\rThe herald says 'Thank you for the money, Decimus.'\n\rThe herald beams a smile at Decimus.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You give the herald 10 silver.\n\rThe herald says 'Thank you for the money, Decimus.'\n\rThe herald smiles at you.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 29 "north"
+out god "\n\rDecimus gets a bottle of beer.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You get a bottle of beer.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 30 "east"
+out god "\n\rDecimus gives a bottle of beer to the doorman.\n\rThe doorman says 'A beer! Thank you, Decimus.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You give a bottle of beer to the doorman.\n\rThe doorman says 'A beer! Thank you, Decimus.'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51934 7bba79b5
+step 31 "@connect hero"
+rng 51934 7bba79b5
+step 32 "Heroic"
+out god "\n\rThe doorman says 'You shall not pass north, Decimus!'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The doorman says 'You shall not pass north, Decimus!'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51934 7bba79b5
+step 33 "psswrd"
+out god "\n\rThe doorman says 'Not east, Decimus.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The doorman says 'Not east, Decimus.'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51934 7bba79b5
+step 34 "@return"
+out god "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "Heroic has entered the game.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rA doorman guards the way north.\n\rA herald stands here, ready to announce you.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51934 7bba79b5
+step 35 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51934 7bba79b5
+step 36 "south"
+out god "\n\rHeroic leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rHeroic leaves south.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51934 7bba79b5
+step 37 "north"
+rng 51934 7bba79b5
+step 38 "@as god"
+rng 51934 7bba79b5
+step 39 "south"
+out god "\n\rHeroic has arrived.\n\rThe doorman nods at Heroic.\n\rThe herald says 'Welcome, Heroic. I'll announce you as Heroic.'\n\rThe herald says 'Make way for a hero!'\n\rThe Temple Square [Room 3005]\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out dec "\n\rHeroic has arrived.\n\rThe doorman nods at Heroic.\n\rThe herald says 'Welcome, Heroic. I'll announce you as Heroic.'\n\rThe herald says 'Make way for a hero!'\n\rSmokegod leaves south.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rA doorman guards the way north.\n\rA herald stands here, ready to announce you.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rThe doorman nods at you in agreement.\n\rThe herald says 'Welcome, Heroic. I'll announce you as Heroic.'\n\rThe herald says 'Make way for a hero!'\n\rSmokegod leaves south.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 40 "north"
+rng 51937 98fa3ef8
+step 41 "@as dec"
+rng 51937 98fa3ef8
+step 42 "say codes"
+out god "The Temple Of Mota [Room 3001]\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHeroic the Recruit is here.\n\rDecimus the Recruit is here.\n\rA doorman guards the way north.\n\rA herald stands here, ready to announce you.\n\rHassan is here, waiting to dispense some justice.\n\rThe doorman nods at you in agreement.\n\rThe herald says 'Welcome, Smokegod. I'll announce you as Smokegod.'\n\rThe herald says 'Make way for a hero!'\n\rThe herald bows before you.\n\r\n\r<100hp 100m 98mv> \xff\xf9"
+out dec "You say 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Decimus K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\rSmokegod has arrived.\n\rThe doorman nods at Smokegod.\n\rThe herald says 'Welcome, Smokegod. I'll announce you as Smokegod.'\n\rThe herald says 'Make way for a hero!'\n\rThe herald bows before Smokegod.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "\n\rDecimus says 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Decimus K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\rSmokegod has arrived.\n\rThe doorman nods at Smokegod.\n\rThe herald says 'Welcome, Smokegod. I'll announce you as Smokegod.'\n\rThe herald says 'Make way for a hero!'\n\rThe herald bows before Smokegod.\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51945 a2c49ca0
+step 43 "say codes"
+out god "Decimus says 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<100hp 100m 98mv> \xff\xf9"
+out dec "You say 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "\n\rDecimus says 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51952 e641a48b
+step 44 "say codes"
+out god "\n\rDecimus says 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<100hp 100m 98mv> \xff\xf9"
+out dec "You say 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+out hero "\n\rDecimus says 'codes'\n\rThe herald says 'i=herald I=the herald n=Decimus N=Decimus t=someone T=someone q=Decimus Q=Decimus'\n\rThe herald says 'j=he e=he E=someone X=he k=him m=him M=someone Y=him l=his s=his S=someone's Z=his'\n\rThe herald says 'o=something O=something p=something P=something J=someone'\n\rThe herald says 'r=Smokegod K=him L=his'\n\rThe herald says 'R=Decimus'\n\rThe herald says 'bad= <@@@> '\n\rThe herald says 'before the break'\n\r\n\r<29hp 102m 104mv> \xff\xf9"
+rng 51960 b6faed5d
+step 45 "@state"
+state room 3001 light 1 people player player player mob mob mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 98/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Heroic 51 pos 8 hit 29/29 mana 102/102 move 104/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 104/106 wait 0 daze 0 exp 2088 gold 0 silver 85 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state char mob 30001 pos 8 hit 174/174 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 51 act 3 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+state   obj carried 3001 wear -1 timer 0 cost 5 values 16 16 1 0 0
+state char mob 30000 pos 8 hit 165/165 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 77 act 3 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51960 b6faed5d

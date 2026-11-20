@@ -1,0 +1,25 @@
+# Mob programs from the fixture area as mobs move, with area_update and mobile_update running, in the temple
+# square (3005) and round it. The wanderer (30003) has random (50) and entry programs; Decimus (10) waits in the
+# square, Heroic (51) in the market square (3014) to the south.
+# - random: each mobile pulse, one in two it looks around, and does nothing else that pulse
+# - entry: when it wanders into a room, it strides in (the market square, where Heroic sees it)
+@place mobprog.are mobprog.are
+@place area-mobprog.lst area.lst
+@updates area,mobile
+@connect dec
+Decimus
+psswrd
+@return
+@return
+south
+@connect hero
+Heroic
+psswrd
+@return
+@return
+south
+south
+@as dec
+@mob 30003 3005
+@pulse 3200
+@state

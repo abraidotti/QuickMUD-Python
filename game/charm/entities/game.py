@@ -70,6 +70,7 @@ class Game:
     pulse_mobile: int = 0
     pulse_violence: int = 0
     pulse_point: int = 0
+    mprog_call_level: int = 0  # mob_prog.c program_flow's static call_level
     save_number: int = 0  # update.c's: which connections char_update saves this tick
     # the updates update_handler runs: CHARM_UPDATES's names (charm.systems.update.updates_named); all by default
     updates: frozenset = frozenset(("area", "song", "mobile", "violence", "weather", "char", "obj", "aggr"))

@@ -1,0 +1,111 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51873 51be72ed
+step 1 "@connect god"
+rng 51873 51be72ed
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@mob 30004 3001"
+rng 51910 fbea3747
+step 7 "@mob 30000 3001"
+rng 51925 7edc2a82
+step 8 "@connect dec"
+rng 51925 7edc2a82
+step 9 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51925 7edc2a82
+step 10 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51925 7edc2a82
+step 11 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA herald stands here, ready to announce you.\n\rA broken golem creaks here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 12 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 13 "say ping"
+out god "\n\rDecimus says 'ping'\n\rThe broken golem says 'pong'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'ping'\n\rThe broken golem says 'pong'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 14 "say iffy"
+out god "\n\rDecimus says 'iffy'\n\rThe broken golem says 'inside two ifs, one never closed'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'iffy'\n\rThe broken golem says 'inside two ifs, one never closed'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 15 "say dollar"
+out god "\n\rDecimus says 'dollar'\n\rThe broken golem says 'done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'dollar'\n\rThe broken golem says 'done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 16 "say elsewhere"
+out god "\n\rDecimus says 'elsewhere'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'elsewhere'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 17 "say endless"
+out god "\n\rDecimus says 'endless'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'endless'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 18 "say orphan"
+out god "\n\rDecimus says 'orphan'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'orphan'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 19 "say nested"
+out god "\n\rDecimus says 'nested'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'nested'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 20 "say ping"
+out god "\n\rDecimus says 'ping'\n\rThe broken golem says 'pong'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'ping'\n\rThe broken golem says 'pong'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 21 "say bogus"
+out god "\n\rDecimus says 'bogus'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'bogus'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 22 "say ping"
+out god "\n\rDecimus says 'ping'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'ping'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 23 "say also"
+out god "\n\rDecimus says 'also'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'also'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 24 "south"
+out god "\n\rDecimus leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51925 7edc2a82
+step 25 "north"
+rng 51925 7edc2a82
+step 26 "@state"
+state room 3001 light 0 people mob mob player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 30000 pos 8 hit 174/174 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 51 act 3 affected_by 0 train 0 on 0 stats 16 16 16 16 16
+state char mob 30004 pos 8 hit 165/165 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 62 act 3 affected_by 0 train 0 on 0 stats 12 12 12 12 12
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51925 7edc2a82

@@ -130,3 +130,16 @@ def spec_name(function: str) -> str | None:
     from charm.data.specials import SPEC_TABLE
 
     return next((s.name for s in SPEC_TABLE if s.function == function), None)
+
+
+# C: lookup.c flag_lookup
+def flag_lookup(name: str, table) -> int:
+    """The bit of the first flag whose name starts with name, or NO_FLAG (-99, which IS_SET finds set in nearly
+    every value)."""
+    from charm.core.strings import lower, str_prefix
+    from charm.data import constants as C
+
+    for flag in table:
+        if name and lower(name[0]) == lower(flag.name[0]) and str_prefix(name, flag.name):
+            return flag.bit
+    return C.NO_FLAG
