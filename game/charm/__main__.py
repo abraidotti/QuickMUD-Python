@@ -61,7 +61,8 @@ def main(argv: list[str] | None = None) -> int:
         game.updates = updates_named(named)
         if named is not None:
             log.log_f("CHARM_UPDATES=%s: only those updates run", named)
-        log.log_f("Not ported, not running: %s (#28).", ", ".join(NOT_RUNNING))
+        if NOT_RUNNING:
+            log.log_f("Not ported, not running: %s (#28).", ", ".join(NOT_RUNNING))
         log.log_f("Charm is ready to rock on port %d (%s).", port, config.ipaddress)
         game_loop(game, control, PulseStats() if args.pulse_stats else None)
     except (NotPorted, CWouldCrash) as e:

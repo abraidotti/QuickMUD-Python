@@ -50,11 +50,10 @@ at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix,
 the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
 string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (kill, murder, flee, surrender,
 slay and the fighting skills), `cast` and every spell (`magic.c` and `magic2.c`), `heal` (`healer.c`), `play`
-(`music.c`), and what login calls; any other command raises `NotPorted`, which stops the game (#32). The mobs'
-special procedures (`special.c`) are ported, but nothing runs them until `mobile_update` is. Of the per-pulse
-updates, `area_update`, `song_update` and `violence_update` run; the game logs the rest at boot (#28).
-`CHARM_UPDATES` names the ones to run in both games (`area,violence`, or `all`; unset, everything ported), as
-`@updates` does in a scenario (#74).
+(`music.c`), and what login calls; any other command raises `NotPorted`, which stops the game (#32). Every
+per-pulse update runs, as the C's do: areas, songs, mobs (and their specials), fights, weather, characters, objects
+and aggression. `CHARM_UPDATES` names the ones to run in both games (`area,violence`, or `all`; unset, all of
+them), as `@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.
 

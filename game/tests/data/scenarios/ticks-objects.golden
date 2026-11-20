@@ -1,0 +1,393 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area,obj
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "@connect pupil"
+rng 51895 7f5599b5
+step 9 "Pupil"
+out pupil "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 10 "psswrd"
+out pupil "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out pupil "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Tournament and Practice Yard\n\r  The practice yard of the fighters.  To the north is the bar.  A well leads\n\rdown into darkness.\n\rYour guildmaster is standing here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@return"
+out pupil "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect dec"
+rng 51895 7f5599b5
+step 14 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@as god"
+rng 51895 7f5599b5
+step 19 "transfer pupil 3700"
+out god "Pupil arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rPupil the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "set char smokegod mana 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "restore smokegod"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "cast 'create spring'"
+out god "A magical spring flows from the ground.\n\r\n\r<100hp 29980m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'qcandusahz gsfuio'.\n\rA magical spring flows from the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'qcandusahz gsfuio'.\n\rA magical spring flows from the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 25 "@pulse 24"
+rng 51896 5ed8996e
+step 26 "set obj spring timer 2"
+out god "\n\r<100hp 29980m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 27 "@obj 3021 3700"
+rng 51896 5ed8996e
+step 28 "get sword"
+out god "You get a small sword.\n\r\n\r<100hp 29980m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 29 "cast fireproof sword"
+out god "You protect a small sword from fire.\n\r\n\r<100hp 29970m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'yucandussfaay'.\n\rA small sword is surrounded by a protective aura.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yucandussfaay'.\n\rA small sword is surrounded by a protective aura.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 30 "@pulse 24"
+rng 51899 d1eb3d36
+step 31 "drop sword"
+out god "You drop a small sword.\n\r\n\r<100hp 29970m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod drops a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod drops a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 32 "@obj 3021 3700"
+rng 51899 d1eb3d36
+step 33 "get sword"
+out god "You get a small sword.\n\r\n\r<100hp 29970m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 34 "cast fireproof sword"
+out god "You protect a small sword from fire.\n\r\n\r<100hp 29960m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'yucandussfaay'.\n\rA small sword is surrounded by a protective aura.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yucandussfaay'.\n\rA small sword is surrounded by a protective aura.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 35 "@pulse 24"
+rng 51901 51250113
+step 36 "@obj 105 3700"
+rng 51901 51250113
+step 37 "set obj potion timer 2"
+out god "\n\r<100hp 29960m 100mv> \xff\xf9"
+rng 51901 51250113
+step 38 "@obj 3001 3700"
+rng 51901 51250113
+step 39 "@obj 3032 3700"
+rng 51901 51250113
+step 40 "get bottle"
+out god "You get a bottle of beer.\n\r\n\r<100hp 29960m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod gets a bottle of beer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets a bottle of beer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 41 "put bottle bag"
+out god "You put a bottle of beer in a bag.\n\r\n\r<100hp 29960m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod puts a bottle of beer in a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod puts a bottle of beer in a bag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51901 51250113
+step 42 "set obj bag timer 1"
+out god "\n\r<100hp 29960m 100mv> \xff\xf9"
+rng 51901 51250113
+step 43 "@obj 3005 3700"
+rng 51901 51250113
+step 44 "set obj scimitar timer 3"
+out god "\n\r<100hp 29960m 100mv> \xff\xf9"
+rng 51901 51250113
+step 45 "cast 'floating disc'"
+out god "You create a floating disc.\n\rYou release a floating disc and it floats next to you.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'yhiahuio eugq'.\n\rSmokegod has created a floating black disc.\n\rSmokegod releases a floating disc to float next to him.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yhiahuio eugq'.\n\rSmokegod has created a floating black disc.\n\rSmokegod releases a floating disc to float next to him.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 46 "@pulse 24"
+rng 51904 da7aaa40
+step 47 "set obj disc timer 3"
+out god "\n\r<100hp 29920m 100mv> \xff\xf9"
+rng 51904 da7aaa40
+step 48 "set obj pie timer 2"
+out god "\n\r<100hp 29920m 100mv> \xff\xf9"
+rng 51904 da7aaa40
+step 49 "@obj 1362 3700"
+rng 51904 da7aaa40
+step 50 "get scroll"
+out god "You get an old scroll.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod gets an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets an old scroll.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 51 "put scroll disc"
+out god "You put an old scroll on a floating disc.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod puts an old scroll on a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod puts an old scroll on a floating disc.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 52 "@as god"
+rng 51904 da7aaa40
+step 53 "@mob 3064 3700"
+rng 51908 82a9c727
+step 54 "@obj 3001 3700"
+rng 51908 82a9c727
+step 55 "force drunk get bottle"
+out god "The drunk gets a bottle of beer.\n\rOk.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rThe drunk gets a bottle of beer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe drunk gets a bottle of beer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51908 82a9c727
+step 56 "slay drunk"
+out god "You slay him in cold blood!\n\rThe drunk spills his guts all over the floor.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod slays the drunk in cold blood!\n\rThe drunk spills his guts all over the floor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod slays the drunk in cold blood!\n\rThe drunk spills his guts all over the floor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51911 df511cc4
+step 57 "@obj 3010 3700"
+rng 51911 df511cc4
+step 58 "@mob 3062 3700"
+rng 51913 60f3770f
+step 59 "slay fido"
+out god "You slay him in cold blood!\n\rYou hear the beastly fido's death cry.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod slays the beastly fido in cold blood!\n\rYou hear the beastly fido's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod slays the beastly fido in cold blood!\n\rYou hear the beastly fido's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 60 "get corpse"
+out god "You get the corpse of the beastly fido.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod gets the corpse of the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod gets the corpse of the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 61 "put corpse pit"
+out god "You put the corpse of the beastly fido in the donation pit.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod puts the corpse of the beastly fido in the donation pit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod puts the corpse of the beastly fido in the donation pit.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 62 "slay decimus"
+out god "You slay him in cold blood!\n\rYou hear Decimus's death cry.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod slays Decimus in cold blood!\n\rYou hear Decimus's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod slays you in cold blood!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 63 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29920/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 23 wear 18 timer 3 cost 0 values 600 16 0 300 0
+state     obj in 1362 wear -1 timer 0 cost 400 values 10 19 -1 -1 -1
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 11 wear -1 timer 31 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state   obj in 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state   obj in 3001 wear -1 timer 0 cost 5 values 16 16 1 0 0
+state obj floor 16 wear -1 timer 7 cost 0 values 5 5 0 1 0
+state obj floor 3005 wear -1 timer 3 cost 5600 values 1 4 10 21 48
+state obj floor 3032 wear -1 timer 1 cost 9 values 50 0 0 5 100
+state   obj in 3001 wear -1 timer 0 cost 5 values 16 16 1 0 0
+state obj floor 105 wear -1 timer 2 cost 160 values 6 2 23 -1 -1
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 22 wear -1 timer 2 cost 0 values 100000 100000 0 0 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 51917 64c4bf17
+step 64 "@pulse 2400"
+out god "\n\rA bag crumbles into dust.\n\r\n\r<100hp 29920m 100mv> \xff\xf9\n\rA floating disc flickers and vanishes, spilling its contents on the floor.\n\rHassan's scimitar crumbles into dust.\n\rA pink potion has evaporated from disuse.\n\rA magical spring dries up.\n\r\n\r<100hp 29920m 100mv> \xff\xf9\n\rThe corpse of the drunk decays into dust.\n\r\n\r<100hp 29920m 100mv> \xff\xf9\n\rThe guts of the drunk decomposes.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rA bag crumbles into dust.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rA floating disc flickers and vanishes, spilling its contents on the floor.\n\rHassan's scimitar crumbles into dust.\n\rA pink potion has evaporated from disuse.\n\rA magical spring dries up.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe corpse of the drunk decays into dust.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe guts of the drunk decomposes.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51954 838facd4
+step 65 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29920/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 1362 wear -1 timer 0 cost 400 values 10 19 -1 -1 -1
+state obj floor 11 wear -1 timer 21 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 51954 838facd4
+step 66 "@pulse 2400"
+out god "\n\rA small sword's protective aura fades.\n\r\n\r<100hp 29920m 100mv> \xff\xf9\n\rA small sword's protective aura fades.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rA small sword's protective aura fades.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51971 4058c99c
+step 67 "look"
+out god "Entrance to Mud School [Room 3700]\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r     An old scroll has been left here.\n\r     The corpse of Decimus is lying here.\n\r     A pit for sacrifices is in front of the altar.\n\r     A small sword lies here.\n\rPupil the Recruit is here.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+rng 51971 4058c99c
+step 68 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29920/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 1362 wear -1 timer 0 cost 400 values 10 19 -1 -1 -1
+state obj floor 11 wear -1 timer 11 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 51971 4058c99c
+step 69 "@pulse 7200"
+out god "\n\rThe corpse of Decimus decays into dust.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rThe corpse of Decimus decays into dust.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52230 3beac10c
+step 70 "look"
+out god "Entrance to Mud School [Room 3700]\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r     A rolled up map is here.\n\r     You see a sub issue shield here.\n\r     You see a sub issue sword here.\n\r     You see a sub issue vest here.\n\r     (Glowing) A war banner is on the floor here.\n\r     An old scroll has been left here.\n\r     A pit for sacrifices is in front of the altar.\n\r     A small sword lies here.\n\rPupil the Recruit is here.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+rng 52230 3beac10c
+step 71 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29920/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state obj floor 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state obj floor 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state obj floor 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 1362 wear -1 timer 0 cost 400 values 10 19 -1 -1 -1
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52230 3beac10c
+step 72 "goto 6535"
+out god "Granite Head's Bakery [Room 6535]\n\r  The aroma coming from this room is sensuous.  You can almost taste\n\rthe pastries dissolving in your mouth.\n\rGranite Head, the baker, is waiting for a customer here.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52230 3beac10c
+step 73 "@state"
+state room 6535 light 0 people player mob
+state exit 1 to 6517 info 0 key -1
+state char Smokegod 60 pos 8 hit 100/100 mana 29920/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state char mob 6504 pos 8 hit 1359/1359 mana 172/172 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 59 act 2051 affected_by 0 train 0 on 0 stats 19 19 19 19 19
+state   obj carried 6504 wear 16 timer 0 cost 880 values 4 4 4 7 0
+state   obj carried 3031 wear -1 timer 0 cost 75 values 0 0 250 0 0
+state   obj carried 3003 wear -1 timer 0 cost 25 values 12 12 7 0 0
+state   obj carried 3000 wear -1 timer 0 cost 75 values 300 300 1 0 0
+state room 3700 light 1 people player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state obj floor 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state obj floor 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state obj floor 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 1362 wear -1 timer 0 cost 400 values 10 19 -1 -1 -1
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state obj floor 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52230 3beac10c

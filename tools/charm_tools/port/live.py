@@ -82,7 +82,7 @@ class CGame:
     def __init__(self, image: str, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",),
                  area_updates_only: bool = False):
         self.image, self.qmconfig, self.players = image, qmconfig, players
-        # CHARM_UPDATES=area (#32): only area_update runs, as in the Python game, so the worlds stay the same
+        # CHARM_UPDATES=area (#32): only area_update runs, in both games, so the worlds stay the same
         self.env = ["-e", "CHARM_UPDATES=area"] if area_updates_only else []
 
     def __enter__(self):
@@ -118,8 +118,10 @@ class PyGame:
     STOP_SIGNAL = int(getattr(signal, "SIGBREAK", 21)) if os.name == "nt" else int(signal.SIGTERM)
 
     def __init__(self, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",),
-                 args: tuple[str, ...] = ()):
+                 args: tuple[str, ...] = (), area_updates_only: bool = False):
         self.qmconfig, self.players, self.args = qmconfig, players, args
+        # CHARM_UPDATES=area, as CGame's: every update runs in the Python game too now (#74, P4 PR 6)
+        self.updates = {"CHARM_UPDATES": "area"} if area_updates_only else {}
 
     def __enter__(self):
         self.root = Path(tempfile.mkdtemp(prefix="charm-port-"))
@@ -136,7 +138,7 @@ class PyGame:
 
     def start(self) -> None:
         """Start the game, or start it again after stop: the same root and port, the log appended to."""
-        env = dict(os.environ, CHARM_SEED=SEED, PYTHONPATH=str(game_dir()))
+        env = dict(os.environ, CHARM_SEED=SEED, PYTHONPATH=str(game_dir()), **self.updates)
         flags = subprocess.CREATE_NEW_PROCESS_GROUP if os.name == "nt" else 0
         self.log = open(self.root / "log" / "python.log", "ab")
         argv = [sys.executable, "-m", "charm", "--port", str(self.port), "--root", str(self.root), *self.args]

@@ -1,0 +1,427 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area,char
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "set char smokegod mana 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "restore smokegod"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@connect dec"
+rng 51895 7f5599b5
+step 11 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 12 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@connect purse"
+rng 51895 7f5599b5
+step 16 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 17 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 18 "@return"
+out dec "\n\rPurser has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@return"
+out purse "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@connect pupil"
+rng 51895 7f5599b5
+step 21 "Pupil"
+out pupil "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 22 "psswrd"
+out pupil "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 23 "@return"
+out pupil "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Tournament and Practice Yard\n\r  The practice yard of the fighters.  To the north is the bar.  A well leads\n\rdown into darkness.\n\rYour guildmaster is standing here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "@return"
+out pupil "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@as god"
+rng 51895 7f5599b5
+step 26 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "transfer purser 3700"
+out god "Purser arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out dec "\n\rPurser arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "transfer pupil 3700"
+out god "Pupil arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out dec "\n\rPupil arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rPupil arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rPurser the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "set skill pupil all 100"
+out god "\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "set char pupil mana 500"
+out god "\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "set char pupil hp 300"
+out god "\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "restore pupil"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod has restored you.\n\r\n\r<300hp 500m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "@as pupil"
+rng 51895 7f5599b5
+step 34 "cast 'detect invis'"
+out pupil "You don't know any spells of that name.\n\r\n\r<300hp 500m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "@pulse 24"
+rng 51895 7f5599b5
+step 36 "cast armor"
+out god "\n\rPupil utters the words, 'abrazak'.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out dec "\n\rPupil utters the words, 'armor'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rPupil utters the words, 'armor'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pupil "You feel someone protecting you.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51896 5ed8996e
+step 37 "@pulse 24"
+rng 51896 5ed8996e
+step 38 "@as god"
+rng 51896 5ed8996e
+step 39 "cast 'cause light' decimus"
+out god "Your spell >>> ANNIHILATES <<< Decimus!\n\rDecimus is in awful condition. \n\r\n\r<100hp 29985m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell >>> ANNIHILATES <<< you!\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\rSmokegod is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell >>> ANNIHILATES <<< Decimus!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell >>> ANNIHILATES <<< Decimus!\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 40 "@pulse 24"
+rng 51899 d1eb3d36
+step 41 "cast 'cause light' purser"
+out god "Your spell *** DEVASTATES *** Purser!\n\rDecimus is in awful condition. \n\r\n\r<100hp 29970m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell *** DEVASTATES *** Purser!\n\rSmokegod is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell *** DEVASTATES *** you!\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\rSmokegod is in excellent condition. \n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell *** DEVASTATES *** Purser!\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51901 51250113
+step 42 "@pulse 24"
+rng 51901 51250113
+step 43 "cast poison purser"
+out god "Purser turns slightly green, but it passes.\n\rDecimus is in awful condition. \n\r\n\r<100hp 29960m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'sausabru'.\n\rPurser turns slightly green, but it passes.\n\rSmokegod is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'sausabru'.\n\rYou feel momentarily ill, but it passes.\n\rSmokegod is in excellent condition. \n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'sausabru'.\n\rPurser turns slightly green, but it passes.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 44 "@pulse 24"
+rng 51904 da7aaa40
+step 45 "cast poison decimus"
+out god "Decimus looks very ill.\n\rDecimus is in awful condition. \n\r\n\r<100hp 29950m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'sausabru'.\n\rYou feel very sick.\n\rSmokegod is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'sausabru'.\n\rDecimus looks very ill.\n\rSmokegod is in excellent condition. \n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'sausabru'.\n\rDecimus looks very ill.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 46 "@pulse 24"
+rng 51906 1b2d656f
+step 47 "cast poison decimus"
+out god "Decimus turns slightly green, but it passes.\n\rDecimus is in awful condition. \n\r\n\r<100hp 29940m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'sausabru'.\n\rYou feel momentarily ill, but it passes.\n\rSmokegod is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'sausabru'.\n\rDecimus turns slightly green, but it passes.\n\rSmokegod is in excellent condition. \n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'sausabru'.\n\rDecimus turns slightly green, but it passes.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 48 "@pulse 24"
+rng 51909 3b8e3587
+step 49 "cast plague pupil"
+out god "Pupil screams in agony as plague sores erupt from his skin.\n\rDecimus is in awful condition. \n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'sraojz'.\n\rPupil screams in agony as plague sores erupt from his skin.\n\rSmokegod is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'sraojz'.\n\rPupil screams in agony as plague sores erupt from his skin.\n\rSmokegod is in excellent condition. \n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod utters the words, 'sraojz'.\n\rYou scream in agony as plague sores erupt from your skin.\n\rJoin a clan if you want to kill players.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 50 "@pulse 24"
+rng 51920 c09b44b3
+step 51 "peace"
+out god "Ok.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+rng 51920 c09b44b3
+step 52 "@obj 3030 3700 0 0 3 0 0"
+rng 51920 c09b44b3
+step 53 "@as purse"
+rng 51920 c09b44b3
+step 54 "get torch"
+out god "Purser gets a torch.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out dec "\n\rPurser gets a torch.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "You get a torch.\n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rPurser gets a torch.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 55 "remove banner"
+out god "\n\rPurser stops using a war banner.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out dec "\n\rPurser stops using a war banner.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "You stop using a war banner.\n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rPurser stops using a war banner.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 56 "hold torch"
+out god "\n\rPurser lights a torch and holds it.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out dec "\n\rPurser lights a torch and holds it.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "You light a torch and hold it.\n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rPurser lights a torch and holds it.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 57 "rest"
+out god "\n\rPurser sits down and rests.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out dec "\n\rPurser sits down and rests.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "You rest.\n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rPurser sits down and rests.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 58 "@as dec"
+rng 51920 c09b44b3
+step 59 "sleep"
+out god "\n\rDecimus goes to sleep.\n\r\n\r<100hp 29920m 100mv> \xff\xf9"
+out dec "You go to sleep.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus goes to sleep.\n\r\n\r<6hp 102m 106mv> \xff\xf9"
+out pupil "\n\rDecimus goes to sleep.\n\r\n\r<300hp 486m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 60 "@as god"
+rng 51920 c09b44b3
+step 61 "@state"
+state room 3700 light 3 people player player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 300/300 mana 486/500 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8388608 train 1 on 0 stats 19 18 13 13 13
+state   affect 71 level 45 duration 60 location 1 modifier -5 bitvector 8388608
+state   affect 2 level 7 duration 24 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 5 hit 6/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3030 wear 0 timer 0 cost 4 values 0 0 3 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 4 hit 4/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 4096 train 1 on 0 stats 19 13 13 13 13
+state   affect 72 level 60 duration 60 location 1 modifier -2 bitvector 4096
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29920/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+rng 51920 c09b44b3
+step 62 "@pulse 240"
+out god "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rDecimus shivers and suffers.\n\r\n\r<100hp 29941m 100mv> \xff\xf9"
+out dec "\n\rYou shiver and suffer.\n\rYou sure are BLEEDING!\n\r\n\r<2hp 102m 106mv> \xff\xf9"
+out purse "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rA torch flickers.\n\rDecimus shivers and suffers.\n\r\n\r<16hp 102m 106mv> \xff\xf9"
+out pupil "\n\rYou writhe in agony from the plague.\n\rDecimus shivers and suffers.\n\r\n\r<290hp 476m 96mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 63 "@state"
+state room 3700 light 3 people player player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 290/300 mana 476/500 move 96/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8388608 train 1 on 0 stats 19 18 13 13 13
+state   affect 71 level 45 duration 59 location 1 modifier -5 bitvector 8388608
+state   affect 2 level 7 duration 23 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 196 0 0
+state char Purser 10 pos 5 hit 16/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3030 wear 0 timer 0 cost 4 values 0 0 2 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 2/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 4096 train 1 on 0 stats 19 13 13 13 13
+state   affect 72 level 60 duration 59 location 1 modifier -2 bitvector 4096
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 196 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29941/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+rng 51937 98fa3ef8
+step 64 "@pulse 720"
+out god "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rDecimus shivers and suffers.\n\rDecimus is incapacitated and will slowly die, if not aided.\n\r\n\r<100hp 29955m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rA torch goes out.\n\rDecimus shivers and suffers.\n\rDecimus is DEAD!!\n\rDecimus's head is shattered, and his brains splash all over you.\n\r\n\r<100hp 29975m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 29990m 100mv> \xff\xf9"
+out dec "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou shiver and suffer.\n\rYou are incapacitated and will slowly die, if not aided.\n\r\n\r<-4hp 102m 106mv> \xff\xf9\n\rYou shiver and suffer.\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+out purse "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rA torch flickers.\n\rDecimus shivers and suffers.\n\rDecimus is incapacitated and will slowly die, if not aided.\n\r\n\r<26hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rA torch flickers and goes out.\n\rDecimus shivers and suffers.\n\rDecimus is DEAD!!\n\rDecimus's head is shattered, and his brains splash all over you.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pupil "\n\rYou writhe in agony from the plague.\n\rDecimus shivers and suffers.\n\rDecimus is incapacitated and will slowly die, if not aided.\n\r\n\r<281hp 466m 87mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rA torch goes out.\n\rDecimus shivers and suffers.\n\rDecimus is DEAD!!\n\rDecimus's head is shattered, and his brains splash all over you.\n\r\n\r<271hp 456m 78mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<262hp 447m 70mv> \xff\xf9"
+rng 52013 3794da88
+step 65 "@state"
+state room 3700 light 1 people player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 262/300 mana 447/500 move 70/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8388608 train 1 on 0 stats 19 18 13 13 13
+state   affect 71 level 44 duration 56 location 1 modifier -5 bitvector 8388608
+state   affect 2 level 7 duration 20 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 193 0 0
+state char Purser 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29990/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 11 wear -1 timer 36 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 194 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 17 wear -1 timer 6 cost 0 values 10 10 0 0 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 12/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52013 3794da88
+step 66 "@pulse 1680"
+out god "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rPurser shivers and looks very ill.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out purse "\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou feel hot and feverish.\n\rYou writhe in agony from the plague.\n\rThat really did HURT!\n\r\n\r<20hp 93m 97mv> \xff\xf9"
+out pupil "\n\rYou writhe in agony from the plague.\n\r\n\r<253hp 438m 62mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<245hp 429m 54mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<236hp 420m 46mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<228hp 411m 38mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<220hp 402m 30mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<212hp 393m 22mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rPurser shivers and looks very ill.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\r\n\r<204hp 384m 14mv> \xff\xf9"
+rng 52115 460632fa
+step 67 "@state"
+state room 3700 light 1 people player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Pupil 10 pos 8 hit 204/300 mana 384/500 move 14/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8388608 train 1 on 0 stats 19 18 13 13 13
+state   affect 71 level 42 duration 49 location 1 modifier -5 bitvector 8388608
+state   affect 2 level 4 duration 13 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 186 0 0
+state char Purser 10 pos 5 hit 20/29 mana 93/102 move 97/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 8388608 train 1 on 0 stats 19 13 13 13 13
+state   affect 71 level 41 duration 65 location 1 modifier -5 bitvector 8388608
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 30000/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 11 wear -1 timer 36 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 194 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 17 wear -1 timer 6 cost 0 values 10 10 0 0 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52115 460632fa
+step 68 "@pulse 4800"
+out god "\n\rPupil disappears into the void.\n\rPurser disappears into the void.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out dec "\n\rYou disappear into the void.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\rPurser is incapacitated and will slowly die, if not aided.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\rPurser is DEAD!!\n\rPurser splatters blood on your armor.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou feel hot and feverish.\n\rYou writhe in agony from the plague.\n\rThat really did HURT!\n\r\n\r<20hp 93m 97mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou writhe in agony from the plague.\n\rThat really did HURT!\n\r\n\r<12hp 84m 90mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou writhe in agony from the plague.\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\r\n\r<5hp 76m 84mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou writhe in agony from the plague.\n\rYou are stunned, but will probably recover.\n\r\n\r<-2hp 68m 78mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou are mortally wounded, and will die soon, if not aided.\n\r\n\r<-10hp 60m 71mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 52m 63mv> \xff\xf9"
+out purse "\n\rPupil disappears into the void.\n\rYou disappear into the void.\n\rYou writhe in agony from the plague.\n\rThat really did HURT!\n\r\n\r<12hp 84m 90mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou writhe in agony from the plague.\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\r\n\r<4hp 75m 83mv> \xff\xf9\n\rPupil writhes in agony as plague sores erupt from his skin.\n\rYou writhe in agony from the plague.\n\rYou are incapacitated and will slowly die, if not aided.\n\r\n\r<-4hp 66m 76mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 57m 67mv> \xff\xf9"
+out pupil "\n\rYou disappear into the void.\n\rYou writhe in agony from the plague.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\r\n\r<196hp 375m 6mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\r\n\r<188hp 366m -2mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\rPurser is incapacitated and will slowly die, if not aided.\n\r\n\r<179hp 357m -10mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rPurser writhes in agony as plague sores erupt from his skin.\n\rPurser is DEAD!!\n\rPurser splatters blood on your armor.\n\r\n\r<170hp 348m -18mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<161hp 339m -26mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rDecimus shivers and looks very ill.\n\rDecimus writhes in agony as plague sores erupt from his skin.\n\r\n\r<153hp 330m -34mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rDecimus writhes in agony as plague sores erupt from his skin.\n\r\n\r<144hp 321m -42mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rDecimus writhes in agony as plague sores erupt from his skin.\n\r\n\r<136hp 312m -50mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rDecimus writhes in agony as plague sores erupt from his skin.\n\rDecimus is stunned, but will probably recover.\n\r\n\r<127hp 303m -58mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rDecimus writhes in agony as plague sores erupt from his skin.\n\rDecimus is mortally wounded, and will die soon, if not aided.\n\r\n\r<118hp 294m -66mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rDecimus writhes in agony as plague sores erupt from his skin.\n\rDecimus is DEAD!!\n\rDecimus's severed head plops on the ground.\n\r\n\r<110hp 285m -74mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<102hp 277m -81mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<94hp 269m -88mv> \xff\xf9\n\rYou feel less armored.\n\rYou writhe in agony from the plague.\n\r\n\r<86hp 261m -95mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\r\n\r<78hp 253m -102mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<71hp 245m -109mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<64hp 237m -116mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<56hp 229m -123mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<48hp 221m -130mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<41hp 213m -137mv> \xff\xf9"
+rng 52722 df6b0f84
+step 69 "@as god"
+rng 52722 df6b0f84
+step 70 "look"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r     The corpse of Decimus is lying here.\n\r     The splattered brains of Decimus are lying here.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 52722 df6b0f84
+step 71 "@state"
+state room 3700 light 0 people player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 30000/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 11 wear -1 timer 36 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 194 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 17 wear -1 timer 6 cost 0 values 10 10 0 0 0
+state room 3054 light 0 people player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Decimus 10 pos 5 hit 29/29 mana 88/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char Purser 10 pos 5 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 100 silver 503 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state room 2 light 1 people player
+state exit 4 to 3001 info 0 key -1
+state char Pupil 10 pos 8 hit 41/300 mana 213/500 move -137/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8388608 train 1 on 0 stats 19 18 13 13 13
+state   affect 71 level 37 duration 29 location 1 modifier -5 bitvector 8388608
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 166 0 0
+state obj floor 11 wear -1 timer 39 cost 0 values 0 0 0 1 0
+state obj floor 12 wear -1 timer 7 cost 0 values 0 0 0 0 0
+state obj floor 11 wear -1 timer 33 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+rng 52722 df6b0f84
+step 72 "@pulse 2400"
+out dec "\n\rAlas, all good things must come to an end.\n\r"
+closed dec
+out purse "\n\rDecimus has left the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rAlas, all good things must come to an end.\n\r"
+closed purse
+out pupil "\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<34hp 205m -144mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\r\n\r<26hp 197m -151mv> \xff\xf9\n\rYou writhe in agony from the plague.\n\rYou sure are BLEEDING!\n\rAlas, all good things must come to an end.\n\r"
+closed pupil
+rng 52775 6f5eaf69
+step 73 "@state"
+state room 3700 light 0 people player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 30000/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 11 wear -1 timer 36 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 194 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 17 wear -1 timer 6 cost 0 values 10 10 0 0 0
+rng 52775 6f5eaf69

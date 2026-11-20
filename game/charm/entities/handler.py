@@ -1,9 +1,8 @@
 """handler.c's functions: moving characters and objects about, affects, finding things by name, and what a
 character can see, carry and do (skills, trust, age). db.c's get_extra_descr is here too.
 
-A few are [partial]; each unported branch raises NotPorted instead of doing something else: plague spreading in
-char_to_room (it needs spells), a switched character in extract_char (do_return), and get_skill's daze with
-sn -1, where the C reads before the start of skill_table.
+A few are [partial]; each unported branch raises NotPorted instead of doing something else: a switched character
+in extract_char (do_return), and get_skill's daze with sn -1, where the C reads before the start of skill_table.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -152,9 +151,8 @@ def affect_to_obj(obj: Obj, paf: Affect) -> None:
             obj.value[4] = int32(obj.value[4] | paf.bitvector)
 
 
-# C: handler.c char_to_room [partial]
+# C: handler.c char_to_room
 def char_to_room(ch: Char, room: Room) -> None:
-    """[partial]: plague spreading to the room needs saves_spell and affect_join, which aren't ported."""
     if room is None:
         bug("Char_to_room: NULL.", 0)
         temple = game_module.current.index.get_room_index(C.ROOM_VNUM_TEMPLE)
@@ -175,10 +173,31 @@ def char_to_room(ch: Char, room: Room) -> None:
         room.light = sh_int(room.light + 1)
     if is_affected(ch, C.AFF_PLAGUE):
         # Without a plague affect the bit is just cleared, which is what a mob made with AFF_PLAGUE gets.
-        if not any(af.type == skill_lookup("plague") for af in ch.affected):  # gsn_plague
-            ch.affected_by &= ~C.AFF_PLAGUE
-            return
-        raise NotPorted("handler.c char_to_room: plague spreading")
+        _spread_plague(ch)
+
+
+def _spread_plague(ch: Char) -> None:
+    """char_to_room's plague: one in 64 in the room, failing a save against the plague's level less 2, catches it a
+    level weaker, for 1 to twice that many ticks. (char_update spreads it the same way, one in 16.)"""
+    from charm.core.rng import number_bits, number_range
+    from charm.net.output import send_to_char
+    from charm.systems.magic import saves_spell
+
+    af = affect_find(ch.affected, GSN["gsn_plague"])
+    if af is None:  # a mob made with AFF_PLAGUE has the bit and no affect
+        ch.affected_by &= ~C.AFF_PLAGUE
+        return
+    if af.level == 1:
+        return
+    level = af.level - 1
+    plague = Affect(where=C.TO_AFFECTS, type=GSN["gsn_plague"], level=level, duration=number_range(1, 2 * level),
+                    location=C.APPLY_STR, modifier=-5, bitvector=C.AFF_PLAGUE)
+    for vch in list(ch.in_room.people):
+        if (not saves_spell(plague.level - 2, vch, C.DAM_DISEASE) and not is_immortal(vch)
+                and not is_affected(vch, C.AFF_PLAGUE) and number_bits(6) == 0):
+            send_to_char("You feel hot and feverish.\n\r", vch)
+            act("$n shivers and looks very ill.", vch, None, None, C.TO_ROOM)
+            affect_join(vch, plague)
 
 
 # C: handler.c obj_to_char
@@ -580,6 +599,7 @@ def extract_obj(game: Game, obj: Obj) -> None:
         bug("Extract_obj: obj %d not found.", obj.index.vnum)
         return
     obj.index.count = sh_int(obj.index.count - 1)
+    obj.valid = False  # free_obj
 
 
 # C: handler.c is_name

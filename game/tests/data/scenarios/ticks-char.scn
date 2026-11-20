@@ -1,0 +1,84 @@
+# char_update on its own: forty ticks of it, with area_update, at the entrance to Mud School (3700). Smokegod (60)
+# hurts and afflicts the others, then they all stand idle; Pupil (10) casts on herself first.
+# - hit points, mana and moves come back by position: Decimus sleeping, Purser resting, Pupil standing; Smokegod's
+#   mana after his casts
+# - Purser and Decimus poisoned shiver and suffer each tick; Pupil plagued writhes, and it may spread to the others
+# - Pupil's detect invis (10 ticks) and armor (24) wear off, with their messages
+# - Purser's torch, set to 3 hours, flickers and goes out
+# - the banners the fixtures carry as lights burn down an hour a tick
+# - hunger and thirst
+# - after 12 idle ticks each mortal disappears into the void (Limbo) and is saved; after 30, they're quit
+@updates area,char
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect purse
+Purser
+psswrd
+@return
+@return
+@connect pupil
+Pupil
+psswrd
+@return
+@return
+@as god
+transfer decimus 3700
+transfer purser 3700
+transfer pupil 3700
+set skill pupil all 100
+set char pupil mana 500
+set char pupil hp 300
+restore pupil
+@as pupil
+cast 'detect invis'
+@pulse 24
+cast armor
+@pulse 24
+@as god
+cast 'cause light' decimus
+@pulse 24
+cast 'cause light' purser
+@pulse 24
+cast poison purser
+@pulse 24
+cast poison decimus
+@pulse 24
+cast poison decimus
+@pulse 24
+cast plague pupil
+@pulse 24
+peace
+@obj 3030 3700 0 0 3 0 0
+@as purse
+get torch
+remove banner
+hold torch
+rest
+@as dec
+sleep
+@as god
+@state
+@pulse 240
+@state
+@pulse 720
+@state
+@pulse 1680
+@state
+@pulse 4800
+@as god
+look
+@state
+@pulse 2400
+@state
