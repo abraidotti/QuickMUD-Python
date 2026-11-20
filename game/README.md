@@ -44,14 +44,13 @@ order, so a prefix finds the same command), aliases and socials. The commands po
 and `act_enter.c`'s (the directions, the doors, the positions, sneak, recall, train, enter), all of `act_comm.c`'s
 and `alias.c`'s (the channels, say, tell, emote, pose, follow, group, order, split, colour, alias, delete, save,
 quit), all of `act_obj.c`'s (get, put, drop, give, wear, remove, food and drink, sacrifice, steal, the shops,
-and the magic items up to the spell, which raises `NotPorted`), all of `board.c`'s and `ban.c`'s (note, board and
+and the magic items, whose spells run if they're ported), all of `board.c`'s and `ban.c`'s (note, board and
 writing a note; ban, permban and allow), all of `act_wiz.c`'s but copyover, which comes with OLC in P5 (goto,
 at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix, wiznet; deny, disconnect, freeze,
 the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
 string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (kill, murder, flee, surrender,
-slay and the fighting skills), and what login calls; any other command raises `NotPorted`, which stops the game
-(#32). Of the per-pulse updates,
-`area_update` and `violence_update` run; the game logs the rest at boot (#28). `CHARM_UPDATES` names the ones to run
+slay and the fighting skills), `cast` with the first half of `magic.c`'s spells, and what login calls; any other
+command raises `NotPorted`, which stops the game (#32). Of the per-pulse updates, `area_update` and `violence_update` run; the game logs the rest at boot (#28). `CHARM_UPDATES` names the ones to run
 in both games (`area,violence`, or `all`; unset, everything ported), as `@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.

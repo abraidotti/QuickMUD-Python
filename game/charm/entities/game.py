@@ -50,6 +50,7 @@ class Game:
     wizlock: bool = False
     newlock: bool = False
     log_all: bool = False  # interp.c's fLogAll: 'log all' logs every command
+    target_name: str = ""  # magic.c's: the rest of a cast's line, for the spells that read more of it
     last_pc_id: int = 0
     # comm.c's: the connections (head first), and the loop's state
     descriptor_list: list = field(default_factory=list)

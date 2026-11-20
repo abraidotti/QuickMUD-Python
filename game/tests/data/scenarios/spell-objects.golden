@@ -1,0 +1,295 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "set char smokegod mana 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "restore smokegod"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "cast 'continual light'"
+out god "You twiddle your thumbs and a bright ball of light appears.\n\r\n\r<100hp 29993m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 11 "@pulse 24"
+rng 51896 5ed8996e
+step 12 "@obj 3021 3700"
+rng 51896 5ed8996e
+step 13 "get sword"
+out god "You get a small sword.\n\r\n\r<100hp 29993m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 14 "cast 'continual light' sword"
+out god "A small sword glows with a white light.\n\r\n\r<100hp 29986m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 15 "@pulse 24"
+rng 51898 d55fddad
+step 16 "cast 'continual light' sword"
+out god "A small sword is already glowing.\n\r\n\r<100hp 29979m 100mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 17 "@pulse 24"
+rng 51899 d1eb3d36
+step 18 "cast 'continual light' nothing"
+out god "You don't see that here.\n\r\n\r<100hp 29972m 100mv> \xff\xf9"
+rng 51900 e9723077
+step 19 "@pulse 24"
+rng 51900 e9723077
+step 20 "cast 'control weather' better"
+out god "Ok.\n\r\n\r<100hp 29947m 100mv> \xff\xf9"
+rng 51921 4f5dc005
+step 21 "@pulse 24"
+rng 51921 4f5dc005
+step 22 "cast 'control weather' worse"
+out god "Ok.\n\r\n\r<100hp 29922m 100mv> \xff\xf9"
+rng 51943 60eeef0b
+step 23 "@pulse 24"
+rng 51943 60eeef0b
+step 24 "cast 'control weather'"
+out god "Do you want it to get better or worse?\n\rOk.\n\r\n\r<100hp 29897m 100mv> \xff\xf9"
+rng 51944 0b11b767
+step 25 "@pulse 24"
+rng 51944 0b11b767
+step 26 "cast 'create food'"
+out god "A Magic Mushroom suddenly appears.\n\r\n\r<100hp 29892m 100mv> \xff\xf9"
+rng 51945 a2c49ca0
+step 27 "@pulse 24"
+rng 51945 a2c49ca0
+step 28 "cast 'create rose'"
+out god "You create a beautiful red rose.\n\r\n\r<100hp 29862m 100mv> \xff\xf9"
+rng 51946 d8f44296
+step 29 "@pulse 24"
+rng 51946 d8f44296
+step 30 "cast 'create spring'"
+out god "A magical spring flows from the ground.\n\r\n\r<100hp 29842m 100mv> \xff\xf9"
+rng 51947 452c3f8e
+step 31 "@pulse 24"
+rng 51947 452c3f8e
+step 32 "cast 'create water' sword"
+out god "It is unable to hold water.\n\r\n\r<100hp 29837m 100mv> \xff\xf9"
+rng 51948 32afb1e5
+step 33 "@pulse 24"
+rng 51948 32afb1e5
+step 34 "@obj 611 3700"
+rng 51948 32afb1e5
+step 35 "get milk"
+out god "You get a bottle of milk.\n\r\n\r<100hp 29837m 100mv> \xff\xf9"
+rng 51948 32afb1e5
+step 36 "cast 'create water' milk"
+out god "It contains some other liquid.\n\r\n\r<100hp 29832m 100mv> \xff\xf9"
+rng 51950 3b52a66a
+step 37 "@pulse 24"
+rng 51950 3b52a66a
+step 38 "@obj 611 3700 20 0 0 0 0"
+rng 51950 3b52a66a
+step 39 "get milk"
+out god "You get a bottle of milk.\n\r\n\r<100hp 29832m 100mv> \xff\xf9"
+rng 51950 3b52a66a
+step 40 "cast 'create water' milk"
+out god "A bottle of milk is filled.\n\r\n\r<100hp 29827m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 41 "@pulse 24"
+rng 51951 33711aee
+step 42 "@obj 20 3700 5 10 0 1 0"
+rng 51951 33711aee
+step 43 "get mushroom"
+out god "You get a Magic Mushroom.\n\r\n\r<100hp 29827m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 44 "get mushroom"
+out god "You get a Magic Mushroom.\n\r\n\r<100hp 29827m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 45 "cast 'detect poison' mushroom"
+out god "It looks delicious.\n\r\n\r<100hp 29822m 100mv> \xff\xf9"
+rng 51952 e641a48b
+step 46 "@pulse 24"
+rng 51952 e641a48b
+step 47 "cast 'detect poison' 2.mushroom"
+out god "You smell poisonous fumes.\n\r\n\r<100hp 29817m 100mv> \xff\xf9"
+rng 51953 714ef537
+step 48 "@pulse 24"
+rng 51953 714ef537
+step 49 "cast 'detect poison' sword"
+out god "It doesn't look poisoned.\n\r\n\r<100hp 29812m 100mv> \xff\xf9"
+rng 51954 838facd4
+step 50 "@pulse 24"
+rng 51954 838facd4
+step 51 "cast fireproof sword"
+out god "You protect a small sword from fire.\n\r\n\r<100hp 29802m 100mv> \xff\xf9"
+rng 51957 7f61faf9
+step 52 "@pulse 24"
+rng 51957 7f61faf9
+step 53 "cast fireproof sword"
+out god "A small sword is already protected from burning.\n\r\n\r<100hp 29792m 100mv> \xff\xf9"
+rng 51958 f8bd1d8e
+step 54 "@pulse 24"
+rng 51958 f8bd1d8e
+step 55 "cast 'floating disc'"
+out god "You create a floating disc.\n\rYou release a floating disc and it floats next to you.\n\r\n\r<100hp 29752m 100mv> \xff\xf9"
+rng 51960 b6faed5d
+step 56 "@pulse 24"
+rng 51960 b6faed5d
+step 57 "cast 'floating disc'"
+out god "You can't remove a floating disc.\n\r\n\r<100hp 29712m 100mv> \xff\xf9"
+rng 51961 d424e269
+step 58 "@pulse 24"
+rng 51961 d424e269
+step 59 "cast 'enchant armor' sword"
+out god "That isn't an armor.\n\r\n\r<100hp 29612m 100mv> \xff\xf9"
+rng 51962 a7dda492
+step 60 "@pulse 24"
+rng 51962 a7dda492
+step 61 "cast 'enchant weapon' milk"
+out god "That isn't a weapon.\n\r\n\r<100hp 29512m 100mv> \xff\xf9"
+rng 51965 542a0729
+step 62 "@pulse 24"
+rng 51965 542a0729
+step 63 "@obj 3117 3700"
+rng 51965 542a0729
+step 64 "get shield"
+out god "You get a small wooden shield.\n\r\n\r<100hp 29512m 100mv> \xff\xf9"
+rng 51965 542a0729
+step 65 "wear shield"
+out god "You wear a small wooden shield as a shield.\n\r\n\r<100hp 29512m 100mv> \xff\xf9"
+rng 51965 542a0729
+step 66 "cast 'enchant armor' shield"
+out god "You are not carrying that.\n\r\n\r<100hp 29512m 100mv> \xff\xf9"
+rng 51965 542a0729
+step 67 "@pulse 24"
+rng 51965 542a0729
+step 68 "remove shield"
+out god "You stop using a small wooden shield.\n\r\n\r<100hp 29512m 100mv> \xff\xf9"
+rng 51965 542a0729
+step 69 "cast 'enchant armor' shield"
+out god "A small wooden shield shimmers with a gold aura.\n\r\n\r<100hp 29412m 100mv> \xff\xf9"
+rng 51968 b7a8be27
+step 70 "@pulse 24"
+rng 51968 b7a8be27
+step 71 "cast 'enchant armor' shield"
+out god "A small wooden shield glows a brillant gold!\n\r\n\r<100hp 29312m 100mv> \xff\xf9"
+rng 51970 efe4cb7b
+step 72 "@pulse 24"
+rng 51970 efe4cb7b
+step 73 "cast 'enchant armor' shield"
+out god "A small wooden shield shimmers with a gold aura.\n\r\n\r<100hp 29212m 100mv> \xff\xf9"
+rng 51973 a400b2cc
+step 74 "@pulse 24"
+rng 51973 a400b2cc
+step 75 "cast 'enchant armor' shield"
+out god "A small wooden shield shimmers with a gold aura.\n\r\n\r<100hp 29112m 100mv> \xff\xf9"
+rng 51975 09ccb864
+step 76 "@pulse 24"
+rng 51975 09ccb864
+step 77 "cast 'enchant armor' shield"
+out god "A small wooden shield flares blindingly... and evaporates!\n\r\n\r<100hp 29012m 100mv> \xff\xf9"
+rng 51977 ffb3740e
+step 78 "@pulse 24"
+rng 51977 ffb3740e
+step 79 "cast 'enchant armor' shield"
+out god "You are not carrying that.\n\r\n\r<100hp 29012m 100mv> \xff\xf9"
+rng 51977 ffb3740e
+step 80 "@pulse 24"
+rng 51977 ffb3740e
+step 81 "cast 'enchant armor' shield"
+out god "You are not carrying that.\n\r\n\r<100hp 29012m 100mv> \xff\xf9"
+rng 51977 ffb3740e
+step 82 "@pulse 24"
+rng 51977 ffb3740e
+step 83 "cast 'enchant armor' shield"
+out god "You are not carrying that.\n\r\n\r<100hp 29012m 100mv> \xff\xf9"
+rng 51977 ffb3740e
+step 84 "@pulse 24"
+rng 51977 ffb3740e
+step 85 "cast 'enchant armor' shield"
+out god "You are not carrying that.\n\r\n\r<100hp 29012m 100mv> \xff\xf9"
+rng 51977 ffb3740e
+step 86 "@pulse 24"
+rng 51977 ffb3740e
+step 87 "@obj 3021 3700"
+rng 51977 ffb3740e
+step 88 "get sword"
+out god "You get a small sword.\n\r\n\r<100hp 29012m 100mv> \xff\xf9"
+rng 51977 ffb3740e
+step 89 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28912m 100mv> \xff\xf9"
+rng 51979 8fd201c6
+step 90 "@pulse 24"
+rng 51979 8fd201c6
+step 91 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28812m 100mv> \xff\xf9"
+rng 51982 3923dba2
+step 92 "@pulse 24"
+rng 51982 3923dba2
+step 93 "cast 'enchant weapon' sword"
+out god "Nothing seemed to happen.\n\r\n\r<100hp 28712m 100mv> \xff\xf9"
+rng 51984 5d83a697
+step 94 "@pulse 24"
+rng 51984 5d83a697
+step 95 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28612m 100mv> \xff\xf9"
+rng 51986 f5128765
+step 96 "@pulse 24"
+rng 51986 f5128765
+step 97 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28512m 100mv> \xff\xf9"
+rng 51988 d9c02521
+step 98 "@pulse 24"
+rng 51988 d9c02521
+step 99 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28412m 100mv> \xff\xf9"
+rng 51991 3b089521
+step 100 "@pulse 24"
+rng 52002 bfac55ae
+step 101 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28312m 100mv> \xff\xf9"
+rng 52004 7f0f430e
+step 102 "@pulse 24"
+rng 52004 7f0f430e
+step 103 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28212m 100mv> \xff\xf9"
+rng 52007 0136d895
+step 104 "@pulse 24"
+rng 52007 0136d895
+step 105 "cast 'enchant weapon' sword"
+out god "A small sword glows brightly, then fades...oops.\n\r\n\r<100hp 28112m 100mv> \xff\xf9"
+rng 52012 6e91b105
+step 106 "@pulse 24"
+rng 52012 6e91b105
+step 107 "cast 'enchant weapon' sword"
+out god "A small sword glows blue.\n\r\n\r<100hp 28012m 100mv> \xff\xf9"
+rng 52014 ad1bfe55
+step 108 "@pulse 24"
+rng 52014 ad1bfe55
+step 109 "@state"
+state room 3700 light 0 people player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 28012/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state   obj carried 23 wear 18 timer 100 cost 0 values 600 16 0 300 0
+state   obj carried 20 wear -1 timer 0 cost 0 values 30 60 0 0 0
+state   obj carried 20 wear -1 timer 0 cost 0 values 5 10 0 1 0
+state   obj carried 611 wear -1 timer 0 cost 3 values 20 20 0 0 0
+state   obj carried 611 wear -1 timer 0 cost 3 values 20 20 10 0 0
+state   obj carried 1001 wear -1 timer 0 cost 0 values 6 0 0 0 0
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state obj floor 22 wear -1 timer 60 cost 0 values 100000 100000 0 0 0
+state obj floor 21 wear -1 timer 0 cost 0 values 0 0 -1 0 0
+rng 52014 ad1bfe55

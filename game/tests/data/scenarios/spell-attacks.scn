@@ -1,0 +1,108 @@
+# The damage spells, cast by Cherub (52, a mage) and, for the clerics' spells a mage can't learn, Smokegod (60), both
+# neutral, with every skill at 100 and mana to spare. Only area_update runs, so each victim strikes back once. At the
+# entrance to Mud School (3700, indoors); both are immortal, so no hit leaves them below 1. Each cast is waited out.
+# - acid blast, burning hands, the three cause spells, colour spray (which can blind), fireball and flamestrike, each
+#   on a fresh drunk (3064, good) or septon (9006, which resists fire)
+# - chain lightning arcing through a room of mobs and back to Cherub
+# - demonfire turning on a caster who isn't evil, then cast by an evil Smokegod
+# - dispel evil on a goblin (3501, evil), a drunk (good: Mota protects it) and a fido (neutral); dispel good the same
+# - energy drain on a duck (3124, level 1: drains its life whole) and on a septon (its mana and moves)
+# - earthquake, which a flying pet dragon (350) rides out; call lightning indoors, and outdoors under a clear sky
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill cherub all 100
+set char cherub mana 30000
+restore cherub
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+transfer cherub 3700
+goto 3700
+@as cher
+@mob 3064 3700
+cast 'acid blast' drunk
+@pulse 24
+@mob 3064 3700
+cast 'burning hands' drunk
+@pulse 24
+@mob 9006 3700
+cast 'colour spray' septon
+@pulse 24
+cast fireball septon
+@pulse 24
+@as god
+cast 'cause light' septon
+@pulse 24
+cast 'cause serious' septon
+@pulse 24
+cast 'cause critical' septon
+@pulse 24
+cast flamestrike septon
+@pulse 24
+@as god
+slay septon
+@mob 3064 3700
+@mob 3062 3700
+@mob 3501 3700
+@mob 3124 3700
+@as cher
+cast 'chain lightning' drunk
+@pulse 24
+@state
+@as god
+peace
+@mob 3501 3700
+@mob 3064 3700
+@mob 3062 3700
+cast demonfire drunk
+@pulse 24
+peace
+set char smokegod align -1000
+cast demonfire drunk
+@pulse 24
+peace
+set char smokegod align 0
+cast 'dispel evil' goblin
+@pulse 24
+cast 'dispel evil' 2.drunk
+@pulse 24
+cast 'dispel evil' fido
+@pulse 24
+cast 'dispel good' 2.drunk
+@pulse 24
+cast 'dispel good' goblin
+@pulse 24
+cast 'dispel good' fido
+@pulse 24
+peace
+@mob 3124 3700
+@mob 9006 3700
+@as cher
+cast 'energy drain' duck
+@pulse 24
+cast 'energy drain' septon
+@pulse 24
+@as god
+peace
+@mob 350 3700
+@as god
+cast earthquake
+@pulse 24
+peace
+@as cher
+cast 'call lightning'
+@pulse 24
+@as god
+transfer cherub 3005
+@as cher
+cast 'call lightning'
+@pulse 24
+@state

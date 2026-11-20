@@ -1,0 +1,104 @@
+# Casting: do_cast's refusals, each kind of target, the words a caster utters, and losing concentration. Only
+# area_update runs. At the entrance to Mud School (3700, not a lawful room): Smokegod (60, a mage, with every skill at
+# 100 and mana to spare), Cherub (52, a mage, who knows no spells until Smokegod sets them, and hears their names)
+# and Decimus (10, a warrior, who hears the garbled words). Heroic (51, a warrior, every skill at 100) casts at 3/4
+# of his level, as his class has no mana. A cast makes the caster wait, which the scenario waits out.
+# - no spell named, a spell not known, a skill that isn't a spell, asleep, resting
+# - offensive: no one fought, no one here, a target safe from Cherub (Decimus, in no clan; Smokegod's trust is past
+#   that rule), and a drunk who attacks back
+# - defensive (yourself by default), self only (on another), an object carried or not, an object or a character
+# - with every skill at 1, Heroic loses his concentration, spending half the mana
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+transfer cherub 3700
+transfer decimus 3700
+transfer heroic 3700
+set skill heroic all 100
+@as dec
+cast
+cast armor
+cast bash
+@as cher
+cast fly
+@as god
+set skill cherub all 100
+@as cher
+cast 'acid blast' decimus
+@as god
+cast
+cast nonesuch
+cast kick
+cast 'acid blast'
+cast 'acid blast' nobody
+cast armor
+@pulse 24
+cast armor nobody
+cast armor decimus
+@pulse 24
+cast 'detect invis' decimus
+@pulse 24
+cast fireproof
+cast fireproof nothing
+@obj 3021 3700
+cast fireproof sword
+get sword
+cast fireproof sword
+@pulse 24
+cast curse
+cast curse nothing
+cast curse decimus
+cast curse sword
+@pulse 24
+cast bless sword
+@pulse 24
+cast bless
+@pulse 24
+@as hero
+cast armor
+@pulse 24
+cast fly smokegod
+cast fly
+@pulse 24
+@as god
+sleep
+cast armor
+wake
+rest
+cast armor
+stand
+@mob 3064 3700
+cast 'chill touch' drunk
+@pulse 24
+@state
+set skill heroic all 1
+@as hero
+cast armor decimus
+@pulse 24
+cast fly decimus
+@pulse 24
+cast 'detect evil' decimus
+@pulse 24
+@state

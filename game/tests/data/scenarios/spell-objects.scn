@@ -1,0 +1,120 @@
+# Spells on objects and spells that make them, cast by Smokegod (60, every skill at 100, mana to spare), with only
+# area_update running, at the entrance to Mud School (3700). Each cast is waited out.
+# - continual light (a ball of light, a glow on something carried, already glowing, not carried); control weather
+#   (better, worse, neither); create food, rose and spring
+# - create water: into something that isn't a drink container, one with another liquid, and an empty one, which
+#   gets "water" in its name
+# - detect poison on plain food (a created mushroom) and poisoned food, and on a sword; fireproof twice
+# - floating disc: one to wear, then refused, as a disc won't come off
+# - enchant armor and enchant weapon cast again and again on one shield and one sword: each bonus makes failing
+#   likelier, until the shield is destroyed and the sword's enchantments fade away; and refused for the wrong kind of item, and a worn shield isn't found
+#   (do_cast looks only among what's carried, so the spell's own "must be carried" can't be reached this way)
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+cast 'continual light'
+@pulse 24
+@obj 3021 3700
+get sword
+cast 'continual light' sword
+@pulse 24
+cast 'continual light' sword
+@pulse 24
+cast 'continual light' nothing
+@pulse 24
+cast 'control weather' better
+@pulse 24
+cast 'control weather' worse
+@pulse 24
+cast 'control weather'
+@pulse 24
+cast 'create food'
+@pulse 24
+cast 'create rose'
+@pulse 24
+cast 'create spring'
+@pulse 24
+cast 'create water' sword
+@pulse 24
+@obj 611 3700
+get milk
+cast 'create water' milk
+@pulse 24
+@obj 611 3700 20 0 0 0 0
+get milk
+cast 'create water' milk
+@pulse 24
+@obj 20 3700 5 10 0 1 0
+get mushroom
+get mushroom
+cast 'detect poison' mushroom
+@pulse 24
+cast 'detect poison' 2.mushroom
+@pulse 24
+cast 'detect poison' sword
+@pulse 24
+cast fireproof sword
+@pulse 24
+cast fireproof sword
+@pulse 24
+cast 'floating disc'
+@pulse 24
+cast 'floating disc'
+@pulse 24
+cast 'enchant armor' sword
+@pulse 24
+cast 'enchant weapon' milk
+@pulse 24
+@obj 3117 3700
+get shield
+wear shield
+cast 'enchant armor' shield
+@pulse 24
+remove shield
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+cast 'enchant armor' shield
+@pulse 24
+@obj 3021 3700
+get sword
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+cast 'enchant weapon' sword
+@pulse 24
+@state

@@ -1,0 +1,660 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "set char smokegod mana 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "restore smokegod"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@connect dec"
+rng 51895 7f5599b5
+step 11 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 12 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@connect uns"
+rng 51895 7f5599b5
+step 16 "Unseen"
+out uns "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 17 "psswrd"
+out uns "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 18 "@return"
+out dec "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@return"
+out uns "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@connect cher"
+rng 51895 7f5599b5
+step 21 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 22 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 23 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 24 "@return"
+out dec "\n\rCherub has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rCherub has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@as god"
+rng 51895 7f5599b5
+step 26 "cast 'detect invis'"
+out god "Your eyes tingle.\n\r\n\r<100hp 29995m 100mv> \xff\xf9"
+rng 51896 5ed8996e
+step 27 "@pulse 24"
+rng 51896 5ed8996e
+step 28 "cast 'detect invis'"
+out god "You can already see invisible.\n\r\n\r<100hp 29990m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 29 "@pulse 24"
+rng 51898 d55fddad
+step 30 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 29990m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rDecimus disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 31 "transfer unseen 3700"
+out god "Unseen arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 29990m 100mv> \xff\xf9"
+out dec "\n\rSomeone arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSomeone disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 32 "transfer cherub 3700"
+out god "Cherub arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 29990m 100mv> \xff\xf9"
+out dec "\n\rCherub arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rCherub arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51898 d55fddad
+step 33 "cast armor decimus"
+out god "Decimus is protected by your magic.\n\r\n\r<100hp 29985m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'abrazak'.\n\rYou feel someone protecting you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'abrazak'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'armor'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51899 d1eb3d36
+step 34 "@pulse 24"
+rng 51899 d1eb3d36
+step 35 "cast armor decimus"
+out god "Decimus is already armored.\n\r\n\r<100hp 29980m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'abrazak'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'abrazak'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'armor'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51900 e9723077
+step 36 "@pulse 24"
+rng 51900 e9723077
+step 37 "cast bless decimus"
+out god "You grant Decimus the favor of your god.\n\r\n\r<100hp 29969m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'fido'.\n\rYou feel righteous.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'fido'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'bless'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51901 51250113
+step 38 "@pulse 24"
+rng 51901 51250113
+step 39 "cast bless decimus"
+out god "Decimus already has divine favor.\n\r\n\r<100hp 29958m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'fido'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'fido'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'bless'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51903 5850559a
+step 40 "@pulse 24"
+rng 51903 5850559a
+step 41 "cast curse decimus"
+out god "Decimus looks very uncomfortable.\n\r\n\r<100hp 29938m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judifgz'.\n\rYou feel unclean.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judifgz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'curse'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51910 fbea3747
+step 42 "@pulse 24"
+rng 51910 fbea3747
+step 43 "cast curse decimus"
+out god "\n\r<100hp 29918m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judifgz'.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judifgz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'curse'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51920 c09b44b3
+step 44 "@pulse 24"
+rng 51920 c09b44b3
+step 45 "cast 'change sex' decimus"
+out god "Decimus doesn't look like herself anymore...\n\r\n\r<100hp 29903m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'qpaioz gzn'.\n\rYou feel different.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qpaioz gzn'.\n\rDecimus doesn't look like herself anymore...\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'change sex'.\n\rDecimus doesn't look like herself anymore...\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51925 7edc2a82
+step 46 "@pulse 24"
+rng 51925 7edc2a82
+step 47 "cast 'change sex' decimus"
+out god "Decimus has already had his(?) sex changed.\n\r\n\r<100hp 29888m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'qpaioz gzn'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qpaioz gzn'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'change sex'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51926 ad863a1b
+step 48 "@pulse 24"
+rng 51926 ad863a1b
+step 49 "cast 'detect evil' decimus"
+out god "You cannot cast this spell on another.\n\r\n\r<100hp 29888m 100mv> \xff\xf9"
+rng 51926 ad863a1b
+step 50 "@pulse 24"
+rng 51926 ad863a1b
+step 51 "cast 'detect evil'"
+out god "Your eyes tingle.\n\r\n\r<100hp 29883m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oculoinfra zzur'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'oculoinfra zzur'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'detect evil'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51927 ac0787c3
+step 52 "@pulse 24"
+rng 51927 ac0787c3
+step 53 "cast 'detect evil'"
+out god "You can already sense evil.\n\r\n\r<100hp 29878m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oculoinfra zzur'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'oculoinfra zzur'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'detect evil'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51928 bc29c08d
+step 54 "@pulse 24"
+rng 51928 bc29c08d
+step 55 "cast 'detect good'"
+out god "Your eyes tingle.\n\r\n\r<100hp 29873m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oculoinfra oaae'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'oculoinfra oaae'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'detect good'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51931 d3e928be
+step 56 "@pulse 24"
+rng 51931 d3e928be
+step 57 "cast 'detect hidden'"
+out god "Your awareness improves.\n\r\n\r<100hp 29868m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oculoinfra pueoculoi'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'oculoinfra pueoculoi'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'detect hidden'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51932 eaa24604
+step 58 "@pulse 24"
+rng 51932 eaa24604
+step 59 "cast 'detect magic'"
+out god "Your eyes tingle.\n\r\n\r<100hp 29863m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oculoinfra waouq'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'oculoinfra waouq'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'detect magic'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51933 af6a286b
+step 60 "@pulse 24"
+rng 51933 af6a286b
+step 61 "cast 'detect magic'"
+out god "You can already sense magical auras.\n\r\n\r<100hp 29858m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'oculoinfra waouq'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'oculoinfra waouq'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'detect magic'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51934 7bba79b5
+step 62 "@pulse 24"
+rng 51934 7bba79b5
+step 63 "cast 'faerie fire' decimus"
+out god "Decimus is surrounded by a pink outline.\n\r\n\r<100hp 29853m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yazfuz yucandus'.\n\rYou are surrounded by a pink outline.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'yazfuz yucandus'.\n\rDecimus is surrounded by a pink outline.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'faerie fire'.\n\rDecimus is surrounded by a pink outline.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51940 58237e7d
+step 64 "@pulse 24"
+rng 51940 58237e7d
+step 65 "cast 'faerie fire' decimus"
+out god "\n\r<100hp 29848m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yazfuz yucandus'.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'yazfuz yucandus'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'faerie fire'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51945 a2c49ca0
+step 66 "@pulse 24"
+rng 51945 a2c49ca0
+step 67 "cast fly decimus"
+out god "Decimus's feet rise off the ground.\n\r\n\r<100hp 29838m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yrl'.\n\rYour feet rise off the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'yrl'.\n\rDecimus's feet rise off the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'fly'.\n\rDecimus's feet rise off the ground.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51946 d8f44296
+step 68 "@pulse 24"
+rng 51946 d8f44296
+step 69 "cast fly decimus"
+out god "Decimus doesn't need your help to fly.\n\r\n\r<100hp 29828m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'yrl'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'yrl'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'fly'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51947 452c3f8e
+step 70 "@pulse 24"
+rng 51947 452c3f8e
+step 71 "@state"
+state room 3700 light 2 people player player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 2 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 525568 train 1 on 0 stats 19 13 13 13 13
+state   affect 50 level 60 duration 63 location 0 modifier 0 bitvector 524288
+state   affect 44 level 60 duration 60 location 17 modifier 120 bitvector 256
+state   affect 13 level 60 duration 120 location 6 modifier 1 bitvector 0
+state   affect 29 level 60 duration 120 location 24 modifier 7 bitvector 1024
+state   affect 29 level 60 duration 120 location 18 modifier -7 bitvector 1024
+state   affect 3 level 60 duration 66 location 24 modifier -7 bitvector 0
+state   affect 3 level 60 duration 66 location 18 modifier 7 bitvector 0
+state   affect 2 level 60 duration 24 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29828/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 124 train 0 on 0 stats 13 13 13 13 13
+state   affect 35 level 60 duration 60 location 0 modifier 0 bitvector 16
+state   affect 33 level 60 duration 60 location 0 modifier 0 bitvector 32
+state   affect 32 level 60 duration 60 location 0 modifier 0 bitvector 64
+state   affect 31 level 60 duration 60 location 0 modifier 0 bitvector 4
+state   affect 34 level 60 duration 60 location 0 modifier 0 bitvector 8
+rng 51947 452c3f8e
+step 72 "cast 'cure poison' decimus"
+out god "Decimus doesn't appear to be poisoned.\n\r\n\r<100hp 29817m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judicandus sausabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus sausabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure poison'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51948 32afb1e5
+step 73 "@pulse 24"
+rng 51948 32afb1e5
+step 74 "set char decimus full 0"
+out god "\n\r<100hp 29817m 100mv> \xff\xf9"
+rng 51948 32afb1e5
+step 75 "set char decimus hunger 0"
+out god "\n\r<100hp 29817m 100mv> \xff\xf9"
+rng 51948 32afb1e5
+step 76 "@obj 20 3700 5 10 0 1 0"
+rng 51948 32afb1e5
+step 77 "@as dec"
+rng 51948 32afb1e5
+step 78 "get mushroom"
+out god "Decimus gets a Magic Mushroom.\n\r\n\r<100hp 29817m 100mv> \xff\xf9"
+out dec "You get a Magic Mushroom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rDecimus gets a Magic Mushroom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rDecimus gets a Magic Mushroom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51948 32afb1e5
+step 79 "eat mushroom"
+out god "\n\rDecimus eats a Magic Mushroom.\n\rDecimus chokes and gags.\n\r\n\r<100hp 29817m 100mv> \xff\xf9"
+out dec "You eat a Magic Mushroom.\n\rYou are no longer hungry.\n\rYou choke and gag.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rDecimus eats a Magic Mushroom.\n\rDecimus chokes and gags.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rDecimus eats a Magic Mushroom.\n\rDecimus chokes and gags.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51949 b59a2a2b
+step 80 "@as god"
+rng 51949 b59a2a2b
+step 81 "cast 'cure poison' decimus"
+out god "Decimus looks much better.\n\r\n\r<100hp 29806m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judicandus sausabru'.\n\rYou feel less sick.\n\rA warm feeling runs through your body.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus sausabru'.\n\rDecimus looks much better.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure poison'.\n\rDecimus looks much better.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51951 33711aee
+step 82 "@pulse 24"
+rng 51951 33711aee
+step 83 "cast 'cure blindness' decimus"
+out god "Decimus doesn't appear to be blinded.\n\r\n\r<100hp 29795m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judicandus noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure blindness'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51952 e641a48b
+step 84 "@pulse 24"
+rng 51952 e641a48b
+step 85 "cast blindness decimus"
+out god "Decimus appears to be blinded.\n\r\n\r<100hp 29790m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'noselacri'.\n\rYou are blinded!\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'noselacri'.\n\rDecimus appears to be blinded.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'blindness'.\n\rDecimus appears to be blinded.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51958 f8bd1d8e
+step 86 "@pulse 24"
+rng 51958 f8bd1d8e
+step 87 "cast blindness decimus"
+out god "\n\r<100hp 29785m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'noselacri'.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'blindness'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51965 542a0729
+step 88 "@pulse 24"
+rng 51965 542a0729
+step 89 "cast 'cure blindness' decimus"
+out god "Spell failed.\n\r\n\r<100hp 29774m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'judicandus noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure blindness'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51968 b7a8be27
+step 90 "@pulse 24"
+rng 51968 b7a8be27
+step 91 "cast 'cure disease' decimus"
+out god "Decimus doesn't appear to be diseased.\n\r\n\r<100hp 29754m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'judicandus eugzagz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus eugzagz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure disease'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51969 8619d420
+step 92 "@pulse 24"
+rng 51969 8619d420
+step 93 "cast 'cause light' decimus"
+out god "Your spell === OBLITERATES === Decimus!\n\rDecimus looks pretty hurt. \n\r\n\r<100hp 29739m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qkadagz dies'.\n\rSomeone's spell === OBLITERATES === you!\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\r\n\r<5hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qkadagz dies'.\n\rSmokegod's spell === OBLITERATES === Decimus!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cause light'.\n\rSmokegod's spell === OBLITERATES === Decimus!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51971 4058c99c
+step 94 "@pulse 24"
+rng 51971 4058c99c
+step 95 "cast 'cure light' decimus"
+out god "Ok.\n\rDecimus is in excellent condition. \n\r\n\r<100hp 29728m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'judicandus dies'.\n\rYou feel better!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus dies'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure light'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51973 a400b2cc
+step 96 "@pulse 24"
+rng 51973 a400b2cc
+step 97 "cast 'cure serious' decimus"
+out god "Ok.\n\rDecimus is in excellent condition. \n\r\n\r<100hp 29713m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'judicandus gzfuajg'.\n\rYou feel better!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus gzfuajg'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure serious'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51976 8093c1b0
+step 98 "@pulse 24"
+rng 51976 8093c1b0
+step 99 "cast 'cure critical' decimus"
+out god "Ok.\n\rDecimus is in excellent condition. \n\r\n\r<100hp 29693m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'judicandus qfuhuqar'.\n\rYou feel better!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'judicandus qfuhuqar'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cure critical'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51980 fdba7cfe
+step 100 "@pulse 24"
+rng 51980 fdba7cfe
+step 101 "peace"
+out god "Ok.\n\r\n\r<100hp 29693m 100mv> \xff\xf9"
+rng 51980 fdba7cfe
+step 102 "cast 'faerie fog'"
+out god "You conjure a cloud of purple smoke.\n\rCherub is revealed!\n\rUnseen is revealed!\n\r\n\r<100hp 29681m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'yazfuz yao'.\n\rSomeone conjures a cloud of purple smoke.\n\rSomeone is revealed!\n\rSomeone is revealed!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'yazfuz yao'.\n\rSmokegod conjures a cloud of purple smoke.\n\rCherub is revealed!\n\rYou are revealed!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'faerie fog'.\n\rSmokegod conjures a cloud of purple smoke.\n\rYou are revealed!\n\rUnseen is revealed!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51984 5d83a697
+step 103 "@pulse 24"
+rng 51984 5d83a697
+step 104 "@mob 3064 3700"
+rng 51988 d9c02521
+step 105 "@mob 3064 3700"
+rng 51993 04c2ec02
+step 106 "@mob 3062 3700"
+rng 51995 fa6cc523
+step 107 "@mob 3062 3700"
+rng 51998 4a94600f
+step 108 "force drunk kill fido"
+out god "The drunk's beating *** DEVASTATES *** the beastly fido!\n\rOk.\n\r\n\r<100hp 29681m 100mv> \xff\xf9"
+out dec "\n\rSomeone's beating *** DEVASTATES *** someone!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe drunk's beating *** DEVASTATES *** the beastly fido!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rThe drunk's beating *** DEVASTATES *** the beastly fido!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52010 c5482e87
+step 109 "force 2.drunk kill 2.fido"
+out god "The drunk's beating misses the beastly fido.\n\rOk.\n\r\n\r<100hp 29681m 100mv> \xff\xf9"
+out dec "\n\rSomeone's beating misses someone.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe drunk's beating misses the beastly fido.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rThe drunk's beating misses the beastly fido.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52018 6742c869
+step 110 "cast calm"
+out god "A wave of calm passes over you.\n\r\n\r<100hp 29651m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qarw'.\n\rA wave of calm passes over you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qarw'.\n\rA wave of calm passes over you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'calm'.\n\rA wave of calm passes over you.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52020 0e9a6874
+step 111 "@pulse 24"
+rng 52020 0e9a6874
+step 112 "@state"
+state room 3700 light 2 people mob mob mob mob player player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char mob 3062 pos 8 hit 1/5 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 4194304 train 0 on 0 stats 10 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3062 pos 8 hit 10/10 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 4194304 train 0 on 0 stats 10 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3064 pos 8 hit 25/25 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 55 act 65 affected_by 4194304 train 0 on 0 stats 11 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3064 pos 8 hit 29/29 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 75 act 65 affected_by 4194304 train 0 on 0 stats 11 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 4194304 train 0 on 0 stats 13 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 4194304 train 1 on 0 stats 19 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 4719873 train 1 on 0 stats 19 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   affect 4 level 59 duration 61 location 18 modifier -4 bitvector 1
+state   affect 50 level 60 duration 63 location 0 modifier 0 bitvector 524288
+state   affect 44 level 60 duration 60 location 17 modifier 120 bitvector 256
+state   affect 13 level 60 duration 120 location 6 modifier 1 bitvector 0
+state   affect 29 level 60 duration 120 location 24 modifier 7 bitvector 1024
+state   affect 29 level 60 duration 120 location 18 modifier -7 bitvector 1024
+state   affect 3 level 60 duration 66 location 24 modifier -7 bitvector 0
+state   affect 3 level 60 duration 66 location 18 modifier 7 bitvector 0
+state   affect 2 level 60 duration 24 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29651/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 4194428 train 0 on 0 stats 13 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   affect 35 level 60 duration 60 location 0 modifier 0 bitvector 16
+state   affect 33 level 60 duration 60 location 0 modifier 0 bitvector 32
+state   affect 32 level 60 duration 60 location 0 modifier 0 bitvector 64
+state   affect 31 level 60 duration 60 location 0 modifier 0 bitvector 4
+state   affect 34 level 60 duration 60 location 0 modifier 0 bitvector 8
+rng 52020 0e9a6874
+step 113 "cast 'charm person' smokegod"
+out god "You like yourself even better!\n\r\n\r<100hp 29646m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qpabraw dudasabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qpabraw dudasabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'charm person'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52021 2717fc32
+step 114 "@pulse 24"
+rng 52021 2717fc32
+step 115 "cast 'charm person' 2.fido"
+out god "The beastly fido now follows you.\n\rThe beastly fido looks at you with adoring eyes.\n\r\n\r<100hp 29641m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qpabraw dudasabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qpabraw dudasabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'charm person'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52024 919901b6
+step 116 "@pulse 24"
+rng 52024 919901b6
+step 117 "cast 'charm person' 2.fido"
+out god "\n\r<100hp 29636m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qpabraw dudasabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qpabraw dudasabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'charm person'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52025 729b8038
+step 118 "@pulse 24"
+rng 52025 729b8038
+step 119 "cast cancellation drunk"
+out god "You failed, try dispel magic.\n\r\n\r<100hp 29616m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qaiqzrrahuai'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qaiqzrrahuai'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cancellation'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52026 3d9ef0ef
+step 120 "@pulse 24"
+rng 52036 979d1777
+step 121 "cast cancellation decimus"
+out god "Decimus is no longer blinded.\n\rDecimus no longer looks so peaceful...\n\rDecimus's outline fades.\n\rDecimus falls to the ground!\n\rOk.\n\r\n\r<100hp 29596m 100mv> \xff\xf9"
+out dec "\n\rSomeone utters the words, 'qaiqzrrahuai'.\n\rYou feel less armored.\n\rYou feel less righteous.\n\rYou can see again.\n\rYou have lost your peace of mind.\n\rThe curse wears off.\n\rThe pink aura around you fades away.\n\rYou slowly float to the ground.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'qaiqzrrahuai'.\n\rDecimus is no longer blinded.\n\rDecimus no longer looks so peaceful...\n\rDecimus's outline fades.\n\rDecimus falls to the ground!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'cancellation'.\n\rDecimus is no longer blinded.\n\rDecimus no longer looks so peaceful...\n\rDecimus's outline fades.\n\rDecimus falls to the ground!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52049 b0ba0cdf
+step 122 "@pulse 24"
+rng 52049 b0ba0cdf
+step 123 "@state"
+state room 3700 light 2 people mob mob mob mob player player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char mob 3062 pos 8 hit 1/5 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 4194304 train 0 on 0 stats 10 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3062 pos 8 hit 10/10 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 4456448 train 0 on 0 stats 10 11 11 11 11
+state   affect 14 level 60 duration 15 location 0 modifier 0 bitvector 262144
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3064 pos 8 hit 25/25 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 55 act 65 affected_by 4194304 train 0 on 0 stats 11 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3064 pos 8 hit 29/29 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 75 act 65 affected_by 4194304 train 0 on 0 stats 11 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 4194304 train 0 on 0 stats 13 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 4194304 train 1 on 0 stats 19 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 13 level 59 duration 120 location 6 modifier 1 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29596/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 4194428 train 0 on 0 stats 13 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   affect 35 level 60 duration 60 location 0 modifier 0 bitvector 16
+state   affect 33 level 60 duration 60 location 0 modifier 0 bitvector 32
+state   affect 32 level 60 duration 60 location 0 modifier 0 bitvector 64
+state   affect 31 level 60 duration 60 location 0 modifier 0 bitvector 4
+state   affect 34 level 60 duration 60 location 0 modifier 0 bitvector 8
+rng 52049 b0ba0cdf
+step 124 "@mob 350 3700"
+rng 52069 02969c70
+step 125 "cast 'dispel magic' dragon"
+out god "The white aura around the pet dragon's body vanishes.\n\rOk.\n\rThe pet dragon's slash grazes you.\n\rThe pet dragon is in excellent condition. \n\r\n\r<92hp 29581m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'eugszr waouq'.\n\rThe white aura around the pet dragon's body vanishes.\n\rThe pet dragon's slash grazes Smokegod.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'eugszr waouq'.\n\rThe white aura around the pet dragon's body vanishes.\n\rThe pet dragon's slash grazes Smokegod.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'dispel magic'.\n\rThe white aura around the pet dragon's body vanishes.\n\rThe pet dragon's slash grazes Smokegod.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52081 e6d4020d
+step 126 "@pulse 24"
+rng 52081 e6d4020d
+step 127 "cast 'dispel magic' dragon"
+out god "Spell failed.\n\rThe pet dragon is in excellent condition. \n\r\n\r<92hp 29566m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'eugszr waouq'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'eugszr waouq'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'dispel magic'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52085 af33eb52
+step 128 "@pulse 24"
+rng 52085 af33eb52
+step 129 "cast 'dispel magic' decimus"
+out god "Decimus looks more like himself again.\n\rOk.\n\rThe pet dragon is in excellent condition. \n\r\n\r<92hp 29551m 100mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'eugszr waouq'.\n\rYour body feels familiar again.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod utters the words, 'eugszr waouq'.\n\rDecimus looks more like himself again.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod utters the words, 'dispel magic'.\n\rDecimus looks more like himself again.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52092 5310e838
+step 130 "@pulse 24"
+rng 52092 5310e838
+step 131 "@state"
+state room 3700 light 2 people mob mob mob mob mob player player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char mob 350 pos 7 hit 118/118 mana 157/157 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 131203 affected_by 524808 train 0 on 0 stats 12 16 13 14 13
+state char mob 3062 pos 8 hit 1/5 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 4194304 train 0 on 0 stats 10 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3062 pos 8 hit 10/10 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048801 affected_by 4456448 train 0 on 0 stats 10 11 11 11 11
+state   affect 14 level 60 duration 15 location 0 modifier 0 bitvector 262144
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3064 pos 8 hit 25/25 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 55 act 65 affected_by 4194304 train 0 on 0 stats 11 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char mob 3064 pos 8 hit 29/29 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 75 act 65 affected_by 4194304 train 0 on 0 stats 11 11 11 11 11
+state   affect 7 level 60 duration 15 location 19 modifier -2 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -2 bitvector 4194304
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 4194304 train 0 on 0 stats 13 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 4194304 train 1 on 0 stats 19 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 7 hit 92/100 mana 29551/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 4194428 train 0 on 0 stats 13 13 13 13 13
+state   affect 7 level 60 duration 15 location 19 modifier -5 bitvector 4194304
+state   affect 7 level 60 duration 15 location 18 modifier -5 bitvector 4194304
+state   affect 35 level 60 duration 60 location 0 modifier 0 bitvector 16
+state   affect 33 level 60 duration 60 location 0 modifier 0 bitvector 32
+state   affect 32 level 60 duration 60 location 0 modifier 0 bitvector 64
+state   affect 31 level 60 duration 60 location 0 modifier 0 bitvector 4
+state   affect 34 level 60 duration 60 location 0 modifier 0 bitvector 8
+rng 52092 5310e838
+step 132 "goto 3005"
+out god "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<92hp 29551m 100mv> \xff\xf9"
+out dec "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rSmokegod leaves in a swirling mist.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52092 5310e838
+step 133 "@mob 3062 3005"
+rng 52094 6056935c
+step 134 "cast 'charm person' fido"
+out god "The mayor does not allow charming in the city limits.\n\rYou dodge the beastly fido's attack.\n\rThe beastly fido is in excellent condition. \n\r\n\r<92hp 29546m 100mv> \xff\xf9"
+rng 52103 a772aac9
+step 135 "@pulse 24"
+rng 52103 a772aac9

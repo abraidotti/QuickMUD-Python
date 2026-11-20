@@ -1,0 +1,146 @@
+# Spells that add or take away affects, cast by Smokegod (60, every skill at 100, mana to spare), with only
+# area_update running. At the entrance to Mud School (3700, not lawful), with Decimus (10), Unseen (5, invisible)
+# and Cherub (52). Each cast is waited out; @state shows the affects.
+# - on Decimus: armor, bless, curse, change sex, faerie fire and fly, each twice (the second is refused, or does
+#   nothing); a detect, which is for yourself only; a poisoned mushroom and cure poison; blindness and cure
+#   blindness; cure disease on someone not ill; the three cure spells after a wound
+# - on Smokegod: the five detects, some twice
+# - faerie fog revealing Unseen; calm in the middle of two fights; charm person (yourself, a fido twice, and in the
+#   lawful temple square)
+# - cancellation on Decimus (and refused on a mob), dispel magic on a pet dragon (350, whose sanctuary is a bit, not
+#   a spell) and on Decimus
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect uns
+Unseen
+psswrd
+@return
+@return
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@as god
+cast 'detect invis'
+@pulse 24
+cast 'detect invis'
+@pulse 24
+transfer decimus 3700
+transfer unseen 3700
+transfer cherub 3700
+cast armor decimus
+@pulse 24
+cast armor decimus
+@pulse 24
+cast bless decimus
+@pulse 24
+cast bless decimus
+@pulse 24
+cast curse decimus
+@pulse 24
+cast curse decimus
+@pulse 24
+cast 'change sex' decimus
+@pulse 24
+cast 'change sex' decimus
+@pulse 24
+cast 'detect evil' decimus
+@pulse 24
+cast 'detect evil'
+@pulse 24
+cast 'detect evil'
+@pulse 24
+cast 'detect good'
+@pulse 24
+cast 'detect hidden'
+@pulse 24
+cast 'detect magic'
+@pulse 24
+cast 'detect magic'
+@pulse 24
+cast 'faerie fire' decimus
+@pulse 24
+cast 'faerie fire' decimus
+@pulse 24
+cast fly decimus
+@pulse 24
+cast fly decimus
+@pulse 24
+@state
+cast 'cure poison' decimus
+@pulse 24
+set char decimus full 0
+set char decimus hunger 0
+@obj 20 3700 5 10 0 1 0
+@as dec
+get mushroom
+eat mushroom
+@as god
+cast 'cure poison' decimus
+@pulse 24
+cast 'cure blindness' decimus
+@pulse 24
+cast blindness decimus
+@pulse 24
+cast blindness decimus
+@pulse 24
+cast 'cure blindness' decimus
+@pulse 24
+cast 'cure disease' decimus
+@pulse 24
+cast 'cause light' decimus
+@pulse 24
+cast 'cure light' decimus
+@pulse 24
+cast 'cure serious' decimus
+@pulse 24
+cast 'cure critical' decimus
+@pulse 24
+peace
+cast 'faerie fog'
+@pulse 24
+@mob 3064 3700
+@mob 3064 3700
+@mob 3062 3700
+@mob 3062 3700
+force drunk kill fido
+force 2.drunk kill 2.fido
+cast calm
+@pulse 24
+@state
+cast 'charm person' smokegod
+@pulse 24
+cast 'charm person' 2.fido
+@pulse 24
+cast 'charm person' 2.fido
+@pulse 24
+cast cancellation drunk
+@pulse 24
+cast cancellation decimus
+@pulse 24
+@state
+@mob 350 3700
+cast 'dispel magic' dragon
+@pulse 24
+cast 'dispel magic' dragon
+@pulse 24
+cast 'dispel magic' decimus
+@pulse 24
+@state
+goto 3005
+@mob 3062 3005
+cast 'charm person' fido
+@pulse 24
