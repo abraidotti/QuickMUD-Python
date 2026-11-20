@@ -1,0 +1,40 @@
+#PLAYER
+Name Cherub~
+Id   1763400016
+LogO 1763337600
+Vers 5
+Prom <%hhp %mm %vmv> ~
+Race human~
+Sex  1
+Cla  0
+Levl 52
+Sec  0
+Plyd 0
+Scro 22
+Room 3001
+HMV  100 100 100 100 100 100
+Gold 0
+Silv 0
+Exp  0
+Act  QT
+Comm NOP
+Pos  8
+Prac 0
+Trai 0
+Save  0
+Alig  0
+Hit   0
+ACs 100 100 100 100
+Attr 13 13 13 13 13
+AMod 0 0 0 0 0
+Pass SmIJj6Ypaw.rM~
+Titl  the Smoke Test~
+Pnts 40
+TSex 1
+LLev 0
+HMVP 100 100 100
+Cnd  0 48 48 48
+Gr 'rom basics'
+End
+
+#END

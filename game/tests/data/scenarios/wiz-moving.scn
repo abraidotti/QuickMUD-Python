@@ -1,0 +1,106 @@
+# Immortals moving about and talking: goto, at, transfer, violate, poofin and poofout, the four echoes, smote, invis
+# and incognito. In the temple (3001): Smokegod (60, the top level), Seraph (56), Cherub (52, the lowest immortal
+# level) and Decimus (10). Room 1205 (the Eye of the Hurricane) is private and for implementors only: Smokegod can go
+# there while it's empty, Seraph can't. Each echo is marked ("global> " and so on) for those of at least the echoer's
+# trust; pecho isn't marked when a top-level immortal sends it. Seraph's own poofin and poofout replace the swirling
+# mist, and those below an invisible immortal's level don't see it come and go. Last, Seraph quits through at, which
+# at survives. goto also finds a room by an object in it (the fountain).
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as cher
+goto
+goto nowhere
+goto 99999
+goto 3005
+goto decimus
+goto fountain
+goto decimus
+at 3005 look
+@as ser
+at
+at 3005
+at nowhere look
+at 3005 look
+at 1205 look
+at decimus say hello from afar
+poofin
+poofin appears
+poofin Seraph glides in on a sunbeam.
+poofout Seraph glides out on a sunbeam.
+poofin
+goto 3005
+goto 3001
+goto 1205
+@as god
+goto 1205
+goto 3001
+violate
+violate nowhere
+violate 3005
+violate 1205
+goto 3001
+transfer
+transfer nobody
+transfer decimus nowhere
+transfer decimus 3005
+transfer decimus
+transfer decimus 1205
+@as ser
+transfer decimus 1205
+transfer decimus
+@as god
+transfer all 3005
+transfer all
+@as ser
+gecho
+gecho Hello, world.
+echo
+echo Hello, room.
+zecho
+zecho Hello, zone.
+pecho
+pecho decimus
+pecho nobody hello
+pecho decimus hello, Decimus.
+pecho smokegod hello, Smokegod.
+@as god
+pecho seraph hello, Seraph.
+@as cher
+smote
+smote waves
+smote Cherub waves at Decimus, and at Decimus's sword.
+invis
+invis
+invis 1
+invis 99
+invis 52
+goto 3005
+goto 3001
+invis
+incognito
+incognito
+incognito 99
+incognito 52
+incognito
+@as ser
+at 3005 quit
+@as god
+look

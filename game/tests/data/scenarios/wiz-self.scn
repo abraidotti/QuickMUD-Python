@@ -1,0 +1,41 @@
+# An immortal's own settings: wiznet's options, and prefix. In the temple (3001): Seraph (56) and Decimus (10).
+# With wiznet on and logins chosen, Seraph sees Knocker log in. A prefix goes in front of every line typed (alias.c's
+# substitute_alias), but setting or changing one says nothing (#68), and its messages end in "\r\n" (#68).
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as ser
+wiznet
+wiznet
+wiznet on
+wiznet off
+wiznet on
+wiznet status
+wiznet show
+wiznet nothing
+wiznet secure
+wiznet logins
+wiznet status
+@connect knock
+Knocker
+psswrd
+@return
+@return
+@as ser
+wiznet logins
+wiznet status
+prefix
+prefi
+prefix say
+hello there
+prefix tell decimus
+hello there
+prefix
+hello there

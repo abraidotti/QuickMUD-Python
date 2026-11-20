@@ -1,0 +1,227 @@
+sources b411b98fb41461f4
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect ser"
+rng 51895 7f5599b5
+step 7 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect dec"
+rng 51895 7f5599b5
+step 12 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@connect pick"
+rng 51895 7f5599b5
+step 16 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 17 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 18 "@return"
+out god "\n\rPickpocket has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rPickpocket has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSeraph the Smoke Test is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@return"
+out pick "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@obj 3021 3001"
+rng 51895 7f5599b5
+step 21 "get sword"
+out god "\n\rPickpocket gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rPickpocket gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "You get a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "envenom sword"
+out god "\n\rPickpocket coats a small sword with deadly venom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rPickpocket coats a small sword with deadly venom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket coats a small sword with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "You coat a small sword with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 23 "@pulse 36"
+rng 51897 86bbd2a0
+step 24 "envenom sword"
+out pick "A small sword is already envenomed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 25 "@pulse 36"
+rng 51897 86bbd2a0
+step 26 "@as god"
+rng 51897 86bbd2a0
+step 27 "scroll 0"
+out god "Paging disabled.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 28 "@obj 105 3001"
+rng 51897 86bbd2a0
+step 29 "@obj 106 3001"
+rng 51897 86bbd2a0
+step 30 "@obj 1327 3001"
+rng 51897 86bbd2a0
+step 31 "@obj 3138 3001"
+rng 51897 86bbd2a0
+step 32 "@obj 1355 3001"
+rng 51897 86bbd2a0
+step 33 "@obj 3020 3001 2 1 4 40 0"
+rng 51897 86bbd2a0
+step 34 "@obj 3062 3001"
+rng 51897 86bbd2a0
+step 35 "@obj 1345 3001"
+rng 51897 86bbd2a0
+step 36 "@obj 300 3001"
+rng 51897 86bbd2a0
+step 37 "@obj 101 3001"
+rng 51897 86bbd2a0
+step 38 "@obj 904 3001"
+rng 51897 86bbd2a0
+step 39 "stat"
+out god "Syntax:\n\r  stat <name>\n\r  stat obj <name>\n\r  stat mob <name>\n\r  stat room <number>\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 40 "stat room"
+out god "Name: 'The Temple Of Mota'\n\rArea: 'Midgaard'\n\rVnum: 3001  Sector: 0  Light: 2  Healing: 100  Mana: 100\n\rRoom flags: 262156.\n\rDescription:\n\rYou are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rExtra description keywords: 'plaque'.\n\rCharacters: pickpocket decimus seraph smokegod hassan.\n\rObjects:    sandals glasses herbs backpack pants dagger cleaver skin staff wand pink.\n\rDoor: 0.  To: 3054.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: At the northern end of the temple hall is a statue and a huge altar.\n\rDoor: 2.  To: 3005.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the temple square.\n\rDoor: 4.  To: 3700.  Key: 0.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the entrance to Mud School.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 41 "stat room 1206"
+out god "Name: 'Walking on the Moon'\n\rArea: 'Valhalla'\n\rVnum: 1206  Sector: 0  Light: 0  Healing: 100  Mana: 100\n\rRoom flags: 25092.\n\rDescription:\n\rThe proud and lonely silence of Mare Imbrium surrounds you, as you gaze upon\n\rthe sterile splendor of the moon.  All around is the velvet curtain of night,\n\rstudded with a thousand gleaming jewels.  Below you hangs the beautiful\n\rfields of Earth, looking fragile and far away, but full of hope.  A sense of\n\rwistful regret touches you, as you think about what might have been, and what\n\rwill be.\n\rExtra description keywords: 'crater mare imbrium'.\n\rCharacters:.\n\rObjects:   .\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 42 "stat room 3005"
+out god "Name: 'The Temple Square'\n\rArea: 'Midgaard'\n\rVnum: 3005  Sector: 1  Light: 0  Healing: 100  Mana: 100\n\rRoom flags: 262144.\n\rDescription:\n\rYou are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\rCharacters:.\n\rObjects:    fountain.\n\rDoor: 0.  To: 3001.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the temple.\n\rDoor: 1.  To: 3006.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the good old Grunting Boar Inn.\n\rDoor: 2.  To: 3014.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the Market Square.\n\rDoor: 3.  To: 3004.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the entrance to the Clerics Guild.\n\rDoor: 4.  To: 3057.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 43 "stat room nowhere"
+out god "No such location.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 44 "stat obj"
+out god "Stat what?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 45 "stat obj nothing"
+out god "Nothing like that in hell, earth, or heaven.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 46 "stat obj potion"
+out god "Name(s): pink potion\n\rVnum: 105  Format: new  Type: potion  Resets: 0\n\rShort description: a pink potion\n\rLong description: A pink potion is barely visible on the ground.\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 20/20/20 (10th pounds)\n\rLevel: 0  Cost: 160  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 6 2 23 -1 -1\n\rLevel 6 spells of: 'armor' 'cure blindness'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 47 "stat obj wand"
+out god "Name(s): wand\n\rVnum: 106  Format: new  Type: wand  Resets: 0\n\rShort description: a small wand\n\rLong description: A small wand lies on the ground.\n\rWear bits: take hold\n\rExtra bits: none\n\rNumber: 1/1  Weight: 20/20/20 (10th pounds)\n\rLevel: 3  Cost: 540  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 5 1 1 5 0\n\rHas 1(1) charges of level 5 'burning hands'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 48 "stat obj staff"
+out god "Name(s): staff burnt\n\rVnum: 1327  Format: new  Type: staff  Resets: 0\n\rShort description: a burnt staff\n\rLong description: A burnt staff is leaning against the wall here.\n\rWear bits: take hold\n\rExtra bits: none\n\rNumber: 1/1  Weight: 60/60/60 (10th pounds)\n\rLevel: 6  Cost: 1720  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 20 4 4 4 0\n\rHas 4(4) charges of level 20 'blindness'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 49 "stat obj skin"
+out god "Name(s): skin water buffalo\n\rVnum: 3138  Format: new  Type: drink  Resets: 0\n\rShort description: a buffalo water skin\n\rLong description: A bloated dead buffalo is on the floor.\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 40/40/40 (10th pounds)\n\rLevel: 0  Cost: 24  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 64 64 0 0 0\n\rIt holds clear-colored water.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 50 "stat obj cleaver"
+out god "Name(s): cleaver\n\rVnum: 1355  Format: new  Type: weapon  Resets: 0\n\rShort description: a meat cleaver\n\rLong description: A meat cleaver is sticking in the wall here.\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 20/20/20 (10th pounds)\n\rLevel: 17  Cost: 840  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 2 3 5 21 8\n\rWeapon type is dagger\n\rDamage is 3d5 (average 9)\n\rDamage noun is cleave.\n\rWeapons flags: sharp\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 51 "stat obj dagger"
+out god "Name(s): dagger\n\rVnum: 3020  Format: new  Type: weapon  Resets: 0\n\rShort description: a dagger\n\rLong description: A dagger with a long thin blade is here.\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 10/10/10 (10th pounds)\n\rLevel: 0  Cost: 157  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 2 1 4 40 0\n\rWeapon type is dagger\n\rDamage is 1d4 (average 2)\n\rDamage noun is (null).\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 52 "stat obj pants"
+out god "Name(s): pants leather\n\rVnum: 3062  Format: new  Type: armor  Resets: 0\n\rShort description: a pair of leather pants\n\rLong description: A pair of leather pants is lying on the ground.\n\rWear bits: take legs\n\rExtra bits: none\n\rNumber: 1/1  Weight: 50/50/50 (10th pounds)\n\rLevel: 0  Cost: 136  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 1 2 2 0 0\n\rArmor class is 1 pierce, 2 bash, 2 slash, and 0 vs. magic\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 53 "stat obj backpack"
+out god "Name(s): backpack leather\n\rVnum: 1345  Format: new  Type: container  Resets: 0\n\rShort description: a leather backpack\n\rLong description: A leather backpack is here.\n\rWear bits: take body hold\n\rExtra bits: magic burn_proof\n\rNumber: 1/0  Weight: 90/90/90 (10th pounds)\n\rLevel: 0  Cost: 1000  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 750 0 0 50 50\n\rCapacity: 750#  Maximum weight: 50#  flags: none\n\rWeight multiplier: 50%\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 54 "stat obj herbs"
+out god "Name(s): herbs herb timian\n\rVnum: 300  Format: new  Type: food  Resets: 0\n\rShort description: a small dusk of timian herbs\n\rLong description: Some herbs are lying here, small green leaves and tiny pink flowers.\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 10/10/10 (10th pounds)\n\rLevel: 0  Cost: 10  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 1 1 0 0 0\n\rExtra description keywords: 'herbs herb timian'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 55 "stat obj glasses"
+out god "Name(s): glasses\n\rVnum: 101  Format: new  Type: clothing  Resets: 0\n\rShort description: a pair of glasses\n\rLong description: An odd pair of glasses has been left here.\n\rWear bits: take head\n\rExtra bits: glow\n\rNumber: 1/1  Weight: 20/20/20 (10th pounds)\n\rLevel: 3  Cost: 270  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 0 0 0 0 0\n\rAffects dexterity by -1, level 3.\n\rAffects wisdom by 1, level 3.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 56 "stat obj sandals"
+out god "Nothing like that in hell, earth, or heaven.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 57 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 58 "stat obj sandals"
+out god "Name(s): sandals winged\n\rVnum: 904  Format: new  Type: armor  Resets: 0\n\rShort description: a pair of winged sandals\n\rLong description: A pair of well made sandals lies here.\n\rWear bits: take feet\n\rExtra bits: invis magic anti-evil\n\rNumber: 1/1  Weight: 50/50/50 (10th pounds)\n\rLevel: 25  Cost: 2200  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 8 8 8 4 0\n\rArmor class is 8 pierce, 8 bash, 8 slash, and 4 vs. magic\n\rAffects none by 0, level 25.\n\rAdds flying affect.\n\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 59 "holylight"
+out god "Holy light mode off.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 60 "stat obj small"
+out god "Name(s): sword small\n\rVnum: 3021  Format: new  Type: weapon  Resets: 0\n\rShort description: a small sword\n\rLong description: A small sword lies here.\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 30/30/30 (10th pounds)\n\rLevel: 0  Cost: 250  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: Pickpocket  Wear_loc: -1\n\rValues: 1 1 5 1 128\n\rWeapon type is sword\n\rDamage is 1d5 (average 3)\n\rDamage noun is slice.\n\rWeapons flags: poison\n\rAffects none by 0, level 1, 0 hours.\n\rAdds poison weapon flags.\n\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 61 "stat potion"
+out god "Name(s): pink potion\n\rVnum: 105  Format: new  Type: potion  Resets: 0\n\rShort description: a pink potion\n\rLong description: A pink potion is barely visible on the ground.\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 20/20/20 (10th pounds)\n\rLevel: 0  Cost: 160  Condition: 0  Timer: 0\n\rIn room: 3001  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 6 2 23 -1 -1\n\rLevel 6 spells of: 'armor' 'cure blindness'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 62 "stat pickpocket"
+out god "Name: Pickpocket\n\rVnum: 0  Format: pc  Race: human  Group: 0  Sex: male  Room: 3001\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rHp: 29/29  Mana: 102/102  Move: 106/106  Practices: 1\n\rLv: 13  Class: thief  Align: 750  Gold: 30  Silver: 200  Exp: 2088\n\rArmor: pierce: 95  bash: 95  slash: 95  magic: 99\n\rHit: 4  Dam: 4  Saves: -1  Size: medium  Position: standing  Wimpy: 0\n\rFighting: (none)\n\rThirst: 2  Hunger: 0  Full: 10  Drunk: 0\n\rCarry number: 6  Carry weight: 20\n\rAge: 17  Played: 0  Last Level: 0  Timer: 0\n\rAct: player no_summon\n\rComm: prompt combine\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rSecurity: 0.\n\rShort description: \n\rLong  description: (none)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52154 3f991850
+step 63 "stat 3005"
+out god "Name: 'The Temple Square'\n\rArea: 'Midgaard'\n\rVnum: 3005  Sector: 1  Light: 0  Healing: 100  Mana: 100\n\rRoom flags: 262144.\n\rDescription:\n\rYou are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\rCharacters:.\n\rObjects:    fountain.\n\rDoor: 0.  To: 3001.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the temple.\n\rDoor: 1.  To: 3006.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the good old Grunting Boar Inn.\n\rDoor: 2.  To: 3014.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the Market Square.\n\rDoor: 3.  To: 3004.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the entrance to the Clerics Guild.\n\rDoor: 4.  To: 3057.  Key: -1.  Exit flags: 0.\n\rKeyword: ''.  Description: You see the air.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52401 108655f2
+step 64 "stat nothing"
+out god "Nothing by that name found anywhere.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52894 babab009
+step 65 "stat mob"
+out god "Stat whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52894 babab009
+step 66 "stat mob nobody"
+out god "They aren't here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
+step 67 "stat mob decimus"
+out god "Name: Decimus\n\rVnum: 0  Format: pc  Race: human  Group: 0  Sex: male  Room: 3001\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rHp: 29/29  Mana: 102/102  Move: 106/106  Practices: 1\n\rLv: 10  Class: warrior  Align: 750  Gold: 0  Silver: 0  Exp: 2088\n\rArmor: pierce: 95  bash: 95  slash: 95  magic: 99\n\rHit: 4  Dam: 4  Saves: -1  Size: medium  Position: standing  Wimpy: 0\n\rFighting: (none)\n\rThirst: 45  Hunger: 45  Full: 42  Drunk: 0\n\rCarry number: 5  Carry weight: 14\n\rAge: 17  Played: 0  Last Level: 0  Timer: 0\n\rAct: player no_summon\n\rComm: prompt combine\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rSecurity: 0.\n\rShort description: \n\rLong  description: (none)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
+step 68 "stat char hassan"
+out god "Name: Hassan\n\rVnum: 3011  Format: new  Race: giant  Group: 3000  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/4000  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 45  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc sentinel warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
+step 69 "@as pick"
+rng 53147 01573cb1
+step 70 "stat obj small"
+out pick "Huh?\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53147 01573cb1
+step 71 "@as god"
+rng 53147 01573cb1
+step 72 "get dagger"
+out god "You get a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rSmokegod gets a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rSmokegod gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 53147 01573cb1
+step 73 "stat obj dagger"
+out god "Name(s): dagger\n\rVnum: 3020  Format: new  Type: weapon  Resets: 0\n\rShort description: a dagger\n\rLong description: A dagger with a long thin blade is here.\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 10/10/10 (10th pounds)\n\rLevel: 0  Cost: 157  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: Smokegod  Wear_loc: -1\n\rValues: 2 1 4 40 0\n\rWeapon type is dagger\n\rDamage is 1d4 (average 2)\n\rDamage noun is (null).\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
+step 74 "@as ser"
+rng 53147 01573cb1
+step 75 "scroll 0"
+out ser "Paging disabled.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
+step 76 "stat room 1206"
+out ser "That room is private right now.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
+step 77 "stat obj dagger"
+out ser "Name(s): dagger\n\rVnum: 3020  Format: new  Type: weapon  Resets: 0\n\rShort description: a dagger\n\rLong description: A dagger with a long thin blade is here.\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 10/10/10 (10th pounds)\n\rLevel: 0  Cost: 157  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: Smokegod  Wear_loc: -1\n\rValues: 2 1 4 40 0\n\rWeapon type is dagger\n\rDamage is 1d4 (average 2)\n\rDamage noun is (null).\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53147 01573cb1
