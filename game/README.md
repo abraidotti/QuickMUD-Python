@@ -52,7 +52,8 @@ string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (ki
 slay and the fighting skills), `cast` and every spell (`magic.c` and `magic2.c`), `heal` (`healer.c`), `play`
 (`music.c`), and what login calls; any other command raises `NotPorted`, which stops the game (#32). Every
 per-pulse update runs, as the C's do: areas, songs, mobs (and their specials), fights, weather, characters, objects
-and aggression. `CHARM_UPDATES` names the ones to run in both games (`area,violence`, or `all`; unset, all of
+and aggression. Mob programs run (`mob_prog.c`), but a program's `mob` commands (`mob_cmds.c`) raise `NotPorted`;
+no stock area has a program, so `tools/fixtures/files/mobprog.are` is the one the scenarios use. `CHARM_UPDATES` names the ones to run in both games (`area,violence`, or `all`; unset, all of
 them), as `@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
 with `CHARM_UPDATES=area` for it, so its other updates are off too.

@@ -187,10 +187,16 @@ class Resets(unittest.TestCase):
 
     def test_act_trigger_runs_only_on_its_phrase(self):
         # The zap's act() messages reach the guards. A trigger whose phrase isn't in them does nothing, as in the C.
-        boot_area(trigger="M act 30050 hello~\n", progs=PROGS)
-        with self.assertRaises(NotPorted) as e:  # running the program isn't ported
+        from unittest import mock
+
+        from charm.systems import mobprog
+
+        with mock.patch.object(mobprog, "program_flow") as flow:
+            boot_area(trigger="M act 30050 hello~\n", progs=PROGS)
+            self.assertFalse(flow.called)
             boot_area(trigger="M act 30050 zapped~\n", progs=PROGS)
-        self.assertIn("program_flow", str(e.exception))
+            self.assertTrue(flow.called)
+            self.assertEqual(flow.call_args.args[0], 30050)
 
 
 class OwnStrings(unittest.TestCase):

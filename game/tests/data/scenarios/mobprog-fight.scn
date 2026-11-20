@@ -1,0 +1,37 @@
+# Mob programs from the fixture area in a fight, with area_update and violence_update running, in the temple
+# square (3005). The sparring partner (30002, 5) has a program for each fight trigger.
+# - kill: Decimus (10) attacks it, and it answers
+# - fight: each round it fights, it speaks
+# - surr: Decimus surrenders, and it accepts
+# - hpcnt 60: Heroic (51) attacks it, and under 60% of its hit points it says so
+# - death: it dies, and says its last
+@place mobprog.are mobprog.are
+@place area-mobprog.lst area.lst
+@updates area,violence
+@connect dec
+Decimus
+psswrd
+@return
+@return
+south
+@connect hero
+Heroic
+psswrd
+@return
+@return
+south
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@mob 30002 3005
+@as dec
+kill partner
+@pulse until 60 Take that
+surrender
+@pulse 24
+@as hero
+kill partner
+@pulse until 400 is DEAD
+@state

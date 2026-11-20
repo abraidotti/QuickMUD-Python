@@ -1,0 +1,59 @@
+# Mob programs from the fixture area (tools/fixtures/files/mobprog.are, put in place with @place), with only
+# area_update running. The herald (30000) and the doorman (30001) stand in the temple (3001).
+# - greet: Decimus (10) walks in and is welcomed and announced; Heroic (51) is a hero; Smokegod (60) is bowed to
+# - grall: the doorman nods to everyone who comes in
+# - speech "check": every if-check, on Decimus and the herald, with or and and, nested ifs, and a break
+# - speech "codes": every $-code; $R gives Decimus's name, not the random player's (#87), and a bad code gives
+#   <@@@>
+# - act "smiles": Decimus smiles, and the herald smiles back
+# - give "all": Decimus's banner, a light, with its values, vnum and name checked; bribe "10": ten silver or more
+# - give 3001: a bottle of beer, by vnum, to the doorman
+# - exit north: the doorman stops Decimus; exall east: and east too, though there's no way east
+# - codes again with Heroic and Smokegod there: $r picks one at random each time, and $R still says Decimus
+@place mobprog.are mobprog.are
+@place area-mobprog.lst area.lst
+@connect god
+Smokegod
+smoke123
+@return
+@return
+holylight
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+@mob 30000 3001
+@mob 30001 3001
+set char decimus silver 100
+@as dec
+south
+north
+say check
+say codes
+smile
+remove banner
+give banner herald
+give 5 silver herald
+give 10 silver herald
+@obj 3001 3001
+get bottle
+give bottle doorman
+north
+east
+@connect hero
+Heroic
+psswrd
+@return
+@return
+south
+north
+@as god
+south
+north
+@as dec
+say codes
+say codes
+say codes
+@state
