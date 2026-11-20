@@ -1,0 +1,745 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect dec"
+rng 51895 7f5599b5
+step 7 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect yeo"
+rng 51895 7f5599b5
+step 12 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\rYeoman has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@return"
+out yeo "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect ram"
+rng 51895 7f5599b5
+step 17 "Rambler"
+out ram "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "psswrd"
+out ram "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out god "\n\rRambler has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rYeoman the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@return"
+out ram "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@connect clan"
+rng 51895 7f5599b5
+step 22 "Clansman"
+out clan "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 23 "psswrd"
+out clan "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 24 "@return"
+out god "\n\rClansman has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rClansman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rRambler the Recruit is here.\n\rYeoman the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@return"
+out clan "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "@connect uns"
+rng 51895 7f5599b5
+step 27 "Unseen"
+out uns "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 28 "psswrd"
+out uns "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 29 "@return"
+out god "\n\rSomeone has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSomeone has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rClansman the Recruit is here.\n\rRambler the Recruit is here.\n\rYeoman the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "@return"
+out uns "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "@connect seer"
+rng 51895 7f5599b5
+step 32 "Seer"
+out seer "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 33 "psswrd"
+out seer "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 34 "@return"
+out god "\n\rSeer has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSeer has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r(Invis) Unseen the Recruit is here.\n\rClansman the Recruit is here.\n\rRambler the Recruit is here.\n\rYeoman the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "@return"
+out seer "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "@connect sot"
+rng 51895 7f5599b5
+step 37 "Sot"
+out sot "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 38 "psswrd"
+out sot "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 39 "@return"
+out god "\n\rSot has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSot has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSeer the Recruit is here.\n\rClansman the Recruit is here.\n\rRambler the Recruit is here.\n\rYeoman the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "@return"
+out sot "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "@as dec"
+rng 51895 7f5599b5
+step 42 "@obj 3021 3001 1 1 5 20 0"
+rng 51895 7f5599b5
+step 43 "get sword"
+out god "\n\rDecimus gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You get a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 44 "wield sword"
+out god "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You stop using a sub issue sword.\n\rYou wield a small sword.\n\rYou are skilled with a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 45 "@mob 9006 3001"
+rng 51968 b7a8be27
+step 46 "kill septon"
+out dec "The septon dodges your attack.\n\rThe septon is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51974 fb1b8648
+step 47 "@pulse 12"
+out god "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe septon's beating >>> ANNIHILATES <<< you!\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\rThe septon is unaffected by your divine power!\n\rThe septon is in excellent condition. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe septon's beating >>> ANNIHILATES <<< Decimus!\n\rThe septon is unaffected by Decimus's divine power!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51998 4a94600f
+step 48 "@as god"
+rng 51998 4a94600f
+step 49 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51998 4a94600f
+step 50 "slay septon"
+out god "You slay it in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52000 aa7f8b05
+step 51 "@as yeo"
+rng 52000 aa7f8b05
+step 52 "@obj 3020 3001"
+rng 52000 aa7f8b05
+step 53 "get dagger"
+out god "Yeoman gets a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman gets a dagger.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rYeoman gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rYeoman gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rYeoman gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rYeoman gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52000 aa7f8b05
+step 54 "wield dagger"
+out god "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "You stop using a sub issue sword.\n\rYou wield a dagger.\n\rYou don't even know which end is up on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rYeoman stops using a sub issue sword.\n\rYeoman wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52000 aa7f8b05
+step 55 "@mob 350 3001"
+rng 52016 4d3c1b5b
+step 56 "kill dragon"
+out god "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "Your stab misses the pet dragon.\n\rThe pet dragon is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52021 2717fc32
+step 57 "@pulse 12"
+out god "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe pet dragon's pound injures you.\n\rYour stab misses the pet dragon.\n\rThe pet dragon is in excellent condition. \n\r\n\r<23hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe pet dragon's pound injures Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52042 3c649aeb
+step 58 "@as ram"
+rng 52042 3c649aeb
+step 59 "@obj 3023 3001"
+rng 52042 3c649aeb
+step 60 "get club"
+out god "\n\rRambler gets a club.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler gets a club.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rRambler gets a club.\n\rThe pet dragon is in excellent condition. \n\r\n\r<23hp 102m 106mv> \xff\xf9"
+out ram "You get a club.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rRambler gets a club.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rRambler gets a club.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rRambler gets a club.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rRambler gets a club.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52042 3c649aeb
+step 61 "wield club"
+out god "\n\rRambler tries to use a club, but is too inexperienced.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler tries to use a club, but is too inexperienced.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rRambler tries to use a club, but is too inexperienced.\n\rThe pet dragon is in excellent condition. \n\r\n\r<23hp 102m 106mv> \xff\xf9"
+out ram "You must be level 3 to use this object.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rRambler tries to use a club, but is too inexperienced.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rRambler tries to use a club, but is too inexperienced.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rRambler tries to use a club, but is too inexperienced.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rRambler tries to use a club, but is too inexperienced.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52042 3c649aeb
+step 62 "kill dragon"
+out ram "Kill stealing is not permitted.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52042 3c649aeb
+step 63 "@pulse 24"
+out god "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<4hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe pet dragon's pound misses you.\n\rYour stab scratches the pet dragon.\n\rThe pet dragon has a few scratches. \n\r\n\r<23hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls you.\n\rThat really did HURT!\n\rYour stab misses the pet dragon.\n\rThe pet dragon has a few scratches. \n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe pet dragon's pound misses Yeoman.\n\rYeoman's stab scratches the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe pet dragon's pound mauls Yeoman.\n\rYeoman's stab misses the pet dragon.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52087 9621bd5c
+step 64 "@as god"
+rng 52087 9621bd5c
+step 65 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52087 9621bd5c
+step 66 "@state"
+state room 3001 light 7 people mob player player player player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 350 pos 8 hit 114/115 mana 130/130 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 131203 affected_by 524936 train 0 on 0 stats 12 16 13 14 13
+state   affect 80 level 10 duration -1 location 0 modifier 0 bitvector 128
+state char Sot 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 2 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Clansman 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3023 wear -1 timer 0 cost 220 values 4 1 7 7 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 8 hit 15/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3020 wear 16 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 4/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 1 5 20 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+rng 52087 9621bd5c
+step 67 "slay dragon"
+out god "You slay her in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSmokegod slays the pet dragon in cold blood!\n\rYou hear the pet dragon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52089 6901465d
+step 68 "set char clansman align -1000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52089 6901465d
+step 69 "@as clan"
+rng 52089 6901465d
+step 70 "@mob 603 3001"
+rng 52159 bc2d80c7
+step 71 "kill jacklyn"
+out clan "Captain Jacklyn parries your attack.\n\rCaptain Jacklyn is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52165 9b182477
+step 72 "@pulse 12"
+out god "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< you!\n\rThat really did HURT!\n\rYou sure are BLEEDING!\n\rYour slash scratches Captain Jacklyn.\n\rCaptain Jacklyn has a few scratches. \n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rCaptain Jacklyn's slash >>> ANNIHILATES <<< Clansman!\n\rClansman's slash scratches Captain Jacklyn.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52189 eea9c927
+step 73 "@as god"
+rng 52189 eea9c927
+step 74 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52189 eea9c927
+step 75 "slay jacklyn"
+out god "You slay her in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSmokegod slays Captain Jacklyn in cold blood!\n\rYou hear Captain Jacklyn's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52191 7657d141
+step 76 "@as uns"
+rng 52191 7657d141
+step 77 "@mob 3124 3001"
+rng 52196 d7f7177d
+step 78 "kill duck"
+out god "Unseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rUnseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rUnseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rUnseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rUnseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "Your slash devastates the duck.\n\rThe duck has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rUnseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rUnseen fades into existence.\n\rUnseen's slash devastates the duck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52204 f1f47d0d
+step 79 "@pulse 12"
+out god "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe duck's peck misses you.\n\rYour slash MUTILATES the duck!\n\rThe duck is in awful condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe duck's peck misses Unseen.\n\rUnseen's slash MUTILATES the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52224 e0dc0684
+step 80 "@as god"
+rng 52224 e0dc0684
+step 81 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52224 e0dc0684
+step 82 "@as seer"
+rng 52224 e0dc0684
+step 83 "@mob 3124 3001"
+rng 52227 8ab97487
+step 84 "@as god"
+rng 52227 8ab97487
+step 85 "force duck sleep"
+out god "The duck goes to sleep.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck goes to sleep.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck goes to sleep.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe duck goes to sleep.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe duck goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe duck goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52227 8ab97487
+step 86 "@as seer"
+rng 52227 8ab97487
+step 87 "kill duck"
+out god "Seer's slash DISEMBOWELS the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeer's slash DISEMBOWELS the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSeer's slash DISEMBOWELS the duck!\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rSeer's slash DISEMBOWELS the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSeer's slash DISEMBOWELS the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rSeer's slash DISEMBOWELS the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "Your slash DISEMBOWELS the duck!\n\rThe duck has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSeer's slash DISEMBOWELS the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52236 8aae1dbf
+step 88 "@pulse 12"
+out god "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck's peck misses you.\n\rThe duck screams and attacks!\n\rYou dodge the duck's attack.\n\rThe duck's peck misses you.\n\rYour slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rYou receive 0 experience points.\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe duck's peck misses Seer.\n\rThe duck screams and attacks!\n\rThe duck's peck misses Seer.\n\rSeer's slash MASSACRES the duck!\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52524 bfbfd0a4
+step 89 "@as god"
+rng 52524 bfbfd0a4
+step 90 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52524 bfbfd0a4
+step 91 "@mob 3124 3001"
+rng 52527 a5331de5
+step 92 "force duck rest"
+out god "The duck sits down and rests.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck sits down and rests.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck sits down and rests.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe duck sits down and rests.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe duck sits down and rests.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52527 a5331de5
+step 93 "@as seer"
+rng 52527 a5331de5
+step 94 "kill duck"
+out god "Seer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSeer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rSeer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSeer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rSeer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "Your slash >>> ANNIHILATES <<< the duck!\n\rThe duck is in awful condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSeer's slash >>> ANNIHILATES <<< the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52541 cd68da8c
+step 95 "@pulse 12"
+out god "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rYou block the duck's attack with your shield.\n\rYour slash maims the duck.\n\rThe duck is DEAD!!\n\rYou receive 0 experience points.\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSeer's slash maims the duck.\n\rThe duck is DEAD!!\n\rThe duck's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52568 70af7fbf
+step 96 "@as god"
+rng 52568 70af7fbf
+step 97 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52568 70af7fbf
+step 98 "@mob 3124 3001"
+rng 52573 034bcd65
+step 99 "force duck kill sot"
+out god "The duck's peck misses Sot.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck's peck misses Sot.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck's peck misses Sot.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck's peck misses Sot.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe duck's peck misses Sot.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe duck's peck misses Sot.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck's peck misses Sot.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe duck's peck misses you.\n\rThe duck is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52584 55b5cc20
+step 100 "@pulse 24"
+out god "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<15hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out clan "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<4hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe duck's peck misses Sot.\n\rSot's slash MUTILATES the duck!\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses Sot.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes Sot.\n\rSot's slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rThe duck spills her guts all over the floor.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe duck's peck misses you.\n\rYour slash MUTILATES the duck!\n\rThe duck has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rThe duck screams and attacks!\n\rThe duck's peck grazes you.\n\rYou parry the duck's attack.\n\rYour slash MANGLES the duck!\n\rThe duck is DEAD!!\n\rYou receive 0 experience points.\n\rThe duck spills her guts all over the floor.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 52903 853a9dd2
+step 101 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52903 853a9dd2
+step 102 "@state"
+state room 3001 light 7 people mob player player player player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3124 pos 8 hit 1/8 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 134742016 train 0 on 0 stats 10 11 11 11 11
+state char Sot 10 pos 8 hit 27/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Clansman 20 pos 8 hit 4/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3023 wear -1 timer 0 cost 220 values 4 1 7 7 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 8 hit 15/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3020 wear 16 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 4/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 1 5 20 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 16 wear -1 timer 4 cost 0 values 5 5 0 1 0
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 13 wear -1 timer 5 cost 0 values 16 16 0 0 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 13 wear -1 timer 4 cost 0 values 16 16 0 0 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+rng 52903 853a9dd2
+step 103 "@as ram"
+rng 52903 853a9dd2
+step 104 "wimpy 14"
+out ram "Wimpy set to 14 hit points.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52903 853a9dd2
+step 105 "@as god"
+rng 52903 853a9dd2
+step 106 "@mob 9006 3001"
+rng 52991 5110d666
+step 107 "force septon kill rambler"
+out god "The septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe septon's beating *** DEMOLISHES *** you!\n\rThat really did HURT!\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r\n\r[Exits: north east south west up]\n\r     A small white fountain gushes forth here.\n\rYou flee from combat!\n\rYou lost 10 exp.\n\r\n\r<8hp 102m 105mv> \xff\xf9"
+out clan "\n\rThe septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe septon's beating *** DEMOLISHES *** Rambler!\n\rRambler leaves south.\n\rRambler has fled!\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 53005 ec8bfc8d
+step 108 "@pulse 12"
+rng 53005 ec8bfc8d
+step 109 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53005 ec8bfc8d
+step 110 "slay septon"
+out god "You slay it in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rYou hear something's death cry.\n\r\n\r<8hp 102m 105mv> \xff\xf9"
+out clan "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rSmokegod slays the septon in cold blood!\n\rYou hear the septon's death cry.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 53007 7975576c
+step 111 "@as yeo"
+rng 53007 7975576c
+step 112 "@mob 3124 3001"
+rng 53014 3ac934e3
+step 113 "@charm"
+rng 53014 3ac934e3
+step 114 "@as god"
+rng 53014 3ac934e3
+step 115 "transfer yeoman 3005"
+out god "Yeoman disappears in a mushroom cloud.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman disappears in a mushroom cloud.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck now follows you.\n\rSmokegod has transferred you.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rRambler the Recruit is here.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rYeoman arrives from a puff of smoke.\n\r\n\r<8hp 102m 105mv> \xff\xf9"
+out clan "\n\rYeoman disappears in a mushroom cloud.\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rYeoman disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rYeoman disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rYeoman disappears in a mushroom cloud.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 53014 3ac934e3
+step 116 "@mob 3062 3001"
+rng 53016 c725ec35
+step 117 "force fido kill duck"
+out god "The beastly fido's bite grazes the duck.\n\rThe duck leaves south.\n\rThe duck has fled!\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe beastly fido's bite grazes the duck.\n\rThe duck leaves south.\n\rThe duck has fled!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out yeo "\n\rThe duck has arrived.\n\r\n\r<15hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe duck has arrived.\n\r\n\r<8hp 102m 105mv> \xff\xf9"
+out clan "\n\rThe beastly fido's bite grazes the duck.\n\rThe duck leaves south.\n\rThe duck has fled!\n\r\n\r<4hp 102m 106mv> \xff\xf9"
+out uns "\n\rThe beastly fido's bite grazes the duck.\n\rThe duck leaves south.\n\rThe duck has fled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out seer "\n\rThe beastly fido's bite grazes the duck.\n\rThe duck leaves south.\n\rThe duck has fled!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out sot "\n\rThe beastly fido's bite grazes the duck.\n\rThe duck leaves south.\n\rThe duck has fled!\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 53030 f2efc2af
+step 118 "@pulse 12"
+rng 53030 f2efc2af
+step 119 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 53030 f2efc2af
+step 120 "@state"
+state room 3001 light 5 people mob mob player player player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3062 pos 8 hit 9/9 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048769 affected_by 0 train 0 on 0 stats 10 11 11 11 11
+state char mob 3124 pos 8 hit 1/8 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 134742016 train 0 on 0 stats 10 11 11 11 11
+state char Sot 10 pos 8 hit 27/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Seer 20 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 8 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Unseen 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Clansman 20 pos 8 hit 4/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 4/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 1 5 20 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 16 wear -1 timer 4 cost 0 values 5 5 0 1 0
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 13 wear -1 timer 5 cost 0 values 16 16 0 0 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 13 wear -1 timer 4 cost 0 values 16 16 0 0 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state room 3005 light 2 people mob player player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char mob 3124 pos 8 hit 15/16 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 135004160 train 0 on 0 stats 10 11 11 11 11
+state char Yeoman 5 pos 8 hit 15/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 3020 wear 16 timer 0 cost 157 values 2 1 4 2 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Rambler 2 pos 8 hit 8/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2078 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3023 wear -1 timer 0 cost 220 values 4 1 7 7 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 53030 f2efc2af

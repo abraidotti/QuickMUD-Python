@@ -1,0 +1,280 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect dec"
+rng 51895 7f5599b5
+step 7 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect yeo"
+rng 51895 7f5599b5
+step 12 "Yeoman"
+out yeo "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out yeo "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\rYeoman has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@return"
+out yeo "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "autoassist"
+out yeo "You will now assist when needed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@connect ram"
+rng 51895 7f5599b5
+step 18 "Rambler"
+out ram "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 19 "psswrd"
+out ram "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 20 "@return"
+out god "\n\rRambler has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rYeoman the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@return"
+out ram "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@as god"
+rng 51895 7f5599b5
+step 23 "load obj 304"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created wild flowers!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has created wild flowers!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod has created wild flowers!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "give flowers rambler"
+out god "You give wild flowers to Rambler.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gives wild flowers to Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gives wild flowers to Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod gives you wild flowers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "load obj 304"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has created wild flowers!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod has created wild flowers!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod has created wild flowers!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "give flowers yeoman"
+out god "You give wild flowers to Yeoman.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod gives wild flowers to Yeoman.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rSmokegod gives you wild flowers.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rSmokegod gives wild flowers to Yeoman.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "@as ram"
+rng 51895 7f5599b5
+step 28 "wear flowers"
+out god "Rambler wears wild flowers on his head.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler wears wild flowers on his head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rRambler wears wild flowers on his head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "You wear wild flowers on your head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "@as yeo"
+rng 51895 7f5599b5
+step 30 "wear flowers"
+out god "\n\rYeoman wears wild flowers on his head.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman wears wild flowers on his head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "You wear wild flowers on your head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rYeoman wears wild flowers on his head.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "@as god"
+rng 51895 7f5599b5
+step 32 "set char rambler align -750"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "set char yeoman align -750"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "@as dec"
+rng 51895 7f5599b5
+step 35 "follow rambler"
+out dec "You now follow Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "@as yeo"
+rng 51895 7f5599b5
+step 37 "follow rambler"
+out yeo "You now follow Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rYeoman now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 38 "@as ram"
+rng 51895 7f5599b5
+step 39 "group decimus"
+out god "\n\rDecimus joins Rambler's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou join Rambler's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "Decimus joins Rambler's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "Decimus joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 40 "group yeoman"
+out god "\n\rYeoman joins Rambler's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYeoman joins Rambler's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out yeo "\n\rYou join Rambler's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "Yeoman joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 41 "@mob 3124 3001"
+rng 51898 d55fddad
+step 42 "@charm"
+rng 51898 d55fddad
+step 43 "@as dec"
+rng 51898 d55fddad
+step 44 "south"
+out god "\n\rDecimus leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out yeo "\n\rDecimus leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "The duck now follows you.\n\rDecimus leaves south.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 45 "@as ram"
+rng 51898 d55fddad
+step 46 "@mob 3710 3001"
+rng 51901 51250113
+step 47 "@mob 3710 3001"
+rng 51904 da7aaa40
+step 48 "@mob 3710 3001"
+rng 51907 f84fac3e
+step 49 "kill lizard"
+out god "\n\rRambler's slash misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out yeo "\n\rRambler's slash misses the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "Your slash misses the lizard.\n\rThe lizard is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 50 "@pulse until 400 is DEAD!!"
+pulses 54
+out god "\n\rThe lizard's bite misses Rambler.\n\rRambler's slash misses the lizard.\n\rThe duck's peck misses the lizard.\n\rYeoman's slash mauls the lizard.\n\rYeoman's slash mauls the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe duck's peck misses the lizard.\n\rRambler's slash hits the lizard.\n\rYeoman's slash hits the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard screams and attacks!\n\rThe lizard's bite misses Yeoman.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck misses the lizard.\n\rRambler's slash misses the lizard.\n\rYeoman's slash misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck grazes the lizard.\n\rRambler's slash misses the lizard.\n\rYeoman's slash misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck misses the lizard.\n\rRambler's slash decimates the lizard.\n\rThe lizard is DEAD!!\n\rRambler is zapped by wild flowers.\n\rThe lizard's leg is sliced from her dead body.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou hear something's death cry.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out yeo "\n\rThe lizard's bite misses Rambler.\n\rRambler's slash misses the lizard.\n\rThe duck's peck misses the lizard.\n\rYour slash mauls the lizard.\n\rYour slash mauls the lizard.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe duck's peck misses the lizard.\n\rRambler's slash hits the lizard.\n\rYour slash hits the lizard.\n\rThe lizard looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard screams and attacks!\n\rThe lizard's bite misses you.\n\rThe lizard's bite misses you.\n\rThe duck's peck misses the lizard.\n\rRambler's slash misses the lizard.\n\rYour slash misses the lizard.\n\rThe lizard looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses you.\n\rThe duck's peck grazes the lizard.\n\rRambler's slash misses the lizard.\n\rYour slash misses the lizard.\n\rThe lizard is in awful condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses you.\n\rThe duck's peck misses the lizard.\n\rRambler's slash decimates the lizard.\n\rThe lizard is DEAD!!\n\rRambler is zapped by wild flowers.\n\rYou receive 21 experience points.\n\rThe lizard's leg is sliced from her dead body.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe lizard's bite misses you.\n\rYour slash misses the lizard.\n\rThe duck's peck misses the lizard.\n\rYeoman's slash mauls the lizard.\n\rYeoman's slash mauls the lizard.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe duck's peck misses the lizard.\n\rYour slash hits the lizard.\n\rYeoman's slash hits the lizard.\n\rThe lizard looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe lizard screams and attacks!\n\rThe lizard's bite misses Yeoman.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck misses the lizard.\n\rYour slash misses the lizard.\n\rYeoman's slash misses the lizard.\n\rThe lizard looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck grazes the lizard.\n\rYour slash misses the lizard.\n\rYeoman's slash misses the lizard.\n\rThe lizard is in awful condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck misses the lizard.\n\rYour slash decimates the lizard.\n\rThe lizard is DEAD!!\n\rYou receive 40 experience points.\n\rYou are zapped by wild flowers.\n\rThe lizard's leg is sliced from her dead body.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52422 ff858dc6
+step 51 "@state"
+state room 3001 light 2 people mob mob mob player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3710 pos 8 hit 24/24 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 0 train 0 on 0 stats 10 11 11 11 11
+state char mob 3710 pos 7 hit 22/22 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 0 train 0 on 0 stats 10 11 11 11 11
+state char mob 3124 pos 8 hit 11/11 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 135004160 train 0 on 0 stats 10 11 11 11 11
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2128 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2109 gold 0 silver 0 act 65540 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 304 wear 6 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 15 wear -1 timer 4 cost 0 values 20 20 0 0 0
+state obj floor 304 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52422 ff858dc6
+step 52 "kill lizard"
+out god "\n\rRambler's slash injures the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out yeo "\n\rRambler's slash injures the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "Your slash injures the lizard.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52434 f392a97b
+step 53 "@pulse until 400 is DEAD!!"
+pulses 59
+out god "\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses Yeoman.\n\rRambler's slash wounds the lizard.\n\rThe duck's peck misses the lizard.\n\rYeoman's slash wounds the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe duck's peck misses the lizard.\n\rRambler's slash decimates the lizard.\n\rYeoman's slash misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck grazes the lizard.\n\rRambler's slash hits the lizard.\n\rYeoman's slash hits the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Rambler.\n\rThe lizard's bite scratches Yeoman.\n\rThe duck's peck misses the lizard.\n\rRambler's slash misses the lizard.\n\rYeoman's slash decimates the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck misses the lizard.\n\rRambler's slash hits the lizard.\n\rThe lizard is DEAD!!\n\rThe lizard's severed head plops on the ground.\n\rYeoman's slash mauls the lizard.\n\rThe duck's peck misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rYou hear something's death cry.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out yeo "\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses you.\n\rRambler's slash wounds the lizard.\n\rThe duck's peck misses the lizard.\n\rYour slash wounds the lizard.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rYou block the lizard's attack with your shield.\n\rThe duck's peck misses the lizard.\n\rRambler's slash decimates the lizard.\n\rYour slash misses the lizard.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses you.\n\rThe duck's peck grazes the lizard.\n\rRambler's slash hits the lizard.\n\rYour slash hits the lizard.\n\rThe lizard has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Rambler.\n\rThe lizard's bite scratches you.\n\rThe duck's peck misses the lizard.\n\rRambler's slash misses the lizard.\n\rYour slash decimates the lizard.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Rambler.\n\rThe lizard's bite misses you.\n\rThe duck's peck misses the lizard.\n\rRambler's slash hits the lizard.\n\rThe lizard is DEAD!!\n\rYou receive 25 experience points.\n\rThe lizard's severed head plops on the ground.\n\rYour slash mauls the lizard.\n\rThe duck's peck misses the lizard.\n\rThe lizard is in awful condition. \n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe lizard's bite misses you.\n\rThe lizard's bite misses Yeoman.\n\rYour slash wounds the lizard.\n\rThe duck's peck misses the lizard.\n\rYeoman's slash wounds the lizard.\n\rThe lizard has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe duck's peck misses the lizard.\n\rYour slash decimates the lizard.\n\rYeoman's slash misses the lizard.\n\rThe lizard looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck grazes the lizard.\n\rYour slash hits the lizard.\n\rYeoman's slash hits the lizard.\n\rThe lizard is in awful condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rThe lizard's bite scratches Yeoman.\n\rThe duck's peck misses the lizard.\n\rYour slash misses the lizard.\n\rYeoman's slash decimates the lizard.\n\rThe lizard is in awful condition. \n\r\n\r<27hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rThe lizard's bite misses Yeoman.\n\rThe duck's peck misses the lizard.\n\rYour slash hits the lizard.\n\rThe lizard is DEAD!!\n\rYou receive 48 experience points.\n\rThe lizard's severed head plops on the ground.\n\rYeoman's slash mauls the lizard.\n\rThe duck's peck misses the lizard.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 52719 0a1cad79
+step 54 "@state"
+state room 3001 light 2 people mob mob player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 3710 pos 7 hit 1/22 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 0 train 0 on 0 stats 10 11 11 11 11
+state char mob 3124 pos 7 hit 11/11 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 1048641 affected_by 135004160 train 0 on 0 stats 10 11 11 11 11
+state char Rambler 2 pos 8 hit 27/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2176 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Yeoman 5 pos 7 hit 28/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2134 gold 0 silver 0 act 65540 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 3 level 20 duration 26 location 24 modifier -2 bitvector 0
+state   affect 3 level 20 duration 26 location 18 modifier 2 bitvector 0
+state   obj carried 304 wear 6 timer 0 cost 0 values 0 0 0 0 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state obj floor 12 wear -1 timer 7 cost 0 values 0 0 0 0 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+state obj floor 15 wear -1 timer 4 cost 0 values 20 20 0 0 0
+state obj floor 304 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52719 0a1cad79
+step 55 "score"
+out ram "You are Rambler the Recruit, level 2, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 27/29 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 5/47 items with weight 14/230 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2176 exp, and have 0 gold and 0 silver coins.\n\rYou need 824 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are demonic.\n\r\n\r<27hp 102m 106mv> \xff\xf9"
+rng 52719 0a1cad79

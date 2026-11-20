@@ -1,0 +1,53 @@
+# Players dying, with violence_update on. A septon (9006, level 24, an area attacker) is put in the temple (3001),
+# with Hassan, Smokegod (60, with wiznet's deaths and mob deaths on), Rambler (2, with 2088 experience: more than
+# level 2's 2000, so dying costs some) and Pickpocket (13, in clan rom, with 30 gold and 200 silver), in Rambler's
+# group. Rambler attacks and Pickpocket joins in: the septon's area attack hits both, and parries. Seraph is in the
+# temple square (3005), to hear the death cries. The fight runs until someone is DEAD: Rambler, who is moved to the
+# altar (3054, the hall for no clan), resting, and leaves a corpse only they can loot. Pickpocket is left stunned,
+# out of the fight (with char_update off, nothing heals or kills them), so Smokegod forces the septon to kill them.
+# Pickpocket, in a clan, leaves an unowned corpse with half their coins. Last, Smokegod slays the septon.
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+wiznet on
+wiznet deaths
+wiznet mobdeaths
+@connect ser
+Seraph
+smoke123
+@return
+@return
+south
+@connect ram
+Rambler
+psswrd
+@return
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@return
+follow rambler
+@as ram
+group pickpocket
+@mob 9006 3001
+kill septon
+@as pick
+kill septon
+@pulse until 400 is DEAD!!
+@state
+@as ram
+look
+score
+@as god
+force septon kill pickpocket
+@pulse until 400 is DEAD!!
+@state
+look in 1.corpse
+look in 2.corpse
+slay septon
+@state

@@ -14,6 +14,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import time
 import traceback
@@ -30,7 +31,7 @@ def main(argv: list[str] | None = None) -> int:
     from charm.entities.boot import boot_db
     from charm.net.config import qmconfig_read
     from charm.net.server import PulseStats, game_loop, init_socket
-    from charm.systems.update import NOT_RUNNING
+    from charm.systems.update import NOT_RUNNING, updates_named
 
     ap = argparse.ArgumentParser(prog="python -m charm", description=f"Charm {__version__}, the Python port")
     ap.add_argument("--port", default="4000", help="the port to listen on (default 4000)")
@@ -56,6 +57,10 @@ def main(argv: list[str] | None = None) -> int:
         game.config = config
         game.str_boot_time = log.ctime(now)
         log.clock = lambda: game.current_time
+        named = os.environ.get("CHARM_UPDATES")
+        game.updates = updates_named(named)
+        if named is not None:
+            log.log_f("CHARM_UPDATES=%s: only those updates run", named)
         log.log_f("Not ported, not running: %s (#28).", ", ".join(NOT_RUNNING))
         log.log_f("Charm is ready to rock on port %d (%s).", port, config.ipaddress)
         game_loop(game, control, PulseStats() if args.pulse_stats else None)

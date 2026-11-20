@@ -1,0 +1,240 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "wiznet on"
+out god "Welcome to Wiznet!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "wiznet levels"
+out god "You will now see levels on wiznet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "wiznet mobdeaths"
+out god "You will now see mobdeaths on wiznet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "set char smokegod gold 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@connect ser"
+rng 51895 7f5599b5
+step 11 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 12 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "south"
+out god "\n\rSeraph leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect ram"
+rng 51895 7f5599b5
+step 17 "Rambler"
+out ram "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "psswrd"
+out ram "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out god "\n\rRambler has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@return"
+out ram "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "autoloot"
+out ram "Automatic corpse looting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "autogold"
+out ram "Automatic gold looting set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "autosac"
+out ram "Automatic corpse sacrificing set.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "@as god"
+rng 51895 7f5599b5
+step 25 "@mob 3124 3001"
+rng 51898 d55fddad
+step 26 "load obj 3021"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rSmokegod has created a small sword!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 27 "give sword duck"
+out god "You give a small sword to the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rSmokegod gives a small sword to the duck.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 28 "give 10 gold duck"
+out god "You give the duck 10 gold.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rSmokegod gives the duck some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 29 "@as ram"
+rng 51898 d55fddad
+step 30 "kill duck"
+out god "Rambler's slash maims the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "Your slash maims the duck.\n\rThe duck has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51907 f84fac3e
+step 31 "@pulse until 400 is DEAD!!"
+pulses 1
+out god "\n\rThe duck's peck misses Rambler.\n\rRambler's slash DISEMBOWELS the duck!\n\rThe duck is DEAD!!\n\rThe duck got toasted by Rambler at The Temple Of Mota [room 3001]\n\rYou hear the duck's death cry.\n\rRambler gets a small sword from the corpse of the duck.\n\rRambler gets 10 gold coins from the corpse of the duck.\n\rRambler sacrifices the corpse of the duck to Mota.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear something's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "\n\rThe duck's peck misses you.\n\rYour slash DISEMBOWELS the duck!\n\rThe duck is DEAD!!\n\rYou receive 278 experience points.\n\rYou hear the duck's death cry.\n\rYou get a small sword from the corpse of the duck.\n\rYou get 10 gold coins from the corpse of the duck.\n\rMota gives you 3 silver coins for your sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51928 bc29c08d
+step 32 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 11 daze 0 exp 2366 gold 10 silver 3 act 65656 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 90 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state room 3005 light 0 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Seraph 56 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51928 bc29c08d
+step 33 "look"
+rng 51928 bc29c08d
+step 34 "autoloot"
+rng 51928 bc29c08d
+step 35 "@as god"
+rng 51928 bc29c08d
+step 36 "@mob 3124 3001"
+rng 51933 af6a286b
+step 37 "give 10 gold duck"
+out god "You give the duck 10 gold.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rSmokegod gives the duck some coins.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 38 "@as ram"
+rng 51933 af6a286b
+step 39 "kill duck"
+rng 51933 af6a286b
+step 40 "@pulse until 400 is DEAD!!"
+pulses 68
+out god "\n\rRambler's slash misses the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slash misses the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slash DISEMBOWELS the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slash mauls the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slash misses the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slash mauls the duck.\n\rThe duck is DEAD!!\n\rThe duck got toasted by Rambler at The Temple Of Mota [room 3001]\n\rThe duck's head is shattered, and his brains splash all over you.\n\rRambler gets 10 gold coins from the corpse of the duck.\n\rRambler sacrifices the corpse of the duck to Mota.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear something's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rA duck is here, quacking happily.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9Autolooting removed.\n\r\n\r<29hp 102m 106mv> \xff\xf9Your slash misses the duck.\n\rThe duck is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slash misses the duck.\n\rThe duck is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slash DISEMBOWELS the duck!\n\rThe duck has some big nasty wounds and scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slash mauls the duck.\n\rThe duck looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slash misses the duck.\n\rThe duck looks pretty hurt. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slash mauls the duck.\n\rThe duck is DEAD!!\n\rYou receive 270 experience points.\n\rThe duck's head is shattered, and his brains splash all over you.\n\rYou get 10 gold coins from the corpse of the duck.\n\rMota gives you 3 silver coins for your sacrifice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52042 3c649aeb
+step 41 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2636 gold 20 silver 6 act 65640 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 80 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 17 wear -1 timer 6 cost 0 values 10 10 0 0 0
+state room 3005 light 0 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Seraph 56 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52042 3c649aeb
+step 42 "wield sword"
+out god "\n\rRambler stops using a sub issue sword.\n\rRambler wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "You stop using a sub issue sword.\n\rYou wield a small sword.\n\rYou are skilled with a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52042 3c649aeb
+step 43 "@as god"
+rng 52042 3c649aeb
+step 44 "@mob 3124 3001"
+rng 52045 196d4dc5
+step 45 "@as ram"
+rng 52045 196d4dc5
+step 46 "kill duck"
+out god "\n\rRambler's slice misses the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "Your slice misses the duck.\n\rThe duck is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52055 00d227b9
+step 47 "@pulse until 400 is DEAD!!"
+pulses 46
+out god "\n\rThe duck's peck grazes Rambler.\n\rRambler's slice mauls the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slice misses the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slice MUTILATES the duck!\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slice MUTILATES the duck!\n\rThe duck is DEAD!!\n\rThe duck got toasted by Rambler at The Temple Of Mota [room 3001]\n\rThe duck's heart is torn from his chest.\n\rRambler sacrifices the corpse of the duck to Mota.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear something's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "\n\rThe duck's peck grazes you.\n\rYour slice mauls the duck.\n\rThe duck has quite a few wounds. \n\r\n\r<26hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slice misses the duck.\n\rThe duck has quite a few wounds. \n\r\n\r<26hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slice MUTILATES the duck!\n\rThe duck looks pretty hurt. \n\r\n\r<26hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slice MUTILATES the duck!\n\rThe duck is DEAD!!\n\rYou receive 218 experience points.\n\rThe duck's heart is torn from his chest.\n\rMota gives you 3 silver coins for your sacrifice.\n\r\n\r<26hp 102m 106mv> \xff\xf9"
+rng 52148 7d4c045d
+step 48 "@as god"
+rng 52148 7d4c045d
+step 49 "@mob 3124 3001"
+rng 52152 cec18ac4
+step 50 "@as ram"
+rng 52152 cec18ac4
+step 51 "kill duck"
+out god "\n\rRambler's slice misses the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "Your slice misses the duck.\n\rThe duck is in excellent condition. \n\r\n\r<26hp 102m 106mv> \xff\xf9"
+rng 52161 91d663f7
+step 52 "@pulse until 400 is DEAD!!"
+pulses 23
+out god "\n\rThe duck's peck misses Rambler.\n\rRambler's slice devastates the duck.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe duck's peck misses Rambler.\n\rRambler's slice MASSACRES the duck!\n\rThe duck is DEAD!!\n\rRambler has attained level 3!\n\rThe duck got toasted by Rambler at The Temple Of Mota [room 3001]\n\rThe duck's leg is sliced from his dead body.\n\rRambler sacrifices the corpse of the duck to Mota.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear something's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "\n\rThe duck's peck misses you.\n\rYour slice devastates the duck.\n\rThe duck has quite a few wounds. \n\r\n\r<26hp 102m 106mv> \xff\xf9\n\rThe duck's peck misses you.\n\rYour slice MASSACRES the duck!\n\rThe duck is DEAD!!\n\rYou receive 290 experience points.\n\rYou raise a level!!  You gain 10 hit points, 2 mana, 6 move, and 1 practice.\n\rThe duck's leg is sliced from his dead body.\n\rMota gives you 3 silver coins for your sacrifice.\n\r\n\r<26hp 102m 106mv> \xff\xf9"
+rng 52208 57c4268d
+step 53 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 3 pos 8 hit 26/39 mana 102/104 move 106/112 wait 0 daze 0 exp 3144 gold 20 silver 12 act 65640 affected_by 0 train 2 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 1 5 1 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 80 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 15 wear -1 timer 6 cost 0 values 20 20 0 0 0
+state obj floor 13 wear -1 timer 4 cost 0 values 16 16 0 0 0
+state obj floor 17 wear -1 timer 6 cost 0 values 10 10 0 0 0
+state room 3005 light 0 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Seraph 56 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 52208 57c4268d
+step 54 "score"
+out ram "You are Rambler the Sentry, level 3, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 26/39 hit, 102/104 mana, 106/112 movement.\n\rYou have 2 practices and 2 training sessions.\n\rYou are carrying 6/48 items with weight 17/232 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 3144 exp, and have 20 gold and 12 silver coins.\n\rYou need 856 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are standing.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\r\n\r<26hp 102m 106mv> \xff\xf9"
+rng 52208 57c4268d

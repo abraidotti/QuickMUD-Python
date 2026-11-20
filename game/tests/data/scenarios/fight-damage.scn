@@ -1,0 +1,132 @@
+# What changes a hit's damage and its message, with violence_update on: each fight gets a round or so, then
+# Smokegod (60) makes peace, and slays the mob if it's no longer needed. In the temple (3001), with Hassan:
+# - Decimus (10), with a sword whose attack is divine power, against a septon (9006), immune to holy: "unaffected"
+# - Yeoman (5), with a dagger (pierce), and Rambler (2), with a club (pound), against a pet dragon (350), whose
+#   sanctuary halves damage, and which is vulnerable to pierce and resists bash
+# - Clansman (20), made evil, against Captain Jacklyn (603), protected from evil
+# - Unseen (5, invisible) attacks a duck and fades into existence; Seer (20) attacks a sleeping duck (double damage)
+#   and a resting one
+# - a duck attacks Sot (10, drunk: a drunk victim takes 9/10)
+# - the septon attacks Rambler, whose wimpy (14) makes them flee
+# - a fido attacks Yeoman's charmed duck, after Smokegod has moved Yeoman away: it flees
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@return
+@connect ram
+Rambler
+psswrd
+@return
+@return
+@connect clan
+Clansman
+psswrd
+@return
+@return
+@connect uns
+Unseen
+psswrd
+@return
+@return
+@connect seer
+Seer
+psswrd
+@return
+@return
+@connect sot
+Sot
+psswrd
+@return
+@return
+@as dec
+@obj 3021 3001 1 1 5 20 0
+get sword
+wield sword
+@mob 9006 3001
+kill septon
+@pulse 12
+@as god
+peace
+slay septon
+@as yeo
+@obj 3020 3001
+get dagger
+wield dagger
+@mob 350 3001
+kill dragon
+@pulse 12
+@as ram
+@obj 3023 3001
+get club
+wield club
+kill dragon
+@pulse 24
+@as god
+peace
+@state
+slay dragon
+set char clansman align -1000
+@as clan
+@mob 603 3001
+kill jacklyn
+@pulse 12
+@as god
+peace
+slay jacklyn
+@as uns
+@mob 3124 3001
+kill duck
+@pulse 12
+@as god
+peace
+@as seer
+@mob 3124 3001
+@as god
+force duck sleep
+@as seer
+kill duck
+@pulse 12
+@as god
+peace
+@mob 3124 3001
+force duck rest
+@as seer
+kill duck
+@pulse 12
+@as god
+peace
+@mob 3124 3001
+force duck kill sot
+@pulse 24
+peace
+@state
+@as ram
+wimpy 14
+@as god
+@mob 9006 3001
+force septon kill rambler
+@pulse 12
+peace
+slay septon
+@as yeo
+@mob 3124 3001
+@charm
+@as god
+transfer yeoman 3005
+@mob 3062 3001
+force fido kill duck
+@pulse 12
+peace
+@state

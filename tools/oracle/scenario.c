@@ -11,12 +11,14 @@
  * The scenario format, one thing per line (# starts a comment line):
  *   @seed N              CHARM_SEED (before anything else; default 20261117)
  *   @clock T             current_time at boot (before anything else; default 1763400000)
- *   @updates all|area    which updates update_handler runs (before anything else; default area: CHARM_UPDATES)
+ *   @updates LIST        which updates update_handler runs: all, or names such as area,violence (before anything
+ *                        else; default area): CHARM_UPDATES, which update.c reads
  *   @place NAME DEST     copy tools/fixtures/files/NAME (../files/NAME here) to DEST, relative to the area
  *                        directory, before boot reads it: a ban list (ban.txt) or a board (../notes/General)
  *   @connect NAME        a new connection, called NAME in the output, which becomes the one lines go to
  *   @as NAME             send the following lines to connection NAME
  *   @pulse N             run N pulses with no new input
+ *   @pulse until N TEXT  run pulses until a connection is sent TEXT (a fight's "is DEAD!!"), at most N
  *   @mob VNUM ROOM       create_mobile and char_to_room
  *   @obj VNUM ROOM       create_object (level 0) and obj_to_room
  *   @obj VNUM ROOM V0 V1 V2 V3 V4   the same, then sets its five values (furniture, portals, locks)
@@ -33,6 +35,7 @@
  *   out NAME "BYTES"     what connection NAME was sent during the step (escaped: see esc)
  *   closed NAME          the game closed connection NAME
  *   file PATH "BYTES"    @file's file, or "file PATH missing"
+ *   pulses K             how many pulses @pulse until ran (", not seen" if TEXT never came)
  *   rng DRAWS HASH       random() calls so far, and an FNV-1a hash of every value they returned
  *   state ...            @state's lines: for each room, its exits (where each leads, exit_info and key), then each
  *                        character (position, points, wait, flags, train, the furniture it's on and its five
@@ -43,6 +46,7 @@
  *
  * Part of charm_tools (MIT, tools/LICENSE). It calls the game's code but contains none of it.
  */
+#define _GNU_SOURCE  /* memmem */
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>
@@ -96,6 +100,8 @@ struct conn
     DESCRIPTOR_DATA *d;
     int peer;      /* our end of the socketpair: what the game writes to d->descriptor arrives here */
     bool closed;
+    unsigned char got[65536];  /* read from peer during this step, not printed yet */
+    size_t ngot;
 };
 
 static struct conn conns[MAX_CONN];
@@ -237,26 +243,49 @@ static void esc (const unsigned char *s, size_t n)
     putchar ('"');
 }
 
-static void collect (void)
+/* Read what the game has sent each open connection so far this step. */
+static void drain (void)
 {
-    static unsigned char buf[65536];
     int i;
+    ssize_t n;
 
     for (i = 0; i < nconn; i++)
     {
         struct conn *c = &conns[i];
-        size_t got = 0;
-        ssize_t n;
+        if (c->closed)
+            continue;
+        while (c->ngot < sizeof c->got && (n = read (c->peer, c->got + c->ngot, sizeof c->got - c->ngot)) > 0)
+            c->ngot += n;
+    }
+}
+
+/* Has an open connection been sent TEXT this step? */
+static bool sent (const char *text)
+{
+    int i;
+    for (i = 0; i < nconn; i++)
+        if (!conns[i].closed && memmem (conns[i].got, conns[i].ngot, text, strlen (text)) != NULL)
+            return TRUE;
+    return FALSE;
+}
+
+static void collect (void)
+{
+    int i;
+
+    drain ();
+    for (i = 0; i < nconn; i++)
+    {
+        struct conn *c = &conns[i];
 
         if (c->closed)
             continue;
-        while (got < sizeof buf && (n = read (c->peer, buf + got, sizeof buf - got)) > 0)
-            got += n;
-        if (got > 0)
+        if (c->ngot > 0)
         {
             printf ("out %s ", c->name);
-            esc (buf, got);
+            esc (c->got, c->ngot);
             putchar ('\n');
+            c->ngot = 0;
         }
         if (!listed (c->d))  /* close_socket took it off the list (and closed its end) */
         {
@@ -376,10 +405,10 @@ int main (void)
             continue;
         if (!booted)
         {
-            static char seedbuf[32], updbuf[16];
+            static char seedbuf[32], updbuf[64];
             if (sscanf (line, "@seed %31s", seedbuf) == 1) { seed = seedbuf; continue; }
             if (sscanf (line, "@clock %ld", &clock) == 1) continue;
-            if (sscanf (line, "@updates %15s", updbuf) == 1) { updates = updbuf; continue; }
+            if (sscanf (line, "@updates %63s", updbuf) == 1) { updates = updbuf; continue; }
             {
                 char src[96], dest[128], from[128];
                 if (sscanf (line, "@place %63s %127s", src, dest) == 2)
@@ -393,8 +422,8 @@ int main (void)
                 }
             }
             setenv ("CHARM_SEED", seed, 1);
-            if (!strcmp (updates, "area"))
-                setenv ("CHARM_UPDATES", "area", 1);
+            if (strcmp (updates, "all"))
+                setenv ("CHARM_UPDATES", updates, 1);
             current_time = start_time = (time_t) clock;
             if ((fpReserve = fopen (NULL_FILE, "r")) == NULL)  /* main reserves one, which file code swaps */
             {
@@ -433,6 +462,17 @@ int main (void)
             connect_as (word);
         else if (sscanf (line, "@as %31s", word) == 1)
             current = find_conn (word);
+        else if (sscanf (line, "@pulse until %ld %n", &a, &n) == 1 && n > 0 && line[n] != '\0')
+        {
+            long k = 0;
+            while (k < a && !sent (line + n))
+            {
+                pulse ();
+                drain ();
+                k++;
+            }
+            printf ("pulses %ld%s\n", k, sent (line + n) ? "" : ", not seen");
+        }
         else if (sscanf (line, "@pulse %ld", &a) == 1)
             while (a-- > 0)
                 pulse ();

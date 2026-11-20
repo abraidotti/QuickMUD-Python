@@ -82,9 +82,10 @@ def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
     from charm.commands import alias, comm, info, move, obj, wiz
     from charm.persist import bans, boards
+    from charm.systems import fight
     from charm.systems.skills import do_groups, do_skills
 
-    found = {name: getattr(mod, name) for mod in (alias, comm, info, move, obj, wiz) for name in dir(mod)
+    found = {name: getattr(mod, name) for mod in (alias, comm, info, move, obj, wiz, fight) for name in dir(mod)
              if name.startswith("do_") and name not in wiz.NOT_COMMANDS}
     found.update(do_board=boards.do_board, do_note=boards.do_note, do_ban=bans.do_ban,
                  do_permban=bans.do_permban, do_allow=bans.do_allow, do_groups=do_groups, do_skills=do_skills)

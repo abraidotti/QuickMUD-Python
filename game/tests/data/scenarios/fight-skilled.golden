@@ -1,0 +1,103 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect hero"
+rng 51895 7f5599b5
+step 7 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@as god"
+rng 51895 7f5599b5
+step 12 "set skill heroic all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@as hero"
+rng 51895 7f5599b5
+step 14 "@mob 3090 3001"
+rng 51898 d55fddad
+step 15 "kill kitten"
+out god "Heroic's slash mauls the kitten.\n\rHeroic's slash DISMEMBERS the kitten!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "Your slash mauls the kitten.\n\rYour slash DISMEMBERS the kitten!\n\rThe kitten is in awful condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51914 918dbc6e
+step 16 "@pulse until 400 is DEAD!!"
+pulses 3
+out god "\n\rHeroic's slash MUTILATES the kitten!\n\rThe kitten is DEAD!!\n\rThe kitten's heart is torn from his chest.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou parry the kitten's attack.\n\rYou parry the kitten's attack.\n\rYour slash MUTILATES the kitten!\n\rThe kitten is DEAD!!\n\rYou receive 0 experience points.\n\rThe kitten's heart is torn from his chest.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 17 "@state"
+state room 3001 light 1 people player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Heroic 51 pos 8 hit 29/29 mana 102/102 move 106/106 wait 9 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 13 wear -1 timer 4 cost 0 values 16 16 0 0 0
+rng 51937 98fa3ef8
+step 18 "@mob 9006 3001"
+rng 52016 4d3c1b5b
+step 19 "kill septon"
+rng 52016 4d3c1b5b
+step 20 "@pulse until 600 is DEAD!!"
+pulses 443
+out god "\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe septon's beating *** DEMOLISHES *** Heroic!\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\rHeroic's slash misses the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rHeroic's slash scratches the septon.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe septon's beating === OBLITERATES === Heroic!\n\rHeroic is DEAD!!\n\rHeroic hits the ground ... DEAD.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "Your slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe septon's beating *** DEMOLISHES *** you!\n\rThat really did HURT!\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou dodge the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has some small wounds and bruises. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou dodge the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rYour slash misses the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou dodge the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has quite a few wounds. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou dodge the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou block the septon's attack with your shield.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou parry the septon's attack.\n\rYour slash scratches the septon.\n\rThe septon looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe septon's beating === OBLITERATES === you!\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+rng 53036 182f066d
+step 21 "@state"
+state room 3001 light 0 people mob player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 9006 pos 8 hit 73/486 mana 192/192 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 196707 affected_by 520 train 0 on 0 stats 17 20 20 17 17
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 11 wear -1 timer 25 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state obj floor 10 wear -1 timer 4 cost 0 values 0 0 0 1 0
+state obj floor 13 wear -1 timer 4 cost 0 values 16 16 0 0 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Heroic 51 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 53036 182f066d

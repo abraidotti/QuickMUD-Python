@@ -16,8 +16,9 @@ the rest of `act_info.c`. PR 3 of 8 done (#56), talking: `act_comm.c` and `alias
 get, put, drop, give, wear and remove. PR 5 of 8 done (#62), objects part 2: the rest of `act_obj.c` (food and
 drink, shops, sacrifice, steal, and the magic items up to the spell). PR 6 of 8 done (#67), boards and bans: `board.c`
 and `ban.c`, with the files they write. PR 7 of 8 done (#70), immortals part 1: `act_wiz.c`'s commands for looking
-and moving. PR 8 of 8, immortals part 2: the rest of `act_wiz.c` but copyover, and `sim smoke --python` runs every
-step but copyover's.
+and moving. PR 8 of 8 done (#73), immortals part 2: the rest of `act_wiz.c` but copyover, and `sim smoke --python` runs
+every step but copyover's. P3 done 2026-11-20. P4, the systems that draw random numbers, is
+8 PRs or 2026-12-11 (#74). PR 1 of 8, fighting part 1: the core of `fight.c`, with `violence_update` on by name.
 
 ## Goal
 

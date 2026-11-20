@@ -107,3 +107,18 @@ def mp_give_trigger(mob, ch, obj) -> None:
                 if is_name(buf, obj.name) or str_cmp("all", buf):
                     program_flow(prg.vnum, prg.code, mob, ch, obj, None)
                     return
+
+
+# C: mob_prog.c mp_hprct_trigger
+def mp_hprct_trigger(mob, ch) -> None:
+    from charm.core.cint import c_div
+
+    for prg in mob.index.mprogs:
+        if prg.trig_type == C.TRIG_HPCNT:
+            if mob.max_hit == 0:
+                from charm.core.errors import CWouldCrash
+
+                raise CWouldCrash("mob_prog.c mp_hprct_trigger: divides by the mob's max_hit, which is 0")
+            if c_div(100 * mob.hit, mob.max_hit) < atoi(prg.trig_phrase):
+                program_flow(prg.vnum, prg.code, mob, ch, None, None)
+                break

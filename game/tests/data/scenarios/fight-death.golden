@@ -1,0 +1,256 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "wiznet on"
+out god "Welcome to Wiznet!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "wiznet deaths"
+out god "You will now see deaths on wiznet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "wiznet mobdeaths"
+out god "You will now see mobdeaths on wiznet.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "@connect ser"
+rng 51895 7f5599b5
+step 10 "Seraph"
+out ser "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 11 "smoke123"
+out ser "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 12 "@return"
+out ser "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out god "\n\rSeraph has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "south"
+out god "\n\rSeraph leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@connect ram"
+rng 51895 7f5599b5
+step 16 "Rambler"
+out ram "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 17 "psswrd"
+out ram "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 18 "@return"
+out god "\n\rRambler has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "@return"
+out ram "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@connect pick"
+rng 51895 7f5599b5
+step 21 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 22 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 23 "@return"
+out god "\n\rPickpocket has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "\n\rPickpocket has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rRambler the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "@return"
+out pick "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "follow rambler"
+out ram "\n\rPickpocket now follows you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "You now follow Rambler.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "@as ram"
+rng 51895 7f5599b5
+step 27 "group pickpocket"
+out god "\n\rPickpocket joins Rambler's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ram "Pickpocket joins your group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rYou join Rambler's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "@mob 9006 3001"
+rng 51968 b7a8be27
+step 29 "kill septon"
+out ram "The septon dodges your attack.\n\rThe septon is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51974 fb1b8648
+step 30 "@as pick"
+rng 51974 fb1b8648
+step 31 "kill septon"
+out pick "The septon parries your attack.\n\rThe septon is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51978 33017d7e
+step 32 "@pulse until 400 is DEAD!!"
+pulses 25
+out god "\n\rThe septon's beating misses Rambler.\n\rThe septon's beating does UNSPEAKABLE things to Pickpocket!\n\rPickpocket is stunned, but will probably recover.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe septon's beating MASSACRES Rambler!\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe septon's beating *** DEVASTATES *** Rambler!\n\rRambler is DEAD!!\n\rRambler got toasted by the septon at The Temple Of Mota [room 3001]\n\rYou hear Rambler's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear someone's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "\n\rThe septon's beating misses you.\n\rThe septon's beating does UNSPEAKABLE things to Pickpocket!\n\rPickpocket is stunned, but will probably recover.\n\rThe septon parries your attack.\n\rThe septon is in excellent condition. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe septon's beating MASSACRES you!\n\rThat really did HURT!\n\rThe septon parries your attack.\n\rThe septon is in excellent condition. \n\r\n\r<11hp 102m 106mv> \xff\xf9\n\rThe septon's beating *** DEVASTATES *** you!\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+out pick "\n\rThe septon's beating misses Rambler.\n\rThe septon's beating does UNSPEAKABLE things to you!\n\rYou are stunned, but will probably recover.\n\r\n\r<0hp 102m 106mv> \xff\xf9"
+rng 52048 fcc770ed
+step 33 "@state"
+state room 3001 light 1 people mob player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 9006 pos 8 hit 533/533 mana 185/185 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 196707 affected_by 520 train 0 on 0 stats 17 20 20 17 17
+state char Pickpocket 13 pos 3 hit 0/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 11 wear -1 timer 27 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state room 3005 light 0 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Seraph 56 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3054 light 0 people player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Rambler 2 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2080 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52048 fcc770ed
+step 34 "@as ram"
+rng 52048 fcc770ed
+step 35 "look"
+out ram "By the Temple Altar\n\r  You are by the temple altar in the northern end of the Temple of Mota.\n\rA huge altar made from white polished marble is standing in front of you and\n\rbehind it is a ten foot tall sitting statue of Odin, the King of the Gods.\n\rThe back of the altar opens into a a beautiful atrium, above which can be\n\rseen a rainbow.\n\r\n\r[Exits: south up]\n\r     A pit for sacrifices is in front of the altar.\n\r(White Aura) A healer is here, selling spells.\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+rng 52048 fcc770ed
+step 36 "score"
+out ram "You are Rambler the Recruit, level 2, 17 years old (0 hours).\n\rRace: human  Sex: male  Class: warrior\n\rYou have 1/29 hit, 102/102 mana, 106/106 movement.\n\rYou have 1 practices and 1 training sessions.\n\rYou are carrying 0/47 items with weight 0/230 pounds.\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rYou have scored 2080 exp, and have 0 gold and 0 silver coins.\n\rYou need 920 exp to level.\n\rWimpy set to 0 hit points.\n\rYou are resting.\n\rYou are defenseless against piercing.\n\rYou are defenseless against bashing.\n\rYou are defenseless against slashing.\n\rYou are defenseless against magic.\n\rYou are saintly.\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+rng 52048 fcc770ed
+step 37 "@as god"
+rng 52048 fcc770ed
+step 38 "force septon kill pickpocket"
+out god "The septon's beating does UNSPEAKABLE things to Pickpocket!\n\rPickpocket is DEAD!!\n\rPickpocket got toasted by the septon at The Temple Of Mota [room 3001]\n\rPickpocket's arm is sliced from his dead body.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear someone's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "\n\rYou hear someone's death cry.\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+out pick "\n\rYou have been KILLED!!\n\r\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+rng 52058 7377f8fc
+step 39 "@pulse until 400 is DEAD!!"
+pulses 400, not seen
+rng 52058 7377f8fc
+step 40 "@state"
+state room 3001 light 0 people mob player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 9006 pos 8 hit 533/533 mana 185/185 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 196707 affected_by 520 train 0 on 0 stats 17 20 20 17 17
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 11 wear -1 timer 35 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj in 5 wear -1 timer 0 cost 1600 values 100 15 0 0 0
+state obj floor 14 wear -1 timer 4 cost 0 values 20 20 0 0 0
+state obj floor 11 wear -1 timer 27 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state room 3005 light 0 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Seraph 56 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3054 light 0 people player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Pickpocket 13 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 15 silver 100 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char Rambler 2 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2080 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52058 7377f8fc
+step 41 "look in 1.corpse"
+out god "The corpse of Pickpocket holds:\n\r     (Glowing) a war banner\n\r     a sub issue vest\n\r     a sub issue sword\n\r     a sub issue shield\n\r     a map of the city of Midgaard\n\r     100 silver coins and 15 gold coins\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52058 7377f8fc
+step 42 "look in 2.corpse"
+out god "The corpse of Rambler holds:\n\r     (Glowing) a war banner\n\r     a sub issue vest\n\r     a sub issue sword\n\r     a sub issue shield\n\r     a map of the city of Midgaard\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52058 7377f8fc
+step 43 "slay septon"
+out god "You slay it in cold blood!\n\rThe septon's leg is sliced from its dead body.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out ser "\n\rYou hear something's death cry.\n\r\n\r<100hp 100m 99mv> \xff\xf9"
+out ram "\n\rYou hear something's death cry.\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+out pick "\n\rYou hear something's death cry.\n\r\n\r<1hp 102m 106mv> \xff\xf9"
+rng 52061 2062ef34
+step 44 "@state"
+state room 3001 light 0 people player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 15 wear -1 timer 7 cost 0 values 20 20 0 0 0
+state obj floor 11 wear -1 timer 35 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj in 5 wear -1 timer 0 cost 1600 values 100 15 0 0 0
+state obj floor 14 wear -1 timer 4 cost 0 values 20 20 0 0 0
+state obj floor 11 wear -1 timer 27 cost 0 values 0 0 0 1 0
+state   obj in 3716 wear -1 timer 0 cost 0 values 0 0 197 0 0
+state   obj in 3703 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj in 3704 wear -1 timer 0 cost 0 values 1 1 1 0 0
+state   obj in 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state room 3005 light 0 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Seraph 56 pos 8 hit 100/100 mana 100/100 move 99/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+state room 3054 light 0 people player player mob
+state exit 2 to 3001 info 0 key -1
+state exit 4 to 1215 info 0 key -1
+state char Pickpocket 13 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 15 silver 100 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char Rambler 2 pos 5 hit 1/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2080 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 34 silver 3307 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+rng 52061 2062ef34

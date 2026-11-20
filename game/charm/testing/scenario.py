@@ -56,6 +56,7 @@ class Conn:
     d: object
     peer: socket.socket
     closed: bool = False
+    got: bytes = b""  # read from peer during this step, not printed yet
 
 
 class Player:
@@ -163,23 +164,34 @@ class Player:
 
     # -- output --------------------------------------------------------------------------------------------------
 
-    def collect(self) -> None:
+    def drain(self) -> None:
+        """Read what the game has sent each open connection so far this step."""
         for c in self.conns:
             if c.closed:
                 continue
-            data = b""
-            while True:
+            while len(c.got) < 65536:
                 try:
-                    chunk = c.peer.recv(65536)
+                    chunk = c.peer.recv(65536 - len(c.got))
                 except (BlockingIOError, InterruptedError):
                     break
                 except OSError:
                     break
                 if not chunk:
                     break
-                data += chunk
-            if data:
-                self.out.append(f"out {c.name} {esc(data)}")
+                c.got += chunk
+
+    def sent(self, text: bytes) -> bool:
+        """Has an open connection been sent text this step?"""
+        return any(not c.closed and text in c.got for c in self.conns)
+
+    def collect(self) -> None:
+        self.drain()
+        for c in self.conns:
+            if c.closed:
+                continue
+            if c.got:
+                self.out.append(f"out {c.name} {esc(c.got)}")
+                c.got = b""
             if not self._listed(c):
                 self.out.append(f"closed {c.name}")
                 c.closed = True
@@ -232,12 +244,16 @@ class Player:
         from charm.entities.boot import boot_db
         from charm.net.config import qmconfig_read
 
-        if updates != "area":
-            raise NotPorted(f"update_handler: only area_update is ported (@updates {updates})")
+        from charm.systems.update import PORTED, updates_named
+
+        on = updates_named(None if updates == "all" else updates)
+        if on - PORTED:
+            raise NotPorted(f"update_handler: {', '.join(sorted(on - PORTED))} (@updates {updates})")
         rng.random = self._wrap_random(rng.random)
         config = qmconfig_read(self.area / "qmconfig.rc")
         self.game = game = boot_db(self.area, clock, {"CHARM_SEED": seed})
         game.config = config
+        game.updates = on
         game_module.current = game
         log.clock = lambda: game.current_time
         log.localtime = time.gmtime  # clock: the oracle's container has no time zone, so its ctime is UTC
@@ -266,6 +282,14 @@ class Player:
             self.connect(m.group(1))
         elif m := re.fullmatch(r"@as (\S+)", line):
             self.current = self.find(m.group(1))
+        elif m := re.fullmatch(r"@pulse until (\d+) (\S.*)", line):
+            cap, text = int(m.group(1)), m.group(2).encode("latin-1")
+            k = 0
+            while k < cap and not self.sent(text):
+                self.pulse()
+                self.drain()
+                k += 1
+            self.out.append("pulses %d%s" % (k, "" if self.sent(text) else ", not seen"))
         elif m := re.fullmatch(r"@pulse (\d+)", line):
             for _ in range(int(m.group(1))):
                 self.pulse()

@@ -1,0 +1,252 @@
+sources 8281d8b1399d93c8
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect dec"
+rng 51895 7f5599b5
+step 7 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect pick"
+rng 51895 7f5599b5
+step 12 "Pickpocket"
+out pick "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out pick "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out god "\n\rPickpocket has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@return"
+out pick "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect ram"
+rng 51895 7f5599b5
+step 17 "Rambler"
+out ram "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "psswrd"
+out ram "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out god "\n\rRambler has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rRambler has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r\n\r[Exits: north south up]\n\rPickpocket the Recruit is here.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@return"
+out ram "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@as dec"
+rng 51895 7f5599b5
+step 22 "@obj 3021 3001 1 2 4 1 140"
+rng 51895 7f5599b5
+step 23 "get sword"
+out god "\n\rDecimus gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You get a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus gets a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "wield sword"
+out god "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You stop using a sub issue sword.\n\rYou wield a small sword.\n\rYou are skilled with a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus stops using a sub issue sword.\n\rDecimus wields a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@mob 3501 3001"
+rng 51900 e9723077
+step 26 "kill goblin"
+out god "\n\rDecimus's slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "Your slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\rThe goblin has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pick "\n\rDecimus's slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rDecimus's slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51915 4fc7cf4e
+step 27 "@pulse until 600 is DEAD!!"
+pulses 102
+out god "\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice wounds the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe goblin's punch mauls Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe goblin's punch grazes Decimus.\n\rDecimus's slice grazes the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rDecimus's slice injures the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe goblin's punch mauls Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rDecimus's slice grazes the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe goblin's punch grazes Decimus.\n\rDecimus's slice hits the goblin.\n\rThe goblin is DEAD!!\n\rYou hear the goblin's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rThe goblin's punch misses you.\n\rYour slice wounds the goblin.\n\rA small sword draws life from the goblin.\n\rThe goblin has quite a few wounds. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch mauls you.\n\rThat really did HURT!\n\rYour slice misses the goblin.\n\rThe goblin has quite a few wounds. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe goblin's punch grazes you.\n\rYou have become better at sword!\n\rYour slice grazes the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\rThe goblin has quite a few wounds. \n\r\n\r<18hp 102m 106mv> \xff\xf9\n\rThe goblin's punch misses you.\n\rYour slice misses the goblin.\n\rThe goblin has quite a few wounds. \n\r\n\r<18hp 102m 106mv> \xff\xf9\n\rYou parry the goblin's attack.\n\rYour slice injures the goblin.\n\rA small sword draws life from the goblin.\n\rThe goblin has some big nasty wounds and scratches. \n\r\n\r<18hp 102m 106mv> \xff\xf9\n\rThe goblin's punch misses you.\n\rYour slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\rThe goblin looks pretty hurt. \n\r\n\r<18hp 102m 106mv> \xff\xf9\n\rThe goblin's punch mauls you.\n\rThat really did HURT!\n\rYour slice misses the goblin.\n\rThe goblin looks pretty hurt. \n\r\n\r<10hp 102m 106mv> \xff\xf9\n\rYou parry the goblin's attack.\n\rYour slice grazes the goblin.\n\rA small sword draws life from the goblin.\n\rThe goblin is in awful condition. \n\r\n\r<10hp 102m 106mv> \xff\xf9\n\rThe goblin's punch grazes you.\n\rYour slice hits the goblin.\n\rThe goblin is DEAD!!\n\rYou receive 11 experience points.\n\rYou hear the goblin's death cry.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice wounds the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch mauls Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch grazes Decimus.\n\rDecimus's slice grazes the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rDecimus's slice injures the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch mauls Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rDecimus's slice grazes the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch grazes Decimus.\n\rDecimus's slice hits the goblin.\n\rThe goblin is DEAD!!\n\rYou hear the goblin's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice wounds the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch mauls Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch grazes Decimus.\n\rDecimus's slice grazes the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rDecimus's slice injures the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch misses Decimus.\n\rDecimus's slice hits the goblin.\n\rThe goblin is poisoned by the venom on a small sword.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch mauls Decimus.\n\rDecimus's slice misses the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rDecimus's slice grazes the goblin.\n\rA small sword draws life from the goblin.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe goblin's punch grazes Decimus.\n\rDecimus's slice hits the goblin.\n\rThe goblin is DEAD!!\n\rYou hear the goblin's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52148 7d4c045d
+step 28 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 7/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2103 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 2 4 1 140
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+rng 52148 7d4c045d
+step 29 "@as pick"
+rng 52148 7d4c045d
+step 30 "@obj 3020 3001"
+rng 52148 7d4c045d
+step 31 "get dagger"
+out god "\n\rPickpocket gets a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket gets a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "You get a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rPickpocket gets a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52148 7d4c045d
+step 32 "envenom dagger"
+out god "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "You coat a dagger with venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out ram "\n\rPickpocket coats a dagger with deadly venom.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52150 3d12f80a
+step 33 "envenom dagger"
+rng 52150 3d12f80a
+step 34 "envenom dagger"
+rng 52150 3d12f80a
+step 35 "wield dagger"
+rng 52150 3d12f80a
+step 36 "@pulse 12"
+rng 52150 3d12f80a
+step 37 "@mob 3710 3001"
+rng 52153 4c8e8fbc
+step 38 "kill lizard"
+rng 52153 4c8e8fbc
+step 39 "@pulse until 600 is DEAD!!"
+pulses 318
+out god "\n\rPickpocket stops using a sub issue sword.\n\rPickpocket wields a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite scratches Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite hits Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rThe lizard's bite hits Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<100hp 100m 100mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is DEAD!!\n\rYou hear the lizard's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPickpocket stops using a sub issue sword.\n\rPickpocket wields a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite scratches Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite hits Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite hits Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is DEAD!!\n\rYou hear the lizard's death cry.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "A dagger is already envenomed.\n\r\n\r<29hp 102m 106mv> \xff\xf9A dagger is already envenomed.\n\r\n\r<29hp 102m 106mv> \xff\xf9You stop using a sub issue sword.\n\rYou wield a dagger.\n\rYou don't even know which end is up on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9Your stab scratches the lizard.\n\rThe lizard has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rYou parry the lizard's attack.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe lizard has a few scratches. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite scratches you.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab misses the lizard.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe lizard's bite hits you.\n\rYour stab misses the lizard.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<24hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some small wounds and bruises. \n\r\n\r<21hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard has quite a few wounds. \n\r\n\r<18hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard has quite a few wounds. \n\r\n\r<15hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab misses the lizard.\n\rThe lizard has quite a few wounds. \n\r\n\r<15hp 102m 106mv> \xff\xf9\n\rYou parry the lizard's attack.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has quite a few wounds. \n\r\n\r<15hp 102m 106mv> \xff\xf9\n\rYou parry the lizard's attack.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has quite a few wounds. \n\r\n\r<15hp 102m 106mv> \xff\xf9\n\rYou parry the lizard's attack.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard has quite a few wounds. \n\r\n\r<15hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has quite a few wounds. \n\r\n\r<12hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<10hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou block the lizard's attack with your shield.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard has some big nasty wounds and scratches. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rYou block the lizard's attack with your shield.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard looks pretty hurt. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\rThe poison on a dagger has worn off.\n\rThe lizard is in awful condition. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses you.\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard is in awful condition. \n\r\n\r<7hp 102m 106mv> \xff\xf9\n\rThe lizard's bite hits you.\n\rYou sure are BLEEDING!\n\rYour stab scratches the lizard.\n\rThe poison on a dagger has worn off.\n\rThe lizard is in awful condition. \n\r\n\r<3hp 102m 106mv> \xff\xf9\n\rYou dodge the lizard's attack.\n\rYour stab scratches the lizard.\n\rThe lizard is DEAD!!\n\rYou receive 0 experience points.\n\rYou hear the lizard's death cry.\n\r\n\r<3hp 102m 106mv> \xff\xf9"
+out ram "\n\rPickpocket stops using a sub issue sword.\n\rPickpocket wields a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite scratches Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite hits Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab misses the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite grazes Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is poisoned by the venom on a dagger.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite misses Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rThe lizard's bite hits Pickpocket.\n\rPickpocket's stab scratches the lizard.\n\r\n\r<29hp 102m 106mv> \xff\xf9\n\rPickpocket's stab scratches the lizard.\n\rThe lizard is DEAD!!\n\rYou hear the lizard's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52690 68993cd5
+step 40 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 3/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3020 wear 16 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 7/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2103 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 2 4 1 140
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+rng 52690 68993cd5
+step 41 "@as ram"
+rng 52690 68993cd5
+step 42 "@obj 3021 3001 1 100 100 1 0"
+rng 52690 68993cd5
+step 43 "get sword"
+out god "\n\rRambler gets a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler gets a small sword.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "\n\rRambler gets a small sword.\n\r\n\r<3hp 102m 106mv> \xff\xf9"
+out ram "You get a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52690 68993cd5
+step 44 "wield sword"
+out god "\n\rRambler stops using a sub issue sword.\n\rRambler wields a small sword.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler stops using a sub issue sword.\n\rRambler wields a small sword.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "\n\rRambler stops using a sub issue sword.\n\rRambler wields a small sword.\n\r\n\r<3hp 102m 106mv> \xff\xf9"
+out ram "You stop using a sub issue sword.\n\rYou wield a small sword.\n\rYou are skilled with a small sword.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52690 68993cd5
+step 45 "@mob 3124 3001"
+rng 52693 41ebe77c
+step 46 "kill duck"
+out god "\n\rRambler's slice does UNSPEAKABLE things to the duck!\n\rThe duck is DEAD!!\n\rYou hear the duck's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rRambler's slice does UNSPEAKABLE things to the duck!\n\rThe duck is DEAD!!\n\rYou hear the duck's death cry.\n\r\n\r<7hp 102m 106mv> \xff\xf9"
+out pick "\n\rRambler's slice does UNSPEAKABLE things to the duck!\n\rThe duck is DEAD!!\n\rYou hear the duck's death cry.\n\r\n\r<3hp 102m 106mv> \xff\xf9"
+out ram "You really shouldn't cheat.\n\rYour slice does UNSPEAKABLE things to the duck!\n\rThe duck is DEAD!!\n\rYou receive 258 experience points.\n\rYou hear the duck's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 52822 30f76f09
+step 47 "@pulse 12"
+rng 52822 30f76f09
+step 48 "@state"
+state room 3001 light 3 people player player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Rambler 2 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2346 gold 0 silver 0 act 65544 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Pickpocket 13 pos 8 hit 3/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 30 silver 200 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3020 wear 16 timer 0 cost 157 values 2 1 4 2 128
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 7/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2103 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3021 wear 16 timer 0 cost 250 values 1 2 4 1 140
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear -1 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 10 wear -1 timer 3 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 6 cost 0 values 0 0 0 1 0
+state obj floor 10 wear -1 timer 5 cost 0 values 0 0 0 1 0
+rng 52822 30f76f09

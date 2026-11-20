@@ -1,0 +1,110 @@
+# The fight commands, with only area_update running, so a fight is the round a command starts. In the temple (3001),
+# with Hassan: Smokegod (60, with wiznet's flags and deaths on), Warden (60), Decimus (10, a warrior in no clan),
+# Pickpocket (13, a thief in clan rom), Yeoman (5, rom), Clansman (20, rom) and Seer (20, in no clan). A kill or a
+# murder makes the attacker wait a round (12 pulses), which the scenario waits out.
+# - kill and murder: no one named, no one here, yourself, a mob in a safe room (the altar, 3054), players (is_safe:
+#   no clan, theirs), a mob fighting someone outside the group (kill stealing), and a second mob while fighting
+# - murder: the victim yells for help, and Pickpocket becomes a KILLER; a charmed duck told to murder does nothing
+# - flee: not fighting, and fleeing (each try draws a door), losing 10 experience; Pickpocket, a thief, may sneak
+#   away instead
+# - surrender: not fighting, and to a fido, which ignores it and attacks
+# - Clansman's charmed duck, told to kill Pickpocket, whom Clansman is fighting, stops following (check_killer)
+# - sla, and slay: no one, yourself, a player of your trust, a mob and a player
+@connect god
+Smokegod
+smoke123
+@return
+@return
+wiznet on
+wiznet flags
+wiznet deaths
+@connect war
+Warden
+smoke123
+@return
+@return
+goto 3001
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect pick
+Pickpocket
+psswrd
+@return
+@return
+@connect yeo
+Yeoman
+psswrd
+@return
+@return
+@connect clan
+Clansman
+psswrd
+@return
+@return
+@connect seer
+Seer
+psswrd
+@return
+@return
+@as dec
+kill
+kill nobody
+kill self
+murde
+murder
+murder nobody
+murder self
+flee
+surrender
+kill pickpocket
+@as pick
+kill seer
+north
+@mob 3062 3054
+kill fido
+murder fido
+south
+@as dec
+@mob 3062 3001
+kill fido
+@pulse 12
+kill fido
+@mob 3124 3001
+kill duck
+@as pick
+kill fido
+murder fido
+@as dec
+surrender
+@pulse 12
+flee
+flee
+@as clan
+@mob 3124 3001
+@charm
+kill pickpocket
+@pulse 12
+order duck kill pickpocket
+@as pick
+flee
+@pulse 12
+down
+@mob 3124 3001
+@charm
+order duck murder yeoman
+murder yeoman
+@pulse 12
+flee
+@state
+@as god
+sla
+slay
+slay nobody
+slay self
+slay warden
+slay fido
+slay seer
+@state

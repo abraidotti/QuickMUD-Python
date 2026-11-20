@@ -1,8 +1,7 @@
 """Objects, all of act_obj.c: get, put, drop, give, wear, wield, hold and remove, the corpse-looting rule, food and
 drink, envenom, sacrifice, steal, shops and pet shops, and the magic items (quaff, recite, brandish, zap).
 
-The magic items run up to the spell: obj_cast_spell (charm.systems.magic) raises NotPorted there. So does a failed
-steal from a mob, which starts a fight (fight.c's multi_hit).
+The magic items run up to the spell: obj_cast_spell (charm.systems.magic) raises NotPorted there.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -13,7 +12,7 @@ from __future__ import annotations
 
 from charm.commands.interp import is_number, mult_argument, number_argument, one_argument
 from charm.core.cint import c_div, int32
-from charm.core.errors import CWouldCrash, NotPorted
+from charm.core.errors import CWouldCrash
 from charm.core.log import bug
 from charm.core.rng import number_fuzzy, number_percent, number_range
 from charm.core.strings import atoi, smash_tilde, str_cmp, str_prefix
@@ -971,7 +970,7 @@ def do_steal(ch, argument: str) -> None:
     from charm.commands.move import do_wake
     from charm.net.wiznet import wiznet
     from charm.persist.player import save_char_obj
-    from charm.systems.fight import is_safe
+    from charm.systems.fight import is_safe, multi_hit
     from charm.systems.skills import check_improve
 
     argument, arg1 = one_argument(argument)
@@ -1021,12 +1020,14 @@ def do_steal(ch, argument: str) -> None:
         if not ch.is_npc:
             if victim.is_npc:
                 check_improve(ch, gsn, False, 2)
-                raise NotPorted("fight.c multi_hit (a mob caught stealing attacks)")
-            wiznet(game_module.current, "$N tried to steal from %s." % victim.name, ch, None, C.WIZ_FLAGS, 0, 0)
-            if not ch.act & C.PLR_THIEF:
-                ch.act |= C.PLR_THIEF
-                send_to_char("*** You are now a THIEF!! ***\n\r", ch)
-                save_char_obj(game_module.current, ch)
+                multi_hit(victim, ch, C.TYPE_UNDEFINED)
+            else:
+                wiznet(game_module.current, "$N tried to steal from %s." % victim.name, ch, None, C.WIZ_FLAGS, 0,
+                       0)
+                if not ch.act & C.PLR_THIEF:
+                    ch.act |= C.PLR_THIEF
+                    send_to_char("*** You are now a THIEF!! ***\n\r", ch)
+                    save_char_obj(game_module.current, ch)
         return
     if any(str_cmp(arg1, w) for w in ("coin", "coins", "gold", "silver")):
         gold = c_div(victim.gold * number_range(1, ch.level), C.MAX_LEVEL)
