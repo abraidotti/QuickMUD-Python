@@ -49,7 +49,7 @@ writing a note; ban, permban and allow), all of `act_wiz.c`'s but copyover, whic
 at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix, wiznet; deny, disconnect, freeze,
 the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
 string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (kill, murder, flee, surrender,
-slay and the fighting skills), `cast` with the first half of `magic.c`'s spells, and what login calls; any other
+slay and the fighting skills), `cast` and every spell (`magic.c` and `magic2.c`), and what login calls; any other
 command raises `NotPorted`, which stops the game (#32). Of the per-pulse updates, `area_update` and `violence_update` run; the game logs the rest at boot (#28). `CHARM_UPDATES` names the ones to run
 in both games (`area,violence`, or `all`; unset, everything ported), as `@updates` does in a scenario (#74).
 `charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs

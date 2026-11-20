@@ -1,0 +1,187 @@
+# The second half's affect spells, cast by Smokegod (60, neutral, every skill at 100, mana to spare), with only
+# area_update running, at the entrance to Mud School (3700). Decimus (10, good) and Cherub (52, neutral) are there,
+# and Decimus joins Smokegod's group. Smokegod can see the invisible. Each cast is waited out; @state shows the
+# affects.
+# - frenzy on Decimus (his alignment isn't Smokegod's), on Cherub, twice, and on a calmed drunk
+# - giant strength, infravision, sanctuary, shield and weaken on Decimus, each twice; pass door (for yourself only)
+#   twice, and protection from evil (then good: already protected); know alignment across the range
+# - haste and slow, each undoing the other; sleep (and on someone above the level); stone skin twice
+# - invisibility on Decimus and on a sword; mass invisibility on the group
+# - plague, poison on Decimus, on food, a drink, a sword, a sharp sword and a pill; remove curse on Decimus (with a
+#   cursed sword he can't drop), on that sword, and on a sword with no curse
+# - heal, refresh, mass healing after a beating
+@connect god
+Smokegod
+smoke123
+@return
+@return
+set skill smokegod all 100
+set char smokegod mana 30000
+restore smokegod
+goto 3700
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@as god
+transfer decimus 3700
+transfer cherub 3700
+cast 'detect invis'
+@pulse 24
+cast frenzy decimus
+@pulse 24
+cast frenzy cherub
+@pulse 24
+cast frenzy cherub
+@pulse 24
+@mob 3062 3700
+@mob 3064 3700
+force drunk kill fido
+cast calm
+@pulse 24
+cast frenzy drunk
+@pulse 24
+slay drunk
+slay fido
+cast 'giant strength' decimus
+@pulse 24
+cast 'giant strength' decimus
+@pulse 24
+cast infravision decimus
+@pulse 24
+cast infravision decimus
+@pulse 24
+cast 'pass door' decimus
+@pulse 24
+cast 'pass door'
+@pulse 24
+cast 'pass door'
+@pulse 24
+cast 'protection evil'
+@pulse 24
+cast 'protection good'
+@pulse 24
+cast sanctuary decimus
+@pulse 24
+cast sanctuary decimus
+@pulse 24
+cast shield decimus
+@pulse 24
+cast shield decimus
+@pulse 24
+cast weaken decimus
+@pulse 24
+cast weaken decimus
+@pulse 24
+@mob 3501 3700
+@mob 3062 3700
+cast 'know alignment' decimus
+@pulse 24
+cast 'know alignment' goblin
+@pulse 24
+cast 'know alignment' fido
+@pulse 24
+cast 'know alignment' smokegod
+@pulse 24
+set char cherub align -900
+cast 'know alignment' cherub
+@pulse 24
+set char cherub align 500
+cast 'know alignment' cherub
+@pulse 24
+set char cherub align -200
+cast 'know alignment' cherub
+@pulse 24
+set char cherub align 200
+cast 'know alignment' cherub
+@pulse 24
+set char cherub align 0
+cast haste decimus
+@pulse 24
+cast haste decimus
+@pulse 24
+cast slow decimus
+@pulse 24
+cast slow decimus
+@pulse 24
+cast slow decimus
+@pulse 24
+cast haste decimus
+@pulse 24
+cast sleep goblin
+@pulse 24
+@mob 9006 3700
+cast sleep septon
+@pulse 24
+peace
+cast 'stone skin'
+@pulse 24
+cast 'stone skin'
+@pulse 24
+cast invis decimus
+@pulse 24
+cast invis decimus
+@pulse 24
+@obj 3021 3700
+get sword
+cast invis sword
+@pulse 24
+cast invis sword
+@pulse 24
+cast plague decimus
+@pulse 24
+cast poison decimus
+@pulse 24
+@obj 20 3700
+@obj 611 3700
+@obj 3021 3700 1 1 5 1 8
+@obj 100 3700
+get all
+cast poison mushroom
+@pulse 24
+cast poison milk
+@pulse 24
+cast poison sword
+@pulse 24
+cast poison sword
+@pulse 24
+cast poison 2.sword
+@pulse 24
+cast poison smurfberries
+@pulse 24
+cast 'remove curse' sword
+@pulse 24
+@obj 3021 3700
+set obj sword extra 128
+@as dec
+get sword
+@as god
+cast 'remove curse' decimus
+@pulse 24
+@obj 3021 3700
+set obj sword extra 4096
+get sword
+cast 'remove curse' sword
+@pulse 24
+@as dec
+follow smokegod
+@as god
+group decimus
+cast 'mass invis'
+@pulse 24
+force septon kill decimus
+@pulse 12
+peace
+cast heal decimus
+@pulse 24
+cast refresh decimus
+@pulse 24
+cast 'mass healing'
+@pulse 24
+@state
