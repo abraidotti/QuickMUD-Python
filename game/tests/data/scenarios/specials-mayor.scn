@@ -1,0 +1,33 @@
+# The mayor's morning walk, run with @spec as mobile_update would, with the clock at 6 in the morning and only
+# area_update running (so the hour stays 6). The mayor (3143) starts asleep in his room (3138), where Smokegod
+# (60) waits; Cherub (52) follows the mayor round town.
+# - the 52 steps of the open path: he wakes, walks, says his lines, opens the gates, comes home and goes back to
+#   sleep (another mayor, from the area's reset, sleeps there too)
+# - it's still 6, so the next call starts him on it again
+@clock 1763399520
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3138
+holylight
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@as god
+transfer cherub 3138
+@mob 3143 3138
+@as cher
+follow mayor
+@as god
+@spec 52
+@as cher
+look
+@state
+@as god
+@spec 2
+look
+@state

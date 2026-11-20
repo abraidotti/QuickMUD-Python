@@ -1,0 +1,100 @@
+# Mobs that breathe in a fight, run with @spec as mobile_update would, at the entrance to Mud School (3700), with
+# only area_update running. Each mob starts a fight with Heroic (51, 30000 hit points), with a potion, a scroll, a
+# drink and food on the floor; Smokegod (60) breaks it up, restores Heroic and purges the room between fights.
+# - the gold dragon (breath_any, 42) many times, so each breath comes up
+# - the fire bat (fire, 12), the water elemental (acid, 30), the white dragon (frost, 37), the lightning elemental
+#   (lightning, 30)
+# - the green dragon (gas, 41) fighting Heroic, with a drunk and a fido standing by: is_safe_spell spares them, as
+#   a mob's area spell spares mobs not grouped with the one it's fighting
+# - the green dragon fighting the drunk, with the fido by: the gas spares the drunk too (#81), so it hits no one
+# - each of them, not fighting, does nothing
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3700
+holylight
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+transfer heroic 3700
+set char heroic hp 30000
+restore heroic
+@obj 105 3700
+@obj 1362 3700
+@obj 3001 3700
+@obj 3009 3700
+@mob 631 3700
+@spec
+force dragon kill heroic
+@spec 48
+peace
+restore heroic
+purge
+@pulse 12
+@obj 105 3700
+@obj 1362 3700
+@obj 3001 3700
+@obj 3009 3700
+@mob 1515 3700
+@spec
+force bat kill heroic
+@spec 16
+peace
+restore heroic
+purge
+@pulse 12
+@obj 105 3700
+@obj 1362 3700
+@obj 3001 3700
+@obj 3009 3700
+@mob 9212 3700
+force water kill heroic
+@spec 16
+peace
+restore heroic
+purge
+@pulse 12
+@obj 105 3700
+@obj 1362 3700
+@obj 3001 3700
+@obj 3009 3700
+@mob 2223 3700
+force dragon kill heroic
+@spec 16
+peace
+restore heroic
+purge
+@pulse 12
+@mob 9211 3700
+force elemental kill heroic
+@spec 16
+peace
+restore heroic
+purge
+@pulse 12
+@obj 105 3700
+@obj 1362 3700
+@obj 3001 3700
+@obj 3009 3700
+@mob 3064 3700
+@mob 3062 3700
+@mob 2225 3700
+@spec
+force dragon kill heroic
+@spec 2
+peace
+restore heroic
+purge
+@pulse 12
+@mob 3064 3700
+@mob 3062 3700
+@mob 2225 3700
+force drunk kill dragon
+@spec 2
+peace
+@state

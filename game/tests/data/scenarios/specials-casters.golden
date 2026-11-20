@@ -1,0 +1,258 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "@connect hero"
+rng 51895 7f5599b5
+step 9 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 10 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@as god"
+rng 51895 7f5599b5
+step 14 "transfer heroic 3700"
+out god "Heroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "set char heroic hp 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@mob 1100 3700"
+rng 51932 eaa24604
+step 18 "@spec"
+spec 0
+rng 51932 eaa24604
+step 19 "force wizard kill heroic"
+out god "The Elven Wizard's pound scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rThe Elven Wizard's pound scratches you.\n\rThe Elven Wizard is in excellent condition. \n\r\n\r<29987hp 102m 106mv> \xff\xf9"
+rng 51946 d8f44296
+step 20 "@spec 8"
+spec 0 0 0 0 0 1 1 0
+rng 51966 0d812d7f
+step 21 "peace"
+out god "The Elven Wizard's chilling touch scratches Heroic.\n\rThe Elven Wizard's colour spray scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rThe Elven Wizard's chilling touch scratches you.\n\rThe Elven Wizard's colour spray scratches you.\n\r\n\r<29944hp 102m 106mv> \xff\xf9"
+rng 51966 0d812d7f
+step 22 "transfer heroic 3700"
+out god "Heroic disappears in a mushroom cloud.\n\rHeroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rAn Elven Wizard is here, creating fireworks for the festivities.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29944hp 102m 106mv> \xff\xf9"
+rng 51966 0d812d7f
+step 23 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51966 0d812d7f
+step 24 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51966 0d812d7f
+step 25 "@pulse 12"
+rng 51966 0d812d7f
+step 26 "@mob 603 3700"
+rng 52021 2717fc32
+step 27 "force jacklyn kill heroic"
+out god "Captain Jacklyn's pound scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rCaptain Jacklyn's pound scratches you.\n\rCaptain Jacklyn is in excellent condition. \n\r\n\r<29977hp 102m 106mv> \xff\xf9"
+rng 52033 d933ea17
+step 28 "@spec 12"
+spec 1 0 0 0 0 1 0 1 0 0 0 0
+rng 52092 5310e838
+step 29 "peace"
+out god "Captain Jacklyn's fireball scratches Heroic.\n\rCaptain Jacklyn's acid blast scratches Heroic.\n\rHeroic doesn't look like herself anymore...\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rCaptain Jacklyn's fireball scratches you.\n\rCaptain Jacklyn's acid blast scratches you.\n\rYou feel different.\n\r\n\r<29858hp 102m 106mv> \xff\xf9"
+rng 52092 5310e838
+step 30 "transfer heroic 3700"
+out god "Heroic disappears in a mushroom cloud.\n\rHeroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rJacklyn, Captain of the Citadel Guard, is here raising morale.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29858hp 102m 106mv> \xff\xf9"
+rng 52092 5310e838
+step 31 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52092 5310e838
+step 32 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52092 5310e838
+step 33 "@pulse 12"
+rng 52092 5310e838
+step 34 "@mob 111 3700"
+rng 52116 a3197098
+step 35 "force gargamel kill heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou block Gargamel's attack with your shield.\n\rGargamel is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52132 b50a1ce0
+step 36 "@spec 8"
+spec 0 1 0 1 1 1 1 1
+rng 52163 fabde1ac
+step 37 "peace"
+out god "Mota protects Heroic.\n\rMota protects Heroic.\n\rGargamel's spell scratches Heroic.\n\rMota protects Heroic.\n\rMota protects Heroic.\n\rGargamel's spell scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rMota protects Heroic.\n\rMota protects Heroic.\n\rGargamel's spell scratches you.\n\rMota protects Heroic.\n\rMota protects Heroic.\n\rGargamel's spell scratches you.\n\r\n\r<29968hp 102m 106mv> \xff\xf9"
+rng 52163 fabde1ac
+step 38 "transfer heroic 3700"
+out god "Heroic disappears in a mushroom cloud.\n\rHeroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rGargamel is here, cursing out the smurfs.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29968hp 102m 106mv> \xff\xf9"
+rng 52163 fabde1ac
+step 39 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52163 fabde1ac
+step 40 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52163 fabde1ac
+step 41 "@pulse 12"
+rng 52163 fabde1ac
+step 42 "@mob 901 3700"
+rng 52356 4c54faff
+step 43 "force zeus kill heroic"
+out god "Zeus fades into existence.\n\rZeus's pound scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rZeus fades into existence.\n\rZeus's pound scratches you.\n\rZeus is in excellent condition. \n\r\n\r<29955hp 102m 106mv> \xff\xf9"
+rng 52371 8d2331e8
+step 44 "@spec 12"
+spec 0 0 0 0 0 1 0 1 0 0 0 0
+rng 52389 8e0a9522
+step 45 "peace"
+out god "Heroic looks more like himself again.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYour body feels familiar again.\n\r\n\r<29955hp 102m 106mv> \xff\xf9"
+rng 52389 8e0a9522
+step 46 "transfer heroic 3700"
+out god "Heroic disappears in a mushroom cloud.\n\rHeroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r(White Aura) Zeus sits here on a throne.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29955hp 102m 106mv> \xff\xf9"
+rng 52389 8e0a9522
+step 47 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52389 8e0a9522
+step 48 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52389 8e0a9522
+step 49 "@pulse 12"
+rng 52389 8e0a9522
+step 50 "@mob 1617 3700"
+rng 52412 ef2e7a6a
+step 51 "@spec"
+spec 0
+rng 52412 ef2e7a6a
+step 52 "force spectre kill heroic"
+out god "The spectre fades into existence.\n\rThe spectre's trip misses Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rThe spectre fades into existence.\n\rYou parry the spectre's attack.\n\rThe spectre's trip misses you.\n\rThe spectre is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52424 3036a892
+step 53 "@spec 10"
+spec 1 0 1 0 1 0 0 0 0 0
+rng 52445 99568f04
+step 54 "peace"
+out god "The spectre's harm spell scratches Heroic.\n\rThe spectre's harm spell scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rThe spectre's harm spell scratches you.\n\rYou feel a momentary chill.\n\rThe spectre's harm spell scratches you.\n\r\n\r<29916hp 102m 106mv> \xff\xf9"
+rng 52445 99568f04
+step 55 "transfer heroic 3700"
+out god "Heroic disappears in a mushroom cloud.\n\rHeroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r(White Aura) A spectre has begun to materialize in front of you!\n\rSmokegod the Smoke Test is here.\n\r\n\r<29916hp 102m 106mv> \xff\xf9"
+rng 52445 99568f04
+step 56 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52445 99568f04
+step 57 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52445 99568f04
+step 58 "@pulse 12"
+rng 52445 99568f04
+step 59 "@mob 8006 3700"
+rng 52469 16a9b8b2
+step 60 "@spec"
+spec 0
+rng 52469 16a9b8b2
+step 61 "force judge kill heroic"
+out god "A rookie judge's trip misses Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou dodge a rookie judge's attack.\n\rA rookie judge's trip misses you.\n\rA rookie judge is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52480 0a22c2c8
+step 62 "@spec 20"
+spec 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1
+rng 52512 3f0722db
+step 63 "peace"
+out god "A rookie judge's high explosive ammo scratches Heroic.\n\rA rookie judge's high explosive ammo scratches Heroic.\n\rA rookie judge's high explosive ammo scratches Heroic.\n\rA rookie judge's high explosive ammo scratches Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA rookie judge's high explosive ammo scratches you.\n\rA rookie judge's high explosive ammo scratches you.\n\rA rookie judge's high explosive ammo scratches you.\n\rA rookie judge's high explosive ammo scratches you.\n\r\n\r<29881hp 102m 106mv> \xff\xf9"
+rng 52512 3f0722db
+step 64 "transfer heroic 3700"
+out god "Heroic disappears in a mushroom cloud.\n\rHeroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rA Rookie judge is on his first beat here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29881hp 102m 106mv> \xff\xf9"
+rng 52512 3f0722db
+step 65 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52512 3f0722db
+step 66 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52512 3f0722db
+step 67 "@pulse 12"
+rng 52512 3f0722db
+step 68 "@mob 2017 3700"
+rng 52551 288ecbe5
+step 69 "@spec"
+spec 0
+rng 52551 288ecbe5
+step 70 "force darkenbeast kill heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou parry The DarkenBeast's attack.\n\rThe DarkenBeast is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52566 ecfc4b2b
+step 71 "@spec 6"
+spec 0 1 1 0 0 0
+rng 52575 55525525
+step 72 "peace"
+out god "The DarkenBeast bites Heroic!\n\rHeroic turns slightly green, but it passes.\n\rThe DarkenBeast bites Heroic!\n\rHeroic turns slightly green, but it passes.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rThe DarkenBeast bites you!\n\rYou feel momentarily ill, but it passes.\n\rThe DarkenBeast bites you!\n\rYou feel momentarily ill, but it passes.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52575 55525525
+step 73 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52575 55525525
+step 74 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52575 55525525
+step 75 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Heroic 51 pos 8 hit 30000/30000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+rng 52575 55525525

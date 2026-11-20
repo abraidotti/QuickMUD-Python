@@ -1,0 +1,93 @@
+# The gangs and the patrolman, run with @spec as mobile_update would, at the entrance to Mud School (3700), with
+# only area_update running. Smokegod (60) purges the room between each; Heroic (51, 30000 hit points) and Cherub
+# (52), a room north in the same area, are there to hear the whistle.
+# - a troll gang member picks a fight with an ogre, with something to say; an ogre with a troll, likewise; each a
+#   few times, so the messages vary
+# - with the patrolman in the room, neither starts anything
+# - the patrolman, with no fight in the room, does nothing; with a fido and a drunk fighting Heroic, he blows his
+#   whistle (heard by Cherub, next door) and goes for the higher level of a pair; once fighting, he does nothing
+# - a patrolman leaves two patrolmen fighting each other to it
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3700
+holylight
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@connect cher
+Cherub
+smoke123
+@return
+@return
+@as god
+transfer heroic 3700
+transfer cherub 3757
+set char heroic hp 30000
+restore heroic
+@mob 2102 3700
+@mob 2101 3700
+@spec
+peace
+purge
+@mob 2102 3700
+@mob 2101 3700
+@spec
+peace
+purge
+@mob 2102 3700
+@mob 2101 3700
+@spec
+peace
+purge
+@mob 2101 3700
+@mob 2102 3700
+@spec
+peace
+purge
+@mob 2101 3700
+@mob 2102 3700
+@spec
+peace
+purge
+@mob 2101 3700
+@mob 2102 3700
+@spec
+peace
+purge
+@mob 2101 3700
+@mob 2106 3700
+@mob 2102 3700
+@spec
+purge
+@mob 2102 3700
+@mob 2106 3700
+@mob 2101 3700
+@spec
+purge
+@obj 2116 3700
+@mob 2106 3700
+force patrolman get whistle
+force patrolman wear whistle
+@spec
+load mob 3062
+force fido kill heroic
+load mob 3064
+force drunk kill heroic
+@pulse 12
+@spec 2
+peace
+restore heroic
+purge
+@mob 2106 3700
+@mob 2106 3700
+force patrolman kill 2.patrolman
+@mob 2106 3700
+@spec
+peace
+purge
+@state

@@ -1,9 +1,9 @@
 """update_handler: the game's clockwork, run once a pulse (a quarter of a second).
 
-[partial], as #28 decided: the pulse counters are the C's exactly, and area_update and violence_update run on
-their pulses. The other updates aren't ported and don't run. That's the one place the game knowingly differs from
-the C: a running Python world stops matching the C's after the first mobile pulse. The game logs what isn't
-running at boot (NOT_RUNNING), and each has a LATER line below, so port status lists them.
+[partial], as #28 decided: the pulse counters are the C's exactly, and area_update, song_update (music.c) and
+violence_update run on their pulses. The other updates aren't ported and don't run. That's the one place the game
+knowingly differs from the C: a running Python world stops matching the C's after the first mobile pulse. The
+game logs what isn't running at boot (NOT_RUNNING), and each has a LATER line below, so port status lists them.
 
 CHARM_UPDATES names the updates that run, in both games (#74): area, song, mobile, violence, weather, char, obj and
 aggr, comma-separated, or all. Unset, everything runs (everything ported, here).
@@ -19,14 +19,13 @@ from charm.data import constants as C
 from charm.entities.resets import area_update
 from charm.net.wiznet import wiznet
 
-# LATER: song_update (music.c) isn't ported and doesn't run (#28)
 # LATER: mobile_update isn't ported and doesn't run (#28): mobs don't move, scavenge or run specials
 # LATER: weather_update, char_update and obj_update aren't ported and don't run (#28): no ticks, idling or decay
 # LATER: aggr_update isn't ported and doesn't run (#28): aggressive mobs don't attack
-NOT_RUNNING = ("song_update", "mobile_update", "weather_update", "char_update", "obj_update", "aggr_update")
+NOT_RUNNING = ("mobile_update", "weather_update", "char_update", "obj_update", "aggr_update")
 
 UPDATES = ("area", "song", "mobile", "violence", "weather", "char", "obj", "aggr")  # CHARM_UPDATES's names
-PORTED = frozenset({"area", "violence"})
+PORTED = frozenset({"area", "song", "violence"})
 
 
 def updates_named(value: str | None) -> frozenset[str]:
@@ -54,6 +53,7 @@ def updates_named(value: str | None) -> frozenset[str]:
 # C: update.c update_handler [partial]
 def update_handler(game) -> None:
     from charm.systems.fight import violence_update
+    from charm.systems.music import song_update
 
     on = game.updates
     game.pulse_area -= 1
@@ -64,7 +64,9 @@ def update_handler(game) -> None:
 
     game.pulse_music -= 1
     if game.pulse_music <= 0:
-        game.pulse_music = C.PULSE_MUSIC  # song_update: not running
+        game.pulse_music = C.PULSE_MUSIC
+        if "song" in on:
+            song_update(game)
 
     game.pulse_mobile -= 1
     if game.pulse_mobile <= 0:

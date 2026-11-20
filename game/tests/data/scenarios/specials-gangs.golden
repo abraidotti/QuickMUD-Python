@@ -1,0 +1,273 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "@connect hero"
+rng 51895 7f5599b5
+step 9 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 10 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect cher"
+rng 51895 7f5599b5
+step 14 "Cherub"
+out cher "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "smoke123"
+out cher "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out cher "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 17 "@return"
+out hero "\n\rCherub has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHeroic the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@as god"
+rng 51895 7f5599b5
+step 19 "transfer heroic 3700"
+out god "Heroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out cher "\n\rHeroic disappears in a mushroom cloud.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "transfer cherub 3757"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out cher "\n\rSmokegod has transferred you.\n\rA Room in Mud School\n\r  You are in a room in Mud School.  Paintings of the heroic graduates of mud\n\rschool adorn the walls. To the west is Furey's Training Room, and to the east\n\ris Zump's Guild Room.  North of you is the next Station of Mud School.\n\rThere is a sign on the wall (type 'LOOK SIGN' to read it).\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "set char heroic hp 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "@mob 2102 3700"
+rng 51899 d1eb3d36
+step 24 "@mob 2101 3700"
+rng 51902 fdba09ec
+step 25 "@spec"
+spec 1
+rng 51914 918dbc6e
+step 26 "peace"
+out god "A troll gang member cracks his knuckles and says 'Do ya feel lucky?'\n\rA troll gang member's punch misses an ogre gang member.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA troll gang member cracks his knuckles and says 'Do ya feel lucky?'\n\rA troll gang member's punch misses an ogre gang member.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51914 918dbc6e
+step 27 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51914 918dbc6e
+step 28 "@mob 2102 3700"
+rng 51919 9e0ded87
+step 29 "@mob 2101 3700"
+rng 51922 2492442c
+step 30 "@spec"
+spec 1
+rng 51933 af6a286b
+step 31 "peace"
+out god "With a scream of rage, a troll gang member attacks an ogre gang member.\n\rA troll gang member's punch scratches an ogre gang member.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rWith a scream of rage, a troll gang member attacks an ogre gang member.\n\rA troll gang member's punch scratches an ogre gang member.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 32 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 33 "@mob 2102 3700"
+rng 51936 db46e4f1
+step 34 "@mob 2101 3700"
+rng 51939 aab51824
+step 35 "@spec"
+spec 1
+rng 51950 3b52a66a
+step 36 "peace"
+out god "A troll gang member cracks his knuckles and says 'Do ya feel lucky?'\n\rA troll gang member's punch misses an ogre gang member.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA troll gang member cracks his knuckles and says 'Do ya feel lucky?'\n\rA troll gang member's punch misses an ogre gang member.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51950 3b52a66a
+step 37 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51950 3b52a66a
+step 38 "@mob 2101 3700"
+rng 51954 838facd4
+step 39 "@mob 2102 3700"
+rng 51957 7f61faf9
+step 40 "@spec"
+spec 1
+rng 51973 a400b2cc
+step 41 "peace"
+out god "An ogre gang member cracks his knuckles and says 'Do ya feel lucky?'\n\rAn ogre gang member's punch scratches a troll gang member.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rAn ogre gang member cracks his knuckles and says 'Do ya feel lucky?'\n\rAn ogre gang member's punch scratches a troll gang member.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51973 a400b2cc
+step 42 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51973 a400b2cc
+step 43 "@mob 2101 3700"
+rng 51979 8fd201c6
+step 44 "@mob 2102 3700"
+rng 51982 3923dba2
+step 45 "@spec"
+spec 1
+rng 51993 04c2ec02
+step 46 "peace"
+out god "An ogre gang member says 'What's Troll filth like you doing around here?'\n\rAn ogre gang member's punch misses a troll gang member.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rAn ogre gang member says 'What's Troll filth like you doing around here?'\n\rAn ogre gang member's punch misses a troll gang member.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51993 04c2ec02
+step 47 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51993 04c2ec02
+step 48 "@mob 2101 3700"
+rng 51998 4a94600f
+step 49 "@mob 2102 3700"
+rng 52005 0a6f38a8
+step 50 "@spec"
+spec 1
+rng 52016 4d3c1b5b
+step 51 "peace"
+out god "An ogre gang member yells 'I've been looking for you, punk!'\n\rAn ogre gang member's punch scratches a troll gang member.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rAn ogre gang member yells 'I've been looking for you, punk!'\n\rAn ogre gang member's punch scratches a troll gang member.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52016 4d3c1b5b
+step 52 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52016 4d3c1b5b
+step 53 "@mob 2101 3700"
+rng 52020 0e9a6874
+step 54 "@mob 2106 3700"
+rng 52024 919901b6
+step 55 "@mob 2102 3700"
+rng 52027 ca56f3de
+step 56 "@spec"
+spec 0
+rng 52027 ca56f3de
+step 57 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52027 ca56f3de
+step 58 "@mob 2102 3700"
+rng 52033 d933ea17
+step 59 "@mob 2106 3700"
+rng 52038 694e7100
+step 60 "@mob 2101 3700"
+rng 52043 7760df97
+step 61 "@spec"
+spec 0
+rng 52043 7760df97
+step 62 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52043 7760df97
+step 63 "@obj 2116 3700"
+rng 52043 7760df97
+step 64 "@mob 2106 3700"
+rng 52049 b0ba0cdf
+step 65 "force patrolman get whistle"
+out god "A patrolman gets a police whistle.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA patrolman gets a police whistle.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52049 b0ba0cdf
+step 66 "force patrolman wear whistle"
+out god "A patrolman wears a police whistle around his neck.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA patrolman wears a police whistle around his neck.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52049 b0ba0cdf
+step 67 "@spec"
+spec 0
+rng 52049 b0ba0cdf
+step 68 "load mob 3062"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has created the beastly fido!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52051 85528781
+step 69 "force fido kill heroic"
+out god "The beastly fido's bite misses Heroic.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rThe beastly fido's bite misses you.\n\rThe beastly fido is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52064 aa99882c
+step 70 "load mob 3064"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has created the drunk!\n\rThe beastly fido is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52069 02969c70
+step 71 "force drunk kill heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52069 02969c70
+step 72 "@pulse 12"
+rng 52069 02969c70
+step 73 "@spec 2"
+spec 1 0
+rng 52084 8606f9f1
+step 74 "peace"
+out god "\n\rA patrolman blows on a police whistle, ***WHEEEEEEEEEEEET***\n\rA patrolman says 'Society's to blame, but what's a bloke to do?'\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA patrolman blows on a police whistle, ***WHEEEEEEEEEEEET***\n\rA patrolman says 'Society's to blame, but what's a bloke to do?'\n\rYou block a patrolman's attack with your shield.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+out cher "\n\rYou hear a shrill whistling sound.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52084 8606f9f1
+step 75 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52084 8606f9f1
+step 76 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52084 8606f9f1
+step 77 "@mob 2106 3700"
+rng 52088 0fa3073a
+step 78 "@mob 2106 3700"
+rng 52093 c10b3f65
+step 79 "force patrolman kill 2.patrolman"
+out god "A patrolman falls flat on his face.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rA patrolman falls flat on his face.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52104 3acb326c
+step 80 "@mob 2106 3700"
+rng 52108 2bb8c913
+step 81 "@spec"
+spec 0
+rng 52109 0b563a1a
+step 82 "peace"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52109 0b563a1a
+step 83 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52109 0b563a1a
+step 84 "@state"
+state room 3700 light 1 people player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char Heroic 51 pos 8 hit 30000/30000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state room 3757 light 0 people player
+state exit 0 to 3701 info 0 key 0
+state exit 1 to 3759 info 0 key 0
+state exit 2 to 3700 info 0 key 0
+state exit 3 to 3758 info 0 key 0
+state char Cherub 52 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+rng 52109 0b563a1a

@@ -1,0 +1,249 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "set char smokegod mana 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "restore smokegod"
+out god "Ok.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@connect purse"
+rng 51895 7f5599b5
+step 11 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 12 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 13 "@return"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@return"
+out purse "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "heal"
+out purse "You can't do that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@connect dec"
+rng 51895 7f5599b5
+step 17 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 18 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 19 "@return"
+out purse "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@as god"
+rng 51895 7f5599b5
+step 22 "transfer purser 3700"
+out god "Purser arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out purse "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 30000m 100mv> \xff\xf9"
+out purse "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rPurser the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "set char purser gold 400"
+out god "\n\r<100hp 30000m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "@mob 3012 3700"
+rng 51900 e9723077
+step 26 "@as purse"
+rng 51900 e9723077
+step 27 "heal"
+out purse "The healer says 'I offer the following spells:'\n\r  light: cure light wounds      10 gold\n\r  serious: cure serious wounds  15 gold\n\r  critic: cure critical wounds  25 gold\n\r  heal: healing spell          50 gold\n\r  blind: cure blindness         20 gold\n\r  disease: cure disease         15 gold\n\r  poison:  cure poison          25 gold\n\r  uncurse: remove curse          50 gold\n\r  refresh: restore movement      5 gold\n\r  mana:  restore mana          10 gold\n\r Type heal <type> to be healed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 28 "heal nonsense"
+out purse "The healer says 'Type 'heal' for a list of spells.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 29 "@as dec"
+rng 51900 e9723077
+step 30 "heal light"
+out dec "The healer says 'You do not have enough gold for my services.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 31 "@as god"
+rng 51900 e9723077
+step 32 "cast blindness purser"
+out god "Purser appears to be blinded.\n\r\n\r<100hp 29995m 100mv> \xff\xf9"
+out purse "\n\rSmokegod utters the words, 'noselacri'.\n\rYou are blinded!\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'noselacri'.\n\rPurser appears to be blinded.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51904 da7aaa40
+step 33 "@pulse 24"
+rng 51904 da7aaa40
+step 34 "cast poison purser"
+out god "Purser looks very ill.\n\r\n\r<100hp 29985m 100mv> \xff\xf9"
+out purse "\n\rSomeone utters the words, 'sausabru'.\n\rYou feel very sick.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'sausabru'.\n\rPurser looks very ill.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51909 3b8e3587
+step 35 "@pulse 24"
+rng 51909 3b8e3587
+step 36 "cast curse purser"
+out god "Purser looks very uncomfortable.\n\r\n\r<100hp 29965m 100mv> \xff\xf9"
+out purse "\n\rSomeone utters the words, 'judifgz'.\n\rYou feel unclean.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judifgz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51917 64c4bf17
+step 37 "@pulse 24"
+rng 51917 64c4bf17
+step 38 "cast plague purser"
+out god "Purser screams in agony as plague sores erupt from his skin.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "\n\rSomeone utters the words, 'sraojz'.\n\rYou scream in agony as plague sores erupt from your skin.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'sraojz'.\n\rPurser screams in agony as plague sores erupt from his skin.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51920 c09b44b3
+step 39 "@pulse 24"
+rng 51920 c09b44b3
+step 40 "@as purse"
+rng 51920 c09b44b3
+step 41 "heal light"
+out god "\n\rThe healer utters the words 'judicandus dies'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'judicandus dies'.\n\rYou feel better!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'judicandus dies'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51921 4f5dc005
+step 42 "@pulse 12"
+rng 51921 4f5dc005
+step 43 "heal serious"
+out god "\n\rThe healer utters the words 'judicandus gzfuajg'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'judicandus gzfuajg'.\n\rYou feel better!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'judicandus gzfuajg'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51923 585652cd
+step 44 "@pulse 12"
+rng 51923 585652cd
+step 45 "heal critical"
+out god "\n\rThe healer utters the words 'judicandus qfuhuqar'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'judicandus qfuhuqar'.\n\rYou feel better!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'judicandus qfuhuqar'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 46 "@pulse 12"
+rng 51926 ad863a1b
+step 47 "heal heal"
+out god "\n\rThe healer utters the words 'pzar'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'pzar'.\n\rA warm feeling fills your body.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'pzar'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51926 ad863a1b
+step 48 "@pulse 12"
+rng 51926 ad863a1b
+step 49 "heal blind"
+out god "\n\rThe healer utters the words 'judicandus noselacri'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'judicandus noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'judicandus noselacri'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 50 "@pulse 12"
+rng 51927 ac0787c3
+step 51 "heal disease"
+out god "\n\rThe healer utters the words 'judicandus eugzagz'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'judicandus eugzagz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'judicandus eugzagz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51928 bc29c08d
+step 52 "@pulse 12"
+rng 51928 bc29c08d
+step 53 "heal poison"
+out god "\n\rThe healer utters the words 'judicandus sausabru'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'judicandus sausabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'judicandus sausabru'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51931 d3e928be
+step 54 "@pulse 12"
+rng 51931 d3e928be
+step 55 "heal uncurse"
+out god "\n\rThe healer utters the words 'candussido judifgz'.\n\r\n\r<100hp 29945m 100mv> \xff\xf9"
+out purse "Someone utters the words 'candussido judifgz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'candussido judifgz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51933 af6a286b
+step 56 "@pulse 12"
+rng 51933 af6a286b
+step 57 "@as god"
+rng 51933 af6a286b
+step 58 "cast curse purser"
+out god "\n\r<100hp 29925m 100mv> \xff\xf9"
+out purse "\n\rSomeone utters the words, 'judifgz'.\n\rJoin a clan if you want to kill players.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod utters the words, 'judifgz'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51937 98fa3ef8
+step 59 "@pulse 24"
+rng 51937 98fa3ef8
+step 60 "@as purse"
+rng 51937 98fa3ef8
+step 61 "heal curse"
+out god "\n\rThe healer utters the words 'candussido judifgz'.\n\rPurser looks more relaxed.\n\r\n\r<100hp 29925m 100mv> \xff\xf9"
+out purse "Someone utters the words 'candussido judifgz'.\n\rThe curse wears off.\n\rYou feel better.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'candussido judifgz'.\n\rPurser looks more relaxed.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51940 58237e7d
+step 62 "@pulse 12"
+rng 51940 58237e7d
+step 63 "heal mana"
+out god "\n\rThe healer utters the words 'energizer'.\n\r\n\r<100hp 29925m 100mv> \xff\xf9"
+out purse "Someone utters the words 'energizer'.\n\rA warm glow passes through you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'energizer'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51942 dc85fa41
+step 64 "@pulse 12"
+rng 51942 dc85fa41
+step 65 "heal energize"
+out god "\n\rThe healer utters the words 'energizer'.\n\r\n\r<100hp 29925m 100mv> \xff\xf9"
+out purse "Someone utters the words 'energizer'.\n\rA warm glow passes through you.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'energizer'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 66 "@pulse 12"
+rng 51944 0b11b767
+step 67 "heal refresh"
+out god "\n\rThe healer utters the words 'candusima'.\n\r\n\r<100hp 29925m 100mv> \xff\xf9"
+out purse "Someone utters the words 'candusima'.\n\rYou feel fully refreshed!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'candusima'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 68 "@pulse 12"
+rng 51944 0b11b767
+step 69 "heal moves"
+out god "\n\rThe healer utters the words 'candusima'.\n\r\n\r<100hp 29925m 100mv> \xff\xf9"
+out purse "Someone utters the words 'candusima'.\n\rYou feel fully refreshed!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe healer utters the words 'candusima'.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51944 0b11b767
+step 70 "@pulse 12"
+rng 51944 0b11b767
+step 71 "@state"
+state room 3700 light 2 people mob player player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char mob 3012 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 335 silver 2940 act 69271555 affected_by 168 train 0 on 0 stats 22 21 24 22 21
+state   affect 80 level 40 duration -1 location 0 modifier 0 bitvector 128
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 114 silver 3 act 65536 affected_by 8392705 train 1 on 0 stats 19 13 13 13 13
+state   affect 71 level 44 duration 60 location 1 modifier -5 bitvector 8388608
+state   affect 72 level 59 duration 60 location 1 modifier -2 bitvector 4096
+state   affect 4 level 59 duration 61 location 18 modifier -4 bitvector 1
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 29925/30000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+rng 51944 0b11b767

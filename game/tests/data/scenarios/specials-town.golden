@@ -1,0 +1,369 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "goto 3700"
+out god "Entrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "@connect out"
+rng 51895 7f5599b5
+step 9 "Outlaw"
+out out "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 10 "psswrd"
+out out "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 11 "@return"
+out out "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@return"
+out out "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect purse"
+rng 51895 7f5599b5
+step 14 "Purser"
+out purse "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out purse "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out out "\n\rPurser has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@return"
+out purse "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@connect dec"
+rng 51895 7f5599b5
+step 19 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 20 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 21 "@return"
+out out "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPurser the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 22 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "@connect hero"
+rng 51895 7f5599b5
+step 24 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 25 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 26 "@return"
+out out "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rHeroic has entered the game.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rPurser the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "@as god"
+rng 51895 7f5599b5
+step 29 "transfer outlaw 3700"
+out god "Outlaw arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rOutlaw disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rOutlaw disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOutlaw disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "transfer purser 3700"
+out god "Purser arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rPurser arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPurser disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rPurser disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "transfer heroic 3700"
+out god "Heroic arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rHeroic arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out purse "\n\rHeroic arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rHeroic disappears in a mushroom cloud.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rPurser the Recruit is here.\n\r(KILLER) (THIEF) Outlaw the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 32 "set char outlaw hp 5000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 33 "restore outlaw"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod has restored you.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 34 "set char heroic hp 30000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 35 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 36 "@mob 3064 3700"
+rng 51898 d55fddad
+step 37 "@obj 3001 3700"
+rng 51898 d55fddad
+step 38 "force drunk get bottle"
+out god "The drunk gets a bottle of beer.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe drunk gets a bottle of beer.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe drunk gets a bottle of beer.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe drunk gets a bottle of beer.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51898 d55fddad
+step 39 "slay drunk"
+out god "You slay him in cold blood!\n\rYou hear the drunk's death cry.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod slays the drunk in cold blood!\n\rYou hear the drunk's death cry.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod slays the drunk in cold blood!\n\rYou hear the drunk's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou hear something's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod slays the drunk in cold blood!\n\rYou hear the drunk's death cry.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51900 e9723077
+step 40 "@mob 3062 3700"
+rng 51902 fdba09ec
+step 41 "@spec 2"
+spec 1 0
+rng 51902 fdba09ec
+step 42 "purge"
+out god "The beastly fido savagely devours a corpse.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe beastly fido savagely devours a corpse.\n\rSmokegod purges the room!\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe beastly fido savagely devours a corpse.\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe beastly fido savagely devours a corpse.\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51902 fdba09ec
+step 43 "@obj 3001 3700"
+rng 51902 fdba09ec
+step 44 "@obj 3005 3700"
+rng 51902 fdba09ec
+step 45 "@obj 3009 3700"
+rng 51902 fdba09ec
+step 46 "@mob 3061 3700"
+rng 51906 1b2d656f
+step 47 "force janitor sleep"
+out god "The janitor goes to sleep.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe janitor goes to sleep.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe janitor goes to sleep.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe janitor goes to sleep.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 48 "@spec"
+spec 0
+rng 51906 1b2d656f
+step 49 "force janitor wake"
+out god "The janitor wakes and stands up.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe janitor wakes and stands up.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe janitor wakes and stands up.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe janitor wakes and stands up.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 50 "@spec 3"
+spec 1 0 0
+rng 51906 1b2d656f
+step 51 "purge"
+out god "The janitor picks up some trash.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe janitor picks up some trash.\n\rSmokegod purges the room!\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe janitor picks up some trash.\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe janitor picks up some trash.\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51906 1b2d656f
+step 52 "@mob 3011 3700"
+rng 51906 1b2d656f
+step 53 "@spec"
+spec 1
+rng 51947 452c3f8e
+step 54 "@spec"
+spec 0
+rng 51947 452c3f8e
+step 55 "peace"
+out god "Hassan yells 'Outlaw is a KILLER!  PROTECT THE INNOCENT!  MORE BLOOOOD!!!'\n\rHassan's crush scratches Outlaw.\n\rHassan's crush scratches Outlaw.\n\rHassan's crush scratches Outlaw.\n\rHassan disarms Outlaw!\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rHassan yells 'Outlaw is a KILLER!  PROTECT THE INNOCENT!  MORE BLOOOOD!!!'\n\rHassan's crush scratches you.\n\rHassan's crush scratches you.\n\rHassan's crush scratches you.\n\rHassan DISARMS you and sends your weapon flying!\n\r\n\r<4857hp 102m 106mv> \xff\xf9"
+out purse "\n\rHassan yells 'Outlaw is a KILLER!  PROTECT THE INNOCENT!  MORE BLOOOOD!!!'\n\rHassan's crush scratches Outlaw.\n\rHassan's crush scratches Outlaw.\n\rHassan's crush scratches Outlaw.\n\rHassan disarms Outlaw!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rHassan yells 'Outlaw is a KILLER!  PROTECT THE INNOCENT!  MORE BLOOOOD!!!'\n\rHassan's crush scratches Outlaw.\n\rHassan's crush scratches Outlaw.\n\rHassan's crush scratches Outlaw.\n\rHassan disarms Outlaw!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51947 452c3f8e
+step 56 "@pulse 12"
+rng 51947 452c3f8e
+step 57 "pardon outlaw killer"
+out god "Killer flag removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rYou are no longer a KILLER.\n\r\n\r<4857hp 102m 106mv> \xff\xf9"
+rng 51947 452c3f8e
+step 58 "@mob 3060 3700"
+rng 51967 51b9fae8
+step 59 "@spec"
+spec 1
+rng 51981 9bd555ac
+step 60 "peace"
+out god "The cityguard yells 'Outlaw is a THIEF!  PROTECT THE INNOCENT!!  BANZAI!!'\n\rThe cityguard's punch scratches Outlaw.\n\rThe cityguard falls flat on his face.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe cityguard yells 'Outlaw is a THIEF!  PROTECT THE INNOCENT!!  BANZAI!!'\n\rThe cityguard's punch scratches you.\n\rYou evade the cityguard's bash, causing him to fall flat on his face.\n\r\n\r<4845hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe cityguard yells 'Outlaw is a THIEF!  PROTECT THE INNOCENT!!  BANZAI!!'\n\rThe cityguard's punch scratches Outlaw.\n\rThe cityguard falls flat on his face.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe cityguard yells 'Outlaw is a THIEF!  PROTECT THE INNOCENT!!  BANZAI!!'\n\rThe cityguard's punch scratches Outlaw.\n\rThe cityguard falls flat on his face.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51981 9bd555ac
+step 61 "@pulse 12"
+rng 51981 9bd555ac
+step 62 "pardon outlaw thief"
+out god "Thief flag removed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rYou are no longer a THIEF.\n\r\n\r<4845hp 102m 106mv> \xff\xf9"
+rng 51981 9bd555ac
+step 63 "@spec"
+spec 0
+rng 51981 9bd555ac
+step 64 "@mob 3062 3700"
+rng 51983 95b68061
+step 65 "force fido kill heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou dodge the beastly fido's attack.\n\rThe beastly fido is in excellent condition. \n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 51993 04c2ec02
+step 66 "@mob 3064 3700"
+rng 51998 4a94600f
+step 67 "force drunk kill heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51998 4a94600f
+step 68 "@pulse 12"
+rng 51998 4a94600f
+step 69 "@mob 3060 3700"
+rng 52017 c2b6aaa6
+step 70 "@spec"
+spec 1
+rng 52024 919901b6
+step 71 "peace"
+out god "\n\rThe cityguard screams 'PROTECT THE INNOCENT!!  BANZAI!!\n\rThe cityguard's punch does UNSPEAKABLE things to the beastly fido!\n\rThe beastly fido is DEAD!!\n\rYou hear the beastly fido's death cry.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe cityguard screams 'PROTECT THE INNOCENT!!  BANZAI!!\n\rThe cityguard's punch does UNSPEAKABLE things to the beastly fido!\n\rThe beastly fido is DEAD!!\n\rYou hear the beastly fido's death cry.\n\r\n\r<4845hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe cityguard screams 'PROTECT THE INNOCENT!!  BANZAI!!\n\rThe cityguard's punch does UNSPEAKABLE things to the beastly fido!\n\rThe beastly fido is DEAD!!\n\rYou hear the beastly fido's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rYou hear something's death cry.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe cityguard screams 'PROTECT THE INNOCENT!!  BANZAI!!\n\rThe cityguard's punch does UNSPEAKABLE things to the beastly fido!\n\rThe beastly fido is DEAD!!\n\rYou hear the beastly fido's death cry.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52024 919901b6
+step 72 "@pulse 12"
+rng 52024 919901b6
+step 73 "purge"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod purges the room!\n\r\n\r<4845hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52024 919901b6
+step 74 "restore outlaw"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod has restored you.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+rng 52024 919901b6
+step 75 "restore heroic"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rSmokegod has restored you.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52024 919901b6
+step 76 "@mob 3005 3700"
+rng 52033 d933ea17
+step 77 "@spec 100"
+spec 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0
+rng 52371 8d2331e8
+step 78 "purge"
+out god "Outlaw discovers the thief's hands in his wallet!\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rYou discover someone's hands in your wallet!\n\rSmokegod purges the room!\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rOutlaw discovers someone's hands in his wallet!\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOutlaw discovers someone's hands in his wallet!\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52371 8d2331e8
+step 79 "set char outlaw gold 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52371 8d2331e8
+step 80 "@mob 3163 3700"
+rng 52380 9625d010
+step 81 "@spec"
+spec 0
+rng 52380 9625d010
+step 82 "set char thief level 10"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52380 9625d010
+step 83 "@spec 12"
+spec 1 1 1 0 1 0 0 0 1 1 1 1
+rng 52446 cbb8fa7b
+step 84 "purge"
+out god "Outlaw yells 'Help! I am being attacked by the thief!'\n\rThe thief's stab scratches Outlaw.\n\rOutlaw's coin purse is ripped apart!\n\rOutlaw's coin purse is ripped apart!\n\rOutlaw's coin purse is ripped apart!\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rYou yell 'Help! I am being attacked by the thief!'\n\rThe thief's stab scratches you.\n\rThe thief rips apart your coin purse, spilling your gold!\n\rThe thief rips apart your coin purse, spilling your gold!\n\rThe thief rips apart your coin purse, spilling your gold!\n\rSmokegod purges the room!\n\r\n\r<4987hp 102m 106mv> \xff\xf9"
+out purse "\n\rOutlaw yells 'Help! I am being attacked by the thief!'\n\rThe thief's stab scratches Outlaw.\n\rOutlaw's coin purse is ripped apart!\n\rOutlaw's coin purse is ripped apart!\n\rOutlaw's coin purse is ripped apart!\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOutlaw yells 'Help! I am being attacked by the thief!'\n\rThe thief's stab scratches Outlaw.\n\rOutlaw's coin purse is ripped apart!\n\rOutlaw's coin purse is ripped apart!\n\rOutlaw's coin purse is ripped apart!\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52446 cbb8fa7b
+step 85 "goto 3700"
+out god "Entrance to Mud School [Room 3700]\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rHassan is here, waiting to dispense some justice.\n\rHeroic the Recruit is here.\n\rPurser the Recruit is here.\n\rOutlaw the Recruit is here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod leaves in a swirling mist.\n\rSmokegod appears in a swirling mist.\n\r\n\r<4987hp 102m 106mv> \xff\xf9"
+out purse "\n\rSmokegod leaves in a swirling mist.\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rSmokegod leaves in a swirling mist.\n\rSmokegod appears in a swirling mist.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52446 cbb8fa7b
+step 86 "transfer outlaw 3700"
+out god "Outlaw disappears in a mushroom cloud.\n\rOutlaw arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rHeroic the Recruit is here.\n\rPurser the Recruit is here.\n\r\n\r<4987hp 102m 106mv> \xff\xf9"
+out purse "\n\rOutlaw disappears in a mushroom cloud.\n\rOutlaw arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rOutlaw disappears in a mushroom cloud.\n\rOutlaw arrives from a puff of smoke.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52446 cbb8fa7b
+step 87 "restore outlaw"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rSmokegod has restored you.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+rng 52446 cbb8fa7b
+step 88 "transfer decimus 3700"
+out god "Decimus arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod has transferred you.\n\rEntrance to Mud School\n\r  This is the entrance to the Merc Mud School.  Go north to go through mud\n\rschool.  If you have been here before and want to go directly to the arena,\n\rgo south.\n\r\n\rA sign warns 'You may not pass these doors once you have passed level 5.'\n\rOutlaw the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rHeroic the Recruit is here.\n\rPurser the Recruit is here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rDecimus arrives from a puff of smoke.\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52446 cbb8fa7b
+step 89 "@mob 3707 3700"
+rng 52446 cbb8fa7b
+step 90 "@spec 60"
+spec 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 0 1 0 0 1 0 0 0 1
+rng 52704 a9d19620
+step 91 "purge"
+out god "The adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'candusima'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out out "\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'candusima'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rSmokegod purges the room!\n\r\n\r<5000hp 102m 106mv> \xff\xf9"
+out purse "\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'fido'.\n\rYou feel righteous.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rYou feel someone protecting you.\n\rThe adept of Satin utters the word 'candusima'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe adept of Satin utters the word 'fido'.\n\rYou feel righteous.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rYou feel someone protecting you.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'candusima'.\n\rYou feel fully refreshed!\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rSmokegod purges the room!\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out hero "\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the words 'judicandus sausabru'.\n\rThe adept of Satin utters the words 'judicandus eugzagz'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the word 'candusima'.\n\rThe adept of Satin utters the word 'fido'.\n\rThe adept of Satin utters the word 'abrazak'.\n\rThe adept of Satin utters the words 'judicandus noselacri'.\n\rSmokegod purges the room!\n\r\n\r<30000hp 102m 106mv> \xff\xf9"
+rng 52704 a9d19620
+step 92 "@state"
+state room 3700 light 4 people mob player player player mob player player
+state exit 0 to 3757 info 0 key 0
+state exit 2 to 3744 info 3 key -1
+state exit 5 to 3001 info 0 key 0
+state char mob 3707 pos 8 hit 1000/1000 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2687043 affected_by 132 train 0 on 0 stats 22 17 21 19 20
+state   affect 80 level 30 duration -1 location 0 modifier 0 bitvector 128
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 2 level 30 duration 24 location 17 modifier -20 bitvector 0
+state   affect 3 level 30 duration 36 location 24 modifier -3 bitvector 0
+state   affect 3 level 30 duration 36 location 18 modifier 3 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Outlaw 18 pos 8 hit 5000/5000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 73 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 24 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state char Heroic 51 pos 8 hit 30000/30000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Purser 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 96 silver 483 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 2 level 30 duration 24 location 17 modifier -20 bitvector 0
+state   affect 3 level 30 duration 36 location 24 modifier -3 bitvector 0
+state   affect 3 level 30 duration 36 location 18 modifier 3 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+rng 52704 a9d19620

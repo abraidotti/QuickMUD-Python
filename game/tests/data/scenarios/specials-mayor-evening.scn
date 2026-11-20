@@ -1,0 +1,37 @@
+# The mayor's evening walk, run with @spec as mobile_update would, with the clock at 8 in the evening and only
+# area_update running. The mayor (3143) starts asleep in his office (3138), where Smokegod (60) waits; Heroic (51,
+# 30000 hit points) follows him.
+# - he wakes; Heroic is attacked by him, and while he's fighting he casts as a mage (spec_cast_mage) instead of
+#   walking
+# - peace, and the 51 steps left of the close path: he walks, says his lines, closes the gates, comes home and
+#   goes back to sleep
+@clock 1763400360
+@connect god
+Smokegod
+smoke123
+@return
+@return
+goto 3138
+holylight
+@connect hero
+Heroic
+psswrd
+@return
+@return
+@as god
+transfer heroic 3138
+set char heroic hp 30000
+restore heroic
+@mob 3143 3138
+@spec
+force mayor kill heroic
+@spec 8
+peace
+restore heroic
+@as hero
+follow mayor
+@as god
+@spec 51
+@as hero
+look
+@state
