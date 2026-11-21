@@ -73,6 +73,26 @@ class FixString(unittest.TestCase):
         self.assertEqual(save.fwrite_flag(1 << 32), "")  # past the 32 bits it looks at: nothing (the C's long)
 
 
+class Strings(unittest.TestCase):
+    def test_string_replace(self):
+        from charm.olc.strings import string_replace
+
+        self.assertEqual(string_replace("Planner Delver", "Del", ""), "Planner ver")  # strstr: inside a word
+        self.assertEqual(string_replace("a b a", "a", "c"), "c b a")  # the first only
+        self.assertEqual(string_replace("abc", "x", "y"), "abc")
+        with self.assertRaises(CWouldCrash):
+            string_replace("x" * C.MAX_STRING_LENGTH, "x", "")
+
+    def test_unpad_and_proper(self):
+        from charm.olc.strings import string_proper, string_unpad
+
+        self.assertEqual(string_unpad("  a b  "), "a b")
+        self.assertEqual(string_unpad("\ta "), "\ta")  # spaces only
+        self.assertEqual(string_unpad("   "), "")
+        self.assertEqual(string_proper("ver ver  planner"), "Ver Ver  Planner")
+        self.assertEqual(string_proper(""), "")
+
+
 class Saving(unittest.TestCase):
     def setUp(self):
         self.game = boot_game()

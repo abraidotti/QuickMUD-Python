@@ -1,0 +1,125 @@
+# The area editor (olc.c's framework, olc_act.c's aedit_*), with Planner (security 9) in Midgaard (area 3), and
+# Delver (security 0).
+# - edit, alist, aedit with a bad vnum; in the editor: an empty line and show, version, commands, ? and its
+#   lists (sector, spec, the paged liquid and weapon lists, spells by target), an unknown word to the interpreter
+# - a word that's a prefix of an area flag toggles it first: c (changed), a (added), n (none, no change)
+# - name, credits, filename (too long, two words, good), age, security (over his own, good), vnum, lvnum, uvnum
+#   with each refusal; reset; done; asave changed saves it under its new file name
+# - builder: added to "None"; "del" is found inside "Delver" and leaves "ver" (strstr); "ver" isn't found (the
+#   name is capitalised, and strstr is case-sensitive), so it's added: "Ver Ver"
+# - Delver, named a builder, may edit Midgaard, but not set security over his own; once he's taken off the list
+#   (the area is at security 5), his next line throws him out of the editor
+# - aedit create: a new area is "area0.are" with no credits ("(null)"), saved with asave changed; the syntax
+#   messages; vnums inside Midgaard (3050) are already assigned, but 2990, in the gap below it, isn't, so
+#   "vnum 2990 3050" sets the lower one only; adding and removing the only builder gives "None" back
+# - Delver can't edit Valhalla (area 0) at all
+# - the prompt's %o and %O in the editor and out of it; a mob can't use the editor
+@connect b
+Planner
+smoke123
+@return
+@return
+goto 3001
+force hassan aedit
+force hassan edit area
+force hassan alist
+edit
+edit nonsense
+alist
+aedit 999
+aedit 3
+@return
+show
+version
+commands
+?
+? sector
+? spec
+? liquid
+@return
+? weapon
+@return
+? spells
+? spells all
+? spells attack
+? spells bogus
+? nothing
+xyzzy
+c
+a
+n
+show
+name
+name New Midgaard
+credits
+credits { All } Diku    New Midgaard
+filename toolongname
+filename ab cd
+filename mid2
+age
+age 5
+security 10
+security 5
+builder
+builder delver
+builder del
+builder ver
+builder planner
+builder delver
+vnum 3400 3000
+vnum 3000 3500
+vnum 2900 3399
+lvnum 99999
+lvnum 3000
+uvnum 1
+uvnum 3500
+uvnum 3399
+reset
+look
+show
+@connect d
+Delver
+psswrd
+@return
+aedit create
+aedit
+security 5
+show
+@as b
+builder delver
+@as d
+show
+look
+@as b
+done
+show
+asave changed
+@file mid2.are
+@file area.lst
+prompt <%o %O>
+aedit create
+show
+name Test Area
+filename newarea
+vnum 30000 30099
+filename
+security
+vnum 1
+lvnum
+uvnum
+vnum 3050 3060
+vnum 2990 3050
+uvnum 3050
+lvnum 3050
+builder planner
+builder planner
+done
+@as d
+aedit 0
+@as b
+asave changed
+@file newarea.are
+@file area.lst
+aedit 3
+prompt <%hhp %mm %vmv>
+done
