@@ -15,6 +15,12 @@ from charm.core.strings import upper
 from charm.data import constants as C
 
 
+def _game():
+    from charm.entities import game as game_module
+
+    return game_module.current
+
+
 def _fits(s: str, what: str) -> str:
     if len(s) >= C.MAX_STRING_LENGTH:
         raise CWouldCrash(f"string.c {what}: {len(s)} characters overflow its {C.MAX_STRING_LENGTH}-byte buffer")
@@ -77,13 +83,12 @@ def string_append(ch, target) -> None:
     ch.desc.pString = target
 
 
-# C: string.c string_add [partial]
+# C: string.c string_add
 def string_add(ch, argument: str) -> None:
     """A line typed in the string editor: a dot command, the end (@; a ~ was already made a - by smash_tilde, so it
-    never ends it), or one more line of text. [partial]: ending a mob program's code (the mpedit branch) raises
-    NotPorted until olc_mpcode.c is ported."""
+    never ends it), or one more line of text. Ending a mob program's code gives it to every mob whose programs use
+    that vnum (they hold a copy of the code, as the C's share its pointer)."""
     from charm.commands.interp import one_argument
-    from charm.core.errors import NotPorted
     from charm.core.strings import atoi, smash_tilde, str_cmp
     from charm.net.output import send_to_char
     from charm.olc import ED_MPCODE
@@ -137,8 +142,16 @@ def string_add(ch, argument: str) -> None:
             send_to_char("SEdit:  Invalid dot command.\n\r", ch)
         return
     if argument[:1] in ("~", "@"):
-        if d.editor == ED_MPCODE:
-            raise NotPorted("string.c string_add: the end of a mob program's code (olc_mpcode.c)")
+        if d.editor == ED_MPCODE:  # "for the mobprogs"
+            from charm.olc.save import _hash_order
+
+            mpc = d.pEdit
+            if mpc is not None:
+                for mob in _hash_order(_game().index.mobs.values()):
+                    for prog in mob.mprogs:
+                        if prog.vnum == mpc.vnum:
+                            send_to_char("Editting mob %d.\n\r" % mob.vnum, ch)
+                            prog.code = mpc.code
         d.pString = None
         return
     current = _get(d)

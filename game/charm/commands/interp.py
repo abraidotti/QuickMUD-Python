@@ -81,7 +81,7 @@ _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no comm
 def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
     from charm.commands import alias, comm, healer, info, move, obj, wiz
-    from charm.olc import olc, save as olc_save
+    from charm.olc import mpcode, olc, save as olc_save
     from charm.persist import bans, boards
     from charm.systems import fight, magic, mobcmds, music
     from charm.systems.skills import do_gain, do_groups, do_skills, do_spells
@@ -96,7 +96,7 @@ def _commands() -> dict:
                  do_mob=mobcmds.do_mob, do_mpstat=mobcmds.do_mpstat, do_mpdump=mobcmds.do_mpdump,
                  do_asave=olc_save.do_asave, do_olc=olc.do_olc, do_aedit=olc.do_aedit, do_alist=olc.do_alist,
                  do_redit=olc.do_redit, do_resets=olc.do_resets,
-                 do_oedit=olc.do_oedit)
+                 do_oedit=olc.do_oedit, do_medit=olc.do_medit, do_mpedit=mpcode.do_mpedit)
     return found
 
 
@@ -304,10 +304,11 @@ def substitute_alias(d, argument: str) -> None:
 
 # C: olc.c run_olc_editor [partial]
 def run_olc_editor(d) -> bool:
-    """[partial]: the area, room and object editors run; the others (medit, mpedit, hedit) raise NotPorted."""
+    """[partial]: every editor runs but the help editor (hedit), which raises NotPorted."""
     from charm.core.errors import NotPorted
-    from charm.olc import ED_AREA, ED_OBJECT, ED_ROOM
-    from charm.olc.olc import aedit, oedit, redit
+    from charm.olc import ED_AREA, ED_HELP, ED_MOBILE, ED_MPCODE, ED_OBJECT, ED_ROOM
+    from charm.olc.mpcode import mpedit
+    from charm.olc.olc import aedit, medit, oedit, redit
 
     if d.editor == ED_AREA:
         aedit(d.character, d.incomm)
@@ -318,6 +319,12 @@ def run_olc_editor(d) -> bool:
     if d.editor == ED_OBJECT:
         oedit(d.character, d.incomm)
         return True
-    if d.editor in (4, 5, 6):  # ED_MOBILE .. ED_HELP
+    if d.editor == ED_MOBILE:
+        medit(d.character, d.incomm)
+        return True
+    if d.editor == ED_MPCODE:
+        mpedit(d.character, d.incomm)
+        return True
+    if d.editor == ED_HELP:
         raise NotPorted(f"olc.c run_olc_editor: editor {d.editor}")
     return False

@@ -1,7 +1,7 @@
 """olc.c: the online builder's framework. 'edit' (do_olc) and the do_*edit commands put a connection in an editor;
 while it's there, every line goes to that editor (run_olc_editor, from the game loop), which runs one of its own
-commands or, failing that, the ordinary interpreter. The area, room and object editors are here, with the reset
-commands; the others raise NotPorted.
+commands or, failing that, the ordinary interpreter. The area, room, object and mob editors are here, with the
+reset commands (the mob program editor is olc_mpcode.c's, in mpcode.py); the help editor raises NotPorted.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -55,6 +55,22 @@ def _oedit_table():
             ("?", act.show_help), ("version", act.show_version))
 
 
+def _medit_table():
+    """medit_table, in the C's order."""
+    return (("alignment", act.medit_align), ("commands", show_commands), ("create", act.medit_create),
+            ("desc", act.medit_desc), ("level", act.medit_level), ("long", act.medit_long),
+            ("name", act.medit_name), ("shop", act.medit_shop), ("short", act.medit_short),
+            ("show", act.medit_show), ("spec", act.medit_spec), ("sex", act.medit_sex), ("act", act.medit_act),
+            ("affect", act.medit_affect), ("armor", act.medit_ac), ("form", act.medit_form),
+            ("part", act.medit_part), ("imm", act.medit_imm), ("res", act.medit_res), ("vuln", act.medit_vuln),
+            ("material", act.medit_material), ("off", act.medit_off), ("size", act.medit_size),
+            ("hitdice", act.medit_hitdice), ("manadice", act.medit_manadice), ("damdice", act.medit_damdice),
+            ("race", act.medit_race), ("position", act.medit_position), ("wealth", act.medit_gold),
+            ("hitroll", act.medit_hitroll), ("damtype", act.medit_damtype), ("group", act.medit_group),
+            ("addmprog", act.medit_addmprog), ("delmprog", act.medit_delmprog), ("?", act.show_help),
+            ("version", act.show_version))
+
+
 # C: olc.c olc_ed_name
 def olc_ed_name(ch) -> str:
     """The prompt's %o."""
@@ -89,7 +105,13 @@ def show_commands(ch, argument: str) -> bool:
         show_olc_cmds(ch, _redit_table())
     elif editor == ED_OBJECT:
         show_olc_cmds(ch, _oedit_table())
-    elif editor in (ED_MOBILE, ED_MPCODE, ED_HELP):
+    elif editor == ED_MOBILE:
+        show_olc_cmds(ch, _medit_table())
+    elif editor == ED_MPCODE:
+        from charm.olc.mpcode import _table
+
+        show_olc_cmds(ch, _table())
+    elif editor == ED_HELP:
         raise NotPorted(f"olc.c show_commands: editor {editor}")
     return False
 
@@ -153,6 +175,12 @@ def do_olc(ch, argument: str) -> None:
                 do_redit(ch, argument)
             elif fun == "do_oedit":
                 do_oedit(ch, argument)
+            elif fun == "do_medit":
+                do_medit(ch, argument)
+            elif fun == "do_mpedit":
+                from charm.olc.mpcode import do_mpedit
+
+                do_mpedit(ch, argument)
             else:
                 raise NotPorted(f"olc.c do_olc: {fun}")
             return
@@ -528,3 +556,70 @@ def do_oedit(ch, argument: str) -> None:
             ch.desc.editor = ED_OBJECT
         return
     send_to_char("OEdit:  There is no default object to edit.\n\r", ch)
+
+
+# C: olc.c medit
+def medit(ch, argument: str) -> None:
+    """A line typed in the mob editor."""
+    from charm.entities.handler import is_builder
+
+    argument = smash_tilde(argument)
+    arg = argument
+    argument, command = one_argument(argument)
+    p = ch.desc.pEdit
+    area = p.area
+    if not is_builder(ch, area):
+        send_to_char("MEdit: Insufficient security to modify area.\n\r", ch)
+        edit_done(ch)
+        return
+    if str_cmp(command, "done"):
+        edit_done(ch)
+        return
+    if command == "":
+        act.medit_show(ch, argument)
+        return
+    for name, fun in _medit_table():  # "Search Table and Dispatch Command."
+        if str_prefix(command, name):
+            if fun(ch, argument):
+                area.area_flags |= C.AREA_CHANGED
+            return
+    interpret(ch, arg)  # "Default to Standard Interpreter."
+
+
+# C: olc.c do_medit
+def do_medit(ch, argument: str) -> None:
+    """medit <vnum> or medit create <vnum> (the create syntax check looks at the word "create", not the vnum, so
+    only a vnum of 0 or none gets it; its area message says "OEdit")."""
+    from charm.entities.handler import is_builder
+
+    argument, arg1 = one_argument(argument)
+    if ch.is_npc:
+        return
+    if is_number(arg1):
+        p = _game().index.get_mob_index(atoi(arg1))
+        if p is None:
+            send_to_char("MEdit:  That vnum does not exist.\n\r", ch)
+            return
+        if not is_builder(ch, p.area):
+            send_to_char("Insufficient security to modify mobs.\n\r", ch)
+            return
+        ch.desc.pEdit = p
+        ch.desc.editor = ED_MOBILE
+        return
+    if str_cmp(arg1, "create"):
+        value = atoi(argument)
+        if arg1 == "" or value == 0:
+            send_to_char("Syntax:  edit mobile create [vnum]\n\r", ch)
+            return
+        area = act.get_vnum_area(value)
+        if area is None:
+            send_to_char("OEdit:  That vnum is not assigned an area.\n\r", ch)
+            return
+        if not is_builder(ch, area):
+            send_to_char("Insufficient security to modify mobs.\n\r", ch)
+            return
+        if act.medit_create(ch, argument):
+            area.area_flags |= C.AREA_CHANGED
+            ch.desc.editor = ED_MOBILE
+        return
+    send_to_char("MEdit:  There is no default mobile to edit.\n\r", ch)
