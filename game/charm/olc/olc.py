@@ -404,7 +404,7 @@ def do_resets(ch, argument: str) -> None:
     as the container unless one is given."""
     from charm.core.errors import CWouldCrash
     from charm.entities.handler import is_builder
-    from charm.olc.mem import new_reset_data
+    from charm.olc.mem import free_reset_data, new_reset_data
 
     index = _game().index
     args = []
@@ -430,12 +430,12 @@ def do_resets(ch, argument: str) -> None:
             send_to_char("No resets in this area.\n\r", ch)
             return
         if insert_loc - 1 <= 0:
-            room.resets.pop(0)
+            free_reset_data(room.resets.pop(0))
         elif insert_loc > len(room.resets):
             send_to_char("Reset not found.\n\r", ch)
             return
         else:
-            room.resets.pop(insert_loc - 1)
+            free_reset_data(room.resets.pop(insert_loc - 1))
         send_to_char("Reset deleted.\n\r", ch)
     elif (str_cmp(arg2, "mob") or str_cmp(arg2, "obj")) and is_number(arg3):  # "Add a reset."
         rs = new_reset_data()

@@ -89,6 +89,12 @@ class Game:
     mayor_path: str | None = None
     mayor_pos: int = 0
     mayor_move: bool = False
+    # db.c's top_* counters and the boot's string space (areafile Counts, copied at boot), which memory prints;
+    # OLC's constructors raise them for fresh memory, not for what they take back off a free list (mem.c)
+    top: object | None = None
+    free_resets: int = 0  # reset_free
+    free_exits: int = 0  # exit_free
+    free_shops: int = 0  # shop_free
 
 
 # LATER: the C reads its globals from anywhere; a few functions that don't take a Game (room_is_dark, called from

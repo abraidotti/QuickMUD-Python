@@ -207,6 +207,60 @@ class RoomEditor(unittest.TestCase):
             do_resets(self.ch, "1 obj 1 inside 99999")
 
 
+class StringSpaceAndOdds(unittest.TestCase):
+    def test_strings_are_kept_once(self):
+        from charm.world.areafile.reader import Reader, StringSpace
+
+        space = StringSpace()
+        r = Reader("one~ two~ one~ ~ three\n")
+        r.space = space
+        for _ in range(4):
+            r.read_string()
+        r.read_string_eol()
+        self.assertEqual((space.count, space.used), (3, (8 + 3 + 1) * 2 + (8 + 5 + 1)))  # "" and a repeat take nothing
+
+    def test_the_space_runs_out(self):
+        from charm.world.areafile.reader import MAX_STRING, AreaParseError, Reader, StringSpace
+
+        space = StringSpace()
+        space.used = MAX_STRING - C.MAX_STRING_LENGTH - 8  # just room for one more check
+        r = Reader("a~ b~")
+        r.space = space
+        r.read_string()
+        with self.assertRaises(AreaParseError) as e:
+            r.read_string()
+        self.assertIn("Fread_string: MAX_STRING 1413120 exceeded.", str(e.exception))
+
+    def test_slot_lookup(self):
+        from charm.data.skills import SKILL_TABLE
+        from charm.systems.magic import slot_lookup
+
+        sn = next(k for k, s in enumerate(SKILL_TABLE) if s.slot > 0)
+        self.assertEqual(slot_lookup(SKILL_TABLE[sn].slot), sn)
+        self.assertEqual(slot_lookup(0), -1)
+        self.assertEqual(slot_lookup(99999), -1)
+        with log.capture(), self.assertRaises(SystemExit):
+            slot_lookup(99999, booting=True)
+
+    def test_a_dazed_exotic_weapon_reads_before_the_table(self):
+        from charm.entities.handler import get_skill
+        from charm.entities.things import new_char
+
+        ch = new_char(0)
+        ch.daze = 1
+        with self.assertRaises(CWouldCrash):
+            get_skill(ch, -1)
+
+    def test_improving_an_exotic_weapon_reads_before_the_table(self):
+        from charm.entities.things import new_char, new_pcdata
+        from charm.systems.skills import check_improve
+
+        ch = new_char(0)
+        ch.pcdata = new_pcdata()
+        with self.assertRaises(CWouldCrash):  # not the last skill, as Python's [-1] would read
+            check_improve(ch, -1, False, 2)  # latent: no caller passes -1 (#104)
+
+
 class Saving(unittest.TestCase):
     def setUp(self):
         self.game = boot_game()

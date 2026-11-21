@@ -24,6 +24,7 @@ MEMORY_LINES = {
 }
 _MOBS = re.compile(r"^Mobs\s+(\d+)\((\d+) new format\)", re.M)
 _OBJS = re.compile(r"^Objs\s+(\d+)\((\d+) new format\)", re.M)
+_STRINGS = re.compile(r"^Strings\s+(\d+) strings of\s+(\d+) bytes", re.M)
 _TIMESTAMP = re.compile(r"^\w{3} \w{3} [ \d]\d \d\d:\d\d:\d\d \d{4} :: ")
 
 
@@ -35,7 +36,8 @@ def parse_memory(text: str) -> Counts:
         if not m:
             raise ValueError(f"no '{label}' line in the memory output")
         setattr(c, attr, int(m.group(1)))
-    for rx, total, new in ((_MOBS, "mobs", "mobs_new"), (_OBJS, "objects", "objects_new")):
+    for rx, total, new in ((_MOBS, "mobs", "mobs_new"), (_OBJS, "objects", "objects_new"),
+                           (_STRINGS, "strings", "string_bytes")):
         m = rx.search(text)
         if not m:
             raise ValueError(f"no '{total}' line in the memory output")

@@ -353,6 +353,15 @@ class Player:
 
 
 EXPECT_STOP = "# expect: stopped NotPorted"
+# Differences kept on purpose, which a comparison sets aside: memory's Perms line counts the C's alloc_perm blocks,
+# and Python's objects (#91, decision 6).
+KEPT = (re.compile(r"Perms +\d+ blocks  of +\d+ bytes\."),)
+
+
+def _kept(line: str) -> str:
+    for rx in KEPT:
+        line = rx.sub("Perms (kept different)", line)
+    return line
 
 
 def difference(c_lines: list[str], py_lines: list[str], text: str) -> str | None:
@@ -370,7 +379,7 @@ def difference(c_lines: list[str], py_lines: list[str], text: str) -> str | None
         want = want[:len(got)]
     # Otherwise a "stopped" line has no match in the C's output, so it shows as the difference below.
     for i, (a, b) in enumerate(zip(want, got)):
-        if a != b:
+        if a != b and _kept(a) != _kept(b):
             step = next((want[j] for j in range(i, -1, -1) if want[j].startswith("step ")), "(before any step)")
             return f"line {i + 1}, at {step}:\n    C:      {a[:300]}\n    Python: {b[:300]}"
     if len(want) != len(got):

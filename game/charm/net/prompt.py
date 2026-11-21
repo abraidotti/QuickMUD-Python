@@ -1,8 +1,5 @@
 """bust_a_prompt: a playing character's prompt, from their prompt string's % codes.
 
-[partial]: %X (experience to the next level) needs exp_per_level and the player's creation points; it raises
-NotPorted.
-
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
 (c) 1993-98 Russ Taylor. Ported from src/comm.c. Licence terms: README.md#licence-terms and doc/.
@@ -10,7 +7,6 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 
 from __future__ import annotations
 
-from charm.core.errors import NotPorted
 from charm.data import constants as C
 from charm.entities.handler import can_see_room, is_affected, is_evil, is_good, is_immortal, room_is_dark
 from charm.net.output import colourconv, send_to_char, write_to_buffer
@@ -42,7 +38,9 @@ def _code(code: str, ch) -> str:
     if code == "X":
         if ch.is_npc:
             return "0"
-        raise NotPorted("comm.c bust_a_prompt: %X (exp_per_level)")
+        from charm.systems.skills import exp_per_level
+
+        return "%d" % ((ch.level + 1) * exp_per_level(ch, ch.pcdata.points) - ch.exp)
     if code == "a":
         if ch.level > 9:
             return str(ch.alignment)
@@ -68,7 +66,7 @@ def _code(code: str, ch) -> str:
     return " "
 
 
-# C: comm.c bust_a_prompt [partial]
+# C: comm.c bust_a_prompt
 def bust_a_prompt(ch) -> None:
     s = ch.prompt
     if s is None or s == "":

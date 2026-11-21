@@ -1,0 +1,51 @@
+# memory and dump (db.c), with Planner (security 9) in Midgaard. memory's counts are the C's allocation counters:
+# fresh memory raises them, a thing taken back off a free list doesn't. Its Strings line is the boot's string
+# space (17111 strings for the stock world), and its Perms line is a difference kept on purpose, which the
+# comparison sets aside (#91, decision 6).
+# - memory at boot; then after a new room (Rooms), a two-way link (Exits +2), deleting it (two exits freed) and
+#   linking again (the freed ones reused: Exits stays), a reset added, deleted and added again (Resets +1 once),
+#   a new mob, object, area and mob program, and a shop assigned, removed and assigned again (Shops +1 once)
+# - dump (level 60: Smokegod) writes mob.dmp and obj.dmp (read back), and mem.dmp, whose sizes are a kept difference (not read)
+@connect b
+Planner
+smoke123
+@return
+@return
+scroll 0
+goto 3001
+memory
+edit room create 3036
+memory
+west link 3001
+memory
+west delete
+west link 3001
+memory
+done
+resets 1 mob 3062
+resets 1 delete
+resets 1 mob 3062
+memory
+medit create 3013
+done
+oedit create 3007
+done
+aedit create
+done
+mpedit create 3050
+done
+memory
+medit 3062
+shop assign
+shop remove
+shop assign
+done
+memory
+@connect god
+Smokegod
+smoke123
+@return
+@return
+dump
+@file mob.dmp
+@file obj.dmp

@@ -1461,3 +1461,83 @@ def do_areas(ch, argument: str) -> None:
     for k in range(half):
         right = areas[k + half] if k + half < len(areas) else None
         send_to_char("%-39s%-39s\n\r" % (_s(areas[k].credits), _s(right.credits) if right is not None else ""), ch)
+
+
+def _python_blocks() -> tuple[int, int]:
+    """Python's own figures for memory's "Perms" line, a difference kept on purpose (#91, decision 6): the objects
+    the garbage collector knows of, and their sizes. The C counts its alloc_perm blocks, which Python has none of."""
+    import gc
+
+    objects = gc.get_objects()
+    return len(objects), sum(sys.getsizeof(o) for o in objects)
+
+
+# C: db.c do_memory
+def do_memory(ch, argument: str) -> None:
+    """The world's allocation counts, as the C keeps them (Game.top), the boot's string space, and (kept
+    different) Python's objects in the Perms line."""
+    from charm.entities import game as game_module
+
+    game = game_module.current
+    t = game.top
+    for label, value in (("Affects", t.affects), ("Areas", t.areas), ("ExDes", t.extra_descr), ("Exits", t.exits),
+                         ("Helps", t.helps), ("Socials", t.socials)):
+        send_to_char("%-7s %5d\n\r" % (label, value), ch)
+    send_to_char("Mobs    %5d(%d new format)\n\r" % (t.mobs, t.mobs_new), ch)
+    send_to_char("(in use)%5d\n\r" % game.mobile_count, ch)
+    send_to_char("Objs    %5d(%d new format)\n\r" % (t.objects, t.objects_new), ch)
+    for label, value in (("Resets", t.resets), ("Rooms", t.rooms), ("Shops", t.shops)):
+        send_to_char("%-7s %5d\n\r" % (label, value), ch)
+    send_to_char("Strings %5d strings of %7d bytes (max %d).\n\r" % (t.strings, t.string_bytes, 1413120), ch)
+    send_to_char("Perms   %5d blocks  of %7d bytes.\n\r" % _python_blocks(), ch)
+
+
+# C: db.c do_dump
+def do_dump(ch, argument: str) -> None:
+    """mem.dmp, mob.dmp and obj.dmp, and nothing said. mob.dmp and obj.dmp are as the C writes them. mem.dmp has
+    the C's counts, but its byte figures are Python's (a count times one object's size) and its free lists are
+    empty: a difference kept on purpose (#91, decision 6), as the C's come from sizeof and its free lists."""
+    from charm.core.errors import CWouldCrash
+    from charm.entities import game as game_module
+    from charm.entities.game import c_path
+
+    game = game_module.current
+    index = game.index
+
+    def write(name: str, text: str) -> None:
+        try:
+            c_path(game, name).write_bytes(text.encode("latin-1"))
+        except OSError:
+            raise CWouldCrash(f"db.c do_dump: can't open {name}, and fprintf gets a NULL file") from None
+
+    def size(things) -> int:
+        return sys.getsizeof(things[0]) if things else 0
+
+    chars, protos, objs = game.char_list, list(index.objs.values()), game.object_list
+    pcs = sum(1 for c in chars if c.pcdata is not None)
+    affects = (sum(len(c.affected) for c in chars) + sum(len(p.affected) for p in protos)
+               + sum(len(o.affected) for o in objs))
+    all_affects = ([a for c in chars for a in c.affected] + [a for p in protos for a in p.affected]
+                   + [a for o in objs for a in o.affected])
+    mobs = list(index.mobs.values())
+    rooms = list(index.rooms.values())
+    exits = [e for r in rooms for e in r.exit if e is not None]
+    pcdata = [c.pcdata for c in chars if c.pcdata is not None]
+    out = ["MobProt    %4d (%8d bytes)\n" % (game.top.mobs, game.top.mobs * size(mobs)),
+           "Mobs    %4d (%8d bytes), %2d free (%d bytes)\n" % (len(chars), len(chars) * size(chars), 0, 0),
+           "Pcdata    %4d (%8d bytes), %2d free (%d bytes)\n" % (pcs, pcs * size(pcdata), 0, 0),
+           "Descs    %4d (%8d bytes), %2d free (%d bytes)\n" % (len(game.descriptor_list), len(game.descriptor_list)
+                                                              * size(game.descriptor_list), 0, 0),
+           "ObjProt    %4d (%8d bytes)\n" % (game.top.objects, game.top.objects * size(protos)),
+           "Objs    %4d (%8d bytes), %2d free (%d bytes)\n" % (len(objs), len(objs) * size(objs), 0, 0),
+           "Affects    %4d (%8d bytes), %2d free (%d bytes)\n" % (affects, affects * size(all_affects), 0, 0),
+           "Rooms    %4d (%8d bytes)\n" % (game.top.rooms, game.top.rooms * size(rooms)),
+           "Exits    %4d (%8d bytes)\n" % (game.top.exits, game.top.exits * size(exits))]
+    write("mem.dmp", "".join(out))
+    # "start printing out mobile data": every prototype, by vnum
+    write("mob.dmp", "\nMobile Analysis\n---------------\n" + "".join(
+        "#%-4d %3d active %3d killed     %s\n" % (p.vnum, p.count, p.killed, p.short_descr)
+        for _, p in sorted(index.mobs.items())))
+    write("obj.dmp", "\nObject Analysis\n---------------\n" + "".join(
+        "#%-4d %3d active %3d reset      %s\n" % (p.vnum, p.count, p.reset_num, p.short_descr)
+        for _, p in sorted(index.objs.items())))

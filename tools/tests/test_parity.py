@@ -56,8 +56,9 @@ class ParseTest(unittest.TestCase):
     def test_parse_memory_handles_the_games_line_endings(self):
         c = parity.parse_memory("Affects   1\n\rAreas 2\n\rExDes 3\n\rExits 4\n\rHelps 5\n\rSocials 6\n\r"
                                 "Mobs      7(7 new format)\n\rObjs 8(6 new format)\n\rResets 9\n\rRooms 10\n\r"
-                                "Shops 11\n\r")
+                                "Shops 11\n\rStrings    12 strings of     130 bytes (max 1413120).\n\r")
         self.assertEqual((c.affects, c.mobs, c.objects_new, c.shops), (1, 7, 6, 11))
+        self.assertEqual((c.strings, c.string_bytes), (12, 130))
 
     def test_bug_lines_drop_timestamps_and_stop_at_ready(self):
         log = ("Tue Nov 17 18:17:08 2026 :: [*****] BUG: one\n"

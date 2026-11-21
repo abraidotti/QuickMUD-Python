@@ -30,8 +30,11 @@ online builder, copyover and the rest, is 7 PRs or 2026-12-05 (#91). PR 1 of 7 d
 framework (`edit`, `alist`, the editor dispatch) and the area editor. PR 3 of 7 done (#97), rooms: the room editor, the
 reset commands, exits, and the string editor (`string.c`), with `mem.c`'s room, exit and reset constructors; the
 checkpoint after it is on #91, on pace. PR 4 done (#99), objects: the object editor. PR 5 done (#101), mobs: the mob editor
-and the mob program editor (`olc_mpcode.c`). PR 6 done, helps and leftovers: the help editor (`hedit.c`), so every
-editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. Areas and rooms took two PRs where the
+and the mob program editor (`olc_mpcode.c`). PR 6 done (#103), helps and leftovers: the help editor (`hedit.c`),
+so every editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. PR 7 done, memory: `memory` and `dump`
+(the boot's string space modelled, Perms a kept difference), the C functions with no counterpart
+(`charm/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs: copyover and the old area formats are
+left. Areas and rooms took two PRs where the
 plan had one, so P5 is now 8 PRs unless two of the last ones combine.
 
 ## Goal
@@ -236,6 +239,12 @@ and line. Ones that cut across the code are here:
 - **A stronger password hash, in both games** (#30). Passwords are traditional DES crypt: 8 characters count, the
   salt is the first two letters of the name, and the hash is fast to attack. Moving both games to a modern hash
   (with old hashes upgraded at the next login) needs a C change too, so it goes through the refactor plan.
+- **A guard test for negative indexes.** Python's `table[-1]` reads the last element, where the C reads before
+  the start of the array (undefined behaviour). Twice a C index that can be -1 went quietly wrong in the port: a
+  shop's `buy_type` slot (P5 PR 5) and `check_improve`'s `sn` (P5 PR 7). Both now raise `CWouldCrash`. A guard
+  test in `tests/test_guards.py` could flag every subscript whose index might be negative (a variable index into a
+  data table or a C-sized list) unless it carries a marker like `# non-negative:`, as the division guard does.
+  This one doesn't change behaviour, so it needn't wait for parity; it's here so it isn't lost.
 
 ## Phases
 
