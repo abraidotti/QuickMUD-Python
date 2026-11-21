@@ -1,0 +1,64 @@
+# The commands no earlier phase ported: scan (scan.c), flag (flags.c), areas (db.c), commands and wizhelp
+# (interp.c), with Planner (56) and Delver (a mortal), in Midgaard.
+# - scan all around and each way, three rooms deep (the "Looking ... you see:" line is never sent), and a word
+#   that isn't a direction
+# - commands for a mortal and an immortal; wizhelp; areas, with and without an argument
+# - flag: each refusal, then toggling, adding (+), removing (-) and setting (=) a mob's act flags, which stat mob
+#   shows; a sign stuck to the flag's name takes the name with it; a player's plr and comm flags; a first word
+#   that's neither mob nor char does nothing
+@connect b
+Planner
+smoke123
+@return
+@return
+scroll 0
+goto 3014
+scan
+scan north
+scan south
+scan e
+scan up
+scan sideways
+@connect d
+Delver
+psswrd
+@return
+scroll 0
+commands
+scan
+@as b
+commands
+wizhelp
+areas
+areas please
+goto 3001
+flag
+flag mob
+flag mob hassan
+flag mob hassan act
+flag mob nobody act sentinel
+flag mob hassan act bogus
+flag mob hassan bogus sentinel
+flag mob hassan plr holylight
+flag char delver act sentinel
+flag char delver form edible
+flag char delver parts ear
+flag mob hassan comm quiet
+flag mob hassan act sentinel
+stat mob hassan
+flag mob hassan act + aggressive
+stat mob hassan
+flag mob hassan act - aggressive sentinel
+stat mob hassan
+flag mob hassan act = sentinel
+stat mob hassan
+flag mob hassan act +aggressive
+flag mob hassan aff sanctuary
+flag mob hassan resist fire
+flag mob hassan vuln cold
+flag mob hassan immunity acid
+stat mob hassan
+flag char delver plr + holylight
+flag char delver comm + quiet
+stat char delver
+flag bogus hassan act sentinel

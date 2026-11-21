@@ -1445,3 +1445,19 @@ def do_telnetga(ch, argument: str) -> None:
     if ch.is_npc:
         return
     _toggle_comm(ch, C.COMM_TELNET_GA, "Telnet GA removed.\n\r", "Telnet GA enabled.\n\r")
+
+
+# C: db.c do_areas
+def do_areas(ch, argument: str) -> None:
+    """The areas' credits in two columns: the first half of the area list, then the second beside it."""
+    from charm.entities import game as game_module
+    from charm.olc.save import _s
+
+    if argument != "":
+        send_to_char("No argument is used with this command.\n\r", ch)
+        return
+    areas = game_module.current.index.areas
+    half = (len(areas) + 1) // 2  # non-negative: a count
+    for k in range(half):
+        right = areas[k + half] if k + half < len(areas) else None
+        send_to_char("%-39s%-39s\n\r" % (_s(areas[k].credits), _s(right.credits) if right is not None else ""), ch)

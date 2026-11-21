@@ -80,13 +80,13 @@ _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no comm
 
 def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
-    from charm.commands import alias, comm, healer, info, move, obj, wiz
-    from charm.olc import mpcode, olc, save as olc_save
+    from charm.commands import alias, comm, flag, healer, info, move, obj, scan, wiz
+    from charm.olc import hedit, mpcode, olc, save as olc_save
     from charm.persist import bans, boards
     from charm.systems import fight, magic, mobcmds, music
     from charm.systems.skills import do_gain, do_groups, do_skills, do_spells
 
-    found = {name: getattr(mod, name) for mod in (alias, comm, healer, info, move, obj, wiz, fight, magic, music)
+    found = {name: getattr(mod, name) for mod in (alias, comm, flag, healer, info, move, obj, scan, wiz, fight, magic, music)
              for name in dir(mod)
              if name.startswith("do_") and name not in wiz.NOT_COMMANDS}
     found.update(do_board=boards.do_board, do_note=boards.do_note, do_ban=bans.do_ban,
@@ -96,7 +96,8 @@ def _commands() -> dict:
                  do_mob=mobcmds.do_mob, do_mpstat=mobcmds.do_mpstat, do_mpdump=mobcmds.do_mpdump,
                  do_asave=olc_save.do_asave, do_olc=olc.do_olc, do_aedit=olc.do_aedit, do_alist=olc.do_alist,
                  do_redit=olc.do_redit, do_resets=olc.do_resets,
-                 do_oedit=olc.do_oedit, do_medit=olc.do_medit, do_mpedit=mpcode.do_mpedit)
+                 do_oedit=olc.do_oedit, do_medit=olc.do_medit, do_mpedit=mpcode.do_mpedit,
+                 do_hedit=hedit.do_hedit, do_commands=do_commands, do_wizhelp=do_wizhelp)
     return found
 
 
@@ -302,11 +303,11 @@ def substitute_alias(d, argument: str) -> None:
     interpret(d.character, buf)
 
 
-# C: olc.c run_olc_editor [partial]
+# C: olc.c run_olc_editor
 def run_olc_editor(d) -> bool:
-    """[partial]: every editor runs but the help editor (hedit), which raises NotPorted."""
-    from charm.core.errors import NotPorted
+    """The line goes to the editor the connection is in, if any."""
     from charm.olc import ED_AREA, ED_HELP, ED_MOBILE, ED_MPCODE, ED_OBJECT, ED_ROOM
+    from charm.olc.hedit import hedit
     from charm.olc.mpcode import mpedit
     from charm.olc.olc import aedit, medit, oedit, redit
 
@@ -326,5 +327,38 @@ def run_olc_editor(d) -> bool:
         mpedit(d.character, d.incomm)
         return True
     if d.editor == ED_HELP:
-        raise NotPorted(f"olc.c run_olc_editor: editor {d.editor}")
+        hedit(d.character, d.incomm)
+        return True
     return False
+
+
+# C: interp.c do_function
+def do_function(ch, do_fun, argument: str) -> None:
+    """Run a command function on a copy of the argument (the C's copy is so the callee can change it)."""
+    do_fun(ch, argument)
+
+
+def _command_columns(ch, wanted) -> None:
+    from charm.data.commands import CMD_TABLE
+    from charm.entities.handler import get_trust
+    from charm.net.output import send_to_char
+
+    col = 0
+    for cmd in CMD_TABLE:
+        if wanted(cmd.level) and cmd.level <= get_trust(ch) and cmd.show:
+            send_to_char("%-12s" % cmd.name, ch)
+            col += 1
+            if col % 6 == 0:  # non-negative: a count
+                send_to_char("\n\r", ch)
+    if col % 6 != 0:  # non-negative: a count
+        send_to_char("\n\r", ch)
+
+
+# C: interp.c do_commands
+def do_commands(ch, argument: str) -> None:
+    _command_columns(ch, lambda level: level < C.LEVEL_HERO)
+
+
+# C: interp.c do_wizhelp
+def do_wizhelp(ch, argument: str) -> None:
+    _command_columns(ch, lambda level: level >= C.LEVEL_HERO)

@@ -36,6 +36,12 @@ def ctime(t: float) -> str:
     return time.asctime(localtime(t)) + "\n"  # clock: formats the time it's given
 
 
+# C: comm.c bugf
+def bugf(fmt: str, *args: object) -> None:
+    """bug() with a printf format; the text made is then bug()'s format, as in the C."""
+    bug(fmt % args if args else fmt)  # format: sprintf
+
+
 # C: db.c bug [partial]
 def bug(fmt: str, param: object = 0) -> None:
     """``bug(str, param)``: the format takes at most one argument, as in the C. [partial]: the "[*****] FILE: x

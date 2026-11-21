@@ -1,0 +1,168 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect b"
+rng 51872 4ba9daca
+step 2 "Planner"
+out b "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out b "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out b "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out b "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota [Room 3001]\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "scroll 0"
+out b "Paging disabled.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "goto 3014"
+out b "Market Square [Room 3014]\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rA cityguard stands here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 8 "scan"
+out b "Looking around you see:\n\rthe cityguard, right here.\n\rthe beastly fido, nearby to the south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 9 "scan north"
+out b "You peer intently north.\n\rHassan, not far north.\n\rthe healer, off in the distance north.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "scan south"
+out b "You peer intently south.\n\rthe beastly fido, nearby to the south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "scan e"
+out b "You peer intently east.\n\rthe beastly fido, not far east.\n\rthe cityguard, off in the distance east.\n\rthe cityguard, off in the distance east.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "scan up"
+out b "You peer intently up.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "scan sideways"
+out b "Which way do you want to scan?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 14 "@connect d"
+rng 51895 7f5599b5
+step 15 "Delver"
+out d "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 16 "psswrd"
+out d "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 17 "@return"
+out d "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rOn the Concourse\n\r  The concourse continues its path around the city.  The southern gates of the\n\rcity are west of here, and park road lies north.  The northeastern corner of\n\rthe city wall is east.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "scroll 0"
+out d "Paging disabled.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "commands"
+out d "cast        auction     buy         channels    exits       get         \n\rgroup       inventory   kill        look        clan        music       \n\rorder       practice    rest        scan        sit         stand       \n\rtell        unlock      wield       affects     areas       board       \n\rcommands    compare     consider    count       credits     equipment   \n\rexamine     help        info        motd        read        report      \n\rrules       score       skills      socials     show        spells      \n\rstory       time        typo        weather     who         whois       \n\rwizlist     worth       alias       autolist    autoall     autoassist  \n\rautoexit    autogold    autoloot    autosac     autosplit   brief       \n\rcolour      color       combine     compact     description delete      \n\rnofollow    noloot      nosummon    outfit      password    prompt      \n\rscroll      telnetga    title       unalias     wimpy       afk         \n\ranswer      deaf        emote       pmote       gossip      grats       \n\rgtell       note        pose        question    quote       quiet       \n\rreply       replay      say         yell        brandish    close       \n\rdrink       drop        eat         envenom     fill        give        \n\rheal        hold        list        lock        open        pick        \n\rpour        put         quaff       recite      remove      sell        \n\rtake        sacrifice   value       wear        zap         backstab    \n\rbash        berserk     dirt        disarm      flee        kick        \n\rsurrender   trip        enter       follow      gain        groups      \n\rhide        play        quit        recall      save        sleep       \n\rsneak       split       steal       train       visible     wake        \n\rwhere       edit        asave       alist       resets      redit       \n\rmedit       aedit       oedit       mpedit      hedit       \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "scan"
+out d "Looking around you see:\n\rthe cityguard, nearby to the west.\n\rthe cityguard, nearby to the west.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@as b"
+rng 51895 7f5599b5
+step 22 "commands"
+out b "cast        auction     buy         channels    exits       get         \n\rgroup       inventory   kill        look        clan        music       \n\rorder       practice    rest        scan        sit         stand       \n\rtell        unlock      wield       affects     areas       board       \n\rcommands    compare     consider    count       credits     equipment   \n\rexamine     help        info        motd        read        report      \n\rrules       score       skills      socials     show        spells      \n\rstory       time        typo        weather     who         whois       \n\rwizlist     worth       alias       autolist    autoall     autoassist  \n\rautoexit    autogold    autoloot    autosac     autosplit   brief       \n\rcolour      color       combine     compact     description delete      \n\rnofollow    noloot      nosummon    outfit      password    prompt      \n\rscroll      telnetga    title       unalias     wimpy       afk         \n\ranswer      deaf        emote       pmote       gossip      grats       \n\rgtell       note        pose        question    quote       quiet       \n\rreply       replay      say         shout       yell        brandish    \n\rclose       drink       drop        eat         envenom     fill        \n\rgive        heal        hold        list        lock        open        \n\rpick        pour        put         quaff       recite      remove      \n\rsell        take        sacrifice   value       wear        zap         \n\rbackstab    bash        berserk     dirt        disarm      flee        \n\rkick        murder      surrender   trip        enter       follow      \n\rgain        groups      hide        play        quit        recall      \n\rsave        sleep       sneak       split       steal       train       \n\rvisible     wake        where       edit        asave       alist       \n\rresets      redit       medit       aedit       oedit       mpedit      \n\rhedit       \n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 23 "wizhelp"
+out b "at          goto        guild       sockets     wizhelp     flag        \n\rfreeze      force       load        newlock     nochannels  noemote     \n\rnoshout     notell      pecho       purge       restore     teleport    \n\rtransfer    poofin      poofout     gecho       holylight   incognito   \n\rmemory      mwhere      owhere      peace       echo        return      \n\rsnoop       stat        string      switch      wizinvis    vnum        \n\rzecho       clone       wiznet      immtalk     imotd       smote       \n\rprefix      mpdump      mpstat      \n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 24 "areas"
+out b "1 60} ROM     Immortal Zone          0 30} Skylar  High Tower of Sorcery  \n\r5 35} Hatchet New Ofcol              5 15} Raff    Dangerous Neighborhood \n\r5 35} Poohb   The Shire              one } Diku    Limbo                  \n\rAll } Diku    Midgaard               5 35} Chris   The Keep of Mahn-Tor   \n\r1 20} Copper  Plains of the North    5 25} Generic Old Marsh              \n\r5 10} Diku    Haon Dor               5 35} Glop    Mega-City One          \n\r5 10} Copper  In the Air             5 15} Copper  Miden'nir              \n\r5 20} Mahatma Arachnos               1 30} Kahn    Old Thalos             \n\r0 35} Andersen Astral/Githyanki      5 15} PinkF   Mob Factory            \n\r5 30} Raff    Elemental Canyon       5 15} Alfa    Moria                  \n\r0 20} Raff    Dwarven Catacombs      0 35} Conner  New Thalos             \n\r5 25} Copper  Chapel Catacombs       0 35} Fstall  Nirvana                \n\r1  5} Sandman Dwarven Day Care       All } Alfa    Ofcol                  \n\r5 30} Wench   Dragon Tower           5 50} Generic Olympus                \n\r1  5} Furey   Machine Dreams         5-50} Andersen The Great Pyramid     \n\r5 25} Drkside Drow City              1 35} Quifael Quifael's Area         \n\r0 25} Drkside Thalos                 5 30} Diku    Sewer                  \n\r0 25} Anon    Dwarven Kingdom        0 30} Diku    Redferne's Residence   \n\r5 25} Dylan   Dylan's Area           1  5} Hatchet Mud School             \n\r0 20} Anon    Sands of Sorrow        1 10} Generic Smurf Village          \n\r0 30} Doctor  Galaxy                 2 51} Strahd  Descent to Hell        \n\r5 15} Vougon  Gnome Village          0 15} Merc    Troll Den              \n\r5 10} Alfa    Graveyard              5 20} Hatchet Valley of the Elves    \n\r5 20} Alfa    Holy Grove             5 30} Tyrst   Wyvern's Tower         \n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 25 "areas please"
+out b "No argument is used with this command.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 26 "goto 3001"
+out b "The Temple Of Mota [Room 3001]\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 27 "flag"
+out b "Syntax:\n\r  flag mob  <name> <field> <flags>\n\r  flag char <name> <field> <flags>\n\r  mob  flags: act,aff,off,imm,res,vuln,form,part\n\r  char flags: plr,comm,aff,imm,res,vuln,\n\r  +: add flag, -: remove flag, = set equal to\n\r  otherwise flag toggles the flags listed.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 28 "flag mob"
+out b "What do you wish to set flags on?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 29 "flag mob hassan"
+out b "You need to specify a flag to set.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 30 "flag mob hassan act"
+out b "Which flags do you wish to change?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 31 "flag mob nobody act sentinel"
+out b "You can't find them.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 32 "flag mob hassan act bogus"
+out b "That flag doesn't exist!\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 33 "flag mob hassan bogus sentinel"
+out b "That's not an acceptable flag.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 34 "flag mob hassan plr holylight"
+out b "Use act for NPCs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 35 "flag char delver act sentinel"
+out b "Use plr for PCs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 36 "flag char delver form edible"
+out b "Form can't be set on PCs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 37 "flag char delver parts ear"
+out b "Parts can't be set on PCs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 38 "flag mob hassan comm quiet"
+out b "Comm can't be set on NPCs.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 39 "flag mob hassan act sentinel"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 40 "stat mob hassan"
+out b "Name: Hassan\n\rVnum: 3011  Format: new  Race: giant  Group: 3000  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/4000  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 45  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 41 "flag mob hassan act + aggressive"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 42 "stat mob hassan"
+out b "Name: Hassan\n\rVnum: 3011  Format: new  Race: giant  Group: 3000  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/4000  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 45  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc aggressive warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 43 "flag mob hassan act - aggressive sentinel"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 44 "stat mob hassan"
+out b "Name: Hassan\n\rVnum: 3011  Format: new  Race: giant  Group: 3000  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/4000  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 45  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc warrior no_purge\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 45 "flag mob hassan act = sentinel"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 46 "stat mob hassan"
+out b "Name: Hassan\n\rVnum: 3011  Format: new  Race: giant  Group: 3000  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/4000  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 45  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc sentinel\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm mental\n\rResist: magic weapon fire cold\n\rVulnerable: lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 47 "flag mob hassan act +aggressive"
+out b "Which flags do you wish to change?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 48 "flag mob hassan aff sanctuary"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 49 "flag mob hassan resist fire"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 50 "flag mob hassan vuln cold"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 51 "flag mob hassan immunity acid"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 52 "stat mob hassan"
+out b "Name: Hassan\n\rVnum: 3011  Format: new  Race: giant  Group: 3000  Sex: male  Room: 3001\n\rCount: 1  Killed: 0\n\rStr: 27(25)  Int: 21(21)  Wis: 22(22)  Dex: 24(25)  Con: 25(25)\n\rHp: 4000/4000  Mana: 500/500  Move: 100/100  Practices: 0\n\rLv: 45  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -370  bash: -370  slash: -370  magic: -270\n\rHit: 36  Dam: 49  Saves: 0  Size: huge  Position: standing  Wimpy: 0\n\rDamage: 5d4  Message:  crush\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 45\n\rAct: npc sentinel\n\rComm: no_shout no_tell no_channels\n\rOffense: area attack bash berserk disarm dodge fast kick parry rescue trip crush assist_guard\n\rImmune: summon charm acid mental\n\rResist: magic weapon cold\n\rVulnerable: cold lightning mental\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by detect_evil detect_invis detect_hidden sanctuary infrared haste dark_vision\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: Hassan\n\rLong  description: Hassan is here, waiting to dispense some justice.\n\rMobile has special procedure spec_executioner.\n\rSpell: 'haste' modifies dexterity by 4 for -1 hours with bits haste, level 45.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 53 "flag char delver plr + holylight"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 54 "flag char delver comm + quiet"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 55 "stat char delver"
+out b "Name: Delver\n\rVnum: 0  Format: pc  Race: dwarf  Group: 0  Sex: male  Room: 3129\n\rStr: 19(19)  Int: 13(13)  Wis: 13(13)  Dex: 13(13)  Con: 13(13)\n\rHp: 29/29  Mana: 102/102  Move: 106/106  Practices: 1\n\rLv: 2  Class: warrior  Align: 750  Gold: 0  Silver: 0  Exp: 2088\n\rArmor: pierce: 95  bash: 95  slash: 95  magic: 99\n\rHit: 4  Dam: 4  Saves: -1  Size: medium  Position: standing  Wimpy: 0\n\rFighting: (none)\n\rThirst: 45  Hunger: 45  Full: 42  Drunk: 0\n\rCarry number: 5  Carry weight: 14\n\rAge: 17  Played: 0  Last Level: 0  Timer: 0\n\rAct: player holy_light no_summon\n\rComm: quiet prompt combine\n\rResist: poison disease\n\rVulnerable: drowning\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rAffected by infrared\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rSecurity: 0.\n\rShort description: \n\rLong  description: (none)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc
+step 56 "flag bogus hassan act sentinel"
+out b "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52153 4c8e8fbc

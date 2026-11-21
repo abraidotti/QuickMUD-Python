@@ -136,6 +136,7 @@ class HelpArea:
     area: Area | None  # load_helps's current_area: None for a file of helps alone
     helps: list[Help] = field(default_factory=list)
     changed: bool = False
+    last_gone: bool = False  # its last help was deleted, and its last pointer still points there (hedit.c)
 
 
 @dataclass(eq=False)
@@ -244,6 +245,7 @@ class Index:
     socials: list = field(default_factory=list)
     mprog_code: dict = field(default_factory=dict)  # mprog_list: each #MOBPROGS program's code, by vnum
     had_list: list[HelpArea] = field(default_factory=list)  # head first, as the C's had_list
+    help_last_gone: bool = False  # the newest help was deleted, and help_last still points there (hedit.c)
 
     # C: db.c get_mprog_index
     def get_mprog_index(self, vnum: int) -> str | None:
