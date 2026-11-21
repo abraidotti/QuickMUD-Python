@@ -9,7 +9,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.data import constants as C
-from charm.world.index import Area, Exit, ExtraDescr, Reset, Room
+from charm.world.index import Area, Exit, ExtraDescr, ObjIndex, Reset, Room
 
 
 # C: mem.c new_area
@@ -40,3 +40,11 @@ def new_room_index() -> Room:
 # C: recycle.c new_extra_descr
 def new_extra_descr() -> ExtraDescr:
     return ExtraDescr("", "")
+
+
+# C: mem.c new_obj_index
+def new_obj_index(area) -> ObjIndex:
+    """A blank object prototype (its level, which the C doesn't set, is fresh memory's 0)."""
+    return ObjIndex(vnum=0, area=area, name="no name", short_descr="(no short description)",
+                    description="(no description)", material="unknown", item_type=C.ITEM_TRASH, extra_flags=0,
+                    wear_flags=0, value=[0, 0, 0, 0, 0], level=0, weight=0, cost=0, condition=100)

@@ -1,5 +1,5 @@
-"""olc_act.c: what each editor's commands do. This PR has the shared helpers (?, version, the lists ? shows, the
-vnum range checks) and the area editor (aedit_*); the room, object and mob editors come in the PRs after.
+"""olc_act.c: what each editor's commands do: the shared helpers (?, version, the lists ? shows, the vnum range
+checks), and the area, room and object editors (aedit_*, redit_*, oedit_*). The mob editor comes next.
 
 Every editor command takes (ch, argument) and returns True if it changed the area, which the editor then marks
 AREA_CHANGED.
@@ -502,10 +502,23 @@ def redit_mshow(ch, argument: str) -> bool:
     return _show_proto(ch, argument, _game().index.get_mob_index, "mobile", "medit_show")
 
 
-# C: olc_act.c redit_oshow [partial]
+# C: olc_act.c redit_oshow
 def redit_oshow(ch, argument: str) -> bool:
-    """[partial]: an object that exists is shown by oedit_show, which raises NotPorted until the object editor."""
-    return _show_proto(ch, argument, _game().index.get_obj_index, "object", "oedit_show")
+    """An object prototype shown as oedit's show shows it; pEdit is then the room (which redit never reads)."""
+    if argument == "":
+        send_to_char("Syntax:  oshow <vnum>\n\r", ch)
+        return False
+    if not is_number(argument):
+        send_to_char("REdit: Must be a number.\n\r", ch)
+        return False
+    p = _game().index.get_obj_index(atoi(argument))
+    if p is None:
+        send_to_char("REdit:  That object does not exist.\n\r", ch)
+        return False
+    ch.desc.pEdit = p
+    oedit_show(ch, argument)
+    ch.desc.pEdit = ch.in_room
+    return False
 
 
 def _first_words(names) -> str:
@@ -1062,3 +1075,541 @@ def redit_sector(ch, argument: str) -> bool:
     _room(ch).sector_type = value
     send_to_char("Sector type set.\n\r", ch)
     return True
+
+
+# -- the object editor (OEDIT): every command edits the prototype in ch->desc->pEdit (EDIT_OBJ) --
+
+
+def _obj(ch):
+    return ch.desc.pEdit
+
+
+def _skill(sn: int) -> str:
+    from charm.olc.save import _s
+
+    return _s(SKILL_TABLE[sn].name) if sn != -1 else "none"
+
+
+# C: olc_act.c show_obj_values
+def show_obj_values(ch, obj) -> None:
+    from charm.olc.save import _s
+
+    v, t = obj.value, obj.item_type
+    index = _game().index
+    if t == C.ITEM_LIGHT:
+        if v[2] == -1 or v[2] == 999:  # "ROM OLC"
+            send_to_char("[v2] Light:  Infinite[-1]\n\r", ch)
+        else:
+            send_to_char("[v2] Light:  [%d]\n\r" % v[2], ch)
+    elif t in (C.ITEM_WAND, C.ITEM_STAFF):
+        send_to_char("[v0] Level:          [%d]\n\r[v1] Charges Total:  [%d]\n\r[v2] Charges Left:   [%d]\n\r"
+                     "[v3] Spell:          %s\n\r" % (v[0], v[1], v[2], _skill(v[3])), ch)
+    elif t == C.ITEM_PORTAL:
+        send_to_char("[v0] Charges:        [%d]\n\r[v1] Exit Flags:     %s\n\r[v2] Portal Flags:   %s\n\r"
+                     "[v3] Goes to (vnum): [%d]\n\r" % (v[0], flag_string(F.EXIT_FLAGS, v[1]),
+                                                       flag_string(F.PORTAL_FLAGS, v[2]), v[3]), ch)
+    elif t == C.ITEM_FURNITURE:
+        send_to_char("[v0] Max people:      [%d]\n\r[v1] Max weight:      [%d]\n\r[v2] Furniture Flags: %s\n\r"
+                     "[v3] Heal bonus:      [%d]\n\r[v4] Mana bonus:      [%d]\n\r"
+                     % (v[0], v[1], flag_string(F.FURNITURE_FLAGS, v[2]), v[3], v[4]), ch)
+    elif t in (C.ITEM_SCROLL, C.ITEM_POTION, C.ITEM_PILL):
+        send_to_char("[v0] Level:  [%d]\n\r[v1] Spell:  %s\n\r[v2] Spell:  %s\n\r[v3] Spell:  %s\n\r"
+                     "[v4] Spell:  %s\n\r" % (v[0], _skill(v[1]), _skill(v[2]), _skill(v[3]), _skill(v[4])), ch)
+    elif t == C.ITEM_ARMOR:  # "ARMOR for ROM"
+        send_to_char("[v0] Ac pierce       [%d]\n\r[v1] Ac bash         [%d]\n\r[v2] Ac slash        [%d]\n\r"
+                     "[v3] Ac exotic       [%d]\n\r" % (v[0], v[1], v[2], v[3]), ch)
+    elif t == C.ITEM_WEAPON:  # "WEAPON changed in ROM"
+        send_to_char("[v0] Weapon class:   %s\n\r" % flag_string(F.WEAPON_CLASS, v[0]), ch)
+        send_to_char("[v1] Number of dice: [%d]\n\r" % v[1], ch)
+        send_to_char("[v2] Type of dice:   [%d]\n\r" % v[2], ch)
+        send_to_char("[v3] Type:           %s\n\r" % _s(ATTACK_TABLE[v[3]].name), ch)
+        send_to_char("[v4] Special type:   %s\n\r" % flag_string(F.WEAPON_TYPE2, v[4]), ch)
+    elif t == C.ITEM_CONTAINER:
+        key = index.get_obj_index(v[2])
+        send_to_char("[v0] Weight:     [%d kg]\n\r[v1] Flags:      [%s]\n\r[v2] Key:     %s [%d]\n\r"
+                     "[v3] Capacity    [%d]\n\r[v4] Weight Mult [%d]\n\r"
+                     % (v[0], flag_string(F.CONTAINER_FLAGS, v[1]), _s(key.short_descr) if key else "none", v[2],
+                        v[3], v[4]), ch)
+    elif t == C.ITEM_DRINK_CON:
+        send_to_char("[v0] Liquid Total: [%d]\n\r[v1] Liquid Left:  [%d]\n\r[v2] Liquid:       %s\n\r"
+                     "[v3] Poisoned:     %s\n\r" % (v[0], v[1], _s(LIQ_TABLE[v[2]].liq_name),
+                                                   "Yes" if v[3] != 0 else "No"), ch)
+    elif t == C.ITEM_FOUNTAIN:
+        send_to_char("[v0] Liquid Total: [%d]\n\r[v1] Liquid Left:  [%d]\n\r[v2] Liquid:        %s\n\r"
+                     % (v[0], v[1], _s(LIQ_TABLE[v[2]].liq_name)), ch)
+    elif t == C.ITEM_FOOD:
+        send_to_char("[v0] Food hours: [%d]\n\r[v1] Full hours: [%d]\n\r[v3] Poisoned:   %s\n\r"
+                     % (v[0], v[1], "Yes" if v[3] != 0 else "No"), ch)
+    elif t == C.ITEM_MONEY:
+        send_to_char("[v0] Gold:   [%d]\n\r" % v[0], ch)
+
+
+def _flag_or_zero(table, argument: str) -> int:
+    """ALT_FLAGVALUE_SET's value: the flags, or 0 for none."""
+    from charm.olc.bits import flag_value
+
+    value = flag_value(table, argument)
+    return 0 if value == C.NO_FLAG else value
+
+
+# per item type: the help topic for a value it has no setting for, and for each value: (message, how it's set),
+# where how is "atoi", "skill", "attack", "liquid", "poison", a flag table to set, or ("toggle", table)
+_ATOI, _SKILL = "atoi", "skill"
+_SETTERS = {
+    C.ITEM_LIGHT: ("ITEM_LIGHT", {2: ("HOURS OF LIGHT SET.\n\r\n\r", _ATOI)}),
+    C.ITEM_WAND: ("ITEM_STAFF_WAND", {0: ("SPELL LEVEL SET.\n\r\n\r", _ATOI),
+                                      1: ("TOTAL NUMBER OF CHARGES SET.\n\r\n\r", _ATOI),
+                                      2: ("CURRENT NUMBER OF CHARGES SET.\n\r\n\r", _ATOI),
+                                      3: ("SPELL TYPE SET.\n\r", _SKILL)}),
+    C.ITEM_SCROLL: ("ITEM_SCROLL_POTION_PILL", {0: ("SPELL LEVEL SET.\n\r\n\r", _ATOI),
+                                                1: ("SPELL TYPE 1 SET.\n\r\n\r", _SKILL),
+                                                2: ("SPELL TYPE 2 SET.\n\r\n\r", _SKILL),
+                                                3: ("SPELL TYPE 3 SET.\n\r\n\r", _SKILL),
+                                                4: ("SPELL TYPE 4 SET.\n\r\n\r", _SKILL)}),
+    C.ITEM_ARMOR: ("ITEM_ARMOR", {0: ("AC PIERCE SET.\n\r\n\r", _ATOI), 1: ("AC BASH SET.\n\r\n\r", _ATOI),
+                                  2: ("AC SLASH SET.\n\r\n\r", _ATOI), 3: ("AC EXOTIC SET.\n\r\n\r", _ATOI)}),
+    C.ITEM_WEAPON: ("ITEM_WEAPON", {0: ("WEAPON CLASS SET.\n\r\n\r", F.WEAPON_CLASS),
+                                    1: ("NUMBER OF DICE SET.\n\r\n\r", _ATOI),
+                                    2: ("TYPE OF DICE SET.\n\r\n\r", _ATOI),
+                                    3: ("WEAPON TYPE SET.\n\r\n\r", "attack"),
+                                    4: ("SPECIAL WEAPON TYPE TOGGLED.\n\r\n\r", ("toggle", F.WEAPON_TYPE2))}),
+    C.ITEM_PORTAL: ("ITEM_PORTAL", {0: ("CHARGES SET.\n\r\n\r", _ATOI), 1: ("EXIT FLAGS SET.\n\r\n\r", F.EXIT_FLAGS),
+                                    2: ("PORTAL FLAGS SET.\n\r\n\r", F.PORTAL_FLAGS),
+                                    3: ("EXIT VNUM SET.\n\r\n\r", _ATOI)}),
+    C.ITEM_FURNITURE: ("ITEM_FURNITURE", {0: ("NUMBER OF PEOPLE SET.\n\r\n\r", _ATOI),
+                                          1: ("MAX WEIGHT SET.\n\r\n\r", _ATOI),
+                                          2: ("FURNITURE FLAGS TOGGLED.\n\r\n\r", ("toggle", F.FURNITURE_FLAGS)),
+                                          3: ("HEAL BONUS SET.\n\r\n\r", _ATOI),
+                                          4: ("MANA BONUS SET.\n\r\n\r", _ATOI)}),
+    C.ITEM_DRINK_CON: ("ITEM_DRINK", {0: ("MAXIMUM AMOUT OF LIQUID HOURS SET.\n\r\n\r", _ATOI),
+                                      1: ("CURRENT AMOUNT OF LIQUID HOURS SET.\n\r\n\r", _ATOI),
+                                      2: ("LIQUID TYPE SET.\n\r\n\r", "liquid"),
+                                      3: ("POISON VALUE TOGGLED.\n\r\n\r", "poison")}),
+    C.ITEM_FOUNTAIN: ("ITEM_FOUNTAIN", {0: ("MAXIMUM AMOUT OF LIQUID HOURS SET.\n\r\n\r", _ATOI),
+                                        1: ("CURRENT AMOUNT OF LIQUID HOURS SET.\n\r\n\r", _ATOI),
+                                        2: ("LIQUID TYPE SET.\n\r\n\r", "liquid")}),
+    C.ITEM_FOOD: ("ITEM_FOOD", {0: ("HOURS OF FOOD SET.\n\r\n\r", _ATOI), 1: ("HOURS OF FULL SET.\n\r\n\r", _ATOI),
+                                3: ("POISON VALUE TOGGLED.\n\r\n\r", "poison")}),
+    C.ITEM_MONEY: ("ITEM_MONEY", {0: ("GOLD AMOUNT SET.\n\r\n\r", _ATOI), 1: ("SILVER AMOUNT SET.\n\r\n\r", _ATOI)}),
+}
+_SETTERS[C.ITEM_STAFF] = _SETTERS[C.ITEM_WAND]
+_SETTERS[C.ITEM_POTION] = _SETTERS[C.ITEM_PILL] = _SETTERS[C.ITEM_SCROLL]
+
+
+# C: olc_act.c set_obj_values
+def set_obj_values(ch, obj, value_num: int, argument: str) -> bool:
+    """Set value number value_num of obj as its item type reads it, then show the values. A value the type has no
+    setting for shows the type's help instead; a type with no values at all just shows them (and is True)."""
+    from charm.commands.info import do_help
+    from charm.olc.bits import flag_value
+    from charm.world.lookup import attack_lookup, liq_lookup, skill_lookup
+
+    index = _game().index
+    v = obj.value
+    if obj.item_type == C.ITEM_CONTAINER:  # its own checks
+        if value_num == 0:
+            send_to_char("WEIGHT CAPACITY SET.\n\r\n\r", ch)
+            v[0] = atoi(argument)
+        elif value_num == 1:
+            value = flag_value(F.CONTAINER_FLAGS, argument)
+            if value == C.NO_FLAG:
+                do_help(ch, "ITEM_CONTAINER")
+                return False
+            v[1] ^= value
+            send_to_char("CONTAINER TYPE SET.\n\r\n\r", ch)
+        elif value_num == 2:
+            if atoi(argument) != 0:
+                key = index.get_obj_index(atoi(argument))
+                if key is None:
+                    send_to_char("THERE IS NO SUCH ITEM.\n\r\n\r", ch)
+                    return False
+                if key.item_type != C.ITEM_KEY:
+                    send_to_char("THAT ITEM IS NOT A KEY.\n\r\n\r", ch)
+                    return False
+            send_to_char("CONTAINER KEY SET.\n\r\n\r", ch)
+            v[2] = atoi(argument)
+        elif value_num == 3:
+            send_to_char("CONTAINER MAX WEIGHT SET.\n\r", ch)
+            v[3] = atoi(argument)
+        elif value_num == 4:
+            send_to_char("WEIGHT MULTIPLIER SET.\n\r\n\r", ch)
+            v[4] = atoi(argument)
+        else:
+            do_help(ch, "ITEM_CONTAINER")
+            return False
+    elif obj.item_type in _SETTERS:
+        topic, setters = _SETTERS[obj.item_type]
+        if value_num not in setters:
+            do_help(ch, topic)
+            return False
+        message, how = setters[value_num]
+        send_to_char(message, ch)
+        if how == _ATOI:
+            v[value_num] = atoi(argument)
+        elif how == _SKILL:
+            v[value_num] = skill_lookup(argument)
+        elif how == "attack":
+            v[value_num] = attack_lookup(argument)
+        elif how == "liquid":
+            v[value_num] = liq_lookup(argument) if liq_lookup(argument) != -1 else 0
+        elif how == "poison":
+            v[value_num] = 1 if v[value_num] == 0 else 0
+        elif how[0] == "toggle":  # ALT_FLAGVALUE_TOGGLE (a flag table is a tuple too, of FlagType)
+            v[value_num] ^= _flag_or_zero(how[1], argument)
+        else:  # ALT_FLAGVALUE_SET
+            v[value_num] = _flag_or_zero(how, argument)
+    show_obj_values(ch, obj)
+    return True
+
+
+# C: olc_act.c oedit_show
+def oedit_show(ch, argument: str) -> bool:
+    from charm.olc.save import _s
+
+    p = _obj(ch)
+    send_to_char("Name:        [%s]\n\rArea:        [%5d] %s\n\r"
+                 % (_s(p.name), -1 if p.area is None else p.area.vnum,
+                    "No Area" if p.area is None else _s(p.area.name)), ch)
+    send_to_char("Vnum:        [%5d]\n\rType:        [%s]\n\r" % (p.vnum, flag_string(F.TYPE_FLAGS, p.item_type)), ch)
+    send_to_char("Level:       [%5d]\n\r" % p.level, ch)
+    send_to_char("Wear flags:  [%s]\n\r" % flag_string(F.WEAR_FLAGS, p.wear_flags), ch)
+    send_to_char("Extra flags: [%s]\n\r" % flag_string(F.EXTRA_FLAGS, p.extra_flags), ch)
+    send_to_char("Material:    [%s]\n\r" % _s(p.material), ch)  # "ROM"
+    send_to_char("Condition:   [%5d]\n\r" % p.condition, ch)  # "ROM"
+    send_to_char("Weight:      [%5d]\n\rCost:        [%5d]\n\r" % (p.weight, p.cost), ch)
+    if p.extra_descr:
+        send_to_char("Ex desc kwd: ", ch)
+        for ed in p.extra_descr:
+            send_to_char("[", ch)
+            send_to_char(ed.keyword, ch)
+            send_to_char("]", ch)
+        send_to_char("\n\r", ch)
+    send_to_char("Short desc:  %s\n\rLong desc:\n\r     %s\n\r" % (_s(p.short_descr), _s(p.description)), ch)
+    for cnt, paf in enumerate(p.affected):
+        if cnt == 0:
+            send_to_char("Number Modifier Affects\n\r", ch)
+            send_to_char("------ -------- -------\n\r", ch)
+        send_to_char("[%4d] %-8d %s\n\r" % (cnt, paf.modifier, flag_string(F.APPLY_FLAGS, paf.location)), ch)
+    show_obj_values(ch, p)
+    return False
+
+
+def _new_affect(location: int, modifier: int, where: int, bitvector: int, level: int):
+    """new_affect, filled in as addaffect and addapply do (type and duration -1)."""
+    from charm.world.index import Affect
+
+    return Affect(where=where, type=-1, level=level, duration=-1, location=location, modifier=modifier,
+                  bitvector=bitvector)
+
+
+# C: olc_act.c oedit_addaffect
+def oedit_addaffect(ch, argument: str) -> bool:
+    from charm.olc.bits import flag_value
+
+    p = _obj(ch)
+    argument, loc = one_argument(argument)
+    _, mod = one_argument(argument)
+    if loc == "" or mod == "" or not is_number(mod):
+        send_to_char("Syntax:  addaffect [location] [#xmod]\n\r", ch)
+        return False
+    value = flag_value(F.APPLY_FLAGS, loc)
+    if value == C.NO_FLAG:  # "Hugin"
+        send_to_char("Valid affects are:\n\r", ch)
+        show_help(ch, "apply")
+        return False
+    p.affected.insert(0, _new_affect(value, atoi(mod), C.TO_OBJECT, 0, p.level))
+    send_to_char("Affect added.\n\r", ch)
+    return True
+
+
+# bitvector_type, by the apply type's value: the table its bits are named from, and the ? topic that lists them
+BITVECTOR_TYPE = ((F.AFFECT_FLAGS, "affect"), (F.APPLY_FLAGS, "apply"), (F.IMM_FLAGS, "imm"), (F.RES_FLAGS, "res"),
+                  (F.VULN_FLAGS, "vuln"), (F.WEAPON_TYPE2, "weapon"))
+
+
+# C: olc_act.c oedit_addapply
+def oedit_addapply(ch, argument: str) -> bool:
+    """An affect with bits. The type's value picks the table the bits are named from (bitvector_type[typ]), so
+    "object" names them from the apply locations."""
+    from charm.olc.bits import flag_value
+
+    p = _obj(ch)
+    argument, kind = one_argument(argument)
+    argument, loc = one_argument(argument)
+    argument, mod = one_argument(argument)
+    _, bvector = one_argument(argument)
+    typ = flag_value(F.APPLY_TYPES, kind) if kind != "" else C.NO_FLAG
+    if typ == C.NO_FLAG:
+        send_to_char("Invalid apply type. Valid apply types are:\n\r", ch)
+        show_help(ch, "apptype")
+        return False
+    value = flag_value(F.APPLY_FLAGS, loc) if loc != "" else C.NO_FLAG
+    if value == C.NO_FLAG:
+        send_to_char("Valid applys are:\n\r", ch)
+        show_help(ch, "apply")
+        return False
+    table, topic = BITVECTOR_TYPE[typ]
+    bv = flag_value(table, bvector) if bvector != "" else C.NO_FLAG
+    if bv == C.NO_FLAG:
+        send_to_char("Invalid bitvector type.\n\r", ch)
+        send_to_char("Valid bitvector types are:\n\r", ch)
+        show_help(ch, topic)
+        return False
+    if mod == "" or not is_number(mod):
+        send_to_char("Syntax:  addapply [type] [location] [#xmod] [bitvector]\n\r", ch)
+        return False
+    p.affected.insert(0, _new_affect(value, atoi(mod), F.APPLY_TYPES[typ].bit, bv, p.level))
+    send_to_char("Apply added.\n\r", ch)
+    return True
+
+
+# C: olc_act.c oedit_delaffect
+def oedit_delaffect(ch, argument: str) -> bool:
+    """Remove affect number n, counting from 0 as show lists them."""
+    p = _obj(ch)
+    _, affect = one_argument(argument)
+    if not is_number(affect) or affect == "":
+        send_to_char("Syntax:  delaffect [#xaffect]\n\r", ch)
+        return False
+    value = atoi(affect)
+    if value < 0:
+        send_to_char("Only non-negative affect-numbers allowed.\n\r", ch)
+        return False
+    if not p.affected:
+        send_to_char("OEdit:  Non-existant affect.\n\r", ch)
+        return False
+    if value >= len(p.affected):
+        send_to_char("No such affect.\n\r", ch)
+        return False
+    p.affected.pop(value)
+    send_to_char("Affect removed.\n\r", ch)
+    return True
+
+
+# C: olc_act.c oedit_name
+def oedit_name(ch, argument: str) -> bool:
+    if argument == "":
+        send_to_char("Syntax:  name [string]\n\r", ch)
+        return False
+    _obj(ch).name = argument
+    send_to_char("Name set.\n\r", ch)
+    return True
+
+
+# C: olc_act.c oedit_short
+def oedit_short(ch, argument: str) -> bool:
+    from charm.core.strings import lower
+
+    if argument == "":
+        send_to_char("Syntax:  short [string]\n\r", ch)
+        return False
+    _obj(ch).short_descr = lower(argument[0]) + argument[1:]
+    send_to_char("Short description set.\n\r", ch)
+    return True
+
+
+# C: olc_act.c oedit_long
+def oedit_long(ch, argument: str) -> bool:
+    if argument == "":
+        send_to_char("Syntax:  long [string]\n\r", ch)
+        return False
+    _obj(ch).description = upper(argument[0]) + argument[1:]
+    send_to_char("Long description set.\n\r", ch)
+    return True
+
+
+# C: olc_act.c set_value
+def set_value(ch, obj, argument: str, value: int) -> bool:
+    if argument == "":
+        set_obj_values(ch, obj, -1, "")  # "'\0' changed to "" -- Hugin"
+        return False
+    return set_obj_values(ch, obj, value, argument)
+
+
+# C: olc_act.c oedit_values
+def oedit_values(ch, argument: str, value: int) -> bool:
+    return set_value(ch, _obj(ch), argument, value)
+
+
+# C: olc_act.c oedit_value0
+def oedit_value0(ch, argument: str) -> bool:
+    return oedit_values(ch, argument, 0)
+
+
+# C: olc_act.c oedit_value1
+def oedit_value1(ch, argument: str) -> bool:
+    return oedit_values(ch, argument, 1)
+
+
+# C: olc_act.c oedit_value2
+def oedit_value2(ch, argument: str) -> bool:
+    return oedit_values(ch, argument, 2)
+
+
+# C: olc_act.c oedit_value3
+def oedit_value3(ch, argument: str) -> bool:
+    return oedit_values(ch, argument, 3)
+
+
+# C: olc_act.c oedit_value4
+def oedit_value4(ch, argument: str) -> bool:
+    return oedit_values(ch, argument, 4)
+
+
+def _number_field(ch, argument: str, field: str, syntax: str, done: str) -> bool:
+    if argument == "" or not is_number(argument):
+        send_to_char(syntax, ch)
+        return False
+    setattr(_obj(ch), field, atoi(argument))
+    send_to_char(done, ch)
+    return True
+
+
+# C: olc_act.c oedit_weight
+def oedit_weight(ch, argument: str) -> bool:
+    return _number_field(ch, argument, "weight", "Syntax:  weight [number]\n\r", "Weight set.\n\r")
+
+
+# C: olc_act.c oedit_cost
+def oedit_cost(ch, argument: str) -> bool:
+    return _number_field(ch, argument, "cost", "Syntax:  cost [number]\n\r", "Cost set.\n\r")
+
+
+# C: olc_act.c oedit_create
+def oedit_create(ch, argument: str) -> bool:
+    """A new object prototype at the vnum given, made the one being edited. (top_vnum_obj, which this raises, is
+    read by nothing.)"""
+    from charm.entities.handler import is_builder
+    from charm.olc.mem import new_obj_index
+
+    index = _game().index
+    value = atoi(argument)
+    if argument == "" or value == 0:
+        send_to_char("Syntax:  oedit create [vnum]\n\r", ch)
+        return False
+    area = get_vnum_area(value)
+    if area is None:
+        send_to_char("OEdit:  That vnum is not assigned an area.\n\r", ch)
+        return False
+    if not is_builder(ch, area):
+        send_to_char("OEdit:  Vnum in an area you cannot build in.\n\r", ch)
+        return False
+    if index.get_obj_index(value) is not None:
+        send_to_char("OEdit:  Object vnum already exists.\n\r", ch)
+        return False
+    p = new_obj_index(area)
+    p.vnum = value
+    index.objs[value] = p  # the head of its hash chain: the newest
+    ch.desc.pEdit = p
+    send_to_char("Object Created.\n\r", ch)
+    return True
+
+
+# C: olc_act.c oedit_ed
+def oedit_ed(ch, argument: str) -> bool:
+    from charm.olc.mem import new_extra_descr
+    from charm.olc.strings import format_string, string_append
+
+    p = _obj(ch)
+    argument, command = one_argument(argument)
+    _, keyword = one_argument(argument)
+    if command == "":
+        send_to_char("Syntax:  ed add [keyword]\n\r", ch)
+        send_to_char("         ed delete [keyword]\n\r", ch)
+        send_to_char("         ed edit [keyword]\n\r", ch)
+        send_to_char("         ed format [keyword]\n\r", ch)
+        return False
+    for sub in ("add", "edit", "delete", "format"):
+        if not str_cmp(command, sub):
+            continue
+        if keyword == "":
+            send_to_char("Syntax:  ed %s [keyword]\n\r" % sub, ch)
+            return False
+        if sub == "add":
+            ed = new_extra_descr()
+            ed.keyword = keyword
+            p.extra_descr.insert(0, ed)
+            string_append(ch, (ed, "description"))
+            return True
+        ed = _find_ed(p, keyword)
+        if ed is None:
+            send_to_char("OEdit:  Extra description keyword not found.\n\r", ch)
+            return False
+        if sub == "edit":
+            string_append(ch, (ed, "description"))
+        elif sub == "delete":
+            p.extra_descr.remove(ed)
+            send_to_char("Extra description deleted.\n\r", ch)
+        else:
+            ed.description = format_string(ed.description)
+            send_to_char("Extra description formatted.\n\r", ch)
+        return True
+    oedit_ed(ch, "")
+    return False
+
+
+def _toggle_flags(ch, argument: str, table, field: str, done: str, syntax: str) -> bool:
+    from charm.olc.bits import flag_value
+
+    if argument != "":
+        value = flag_value(table, argument)
+        if value != C.NO_FLAG:
+            p = _obj(ch)
+            setattr(p, field, getattr(p, field) ^ value)
+            send_to_char(done, ch)
+            return True
+    send_to_char(syntax, ch)
+    return False
+
+
+# C: olc_act.c oedit_extra
+def oedit_extra(ch, argument: str) -> bool:
+    return _toggle_flags(ch, argument, F.EXTRA_FLAGS, "extra_flags", "Extra flag toggled.\n\r",
+                         "Syntax:  extra [flag]\n\rType '? extra' for a list of flags.\n\r")
+
+
+# C: olc_act.c oedit_wear
+def oedit_wear(ch, argument: str) -> bool:
+    return _toggle_flags(ch, argument, F.WEAR_FLAGS, "wear_flags", "Wear flag toggled.\n\r",
+                         "Syntax:  wear [flag]\n\rType '? wear' for a list of flags.\n\r")
+
+
+# C: olc_act.c oedit_type
+def oedit_type(ch, argument: str) -> bool:
+    from charm.olc.bits import flag_value
+
+    if argument != "":
+        value = flag_value(F.TYPE_FLAGS, argument)
+        if value != C.NO_FLAG:
+            p = _obj(ch)
+            p.item_type = value
+            send_to_char("Type set.\n\r", ch)
+            p.value[:] = [0, 0, 0, 0, 0]  # "Clear the values."
+            return True
+    send_to_char("Syntax:  type [flag]\n\rType '? type' for a list of flags.\n\r", ch)
+    return False
+
+
+# C: olc_act.c oedit_material
+def oedit_material(ch, argument: str) -> bool:
+    if argument == "":
+        send_to_char("Syntax:  material [string]\n\r", ch)
+        return False
+    _obj(ch).material = argument
+    send_to_char("Material set.\n\r", ch)
+    return True
+
+
+# C: olc_act.c oedit_level
+def oedit_level(ch, argument: str) -> bool:
+    return _number_field(ch, argument, "level", "Syntax:  level [number]\n\r", "Level set.\n\r")
+
+
+# C: olc_act.c oedit_condition
+def oedit_condition(ch, argument: str) -> bool:
+    if argument != "" and 0 <= atoi(argument) <= 100:
+        _obj(ch).condition = atoi(argument)
+        send_to_char("Condition set.\n\r", ch)
+        return True
+    send_to_char("Syntax:  condition [number]\n\rWhere number can range from 0 (ruined) to 100 (perfect).\n\r", ch)
+    return False

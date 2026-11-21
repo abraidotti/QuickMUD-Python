@@ -1,7 +1,7 @@
 """olc.c: the online builder's framework. 'edit' (do_olc) and the do_*edit commands put a connection in an editor;
 while it's there, every line goes to that editor (run_olc_editor, from the game loop), which runs one of its own
-commands or, failing that, the ordinary interpreter. The area and room editors are here, with the reset commands;
-the others raise NotPorted.
+commands or, failing that, the ordinary interpreter. The area, room and object editors are here, with the reset
+commands; the others raise NotPorted.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -43,6 +43,18 @@ def _redit_table():
             ("sector", act.redit_sector), ("?", act.show_help), ("version", act.show_version))
 
 
+def _oedit_table():
+    """oedit_table, in the C's order."""
+    return (("addaffect", act.oedit_addaffect), ("addapply", act.oedit_addapply), ("commands", show_commands),
+            ("cost", act.oedit_cost), ("create", act.oedit_create), ("delaffect", act.oedit_delaffect),
+            ("ed", act.oedit_ed), ("long", act.oedit_long), ("name", act.oedit_name), ("short", act.oedit_short),
+            ("show", act.oedit_show), ("v0", act.oedit_value0), ("v1", act.oedit_value1), ("v2", act.oedit_value2),
+            ("v3", act.oedit_value3), ("v4", act.oedit_value4), ("weight", act.oedit_weight),
+            ("extra", act.oedit_extra), ("wear", act.oedit_wear), ("type", act.oedit_type),
+            ("material", act.oedit_material), ("level", act.oedit_level), ("condition", act.oedit_condition),
+            ("?", act.show_help), ("version", act.show_version))
+
+
 # C: olc.c olc_ed_name
 def olc_ed_name(ch) -> str:
     """The prompt's %o."""
@@ -75,7 +87,9 @@ def show_commands(ch, argument: str) -> bool:
         show_olc_cmds(ch, _aedit_table())
     elif editor == ED_ROOM:
         show_olc_cmds(ch, _redit_table())
-    elif editor in (ED_OBJECT, ED_MOBILE, ED_MPCODE, ED_HELP):
+    elif editor == ED_OBJECT:
+        show_olc_cmds(ch, _oedit_table())
+    elif editor in (ED_MOBILE, ED_MPCODE, ED_HELP):
         raise NotPorted(f"olc.c show_commands: editor {editor}")
     return False
 
@@ -137,6 +151,8 @@ def do_olc(ch, argument: str) -> None:
                 do_aedit(ch, argument)
             elif fun == "do_redit":
                 do_redit(ch, argument)
+            elif fun == "do_oedit":
+                do_oedit(ch, argument)
             else:
                 raise NotPorted(f"olc.c do_olc: {fun}")
             return
@@ -447,3 +463,68 @@ def do_resets(ch, argument: str) -> None:
         send_to_char("        RESET <number> MOB <vnum> [max #x area] [max #x room]\n\r", ch)
         send_to_char("        RESET <number> DELETE\n\r", ch)
         send_to_char("        RESET <number> RANDOM [#x exits]\n\r", ch)
+
+
+# C: olc.c oedit
+def oedit(ch, argument: str) -> None:
+    """A line typed in the object editor."""
+    from charm.entities.handler import is_builder
+
+    argument = smash_tilde(argument)
+    arg = argument
+    argument, command = one_argument(argument)
+    p = ch.desc.pEdit
+    area = p.area
+    if not is_builder(ch, area):
+        send_to_char("OEdit: Insufficient security to modify area.\n\r", ch)
+        edit_done(ch)
+        return
+    if str_cmp(command, "done"):
+        edit_done(ch)
+        return
+    if command == "":
+        act.oedit_show(ch, argument)
+        return
+    for name, fun in _oedit_table():  # "Search Table and Dispatch Command."
+        if str_prefix(command, name):
+            if fun(ch, argument):
+                area.area_flags |= C.AREA_CHANGED
+            return
+    interpret(ch, arg)  # "Default to Standard Interpreter."
+
+
+# C: olc.c do_oedit
+def do_oedit(ch, argument: str) -> None:
+    from charm.entities.handler import is_builder
+
+    if ch.is_npc:
+        return
+    argument, arg1 = one_argument(argument)
+    if is_number(arg1):
+        p = _game().index.get_obj_index(atoi(arg1))
+        if p is None:
+            send_to_char("OEdit:  That vnum does not exist.\n\r", ch)
+            return
+        if not is_builder(ch, p.area):
+            send_to_char("Insufficient security to modify objects.\n\r", ch)
+            return
+        ch.desc.pEdit = p
+        ch.desc.editor = ED_OBJECT
+        return
+    if str_cmp(arg1, "create"):
+        value = atoi(argument)
+        if argument == "" or value == 0:
+            send_to_char("Syntax:  edit object create [vnum]\n\r", ch)
+            return
+        area = act.get_vnum_area(value)
+        if area is None:
+            send_to_char("OEdit:  That vnum is not assigned an area.\n\r", ch)
+            return
+        if not is_builder(ch, area):
+            send_to_char("Insufficient security to modify objects.\n\r", ch)
+            return
+        if act.oedit_create(ch, argument):
+            area.area_flags |= C.AREA_CHANGED
+            ch.desc.editor = ED_OBJECT
+        return
+    send_to_char("OEdit:  There is no default object to edit.\n\r", ch)

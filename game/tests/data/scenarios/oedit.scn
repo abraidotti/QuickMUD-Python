@@ -1,0 +1,220 @@
+# The object editor (olc.c's oedit and do_oedit, olc_act.c's oedit_*, show_obj_values and set_obj_values), with
+# Planner (security 9) in Midgaard, and Delver (security 0). The string editor's "@" is sent as "x", a backspace,
+# "@" (see redit.scn).
+# - oedit with no vnum, a bad one, create's refusals; edit object 3011 (bread); show, commands, version
+# - name, short (lower-cased first letter), long (upper-cased), weight, cost, level, material, condition, extra,
+#   wear and type, with their refusals
+# - addaffect and addapply with each refusal (addapply checks the bits before the modifier, and "object" names
+#   its bits from the apply locations), then delaffect by number
+# - extra descriptions: add, edit, format, delete, and keywords not found
+# - v0-v4 on food (a value it doesn't have shows its help), then a new object (3007) through every item type:
+#   light, wand, staff, portal, furniture, scroll, potion, pill, armor, weapon, container (key refusals), drink,
+#   fountain, money, and trash (no values at all)
+# - asave changed saves Midgaard; the room editor's oshow; after a save, creating an object, and setting a
+#   value on trash (which has none), each mark the area changed again
+# - Delver can't edit or create
+@connect b
+Planner
+smoke123
+@return
+@return
+scroll 0
+goto 3001
+force hassan oedit 3011
+oedit
+oedit 99999
+oedit create
+oedit create 99999
+oedit create 3011
+edit object 3011
+@return
+show
+commands
+version
+name
+name bread loaf
+short
+short A Bread loaf
+long
+long a loaf of bread lies here.
+weight
+weight x
+weight 2
+cost 5
+level
+level 3
+material
+material grain
+condition
+condition 101
+condition 100
+condition 50
+extra
+extra bogus
+extra glow
+wear
+wear bogus
+wear hold
+type
+type bogus
+addaffect
+addaffect bogus 1
+addaffect strength x
+addaffect strength 1
+addaffect dexterity 2
+addapply
+addapply bogus
+addapply affects
+addapply affects strength
+addapply affects strength 1
+addapply affects strength 1 bogus
+addapply affects strength x sanctuary
+addapply affects hitroll 2 sanctuary
+addapply object strength 1 dexterity
+addapply immune hitroll 1 fire
+addapply weapon strength 1 flaming
+show
+delaffect
+delaffect x
+delaffect -1
+delaffect 9
+delaffect 1
+delaffect 0
+show
+ed
+ed add
+ed add crust
+A hard crust.
+x@
+show
+ed edit crust
+.s
+x@
+ed edit zz
+ed format crust
+ed format zz
+ed delete zz
+ed delete crust
+ed bogus x
+v0
+v0 10
+v1 5
+v2 3
+v3 1
+v3 1
+v4 x
+create
+create 99999
+create 3011
+done
+oedit create 3007
+show
+delaffect 0
+type light
+v2 -1
+v2 999
+v2 12
+type wand
+v0 10
+v1 5
+v2 3
+v3 fireball
+v4 x
+type staff
+v3 bogus
+type portal
+v0 3
+v1 door closed
+v2 no_curse
+v3 3001
+v4 x
+type furniture
+v0 2
+v1 100
+v2 stand_at
+v2 stand_at
+v3 10
+v4 20
+type scroll
+v0 5
+v1 armor
+v2 bless
+v3 bogus
+v4 sanctuary
+type potion
+v1 heal
+type pill
+v1 cure
+type armor
+v0 5
+v1 6
+v2 7
+v3 8
+v4 x
+type weapon
+v0 sword
+v0 bogus
+v1 2
+v2 6
+v3 slash
+v4 flaming
+v4 frost
+v4 flaming
+type container
+v0
+v0 50
+v1 closeable
+v1 bogus
+v2 99999
+v2 3011
+v2 3120
+v2 0
+v3 30
+v4 100
+type drink
+v0 10
+v1 5
+v2 wine
+v2 bogus
+v3 x
+v4 x
+type fountain
+v0 10
+v1 5
+v2 water
+v3 x
+type money
+v0 100
+v1 50
+v2 x
+type trash
+v0 1
+show
+done
+asave changed
+@file midgaard.are
+edit room
+oshow
+oshow x
+oshow 99999
+oshow 3007
+done
+asave changed
+oedit create 3008
+done
+asave changed
+oedit 3007
+v0 1
+done
+asave changed
+prompt <%o %O>
+oedit 3011
+prompt <%hhp %mm %vmv>
+done
+@connect d
+Delver
+psswrd
+@return
+oedit 3011
+oedit create 3008
+edit object 3011
