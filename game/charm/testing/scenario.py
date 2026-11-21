@@ -52,6 +52,10 @@ def esc(data: bytes) -> str:
 
 @dataclass(eq=False)
 class Conn:
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<Conn {self.name!r}>"
+
     name: str
     d: object
     peer: socket.socket

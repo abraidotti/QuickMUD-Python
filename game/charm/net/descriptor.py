@@ -19,6 +19,11 @@ INBUF_SIZE = 4 * C.MAX_INPUT_LENGTH  # char inbuf[4 * MAX_INPUT_LENGTH]
 
 @dataclass(eq=False)
 class Descriptor:
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        name = self.character.name if self.character is not None else None
+        return f"<Descriptor {self.fd} {name!r} connected={self.connected}>"
+
     sock: object = None  # a socket (send, recv, fileno, close)
     snoop_by: "Descriptor | None" = None
     character: object | None = None  # Char

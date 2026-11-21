@@ -21,6 +21,10 @@ from .reader import AreaParseError, Diagnostic, Reader
 
 @dataclass
 class World:
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<World: {len(self.files)} files, {len(self.rooms)} rooms>"
+
     area_dir: Path
     area_list: list[str]  # file names, in area.lst order
     files: list[AreaFile]
