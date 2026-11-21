@@ -239,6 +239,12 @@ and line. Ones that cut across the code are here:
 - **A stronger password hash, in both games** (#30). Passwords are traditional DES crypt: 8 characters count, the
   salt is the first two letters of the name, and the hash is fast to attack. Moving both games to a modern hash
   (with old hashes upgraded at the next login) needs a C change too, so it goes through the refactor plan.
+- **A guard test for negative indexes.** Python's `table[-1]` reads the last element, where the C reads before
+  the start of the array (undefined behaviour). Twice a C index that can be -1 went quietly wrong in the port: a
+  shop's `buy_type` slot (P5 PR 5) and `check_improve`'s `sn` (P5 PR 7). Both now raise `CWouldCrash`. A guard
+  test in `tests/test_guards.py` could flag every subscript whose index might be negative (a variable index into a
+  data table or a C-sized list) unless it carries a marker like `# non-negative:`, as the division guard does.
+  This one doesn't change behaviour, so it needn't wait for parity; it's here so it isn't lost.
 
 ## Phases
 
