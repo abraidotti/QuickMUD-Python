@@ -2,8 +2,8 @@
 and the triggers that start a program (#74, P4 PR 7).
 
 A program's lines are commands the mob runs through interpret, if-checks (if, or, and, else, endif) that pick
-which, break or end, and comments (*). A line starting "mob" is a mob command (mob_cmds.c's mob_interpret, P4 PR
-8), which raises NotPorted until then.
+which, break or end, and comments (*). A line starting "mob" is a mob command (mob_cmds.c's mob_interpret, in
+charm.systems.mobcmds).
 
 The C's static call_level is Game.mprog_call_level.
 
@@ -15,7 +15,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.core.cint import c_div, int32, sh_int
-from charm.core.errors import CWouldCrash, NotPorted
+from charm.core.errors import CWouldCrash
 from charm.core.log import bug
 from charm.core.rng import number_percent
 from charm.core.strings import atoi, str_cmp
@@ -598,7 +598,10 @@ def program_flow(pvnum: int, source: str, mob, ch, arg1, arg2) -> None:
             data = expand_arg(buf, mob, ch, arg1, arg2, rch)
             if str_cmp(control, "mob"):
                 # "Found a mob restricted command, pass it to mob interpreter"
-                raise NotPorted("mob_cmds.c mob_interpret (a mob program's mob command)")
+                from charm.systems.mobcmds import mob_interpret
+
+                mob_interpret(mob, one_argument(data)[0])
+                continue
             interpret(mob, data)  # "Found a normal mud command, pass it to interpreter"
     game.mprog_call_level -= 1
 

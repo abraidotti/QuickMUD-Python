@@ -1,0 +1,74 @@
+# More mob commands from the stage manager (30005) in the fixture area tools/fixtures/files/mobcmds.are, with
+# area_update and violence_update running, in the temple (3001), cued by Decimus (10, 1000 hit points). Pupil
+# (10) is grouped with him; the understudy (30006) is there too.
+# - travel: goto, at, transfer (one, all, here), gtransfer and otransfer (from the floor, and worn), with bad
+#   locations
+# - forces: force, force all, gforce, vforce
+# - spells: each kind of target; an object-or-character spell on a character does nothing
+# - hurt: damage within the hit points, all, and with kill
+# - remember: remember, forget, delay and cancel; subroutine: mob call with a character and an object
+# - strip: remove by vnum (the banner's light leaves the mob, not Decimus: #89) and all
+# - fight: kill a player; then, with Decimus fighting the understudy, assist him (it attacks the understudy)
+# - flee: not fighting, it goes (a fighting mob doesn't hear the cue: speech triggers wait for its default
+#   position)
+@place mobcmds.are mobcmds.are
+@place area-mobcmds.lst area.lst
+@updates area,violence
+@connect god
+Smokegod
+smoke123
+@return
+@return
+holylight
+@connect pupil
+Pupil
+psswrd
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+transfer pupil 3001
+set char decimus hp 1000
+restore decimus
+@mob 30006 3001
+@mob 30005 3001
+@as pupil
+follow decimus
+@as dec
+group pupil
+say travel
+@pulse 4
+look
+@as god
+goto 3001
+@as dec
+say forces
+@pulse 4
+say spells
+@pulse 24
+say hurt
+@pulse 4
+say remember
+say subroutine
+@state
+say strip
+@state
+say fight
+@pulse 48
+@as god
+peace
+@as dec
+@pulse 12
+kill understudy
+say fight
+@pulse 24
+@as god
+peace
+@as dec
+@pulse 12
+say flee
+@state

@@ -1,0 +1,214 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51872 4ba9daca
+step 1 "@connect god"
+rng 51872 4ba9daca
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "@connect dec"
+rng 51895 7f5599b5
+step 7 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 8 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 9 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 10 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@connect pupil"
+rng 51895 7f5599b5
+step 12 "Pupil"
+out pupil "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 13 "psswrd"
+out pupil "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 14 "@return"
+out pupil "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Tournament and Practice Yard\n\r  The practice yard of the fighters.  To the north is the bar.  A well leads\n\rdown into darkness.\n\rYour guildmaster is standing here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 15 "@return"
+out pupil "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@as god"
+rng 51895 7f5599b5
+step 17 "transfer pupil 3001"
+out god "Pupil arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rPupil arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pupil "\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@as pupil"
+rng 51895 7f5599b5
+step 19 "gain list"
+out pupil "You can't do that here.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "@as god"
+rng 51895 7f5599b5
+step 21 "@mob 9500 3001"
+rng 51897 86bbd2a0
+step 22 "@as dec"
+rng 51897 86bbd2a0
+step 23 "gain"
+out god "\n\rThe guildmaster says 'Pardon me?'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "The guildmaster says 'Pardon me?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out pupil "\n\rThe guildmaster says 'Pardon me?'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 24 "gain convert"
+out dec "The guildmaster tells you 'You are not yet ready.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 25 "gain points"
+out dec "The guildmaster tells you 'You are not yet ready.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 26 "@as god"
+rng 51897 86bbd2a0
+step 27 "set char decimus practice 30"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 28 "set char decimus train 40"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 29 "@as dec"
+rng 51897 86bbd2a0
+step 30 "gain list"
+out dec "group              cost  group              cost  group              cost \n\rattack             8     benedictions       8     combat             9     \n\rcreation           8     curative           8     enhancement        9     \n\rharmful            6     healing            6     maladictions       9     \n\rprotective         8     transportation     9     weather            8     \n\r\n\rskill              cost  skill              cost  skill              cost \n\rberserk            5     dirt kicking       4     dodge              6     \n\rhand to hand       4     kick               3     trip               8     \n\rfast healing       4     haggle             6     hide               6     \n\rlore               8     meditation         8     peek               6     \n\rpick lock          8     sneak              6     \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 31 "gain convert"
+out dec "The guildmaster helps you apply your practice to training\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 32 "gain points"
+out dec "The guildmaster tells you 'There would be no point in that.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 33 "gain weaponsmaster"
+out dec "The guildmaster tells you 'You already know that group!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 34 "gain weaponsmaster"
+out dec "The guildmaster tells you 'You already know that group!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 35 "gain sneak"
+out dec "The guildmaster trains you in the art of sneak\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 36 "gain armor"
+out dec "The guildmaster tells you 'You must learn the full group.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 37 "gain parry"
+out dec "The guildmaster tells you 'You already know that skill!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 38 "gain 'fast healing'"
+out dec "The guildmaster tells you 'I do not understand...'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 39 "gain hand to hand"
+out dec "The guildmaster trains you in the art of hand to hand\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 40 "gain nonsense"
+out dec "The guildmaster tells you 'I do not understand...'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 41 "@as god"
+rng 51897 86bbd2a0
+step 42 "set char decimus train 1"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 43 "@as dec"
+rng 51897 86bbd2a0
+step 44 "gain dagger"
+out dec "The guildmaster tells you 'You already know that skill!'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 45 "spells"
+out dec "No spells found.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 46 "spells all"
+out dec "No spells found.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 47 "@as pupil"
+rng 51897 86bbd2a0
+step 48 "spells"
+out pupil "No spells found.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 49 "spells all"
+out pupil "No spells found.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 50 "spells 5"
+out pupil "No spells found.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 51 "spells 1 20"
+out pupil "No spells found.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 52 "spells 20 1"
+out pupil "That would be silly.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 53 "spells x"
+out pupil "Arguments must be numerical or all.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 54 "spells 1 x"
+out pupil "Arguments must be numerical or all.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 55 "spells 99"
+out pupil "Levels must be between 1 and 51.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 56 "spells 1 99"
+out pupil "Levels must be between 1 and 51.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 57 "@as god"
+rng 51897 86bbd2a0
+step 58 "set skill smokegod all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 59 "spells"
+out god "\n\rLevel  1: magic missile        15 mana  ventriloquate         5 mana  \n\rLevel  2: detect magic          5 mana  \n\rLevel  3: detect invis          5 mana  \n\rLevel  4: chill touch          15 mana  floating disc        40 mana  \n\rLevel  5: invisibility          5 mana  \n\rLevel  6: continual light       7 mana  faerie fire           5 mana  \n\rLevel  7: armor                 5 mana  burning hands        15 mana  \n\rLevel  8: create water          5 mana  refresh              12 mana  \n\rLevel  9: infravision           5 mana  locate object        20 mana  \n\r          recharge             60 mana  \n\rLevel 10: create food           5 mana  fly                  10 mana  \n\r          shocking grasp       15 mana  sleep                15 mana  \n\rLevel 11: detect evil           5 mana  detect good           5 mana  \n\r          giant strength       20 mana  weaken               20 mana  \n\rLevel 12: blindness             5 mana  know alignment        9 mana  \n\r          protection evil       5 mana  protection good       5 mana  \n\rLevel 13: fireproof            10 mana  lightning bolt       15 mana  \n\r          teleport             35 mana  \n\rLevel 14: create spring        20 mana  faerie fog           12 mana  \n\r          farsight             36 mana  \n\rLevel 15: control weather      25 mana  detect hidden         5 mana  \n[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 60 "spells 1 10"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 61 "spells all"
+out god "\n\rLevel  1: magic missile        15 mana  ventriloquate         5 mana  \n\rLevel  2: detect magic          5 mana  \n\rLevel  3: detect invis          5 mana  \n\rLevel  4: chill touch          15 mana  floating disc        40 mana  \n\rLevel  5: invisibility          5 mana  \n\rLevel  6: continual light       7 mana  faerie fire           5 mana  \n\rLevel  7: armor                 5 mana  burning hands        15 mana  \n\rLevel  8: create water          5 mana  refresh              12 mana  \n\rLevel  9: infravision           5 mana  locate object        20 mana  \n\r          recharge             60 mana  \n\rLevel 10: create food           5 mana  fly                  10 mana  \n\r          shocking grasp       15 mana  sleep                15 mana  \n\rLevel 11: detect evil           5 mana  detect good           5 mana  \n\r          giant strength       20 mana  weaken               20 mana  \n\rLevel 12: blindness             5 mana  know alignment        9 mana  \n\r          protection evil       5 mana  protection good       5 mana  \n\rLevel 13: fireproof            10 mana  lightning bolt       15 mana  \n\r          teleport             35 mana  \n\rLevel 14: create spring        20 mana  faerie fog           12 mana  \n\r          farsight             36 mana  \n\rLevel 15: control weather      25 mana  detect hidden         5 mana  \n[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 62 "set char decimus class mage"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 63 "set skill decimus all 100"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 64 "@as dec"
+rng 51897 86bbd2a0
+step 65 "spells"
+out dec "\n\rLevel  2: magic missile        15 mana  \n\rLevel  3: cause light          15 mana  cure light           11 mana  \n\rLevel  5: armor                14 mana  \n\rLevel  6: chill touch          16 mana  \n\rLevel  8: bless                25 mana  cure blindness       25 mana  \n\r          faerie fire          25 mana  \n\rLevel  9: burning hands        33 mana  continual light      33 mana  \n\r          refresh              33 mana  \n\rLevel 10: cause serious        50 mana  cure serious         50 mana  \n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51897 86bbd2a0
+step 66 "spells all"
+out dec "\n\rLevel  2: magic missile        15 mana  \n\rLevel  3: cause light          15 mana  cure light           11 mana  \n\rLevel  5: armor                14 mana  \n\rLevel  6: chill touch          16 mana  \n\rLevel  8: bless                25 mana  cure blindness       25 mana  \n\r          faerie fire          25 mana  \n\rLevel  9: burning hands        33 mana  continual light      33 mana  \n\r          refresh              33 mana  \n\rLevel 10: cause serious        50 mana  cure serious         50 mana  \n\rLevel 11: create water       n/a      protection evil    n/a      \n\r          protection good    n/a      \n\rLevel 12: create food        n/a      \n\rLevel 13: shocking grasp     n/a      \n\rLevel 14: cure disease       n/a      earthquake         n/a      \n\rLevel 15: blindness          n/a      \n\rLevel 16: cure poison        n/a      floating disc      n/a      \n\r          infravision        n/a      lightning bolt     n/a      \n\rLevel 17: weaken             n/a      \n\rLevel 18: fireproof          n/a      \n\rLevel 19: cause critical     n/a      cure critical      n/a      \n\rLevel 20: calm               n/a      colour spray       n/a      \n[Hit Return to continue]\n\r"
+rng 51897 86bbd2a0
+step 67 "@state"
+state room 3001 light 2 people mob player player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 9500 pos 8 hit 30001/30001 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 208 silver 152 act 136447491 affected_by 40 train 0 on 0 stats 20 24 21 24 21
+state char Pupil 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 65536 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+rng 51897 86bbd2a0

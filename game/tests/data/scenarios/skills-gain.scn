@@ -1,0 +1,74 @@
+# skills.c's gain and spells, with only area_update running, in the temple (3001), where Smokegod (60) puts a
+# guildmaster (9500, a trainer). Decimus (10) trains; Pupil (10) looks for a trainer.
+# - gain with no trainer here (Pupil, before the guildmaster comes); gain with nothing, list, convert and points
+#   (not ready, then ready), a group, a skill, a spell (the whole group is needed), something already known,
+#   something beyond the class, something too dear, and nothing it knows
+# - spells: Decimus's and Pupil's (warriors: none), the refusals, then Smokegod's with every skill set: his,
+#   up to level 10, and all; then Decimus as a mage with every skill, whose low level shows each spell's mana
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@connect pupil
+Pupil
+psswrd
+@return
+@return
+@as god
+transfer pupil 3001
+@as pupil
+gain list
+@as god
+@mob 9500 3001
+@as dec
+gain
+gain convert
+gain points
+@as god
+set char decimus practice 30
+set char decimus train 40
+@as dec
+gain list
+gain convert
+gain points
+gain weaponsmaster
+gain weaponsmaster
+gain sneak
+gain armor
+gain parry
+gain 'fast healing'
+gain hand to hand
+gain nonsense
+@as god
+set char decimus train 1
+@as dec
+gain dagger
+spells
+spells all
+@as pupil
+spells
+spells all
+spells 5
+spells 1 20
+spells 20 1
+spells x
+spells 1 x
+spells 99
+spells 1 99
+@as god
+set skill smokegod all 100
+spells
+spells 1 10
+spells all
+set char decimus class mage
+set skill decimus all 100
+@as dec
+spells
+spells all
+@state

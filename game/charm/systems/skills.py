@@ -344,3 +344,165 @@ def check_improve(ch, sn: int, success: bool, multiplier: int) -> None:
             learned[sn] += number_range(1, 3)
             learned[sn] = min(learned[sn], 100)
             gain_exp(ch, 2 * sk.rating[ch.class_])
+
+
+# C: skills.c do_gain
+def do_gain(ch, argument: str) -> None:
+    """Buying groups and skills from a trainer with trains, converting practices to trains, and trains to a
+    creation point less."""
+    from charm.commands.comm import do_say
+    from charm.entities.handler import can_see
+    from charm.net.act import act
+
+    if ch.is_npc:
+        return
+    trainer = next((t for t in ch.in_room.people if t.is_npc and t.act & C.ACT_GAIN), None)  # "find a trainer"
+    if trainer is None or not can_see(ch, trainer):
+        send_to_char("You can't do that here.\n\r", ch)
+        return
+
+    _, arg = one_argument(argument)
+    if arg == "":
+        do_say(trainer, "Pardon me?")
+        return
+
+    if str_prefix(arg, "list"):
+        send_to_char("%-18s %-5s %-18s %-5s %-18s %-5s\n\r" % ("group", "cost", "group", "cost", "group", "cost"), ch)
+        col = 0
+        for gn, g in enumerate(GROUP_TABLE):
+            if not ch.pcdata.group_known[gn] and g.rating[ch.class_] > 0:
+                send_to_char("%-18s %-5d " % (g.name, g.rating[ch.class_]), ch)
+                col += 1
+                if col % 3 == 0:  # non-negative: a count
+                    send_to_char("\n\r", ch)
+        if col % 3 != 0:  # non-negative: a count
+            send_to_char("\n\r", ch)
+        send_to_char("\n\r", ch)
+        send_to_char("%-18s %-5s %-18s %-5s %-18s %-5s\n\r" % ("skill", "cost", "skill", "cost", "skill", "cost"), ch)
+        col = 0
+        for sn, s in enumerate(SKILL_TABLE):
+            if not ch.pcdata.learned[sn] and s.rating[ch.class_] > 0 and _spell_null(sn):
+                send_to_char("%-18s %-5d " % (s.name, s.rating[ch.class_]), ch)
+                col += 1
+                if col % 3 == 0:  # non-negative: a count
+                    send_to_char("\n\r", ch)
+        if col % 3 != 0:  # non-negative: a count
+            send_to_char("\n\r", ch)
+        return
+
+    if str_prefix(arg, "convert"):
+        if ch.practice < 10:
+            act("$N tells you 'You are not yet ready.'", ch, None, trainer, C.TO_CHAR)
+            return
+        act("$N helps you apply your practice to training", ch, None, trainer, C.TO_CHAR)
+        ch.practice -= 10
+        ch.train += 1
+        return
+
+    if str_prefix(arg, "points"):
+        if ch.train < 2:
+            act("$N tells you 'You are not yet ready.'", ch, None, trainer, C.TO_CHAR)
+            return
+        if ch.pcdata.points <= 40:
+            act("$N tells you 'There would be no point in that.'", ch, None, trainer, C.TO_CHAR)
+            return
+        act("$N trains you, and you feel more at ease with your skills.", ch, None, trainer, C.TO_CHAR)
+        ch.train -= 2
+        ch.pcdata.points -= 1
+        ch.exp = exp_per_level(ch, ch.pcdata.points) * ch.level
+        return
+
+    # "else add a group/skill": by the whole argument, not the first word
+    gn = group_lookup(argument)
+    if gn > 0:  # group 0, rom basics, every class has
+        g = GROUP_TABLE[gn]
+        if ch.pcdata.group_known[gn]:
+            act("$N tells you 'You already know that group!'", ch, None, trainer, C.TO_CHAR)
+            return
+        if g.rating[ch.class_] <= 0:
+            act("$N tells you 'That group is beyond your powers.'", ch, None, trainer, C.TO_CHAR)
+            return
+        if ch.train < g.rating[ch.class_]:
+            act("$N tells you 'You are not yet ready for that group.'", ch, None, trainer, C.TO_CHAR)
+            return
+        gn_add(ch, gn)  # "add the group"
+        act("$N trains you in the art of $t", ch, g.name, trainer, C.TO_CHAR)
+        ch.train -= g.rating[ch.class_]
+        return
+
+    sn = skill_lookup(argument)
+    if sn > -1:
+        s = SKILL_TABLE[sn]
+        if not _spell_null(sn):
+            act("$N tells you 'You must learn the full group.'", ch, None, trainer, C.TO_CHAR)
+            return
+        if ch.pcdata.learned[sn]:
+            act("$N tells you 'You already know that skill!'", ch, None, trainer, C.TO_CHAR)
+            return
+        if s.rating[ch.class_] <= 0:
+            act("$N tells you 'That skill is beyond your powers.'", ch, None, trainer, C.TO_CHAR)
+            return
+        if ch.train < s.rating[ch.class_]:
+            act("$N tells you 'You are not yet ready for that skill.'", ch, None, trainer, C.TO_CHAR)
+            return
+        ch.pcdata.learned[sn] = 1  # "add the skill"
+        act("$N trains you in the art of $t", ch, s.name, trainer, C.TO_CHAR)
+        ch.train -= s.rating[ch.class_]
+        return
+
+    act("$N tells you 'I do not understand...'", ch, None, trainer, C.TO_CHAR)
+
+
+# C: skills.c do_spells
+def do_spells(ch, argument: str) -> None:
+    """"RT spells and skills show the players spells (or skills)": as do_skills, with each spell's mana."""
+    if ch.is_npc:
+        return
+    fall, min_lev, max_lev = False, 1, C.LEVEL_HERO
+    if argument != "":
+        fall = True
+        if not str_prefix(argument, "all"):
+            argument, arg = one_argument(argument)
+            if not is_number(arg):
+                send_to_char("Arguments must be numerical or all.\n\r", ch)
+                return
+            max_lev = atoi(arg)
+            if max_lev < 1 or max_lev > C.LEVEL_HERO:
+                send_to_char("Levels must be between 1 and %d.\n\r" % C.LEVEL_HERO, ch)
+                return
+            if argument != "":
+                argument, arg = one_argument(argument)
+                if not is_number(arg):
+                    send_to_char("Arguments must be numerical or all.\n\r", ch)
+                    return
+                min_lev, max_lev = max_lev, atoi(arg)
+                if max_lev < 1 or max_lev > C.LEVEL_HERO:
+                    send_to_char("Levels must be between 1 and %d.\n\r" % C.LEVEL_HERO, ch)
+                    return
+                if min_lev > max_lev:
+                    send_to_char("That would be silly.\n\r", ch)
+                    return
+    lists = [""] * (C.LEVEL_HERO + 1)
+    columns = [0] * (C.LEVEL_HERO + 1)
+    found = False
+    for sn, s in enumerate(SKILL_TABLE):
+        level = s.skill_level[ch.class_]
+        if (level < C.LEVEL_HERO + 1 and (fall or level <= ch.level) and min_lev <= level <= max_lev
+                and not _spell_null(sn) and ch.pcdata.learned[sn] > 0):
+            found = True
+            if ch.level < level:
+                buf = "%-18s n/a      " % s.name
+            else:
+                mana = max(s.min_mana, c_div(100, 2 + ch.level - level))
+                buf = "%-18s  %3d mana  " % (s.name, mana)
+            if lists[level] == "":
+                lists[level] = "\n\rLevel %2d: %s" % (level, buf)
+            else:
+                columns[level] += 1
+                if columns[level] % 2 == 0:  # non-negative: a count
+                    lists[level] += "\n\r          "
+                lists[level] += buf
+    if not found:
+        send_to_char("No spells found.\n\r", ch)
+        return
+    page_to_char("".join(x for x in lists if x) + "\n\r", ch)

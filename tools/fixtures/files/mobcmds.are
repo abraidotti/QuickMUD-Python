@@ -1,0 +1,235 @@
+#AREA
+mobcmds.are~
+Mob command tests~
+{ 1 5} Charm  Mob commands~
+30000 30099
+
+#MOBILES
+#30005
+stage manager~
+the stage manager~
+A stage manager runs the show from here.
+~
+A busy stage manager with a list of cues.
+~
+human~
+B 0 0 0
+40 0 10d10+1000 1d1+999 1d4+0 punch
+5 5 5 5
+0 0 0 0
+stand stand male 100
+0 0 medium flesh
+M speech 30030 echoes~
+M speech 30031 loads~
+M speech 30032 junk~
+M speech 30033 purge~
+M speech 30034 travel~
+M speech 30035 forces~
+M speech 30036 spells~
+M speech 30037 hurt~
+M speech 30038 remember~
+M speech 30039 subroutine~
+M speech 30040 flee~
+M speech 30041 fight~
+M speech 30042 strip~
+M speech 30043 deep~
+M delay 30044 100~
+#30006
+understudy~
+the understudy~
+An understudy waits in the wings.
+~
+An understudy, ready to step in.
+~
+human~
+B 0 0 0
+5 0 10d10+100 1d1+99 1d4+0 punch
+5 5 5 5
+0 0 0 0
+stand stand female 100
+0 0 medium flesh
+#0
+
+#MOBPROGS
+#30030
+* speech "echoes": every echo, and a bad mob command
+mob echo The stage manager rings a bell.
+mob echoat $n Psst, $n, you're on next.
+mob echoaround $n The stage manager whispers to $n.
+mob echoat $n
+mob asound You hear a bell from the temple.
+mob zecho Places, everyone in Midgaard!
+mob gecho Curtain up across the world!
+mob gecho
+mob zecho
+mob nosuchcommand
+mob
+say echoes done
+~
+#30031
+* speech "loads": mobs and objects
+mob mload 3062
+mob mload 30099
+mob mload nonsense
+mob oload 3001
+mob oload 3001 0 R
+mob oload 3716 1 W
+mob oload 3001 99
+mob oload 3001 level
+mob oload nonsense
+mob oload 30099
+mob oload 3010 0
+say loads done
+~
+#30032
+* speech "junk": by name, worn, all of a kind, and all
+mob oload 3001
+mob oload 3001
+mob oload 3002
+mob junk bottle
+mob junk banner
+mob junk all.bottle
+mob junk nosuchthing
+mob junk all
+mob junk
+say junk done
+~
+#30033
+* speech "purge": a mob by name, an object by name, a player (refused), and everything
+mob purge fido
+mob purge bottle
+mob purge $n
+mob purge nosuchthing
+mob purge
+say purge done
+~
+#30034
+* speech "travel": goto, at, transfer, gtransfer and otransfer
+mob goto 3005
+say I'm in the square.
+mob goto 3001
+mob at 3005 say Said from the square.
+mob at 3005
+mob transfer $n 3005
+mob transfer $n
+mob transfer all 3014
+mob transfer $n
+mob gtransfer $n 3005
+mob gtransfer $n
+mob oload 3001 0 R
+mob otransfer bottle 3005
+mob oload 3716 1 W
+mob otransfer banner 3005
+mob otransfer bottle 99999
+mob otransfer
+mob goto 99999
+mob goto
+mob transfer
+mob transfer nobody 3005
+mob transfer $n
+mob transfer pupil
+say travel done
+~
+#30035
+* speech "forces": force, force all, gforce and vforce
+mob force $n say I am forced.
+mob force all smile
+mob gforce $n nod
+mob vforce 30006 say The understudy is forced.
+mob vforce nonsense say no
+mob force $n
+mob force self say no
+say forces done
+~
+#30036
+* speech "spells": each kind of target
+mob cast armor $n
+mob cast 'cure light' $n
+mob cast blindness understudy
+mob cast blindness self
+mob cast 'detect invis'
+mob cast 'create food'
+mob cast bless $n
+mob oload 3021
+mob cast 'enchant weapon' sword
+mob cast nosuchspell
+mob cast
+say spells done
+~
+#30037
+* speech "hurt": damage within the hit points, all, and with kill
+mob damage $n 1 3
+mob damage $n 100 200
+mob damage all 1 2
+mob damage $n 1 2 kill
+mob damage $n nonsense 2
+mob damage $n 1 nonsense
+mob damage nobody 1 2
+mob damage
+say hurt done
+~
+#30038
+* speech "remember": remember, forget, delay and cancel
+mob remember $n
+say I remember $q.
+mob forget
+say I remember $q.
+mob remember
+mob delay 2
+if isdelay $i
+  say A delay is set.
+endif
+mob cancel
+if isdelay $i
+  say not reached
+else
+  say No delay now.
+endif
+mob delay nonsense
+mob delay 2
+say remember done
+~
+#30039
+* speech "subroutine": mob call, with a character and objects
+mob oload 3001 0 R
+mob call 30045 $n bottle null
+mob call 30045
+mob call 30099
+mob call
+say subroutine done
+~
+#30040
+* speech "flee": not fighting, it goes
+mob flee
+~
+#30041
+* speech "fight": kill a player, assist one fighting
+mob kill $n
+mob kill understudy
+mob assist $n
+mob kill
+say fight done
+~
+#30042
+* speech "strip": take objects back by vnum and all
+mob remove $n 3716
+mob remove $n nonsense
+mob remove $n all
+say strip done
+~
+#30043
+* speech "deep": a program that calls itself, past MAX_CALL_LEVEL
+say Deeper.
+mob call 30043 $n
+~
+#30044
+* delay: when the delay runs out
+say The delay ran out.
+~
+#30045
+* called by mob call
+say Called for $n with $o, and $p.
+~
+#0
+
+#$
