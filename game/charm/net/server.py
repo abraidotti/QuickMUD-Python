@@ -39,6 +39,7 @@ from charm.net.descriptor import Descriptor, ch_of, new_descriptor
 from charm.net.input import read_from_buffer, read_from_descriptor
 from charm.net.output import process_output, send_to_desc, show_string, write_to_buffer, write_to_descriptor
 from charm.net.wiznet import wiznet
+from charm.olc.strings import string_add
 from charm.persist.player import save_char_obj
 
 PULSE_SECONDS = 1 / C.PULSE_PER_SECOND
@@ -277,7 +278,7 @@ def _loop(game, control: socket.socket, sel, stats: PulseStats | None) -> None:
                 if d.showstr_point is not None:
                     show_string(d, d.incomm)
                 elif d.pString is not None:
-                    raise NotPorted("string.c string_add")
+                    string_add(d.character, d.incomm)
                 elif d.connected == C.CON_PLAYING:
                     if not run_olc_editor(d):
                         substitute_alias(d, d.incomm)

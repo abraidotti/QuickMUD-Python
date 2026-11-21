@@ -1,0 +1,229 @@
+# The room editor (olc.c's redit, do_redit, the reset commands; olc_act.c's redit_* and change_exit) and the string
+# editor (string.c), with Planner (security 9) in Midgaard, and Delver (security 0).
+# A line of just "@" ends the string editor, but the scenario reads a line starting with @ as its own, so those
+# lines are "x", a backspace and "@": the game's input takes the backspace away, as it does from a telnet client.
+# - edit room in the temple; show; commands; rlist, mlist, olist (by name and by type), and their refusals;
+#   mshow and oshow's refusals (showing one needs the mob and object editors)
+# - name; desc in the string editor: every dot command, a ~ (smash_tilde makes it a -, so it's a line, not the
+#   end), the end; format word-wraps it
+# - heal, mana, clan, owner, room flags and sector, with their refusals; extra descriptions: add, edit, format,
+#   delete, and keywords not found
+# - exits: dig (a new room, linked both ways), name, key (refused, then a key), flags (copied to the other side),
+#   desc, link and room (one way) and delete (both sides), with each refusal; walking through one changes the
+#   room edited
+# - .f on sentences, parentheses, quotes, long lines and a word too long for a line ("No spaces")
+# - mreset and oreset (into the room, a container, a mob's hand and inventory); "already equipped" for anything
+#   in the inventory, since WEAR_NONE matches it (so a shopkeeper, who carries his stock, can only be given
+#   things to wear or hold); a shopkeeper's goods; each refusal
+# - resets: list, add (mob, object in the room, inside, worn, given, random exits) and delete, and each refusal;
+#   an empty position means "inside" object 1, which isn't a container; a reset naming no object isn't shown
+#   (its line is made and not sent); a pet shop's mobs show as P, a shopkeeper's goods as S; a new room has no
+#   resets
+# - redit reset, create and a vnum; asave changed saves Midgaard
+# - Delver can't edit, reset or list resets here
+@connect b
+Planner
+smoke123
+@return
+@return
+scroll 0
+goto 3001
+force hassan redit
+redit 99999
+edit room
+@return
+commands
+?
+rlist
+mlist
+mlist zzz
+mlist fido
+olist
+olist bread
+olist container
+olist zzz
+mshow
+mshow x
+mshow 99999
+oshow
+oshow x
+oshow 99999
+name
+name The Temple Of Testing
+desc
+.h
+.s
+A new line of text.
+Another line here.
+.li 1 Inserted first line.
+.lr 2 Replaced line.
+.ld 3
+.r 'Another' 'One more'
+.r
+.x
+~
+.s
+x@
+show
+format
+show
+heal
+heal 50
+mana 120
+clan
+clan rom
+owner
+owner Planner
+show
+owner none
+mana
+desc x
+room
+room dark
+room bogus
+room dark
+sector
+sector forest
+sector bogus
+ed
+ed add statue
+A big statue.
+x@
+ed add plaque
+x@
+ed edit statue
+.c
+A small statue.
+He said "Stop."  (Really.)  Why?  She shouted "No!" and left... the end. one two three four five six seven
+eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx tail.
+.f
+.s
+x@
+ed edit zz
+ed format statue
+ed format zz
+ed delete zz
+ed delete statue
+ed bogus x
+create
+create 99999
+create 3001
+west dig 3036
+west name gate
+west name
+west key
+west key 99999
+west key 3011
+west key 3120
+west door
+west closed locked
+west desc
+A gate to the west.
+x@
+west desc extra
+west link 3036
+create 3037
+east room 3037
+east delete
+east delete
+east door
+east key 5
+east name x
+east desc
+east bogus
+south ?
+up bogus
+down bogus
+west dig
+east room
+east room 99999
+north ?
+north link
+north link abc
+north link 99999
+north link 3054
+west
+@pulse 1
+show
+east
+@pulse 1
+west delete
+mreset
+mreset 99999
+mreset 1100
+mreset 3062 2 1
+oreset
+oreset 99999
+oreset 1100
+oreset 3033
+oreset 3011 box
+oreset 3011 fido
+oreset 3021 fido head
+oreset 3021 fido wield
+oreset 3011 fido none
+oreset 3011 fido none
+oreset 3011 nobody
+show
+done
+resets
+resets foo
+resets 1 bogus
+resets 99 delete
+resets 1 mob 99999
+resets 1 mob 3062 2 3
+resets 2 obj 3011 room
+resets 1 obj 99999 room
+resets 3 obj 3011
+resets 3 obj 3011 inside 3033 2 3
+resets 1 obj 3021 wield
+resets 1 obj 3011 none
+resets 1 obj 3011 bogus
+resets 1 obj 99999 wield
+resets 1 random 7
+resets 1 random 4
+resets
+resets 1 delete
+resets 99 delete
+resets 2 delete
+resets 1 obj 99999 inside 3033
+resets
+resets 1 delete
+resets
+goto 3032
+resets
+goto 3033
+redit
+oreset 3041 wizard hold
+oreset 3020 wizard wield
+oreset 3041 wizard none
+done
+resets
+goto 3036
+resets 1 obj 3011 none
+resets
+redit reset
+redit create
+redit create 0
+redit create 3038
+show
+resets
+redit create 3038
+done
+redit 3001
+done
+prompt <%o %O>
+redit
+prompt <%hhp %mm %vmv>
+done
+asave changed
+@file midgaard.are
+@connect d
+Delver
+psswrd
+@return
+redit
+redit reset
+redit 3001
+resets
+edit room

@@ -117,6 +117,7 @@ class Player:
 
     def pulse(self) -> None:
         from charm.commands.interp import run_olc_editor, substitute_alias
+        from charm.olc.strings import string_add
         from charm.net.input import read_from_buffer
         from charm.net.nanny import nanny
         from charm.net.output import process_output, show_string
@@ -142,7 +143,7 @@ class Player:
                 if d.showstr_point is not None:
                     show_string(d, d.incomm)
                 elif d.pString is not None:
-                    raise NotPorted("string.c string_add")
+                    string_add(d.character, d.incomm)
                 elif d.connected == C.CON_PLAYING:
                     if not run_olc_editor(d):
                         substitute_alias(d, d.incomm)
