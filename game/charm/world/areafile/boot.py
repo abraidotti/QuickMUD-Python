@@ -71,6 +71,10 @@ class Counts:
 
 @dataclass
 class Boot:
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<Boot: {len(self.files)} files>"
+
     tables: LookupTables
     files: list[AreaFile] = field(default_factory=list)
     areas: list[AreaHeader] = field(default_factory=list)  # every #AREA and #AREADATA, in load order (area_first)

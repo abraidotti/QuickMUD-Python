@@ -13,6 +13,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 import unittest
 from pathlib import Path
 
+from charm.testing import watchdog
 from charm.testing.scenario import EXPECT_STOP, difference, esc, play_fresh, source_hash
 
 REPO = Path(__file__).resolve().parents[2]
@@ -36,6 +37,7 @@ class Goldens(unittest.TestCase):
             golden = scn.with_suffix(".golden")
             if not golden.exists():
                 continue
+            watchdog.arm()  # the limit is per scenario: this test plays them all
             with self.subTest(scenario=scn.stem):
                 text = scn.read_text(encoding="latin-1")
                 c = golden.read_text(encoding="latin-1").splitlines()[1:]

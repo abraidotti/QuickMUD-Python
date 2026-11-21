@@ -5,6 +5,7 @@ The game's own tests (game/tests/test_scenarios.py) replay the goldens too; this
 
 import unittest
 
+from charm.testing.watchdog import allow
 from charm_tools.port import scenarios
 
 
@@ -20,5 +21,6 @@ class Difference(unittest.TestCase):
 
 
 class Goldens(unittest.TestCase):
+    @allow(600)  # every scenario, played in one call (about 150 seconds)
     def test_saved_goldens_match_the_python_game(self):
         self.assertEqual(scenarios.run(None), 0)

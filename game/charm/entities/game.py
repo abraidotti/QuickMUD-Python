@@ -44,6 +44,11 @@ def _song_table() -> list:
 
 @dataclass(eq=False)
 class Game:
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return (f"<Game: {len(self.index.areas)} areas, {len(self.char_list)} characters, "
+                f"{len(self.descriptor_list)} connections>")
+
     index: Index
     current_time: int
     char_list: list[Char] = field(default_factory=list)  # head first, as the C's char_list

@@ -258,6 +258,9 @@ class MobProg:
 class AreaFile:
     """Everything boot_db read from one file in area.lst."""
 
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<AreaFile {self.filename!r}>"
+
     filename: str
     header: AreaHeader | None = None
     sections: list[str] = field(default_factory=list)  # in the order seen

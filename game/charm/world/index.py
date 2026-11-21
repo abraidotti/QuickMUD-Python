@@ -57,6 +57,9 @@ class ExtraDescr:
 class Area:
     """AREA_DATA."""
 
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<Area {self.vnum} {self.file_name!r}>"
+
     vnum: int  # its place in the area list (top_area when it was loaded)
     file_name: str
     name: str
@@ -87,6 +90,9 @@ class Reset:
 class Exit:
     """EXIT_DATA. ``vnum`` is the file's; ``to_room`` is what fix_exits made of it (None for vnum <= 0)."""
 
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<Exit to {self.to_room.vnum if self.to_room is not None else None}>"
+
     vnum: int
     to_room: "Room | None"
     exit_info: int
@@ -100,6 +106,9 @@ class Exit:
 @dataclass(eq=False)
 class Room:
     """ROOM_INDEX_DATA."""
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<Room {self.vnum} {self.name!r}>"
 
     vnum: int
     name: str
@@ -131,6 +140,9 @@ class Help:
 @dataclass(eq=False)
 class HelpArea:
     """HELP_AREA: the helps one file loaded, in load order (first, then each next_area), for OLC to save."""
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<HelpArea {self.filename!r}: {len(self.helps)} helps>"
 
     filename: str
     area: Area | None  # load_helps's current_area: None for a file of helps alone
@@ -164,6 +176,9 @@ class MobProgRef:
 @dataclass(eq=False)
 class MobIndex:
     """MOB_INDEX_DATA."""
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<MobIndex {self.vnum} {self.short_descr!r}>"
 
     vnum: int
     area: Area
@@ -208,6 +223,9 @@ class MobIndex:
 class ObjIndex:
     """OBJ_INDEX_DATA."""
 
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<ObjIndex {self.vnum} {self.short_descr!r}>"
+
     vnum: int
     area: Area
     name: str
@@ -233,6 +251,10 @@ class ObjIndex:
 class Index:
     """The prototypes, by vnum, and the area list in load order. Lookups return None for a vnum that isn't there,
     as get_*_index do once booting is over."""
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return (f"<Index: {len(self.areas)} areas, {len(self.rooms)} rooms, {len(self.mobs)} mobs, "
+                f"{len(self.objs)} objects>")
 
     areas: list[Area]
     rooms: dict[int, Room]

@@ -47,6 +47,11 @@ class _OwnString:
 class Char:
     """CHAR_DATA, with new_char's defaults."""
 
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        mob = f" (mob {self.index.vnum})" if self.index is not None else ""
+        room = f" in {self.in_room.vnum}" if self.in_room is not None else ""
+        return f"<Char {self.name!r}{mob}{room}>"
+
     index: MobIndex | None = None  # pIndexData; None for a player
     name: str = ""  # fwrite_pet always writes Name, so it isn't an _OwnString
     short_descr: str = _OwnString()
@@ -196,6 +201,9 @@ def clear_buf(buffer: Buffer) -> None:
 class PCData:
     """PC_DATA. Each colour setting is [bright, colour, beep], as the C's int field[3]."""
 
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return "<PCData>"
+
     pwd: str = ""
     bamfin: str = ""
     bamfout: str = ""
@@ -238,6 +246,9 @@ class GenData:
 @dataclass(eq=False)
 class Obj:
     """OBJ_DATA, all zeros as new_obj leaves it."""
+
+    def __repr__(self) -> str:  # short: the dataclass default never ends (tests/test_reprs.py)
+        return f"<Obj {self.index.vnum if self.index is not None else None} {self.short_descr!r}>"
 
     index: ObjIndex | None = None  # pIndexData
     in_room: Room | None = None
