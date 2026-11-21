@@ -93,6 +93,102 @@ class Strings(unittest.TestCase):
         self.assertEqual(string_proper(""), "")
 
 
+class StringEditor(unittest.TestCase):
+    def test_format_string(self):
+        from charm.olc.strings import format_string
+
+        self.assertEqual(format_string("hello.  there\n\r"), "Hello.  There \n\r")  # the trailing space stays
+        self.assertEqual(format_string('a (b.) c "d." e'), 'A (b.)  C "d."  E\n\r')
+        self.assertEqual(format_string("x... y"), "X...  Y\n\r")
+        wrapped = format_string("word " * 30)
+        self.assertTrue(all(len(line) <= 77 for line in wrapped.split("\n\r")))
+        with log.capture() as lines:
+            self.assertEqual(format_string("a" * 80)[:78], "A" + "a" * 74 + "-\n\r")  # a character is lost
+        self.assertIn("No spaces", "".join(lines))
+
+    def test_format_string_reads_before_its_buffer(self):
+        from charm.olc.strings import format_string
+
+        for text in ("", " leading", "\nx", ". x"):
+            with self.subTest(text=text), self.assertRaises(CWouldCrash):
+                format_string(text)
+
+    def test_lines(self):
+        from charm.olc.strings import first_arg, merc_getline, numlines, string_lineadd, string_linedel
+
+        text = "one\n\rtwo\n\rthree\n\r"
+        self.assertEqual(string_linedel(text, 2), "one\n\rthree\n\r")
+        self.assertEqual(string_linedel(text, 9), text)
+        self.assertEqual(string_lineadd(text, "new", 1), "new\n\r" + text)
+        self.assertEqual(string_lineadd(text, "new", 4), text + "new\n\r")  # one past the last line
+        self.assertEqual(string_lineadd(text, "new", 9), text)
+        self.assertEqual(string_lineadd("", "new", 1), "new\n\r")
+        self.assertEqual(numlines(text), " 1. one\n\r 2. two\n\r 3. three\n\r")
+        self.assertEqual(merc_getline("no end"), ("", "no end"))
+        self.assertEqual(merc_getline("a\nb"), ("b", "a"))
+        self.assertEqual(first_arg("  (two words) rest", False), ("rest", "two words"))
+        self.assertEqual(first_arg("%Pct% x", True), ("x", "pct"))
+
+    def test_too_long_and_none(self):
+        from charm.olc.strings import string_add, string_append
+        from charm.net.descriptor import new_descriptor
+        from charm.entities.things import new_char
+        from charm.world.index import ExtraDescr
+
+        ch = new_char(0)
+        ch.desc = new_descriptor()
+        ed = ExtraDescr("k", None)
+        string_append(ch, (ed, "description"))
+        self.assertEqual(ed.description, "")  # a NULL string is made empty
+        ed.description = "x" * (C.MAX_STRING_LENGTH - 10)
+        string_add(ch, "123456")
+        self.assertIsNone(ch.desc.pString)  # "String too long, last line skipped." and out of the editor
+        self.assertIn("String too long", ch.desc.outbuf)
+
+
+class RoomEditor(unittest.TestCase):
+    def setUp(self):
+        from tests.test_commands import Commands
+
+        self.case = Commands()
+        self.case.setUp()
+        self.game, self.ch = self.case.game, self.case.ch
+        self.ch.pcdata.security = 9
+        self.room = self.ch.in_room
+
+    def tearDown(self):
+        self.case.tearDown()
+
+    def test_add_reset_slots(self):
+        from charm.olc.olc import add_reset
+
+        room = self.room
+        room.resets = []
+        a, b, c, d, e = (Reset(x, 0, 0, 0, 0) for x in "ABCDE")
+        add_reset(room, a, 5)  # the first reset goes in whatever the slot
+        add_reset(room, b, 1)  # slot 1: first
+        add_reset(room, c, 0)  # 0: last
+        add_reset(room, d, 2)  # slot 2
+        add_reset(room, e, -3)  # negative: last
+        self.assertEqual([r.command for r in room.resets], ["B", "D", "A", "C", "E"])
+
+    def test_an_exit_to_nowhere_crashes(self):
+        from charm.olc.act import change_exit
+        from charm.olc.mem import new_exit
+
+        self.room.exit[1] = new_exit()  # to_room None
+        for line in ("door", "delete"):
+            with self.subTest(line), self.assertRaises(CWouldCrash):
+                change_exit(self.ch, line, 1)
+
+    def test_resets_inside_nothing_crashes(self):
+        from charm.olc.olc import do_resets
+
+        self.room.area.security = 0
+        with self.assertRaises(CWouldCrash):
+            do_resets(self.ch, "1 obj 1 inside 99999")
+
+
 class Saving(unittest.TestCase):
     def setUp(self):
         self.game = boot_game()

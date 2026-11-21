@@ -94,7 +94,8 @@ def _commands() -> dict:
                  do_gain=do_gain, do_spells=do_spells,
                  # mob_cmds.c's: only these are commands; the rest are mob_interpret's
                  do_mob=mobcmds.do_mob, do_mpstat=mobcmds.do_mpstat, do_mpdump=mobcmds.do_mpdump,
-                 do_asave=olc_save.do_asave, do_olc=olc.do_olc, do_aedit=olc.do_aedit, do_alist=olc.do_alist)
+                 do_asave=olc_save.do_asave, do_olc=olc.do_olc, do_aedit=olc.do_aedit, do_alist=olc.do_alist,
+                 do_redit=olc.do_redit, do_resets=olc.do_resets)
     return found
 
 
@@ -302,14 +303,17 @@ def substitute_alias(d, argument: str) -> None:
 
 # C: olc.c run_olc_editor [partial]
 def run_olc_editor(d) -> bool:
-    """[partial]: the area editor runs; the others (redit, oedit, medit, mpedit, hedit) raise NotPorted."""
+    """[partial]: the area and room editors run; the others (oedit, medit, mpedit, hedit) raise NotPorted."""
     from charm.core.errors import NotPorted
-    from charm.olc import ED_AREA
-    from charm.olc.olc import aedit
+    from charm.olc import ED_AREA, ED_ROOM
+    from charm.olc.olc import aedit, redit
 
     if d.editor == ED_AREA:
         aedit(d.character, d.incomm)
         return True
-    if d.editor in (2, 3, 4, 5, 6):  # ED_ROOM .. ED_HELP
+    if d.editor == ED_ROOM:
+        redit(d.character, d.incomm)
+        return True
+    if d.editor in (3, 4, 5, 6):  # ED_OBJECT .. ED_HELP
         raise NotPorted(f"olc.c run_olc_editor: editor {d.editor}")
     return False

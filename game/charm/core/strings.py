@@ -39,6 +39,12 @@ def str_prefix(astr: str, bstr: str) -> bool:
     return lower(bstr).startswith(lower(astr))
 
 
+# C: db.c str_infix
+def str_infix(astr: str, bstr: str) -> bool:
+    """``!str_infix (astr, bstr)``: astr is somewhere in bstr, ignoring case. An empty astr always is."""
+    return lower(astr) in lower(bstr)
+
+
 # C: db.c str_suffix
 def str_suffix(astr: str, bstr: str) -> bool:
     """``!str_suffix (astr, bstr)``: astr is a suffix of bstr, ignoring case."""
