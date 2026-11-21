@@ -9,8 +9,9 @@ real boot log (see world.py and the ``explore parity`` command).
 Adapted from xania-explorer 90cfc79 areafile/parser.py: the section loop and structure carry over; every loader
 was rewritten from Charm's db.c/db2.c (ROM's formats and checks differ from Xania's throughout).
 
-Not modelled (reported, never guessed): the old #MOBOLD and #OBJOLD formats (no stock area uses them), and
-area.lst's "-" (read from stdin). The first reset pass (area_update) is the game's: charm.entities.boot.
+Not modelled (reported, never guessed): area.lst's "-" (read from stdin). The old #MOBOLD and #OBJOLD formats
+(no stock area uses them) are read into OldMob and OldObj. The first reset pass (area_update) is the game's:
+charm.entities.boot.
 
 load_mobiles and load_objects come in two halves. This module reads: the model keeps what the file says. Then
 charm.world.index builds the prototypes the C leaves, with a mob's race flags ORed into its own, ACT_IS_NPC set,
@@ -26,13 +27,14 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from charm.core.cint import c_div
 from charm.core.errors import CWouldCrash
 from charm.core.strings import lower, str_prefix, upper
 
 from .lookups import LookupTables, prefix_lookup
 from .model import (
     AreaFile, AreaHeader, Dice, Exit, ExtraDescription, FlagRemoval, Help, Mob, MobProg, MobProgRef, Obj, ObjAffect,
-    REV_DIR, Reset, Room, Shop, Social, Special,
+    OldMob, OldObj, REV_DIR, Reset, Room, Shop, Social, Special,
 )
 from .reader import AreaParseError, Diagnostic, Reader, StringSpace, sh_int
 
@@ -41,10 +43,6 @@ MAX_TRADE = 5
 MAX_DIR = 6
 FLAG_FIELDS = ("act", "aff", "off", "imm", "res", "vul", "for", "par")  # db2.c load_mobiles 'F' lines, in order
 FLAG_FIELD_NAMES = {"vul": "vuln", "for": "form", "par": "parts"}
-
-
-class UnsupportedSection(AreaParseError):
-    """A section the game reads but charm_tools doesn't model yet. What the game does with it is unknown here."""
 
 
 @dataclass
@@ -120,14 +118,14 @@ class Boot:
                     current_area = self._new_load_area(r, af)
                 elif section == "HELPS":
                     self._load_helps(r, af, current_area)
-                elif section in ("MOBOLD", "OBJOLD"):
-                    raise UnsupportedSection(
-                        f"#{section} (the old format) isn't modelled by charm_tools yet; how the game loads this "
-                        "file is unknown here", r.filename, r.line)
+                elif section == "MOBOLD":
+                    self._load_old_mob(r, af)
                 elif section == "MOBILES":
                     self._load_mobiles(r, af)
                 elif section == "MOBPROGS":
                     self._load_mobprogs(r, af)
+                elif section == "OBJOLD":
+                    self._load_old_obj(r, af)
                 elif section == "OBJECTS":
                     self._load_objects(r, af)
                 elif section == "RESETS":
@@ -411,6 +409,123 @@ class Boot:
             af.objects.append(obj)
             self.counts.objects += 1
             self.counts.objects_new += 1
+
+    # -- #MOBOLD (load_old_mob, db.c:663) ----------------------------------------------------------------------
+    # C: db.c load_old_mob
+    def _load_old_mob(self, r: Reader, af: AreaFile) -> None:
+        """The reading half: charm.world.index's old_mob_index makes the prototype, and convert_mobile its dice.
+        The C runs convert_mobile as each mob loads, so newmobs counts these too."""
+        self._need_area(r, "Load_mobiles: no #AREA seen yet.")
+        d = self.tables.defines
+        while True:
+            if r.read_letter() != "#":
+                raise r.error("Load_mobiles: # not found.")
+            line = r.line
+            vnum = sh_int(r.read_number())
+            if vnum == 0:
+                break
+            if vnum in self.mobs:
+                raise r.error(f"Load_mobiles: vnum {vnum} duplicated.")
+            keywords = r.read_string()
+            short = r.read_string()
+            long = r.read_string()
+            desc = r.read_string()
+            for value, what in ((long, "the long description"), (desc, "the description")):
+                if value is None:
+                    raise self._crash(r, what)
+            act = r.read_flag()
+            aff = r.read_flag()
+            alignment = r.read_number()
+            letter = r.read_letter()
+            level = r.read_number()
+            # "The unused stuff is for imps who want to use the old-style stats-in-files method."
+            for _ in range(3):
+                r.read_number()
+            r.read_letter()  # 'd'
+            r.read_number()
+            r.read_letter()  # '+'
+            r.read_number()
+            r.read_number()
+            r.read_letter()  # 'd'
+            r.read_number()
+            r.read_letter()  # '+'
+            r.read_number()
+            wealth = c_div(r.read_number(), 20)
+            r.read_number()  # "xp can't be used!"
+            start_pos = sh_int(r.read_number())
+            default_pos = sh_int(r.read_number())
+            if start_pos < d["POS_SLEEPING"]:
+                start_pos = d["POS_STANDING"]
+            if default_pos < d["POS_SLEEPING"]:
+                default_pos = d["POS_STANDING"]
+            sex = sh_int(r.read_number())
+            if letter != "S":
+                raise r.error(f"Load_mobiles: vnum {vnum} non-S.")
+            mob = OldMob(vnum, keywords, short, long, desc, act, aff, alignment, level, wealth, start_pos,
+                         default_pos, sex, file=af.filename, line=line)
+            self.mobs[vnum] = mob
+            self._mob_order.append(vnum)
+            self._assign_area_vnum(vnum)
+            af.mobs.append(mob)
+            self.counts.mobs += 1
+            self.counts.mobs_new += 1  # convert_mobile's ++newmobs
+
+    # -- #OBJOLD (load_old_obj, db.c:810) ----------------------------------------------------------------------
+    # C: db.c load_old_obj
+    def _load_old_obj(self, r: Reader, af: AreaFile) -> None:
+        """The reading half: charm.world.index's old_obj_index makes the prototype. A spell slot that no skill has
+        stops the boot here, as the C's slot_lookup does while booting (bug, then abort)."""
+        self._need_area(r, "Load_objects: no #AREA seen yet.")
+        d = self.tables.defines
+        spells = {d["ITEM_PILL"], d["ITEM_POTION"], d["ITEM_SCROLL"]}
+        wands = {d["ITEM_STAFF"], d["ITEM_WAND"]}
+        names = {v: n for n, v in reversed(self.tables.item_types)}  # the first name for each type
+        while True:
+            if r.read_letter() != "#":
+                raise r.error("Load_objects: # not found.")
+            line = r.line
+            vnum = sh_int(r.read_number())
+            if vnum == 0:
+                break
+            if vnum in self.objects:
+                raise r.error(f"Load_objects: vnum {vnum} duplicated.")
+            keywords = r.read_string()
+            short = r.read_string()
+            desc = r.read_string()
+            r.read_string()  # the action description
+            for value, what in ((short, "the short description"), (desc, "the description")):
+                if value is None:
+                    raise self._crash(r, what)
+            item_type = sh_int(r.read_number())
+            extra = r.read_flag()
+            wear = r.read_flag()
+            values = [r.read_number() for _ in range(4)] + [0]
+            weight = r.read_number()
+            cost = r.read_number()
+            r.read_number()  # cost per day
+            obj = OldObj(vnum, keywords, short, desc, names.get(item_type, str(item_type)), item_type, extra, wear,
+                         values, weight, cost, file=af.filename, line=line)
+            while True:
+                letter = r.read_letter()
+                if letter == "A":
+                    obj.affects.insert(0, ObjAffect("object", r.read_number(), r.read_number()))
+                    self.counts.affects += 1
+                elif letter == "E":
+                    obj.extra_descr.insert(0, ExtraDescription(r.read_string(), r.read_string()))
+                    self.counts.extra_descr += 1
+                else:
+                    r.ungetc()
+                    break
+            # 'Translate spell "slot numbers" to internal "skill numbers."' Only a bad slot matters here. A pill's
+            # value[4] is 0, and a weapon's two-handed flag is for weapons only, so it's never a slot.
+            slots = values[1:5] if item_type in spells else values[3:4] if item_type in wands else []
+            for slot in slots:
+                if slot > 0 and slot not in self.tables.slots:
+                    raise r.error(f"Slot_lookup: bad slot {slot}.")
+            self.objects[vnum] = obj
+            self._assign_area_vnum(vnum)
+            af.objects.append(obj)
+            self.counts.objects += 1  # newobjs comes with convert_objects
 
     # -- #RESETS (load_resets, db.c:1009) ----------------------------------------------------------------------
     def _new_reset(self) -> None:

@@ -42,10 +42,11 @@ def bugf(fmt: str, *args: object) -> None:
     bug(fmt % args if args else fmt)  # format: sprintf
 
 
-# C: db.c bug [partial]
+# C: db.c bug
 def bug(fmt: str, param: object = 0) -> None:
-    """``bug(str, param)``: the format takes at most one argument, as in the C. [partial]: the "[*****] FILE: x
-    LINE: n" line bug() adds while an area file is open is the area loader's (areafile Diagnostic)."""
+    """``bug(str, param)``: the format takes at most one argument, as in the C. The "[*****] FILE: x LINE: n" line
+    bug() adds while an area file is open is the area loader's (areafile Reader.bug_line and Diagnostic): no area
+    file is open by the time this one is called."""
     try:
         text = fmt % param if "%" in fmt else fmt  # format: sprintf
     except (TypeError, ValueError):  # bug(word, 0) with a word from a file: sprintf would read garbage, not stop

@@ -1,0 +1,19 @@
+#AREA
+old_bad_slot.are~
+Parity old_bad_slot~
+{ 1  5} charm_tools  Parity old_bad_slot~
+30000 30099
+
+#OBJOLD
+#30000
+oldpotion potion~
+an old potion~
+A dusty potion stands here.
+~
+~
+10 0 A
+12 16 9999 0
+1 50 0
+#0
+
+#$

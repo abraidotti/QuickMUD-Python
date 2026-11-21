@@ -13,7 +13,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from charm.core.strings import lower, str_prefix
-from charm.data import clans, constants, items, mobprogs, races, specials
+from charm.data import clans, constants, items, mobprogs, races, skills, specials
 
 
 class Constants(dict):
@@ -35,6 +35,7 @@ class LookupTables:
     clans: list[str]
     specials: list[str]
     defines: Constants
+    slots: list[int]  # each skill's slot number (old-format objects name spells by it), by sn
 
     @classmethod
     def from_data(cls) -> "LookupTables":
@@ -48,6 +49,7 @@ class LookupTables:
             clans=[c.name for c in clans.CLAN_TABLE],
             specials=[s.name for s in specials.SPEC_TABLE],
             defines=Constants({k: v for k, v in vars(constants).items() if k.isupper() and not k.startswith("_")}),
+            slots=[s.slot for s in skills.SKILL_TABLE[:constants.MAX_SKILL]],
         )
 
 

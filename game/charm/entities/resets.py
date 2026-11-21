@@ -12,8 +12,8 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 
 from __future__ import annotations
 
-from charm.core.cint import sh_int
-from charm.core.errors import NotPorted
+from charm.core.cint import c_div, sh_int
+from charm.core.errors import CWouldCrash
 from charm.core.log import bug, log_f
 from charm.core.rng import number_fuzzy, number_range
 from charm.data import constants as C
@@ -69,9 +69,37 @@ def reset_area(game: Game, area: Area) -> None:
             reset_room(game, room)
 
 
-# C: db.c reset_room [partial]
+def _old_goods_level(p) -> int:
+    """reset_room's level for a shopkeeper's old-format goods: from the lowest level any class gets each spell, or
+    a random draw for wands, staves, armour, weapons and treasure."""
+    from charm.data.skills import SKILL_TABLE
+
+    t = p.item_type
+    if t in (C.ITEM_PILL, C.ITEM_POTION, C.ITEM_SCROLL):
+        olevel = 53
+        for i in range(1, 5):
+            sn = p.value[i]
+            if sn > 0:
+                if sn >= C.MAX_SKILL:
+                    raise CWouldCrash(f"db.c reset_room: skill_table[{sn}] is past the array")
+                for j in range(C.MAX_CLASS):  # the rows after the last skill are zeros
+                    olevel = min(olevel, SKILL_TABLE[sn].skill_level[j] if sn < len(SKILL_TABLE) else 0)
+        return max(0, c_div(olevel * 3, 4) - 2)
+    if t == C.ITEM_WAND:
+        return number_range(10, 20)
+    if t == C.ITEM_STAFF:
+        return number_range(15, 25)
+    if t in (C.ITEM_ARMOR, C.ITEM_WEAPON):  # "ROM patch weapon, treasure"
+        return number_range(5, 15)
+    if t == C.ITEM_TREASURE:
+        return number_range(10, 20)
+    return 0
+
+
+# C: db.c reset_room
 def reset_room(game: Game, room: Room | None) -> None:
-    """[partial]: a shopkeeper's old-format goods (their level from the spell table) raise NotPorted."""
+    """A shopkeeper's old-format goods take a level from the spell table or a random draw (never, after the boot:
+    every prototype is new-format by then)."""
     if room is None:
         return
     index = game.index
@@ -188,9 +216,7 @@ def reset_room(game: Game, room: Room | None) -> None:
                 last = False
                 continue
             if last_mob.index.shop is not None:  # shopkeeper
-                if not p.new_format:
-                    raise NotPorted("db.c reset_room: a shopkeeper's old-format goods")
-                obj = create_object(game, p, 0)
+                obj = create_object(game, p, _old_goods_level(p) if not p.new_format else 0)
                 obj.extra_flags |= C.ITEM_INVENTORY
             else:
                 if rs.arg2 > 50:  # old format

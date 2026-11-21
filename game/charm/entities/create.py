@@ -2,8 +2,11 @@
 clone_object for do_clone.
 
 Every random draw is in the C's order, because the draws during resets decide what the world looks like and
-every later draw depends on them. Both are [partial]: the old-format branches (#MOBOLD and #OBJOLD prototypes,
-which no area uses) raise NotPorted.
+every later draw depends on them.
+
+Both have an old-format branch (an #MOBOLD or #OBJOLD prototype), ported as the C has it, but neither runs: the boot
+converts every old-format prototype (convert_mobile as each mob loads, convert_objects at the end), and OLC makes
+only new-format ones. tests/test_old_format.py runs them on prototypes made old by hand.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -13,9 +16,8 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.core.cint import c_div, int32, sh_int
-from charm.core.errors import NotPorted
 from charm.core.log import bug
-from charm.core.rng import dice, number_range
+from charm.core.rng import dice, number_fuzzy, number_range
 from charm.data import constants as C
 from charm.entities.game import Game
 from charm.entities.handler import affect_to_char, affect_to_obj, is_affected
@@ -34,9 +36,8 @@ def _random_dam_type() -> int:
     return {1: 3, 2: 7, 3: 11}[number_range(1, 3)]  # slash, pound, pierce
 
 
-# C: db.c create_mobile [partial]
+# C: db.c create_mobile
 def create_mobile(game: Game, p: MobIndex) -> Char:
-    """[partial]: an old-format prototype raises NotPorted."""
     game.mobile_count += 1
     if p is None:
         raise SystemExit("Create_mobile: NULL pMobIndex.")
@@ -60,8 +61,12 @@ def create_mobile(game: Game, p: MobIndex) -> Char:
         mob.gold = number_range(c_div(wealth, 200), c_div(wealth, 100))
         mob.silver = wealth - mob.gold * 100
 
-    if not p.new_format:
-        raise NotPorted("db.c create_mobile: an old-format (#MOBOLD) prototype")
+    if not p.new_format:  # "read in old format and convert" (never, after the boot)
+        _old_format_mobile(mob, p)
+        mob.position = mob.start_pos
+        game.char_list.insert(0, mob)
+        p.count = sh_int(p.count + 1)
+        return mob
 
     mob.group = p.group
     mob.act = p.act
@@ -144,27 +149,59 @@ def create_mobile(game: Game, p: MobIndex) -> Char:
     return mob
 
 
+def _old_format_mobile(mob: Char, p: MobIndex) -> None:
+    """create_mobile's old-format branch: points and armour from the level, with three random draws."""
+    from charm.entities.handler import interpolate
+
+    mob.act = p.act
+    mob.affected_by = p.affected_by
+    mob.alignment = p.alignment
+    mob.level = p.level
+    mob.hitroll = p.hitroll
+    mob.damroll = 0
+    mob.max_hit = sh_int(mob.level * 8 + number_range(c_div(mob.level * mob.level, 4), mob.level * mob.level))
+    mob.max_hit = sh_int(int(mob.max_hit * .9))  # max_hit *= .9: a double, truncated to the sh_int
+    mob.hit = mob.max_hit
+    mob.max_mana = sh_int(100 + dice(mob.level, 10))
+    mob.mana = mob.max_mana
+    mob.dam_type = _random_dam_type()
+    for i in range(3):
+        mob.armor[i] = sh_int(interpolate(mob.level, 100, -100))
+    mob.armor[3] = sh_int(interpolate(mob.level, 100, 0))
+    mob.race = p.race
+    mob.off_flags = p.off_flags
+    mob.imm_flags = p.imm_flags
+    mob.res_flags = p.res_flags
+    mob.vuln_flags = p.vuln_flags
+    mob.start_pos = p.start_pos
+    mob.default_pos = p.default_pos
+    mob.sex = p.sex
+    mob.form = p.form
+    mob.parts = p.parts
+    mob.size = C.SIZE_MEDIUM
+    mob.material = ""
+    for i in range(C.MAX_STATS):
+        mob.perm_stat[i] = sh_int(11 + c_div(mob.level, 4))
+
+
 _COST_FIFTH = {C.ITEM_FURNITURE, C.ITEM_TRASH, C.ITEM_CONTAINER, C.ITEM_DRINK_CON, C.ITEM_KEY, C.ITEM_FOOD,
                C.ITEM_BOAT, C.ITEM_CORPSE_NPC, C.ITEM_CORPSE_PC, C.ITEM_FOUNTAIN, C.ITEM_MAP, C.ITEM_CLOTHING,
                C.ITEM_PORTAL}
 _AS_IS = {C.ITEM_TREASURE, C.ITEM_WARP_STONE, C.ITEM_ROOM_KEY, C.ITEM_GEM, C.ITEM_JEWELRY}
-_OLD_FORMAT_ONLY = {C.ITEM_SCROLL, C.ITEM_WAND, C.ITEM_STAFF, C.ITEM_WEAPON, C.ITEM_ARMOR, C.ITEM_POTION,
-                    C.ITEM_PILL, C.ITEM_MONEY}
 
 
-# C: db.c create_object [partial]
+# C: db.c create_object
 def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
-    """[partial]: an old-format prototype raises NotPorted (its level, cost and values are made up from the
-    level given, with more random draws)."""
+    """An old-format prototype (never, after the boot) takes its level from the level given, and its cost and
+    some values are made up from it, with more random draws."""
     if p is None:
         raise SystemExit("Create_object: NULL pObjIndex.")
-    if not p.new_format:
-        raise NotPorted("db.c create_object: an old-format (#OBJOLD) prototype")
+    old = not p.new_format
     obj = new_obj()
     obj.index = p
     obj.in_room = None
     obj.enchanted = False
-    obj.level = p.level
+    obj.level = max(0, level) if old else p.level
     obj.wear_loc = -1
     obj.name = p.name
     obj.short_descr = p.short_descr
@@ -176,17 +213,50 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     obj.wear_flags = p.wear_flags
     obj.value = list(p.value)
     obj.weight = p.weight
-    obj.cost = p.cost  # level == -1 or new format
+    if level == -1 or not old:
+        obj.cost = p.cost
+    else:  # left to right, as gcc calls them (tools/oracle checks nothing here: the branch never runs)
+        obj.cost = int32(number_fuzzy(10) * number_fuzzy(level) * number_fuzzy(level))
+    fuzz = old and level != -1  # the old-format branches that use the level given
 
-    # "Mess with object properties": for a new-format prototype only these branches do anything.
+    # "Mess with object properties."
     t = obj.item_type
+    v = obj.value
     if t == C.ITEM_LIGHT:
-        if obj.value[2] == 999:
-            obj.value[2] = -1
+        if v[2] == 999:
+            v[2] = -1
+    elif t in _COST_FIFTH:
+        if old:
+            obj.cost = c_div(obj.cost, 5)
+    elif t in _AS_IS:
+        pass
     elif t == C.ITEM_JUKEBOX:
         obj.value = [-1] * 5
-    elif t in _COST_FIFTH or t in _AS_IS or t in _OLD_FORMAT_ONLY:
-        pass
+    elif t == C.ITEM_SCROLL:
+        if fuzz:
+            v[0] = number_fuzzy(v[0])
+    elif t in (C.ITEM_WAND, C.ITEM_STAFF):
+        if fuzz:
+            v[0] = number_fuzzy(v[0])
+            v[1] = number_fuzzy(v[1])
+            v[2] = v[1]
+        if old:
+            obj.cost = int32(obj.cost * 2)
+    elif t == C.ITEM_WEAPON:
+        if fuzz:
+            v[1] = number_fuzzy(number_fuzzy(c_div(1 * level, 4) + 2))
+            v[2] = number_fuzzy(number_fuzzy(c_div(3 * level, 4) + 6))
+    elif t == C.ITEM_ARMOR:
+        if fuzz:
+            v[0] = number_fuzzy(c_div(level, 5) + 3)
+            v[1] = number_fuzzy(c_div(level, 5) + 3)
+            v[2] = number_fuzzy(c_div(level, 5) + 3)
+    elif t in (C.ITEM_POTION, C.ITEM_PILL):
+        if fuzz:
+            v[0] = number_fuzzy(number_fuzzy(v[0]))
+    elif t == C.ITEM_MONEY:
+        if old:
+            v[0] = obj.cost
     else:
         bug("Read_object: vnum %d bad type.", p.vnum)
 

@@ -208,10 +208,56 @@ class BootTest(unittest.TestCase):
                          ("New Place", "Me", 30000, 30099, 3, True))
         self.assertEqual(h.level_band, ("1", "5"))
 
-    def test_old_formats_are_reported_not_guessed(self):
+    OLD_MOB = ("#MOBOLD\n#30000\nelf sage~\nthe sage~\nA sage.\n~\nA sage.\n~\n"
+               "B 0 300 {letter}\n12 0 5 2d6+30 1d4+2\n{gold} 99\n{start} 8 2\n#0\n")
+    OLD_OBJ = ("#OBJOLD\n#30000\noldpotion~\nan old potion~\nA potion.\n~\nthe action~\n"
+               "10 0 A\n12 {slot} 0 0\n1 50 7\nA\n1 2\nE\nkw~\ntext~\n#0\n")
+
+    def test_an_old_format_mob_is_read(self):
+        b = boot(HEADER + self.OLD_MOB.format(letter="S", gold=-130, start=3) + "#$\n")
+        m = b.mobs[30000]
+        self.assertEqual((m.keywords, m.act, m.alignment, m.level, m.sex), ("elf sage", 2, 300, 12, 2))
+        self.assertEqual(m.wealth, -6)  # gold / 20, truncated toward zero as in C
+        self.assertEqual((m.start_pos, m.default_pos), (8, 8))  # 3 is below POS_SLEEPING: standing
+        self.assertEqual((b.counts.mobs, b.counts.mobs_new), (1, 1))  # convert_mobile counts it as it loads
+
+    def test_an_old_format_mob_needs_its_s(self):
         with self.assertRaises(AreaParseError) as e:
-            boot(HEADER + "#MOBOLD\n#0\n#$\n")
-        self.assertIn("isn't modelled", e.exception.message)
+            boot(HEADER + self.OLD_MOB.format(letter="X", gold=0, start=8) + "#$\n")
+        self.assertEqual(e.exception.message, "Load_mobiles: vnum 30000 non-S.")
+
+    def test_an_old_format_object_is_read(self):
+        b = boot(HEADER + self.OLD_OBJ.format(slot=16) + "#$\n")
+        o = b.objects[30000]
+        self.assertEqual((o.item_type, o.type_word, o.values, o.weight, o.cost),
+                         (10, "potion", [12, 16, 0, 0, 0], 1, 50))
+        self.assertEqual((len(o.affects), len(o.extra_descr)), (1, 1))
+        self.assertEqual((b.counts.objects, b.counts.objects_new, b.counts.affects, b.counts.extra_descr), (1, 0, 1, 1))
+
+    def test_old_format_errors_are_the_new_formats(self):
+        mob = self.OLD_MOB.format(letter="S", gold=0, start=8)
+        cases = [
+            (mob.replace("#0\n", mob.split("\n", 1)[1]), "Load_mobiles: vnum 30000 duplicated."),
+            ("#MOBOLD\n30000\n", "Load_mobiles: # not found."),
+            (self.OLD_OBJ.format(slot=16).replace("#0\n", "#30000\n"), "Load_objects: vnum 30000 duplicated."),
+            ("#OBJOLD\nx\n", "Load_objects: # not found."),
+        ]
+        for text, message in cases:
+            with self.subTest(message=message):
+                with self.assertRaises(AreaParseError) as e:
+                    boot(HEADER + text + "#$\n")
+                self.assertEqual(e.exception.message, message)
+        for section, what in (("#MOBOLD\n#30000\nname~\nshort~\n", "the long description"),
+                              ("#OBJOLD\n#30000\nname~\n", "the short description")):
+            with self.subTest(what=what):
+                with self.assertRaises(AreaParseError) as e:
+                    boot(HEADER + section)
+                self.assertIn(what, e.exception.message)  # NULL from Fread_string at EOF, dereferenced
+
+    def test_a_bad_spell_slot_stops_the_boot(self):
+        with self.assertRaises(AreaParseError) as e:
+            boot(HEADER + self.OLD_OBJ.format(slot=9999) + "#$\n")
+        self.assertEqual(e.exception.message, "Slot_lookup: bad slot 9999.")
 
 
 if __name__ == "__main__":
