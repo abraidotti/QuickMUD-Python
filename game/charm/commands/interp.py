@@ -80,13 +80,13 @@ _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no comm
 
 def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
-    from charm.commands import alias, comm, flag, healer, info, move, obj, scan, wiz
+    from charm.commands import alias, comm, copyover, flag, healer, info, move, obj, scan, wiz
     from charm.olc import hedit, mpcode, olc, save as olc_save
     from charm.persist import bans, boards
     from charm.systems import fight, magic, mobcmds, music
     from charm.systems.skills import do_gain, do_groups, do_skills, do_spells
 
-    found = {name: getattr(mod, name) for mod in (alias, comm, flag, healer, info, move, obj, scan, wiz, fight, magic, music)
+    found = {name: getattr(mod, name) for mod in (alias, comm, copyover, flag, healer, info, move, obj, scan, wiz, fight, magic, music)
              for name in dir(mod)
              if name.startswith("do_") and name not in wiz.NOT_COMMANDS}
     found.update(do_board=boards.do_board, do_note=boards.do_note, do_ban=bans.do_ban,

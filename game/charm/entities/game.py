@@ -95,6 +95,11 @@ class Game:
     free_resets: int = 0  # reset_free
     free_exits: int = 0  # exit_free
     free_shops: int = 0  # shop_free
+    # comm.c's port and control socket (do_copyover passes them on), and the re-exec copyover uses: None for
+    # charm.commands.copyover.exec_game; the scenario player puts a stub here, as its C driver wraps execl
+    port: int = 0
+    control: object | None = None
+    exec_game: object | None = None
 
 
 # LATER: the C reads its globals from anywhere; a few functions that don't take a Game (room_is_dark, called from

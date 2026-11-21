@@ -31,10 +31,11 @@ framework (`edit`, `alist`, the editor dispatch) and the area editor. PR 3 of 7 
 reset commands, exits, and the string editor (`string.c`), with `mem.c`'s room, exit and reset constructors; the
 checkpoint after it is on #91, on pace. PR 4 done (#99), objects: the object editor. PR 5 done (#101), mobs: the mob editor
 and the mob program editor (`olc_mpcode.c`). PR 6 done (#103), helps and leftovers: the help editor (`hedit.c`),
-so every editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. PR 7 done, memory: `memory` and `dump`
+so every editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. PR 7 done (#105), memory: `memory` and `dump`
 (the boot's string space modelled, Perms a kept difference), the C functions with no counterpart
-(`charm/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs: copyover and the old area formats are
-left. Areas and rooms took two PRs where the
+(`charm/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs. PR 8 done, copyover: `do_copyover` and
+`copyover_recover`, re-executing with inherited sockets on Linux (`sim smoke --wsl` runs its steps from Windows), so
+every command is ported. The old area formats are left. Areas and rooms took two PRs where the
 plan had one, so P5 is now 8 PRs unless two of the last ones combine.
 
 ## Goal

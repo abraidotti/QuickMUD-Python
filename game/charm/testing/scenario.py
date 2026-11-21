@@ -240,6 +240,11 @@ class Player:
 
     # -- the script ----------------------------------------------------------------------------------------------
 
+    def _exec_game(self, game, port: int, control) -> bool:
+        """The re-exec, stubbed: what the C driver's __wrap_execl prints for do_copyover's execl, which then fails."""
+        self.out.append("exec ../area/rom rom %d copyover %d" % (port, control.fileno() if control else 0))
+        return False
+
     def boot(self, seed: str, clock: int, updates: str) -> None:
         from charm.entities import game as game_module
         from charm.entities.boot import boot_db
@@ -255,6 +260,7 @@ class Player:
         self.game = game = boot_db(self.area, clock, {"CHARM_SEED": seed})
         game.config = config
         game.updates = on
+        game.exec_game = self._exec_game  # copyover's re-exec, stubbed as the C driver wraps execl
         game_module.current = game
         log.clock = lambda: game.current_time
         log.localtime = time.gmtime  # clock: the oracle's container has no time zone, so its ctime is UTC

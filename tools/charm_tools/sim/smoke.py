@@ -5,20 +5,23 @@ This began as the refactor plan's R0 smoke test (tools/smoke.py) and is the seed
 
     python -m charm_tools sim smoke --docker charm   # throwaway container from an image (recommended)
     python -m charm_tools sim smoke --port 4100      # a game that's already running (mortal steps only)
-    python -m charm_tools sim smoke --python         # the Python game, from a throwaway copy (all but copyover)
+    python -m charm_tools sim smoke --python         # the Python game, from a throwaway copy (copyover on Linux)
+    python -m charm_tools sim smoke --wsl            # the same in WSL from Windows, copyover included
     python tools/smoke.py --docker charm             # the same, from the repo root
 
 --docker creates a container on a free port, copies the fixtures in before boot (the immortal
 tools/fixtures/player/Smokegod, tools/fixtures/player/Shemp as saved before IMC2 was removed, and
 tools/fixtures/qmconfig.rc, which turns the ANSI question off), sets CHARM_SEED, runs every step
 and always removes the container. --python does the same with the Python game on this machine: the same fixtures
-and steps, stopped with a signal and started again, but not copyover, which P5 ports. The clean-shutdown steps
+and steps, stopped with a signal and started again; copyover's steps only on Linux, since it re-executes the game
+(--wsl runs them from Windows). The clean-shutdown steps
 need --docker or --python. Against a running game, copyover runs only if you pass --immortal NAME:PASSWORD for a
 level-60 character. Either way the test creates a player file, so don't point it at your real player/.
 """
 
 import argparse
 import io
+import os
 import re
 import socket
 import subprocess
@@ -495,13 +498,35 @@ def run_python(args):
             path = self.game.root / "area" / "shutdown.txt"
             return path.is_file() and f"Shutdown by {name}." in path.read_text(encoding="latin-1")
 
+    copyover = os.name == "posix"  # copyover re-executes the game, which only works on Linux (#91, decision 3)
     with PyGame("fixture", (IMMORTAL[0], OLD_FILE[0])) as game:
-        print(f"python game on 127.0.0.1:{game.port}", flush=True)
-        code = run_steps(args, game.port, IMMORTAL, Restart(game), copyover=False)
+        print(f"python game on 127.0.0.1:{game.port}" + ("" if copyover else " (no copyover steps here: --wsl)"),
+              flush=True)
+        code = run_steps(args, game.port, IMMORTAL, Restart(game), copyover=copyover)
         if code != 0 or args.verbose:
             print("---- game log (tail) ----")
             print("\n".join(game.game_log().splitlines()[-30:]))
         return code
+
+
+def run_wsl(args):
+    """--python in WSL, so the copyover steps run (Linux only): this checkout through /mnt, the same steps. The script
+    goes to wsl.exe on stdin, as bytes; wsl.exe's own exit code is the test's."""
+    root = Path(__file__).resolve().parents[3]
+    distro = ["-d", args.wsl] if args.wsl else []
+    win = str(root / "tools").replace("\\", "/")
+    flags = [f"--timeout {args.timeout}", f"--wait {args.wait}"] + (["-v"] if args.verbose else [])
+    script = (f'set -e\ncd "$(wslpath -a \'{win}\')"\n'
+              f"exec python3 -m charm_tools sim smoke --python {' '.join(flags)}\n")
+    print(f"python game in WSL{' ' + args.wsl if args.wsl else ''}, with the copyover steps", flush=True)
+    try:
+        return subprocess.run(["wsl.exe", *distro, "--", "bash", "-s"], input=script.encode(), timeout=600).returncode
+    except FileNotFoundError:
+        print("wsl.exe not found: --wsl needs Windows with WSL", file=sys.stderr)
+        return 2
+    except subprocess.TimeoutExpired:
+        print("the WSL run took over 10 minutes; stopped", file=sys.stderr)
+        return 2
 
 
 def main(argv=None, prog=None):
@@ -509,7 +534,10 @@ def main(argv=None, prog=None):
     where = ap.add_mutually_exclusive_group(required=True)
     where.add_argument("--docker", metavar="IMAGE", help="run against a throwaway container from IMAGE")
     where.add_argument("--port", type=int, help="run against a game already listening on this port")
-    where.add_argument("--python", action="store_true", help="run against the Python game (all but copyover)")
+    where.add_argument("--python", action="store_true",
+                       help="run against the Python game (copyover's steps too, on Linux)")
+    where.add_argument("--wsl", nargs="?", const="", metavar="DISTRO",
+                       help="from Windows: --python inside WSL (DISTRO, or the default one), with copyover's steps")
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--name", default="Smokey")
     ap.add_argument("--password", default="smoke123")
@@ -523,6 +551,8 @@ def main(argv=None, prog=None):
         return run_docker(args)
     if args.python:
         return run_python(args)
+    if args.wsl is not None:
+        return run_wsl(args)
     immortal = tuple(args.immortal.split(":", 1)) if args.immortal else None
     return run_steps(args, args.port, immortal)
 

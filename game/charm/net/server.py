@@ -210,6 +210,9 @@ def handle_shutdown_signal(game, sig: int) -> None:
 def game_loop(game, control: socket.socket, stats: PulseStats | None = None) -> None:
     sel = game.selector = selectors.DefaultSelector()
     sel.register(control, selectors.EVENT_READ, None)
+    for d in game.descriptor_list:  # the connections copyover_recover picked up
+        if d.sock is not None:
+            sel.register(d.sock, selectors.EVENT_READ | selectors.EVENT_WRITE, d)
     saved = {}
     for name in ("SIGTERM", "SIGINT", "SIGBREAK"):  # SIGBREAK: Windows' way to ask a console program to stop
         if hasattr(signal, name):
