@@ -69,6 +69,7 @@ class Status:
     ports: list[Port]
     bad_markers: list[str] = field(default_factory=list)
     python_lines: int = 0  # every line of game/charm/**/*.py outside data/
+    no_counterpart: dict = field(default_factory=dict)  # (C file, function): reason (charm/core/no_counterpart.py)
     later: list[Later] = field(default_factory=list)
 
 
@@ -167,12 +168,28 @@ def status(root: Path | None = None) -> Status:
                        if py.relative_to(pkg).parts[0] not in ("data", "testing"))
     later = later_notes(root)
     bad += [f"game/{n.module}:{n.line}: '# LATER:' says nothing" for n in later if not n.text]
-    return Status(functions, c_lines, ports, bad, python_lines, later)
+    none = no_counterpart(root)
+    marked = {(p.c_file, p.c_name) for p in ports}
+    bad += [f"charm/core/no_counterpart.py: {f} {n} names no C function" for f, n in none if (f, n) not in known]
+    bad += [f"charm/core/no_counterpart.py: {f} {n} has a '# C:' marker too" for f, n in none if (f, n) in marked]
+    return Status(functions, c_lines, ports, bad, python_lines, later=later, no_counterpart=none)
+
+
+def no_counterpart(root: Path) -> dict:
+    """NO_COUNTERPART, read as a literal (the game isn't imported)."""
+    path = game_dir(root) / "charm" / "core" / "no_counterpart.py"
+    if not path.exists():
+        return {}
+    tree = ast.parse(path.read_text(encoding="utf-8"))
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and any(getattr(t, "id", "") == "NO_COUNTERPART" for t in node.targets):
+            return ast.literal_eval(node.value)
+    return {}
 
 
 def report(st: Status) -> str:
     full = [p for p in st.ports if not p.partial]
-    ported = {(p.c_file, p.c_name) for p in full}
+    ported = {(p.c_file, p.c_name) for p in full} | set(st.no_counterpart)
     partial = {(p.c_file, p.c_name) for p in st.ports if p.partial} - ported
     by_file: dict[str, list[CFunction]] = {}
     for f in st.functions:
@@ -201,6 +218,10 @@ def report(st: Status) -> str:
     if c_any:
         out.append(f"All hand-written Python in game/charm (not data/, which is generated, or testing/), per C line "
                    f"ported or partly ported:{st.python_lines / c_any:.2f} ({st.python_lines} / {c_any})")
+    if st.no_counterpart:
+        out.append("")
+        out.append(f"Counted as done with no Python counterpart ({len(st.no_counterpart)}, charm/core/no_counterpart.py):")
+        out += [f"  {f} {n}: {why}" for (f, n), why in sorted(st.no_counterpart.items())]
     notes = [n for n in st.later if n.text]
     if notes:
         out.append("")

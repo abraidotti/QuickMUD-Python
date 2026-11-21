@@ -1,8 +1,8 @@
 """handler.c's functions: moving characters and objects about, affects, finding things by name, and what a
 character can see, carry and do (skills, trust, age). db.c's get_extra_descr is here too.
 
-A few are [partial]; each unported branch raises NotPorted instead of doing something else: a switched character
-in extract_char (do_return), and get_skill's daze with sn -1, where the C reads before the start of skill_table.
+Where the C reads outside its memory (get_skill's daze with sn -1, before the start of skill_table), these raise
+CWouldCrash.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -12,7 +12,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.core.cint import c_div, int32, sh_int
-from charm.core.errors import NotPorted
+from charm.core.errors import CWouldCrash
 from charm.core.log import bug
 from charm.core.strings import lower, str_cmp, str_prefix
 from charm.net.act import act
@@ -723,9 +723,10 @@ def reset_char(ch: Char) -> None:
 
 
 
-# C: handler.c get_skill [partial]
+# C: handler.c get_skill
 def get_skill(ch: Char, sn: int) -> int:
-    """[partial]: a dazed character with sn -1 reads skill_table[-1] in the C, before the array: raises NotPorted."""
+    """A dazed character with sn -1 (an exotic weapon's) reads skill_table[-1] in the C, before the array: that
+    raises CWouldCrash."""
     if sn == -1:  # "shorthand for level based skills"
         skill = c_div(ch.level * 5, 2)
     elif sn < -1 or sn > C.MAX_SKILL:
@@ -770,7 +771,7 @@ def get_skill(ch: Char, sn: int) -> int:
             skill = 0
     if ch.daze > 0:
         if sn == -1:
-            raise NotPorted("handler.c get_skill: daze with sn -1 (reads skill_table[-1])")
+            raise CWouldCrash("handler.c get_skill: daze with sn -1 reads skill_table[-1]")
         skill = c_div(skill, 2) if SKILL_TABLE[sn].spell_fun != "spell_null" else c_div(2 * skill, 3)
     if not ch.is_npc and ch.pcdata.condition[C.COND_DRUNK] > 10:
         skill = c_div(9 * skill, 10)

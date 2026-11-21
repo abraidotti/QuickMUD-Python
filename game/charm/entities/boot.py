@@ -8,6 +8,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 import time
+from dataclasses import replace
 from pathlib import Path
 
 from charm.core import log
@@ -83,6 +84,7 @@ def boot_db(area_dir: Path, current_time: int | None = None, environ: dict | Non
         raise BootFailed(str(world.fatal))
 
     game = Game(build_index(world), now, time_info=time_info, weather_info=weather_info, area_dir=Path(area_dir))
+    game.top = replace(world.counts)
     game_module.current = game
     if any(not m.new_format for m in game.index.mobs.values()) or any(
             not o.new_format for o in game.index.objs.values()):

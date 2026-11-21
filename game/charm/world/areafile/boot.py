@@ -34,7 +34,7 @@ from .model import (
     AreaFile, AreaHeader, Dice, Exit, ExtraDescription, FlagRemoval, Help, Mob, MobProg, MobProgRef, Obj, ObjAffect,
     REV_DIR, Reset, Room, Shop, Social, Special,
 )
-from .reader import AreaParseError, Diagnostic, Reader, sh_int
+from .reader import AreaParseError, Diagnostic, Reader, StringSpace, sh_int
 
 MAX_KEY_HASH = 1024  # merc.h
 MAX_TRADE = 5
@@ -65,6 +65,8 @@ class Counts:
     rooms: int = 0  # Rooms    top_room
     shops: int = 0  # Shops    top_shop
     mobprogs: int = 0  # top_mprog_index (logged as "Loaded %d mobprogs.", not in memory)
+    strings: int = 0  # Strings  nAllocString (the boot's string space: StringSpace)
+    string_bytes: int = 0  # (of n bytes)  sAllocString
 
 
 @dataclass
@@ -85,6 +87,7 @@ class Boot:
     _room_order: list[int] = field(default_factory=list)
     _mob_order: list[int] = field(default_factory=list)
     finished: bool = False
+    space: StringSpace = field(default_factory=StringSpace)  # db.c's string space (fBootDb)
 
     # -- the per-file section loop (boot_db, db.c:325-404) ------------------------------------------------------
     def load_file(self, path: Path, name: str | None = None) -> AreaFile:
@@ -94,6 +97,7 @@ class Boot:
         return self.load_text(r)
 
     def load_text(self, r: Reader) -> AreaFile:
+        r.space = self.space
         af = AreaFile(r.filename)
         self.files.append(af)
         current_area = None  # reset per file; load_helps attaches helps to it
@@ -136,6 +140,7 @@ class Boot:
                     raise r.error("Boot_db: bad section name.")
         finally:
             self.diagnostics.extend(r.diagnostics)
+            self.counts.strings, self.counts.string_bytes = self.space.count, self.space.used
         del current_area
         return af
 

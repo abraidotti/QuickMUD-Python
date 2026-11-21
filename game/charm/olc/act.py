@@ -562,7 +562,7 @@ def change_exit(ch, argument: str, door: int) -> bool:
     from charm.commands.move import REV_DIR, move_char
     from charm.entities.handler import is_builder
     from charm.olc.bits import flag_value
-    from charm.olc.mem import new_exit
+    from charm.olc.mem import free_exit, new_exit
     from charm.olc.strings import string_append
 
     index = _game().index
@@ -601,7 +601,9 @@ def change_exit(ch, argument: str, door: int) -> bool:
         if to_room is None:
             raise _no_room_beyond("deleting")
         if to_room.exit[rev] is not None:  # "Remove ToRoom Exit."
+            free_exit(to_room.exit[rev])
             to_room.exit[rev] = None
+        free_exit(room.exit[door])
         room.exit[door] = None  # "Remove this exit."
         send_to_char("Exit unlinked.\n\r", ch)
         return True
@@ -1795,7 +1797,7 @@ def medit_shop(ch, argument: str) -> bool:
 
     from charm.core.errors import CWouldCrash
     from charm.olc.bits import flag_value
-    from charm.olc.mem import new_shop
+    from charm.olc.mem import free_shop, new_shop
 
     argument, command = one_argument(argument)
     argument, arg1 = one_argument(argument)
@@ -1859,6 +1861,7 @@ def medit_shop(ch, argument: str) -> bool:
     if str_prefix(command, "remove"):
         if p.shop is None:
             raise CWouldCrash("olc_act.c medit_shop: shop remove with no shop walks shop_first with a NULL shop")
+        free_shop(p.shop)
         p.shop = None
         send_to_char("Mobile is no longer a shopkeeper.\n\r", ch)
         return True

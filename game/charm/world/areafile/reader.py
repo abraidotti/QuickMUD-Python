@@ -74,6 +74,35 @@ def flag_convert(letter: str) -> int:
     return 0
 
 
+MAX_STRING = 1413120  # db.c's string space, in bytes
+STRING_LINK = 8  # sizeof (char *): each boot string starts with a link to the next in its string_hash chain
+MAX_STRING_LENGTH = 4608  # merc.h
+
+
+class StringSpace:
+    """db.c's string space while the world boots (fBootDb). fread_string and fread_string_eol keep each string
+    once: one already there is shared (string_hash), and a new one takes a link, its text (with each "\\n" as
+    "\\n\\r") and its terminator. memory's "Strings" line counts them. An empty string is str_empty, which takes
+    nothing. Before each read the C checks there's room for one more of the longest strings, and stops the boot
+    if there isn't."""
+
+    def __init__(self):
+        self.count = 0  # nAllocString
+        self.used = 0  # sAllocString: top_string - string_space
+        self._seen: set[str] = set()
+
+    def check(self, r: "Reader") -> None:
+        if self.used + STRING_LINK > MAX_STRING - MAX_STRING_LENGTH:
+            raise r.error("Fread_string: MAX_STRING %d exceeded." % MAX_STRING)
+
+    def keep(self, s: str | None) -> None:
+        if not s or s in self._seen:
+            return
+        self._seen.add(s)
+        self.count += 1
+        self.used += STRING_LINK + len(s) + 1
+
+
 class Reader:
     def __init__(self, text: str, filename: str = "<string>"):
         # Area files are LF in the repo; normalise CRLF defensively so a Windows checkout behaves like Linux.
@@ -81,6 +110,7 @@ class Reader:
         self.pos = 0
         self.filename = filename
         self.diagnostics: list[Diagnostic] = []
+        self.space: StringSpace | None = None  # the boot's string space, when the game reads (not for tools)
 
     @classmethod
     def from_path(cls, path: Path) -> "Reader":
@@ -185,14 +215,14 @@ class Reader:
             self.ungetc()
         return -n if negative else n
 
-    # LATER: the C's string space isn't modelled (MAX_STRING, 1,413,120 bytes, with boot strings shared through
-    # string_hash). A world past it exits the C at boot ("Fread_string: MAX_STRING exceeded") and boots here; the
-    # stock world and one fixture area fit, two fixture areas don't (P4 PR 8).
     # C: db.c fread_string
     def read_string(self) -> str | None:
         """``fread_string`` (db.c:2822): text up to ``~``. The game turns ``\\n`` into ``\\n\\r`` and drops ``\\r``;
         this keeps plain ``\\n``. At EOF the game logs "Fread_string: EOF" and returns NULL, and so does this
-        (None). Most loaders just store it; the ones that touch it crash (see Boot._text)."""
+        (None). Most loaders just store it; the ones that touch it crash (see Boot._text). With a string space,
+        the string is kept there (StringSpace)."""
+        if self.space is not None:
+            self.space.check(self)
         self.skip_ws()
         end = self.text.find("~", self.pos)
         if end < 0:
@@ -200,11 +230,17 @@ class Reader:
             self.bug("Fread_string: EOF")
             return None
         s, self.pos = self.text[self.pos:end], end + 1
-        return s.replace("\r", "")
+        s = s.replace("\r", "")
+        if self.space is not None:
+            self.space.keep(s.replace("\n", "\n\r"))
+        return s
 
     # C: db.c fread_string_eol
     def read_string_eol(self) -> str:
-        """``fread_string_eol`` (db.c:2926): rest of the line; the newline is consumed. EOF is fatal."""
+        """``fread_string_eol`` (db.c:2926): rest of the line; the newline is consumed. EOF is fatal. With a string
+        space, the string is kept there (StringSpace)."""
+        if self.space is not None:
+            self.space.check(self)
         self.skip_ws()
         if self.at_eof:
             raise self.error("Fread_string_eol  EOF")
@@ -216,6 +252,8 @@ class Reader:
         else:
             raise self.error("Fread_string_eol  EOF")
         s, self.pos = self.text[self.pos:end], end + 1
+        if self.space is not None:
+            self.space.keep(s)
         return s
 
     # C: db.c fread_to_eol

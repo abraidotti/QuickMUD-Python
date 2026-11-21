@@ -382,3 +382,20 @@ def spell_null(sn: int, level: int, ch, vo, target: int) -> None:
     from charm.net.output import send_to_char
 
     send_to_char("That's not a spell!\n\r", ch)
+
+
+# C: magic.c slot_lookup
+def slot_lookup(slot: int, booting: bool = False) -> int:
+    """The sn of the skill with this slot number (old-format objects name their spells by slot), or -1. While the
+    world boots (fBootDb) a slot that isn't there stops the game (bug, then abort)."""
+    from charm.core.log import bug
+
+    if slot <= 0:
+        return -1
+    for sn, skill in enumerate(SKILL_TABLE[:C.MAX_SKILL]):
+        if slot == skill.slot:
+            return sn
+    if booting:
+        bug("Slot_lookup: bad slot %d.", slot)
+        raise SystemExit("magic.c slot_lookup: abort ()")
+    return -1

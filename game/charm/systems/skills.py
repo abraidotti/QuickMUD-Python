@@ -11,6 +11,7 @@ from __future__ import annotations
 
 from charm.commands.interp import is_number, one_argument
 from charm.core.cint import c_div
+from charm.core.errors import CWouldCrash
 from charm.core.strings import atoi, str_cmp, str_prefix
 from charm.data import constants as C
 from charm.data.races import PC_RACE_TABLE
@@ -320,6 +321,9 @@ def check_improve(ch, sn: int, success: bool, multiplier: int) -> None:
 
     if ch.is_npc:
         return
+    # No caller passes -1 today (#104). Python's [-1] would read the last skill, where the C reads before the array.
+    if sn < 0:
+        raise CWouldCrash("skills.c check_improve: sn -1 reads skill_table[-1] and learned[-1]")
     sk, learned = SKILL_TABLE[sn], ch.pcdata.learned
     if (ch.level < sk.skill_level[ch.class_] or sk.rating[ch.class_] == 0
             or learned[sn] == 0 or learned[sn] == 100):

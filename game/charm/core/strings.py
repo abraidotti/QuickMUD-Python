@@ -39,6 +39,13 @@ def str_prefix(astr: str, bstr: str) -> bool:
     return lower(bstr).startswith(lower(astr))
 
 
+# C: db.c str_dup
+def str_dup(s: str) -> str:
+    """A copy of s. Python's strings can't be changed, so s is its own copy (the C's also shares a string that's in
+    the boot's string space)."""
+    return s
+
+
 # C: db.c str_infix
 def str_infix(astr: str, bstr: str) -> bool:
     """``!str_infix (astr, bstr)``: astr is somewhere in bstr, ignoring case. An empty astr always is."""

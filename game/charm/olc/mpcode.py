@@ -137,7 +137,9 @@ def mpedit_create(ch, argument: str) -> bool:
     if index.get_mprog_index(value) is not None:
         send_to_char("MPEdit: Code vnum already exists.\n\r", ch)
         return False
-    index.mprog_code[value] = ""  # new_mpcode, at the head of mprog_list (the newest)
+    from charm.olc.mem import new_mpcode
+
+    new_mpcode(index, value)  # at the head of mprog_list (the newest)
     ch.desc.pEdit = MprogCode(index, value)
     ch.desc.editor = ED_MPCODE
     send_to_char("MobProgram Code Created.\n\r", ch)
