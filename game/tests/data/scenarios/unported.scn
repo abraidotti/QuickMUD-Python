@@ -1,10 +1,11 @@
-# An unported command stops the Python game: "sc" is scan, before score in the table, and scan isn't ported.
+# An unported command stops the Python game: memory isn't ported yet (P5's leftovers), and it's an immortal's.
 # Everything before it must match; the C carries on.
 # expect: stopped NotPorted
-@connect rambler
-Rambler
-psswrd
+@connect god
+Smokegod
+smoke123
+@return
 @return
 look
-sc
+memory
 look

@@ -1,7 +1,7 @@
 """olc.c: the online builder's framework. 'edit' (do_olc) and the do_*edit commands put a connection in an editor;
 while it's there, every line goes to that editor (run_olc_editor, from the game loop), which runs one of its own
 commands or, failing that, the ordinary interpreter. The area, room, object and mob editors are here, with the
-reset commands (the mob program editor is olc_mpcode.c's, in mpcode.py); the help editor raises NotPorted.
+reset commands. The mob program and help editors are olc_mpcode.c's and hedit.c's (mpcode.py, hedit.py).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -11,7 +11,6 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.commands.interp import interpret, is_number, one_argument
-from charm.core.errors import NotPorted
 from charm.core.strings import atoi, smash_tilde, str_cmp, str_prefix
 from charm.data import constants as C
 from charm.data import flags as F
@@ -112,7 +111,9 @@ def show_commands(ch, argument: str) -> bool:
 
         show_olc_cmds(ch, _table())
     elif editor == ED_HELP:
-        raise NotPorted(f"olc.c show_commands: editor {editor}")
+        from charm.olc.hedit import _table as hedit_table
+
+        show_olc_cmds(ch, hedit_table())
     return False
 
 
@@ -182,7 +183,9 @@ def do_olc(ch, argument: str) -> None:
 
                 do_mpedit(ch, argument)
             else:
-                raise NotPorted(f"olc.c do_olc: {fun}")
+                from charm.olc.hedit import do_hedit
+
+                do_hedit(ch, argument)
             return
     do_help(ch, "olc")  # "Invalid command, send help."
 

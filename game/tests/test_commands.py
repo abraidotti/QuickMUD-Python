@@ -107,9 +107,10 @@ class Commands(unittest.TestCase):
         self.assertEqual(self.say("   "), "")
 
     def test_an_unported_command_stops_the_game(self):
+        self.ch.level = 60  # memory is an immortal's
         with self.assertRaises(NotPorted) as e:
-            self.say("sc")
-        self.assertIn("do_scan", str(e.exception))
+            self.say("memory")
+        self.assertIn("do_memory", str(e.exception))
 
     def test_every_ported_name_is_in_the_table(self):
         table = {c.do_fun for c in CMD_TABLE}

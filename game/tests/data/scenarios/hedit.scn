@@ -1,0 +1,105 @@
+# The help editor (hedit.c, lookup.c's help_lookup and had_lookup), with Planner (security 9) and Delver (security
+# 0), and the fixture area olcsave.are (tools/fixtures/files), which has a help of its own. The string editor's
+# "@" is sent as "x", a backspace, "@" (see redit.scn).
+# - hedit with nothing, and a help that isn't; "hedit new" with no name opens a help named "new" rather than
+#   giving new's syntax; "edit help" isn't the help editor (edit's word for it is "hedit"), though new's syntax
+#   says so
+# - edit QMCONFIG (help.are): show, commands, ?, an unknown word, keyword, level and its refusals, text in the
+#   string editor, list (all, and this area's, which has none), new (exists; in help.are by its file name)
+# - a new help in Midgaard, which has none: a help file for it, and the area marked changed
+# - in the fixture area: changing its help marks the help file changed but not the area, so asave changed saves
+#   no zone and then writes the help file, which is the area's own file: olcsave.are is left with only its helps
+# - delete: of a help someone else is editing too (it takes them out of the editor), of a file's first help, and of
+#   its last: a help made after that is never in the file's list, nor in the list of all helps (help_last is
+#   left on the deleted one too), so hedit can't find it, and the editor puts its builder out at the next line
+# - Delver can open a help, and is put out at his next line; the prompt's %o and %O
+@place olcsave.are olcsave.are
+@place area-olcsave.lst area.lst
+@connect b
+Planner
+smoke123
+@return
+@return
+scroll 0
+goto 3001
+hedit
+hedit nonsuch
+hedit new
+edit help qmconfig
+edit hedit qmconfig
+@return
+show
+commands
+?
+xyzzy
+keyword
+keyword QMCONFIG QM
+level
+level x
+level 99
+level 5
+text
+.s
+One more line.
+x@
+show
+text x
+list
+list all
+list area
+new
+new qmconfig
+new help.are TESTHELP
+show
+level 1
+done
+hedit new MIDHELP
+level 3
+done
+goto 30200
+hedit olcsave
+level 2
+done
+asave changed
+@file olcsave.are
+@file help.are
+hedit new AAA
+done
+hedit new BBB
+done
+@connect d
+Delver
+psswrd
+@return
+hedit bbb
+@as b
+hedit bbb
+delete
+@as d
+show
+hedit qmconfig
+show
+@as b
+hedit aaa
+list area
+done
+hedit new CCC
+list area
+done
+hedit fresh
+hedit new FRESH
+done
+hedit fresh
+delete
+hedit olcsave
+delete
+hedit new DDD
+list area
+list all
+done
+prompt <%o %O>
+hedit qmconfig
+done
+prompt <%hhp %mm %vmv>
+asave world
+@file olcsave.are
