@@ -1,7 +1,7 @@
 """bust_a_prompt: a playing character's prompt, from their prompt string's % codes.
 
-[partial]: %X (experience to the next level) needs exp_per_level and the player's creation points, and %o and %O
-need the online builder; they raise NotPorted.
+[partial]: %X (experience to the next level) needs exp_per_level and the player's creation points; it raises
+NotPorted.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -59,8 +59,12 @@ def _code(code: str, ch) -> str:
         return ch.in_room.area.name if is_immortal(ch) and ch.in_room is not None else " "
     if code == "%":
         return "%"
-    if code in ("o", "O"):
-        raise NotPorted(f"comm.c bust_a_prompt: %{code} (the online builder)")
+    if code == "o":
+        from charm.olc.olc import olc_ed_name
+        return olc_ed_name(ch)
+    if code == "O":
+        from charm.olc.olc import olc_ed_vnum
+        return olc_ed_vnum(ch)
     return " "
 
 

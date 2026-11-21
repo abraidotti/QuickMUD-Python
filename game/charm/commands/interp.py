@@ -81,7 +81,7 @@ _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no comm
 def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
     from charm.commands import alias, comm, healer, info, move, obj, wiz
-    from charm.olc import save as olc_save
+    from charm.olc import olc, save as olc_save
     from charm.persist import bans, boards
     from charm.systems import fight, magic, mobcmds, music
     from charm.systems.skills import do_gain, do_groups, do_skills, do_spells
@@ -94,7 +94,7 @@ def _commands() -> dict:
                  do_gain=do_gain, do_spells=do_spells,
                  # mob_cmds.c's: only these are commands; the rest are mob_interpret's
                  do_mob=mobcmds.do_mob, do_mpstat=mobcmds.do_mpstat, do_mpdump=mobcmds.do_mpdump,
-                 do_asave=olc_save.do_asave)
+                 do_asave=olc_save.do_asave, do_olc=olc.do_olc, do_aedit=olc.do_aedit, do_alist=olc.do_alist)
     return found
 
 
@@ -302,9 +302,14 @@ def substitute_alias(d, argument: str) -> None:
 
 # C: olc.c run_olc_editor [partial]
 def run_olc_editor(d) -> bool:
-    """[partial]: every editor (aedit, redit, oedit, medit, mpedit, hedit) raises NotPorted."""
+    """[partial]: the area editor runs; the others (redit, oedit, medit, mpedit, hedit) raise NotPorted."""
     from charm.core.errors import NotPorted
+    from charm.olc import ED_AREA
+    from charm.olc.olc import aedit
 
-    if d.editor == 0:
-        return False
-    raise NotPorted(f"olc.c run_olc_editor: editor {d.editor}")
+    if d.editor == ED_AREA:
+        aedit(d.character, d.incomm)
+        return True
+    if d.editor in (2, 3, 4, 5, 6):  # ED_ROOM .. ED_HELP
+        raise NotPorted(f"olc.c run_olc_editor: editor {d.editor}")
+    return False
