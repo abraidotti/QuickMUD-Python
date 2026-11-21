@@ -1,0 +1,49 @@
+# The old area formats: #MOBOLD and #OBJOLD (db.c load_old_mob, load_old_obj) and their conversion (db2.c
+# convert_mobile, convert_objects, convert_object), with tools/fixtures/files/oldformat.are loaded first (its
+# area.lst is area-oldformat.lst), so its first 'O' reset comes before any mob's.
+# - the boot: convert_mobile draws a damage type for each old mob as it loads (the rng line), and every prototype is
+#   new-format by the end (memory's "new format" counts)
+# - stat mob on each old mob: its race from the first keyword (a quoted 'giant troll' is no race, so human blanks),
+#   dice, armour and wealth made up from the level, positions below sleeping made standing; look shows the
+#   first letters the loader upper-cases (a long description and a description) and lower-cases (a short one)
+# - stat obj on each old object: its level from the mob or container its resets put it with (shop goods have a floor
+#   by type), its cost and values from the level, spell slots looked up, a two-handed sword's flag
+# - the bread's 'P' reset has no room under its limit (0), so stat obj finds none until @obj makes one
+# - list in the old smith's shop: the prices come from the made-up costs
+@place oldformat.are oldformat.are
+@place area-oldformat.lst area.lst
+@connect god
+Smokegod
+smoke123
+@return
+@return
+holylight
+memory
+goto 31000
+look
+look oldguard
+stat mob oldguard
+stat mob oldsage
+stat mob oldbrute
+stat mob oldchild
+stat obj oldsword
+stat obj oldmail
+stat obj oldpill
+stat obj oldidol
+stat obj oldchest
+stat obj oldbread
+stat obj oldcoins
+stat obj oldlamp
+stat obj oldgem
+stat obj oldclub
+stat obj oldbone
+@obj 31008 31000
+stat obj oldbread
+goto 31001
+stat mob oldsmith
+stat obj oldpotion
+stat obj oldscroll
+stat obj oldwand
+stat obj oldstaff
+list
+@state

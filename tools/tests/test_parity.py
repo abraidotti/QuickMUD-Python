@@ -10,6 +10,7 @@ import unittest
 from dataclasses import fields
 from pathlib import Path
 
+from charm.testing.watchdog import allow
 from charm_tools import paths
 from charm_tools.explore import parity
 from charm_tools.explore.world import Counts, load_world
@@ -40,6 +41,7 @@ class StockWorldTest(unittest.TestCase):
 
 
 class BrokenAreaTest(unittest.TestCase):
+    @allow(300)
     def test_each_case_matches_the_games_log(self):
         cases = sorted((FIXTURES / "cases").glob("*.are"))
         self.assertGreaterEqual(len(cases), 11)
@@ -48,8 +50,8 @@ class BrokenAreaTest(unittest.TestCase):
             with self.subTest(case=case.stem):
                 expected = case.with_suffix(".log").read_text(encoding="latin-1").splitlines()
                 with tempfile.TemporaryDirectory() as tmp:
-                    w = load_world(area_dir=parity.case_area_dir(area_dir, case, Path(tmp)))
-                self.assertEqual(w.log_lines(), expected)
+                    actual = parity.game_boot_bugs(parity.case_area_dir(area_dir, case, Path(tmp)))
+                self.assertEqual(actual, expected)
 
 
 class ParseTest(unittest.TestCase):

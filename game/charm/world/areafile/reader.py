@@ -133,9 +133,16 @@ class Reader:
     def at_eof(self) -> bool:
         return self.pos >= len(self.text)
 
+    # C: db.c bug
     def bug_line(self) -> int:
-        """The LINE that ``bug()`` prints: how many lines start before the current position (db.c bug())."""
+        """The LINE that ``bug()`` prints while an area file is open: how many lines start before the current
+        position. The C counts them by reading from the start, a line at a time, with
+        ``while (getc (fpArea) != '\n');``: if the position is past the file's last newline, that loop reads EOF
+        forever and the game hangs, printing nothing more. (charm.core.log's bug is the rest of bug().)"""
         p = min(self.pos, len(self.text))
+        if p > 0 and self.text.rfind("\n") + 1 < p:
+            raise AreaParseError("bug() counts the lines up to here, and the last one has no newline: getc reads EOF "
+                                 "forever and the game hangs", self.filename, self.line, log=[])
         return (1 if p > 0 else 0) + self.text.count("\n", 0, max(p - 1, 0))
 
     @property

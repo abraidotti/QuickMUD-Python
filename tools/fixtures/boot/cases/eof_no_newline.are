@@ -1,0 +1,10 @@
+#AREA
+eof_no_newline.are~
+Parity eof_no_newline~
+{ 1  5} charm_tools  Parity eof_no_newline~
+30000 30099
+
+#MOBILES
+#30000
+hangs~
+the one who hangs

@@ -87,10 +87,10 @@ class RealTree(unittest.TestCase):
     def test_partial_markers(self):
         st = status.status()
         partial = {(p.c_file, p.c_name) for p in st.ports if p.partial}
-        self.assertIn(("db.c", "boot_db"), partial)
-        self.assertIn(("db.c", "create_mobile"), partial)
-        self.assertNotIn(("db.c", "load_rooms"), partial)
-        self.assertIn(("db.c", "reset_room"), partial)
+        self.assertIn(("db.c", "boot_db"), partial)  # charm.world.areafile.world's half; charm.entities.boot is whole
+        self.assertIn(("comm.c", "game_loop_unix"), partial)
+        for name in ("load_rooms", "create_mobile", "create_object", "reset_room", "bug"):
+            self.assertNotIn(("db.c", name), partial)
         full = {(p.c_file, p.c_name) for p in st.ports if not p.partial}
         for name in (("db2.c", "load_mobiles"), ("db2.c", "load_objects"), ("db.c", "reset_area"),
                      ("db.c", "assign_area_vnum"), ("handler.c", "obj_to_obj")):

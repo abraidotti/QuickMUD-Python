@@ -91,24 +91,23 @@ CASES_DIR = FIXTURE_DIR / "cases"
 
 def run_cases(image: str | None, save: bool) -> bool:
     """Each broken area in tools/fixtures/boot/cases, added to the end of area.lst: the game's bug() lines (live,
-    or saved next to the case as <case>.log) must equal the Python boot's."""
+    or saved next to the case as <case>.log) must equal the Python game's boot's (parity.game_boot_bugs)."""
     import tempfile
 
     area_dir = paths.area_dir()
     all_ok = True
     print()
-    print("broken-area cases (each added to the end of area.lst):")
+    print("broken-area and old-format cases (each added to the end of area.lst):")
     for case in sorted(CASES_DIR.glob("*.are")):
         saved = case.with_suffix(".log")
         if image:
             expected = parity.bug_lines(parity.capture_case(image, area_dir, case))
             if save:
-                saved.write_text("\n".join(expected) + "\n", encoding="latin-1", newline="\n")
+                saved.write_text("".join(line + "\n" for line in expected), encoding="latin-1", newline="\n")
         else:
             expected = saved.read_text(encoding="latin-1").splitlines() if saved.exists() else None
         with tempfile.TemporaryDirectory() as tmp:
-            w = load_world(area_dir=parity.case_area_dir(area_dir, case, Path(tmp)))
-        actual = w.log_lines()
+            actual = parity.game_boot_bugs(parity.case_area_dir(area_dir, case, Path(tmp)))
         ok = expected == actual
         all_ok &= ok
         tail = expected[-1] if expected else "(no capture)"

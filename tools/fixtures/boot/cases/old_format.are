@@ -1,0 +1,260 @@
+#AREA
+old_format.are~
+Parity old_format~
+{ 1 5} Charm  Old formats~
+31000 31099
+
+#MOBOLD
+#31000
+oldguard cityguard~
+the old guard~
+An old guard stands here, leaning on a spear.
+~
+an old guard who has seen better days.
+~
+B 0 500 S
+10 0 5 2d6+30 1d4+2
+2000 0
+8 8 1
+#31001
+dwarf oldsmith~
+the old smith~
+An old dwarven smith sells his wares here.
+~
+a stout smith with a grey beard.
+~
+B 0 0 S
+20 0 0 1d1+1 1d1+1
+55555 0
+8 8 1
+#31002
+elf oldsage~
+the old sage~
+an old elven sage sits here.
+~
+a sage with very long ears.
+~
+0 0 1000 S
+1 0 0 1d1+1 1d1+1
+0 0
+0 2 2
+#31003
+'giant troll' oldbrute~
+the old brute~
+A huge old brute looms over you.
+~
+a troll, or a giant: nobody has asked.
+~
+0 0 -1000 S
+50 0 0 1d1+1 1d1+1
+-125 0
+6 3 0
+#31004
+oldchild~
+the old child~
+A child who was never young stands here.
+~
+a pale child.
+~
+0 0 0 S
+0 0 0 1d1+1 1d1+1
+19 0
+8 8 2
+#0
+
+#OBJOLD
+#31000
+two-handed sword oldsword~
+an Old two-handed sword~
+A long sword lies here.
+~
+~
+5 0 AN
+0 0 0 3
+20 100 0
+#31001
+oldmail chain mail~
+Some old chain mail~
+Some chain mail lies here.
+~
+~
+9 0 AD
+5 0 0 0
+30 200 0
+A
+1 2
+E
+oldmail~
+Rust, mostly.
+~
+#31002
+oldpotion potion~
+an old potion~
+A dusty potion stands here.
+~
+~
+10 0 A
+12 16 1 0
+1 50 0
+#31003
+oldscroll scroll~
+an old scroll~
+A yellowed scroll lies here.
+~
+~
+2 0 A
+8 3 0 0
+1 50 0
+#31004
+oldwand wand~
+an old wand~
+a crooked wand lies here.
+~
+~
+3 0 AO
+10 6 0 32
+1 50 0
+#31005
+oldstaff staff~
+an old staff~
+A tall staff leans here.
+~
+~
+4 0 AO
+20 4 0 26
+5 50 0
+#31006
+oldidol idol~
+an old idol~
+A small idol sits here.
+~
+~
+8 0 A
+0 0 0 0
+5 500 0
+#31007
+oldchest chest~
+an old chest~
+An old chest sits here.
+~
+~
+15 0 0
+50 0 0 0
+40 30 0
+#31008
+oldbread bread~
+some old bread~
+A crust of bread lies here.
+~
+~
+19 0 A
+5 0 0 0
+1 2 0
+#31009
+oldcoins coins~
+some old coins~
+A few old coins lie here.
+~
+~
+20 0 A
+0 0 0 0
+0 0 0
+#31010
+oldlamp lamp~
+an old lamp~
+An old lamp lies here.
+~
+~
+1 0 A
+0 0 999 0
+2 20 0
+#31011
+oldgem gem~
+an old gem~
+A cloudy gem lies here.
+~
+~
+32 0 A
+0 0 0 0
+1 300 0
+#31012
+oldpill pill~
+an old pill~
+A grey pill lies here.
+~
+~
+26 0 A
+4 81 0 0
+1 10 0
+#31013
+oldclub club~
+an old club~
+A knotted club lies here.
+~
+~
+5 0 AN
+0 0 0 7
+10 10 0
+#31014
+oldbone bone~
+an old bone~
+A bone lies here, forgotten.
+~
+~
+13 0 A
+0 0 0 0
+1 0 0
+#0
+
+#ROOMS
+#31000
+The Old Hall~
+Dust lies thick on everything here. A doorway leads east.
+~
+0 0 0
+D1
+~
+~
+0 0 31001
+S
+#31001
+The Old Shop~
+Shelves of old things line the walls.
+~
+0 0 0
+D3
+~
+~
+0 0 31000
+S
+#0
+
+#RESETS
+O 0 31014 0 31000
+M 0 31000 1 31000 1
+E 0 31000 0 16
+E 0 31001 0 5
+G 0 31012 0
+O 0 31006 0 31000
+O 0 31007 0 31000
+P 0 31008 0 31007 1
+O 0 31009 0 31000
+O 0 31010 0 31000
+O 0 31011 0 31000
+P 0 31014 0 31098 1
+M 0 31001 1 31001 1
+G 0 31002 0
+G 0 31003 0
+G 0 31004 0
+G 0 31005 0
+M 0 31002 1 31000 1
+M 0 31003 1 31000 1
+M 0 31004 1 31000 1
+G 0 31013 0
+S
+
+#SHOPS
+31001 10 2 3 4 0 120 80 0 23
+0
+
+#$

@@ -20,12 +20,12 @@ from dataclasses import dataclass, field, replace
 from typing import Any
 
 from charm.core.cint import int32, sh_int
-from charm.core.strings import str_cmp, upper
+from charm.core.strings import lower, str_cmp, upper
 from charm.data import constants as C
 from charm.data.races import RACE_TABLE
 from charm.world import lookup
 from charm.world.areafile.lookups import prefix_lookup
-from charm.world.areafile.model import Mob, Obj
+from charm.world.areafile.model import Mob, Obj, OldMob, OldObj
 from charm.world.areafile.world import World
 
 MAX_DIR = 6
@@ -297,6 +297,11 @@ def _upper_first(s: str) -> str:
     return upper(s[:1]) + s[1:]
 
 
+def _lower_first(s: str) -> str:
+    """``s[0] = LOWER(s[0])``."""
+    return lower(s[:1]) + s[1:]
+
+
 _REMOVE_FIELD = {"act": "act", "aff": "affected_by", "off": "off_flags", "imm": "imm_flags", "res": "res_flags",
                  "vuln": "vuln_flags", "form": "form", "parts": "parts"}
 
@@ -363,11 +368,29 @@ def obj_index(o: Obj, area: Area) -> ObjIndex:
         extra_descr=[ExtraDescr(_s(e.keywords), _s(e.description)) for e in o.extra_descr])
 
 
-def build_index(world: World) -> Index:
+def build_index(world: World, old_mob_index=None, old_obj_index=None) -> Index:
     """Every prototype the boot loaded, linked the way the C links them: exits to rooms (fix_exits), mobprog code
-    to triggers (fix_mobprogs), shops and specials to mobs, resets to rooms."""
+    to triggers (fix_mobprogs), shops and specials to mobs, resets to rooms.
+
+    An old-format (#MOBOLD, #OBJOLD) prototype is made by the function given for it, charm.entities.oldformat's:
+    those need the game's one_argument, is_name and slot_lookup, which this layer can't import."""
     if world.fatal is not None:
         raise ValueError(f"the boot stopped: {world.fatal}")
+
+    def make_mob(m, area):
+        if not isinstance(m, OldMob):
+            return mob_index(m, area)
+        if old_mob_index is None:
+            raise ValueError(f"mob {m.vnum} is old-format (#MOBOLD): pass charm.entities.oldformat.old_mob_index")
+        return old_mob_index(m, area)
+
+    def make_obj(o, area):
+        if not isinstance(o, OldObj):
+            return obj_index(o, area)
+        if old_obj_index is None:
+            raise ValueError(f"object {o.vnum} is old-format (#OBJOLD): pass charm.entities.oldformat.old_obj_index")
+        return old_obj_index(o, area)
+
     areas = [Area(i, _s(h.file_name), _s(h.name), _s(h.credits), h.game_min_vnum, h.game_max_vnum, h.security,
                   _s(h.builders))
              for i, h in enumerate(world.areas)]
@@ -384,8 +407,9 @@ def build_index(world: World) -> Index:
             area_of_mob[m.vnum] = a
         for o in f.objects:
             area_of_obj[o.vnum] = a
-    mobs = {v: mob_index(m, area_of_mob[v]) for v, m in world.mobs.items()}
-    objs = {v: obj_index(o, area_of_obj[v]) for v, o in world.objects.items()}
+    # in load order: each old-format mob draws a random number (convert_mobile), as it does while loading in the C
+    mobs = {v: make_mob(m, area_of_mob[v]) for v, m in world.mobs.items()}
+    objs = {v: make_obj(o, area_of_obj[v]) for v, o in world.objects.items()}
     for f in world.files:
         for s in f.specials:  # load_specials: a later line for the same mob wins
             mobs[s.mob_vnum].spec_fun = s.resolved

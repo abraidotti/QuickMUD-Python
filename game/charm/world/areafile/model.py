@@ -125,6 +125,29 @@ class Mob:
 
 
 @dataclass
+class OldMob:
+    """A #MOBOLD mob (db.c load_old_mob), as the file says it: what's left of the old format once the C skips its
+    unused numbers. The prototype (race from the first keyword, dice from the level) is charm.world.index's."""
+
+    vnum: int
+    keywords: str
+    short_descr: str
+    long_descr: str
+    description: str
+    act: int  # file value; the game ORs in ACT_IS_NPC, and convert_mobile ACT_WARRIOR
+    affected_by: int
+    alignment: int
+    level: int
+    wealth: int  # the file's number / 20, as load_old_mob stores it (convert_mobile then divides by 100)
+    start_pos: int  # POS_STANDING where the file's is below POS_SLEEPING
+    default_pos: int
+    sex: int
+    mobprogs: list[MobProgRef] = field(default_factory=list)  # always empty: the old format has none
+    file: str = ""
+    line: int = 0
+
+
+@dataclass
 class ObjAffect:
     where: str  # "object" for 'A' lines; "affects", "immune", "resist" or "vuln" for 'F' lines
     location: int
@@ -158,6 +181,30 @@ class Obj:
     @property
     def condition(self) -> int:
         return CONDITIONS.get(self.condition_letter, 100)
+
+
+@dataclass
+class OldObj:
+    """An #OBJOLD object (db.c load_old_obj), as the file says it. charm.world.index makes the prototype: a
+    two-handed weapon's flag, an armour's three values, spell slot numbers looked up, and new_format FALSE until
+    convert_objects makes it up."""
+
+    vnum: int
+    keywords: str
+    short_descr: str
+    description: str
+    type_word: str  # the item type's name (item_table), or its number if there's none
+    item_type: int
+    extra_flags: int
+    wear_flags: int
+    values: list[int]  # value[0..3] from the file, and 0
+    weight: int
+    cost: int
+    level: int = 0
+    affects: list[ObjAffect] = field(default_factory=list)  # 'A' lines, head first
+    extra_descr: list[ExtraDescription] = field(default_factory=list)
+    file: str = ""
+    line: int = 0
 
 
 @dataclass

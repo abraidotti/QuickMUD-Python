@@ -33,10 +33,12 @@ checkpoint after it is on #91, on pace. PR 4 done (#99), objects: the object edi
 and the mob program editor (`olc_mpcode.c`). PR 6 done (#103), helps and leftovers: the help editor (`hedit.c`),
 so every editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. PR 7 done (#105), memory: `memory` and `dump`
 (the boot's string space modelled, Perms a kept difference), the C functions with no counterpart
-(`charm/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs. PR 8 done, copyover: `do_copyover` and
+(`charm/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs. PR 8 done (#107), copyover: `do_copyover` and
 `copyover_recover`, re-executing with inherited sockets on Linux (`sim smoke --wsl` runs its steps from Windows), so
-every command is ported. The old area formats are left. Areas and rooms took two PRs where the
-plan had one, so P5 is now 8 PRs unless two of the last ones combine.
+every command is ported. PR 9 done, the old area formats: `#MOBOLD` and `#OBJOLD` (`load_old_mob`, `load_old_obj`
+and `db2.c`'s `convert_*`, in `charm/entities/oldformat.py`), with a fixture area, and `bug`'s hang on a last line
+with no newline. P5 done 2026-11-21: 949 of 950 C functions are whole. `game_loop_unix` stays partial for the
+out-of-band difference accepted in #29, and how to count it is a question for P6.
 
 ## Goal
 

@@ -1,0 +1,113 @@
+sources 492a651977d8bc67
+boot seed 20261117 clock 1763400000 updates area
+rng 51995 fa6cc523
+step 1 "@connect god"
+rng 51995 fa6cc523
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 52018 6742c869
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 52018 6742c869
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 52018 6742c869
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52018 6742c869
+step 6 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52018 6742c869
+step 7 "memory"
+out god "Affects   744\n\rAreas      49\n\rExDes    1116\n\rExits    7322\n\rHelps     273\n\rSocials   244\n\rMobs      991(991 new format)\n\r(in use) 2178\n\rObjs     1281(1281 new format)\n\rResets   4609\n\rRooms    3128\n\rShops      63\n\rStrings 17184 strings of 1402521 bytes (max 1413120).\n\rPerms   28174 blocks  of 2943944 bytes.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52018 6742c869
+step 8 "goto 31000"
+out god "The Old Hall [Room 31000]\n\r  Dust lies thick on everything here. A doorway leads east.\n\r     A cloudy gem lies here.\n\r\n\r     An old lamp lies here.\n\r\n\r     A few old coins lie here.\n\r\n\r     An old chest sits here.\n\r\n\r     A small idol sits here.\n\r\n\r     A bone lies here, forgotten.\n\r\n\rA child who was never young stands here.\n\rA huge old brute looms over you.\n\rAn old elven sage sits here.\n\rAn old guard stands here, leaning on a spear.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52018 6742c869
+step 9 "look"
+out god "The Old Hall [Room 31000]\n\r  Dust lies thick on everything here. A doorway leads east.\n\r     A cloudy gem lies here.\n\r\n\r     An old lamp lies here.\n\r\n\r     A few old coins lie here.\n\r\n\r     An old chest sits here.\n\r\n\r     A small idol sits here.\n\r\n\r     A bone lies here, forgotten.\n\r\n\rA child who was never young stands here.\n\rA huge old brute looms over you.\n\rAn old elven sage sits here.\n\rAn old guard stands here, leaning on a spear.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52018 6742c869
+step 10 "look oldguard"
+out god "An old guard who has seen better days.\n\rThe old guard is in excellent condition.\n\r\n\rThe old guard is using:\n\r<worn on torso>     some old chain mail\n\r<wielded>           an Old two-handed sword\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 11 "stat mob oldguard"
+out god "Name: oldguard cityguard\n\rVnum: 31000  Format: new  Race: human  Group: 0  Sex: male  Room: 31000\n\rCount: 1  Killed: 0\n\rStr: 16(18)  Int: 12(12)  Wis: 13(13)  Dex: 13(13)  Con: 15(15)\n\rHp: 123/123  Mana: 145/145  Move: 100/100  Practices: 0\n\rLv: 10  Class: mobile  Align: 500  Gold: 0  Silver: 1  Exp: 0\n\rArmor: pierce: 23  bash: 23  slash: 23  magic: 69\n\rHit: 2  Dam: 10  Saves: 0  Size: medium  Position: standing  Wimpy: 0\n\rDamage: 3d5  Message:  pound\n\rFighting: (none)\n\rCarry number: 3  Carry weight: 5\n\rAct: npc sentinel warrior\n\rComm: no_shout no_tell no_channels\n\rOffense: disarm dodge trip assist_vnum\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: the old guard\n\rLong  description: An old guard stands here, leaning on a spear.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 12 "stat mob oldsage"
+out god "Name: elf oldsage\n\rVnum: 31002  Format: new  Race: elf  Group: 0  Sex: female  Room: 31000\n\rCount: 1  Killed: 0\n\rStr: 14(14)  Int: 10(10)  Wis: 11(11)  Dex: 11(11)  Con: 13(13)\n\rHp: 7/7  Mana: 108/108  Move: 100/100  Practices: 0\n\rLv: 1  Class: mobile  Align: 1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: 94  bash: 94  slash: 94  magic: 97\n\rHit: 0  Dam: 1  Saves: 0  Size: medium  Position: standing  Wimpy: 0\n\rDamage: 1d2  Message:  slash\n\rFighting: (none)\n\rCarry number: 0  Carry weight: 0\n\rAct: npc warrior\n\rComm: no_shout no_tell no_channels\n\rOffense: disarm dodge trip assist_race\n\rResist: charm\n\rVulnerable: iron\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: the old sage\n\rLong  description: An old elven sage sits here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 13 "stat mob oldbrute"
+out god "Name: 'giant troll' oldbrute\n\rVnum: 31003  Format: new  Race: human  Group: 0  Sex: none  Room: 31000\n\rCount: 1  Killed: 0\n\rStr: 26(25)  Int: 22(22)  Wis: 23(23)  Dex: 23(23)  Con: 25(25)\n\rHp: 1691/1691  Mana: 362/362  Move: 100/100  Practices: 0\n\rLv: 50  Class: mobile  Align: -1000  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: -302  bash: -302  slash: -302  magic: -146\n\rHit: 6  Dam: 36  Saves: 0  Size: medium  Position: sitting  Wimpy: 0\n\rDamage: 5d17  Message:  slash\n\rFighting: (none)\n\rCarry number: 0  Carry weight: 0\n\rAct: npc warrior\n\rComm: no_shout no_tell no_channels\n\rOffense: disarm dodge trip assist_vnum\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: the old brute\n\rLong  description: A huge old brute looms over you.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 14 "stat mob oldchild"
+out god "Name: oldchild\n\rVnum: 31004  Format: new  Race: human  Group: 0  Sex: female  Room: 31000\n\rCount: 1  Killed: 0\n\rStr: 14(14)  Int: 10(10)  Wis: 11(11)  Dex: 11(11)  Con: 13(13)\n\rHp: 1/1  Mana: 100/100  Move: 100/100  Practices: 0\n\rLv: 0  Class: mobile  Align: 0  Gold: 0  Silver: 0  Exp: 0\n\rArmor: pierce: 100  bash: 100  slash: 100  magic: 100\n\rHit: 0  Dam: 1  Saves: 0  Size: medium  Position: standing  Wimpy: 0\n\rDamage: 1d2  Message:  pound\n\rFighting: (none)\n\rCarry number: 1  Carry weight: 1\n\rAct: npc warrior\n\rComm: no_shout no_tell no_channels\n\rOffense: disarm dodge trip assist_vnum\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: the old child\n\rLong  description: A child who was never young stands here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 15 "stat obj oldsword"
+out god "Name(s): two-handed sword oldsword\n\rVnum: 31000  Format: new  Type: weapon  Resets: 0\n\rShort description: an Old two-handed sword\n\rLong description: A long sword lies here.\n\r\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 20/20/20 (10th pounds)\n\rLevel: 10  Cost: 100  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: oldguard cityguard  Wear_loc: 16\n\rValues: 0 3 5 3 32\n\rWeapon type is exotic\n\rDamage is 3d5 (average 9)\n\rDamage noun is slash.\n\rWeapons flags: two-handed\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 16 "stat obj oldmail"
+out god "Name(s): oldmail chain mail\n\rVnum: 31001  Format: new  Type: armor  Resets: 0\n\rShort description: some old chain mail\n\rLong description: Some chain mail lies here.\n\r\n\rWear bits: take torso\n\rExtra bits: none\n\rNumber: 1/1  Weight: 30/30/30 (10th pounds)\n\rLevel: 10  Cost: 100  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: oldguard cityguard  Wear_loc: 5\n\rValues: 5 5 5 0 0\n\rArmor class is 5 pierce, 5 bash, 5 slash, and 0 vs. magic\n\rExtra description keywords: 'oldmail'\n\rAffects strength by 2, level 20.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 17 "stat obj oldpill"
+out god "Name(s): oldpill pill\n\rVnum: 31012  Format: new  Type: pill  Resets: 0\n\rShort description: an old pill\n\rLong description: A grey pill lies here.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 1/1/1 (10th pounds)\n\rLevel: 10  Cost: 100  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: oldguard cityguard  Wear_loc: -1\n\rValues: 4 78 -1 -1 -1\n\rLevel 4 spells of: 'refresh'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 18 "stat obj oldidol"
+out god "Name(s): oldidol idol\n\rVnum: 31006  Format: new  Type: treasure  Resets: 0\n\rShort description: an old idol\n\rLong description: A small idol sits here.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 5/5/5 (10th pounds)\n\rLevel: 8  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 0 0 0 0 0\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 19 "stat obj oldchest"
+out god "Name(s): oldchest chest\n\rVnum: 31007  Format: new  Type: container  Resets: 0\n\rShort description: an old chest\n\rLong description: An old chest sits here.\n\r\n\rWear bits: none\n\rExtra bits: none\n\rNumber: 1/0  Weight: 40/40/40 (10th pounds)\n\rLevel: 8  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 50 0 0 0 0\n\rCapacity: 50#  Maximum weight: 0#  flags: none\n\rWeight multiplier: 0%\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 20 "stat obj oldbread"
+out god "Nothing like that in hell, earth, or heaven.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 21 "stat obj oldcoins"
+out god "Name(s): oldcoins coins\n\rVnum: 31009  Format: new  Type: money  Resets: 0\n\rShort description: some old coins\n\rLong description: A few old coins lie here.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/0  Weight: 0/0/0 (10th pounds)\n\rLevel: 8  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 80 0 0 0 0\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 22 "stat obj oldlamp"
+out god "Name(s): oldlamp lamp\n\rVnum: 31010  Format: new  Type: light  Resets: 0\n\rShort description: an old lamp\n\rLong description: An old lamp lies here.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 2/2/2 (10th pounds)\n\rLevel: 8  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 0 0 -1 0 0\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 23 "stat obj oldgem"
+out god "Name(s): oldgem gem\n\rVnum: 31011  Format: new  Type: gem  Resets: 0\n\rShort description: an old gem\n\rLong description: A cloudy gem lies here.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/0  Weight: 1/1/1 (10th pounds)\n\rLevel: 8  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 0 0 0 0 0\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 24 "stat obj oldclub"
+out god "Name(s): oldclub club\n\rVnum: 31013  Format: new  Type: weapon  Resets: 0\n\rShort description: an old club\n\rLong description: A knotted club lies here.\n\r\n\rWear bits: take wield\n\rExtra bits: none\n\rNumber: 1/1  Weight: 10/10/10 (10th pounds)\n\rLevel: 0  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: oldchild  Wear_loc: -1\n\rValues: 0 1 7 7 0\n\rWeapon type is exotic\n\rDamage is 1d7 (average 4)\n\rDamage noun is pound.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 25 "stat obj oldbone"
+out god "Name(s): oldbone bone\n\rVnum: 31014  Format: new  Type: trash  Resets: 0\n\rShort description: an old bone\n\rLong description: A bone lies here, forgotten.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 1/1/1 (10th pounds)\n\rLevel: 0  Cost: 0  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 0 0 0 0 0\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 26 "@obj 31008 31000"
+rng 52019 7f97590f
+step 27 "stat obj oldbread"
+out god "Name(s): oldbread bread\n\rVnum: 31008  Format: new  Type: food  Resets: 0\n\rShort description: some old bread\n\rLong description: A crust of bread lies here.\n\r\n\rWear bits: take\n\rExtra bits: none\n\rNumber: 1/1  Weight: 1/1/1 (10th pounds)\n\rLevel: 8  Cost: 80  Condition: 0  Timer: 0\n\rIn room: 31000  In object: (none)  Carried by: (none)  Wear_loc: -1\n\rValues: 5 0 0 0 0\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 28 "goto 31001"
+out god "The Old Shop [Room 31001]\n\r  Shelves of old things line the walls.\n\rAn old dwarven smith sells his wares here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 29 "stat mob oldsmith"
+out god "Name: dwarf oldsmith\n\rVnum: 31001  Format: new  Race: dwarf  Group: 0  Sex: male  Room: 31001\n\rCount: 1  Killed: 0\n\rStr: 19(19)  Int: 15(15)  Wis: 16(16)  Dex: 16(16)  Con: 18(18)\n\rHp: 369/369  Mana: 215/215  Move: 100/100  Practices: 0\n\rLv: 20  Class: mobile  Align: 0  Gold: 0  Silver: 15  Exp: 0\n\rArmor: pierce: -40  bash: -40  slash: -40  magic: 23\n\rHit: 3  Dam: 14  Saves: 0  Size: medium  Position: standing  Wimpy: 0\n\rDamage: 5d7  Message:  pound\n\rFighting: (none)\n\rCarry number: 4  Carry weight: 0\n\rAct: npc sentinel warrior\n\rComm: no_shout no_tell no_channels\n\rOffense: disarm dodge trip assist_race\n\rResist: poison disease\n\rVulnerable: drowning\n\rForm: edible sentient biped mammal\n\rParts: head arms legs heart brains guts hands feet fingers ears eyes\n\rMaster: (none)  Leader: (none)  Pet: (none)\n\rShort description: the old smith\n\rLong  description: An old dwarven smith sells his wares here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 30 "stat obj oldpotion"
+out god "Name(s): oldpotion potion\n\rVnum: 31002  Format: new  Type: potion  Resets: 0\n\rShort description: an old potion\n\rLong description: A dusty potion stands here.\n\r\n\rWear bits: take\n\rExtra bits: inventory\n\rNumber: 1/1  Weight: 1/1/1 (10th pounds)\n\rLevel: 5  Cost: 50  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: dwarf oldsmith  Wear_loc: -1\n\rValues: 12 26 2 -1 -1\n\rLevel 12 spells of: 'cure light' 'armor'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 31 "stat obj oldscroll"
+out god "Name(s): oldscroll scroll\n\rVnum: 31003  Format: new  Type: scroll  Resets: 0\n\rShort description: an old scroll\n\rLong description: A yellowed scroll lies here.\n\r\n\rWear bits: take\n\rExtra bits: inventory\n\rNumber: 1/1  Weight: 1/1/1 (10th pounds)\n\rLevel: 10  Cost: 100  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: dwarf oldsmith  Wear_loc: -1\n\rValues: 8 3 -1 -1 -1\n\rLevel 8 spells of: 'bless'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 32 "stat obj oldwand"
+out god "Name(s): oldwand wand\n\rVnum: 31004  Format: new  Type: wand  Resets: 0\n\rShort description: an old wand\n\rLong description: A crooked wand lies here.\n\r\n\rWear bits: take hold\n\rExtra bits: inventory\n\rNumber: 1/1  Weight: 1/1/1 (10th pounds)\n\rLevel: 15  Cost: 150  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: dwarf oldsmith  Wear_loc: -1\n\rValues: 10 6 6 66 0\n\rHas 6(6) charges of level 10 'magic missile'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 33 "stat obj oldstaff"
+out god "Name(s): oldstaff staff\n\rVnum: 31005  Format: new  Type: staff  Resets: 0\n\rShort description: an old staff\n\rLong description: A tall staff leans here.\n\r\n\rWear bits: take hold\n\rExtra bits: inventory\n\rNumber: 1/1  Weight: 5/5/5 (10th pounds)\n\rLevel: 20  Cost: 200  Condition: 0  Timer: 0\n\rIn room: 0  In object: (none)  Carried by: dwarf oldsmith  Wear_loc: -1\n\rValues: 20 4 4 47 0\n\rHas 4(4) charges of level 20 'fireball'.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 34 "list"
+out god "[Lv Price Qty] Item\n\r[20   240 -- ] an old staff\n\r[15   180 -- ] an old wand\n\r[10   120 -- ] an old scroll\n\r[ 5    60 -- ] an old potion\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 52019 7f97590f
+step 35 "@state"
+state room 31001 light 0 people player mob
+state exit 3 to 31000 info 0 key 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 31001 pos 8 hit 369/369 mana 215/215 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 15 act 524291 affected_by 0 train 0 on 0 stats 19 15 16 16 18
+state   obj carried 31005 wear -1 timer 0 cost 200 values 20 4 4 47 0
+state   obj carried 31004 wear -1 timer 0 cost 150 values 10 6 6 66 0
+state   obj carried 31003 wear -1 timer 0 cost 100 values 8 3 -1 -1 -1
+state   obj carried 31002 wear -1 timer 0 cost 50 values 12 26 2 -1 -1
+rng 52019 7f97590f

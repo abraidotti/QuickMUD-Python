@@ -1,0 +1,21 @@
+#AREA
+old_non_s.are~
+Parity old_non_s~
+{ 1  5} charm_tools  Parity old_non_s~
+30000 30099
+
+#MOBOLD
+#30000
+oldguard~
+the old guard~
+An old guard stands here.
+~
+An old guard.
+~
+B 0 500 X
+10 0 5 2d6+30 1d4+2
+2000 0
+8 8 1
+#0
+
+#$

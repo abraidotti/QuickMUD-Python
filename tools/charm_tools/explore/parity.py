@@ -157,6 +157,23 @@ def capture_case(image: str, area_dir: Path, case: Path, timeout: float = 20.0) 
         smoke.docker("rm", "-f", container, check=False)
 
 
+def game_boot_bugs(area_dir: Path) -> list[str]:
+    """The bug() lines of the Python game's whole boot (charm.entities.boot.boot_db) from area_dir, ending with the
+    fatal one if the boot stops. That's the area loader's lines (World.log_lines) and then what comes after it, as
+    in the game's log: convert_objects for old-format areas, and the first area_update's resets."""
+    from charm.core import log
+    from charm.entities.boot import BootFailed, boot_db
+
+    for d in ("notes", "player", "gods", "log"):  # the boot reads (and save_notes writes) next to area/
+        (area_dir.parent / d).mkdir(exist_ok=True)
+    with log.capture() as lines:
+        try:
+            boot_db(area_dir)
+        except BootFailed:
+            pass
+    return [line for line in lines if line.startswith("[*****]")]
+
+
 def save_capture(memory: str, log: str, directory: Path) -> None:
     directory.mkdir(parents=True, exist_ok=True)
     (directory / "memory.txt").write_text(memory.replace("\r", ""), encoding="latin-1", newline="\n")

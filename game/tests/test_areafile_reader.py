@@ -33,7 +33,7 @@ class NumberTest(unittest.TestCase):
 
     def test_bad_format_is_fatal(self):
         with self.assertRaises(AreaParseError) as e:
-            r("abc").read_number()
+            r("abc\n").read_number()
         self.assertEqual(e.exception.message, "Fread_number: bad format.")
 
     def test_wraps_like_a_c_int(self):
@@ -74,7 +74,7 @@ class WordTest(unittest.TestCase):
     def test_too_long_is_fatal(self):
         self.assertEqual(r("x" * 255 + " ").read_word(), "x" * 255)
         with self.assertRaises(AreaParseError) as e:
-            r("x" * 256 + " ").read_word()
+            r("x" * 256 + " \n").read_word()
         self.assertEqual(e.exception.message, "Fread_word: word too long.")
 
     def test_eof_is_fatal(self):
@@ -100,7 +100,7 @@ class StringTest(unittest.TestCase):
             self.assertEqual(Reader.from_path(path).read_string(), "one\ntwo")
 
     def test_eof_logs_a_bug_and_returns_null(self):
-        rd = r("no tilde")
+        rd = r("no tilde\n")
         self.assertIsNone(rd.read_string())
         self.assertEqual([d.message for d in rd.diagnostics], ["Fread_string: EOF"])
 
@@ -141,11 +141,27 @@ class BugLineTest(unittest.TestCase):
         self.assertEqual(rd.bug_line(), 2)
 
     def test_diagnostic_log_lines(self):
-        rd = r("x")
+        rd = r("x\n")
         rd.pos = 1
         rd.bug("CHECK_POS : size == -1 < 0")
         self.assertEqual(rd.diagnostics[0].log_lines(),
                          ["[*****] FILE: t.are LINE: 1", "[*****] BUG: CHECK_POS : size == -1 < 0"])
+
+    def test_a_bug_past_the_last_newline_hangs(self):
+        # bug() counts lines with while (getc (fpArea) != '\n'), which never ends on a last line with no newline
+        # (tools/fixtures/boot/cases/eof_no_newline.are: the C game spins there)
+        rd = r("first\nno newline")
+        rd.pos = 6  # the start of the last line: the loop stops after one line (ftell is 6)
+        self.assertEqual(rd.bug_line(), 1)
+        rd.pos = 7  # one past it: the loop has to read the last line, and finds no newline
+        with self.assertRaises(AreaParseError):
+            rd.bug_line()
+        rd.pos = len(rd.text)
+        with self.assertRaises(AreaParseError) as e:
+            rd.bug("Fread_string: EOF")
+        self.assertIn("hangs", e.exception.message)
+        self.assertEqual(e.exception.log, [])  # it prints nothing: not even its own FILE line
+        self.assertEqual(rd.diagnostics, [])
 
 
 class WrapTest(unittest.TestCase):

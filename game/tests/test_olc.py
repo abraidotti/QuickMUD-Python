@@ -224,7 +224,7 @@ class StringSpaceAndOdds(unittest.TestCase):
 
         space = StringSpace()
         space.used = MAX_STRING - C.MAX_STRING_LENGTH - 8  # just room for one more check
-        r = Reader("a~ b~")
+        r = Reader("a~ b~\n")
         r.space = space
         r.read_string()
         with self.assertRaises(AreaParseError) as e:
