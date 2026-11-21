@@ -1,0 +1,37 @@
+# asave's modes (olc_save.c do_asave), with a builder (Planner, security 9) and a mortal (Delver, security 0).
+# Areas are numbered in load order: 0 is immort.are, 2 shire.are, 3 midgaard.are.
+# - Delver: asave 2 is refused; asave world saves only area.lst (every area is refused quietly), so shire.are is
+#   still the stock file; asave list rewrites area.lst for anyone
+# - a mob: asave area does nothing without a connection; asave 2 is refused (a mob is never a builder)
+# - Planner: no argument and an unknown word give the syntax; 999 is no area; 0 and 2 save those areas;
+#   changed saves nothing (no area has changed) and says None.; area needs an editor
+@connect d
+Delver
+psswrd
+@return
+asave 2
+asave world
+@file shire.are
+@file area.lst
+asave list
+@connect b
+Planner
+smoke123
+@return
+@return
+goto 3001
+force hassan asave area
+force hassan asave 2
+asave
+asave nonsense
+asave 999
+asave -1
+asave 0
+@file immort.are
+asave 2
+@file shire.are
+asave changed
+asave area
+asave  world
+asave WORLD
+@file midgaard.are

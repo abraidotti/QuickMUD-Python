@@ -17,6 +17,7 @@
     port players --docker IMG   player files saved by each game load in the other, key by key
     port commands --docker IMG  the same sessions in the game against both games, byte for byte
     port scenarios         scenario files through both games, line by line (--docker IMAGE, or the goldens)
+    port asave --docker IMG     OLC's asave world on both games, every area file compared byte for byte
 """
 
 from __future__ import annotations
@@ -92,6 +93,9 @@ def main(argv: list[str] | None = None) -> int:
     pscen.add_argument("--docker", metavar="IMAGE", help="the build-stage image: docker build --target build")
     pscen.add_argument("--save", action="store_true", help="with --docker: write the goldens the tests replay")
     pscen.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
+    pasave = port_sub.add_parser("asave", help="asave world on both games, and compare every file it writes")
+    pasave.add_argument("--docker", metavar="IMAGE", required=True, help="the build-stage image: docker build --target build")
+    pasave.add_argument("--only", metavar="TEXT", help="only read back the files whose name contains TEXT")
     pcov = port_sub.add_parser("coverage", help="the lines of the ported functions that no test or scenario runs")
     pcov.add_argument("c_files", nargs="*", metavar="FILE.c", help="only the functions ported from these C files")
     pcov.add_argument("--scenarios", action="store_true", help="run only the scenarios, not the unit tests")
@@ -145,6 +149,9 @@ def main(argv: list[str] | None = None) -> int:
         if args.port_command == "scenarios":
             from .port import scenarios
             return scenarios.run(args.docker, args.save, args.only)
+        if args.port_command == "asave":
+            from .port import asave
+            return asave.run(args.docker, args.only)
         if args.port_command == "coverage":
             from .port import coverage
             return coverage.run(args.c_files, args.scenarios)

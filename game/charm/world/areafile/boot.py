@@ -111,7 +111,7 @@ class Boot:
                 elif section == "AREADATA":
                     current_area = self._new_load_area(r, af)
                 elif section == "HELPS":
-                    self._load_helps(r, af)
+                    self._load_helps(r, af, current_area)
                 elif section in ("MOBOLD", "OBJOLD"):
                     raise UnsupportedSection(
                         f"#{section} (the old format) isn't modelled by charm_tools yet; how the game loads this "
@@ -228,7 +228,7 @@ class Boot:
 
     # -- #HELPS (load_helps, db.c:603) -------------------------------------------------------------------------
     # C: db.c load_helps
-    def _load_helps(self, r: Reader, af: AreaFile) -> None:
+    def _load_helps(self, r: Reader, af: AreaFile, current_area: AreaHeader | None = None) -> None:
         while True:
             line = r.line
             level = r.read_number()
@@ -237,7 +237,7 @@ class Boot:
                 raise self._crash(r, "the help keyword (keyword[0])")
             if keyword.startswith("$"):
                 break
-            af.helps.append(Help(level, keyword, r.read_string(), af.filename, line))
+            af.helps.append(Help(level, keyword, r.read_string(), af.filename, line, current_area))
             self.counts.helps += 1
 
     # -- #MOBILES (load_mobiles, db2.c:190) --------------------------------------------------------------------

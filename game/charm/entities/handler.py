@@ -1659,6 +1659,13 @@ def item_name(item_type: int) -> str:
     return next((t.name for t in ITEM_TABLE if t.type == item_type), "none")
 
 
+# C: handler.c weapon_name
+def weapon_name(weapon_type: int) -> str:
+    from charm.data.items import WEAPON_TABLE
+
+    return next((t.name for t in WEAPON_TABLE if t.type == weapon_type), "exotic")
+
+
 # C: handler.c wiznet_lookup
 def wiznet_lookup(name: str) -> int:
     """"returns a flag for wiznet": the index in wiznet_table of the first option name is a prefix of, or -1."""

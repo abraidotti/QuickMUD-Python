@@ -81,6 +81,7 @@ _SENTINEL_LOG = LOG_NORMAL  # the closing row's: interpret reads it when no comm
 def _commands() -> dict:
     """The do_* functions ported so far, by the C name the command table gives."""
     from charm.commands import alias, comm, healer, info, move, obj, wiz
+    from charm.olc import save as olc_save
     from charm.persist import bans, boards
     from charm.systems import fight, magic, mobcmds, music
     from charm.systems.skills import do_gain, do_groups, do_skills, do_spells
@@ -92,7 +93,8 @@ def _commands() -> dict:
                  do_permban=bans.do_permban, do_allow=bans.do_allow, do_groups=do_groups, do_skills=do_skills,
                  do_gain=do_gain, do_spells=do_spells,
                  # mob_cmds.c's: only these are commands; the rest are mob_interpret's
-                 do_mob=mobcmds.do_mob, do_mpstat=mobcmds.do_mpstat, do_mpdump=mobcmds.do_mpdump)
+                 do_mob=mobcmds.do_mob, do_mpstat=mobcmds.do_mpstat, do_mpdump=mobcmds.do_mpdump,
+                 do_asave=olc_save.do_asave)
     return found
 
 
