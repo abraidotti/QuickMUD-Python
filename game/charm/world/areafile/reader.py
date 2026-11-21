@@ -185,6 +185,9 @@ class Reader:
             self.ungetc()
         return -n if negative else n
 
+    # LATER: the C's string space isn't modelled (MAX_STRING, 1,413,120 bytes, with boot strings shared through
+    # string_hash). A world past it exits the C at boot ("Fread_string: MAX_STRING exceeded") and boots here; the
+    # stock world and one fixture area fit, two fixture areas don't (P4 PR 8).
     # C: db.c fread_string
     def read_string(self) -> str | None:
         """``fread_string`` (db.c:2822): text up to ``~``. The game turns ``\\n`` into ``\\n\\r`` and drops ``\\r``;

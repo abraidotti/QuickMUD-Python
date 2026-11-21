@@ -1,0 +1,257 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area,violence
+rng 51873 51be72ed
+step 1 "@connect god"
+rng 51873 51be72ed
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect pupil"
+rng 51895 7f5599b5
+step 8 "Pupil"
+out pupil "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "psswrd"
+out pupil "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out pupil "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Tournament and Practice Yard\n\r  The practice yard of the fighters.  To the north is the bar.  A well leads\n\rdown into darkness.\n\rYour guildmaster is standing here.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@return"
+out pupil "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "@connect dec"
+rng 51895 7f5599b5
+step 13 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 14 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 15 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 16 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@as god"
+rng 51895 7f5599b5
+step 18 "transfer pupil 3001"
+out god "Pupil arrives from a puff of smoke.\n\rOk.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod has transferred you.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPupil arrives from a puff of smoke.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 19 "set char decimus hp 1000"
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 20 "restore decimus"
+out god "Ok.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod has restored you.\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 21 "@mob 30006 3001"
+rng 51910 fbea3747
+step 22 "@mob 30005 3001"
+rng 51925 7edc2a82
+step 23 "@as pupil"
+rng 51925 7edc2a82
+step 24 "follow decimus"
+out pupil "You now follow Decimus.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rPupil now follows you.\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 25 "@as dec"
+rng 51925 7edc2a82
+step 26 "group pupil"
+out god "\n\rPupil joins Decimus's group.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "You join Decimus's group.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "Pupil joins your group.\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 27 "say travel"
+out god "\n\rDecimus says 'travel'\n\rMarket Square [Room 3014]\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rPupil the Recruit is here.\n\rDecimus the Recruit is here.\n\rA cityguard stands here.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'travel'\n\rMarket Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rDecimus the Recruit is here.\n\rA cityguard stands here.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rDecimus the Recruit is here.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rHassan is here, waiting to dispense some justice.\n\rThe stage manager says 'travel done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You say 'travel'\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rPupil the Recruit is here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\rMarket Square\n\r  You are standing on the market square, the famous Square of Midgaard.\n\rA large, peculiar looking statue is standing in the middle of the square.\n\rRoads lead in every direction, north to the temple square, south to the\n\rcommon square, east and westbound is the main street.\n\rA cityguard stands here.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rHassan is here, waiting to dispense some justice.\n\rThe Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rHassan is here, waiting to dispense some justice.\n\rThe stage manager says 'travel done'\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 52188 f645e8fb
+step 28 "@pulse 4"
+rng 52188 f645e8fb
+step 29 "look"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPupil the Recruit is here.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 52188 f645e8fb
+step 30 "@as god"
+rng 52188 f645e8fb
+step 31 "goto 3001"
+out god "The Temple Of Mota [Room 3001]\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rPupil the Recruit is here.\n\rDecimus the Recruit is here.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rSmokegod appears in a swirling mist.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "\n\rSmokegod appears in a swirling mist.\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 52188 f645e8fb
+step 32 "@as dec"
+rng 52188 f645e8fb
+step 33 "say forces"
+out god "Decimus says 'forces'\n\rDecimus says 'I am forced.'\n\rThe understudy smiles happily.\n\rDecimus smiles happily.\n\rPupil smiles happily.\n\rPupil nods.\n\rDecimus nods.\n\rThe understudy says 'The understudy is forced.'\n\rThe stage manager says 'forces done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'forces'\n\rDecimus says 'I am forced.'\n\rThe understudy smiles happily.\n\rDecimus smiles happily.\n\rYou smile happily.\n\rYou nod.\n\rDecimus nods.\n\rThe understudy says 'The understudy is forced.'\n\rThe stage manager says 'forces done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You say 'forces'\n\rYou say 'I am forced.'\n\rThe understudy smiles happily.\n\rYou smile happily.\n\rPupil smiles happily.\n\rPupil nods.\n\rYou nod.\n\rThe understudy says 'The understudy is forced.'\n\rThe stage manager says 'forces done'\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 52188 f645e8fb
+step 34 "@pulse 4"
+rng 52188 f645e8fb
+step 35 "say spells"
+out god "\n\rDecimus says 'spells'\n\rThe understudy appears to be blinded.\n\rA Magic Mushroom suddenly appears.\n\rA small sword glows blue.\n\rThe stage manager says 'spells done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'spells'\n\rThe understudy appears to be blinded.\n\rA Magic Mushroom suddenly appears.\n\rA small sword glows blue.\n\rThe stage manager says 'spells done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+out dec "You say 'spells'\n\rYou feel someone protecting you.\n\rYou feel better!\n\rThe understudy appears to be blinded.\n\rA Magic Mushroom suddenly appears.\n\rA small sword glows blue.\n\rThe stage manager says 'spells done'\n\r\n\r<1000hp 102m 106mv> \xff\xf9"
+rng 52191 7657d141
+step 36 "@pulse 24"
+rng 52191 7657d141
+step 37 "say hurt"
+out god "\n\rDecimus says 'hurt'\n\rThe stage manager says 'hurt done'\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'hurt'\n\rThe stage manager says 'hurt done'\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "You say 'hurt'\n\rThe stage manager says 'hurt done'\n\r\n\r<906hp 102m 106mv> \xff\xf9"
+rng 52207 006c184d
+step 38 "@pulse 4"
+rng 52207 006c184d
+step 39 "say remember"
+out god "\n\rDecimus says 'remember'\n\rThe stage manager says 'I remember Decimus.'\n\rThe stage manager says 'I remember someone.'\n\rThe stage manager says 'A delay is set.'\n\rThe stage manager says 'No delay now.'\n\rThe stage manager says 'remember done'\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'remember'\n\rThe stage manager says 'I remember Decimus.'\n\rThe stage manager says 'I remember someone.'\n\rThe stage manager says 'A delay is set.'\n\rThe stage manager says 'No delay now.'\n\rThe stage manager says 'remember done'\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "You say 'remember'\n\rThe stage manager says 'I remember Decimus.'\n\rThe stage manager says 'I remember someone.'\n\rThe stage manager says 'A delay is set.'\n\rThe stage manager says 'No delay now.'\n\rThe stage manager says 'remember done'\n\r\n\r<906hp 102m 106mv> \xff\xf9"
+rng 52207 006c184d
+step 40 "say subroutine"
+out god "\n\rDecimus says 'subroutine'\n\rThe stage manager says 'Called for Decimus with bottle, and something.'\n\rThe stage manager says 'Called for someone with something, and something.'\n\rThe stage manager says 'subroutine done'\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'subroutine'\n\rThe stage manager says 'Called for Decimus with bottle, and something.'\n\rThe stage manager says 'Called for someone with something, and something.'\n\rThe stage manager says 'subroutine done'\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "You say 'subroutine'\n\rThe stage manager says 'Called for Decimus with bottle, and something.'\n\rThe stage manager says 'Called for someone with something, and something.'\n\rThe stage manager says 'subroutine done'\n\r\n\r<906hp 102m 106mv> \xff\xf9"
+rng 52207 006c184d
+step 41 "@state"
+state room 3001 light 2 people player player player mob mob mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 99/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Pupil 10 pos 8 hit 28/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 906/1000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 2 level 40 duration 24 location 17 modifier -20 bitvector 0
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char mob 30005 pos 8 hit 1074/1074 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 51 act 3 affected_by 8 train 0 on 0 stats 21 21 21 21 21
+state   affect 34 level 40 duration 40 location 0 modifier 0 bitvector 8
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state char mob 30006 pos 8 hit 163/165 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 62 act 3 affected_by 1 train 0 on 0 stats 12 12 12 12 12
+state   affect 4 level 40 duration 41 location 18 modifier -4 bitvector 1
+state char mob 3011 pos 8 hit 3999/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3001 wear -1 timer 0 cost 5 values 16 16 1 0 0
+state obj floor 20 wear -1 timer 0 cost 0 values 20 40 0 0 0
+rng 52207 006c184d
+step 42 "say strip"
+out god "\n\rDecimus says 'strip'\n\rThe stage manager says 'strip done'\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'strip'\n\rThe stage manager says 'strip done'\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "You say 'strip'\n\rThe stage manager says 'strip done'\n\r\n\r<906hp 102m 106mv> \xff\xf9"
+rng 52207 006c184d
+step 43 "@state"
+state room 3001 light 1 people player player player mob mob mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 99/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Pupil 10 pos 8 hit 28/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 906/1000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 2 level 40 duration 24 location 17 modifier -20 bitvector 0
+state char mob 30005 pos 8 hit 1074/1074 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 51 act 3 affected_by 8 train 0 on 0 stats 21 21 21 21 21
+state   affect 34 level 40 duration 40 location 0 modifier 0 bitvector 8
+state   obj carried 3021 wear -1 timer 0 cost 250 values 1 1 5 1 0
+state char mob 30006 pos 8 hit 163/165 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 62 act 3 affected_by 1 train 0 on 0 stats 12 12 12 12 12
+state   affect 4 level 40 duration 41 location 18 modifier -4 bitvector 1
+state char mob 3011 pos 8 hit 3999/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3001 wear -1 timer 0 cost 5 values 16 16 1 0 0
+state obj floor 20 wear -1 timer 0 cost 0 values 20 40 0 0 0
+rng 52207 006c184d
+step 44 "say fight"
+out god "\n\rDecimus says 'fight'\n\rThe stage manager's punch scratches Decimus.\n\rThe stage manager says 'fight done'\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'fight'\n\rThe stage manager's punch scratches Decimus.\n\rThe stage manager says 'fight done'\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "You say 'fight'\n\rThe stage manager's punch scratches you.\n\rThe stage manager says 'fight done'\n\rThe stage manager is in excellent condition. \n\r\n\r<896hp 102m 106mv> \xff\xf9"
+rng 52215 fb0af434
+step 45 "@pulse 48"
+out god "\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch misses the stage manager.\n\r\n\r<99hp 100m 100mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch scratches the stage manager.\n\r\n\r<99hp 100m 100mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch misses the stage manager.\n\r\n\r<99hp 100m 100mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch scratches the stage manager.\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch misses the stage manager.\n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch scratches the stage manager.\n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch misses the stage manager.\n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rDecimus's punch scratches the stage manager.\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe stage manager's punch scratches you.\n\rYour punch misses the stage manager.\n\rThe stage manager is in excellent condition. \n\r\n\r<889hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches you.\n\rYour punch scratches the stage manager.\n\rThe stage manager has a few scratches. \n\r\n\r<881hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches you.\n\rYour punch misses the stage manager.\n\rThe stage manager has a few scratches. \n\r\n\r<871hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches you.\n\rYour punch scratches the stage manager.\n\rThe stage manager has a few scratches. \n\r\n\r<862hp 102m 106mv> \xff\xf9"
+rng 52282 7f705121
+step 46 "@as god"
+rng 52282 7f705121
+step 47 "peace"
+out god "Ok.\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+rng 52282 7f705121
+step 48 "@as dec"
+rng 52282 7f705121
+step 49 "@pulse 12"
+rng 52282 7f705121
+step 50 "kill understudy"
+out god "\n\rDecimus's punch misses the understudy.\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus's punch misses the understudy.\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "Your punch misses the understudy.\n\rThe understudy has a few scratches. \n\r\n\r<862hp 102m 106mv> \xff\xf9"
+rng 52288 06fa3ebe
+step 51 "say fight"
+rng 52288 06fa3ebe
+step 52 "@pulse 24"
+out god "\n\rThe understudy's punch misses Decimus.\n\rDecimus's punch scratches the understudy.\n\r\n\r<99hp 100m 100mv> \xff\xf9\n\rDecimus says 'fight'\n\rThe stage manager's punch scratches Decimus.\n\rThe stage manager says 'fight done'\n\r\n\r<99hp 100m 100mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rThe understudy's punch misses Decimus.\n\rDecimus's punch scratches the understudy.\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rThe understudy's punch misses Decimus.\n\rDecimus's punch scratches the understudy.\n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rDecimus says 'fight'\n\rThe stage manager's punch scratches Decimus.\n\rThe stage manager says 'fight done'\n\r\n\r<28hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches Decimus.\n\rThe understudy's punch misses Decimus.\n\rDecimus's punch scratches the understudy.\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "\n\rThe understudy's punch misses you.\n\rYour punch scratches the understudy.\n\rThe understudy has a few scratches. \n\r\n\r<862hp 102m 106mv> \xff\xf9You say 'fight'\n\rThe stage manager's punch scratches you.\n\rThe stage manager says 'fight done'\n\rThe understudy has a few scratches. \n\r\n\r<853hp 102m 106mv> \xff\xf9\n\rThe stage manager's punch scratches you.\n\rThe understudy's punch misses you.\n\rYour punch scratches the understudy.\n\rThe understudy has a few scratches. \n\r\n\r<846hp 102m 106mv> \xff\xf9"
+rng 52342 20cf5bb5
+step 53 "@as god"
+rng 52342 20cf5bb5
+step 54 "peace"
+out god "Ok.\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+rng 52342 20cf5bb5
+step 55 "@as dec"
+rng 52342 20cf5bb5
+step 56 "@pulse 12"
+rng 52342 20cf5bb5
+step 57 "say flee"
+out god "\n\rDecimus says 'flee'\n\rThe stage manager leaves north.\n\r\n\r<99hp 100m 100mv> \xff\xf9"
+out pupil "\n\rDecimus says 'flee'\n\rThe stage manager leaves north.\n\r\n\r<28hp 102m 106mv> \xff\xf9"
+out dec "You say 'flee'\n\rThe stage manager leaves north.\n\r\n\r<846hp 102m 106mv> \xff\xf9"
+rng 52343 d815c170
+step 58 "@state"
+state room 3001 light 1 people player player player mob mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char Smokegod 60 pos 8 hit 99/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char Pupil 10 pos 8 hit 28/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 18 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Decimus 10 pos 8 hit 846/1000 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   affect 2 level 40 duration 24 location 17 modifier -20 bitvector 0
+state char mob 30006 pos 8 hit 161/165 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 62 act 3 affected_by 1 train 0 on 0 stats 12 12 12 12 12
+state   affect 4 level 40 duration 41 location 18 modifier -4 bitvector 1
+state char mob 3011 pos 8 hit 3999/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3001 wear -1 timer 0 cost 5 values 16 16 1 0 0
+state obj floor 20 wear -1 timer 0 cost 0 values 20 40 0 0 0
+rng 52343 d815c170

@@ -23,7 +23,8 @@ done (#78), fighting part 2: the fighting skills, so all of `fight.c`, and `effe
 spells part 1: `do_cast`, `obj_cast_spell` and the first half of the spells (acid blast to fly). PR 4 of 8 done
 (#82), spells part 2: the rest of the spells, and `magic2.c`. PR 5 of 8 done (#84), specials, the healer
 and music: `special.c`, `healer.c` and `music.c`. PR 6 of 8 done (#86), ticks: the rest of `update.c`, so every update
-runs, and the speed checkpoint passed. PR 7 of 8, mob programs part 1: `mob_prog.c`, with a fixture area.
+runs, and the speed checkpoint passed. PR 7 of 8 done (#88), mob programs part 1: `mob_prog.c`, with a fixture area. PR 8 of 8 done
+(#90), mob programs part 2: `mob_cmds.c`, and the rest of `skills.c` (`gain` and `spells`). P4 done 2026-11-20.
 
 ## Goal
 

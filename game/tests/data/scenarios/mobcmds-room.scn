@@ -1,0 +1,57 @@
+# Mob commands from the stage manager (30005) in the fixture area tools/fixtures/files/mobcmds.are, with only
+# area_update running, in the temple (3001). Decimus (10) gives each cue; the understudy (30006) and Smokegod
+# (60, who sees the gecho as an immortal) are there too, and Heroic (51) is in the temple square (3005), to hear
+# the asound.
+# - echoes: echo, echoat, echoaround, asound, zecho and gecho, the ones with nothing to say, and a mob command
+#   that isn't one
+# - loads: mload and oload (to inventory, the room and worn; at too high a level, with bad words); junk by name,
+#   worn, all.bottle and all; purge a mob, an object, a player (refused) and everything
+# - the mob command typed by Decimus (his trust is too low: nothing) and by Smokegod (60, it runs); mpstat and
+#   mpdump
+# - deep: a program that calls itself six times is stopped at MAX_CALL_LEVEL, which then refuses every program
+#   (#87): echoes does nothing
+@place mobcmds.are mobcmds.are
+@place area-mobcmds.lst area.lst
+@connect god
+Smokegod
+smoke123
+@return
+@return
+holylight
+@connect hero
+Heroic
+psswrd
+@return
+@return
+south
+@connect dec
+Decimus
+psswrd
+@return
+@return
+@as god
+@mob 30006 3001
+@mob 30005 3001
+@as dec
+say echoes
+say loads
+look
+say junk
+look
+@mob 3062 3001
+say purge
+look
+mob echo Decimus tries it.
+@as god
+mob echo Smokegod tries it.
+mpstat manager
+mpstat decimus
+mpstat nobody
+mpstat
+mpstat understudy
+mpdump 30044
+mpdump 1
+@as dec
+say deep
+say echoes
+@state

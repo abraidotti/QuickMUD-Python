@@ -230,6 +230,11 @@ class Index:
     # social_table, in load order: name, then char_no_arg, others_no_arg, char_found, others_found, vict_found,
     # char_not_found, char_auto, others_auto (None for "$")
     socials: list = field(default_factory=list)
+    mprog_code: dict = field(default_factory=dict)  # mprog_list: each #MOBPROGS program's code, by vnum
+
+    # C: db.c get_mprog_index
+    def get_mprog_index(self, vnum: int) -> str | None:
+        return self.mprog_code.get(vnum)
 
     # C: db.c get_room_index
     def get_room_index(self, vnum: int) -> Room | None:
@@ -368,4 +373,5 @@ def build_index(world: World) -> Index:
             if str_cmp(h.keywords, "greeting"):  # load_helps: !str_cmp (pHelp->keyword, "greeting")
                 greeting = helps[-1].text
     socials = [s for f in world.files for s in f.socials]
-    return Index(areas, rooms, mobs, objs, greeting, helps, socials)
+    return Index(areas, rooms, mobs, objs, greeting, helps, socials,
+                 {v: _s(p.code) for v, p in world.mobprogs.items()})

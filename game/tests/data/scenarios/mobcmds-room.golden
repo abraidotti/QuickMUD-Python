@@ -1,0 +1,162 @@
+sources 0b2d50b7143dcade
+boot seed 20261117 clock 1763400000 updates area
+rng 51873 51be72ed
+step 1 "@connect god"
+rng 51873 51be72ed
+step 2 "Smokegod"
+out god "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 3 "smoke123"
+out god "\n\r\xff\xfc\x01Welcome Immortal!\n\r\n\rYou are responsible for following the laws of immortal behavior. These can\n\rbe found by typing 'help laws' or 'help commandments'.\n\r\n\r* Excessive loading is not allowed, and is grounds for deletion.\n\r\n\r* Asking for promotion is grounds for instant deletion.\n\r\n\r* Type 'help jobs' to get some idea of what you should be doing.\n\r\n\r [Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 4 "@return"
+out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 5 "@return"
+out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 6 "holylight"
+out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51895 7f5599b5
+step 7 "@connect hero"
+rng 51895 7f5599b5
+step 8 "Heroic"
+out hero "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 9 "psswrd"
+out hero "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 10 "@return"
+out god "\n\rHeroic has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 11 "@return"
+out hero "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 12 "south"
+out god "\n\rHeroic leaves south.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "The Temple Square\n\r  You are standing on the temple square.  Huge marble steps lead up to the\n\rtemple gate.  The entrance to the Clerics Guild is to the west, and the old\n\rGrunting Boar Inn, is to the east.  Just south of here you see the market\n\rsquare, the center of Midgaard.\n\r     A small white fountain gushes forth here.\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+rng 51895 7f5599b5
+step 13 "@connect dec"
+rng 51895 7f5599b5
+step 14 "Decimus"
+out dec "\n\r\n\rTHIS IS A MUD BASED ON.....\n\r\n\r                                ROM Version 2.4 beta\n\r\n\r               Original DikuMUD by Hans Staerfeldt, Katja Nyboe,\n\r               Tom Madsen, Michael Seifert, and Sebastian Hammer\n\r               Based on MERC 2.1 code by Hatchet, Furey, and Kahn\n\r               ROM 2.4 copyright (c) 1993-1998 Russ Taylor\n\r\n\rBy what name do you wish to be known? Password: \xff\xfb\x01"
+rng 51895 7f5599b5
+step 15 "psswrd"
+out dec "\n\r\xff\xfc\x01* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
+rng 51895 7f5599b5
+step 16 "@return"
+out god "\n\rDecimus has entered the game.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 17 "@return"
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51895 7f5599b5
+step 18 "@as god"
+rng 51895 7f5599b5
+step 19 "@mob 30006 3001"
+rng 51910 fbea3747
+step 20 "@mob 30005 3001"
+rng 51925 7edc2a82
+step 21 "@as dec"
+rng 51925 7edc2a82
+step 22 "say echoes"
+out god "\n\rDecimus says 'echoes'\n\rThe stage manager rings a bell.\n\rThe stage manager whispers to Decimus.\n\rMob echo> Places, everyone in Midgaard!\n\rMob echo> Curtain up across the world!\n\rThe stage manager says 'echoes done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou hear a bell from the temple.\n\rPlaces, everyone in Midgaard!\n\rCurtain up across the world!\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "You say 'echoes'\n\rThe stage manager rings a bell.\n\rPsst, Decimus, you're on next.\n\rPlaces, everyone in Midgaard!\n\rCurtain up across the world!\n\rThe stage manager says 'echoes done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51925 7edc2a82
+step 23 "say loads"
+out god "\n\rDecimus says 'loads'\n\rThe stage manager lights a war banner and holds it.\n\rThe stage manager says 'loads done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'loads'\n\rThe stage manager lights a war banner and holds it.\n\rThe stage manager says 'loads done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 24 "look"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A pit for sacrifices is in front of the altar.\n\r     A beer bottle has been left here.\n\rA beastly fido is here.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 25 "say junk"
+out god "\n\rDecimus says 'junk'\n\rThe stage manager says 'junk done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'junk'\n\rThe stage manager says 'junk done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 26 "look"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A pit for sacrifices is in front of the altar.\n\r     A beer bottle has been left here.\n\rA beastly fido is here.\n\rA stage manager runs the show from here.\n\rAn understudy waits in the wings.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51927 ac0787c3
+step 27 "@mob 3062 3001"
+rng 51929 534cb46e
+step 28 "say purge"
+out god "\n\rDecimus says 'purge'\n\rThe stage manager says 'purge done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'purge'\n\rThe stage manager says 'purge done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 29 "look"
+out dec "The Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\r     A pit for sacrifices is in front of the altar.\n\rA stage manager runs the show from here.\n\rSmokegod the Smoke Test is here.\n\rHassan is here, waiting to dispense some justice.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 30 "mob echo Decimus tries it."
+out dec "\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 31 "@as god"
+rng 51929 534cb46e
+step 32 "mob echo Smokegod tries it."
+out god "\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "\n\rSmokegod tries it.\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 33 "mpstat manager"
+out god "Mobile #30005  [the stage manager]\n\rDelay   0      [No target]\n\r[ 1] Trigger [DELAY   ] Program [30044] Phrase [100]\n\r[ 2] Trigger [SPEECH  ] Program [30043] Phrase [deep]\n\r[ 3] Trigger [SPEECH  ] Program [30042] Phrase [strip]\n\r[ 4] Trigger [SPEECH  ] Program [30041] Phrase [fight]\n\r[ 5] Trigger [SPEECH  ] Program [30040] Phrase [flee]\n\r[ 6] Trigger [SPEECH  ] Program [30039] Phrase [subroutine]\n\r[ 7] Trigger [SPEECH  ] Program [30038] Phrase [remember]\n\r[ 8] Trigger [SPEECH  ] Program [30037] Phrase [hurt]\n\r[ 9] Trigger [SPEECH  ] Program [30036] Phrase [spells]\n\r[10] Trigger [SPEECH  ] Program [30035] Phrase [forces]\n\r[11] Trigger [SPEECH  ] Program [30034] Phrase [travel]\n\r[12] Trigger [SPEECH  ] Program [30033] Phrase [purge]\n\r[13] Trigger [SPEECH  ] Program [30032] Phrase [junk]\n\r[14] Trigger [SPEECH  ] Program [30031] Phrase [loads]\n\r[15] Trigger [SPEECH  ] Program [30030] Phrase [echoes]\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 34 "mpstat decimus"
+out god "That is not a mobile.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 35 "mpstat nobody"
+out god "No such creature.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 36 "mpstat"
+out god "Mpstat whom?\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 37 "mpstat understudy"
+out god "No such creature.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 38 "mpdump 30044"
+out god "* delay: when the delay runs out\n\rsay The delay ran out.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 39 "mpdump 1"
+out god "No such MOBprogram.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+rng 51929 534cb46e
+step 40 "@as dec"
+rng 51929 534cb46e
+step 41 "say deep"
+out god "Decimus says 'deep'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out dec "You say 'deep'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\rThe stage manager says 'Deeper.'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 42 "say echoes"
+out god "\n\rDecimus says 'echoes'\n\rThe stage manager rings a bell.\n\rThe stage manager whispers to Decimus.\n\rMob echo> Places, everyone in Midgaard!\n\rMob echo> Curtain up across the world!\n\rThe stage manager says 'echoes done'\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out hero "\n\rYou hear a bell from the temple.\n\rPlaces, everyone in Midgaard!\n\rCurtain up across the world!\n\r\n\r<29hp 102m 105mv> \xff\xf9"
+out dec "You say 'echoes'\n\rThe stage manager rings a bell.\n\rPsst, Decimus, you're on next.\n\rPlaces, everyone in Midgaard!\n\rCurtain up across the world!\n\rThe stage manager says 'echoes done'\n\r\n\r<29hp 102m 106mv> \xff\xf9"
+rng 51929 534cb46e
+step 43 "@state"
+state room 3001 light 1 people mob player player mob
+state exit 0 to 3054 info 0 key -1
+state exit 2 to 3005 info 0 key -1
+state exit 4 to 3700 info 0 key 0
+state char mob 30005 pos 8 hit 1074/1074 mana 1000/1000 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 51 act 3 affected_by 0 train 0 on 0 stats 21 21 21 21 21
+state char Decimus 10 pos 8 hit 29/29 mana 102/102 move 106/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state char Smokegod 60 pos 8 hit 100/100 mana 100/100 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 73728 affected_by 0 train 0 on 0 stats 13 13 13 13 13
+state char mob 3011 pos 8 hit 4000/4000 mana 500/500 move 100/100 wait 0 daze 0 exp 0 gold 0 silver 0 act 2621443 affected_by 35652140 train 0 on 0 stats 27 21 22 24 25
+state   affect 56 level 45 duration -1 location 2 modifier 4 bitvector 2097152
+state   obj carried 3005 wear 16 timer 0 cost 5600 values 1 4 10 21 48
+state obj floor 3010 wear -1 timer 0 cost 0 values 10000 0 0 1000 100
+state room 3005 light 1 people player
+state exit 0 to 3001 info 0 key -1
+state exit 1 to 3006 info 0 key -1
+state exit 2 to 3014 info 0 key -1
+state exit 3 to 3004 info 0 key -1
+state exit 4 to 3057 info 0 key -1
+state char Heroic 51 pos 8 hit 29/29 mana 102/102 move 105/106 wait 0 daze 0 exp 2088 gold 0 silver 0 act 65536 affected_by 0 train 1 on 0 stats 19 13 13 13 13
+state   obj carried 3162 wear -1 timer 0 cost 500 values 1 0 0 0 0
+state   obj carried 3704 wear 11 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3702 wear 16 timer 0 cost 360 values 1 1 6 3 0
+state   obj carried 3703 wear 5 timer 0 cost 0 values 1 1 1 0 0
+state   obj carried 3716 wear 0 timer 0 cost 0 values 0 0 197 0 0
+state obj floor 3135 wear -1 timer 0 cost 0 values 0 0 0 0 0
+rng 51929 534cb46e
