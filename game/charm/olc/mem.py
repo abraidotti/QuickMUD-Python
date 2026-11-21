@@ -1,5 +1,5 @@
-"""mem.c: OLC's constructors for new prototypes: areas, and the room editor's rooms, exits and resets. The object,
-mob, shop and mob program ones come with the editors that make them. (The free_* functions only give memory back.)
+"""mem.c: OLC's constructors for new prototypes: areas, rooms, exits, resets, objects, mobs and shops. (A mob
+program's code is a new entry in the index's mprog_code; the free_* functions only give memory back.)
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -9,7 +9,7 @@ Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and 
 from __future__ import annotations
 
 from charm.data import constants as C
-from charm.world.index import Area, Exit, ExtraDescr, ObjIndex, Reset, Room
+from charm.world.index import Area, Exit, ExtraDescr, MobIndex, ObjIndex, Reset, Room, Shop
 
 
 # C: mem.c new_area
@@ -48,3 +48,22 @@ def new_obj_index(area) -> ObjIndex:
     return ObjIndex(vnum=0, area=area, name="no name", short_descr="(no short description)",
                     description="(no description)", material="unknown", item_type=C.ITEM_TRASH, extra_flags=0,
                     wear_flags=0, value=[0, 0, 0, 0, 0], level=0, weight=0, cost=0, condition=100)
+
+
+# C: mem.c new_mob_index
+def new_mob_index(area) -> MobIndex:
+    """A blank mob prototype: a human, standing, medium-sized (the C sets damage's number twice and not its bonus,
+    which is fresh memory's 0 anyway)."""
+    from charm.world.lookup import race_lookup
+
+    return MobIndex(vnum=0, area=area, player_name="no name", short_descr="(no short description)",
+                    long_descr="(no long description)\n\r", description="", race=race_lookup("human"),
+                    act=C.ACT_IS_NPC, affected_by=0, alignment=0, group=0, level=0, hitroll=0, hit=(0, 0, 0),
+                    mana=(0, 0, 0), damage=(0, 0, 0), dam_type=0, ac=(0, 0, 0, 0), off_flags=0, imm_flags=0,
+                    res_flags=0, vuln_flags=0, start_pos=C.POS_STANDING, default_pos=C.POS_STANDING, sex=0,
+                    wealth=0, form=0, parts=0, size=C.SIZE_MEDIUM, material="unknown")
+
+
+# C: mem.c new_shop
+def new_shop() -> Shop:
+    return Shop(keeper=0, buy_type=(0,) * C.MAX_TRADE, profit_buy=100, profit_sell=100, open_hour=0, close_hour=23)

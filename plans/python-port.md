@@ -29,7 +29,8 @@ online builder, copyover and the rest, is 7 PRs or 2026-12-05 (#91). PR 1 of 7 d
 `bit.c`, with `port asave` (every stock area saved byte-identical on both games). PR 2 of 7 done (#95), areas: `olc.c`'s
 framework (`edit`, `alist`, the editor dispatch) and the area editor. PR 3 of 7 done (#97), rooms: the room editor, the
 reset commands, exits, and the string editor (`string.c`), with `mem.c`'s room, exit and reset constructors; the
-checkpoint after it is on #91, on pace. PR 4 done, objects: the object editor. Areas and rooms took two PRs where the
+checkpoint after it is on #91, on pace. PR 4 done (#99), objects: the object editor. PR 5 done, mobs: the mob editor
+and the mob program editor (`olc_mpcode.c`), so every editor but the help editor runs. Areas and rooms took two PRs where the
 plan had one, so P5 is now 8 PRs unless two of the last ones combine.
 
 ## Goal

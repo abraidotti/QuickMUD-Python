@@ -1,0 +1,217 @@
+# The mob editor (olc.c's medit and do_medit, olc_act.c's medit_*) and the mob program editor (olc_mpcode.c), with
+# Planner (security 9) in Midgaard, and Delver (security 0). The string editor's "@" is sent as "x", a backspace,
+# "@" (see redit.scn).
+# - medit with no vnum, a bad one, create's refusals (its area message says "OEdit"); edit mobile 3062 (fido)
+# - every field: name, short, long, desc, level, alignment, hitroll, wealth, damtype, group (and group show), sex,
+#   act (ACT_IS_NPC stays), affect, armor (one to four values), form, parts, imm, res, vuln, material, off,
+#   size, the three dice (cut at non-digits), race (its flags added), position, spec; each refusal
+# - shop: every subcommand, before and after assign, and remove
+# - mpedit: create (and its refusals), show, list, code in the string editor, create from inside; addmprog
+#   (its phrase is one lower-cased word) and delmprog (which clears the trigger's bit); changing a program's
+#   code tells each mob using it ("Editting mob"), and a fido loaded then answers "hello" with the new code;
+#   deleting one of two speech programs clears the speech bit, so the other no longer answers "bark"
+# - mpedit list: newest first, and not the program at the area's first vnum (ENTRE is strict)
+# - medit create 3013; the room editor's mshow; asave changed saves Midgaard; the prompt's %o and %O
+# - Delver can't edit or create mobs or programs, and nor can a mob
+@connect b
+Planner
+smoke123
+@return
+@return
+scroll 0
+goto 3001
+force hassan medit 3062
+medit
+medit 99999
+medit create
+medit create 99999
+medit create 3062
+edit mobile 3062
+@return
+show
+commands
+version
+create
+create 99999
+create 3062
+xyzzy
+desc x
+name
+name fido dog mutt
+short
+short the mangy fido
+long
+long a mangy fido sniffs about here.
+desc
+A small, mangy dog.
+x@
+level
+level x
+level 5
+alignment -100
+hitroll 3
+wealth 50
+damtype
+damtype bite
+group
+group 7
+group show 7
+group show 0
+group show 99
+group bogus
+sex
+sex bogus
+sex female
+act
+act bogus
+act sentinel
+act npc
+affect sanctuary
+armor
+armor x
+armor 10
+armor 10 20 x
+armor -5 -6 -7 -8
+form bogus
+form edible
+part
+part ear
+imm fire
+res cold
+vuln acid
+material
+material fur
+off bash
+size
+size large
+hitdice
+hitdice x
+hitdice 2d6+10
+hitdice 0d6+1
+manadice 1d1+0
+manadice 3 d 4 + 5
+damdice 1d8+2
+damdice 2d
+race
+race ?
+race bogus
+race dwarf
+position
+position start sleeping
+position default resting
+position bogus x
+position s bogus
+position s standing
+position d standing
+spec
+spec bogus
+spec spec_cast_mage
+show
+spec none
+shop
+shop hours 6 22
+shop profit 1 2
+shop type 0 food
+shop assign
+shop assign
+shop hours
+shop hours 6 22
+shop profit
+shop profit 120 80
+shop type
+shop type 9 food
+shop type 0 bogus
+shop type 1 drink
+show
+shop type 0 food
+shop bogus
+show
+shop remove
+addmprog
+addmprog 3050 bogus x
+addmprog 3050 speech hello
+show
+done
+mpedit
+mpedit 3050
+mpedit create
+mpedit create 0
+mpedit create 99999
+mpedit create 3050
+@return
+show
+commands
+?
+list
+list all
+create 3050
+xyzzy
+code
+say Hello, $n.
+x@
+show
+create 3051
+code
+mob echo hi
+x@
+list
+create 3000
+list
+list all
+done
+edit mobile 3062
+addmprog 3050 speech Hello
+addmprog 3051 greet 100
+show
+done
+edit mpcode 3050
+code
+.c
+say Changed.
+x@
+done
+@mob 3062 3001
+say hello
+edit mobile 3062
+addmprog 3051 speech bark
+delmprog 2
+done
+say bark
+edit mobile 3062
+delmprog
+delmprog x
+delmprog -1
+delmprog 9
+delmprog 1
+show
+delmprog 0
+delmprog 0
+done
+medit create 3013
+show
+done
+edit room
+mshow
+mshow x
+mshow 99999
+mshow 3062
+done
+asave changed
+@file midgaard.are
+prompt <%o %O>
+medit 3062
+done
+mpedit 3050
+done
+prompt <%hhp %mm %vmv>
+force hassan mpedit 3050
+force hassan mpedit create 3052
+@connect d
+Delver
+psswrd
+@return
+medit 3062
+medit create 3014
+mpedit 3050
+mpedit create 3052
+edit mobile 3062

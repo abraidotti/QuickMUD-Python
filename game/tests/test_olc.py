@@ -181,6 +181,24 @@ class RoomEditor(unittest.TestCase):
             with self.subTest(line), self.assertRaises(CWouldCrash):
                 change_exit(self.ch, line, 1)
 
+    def test_removing_no_shop_crashes(self):
+        from charm.olc.act import medit_shop
+
+        self.ch.desc.pEdit = next(iter(self.game.index.mobs.values()))
+        self.ch.desc.pEdit.shop = None
+        with self.assertRaises(CWouldCrash):
+            medit_shop(self.ch, "remove")
+        medit_shop(self.ch, "assign")
+        with self.assertRaises(CWouldCrash):
+            medit_shop(self.ch, "type -1 food")  # before the array in the C, not its last slot
+
+    def test_dice_are_cut_at_non_digits(self):
+        from charm.olc.act import _dice_parts
+
+        self.assertEqual(_dice_parts("2d6+10"), ("2", "6", "10"))
+        self.assertEqual(_dice_parts("3 d 4 + 5x9"), ("3", "4", "5"))
+        self.assertEqual(_dice_parts("d6"), ("", "6", ""))
+
     def test_resets_inside_nothing_crashes(self):
         from charm.olc.olc import do_resets
 

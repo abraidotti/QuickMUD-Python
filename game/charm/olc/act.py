@@ -1,5 +1,5 @@
 """olc_act.c: what each editor's commands do: the shared helpers (?, version, the lists ? shows, the vnum range
-checks), and the area, room and object editors (aedit_*, redit_*, oedit_*). The mob editor comes next.
+checks), and the area, room, object and mob editors (aedit_*, redit_*, oedit_*, medit_*).
 
 Every editor command takes (ch, argument) and returns True if it changed the area, which the editor then marks
 AREA_CHANGED.
@@ -479,27 +479,6 @@ def redit_olist(ch, argument: str) -> bool:
     found = [p for p in _in_area(ch, index.get_obj_index)
              if every or is_name(arg, p.name) or flag_value(F.TYPE_FLAGS, arg) == p.item_type]
     return _list(ch, found, "Object(s) not found in this area.\n\r", lambda p: p.short_descr)
-
-
-def _show_proto(ch, argument: str, get, what: str, show_name: str) -> bool:
-    from charm.core.errors import NotPorted
-
-    if argument == "":
-        send_to_char("Syntax:  %sshow <vnum>\n\r" % what[0], ch)
-        return False
-    if not is_number(argument):
-        send_to_char("REdit: Must be a number.\n\r", ch)
-        return False
-    if get(atoi(argument)) is None:
-        send_to_char("REdit:  That %s does not exist.\n\r" % what, ch)
-        return False
-    raise NotPorted(f"olc_act.c {show_name}")
-
-
-# C: olc_act.c redit_mshow [partial]
-def redit_mshow(ch, argument: str) -> bool:
-    """[partial]: a mob that exists is shown by medit_show, which raises NotPorted until the mob editor (PR 4)."""
-    return _show_proto(ch, argument, _game().index.get_mob_index, "mobile", "medit_show")
 
 
 # C: olc_act.c redit_oshow
@@ -1612,4 +1591,603 @@ def oedit_condition(ch, argument: str) -> bool:
         send_to_char("Condition set.\n\r", ch)
         return True
     send_to_char("Syntax:  condition [number]\n\rWhere number can range from 0 (ruined) to 100 (perfect).\n\r", ch)
+    return False
+
+
+# -- the mob editor (MEDIT): every command edits the prototype in ch->desc->pEdit (EDIT_MOB) --
+
+
+def _mob(ch):
+    return ch.desc.pEdit
+
+
+# C: olc_act.c medit_show
+def medit_show(ch, argument: str) -> bool:
+    from charm.data.races import RACE_TABLE
+    from charm.olc.save import _s
+    from charm.systems.mobcmds import mprog_type_to_name
+    from charm.world.lookup import spec_name
+
+    p = _mob(ch)
+    w = lambda text: send_to_char(text, ch)  # noqa: E731
+    w("Name:        [%s]\n\rArea:        [%5d] %s\n\r" % (_s(p.player_name), -1 if p.area is None else p.area.vnum,
+                                                          "No Area" if p.area is None else _s(p.area.name)))
+    w("Act:         [%s]\n\r" % flag_string(F.ACT_FLAGS, p.act))
+    sex = ("male   " if p.sex == C.SEX_MALE else "female " if p.sex == C.SEX_FEMALE else "random " if p.sex == 3
+           else "neutral")
+    w("Vnum:        [%5d] Sex:   [%s]   Race: [%s]\n\r" % (p.vnum, sex, _s(RACE_TABLE[p.race].name)))
+    w("Level:       [%2d]    Align: [%4d]      Hitroll: [%2d] Dam Type:    [%s]\n\r"
+      % (p.level, p.alignment, p.hitroll, _s(ATTACK_TABLE[p.dam_type].name)))
+    if p.group:
+        w("Group:       [%5d]\n\r" % p.group)
+    w("Hit dice:    [%2dd%-3d+%4d] " % p.hit)
+    w("Damage dice: [%2dd%-3d+%4d] " % p.damage)
+    w("Mana dice:   [%2dd%-3d+%4d]\n\r" % p.mana)
+    w("Affected by: [%s]\n\r" % flag_string(F.AFFECT_FLAGS, p.affected_by))
+    w("Armor:       [pierce: %d  bash: %d  slash: %d  magic: %d]\n\r" % p.ac)
+    w("Form:        [%s]\n\r" % flag_string(F.FORM_FLAGS, p.form))
+    w("Parts:       [%s]\n\r" % flag_string(F.PART_FLAGS, p.parts))
+    w("Imm:         [%s]\n\r" % flag_string(F.IMM_FLAGS, p.imm_flags))
+    w("Res:         [%s]\n\r" % flag_string(F.RES_FLAGS, p.res_flags))
+    w("Vuln:        [%s]\n\r" % flag_string(F.VULN_FLAGS, p.vuln_flags))
+    w("Off:         [%s]\n\r" % flag_string(F.OFF_FLAGS, p.off_flags))
+    w("Size:        [%s]\n\r" % flag_string(F.SIZE_FLAGS, p.size))
+    w("Material:    [%s]\n\r" % _s(p.material))
+    w("Start pos.   [%s]\n\r" % flag_string(F.POSITION_FLAGS, p.start_pos))
+    w("Default pos  [%s]\n\r" % flag_string(F.POSITION_FLAGS, p.default_pos))
+    w("Wealth:      [%5d]\n\r" % p.wealth)
+    if p.spec_fun:
+        w("Spec fun:    [%s]\n\r" % _s(spec_name(p.spec_fun)))
+    w("Short descr: %s\n\rLong descr:\n\r%s" % (_s(p.short_descr), _s(p.long_descr)))
+    w("Description:\n\r%s" % _s(p.description))
+    if p.shop is not None:
+        shop = p.shop
+        w("Shop data for [%5d]:\n\r  Markup for purchaser: %d%%\n\r  Markdown for seller:  %d%%\n\r"
+          % (shop.keeper, shop.profit_buy, shop.profit_sell))
+        w("  Hours: %d to %d.\n\r" % (shop.open_hour, shop.close_hour))
+        for i in range(C.MAX_TRADE):
+            if shop.buy_type[i] != 0:
+                if i == 0:  # (so the heading is left out when the first slot is empty)
+                    w("  Number Trades Type\n\r")
+                    w("  ------ -----------\n\r")
+                w("  [%4d] %s\n\r" % (i, flag_string(F.TYPE_FLAGS, shop.buy_type[i])))
+    if p.mprogs:
+        w("\n\rMOBPrograms for [%5d]:\n\r" % p.vnum)
+        for cnt, prog in enumerate(p.mprogs):
+            if cnt == 0:
+                w(" Number Vnum Trigger Phrase\n\r")
+                w(" ------ ---- ------- ------\n\r")
+            w("[%5d] %4d %7s %s\n\r" % (cnt, prog.vnum, mprog_type_to_name(prog.trig_type), _s(prog.trig_phrase)))
+    return False
+
+
+# C: olc_act.c medit_create
+def medit_create(ch, argument: str) -> bool:
+    """A new mob prototype at the vnum given, made the one being edited. (top_vnum_mob is read by nothing.)"""
+    from charm.entities.handler import is_builder
+    from charm.olc.mem import new_mob_index
+
+    index = _game().index
+    value = atoi(argument)
+    if argument == "" or value == 0:
+        send_to_char("Syntax:  medit create [vnum]\n\r", ch)
+        return False
+    area = get_vnum_area(value)
+    if area is None:
+        send_to_char("MEdit:  That vnum is not assigned an area.\n\r", ch)
+        return False
+    if not is_builder(ch, area):
+        send_to_char("MEdit:  Vnum in an area you cannot build in.\n\r", ch)
+        return False
+    if index.get_mob_index(value) is not None:
+        send_to_char("MEdit:  Mobile vnum already exists.\n\r", ch)
+        return False
+    p = new_mob_index(area)
+    p.vnum = value
+    p.act = C.ACT_IS_NPC
+    index.mobs[value] = p  # the head of its hash chain: the newest
+    ch.desc.pEdit = p
+    send_to_char("Mobile Created.\n\r", ch)
+    return True
+
+
+# C: olc_act.c medit_spec
+def medit_spec(ch, argument: str) -> bool:
+    from charm.world.lookup import spec_lookup
+
+    p = _mob(ch)
+    if argument == "":
+        send_to_char("Syntax:  spec [special function]\n\r", ch)
+        return False
+    if str_cmp(argument, "none"):
+        p.spec_fun = None
+        send_to_char("Spec removed.\n\r", ch)
+        return True
+    if spec_lookup(argument):
+        p.spec_fun = spec_lookup(argument)
+        send_to_char("Spec set.\n\r", ch)
+        return True
+    send_to_char("MEdit: No such special function.\n\r", ch)
+    return False
+
+
+# C: olc_act.c medit_damtype
+def medit_damtype(ch, argument: str) -> bool:
+    from charm.world.lookup import attack_lookup
+
+    if argument == "":
+        send_to_char("Syntax:  damtype [damage message]\n\r", ch)
+        send_to_char("For a list of damage types, type '? weapon'.\n\r", ch)
+        return False
+    _mob(ch).dam_type = attack_lookup(argument)
+    send_to_char("Damage type set.\n\r", ch)
+    return True
+
+
+def _mob_number(ch, argument: str, field: str, syntax: str, done: str) -> bool:
+    if argument == "" or not is_number(argument):
+        send_to_char(syntax, ch)
+        return False
+    setattr(_mob(ch), field, atoi(argument))
+    send_to_char(done, ch)
+    return True
+
+
+# C: olc_act.c medit_align
+def medit_align(ch, argument: str) -> bool:
+    return _mob_number(ch, argument, "alignment", "Syntax:  alignment [number]\n\r", "Alignment set.\n\r")
+
+
+# C: olc_act.c medit_level
+def medit_level(ch, argument: str) -> bool:
+    return _mob_number(ch, argument, "level", "Syntax:  level [number]\n\r", "Level set.\n\r")
+
+
+# C: olc_act.c medit_desc
+def medit_desc(ch, argument: str) -> bool:
+    from charm.olc.strings import string_append
+
+    if argument == "":
+        string_append(ch, (_mob(ch), "description"))
+        return True
+    send_to_char("Syntax:  desc    - line edit\n\r", ch)
+    return False
+
+
+# C: olc_act.c medit_long
+def medit_long(ch, argument: str) -> bool:
+    if argument == "":
+        send_to_char("Syntax:  long [string]\n\r", ch)
+        return False
+    text = argument + "\n\r"
+    _mob(ch).long_descr = upper(text[0]) + text[1:]
+    send_to_char("Long description set.\n\r", ch)
+    return True
+
+
+def _mob_text(ch, argument: str, field: str, syntax: str, done: str) -> bool:
+    if argument == "":
+        send_to_char(syntax, ch)
+        return False
+    setattr(_mob(ch), field, argument)
+    send_to_char(done, ch)
+    return True
+
+
+# C: olc_act.c medit_short
+def medit_short(ch, argument: str) -> bool:
+    return _mob_text(ch, argument, "short_descr", "Syntax:  short [string]\n\r", "Short description set.\n\r")
+
+
+# C: olc_act.c medit_name
+def medit_name(ch, argument: str) -> bool:
+    return _mob_text(ch, argument, "player_name", "Syntax:  name [string]\n\r", "Name set.\n\r")
+
+
+_NO_SHOP = "MEdit:  You must create the shop first (shop assign).\n\r"
+
+
+# C: olc_act.c medit_shop
+def medit_shop(ch, argument: str) -> bool:
+    """shop hours, profit, type, assign and remove. (The C keeps shops in a list too, shop_first to shop_last, which
+    nothing else here reads; removing a shop from a mob that has none walks it with a NULL shop and crashes.)"""
+    from dataclasses import replace
+
+    from charm.core.errors import CWouldCrash
+    from charm.olc.bits import flag_value
+    from charm.olc.mem import new_shop
+
+    argument, command = one_argument(argument)
+    argument, arg1 = one_argument(argument)
+    p = _mob(ch)
+    if command == "":
+        send_to_char("Syntax:  shop hours [#xopening] [#xclosing]\n\r", ch)
+        send_to_char("         shop profit [#xbuying%] [#xselling%]\n\r", ch)
+        send_to_char("         shop type [#x0-4] [item type]\n\r", ch)
+        send_to_char("         shop assign\n\r", ch)
+        send_to_char("         shop remove\n\r", ch)
+        return False
+    if str_cmp(command, "hours"):
+        if arg1 == "" or not is_number(arg1) or argument == "" or not is_number(argument):
+            send_to_char("Syntax:  shop hours [#xopening] [#xclosing]\n\r", ch)
+            return False
+        if p.shop is None:
+            send_to_char(_NO_SHOP, ch)
+            return False
+        p.shop.open_hour, p.shop.close_hour = atoi(arg1), atoi(argument)
+        send_to_char("Shop hours set.\n\r", ch)
+        return True
+    if str_cmp(command, "profit"):
+        if arg1 == "" or not is_number(arg1) or argument == "" or not is_number(argument):
+            send_to_char("Syntax:  shop profit [#xbuying%] [#xselling%]\n\r", ch)
+            return False
+        if p.shop is None:
+            send_to_char(_NO_SHOP, ch)
+            return False
+        p.shop.profit_buy, p.shop.profit_sell = atoi(arg1), atoi(argument)
+        send_to_char("Shop profit set.\n\r", ch)
+        return True
+    if str_cmp(command, "type"):
+        if arg1 == "" or not is_number(arg1) or argument == "":
+            send_to_char("Syntax:  shop type [#x0-4] [item type]\n\r", ch)
+            return False
+        if atoi(arg1) >= C.MAX_TRADE:
+            send_to_char("MEdit:  May sell %d items max.\n\r" % C.MAX_TRADE, ch)
+            return False
+        if p.shop is None:
+            send_to_char(_NO_SHOP, ch)
+            return False
+        value = flag_value(F.TYPE_FLAGS, argument)
+        if value == C.NO_FLAG:
+            send_to_char("MEdit:  That type of item is not known.\n\r", ch)
+            return False
+        if atoi(arg1) < 0:
+            raise CWouldCrash("olc_act.c medit_shop: shop type with a negative slot writes before buy_type")
+        types = list(p.shop.buy_type)
+        types[atoi(arg1)] = value
+        p.shop = replace(p.shop, buy_type=tuple(types))
+        send_to_char("Shop type set.\n\r", ch)
+        return True
+    if str_prefix(command, "assign"):  # "shop assign && shop delete by Phoenix"
+        if p.shop is not None:
+            send_to_char("Mob already has a shop assigned to it.\n\r", ch)
+            return False
+        p.shop = new_shop()
+        p.shop.keeper = p.vnum
+        send_to_char("New shop assigned to mobile.\n\r", ch)
+        return True
+    if str_prefix(command, "remove"):
+        if p.shop is None:
+            raise CWouldCrash("olc_act.c medit_shop: shop remove with no shop walks shop_first with a NULL shop")
+        p.shop = None
+        send_to_char("Mobile is no longer a shopkeeper.\n\r", ch)
+        return True
+    medit_shop(ch, "")
+    return False
+
+
+def _mob_flag(ch, argument: str, table, field: str, done: str, syntax: str, toggle: bool = True) -> bool:
+    from charm.olc.bits import flag_value
+
+    if argument != "":
+        value = flag_value(table, argument)
+        if value != C.NO_FLAG:
+            p = _mob(ch)
+            setattr(p, field, getattr(p, field) ^ value if toggle else value)
+            send_to_char(done, ch)
+            return True
+    send_to_char(syntax, ch)
+    return False
+
+
+# C: olc_act.c medit_sex
+def medit_sex(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.SEX_FLAGS, "sex", "Sex set.\n\r",
+                     "Syntax: sex [sex]\n\rType '? sex' for a list of flags.\n\r", toggle=False)
+
+
+# C: olc_act.c medit_act
+def medit_act(ch, argument: str) -> bool:
+    if _mob_flag(ch, argument, F.ACT_FLAGS, "act", "Act flag toggled.\n\r",
+                 "Syntax: act [flag]\n\rType '? act' for a list of flags.\n\r"):
+        _mob(ch).act |= C.ACT_IS_NPC
+        return True
+    return False
+
+
+# C: olc_act.c medit_affect
+def medit_affect(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.AFFECT_FLAGS, "affected_by", "Affect flag toggled.\n\r",
+                     "Syntax: affect [flag]\n\rType '? affect' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_ac
+def medit_ac(ch, argument: str) -> bool:
+    """ac pierce [bash [slash [exotic]]]: the ones left out keep their values."""
+    p = _mob(ch)
+    while argument != "":  # "So that I can use break and send the syntax in one place"
+        argument, arg = one_argument(argument)
+        if not is_number(arg):
+            break
+        values = [atoi(arg)]
+        argument, arg = one_argument(argument)
+        bad = False
+        for k in (C.AC_BASH, C.AC_SLASH, C.AC_EXOTIC):
+            if arg != "":
+                if not is_number(arg):
+                    bad = True
+                    break
+                values.append(atoi(arg))
+                if k != C.AC_EXOTIC:
+                    argument, arg = one_argument(argument)
+            else:
+                values.append(p.ac[k])
+        if bad:
+            break
+        p.ac = tuple(values)
+        send_to_char("Ac set.\n\r", ch)
+        return True
+    send_to_char("Syntax:  ac [ac-pierce [ac-bash [ac-slash [ac-exotic]]]]\n\r"
+                 "help MOB_AC  gives a list of reasonable ac-values.\n\r", ch)
+    return False
+
+
+# C: olc_act.c medit_form
+def medit_form(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.FORM_FLAGS, "form", "Form toggled.\n\r",
+                     "Syntax: form [flags]\n\rType '? form' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_part
+def medit_part(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.PART_FLAGS, "parts", "Parts toggled.\n\r",
+                     "Syntax: part [flags]\n\rType '? part' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_imm
+def medit_imm(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.IMM_FLAGS, "imm_flags", "Immunity toggled.\n\r",
+                     "Syntax: imm [flags]\n\rType '? imm' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_res
+def medit_res(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.RES_FLAGS, "res_flags", "Resistance toggled.\n\r",
+                     "Syntax: res [flags]\n\rType '? res' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_vuln
+def medit_vuln(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.VULN_FLAGS, "vuln_flags", "Vulnerability toggled.\n\r",
+                     "Syntax: vuln [flags]\n\rType '? vuln' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_material
+def medit_material(ch, argument: str) -> bool:
+    return _mob_text(ch, argument, "material", "Syntax:  material [string]\n\r", "Material set.\n\r")
+
+
+# C: olc_act.c medit_off
+def medit_off(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.OFF_FLAGS, "off_flags", "Offensive behaviour toggled.\n\r",
+                     "Syntax: off [flags]\n\rType '? off' for a list of flags.\n\r")
+
+
+# C: olc_act.c medit_size
+def medit_size(ch, argument: str) -> bool:
+    return _mob_flag(ch, argument, F.SIZE_FLAGS, "size", "Size set.\n\r",
+                     "Syntax: size [size]\n\rType '? size' for a list of sizes.\n\r", toggle=False)
+
+
+def _dice_parts(argument: str) -> tuple[str, str, str]:
+    """The three numbers of "2d6+10" as the C cuts them: a run of digits, then everything up to the next digit is
+    dropped, twice; the third run ends at the first non-digit."""
+    def run(s, k):
+        start = k
+        while k < len(s) and "0" <= s[k] <= "9":
+            k += 1
+        return s[start:k], k
+
+    def skip(s, k):
+        while k < len(s) and not ("0" <= s[k] <= "9"):
+            k += 1
+        return k
+
+    num, k = run(argument, 0)
+    k = skip(argument, k)
+    kind, k = run(argument, k)
+    k = skip(argument, k)
+    bonus, _ = run(argument, k)
+    return num, kind, bonus
+
+
+def _dice(ch, argument: str, field: str, syntax: str, done: str) -> bool:
+    if argument == "":
+        send_to_char(syntax, ch)
+        return False
+    num, kind, bonus = _dice_parts(argument)
+    if (not is_number(num) or atoi(num) < 1 or not is_number(kind) or atoi(kind) < 1
+            or not is_number(bonus) or atoi(bonus) < 0):
+        send_to_char(syntax, ch)
+        return False
+    setattr(_mob(ch), field, (atoi(num), atoi(kind), atoi(bonus)))
+    send_to_char(done, ch)
+    return True
+
+
+# C: olc_act.c medit_hitdice
+def medit_hitdice(ch, argument: str) -> bool:
+    return _dice(ch, argument, "hit", "Syntax:  hitdice <number> d <type> + <bonus>\n\r", "Hitdice set.\n\r")
+
+
+# C: olc_act.c medit_manadice
+def medit_manadice(ch, argument: str) -> bool:
+    return _dice(ch, argument, "mana", "Syntax:  manadice <number> d <type> + <bonus>\n\r", "Manadice set.\n\r")
+
+
+# C: olc_act.c medit_damdice
+def medit_damdice(ch, argument: str) -> bool:
+    return _dice(ch, argument, "damage", "Syntax:  damdice <number> d <type> + <bonus>\n\r", "Damdice set.\n\r")
+
+
+# C: olc_act.c medit_race
+def medit_race(ch, argument: str) -> bool:
+    """The race, and its flags added (never taken away: the old race's stay)."""
+    from charm.data.races import RACE_TABLE
+    from charm.world.lookup import race_lookup
+
+    if argument != "":
+        race = race_lookup(argument)
+        if race != 0:
+            p = _mob(ch)
+            rt = RACE_TABLE[race]
+            p.race = race
+            p.act |= rt.act
+            p.affected_by |= rt.aff
+            p.off_flags |= rt.off
+            p.imm_flags |= rt.imm
+            p.res_flags |= rt.res
+            p.vuln_flags |= rt.vuln
+            p.form |= rt.form
+            p.parts |= rt.parts
+            send_to_char("Race set.\n\r", ch)
+            return True
+    if argument[:1] == "?":
+        send_to_char("Available races are:", ch)
+        for race, rt in enumerate(RACE_TABLE):
+            if race % 3 == 0:  # non-negative: an index
+                send_to_char("\n\r", ch)
+            send_to_char(" %-15s" % rt.name, ch)
+        send_to_char("\n\r", ch)
+        return False
+    send_to_char("Syntax:  race [race]\n\rType 'race ?' for a list of races.\n\r", ch)
+    return False
+
+
+# C: olc_act.c medit_position
+def medit_position(ch, argument: str) -> bool:
+    from charm.olc.bits import flag_value
+
+    argument, arg = one_argument(argument)
+    for letter, word, field, done in (("s", "start", "start_pos", "Start position set.\n\r"),
+                                      ("d", "default", "default_pos", "Default position set.\n\r")):
+        if arg[:1] in (letter, upper(letter)) and str_prefix(arg, word):
+            value = flag_value(F.POSITION_FLAGS, argument)
+            if value != C.NO_FLAG:
+                setattr(_mob(ch), field, value)
+                send_to_char(done, ch)
+                return True
+    send_to_char("Syntax:  position [start/default] [position]\n\rType '? position' for a list of positions.\n\r", ch)
+    return False
+
+
+# C: olc_act.c medit_gold
+def medit_gold(ch, argument: str) -> bool:
+    return _mob_number(ch, argument, "wealth", "Syntax:  wealth [number]\n\r", "Wealth set.\n\r")
+
+
+# C: olc_act.c medit_hitroll
+def medit_hitroll(ch, argument: str) -> bool:
+    return _mob_number(ch, argument, "hitroll", "Syntax:  hitroll [number]\n\r", "Hitroll set.\n\r")
+
+
+# C: olc_act.c medit_group
+def medit_group(ch, argument: str) -> bool:
+    """group <number>, or group show <number>: the mobs in a group, by vnum (the C looks at vnums 0 to 65535)."""
+    from charm.olc.save import _s
+
+    p = _mob(ch)
+    if argument == "":
+        send_to_char("Syntax: group [number]\n\r", ch)
+        send_to_char("        group show [number]\n\r", ch)
+        return False
+    if is_number(argument):
+        p.group = atoi(argument)
+        send_to_char("Group set.\n\r", ch)
+        return True
+    argument, arg = one_argument(argument)
+    if arg == "show" and is_number(argument):
+        if atoi(argument) == 0:
+            send_to_char("Are you crazy?\n\r", ch)
+            return False
+        index = _game().index
+        found = [m for v, m in sorted(index.mobs.items()) if 0 <= v < 65536 and m.group == atoi(argument)]
+        if found:
+            page_to_char("".join("[%5d] %s\n\r" % (m.vnum, _s(m.player_name)) for m in found), ch)
+        else:
+            send_to_char("No mobs in that group.\n\r", ch)
+        return False
+    return False
+
+
+# C: olc_act.c medit_addmprog
+def medit_addmprog(ch, argument: str) -> bool:
+    """addmprog <vnum> <trigger> <phrase>: the phrase is one word, lower-cased (one_argument)."""
+    from charm.data.mobprogs import MPROG_FLAGS
+    from charm.olc.bits import flag_value
+    from charm.world.index import MobProgRef
+
+    p = _mob(ch)
+    argument, num = one_argument(argument)
+    argument, trigger = one_argument(argument)
+    argument, phrase = one_argument(argument)
+    if not is_number(num) or trigger == "" or phrase == "":
+        send_to_char("Syntax:   addmprog [vnum] [trigger] [phrase]\n\r", ch)
+        return False
+    value = flag_value(MPROG_FLAGS, trigger)
+    if value == C.NO_FLAG:
+        send_to_char("Valid flags are:\n\r", ch)
+        show_help(ch, "mprog")
+        return False
+    code = _game().index.get_mprog_index(atoi(num))
+    if code is None:
+        send_to_char("No such MOBProgram.\n\r", ch)
+        return False
+    p.mprog_flags |= value
+    p.mprogs.insert(0, MobProgRef(value, atoi(num), phrase, code))
+    send_to_char("Mprog Added.\n\r", ch)
+    return True
+
+
+# C: olc_act.c medit_delmprog
+def medit_delmprog(ch, argument: str) -> bool:
+    """Remove mob program number n (from 0, as show lists them), and its trigger's bit, even when another program
+    still has that trigger."""
+    p = _mob(ch)
+    _, mprog = one_argument(argument)
+    if not is_number(mprog) or mprog == "":
+        send_to_char("Syntax:  delmprog [#mprog]\n\r", ch)
+        return False
+    value = atoi(mprog)
+    if value < 0:
+        send_to_char("Only non-negative mprog-numbers allowed.\n\r", ch)
+        return False
+    if not p.mprogs:
+        send_to_char("MEdit:  Non existant mprog.\n\r", ch)
+        return False
+    if value >= len(p.mprogs):
+        send_to_char("No such mprog.\n\r", ch)
+        return False
+    gone = p.mprogs.pop(value)
+    p.mprog_flags &= ~gone.trig_type
+    send_to_char("Mprog removed.\n\r", ch)
+    return True
+
+
+# C: olc_act.c redit_mshow
+def redit_mshow(ch, argument: str) -> bool:
+    """A mob prototype shown as medit's show shows it; pEdit is then the room (which redit never reads)."""
+    if argument == "":
+        send_to_char("Syntax:  mshow <vnum>\n\r", ch)
+        return False
+    if not is_number(argument):
+        send_to_char("REdit: Must be a number.\n\r", ch)
+        return False
+    p = _game().index.get_mob_index(atoi(argument))
+    if p is None:
+        send_to_char("REdit:  That mobile does not exist.\n\r", ch)
+        return False
+    ch.desc.pEdit = p
+    medit_show(ch, argument)
+    ch.desc.pEdit = ch.in_room
     return False
