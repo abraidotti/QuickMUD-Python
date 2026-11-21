@@ -1,0 +1,29 @@
+# asave on a fixture area in OLC's own format (tools/fixtures/files/olcsave.are, area 48, security 3, builders
+# "Planner Delver"), written to reach what no stock area does:
+# - #AREADATA with its builders and security, and a help section (#HELPS) that's saved with the area
+# - mobs: a race's flags taken off (F lines), negative dice bonuses and armour, mob programs (M lines)
+# - objects: drink, container, weapon, potion (a negative level is saved as 0, blank spells as ''), staff, a
+#   value with every bit set, affects of each kind (an F with no bits is saved as an A), extra descriptions, and
+#   every condition letter
+# - rooms: doors with each kind of lock, a key, an exit to no room (not saved), mana and heal rates, a clan, an
+#   owner; a door that starts open (a door and nothing else) is saved as no door at all (#92)
+# - resets of every kind, door resets, shops and specials
+# - a mob, an object and a room 1024 vnums on (31224), in the same hash chains as the first ones: the C saves
+#   rooms, specials and shops newest first in a chain
+# Delver may save it (he's named a builder) though his security is 0; Planner saves the world.
+@place olcsave.are olcsave.are
+@place area-olcsave.lst area.lst
+@connect d
+Delver
+psswrd
+@return
+asave 48
+@file olcsave.are
+@connect b
+Planner
+smoke123
+@return
+@return
+asave world
+@file olcsave.are
+@file area.lst

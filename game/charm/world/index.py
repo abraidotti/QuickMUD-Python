@@ -68,6 +68,8 @@ class Area:
     age: int = 15
     nplayer: int = 0
     empty: bool = False
+    area_flags: int = 0  # OLC's AREA_CHANGED, AREA_ADDED, AREA_LOADING
+    helps: "HelpArea | None" = None  # the help file (HELP_AREA) whose helps came after this area's header
 
 
 @dataclass(eq=False)
@@ -124,6 +126,16 @@ class Help:
     level: int
     keyword: str
     text: str
+
+
+@dataclass(eq=False)
+class HelpArea:
+    """HELP_AREA: the helps one file loaded, in load order (first, then each next_area), for OLC to save."""
+
+    filename: str
+    area: Area | None  # load_helps's current_area: None for a file of helps alone
+    helps: list[Help] = field(default_factory=list)
+    changed: bool = False
 
 
 @dataclass(eq=False)
@@ -231,6 +243,7 @@ class Index:
     # char_not_found, char_auto, others_auto (None for "$")
     socials: list = field(default_factory=list)
     mprog_code: dict = field(default_factory=dict)  # mprog_list: each #MOBPROGS program's code, by vnum
+    had_list: list[HelpArea] = field(default_factory=list)  # head first, as the C's had_list
 
     # C: db.c get_mprog_index
     def get_mprog_index(self, vnum: int) -> str | None:
@@ -335,6 +348,10 @@ def build_index(world: World) -> Index:
                   _s(h.builders))
              for i, h in enumerate(world.areas)]
     by_header = {id(h): areas[i] for i, h in enumerate(world.areas)}
+    # load_area sets AREA_LOADING, and clears it on area_last when the next #AREA loads (new_load_area doesn't)
+    for i, h in enumerate(world.areas):
+        if not h.olc and (i + 1 == len(world.areas) or world.areas[i + 1].olc):
+            areas[i].area_flags = C.AREA_LOADING
     area_of_mob: dict[int, Area] = {}
     area_of_obj: dict[int, Area] = {}
     for f in world.files:
@@ -366,12 +383,19 @@ def build_index(world: World) -> Index:
                                     e.rs_flags, sh_int(e.key), _s(e.keyword), _s(e.description), d)
         rooms[v].resets = [Reset(rs.command, sh_int(rs.arg1), sh_int(rs.arg2), sh_int(rs.arg3), sh_int(rs.arg4))
                            for rs in world.room_resets.get(v, [])]
-    greeting, helps = None, []
+    greeting, helps, had_list = None, [], []
     for f in world.files:
         for h in f.helps:
+            # A new HELP_AREA only when the file isn't the one at the head of had_list (the C compares with no other)
+            if not had_list or not str_cmp(f.filename, had_list[0].filename):
+                area = by_header[id(h.area)] if h.area is not None else None
+                had_list.insert(0, HelpArea(_s(f.filename), area))
+                if area is not None:
+                    area.helps = had_list[0]
             helps.append(Help(sh_int(h.level), _s(h.keywords), _s(h.text)))
+            had_list[0].helps.append(helps[-1])
             if str_cmp(h.keywords, "greeting"):  # load_helps: !str_cmp (pHelp->keyword, "greeting")
                 greeting = helps[-1].text
     socials = [s for f in world.files for s in f.socials]
     return Index(areas, rooms, mobs, objs, greeting, helps, socials,
-                 {v: _s(p.code) for v, p in world.mobprogs.items()})
+                 {v: _s(p.code) for v, p in world.mobprogs.items()}, had_list)

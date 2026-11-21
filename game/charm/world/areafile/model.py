@@ -236,6 +236,7 @@ class Help:
     text: str
     file: str = ""
     line: int = 0
+    area: "AreaHeader | None" = None  # load_helps's current_area: the file's latest #AREA or #AREADATA before it
 
 
 @dataclass
