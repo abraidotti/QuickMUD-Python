@@ -107,10 +107,17 @@ class Commands(unittest.TestCase):
         self.assertEqual(self.say("   "), "")
 
     def test_an_unported_command_stops_the_game(self):
-        self.ch.level = 60  # copyover is an immortal's, and the last command not yet ported
-        with self.assertRaises(NotPorted) as e:
-            self.say("copyover")
-        self.assertIn("do_copyover", str(e.exception))
+        # Every command is ported now (P5 PR 8), so take one away for the test.
+        interp.command_function("do_score")  # fill the table first
+        with mock.patch.dict(interp._COMMANDS):
+            del interp._COMMANDS["do_score"]
+            with self.assertRaises(NotPorted) as e:
+                self.say("score")
+        self.assertIn("do_score", str(e.exception))
+
+    def test_every_command_is_ported(self):
+        missing = sorted({c.do_fun for c in CMD_TABLE} - set(interp._commands()))
+        self.assertEqual(missing, [])
 
     def test_every_ported_name_is_in_the_table(self):
         table = {c.do_fun for c in CMD_TABLE}

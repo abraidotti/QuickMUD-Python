@@ -2,7 +2,7 @@
 
 The scenarios are game/tests/data/scenarios/NAME.scn. The C side is tools/oracle/scenario.c, built in the game's
 build-stage image against the game's own object files (as port world's worldcheck is), linked with
--Wl,--wrap=random so the random numbers are counted. The Python side is charm.testing.scenario. Both run from a
+-Wl,--wrap=random so the random numbers are counted, and -Wl,--wrap=execl so copyover's re-exec is stubbed. The Python side is charm.testing.scenario. Both run from a
 copy of the area directory with the fixture players (tools/fixtures/player), qmconfig.rc, and the files
 (tools/fixtures/files) that a scenario's @place lines put in place before boot.
 
@@ -24,7 +24,7 @@ BUILD = r"""
 set -e
 cd /opt/charm/src
 gcc -O -g3 -Wall -std=gnu17 -fcommon -Dmain=game_main -c -o /tmp/comm_nomain.o comm.c 2>/dev/null
-gcc -O -g3 -Wall -std=gnu17 -fcommon -I. -o /tmp/scenario /oracle/scenario.c -Wl,--wrap=random \
+gcc -O -g3 -Wall -std=gnu17 -fcommon -I. -o /tmp/scenario /oracle/scenario.c -Wl,--wrap=random -Wl,--wrap=execl \
     $(ls obj/*.o | grep -v '^obj/comm\.o$') /tmp/comm_nomain.o -lcrypt
 mkdir -p /opt/charm/notes /opt/charm/log /opt/charm/player /opt/charm/gods /opt/charm/files
 cp /fixtures/player/* /opt/charm/player/

@@ -147,5 +147,86 @@ class OneArgument(unittest.TestCase):
         self.assertEqual(one_argument(""), ("", ""))
 
 
+class Copyover(unittest.TestCase):
+    """copyover_recover, which a scenario can't reach (it needs a real exec): connections picked up from
+    copyover.data, over socketpairs, in the stock world with the Shemp fixture."""
+
+    def setUp(self):
+        import shutil
+
+        from charm.entities import game as game_module
+
+        repo = Path(__file__).resolve().parents[2]
+        self.tmp = tempfile.TemporaryDirectory()
+        root = Path(self.tmp.name)
+        shutil.copytree(repo / "area", root / "area")
+        (root / "player").mkdir()
+        shutil.copy(repo / "tools" / "fixtures" / "player" / "Shemp", root / "player" / "Shemp")
+        with log.capture():
+            self.game = boot_db(root / "area", 1763400000, {"CHARM_SEED": "1"})
+        self.game.config = Config()
+        self.saved, game_module.current = game_module.current, self.game
+        self.area = root / "area"
+
+    def tearDown(self):
+        from charm.entities import game as game_module
+
+        game_module.current = self.saved
+        self.tmp.cleanup()
+
+    def test_recover_a_player_and_drop_the_lost(self):
+        from charm.commands.copyover import COPYOVER_FILE, copyover_recover
+        from charm.data import constants as C
+
+        game_end, ours = socket.socketpair()
+        lost_end, lost_ours = socket.socketpair()
+        fd, lost = game_end.detach(), lost_end.detach()
+        ours.settimeout(5)  # a mutant that sends nothing fails, rather than hanging
+        lost_ours.settimeout(5)
+        (self.area / COPYOVER_FILE).write_text(f"{fd} Shemp somehost\n{lost} Nobody otherhost\n-1\n")
+        with log.capture() as lines:
+            copyover_recover(self.game)
+        self.assertFalse((self.area / COPYOVER_FILE).exists())  # removed before reading on
+        self.assertIn("Copyover recovery initiated", "".join(lines))
+        d = next(d for d in self.game.descriptor_list if d.character is not None)
+        self.assertEqual((d.connected, d.host, d.character.name), (C.CON_PLAYING, "somehost", "Shemp"))
+        # (assertIn would print the lists, whose dataclass reprs never end)
+        self.assertTrue(any(c is d.character for c in self.game.char_list), "not in char_list")
+        self.assertTrue(any(c is d.character for c in d.character.in_room.people), "not in the room")
+        got = ours.recv(65536).decode("latin-1")
+        self.assertIn("Restoring from copyover...", got)
+        self.assertIn("Copyover recovery complete.", got)
+        lost_got = lost_ours.recv(65536).decode("latin-1")
+        self.assertIn("Somehow, your character was lost in the copyover. Sorry.", lost_got)
+        self.assertEqual(len([x for x in self.game.descriptor_list if not x.closed]), 1)
+        for s in (ours, lost_ours, d.sock):
+            s.close()
+
+    def test_no_copyover_file_stops_the_game(self):
+        from charm.commands.copyover import copyover_recover
+
+        with log.capture() as lines, self.assertRaises(SystemExit):
+            copyover_recover(self.game)
+        self.assertIn("Copyover file not found. Exitting.", "".join(lines))
+
+    def test_copyover_file_not_writeable(self):
+        from charm.commands.copyover import do_copyover
+        from charm.entities.things import new_char
+
+        self.game.area_dir = self.area / "missing"
+        ch = new_char(0)
+        ch.desc = None
+        sent = []
+        import charm.commands.copyover as co
+
+        real, co.send_to_char = co.send_to_char, lambda text, c: sent.append(text)
+        try:
+            with log.capture():
+                do_copyover(ch, "")
+        finally:
+            co.send_to_char = real
+        self.assertEqual(sent, ["Copyover file not writeable, aborted.\n\r"])
+
+
 if __name__ == "__main__":
     unittest.main()

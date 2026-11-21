@@ -1,0 +1,34 @@
+# copyover (act_wiz.c do_copyover), up to the exec: both drivers stub it (the C's wraps execl), print what it would
+# run, and fail as a failed exec does, so do_copyover then says "Copyover FAILED!". The recovery after a real exec
+# (copyover_recover) is checked by sim smoke's copyover steps, in WSL (#91, decision 3).
+# - Seraph (56) can't copyover (it's level 60); Smokegod (60) does
+# - Delver, playing, and Pupil, writing a note (IS_IN_GAME counts that as playing), are saved and told to remain
+#   seated; Rambler, still at the password prompt, is told the game is
+#   rebooting and dropped; copyover.data lists who was saved, by descriptor, name and host, and ends with -1
+@connect god
+Smokegod
+smoke123
+@return
+@return
+@connect ser
+Seraph
+smoke123
+@return
+@return
+@connect d
+Delver
+psswrd
+@return
+@connect p
+Pupil
+psswrd
+@return
+note write
+@connect r
+Rambler
+@as ser
+copyover
+@as god
+copyover
+@file copyover.data
+@file ../player/Delver

@@ -1,4 +1,4 @@
-"""Immortal commands: all of act_wiz.c but copyover, which P5 ports with OLC. Looking and moving about (goto, at,
+"""Immortal commands: all of act_wiz.c but copyover (commands/copyover.py). Looking and moving about (goto, at,
 transfer, violate, stat, vnum, the finds and wheres, sockets, the echoes, smote, poofs, invis, incognito, holylight,
 prefix, wiznet); punishments (deny, disconnect, freeze, the no- commands, pardon, log, protect, snoop); switching;
 making and unmaking (load, clone, purge, advance, trust, restore, peace); setting (set, string); force; the locks,

@@ -23,9 +23,13 @@ from pathlib import Path
 from charm import __version__
 
 
-# C: comm.c main [partial]
+# C: comm.c main
 def main(argv: list[str] | None = None) -> int:
-    """[partial]: copyover recovery isn't ported (it's not in the spike)."""
+    """Boot and run the game. After a copyover the old process runs this again with "copyover <control>" as
+    the C's main gets them: the listening socket is inherited, not opened, and copyover_recover picks the players up."""
+    import socket
+
+    from charm.commands.copyover import copyover_recover
     from charm.core import log
     from charm.core.errors import CWouldCrash, NotPorted
     from charm.entities.boot import boot_db
@@ -37,7 +41,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--port", default="4000", help="the port to listen on (default 4000)")
     ap.add_argument("--root", default=".", help="the directory that holds area/ (default: here)")
     ap.add_argument("--pulse-stats", action="store_true", help="log each pulse's work every 60 seconds")
+    ap.add_argument("copyover", nargs="?", default="", help=argparse.SUPPRESS)  # "copyover", from do_copyover
+    ap.add_argument("control", nargs="?", default="0", help=argparse.SUPPRESS)  # the listening socket's descriptor
     args = ap.parse_args(argv)
+    copyover = args.copyover != ""  # "Are we recovering from a copyover?"
 
     if not args.port.isdigit():
         print(f"Usage: {ap.prog} [--port #]", file=sys.stderr)
@@ -51,10 +58,15 @@ def main(argv: list[str] | None = None) -> int:
     now = int(time.time())  # clock: the boot time, as the C's main reads it before boot_db
     log.clock = lambda: now
     config = qmconfig_read(area / "qmconfig.rc")
-    control = init_socket(port, config.ipaddress)
+    if copyover:
+        control = socket.socket(fileno=int(args.control))
+        control.setblocking(False)
+    else:
+        control = init_socket(port, config.ipaddress)
     try:
         game = boot_db(area, now)
         game.config = config
+        game.port, game.control = port, control
         game.str_boot_time = log.ctime(now)
         log.clock = lambda: game.current_time
         named = os.environ.get("CHARM_UPDATES")
@@ -64,6 +76,8 @@ def main(argv: list[str] | None = None) -> int:
         if NOT_RUNNING:
             log.log_f("Not ported, not running: %s (#28).", ", ".join(NOT_RUNNING))
         log.log_f("Charm is ready to rock on port %d (%s).", port, config.ipaddress)
+        if copyover:
+            copyover_recover(game)
         game_loop(game, control, PulseStats() if args.pulse_stats else None)
     except (NotPorted, CWouldCrash) as e:
         log.log_string(f"[*****] {'NOT PORTED' if isinstance(e, NotPorted) else 'THE C WOULD CRASH'}: {e}")

@@ -6,7 +6,8 @@
  * socketpair. There is no network and no real clock: a pulse is a call, and the clock moves a second every 4.
  *
  * Usage: scenario < FILE (run from the area directory, like the game). Linked with -Wl,--wrap=random, so every
- * random() the game draws is counted and hashed.
+ * random() the game draws is counted and hashed, and -Wl,--wrap=execl, so copyover's re-exec prints its arguments
+ * ("exec PATH ARG...") and fails instead of replacing the driver.
  *
  * The scenario format, one thing per line (# starts a comment line):
  *   @seed N              CHARM_SEED (before anything else; default 20261117)
@@ -51,6 +52,7 @@
 #define _GNU_SOURCE  /* memmem */
 #include <errno.h>
 #include <fcntl.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -90,6 +92,23 @@ long __wrap_random (void)
         rng_hash *= 16777619u;
     }
     return v;
+}
+
+/* -- execl(), stubbed: do_copyover's re-exec prints what it would run, then fails as a failed exec does --------- */
+
+int __wrap_execl (const char *path, const char *arg, ...)
+{
+    va_list ap;
+    const char *a;
+
+    printf ("exec %s %s", path, arg);
+    va_start (ap, arg);
+    while ((a = va_arg (ap, const char *)) != NULL)
+        printf (" %s", a);
+    va_end (ap);
+    putchar ('\n');
+    errno = ENOEXEC;
+    return -1;
 }
 
 /* -- connections ------------------------------------------------------------------------------------------- */
