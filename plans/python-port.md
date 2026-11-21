@@ -27,9 +27,10 @@ runs, and the speed checkpoint passed. PR 7 of 8 done (#88), mob programs part 1
 (#90), mob programs part 2: `mob_cmds.c`, and the rest of `skills.c` (`gain` and `spells`). P4 done 2026-11-20. P5, the
 online builder, copyover and the rest, is 7 PRs or 2026-12-05 (#91). PR 1 of 7 done (#93), saving: `olc_save.c` and
 `bit.c`, with `port asave` (every stock area saved byte-identical on both games). PR 2 of 7 done (#95), areas: `olc.c`'s
-framework (`edit`, `alist`, the editor dispatch) and the area editor. PR 3 of 7 done, rooms: the room editor, the
+framework (`edit`, `alist`, the editor dispatch) and the area editor. PR 3 of 7 done (#97), rooms: the room editor, the
 reset commands, exits, and the string editor (`string.c`), with `mem.c`'s room, exit and reset constructors; the
-checkpoint after it is on #91.
+checkpoint after it is on #91, on pace. PR 4 done, objects: the object editor. Areas and rooms took two PRs where the
+plan had one, so P5 is now 8 PRs unless two of the last ones combine.
 
 ## Goal
 
