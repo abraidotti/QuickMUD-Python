@@ -1,7 +1,7 @@
 #AREA
 string_eof.are~
 Parity string_eof~
-{ 1  5} charm_tools  Parity string_eof~
+{ 1  5} quickmud_tools  Parity string_eof~
 30000 30099
 
 #ROOMS

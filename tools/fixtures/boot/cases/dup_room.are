@@ -1,7 +1,7 @@
 #AREA
 dup_room.are~
 Parity dup_room~
-{ 1  5} charm_tools  Parity dup_room~
+{ 1  5} quickmud_tools  Parity dup_room~
 30000 30099
 
 #ROOMS
