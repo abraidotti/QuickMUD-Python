@@ -80,7 +80,7 @@ class RealTree(unittest.TestCase):
         self.assertTrue(lists.text.endswith("carrying, contains)"))  # joined over its second comment line
         self.assertEqual(status.LATER.search("    x = 1  # LATER: a deque").group(1).strip(), "a deque")
 
-    def test_use_game_makes_charm_importable(self):
+    def test_use_game_makes_quickmud_importable(self):
         paths.use_game()
         from quickmud.core import rng as game_rng  # noqa: F401  (the import is the test)
 

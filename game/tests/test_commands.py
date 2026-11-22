@@ -149,7 +149,7 @@ class Commands(unittest.TestCase):
         self.assertEqual(self.say("prompt"), "You will no longer see prompts.\n\r")
         self.assertFalse(self.ch.comm & C.COMM_PROMPT)
 
-    def test_save_says_charm_and_lags(self):
+    def test_save_says_quickmud_and_lags(self):
         with mock.patch("quickmud.persist.player.save_char_obj") as save:
             self.assertEqual(self.say("save"), "Saving. Remember that QuickMUD-Python has automatic saving now.\n\r")
         save.assert_called_once()

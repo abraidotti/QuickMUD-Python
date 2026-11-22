@@ -1,7 +1,7 @@
 #AREA
 bad_door_reset.are~
 Parity bad_door_reset~
-{ 1  5} charm_tools  Parity bad_door_reset~
+{ 1  5} quickmud_tools  Parity bad_door_reset~
 30000 30099
 
 #ROOMS

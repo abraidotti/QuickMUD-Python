@@ -14,12 +14,12 @@ class PathsTest(unittest.TestCase):
         self.assertTrue((root / "area" / "area.lst").is_file())
         self.assertEqual(paths.game_dir(root), root / "game")
 
-    def test_charm_root_must_be_a_checkout(self):
+    def test_quickmud_root_must_be_a_checkout(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, {"QUICKMUD_ROOT": tmp}):
             with self.assertRaises(paths.RootNotFound):
                 paths.find_root()
 
-    def test_charm_root_wins(self):
+    def test_quickmud_root_wins(self):
         with tempfile.TemporaryDirectory() as tmp:
             for m in paths.MARKERS:
                 (Path(tmp) / m).parent.mkdir(parents=True, exist_ok=True)

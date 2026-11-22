@@ -62,7 +62,7 @@ class InitMm(unittest.TestCase):
         got = rng.init_mm({} if value is None else {"QUICKMUD_SEED": value}, log=lines.append)
         return got, lines
 
-    def test_charm_seed_is_used_and_logged(self):
+    def test_quickmud_seed_is_used_and_logged(self):
         self.assertEqual(self.seed("42"), (42, ["Random seed: 42 (QUICKMUD_SEED)"]))
         self.assertEqual(self.seed("4294967295")[0], 4294967295)
 

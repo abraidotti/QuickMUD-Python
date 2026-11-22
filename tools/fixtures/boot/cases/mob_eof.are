@@ -1,7 +1,7 @@
 #AREA
 mob_eof.are~
 Parity mob_eof~
-{ 1  5} charm_tools  Parity mob_eof~
+{ 1  5} quickmud_tools  Parity mob_eof~
 30000 30099
 
 #MOBILES

@@ -33,7 +33,7 @@ def docstring(path):
     return ast.get_docstring(ast.parse(path.read_text(encoding="utf-8"))) or ""
 
 
-def charm_imports(path, package_parts):
+def quickmud_imports(path, package_parts):
     """Every quickmud.* module path imports, with relative imports resolved."""
     for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
         if isinstance(node, ast.Import):
@@ -274,7 +274,7 @@ class Layers(unittest.TestCase):
             if layer not in LAYERS:
                 continue
             package_parts = ("quickmud",) + rel[:-1]
-            for name in charm_imports(path, package_parts):
+            for name in quickmud_imports(path, package_parts):
                 parts = name.split(".")
                 if parts[0] == "quickmud" and len(parts) > 1:
                     with self.subTest(module=str(path.relative_to(GAME)), imports=name):

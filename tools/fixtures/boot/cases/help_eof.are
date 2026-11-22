@@ -1,7 +1,7 @@
 #AREA
 help_eof.are~
 Parity help_eof~
-{ 1  5} charm_tools  Parity help_eof~
+{ 1  5} quickmud_tools  Parity help_eof~
 30000 30099
 
 #HELPS
