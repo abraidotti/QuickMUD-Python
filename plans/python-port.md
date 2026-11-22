@@ -279,19 +279,24 @@ tables. The same issue takes up refactor decision 6 (tables in C or in data file
 
 ## After cut-over: three repos
 
-The plan agreed on 2026-11-22 (#116) has three repos, in this order:
+The plan agreed on 2026-11-22 (#116) has three repos. The order was changed the same day: the fixes start in C, not
+here (#116's decisions 5 to 7, and #119, are superseded).
 
-1. **This repo becomes QuickMUD-Python** (#116, answered). It's renamed from Charm (`v1.1`), then every bug labelled
-   "after cut-over" is fixed, OLC and the other add-ons included (`v2.0`).
-2. **`2.4b6-fixed`, a new repo in C.** It holds an archive of stock ROM 2.4b6 as Russ Taylor released it, and a fixed
-   version: the same code with the bugs that are in stock ROM fixed. Many of the bugs filed here are in QuickMUD's
-   add-ons (OLC, copyover, colour, boards), so each is triaged against the stock code first.
-3. **Charm, a new repo:** a Python port of stock ROM. It's derived from QuickMUD-Python by stripping what QuickMUD
-   added, rather than ported again, and compared live with `2.4b6-fixed`. The harness at `c-final`
-   (`tools/oracle/`), adapted to stock ROM, makes the fixed C game Charm's oracle.
+1. **This repo becomes QuickMUD-Python** (#116, done). It's renamed from Charm (`v1.1`) and left in a good state: the
+   docs and issues brought into line with this plan. The bugs labelled "after cut-over" stay open, unfixed, until step 4.
+2. **`2.4b6-fixed`, a new repo in C:** what's offered to the ROM community. It holds an archive of stock ROM 2.4b6 as
+   Russ Taylor released it, and a fixed version: the same code with the bugs that are in stock ROM fixed. A visitor
+   can trace the lineage back to that release, read each fix and why it was made, and decide whether to build a
+   new ROM MUD on it. Many of the bugs filed here are in QuickMUD's add-ons (OLC, copyover, colour, boards), so each
+   is triaged against the stock code first.
+3. **Charm, a new repo:** a Python port of stock ROM, with the same fixes. It's derived from QuickMUD-Python by
+   stripping what QuickMUD added, rather than ported again, and compared live with `2.4b6-fixed`. The harness at
+   `c-final` (`tools/oracle/`), adapted to stock ROM, makes the fixed C game Charm's oracle. A visitor can briefly
+   see the fixes made between ROM's C and the Python.
+4. **Back to QuickMUD-Python:** decide which fixes this repo takes, the add-ons' included, and what comes after.
 
 The diff between stock ROM and `c-final` is the list of what QuickMUD added, which is what step 3 strips. Issues for
-steps 2 and 3 come after #116's work.
+steps 2 and 3 come next, starting with step 2's.
 
 **The pristine source** (found 2026-11-22; one source is enough, the user decided). It's the ROM consortium's own
 distribution page: Gabrielle Taylor's hypercube.org/tess/rom/, archived by the Wayback Machine in December 2000 and
