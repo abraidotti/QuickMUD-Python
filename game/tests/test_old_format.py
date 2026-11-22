@@ -6,9 +6,10 @@ converts every old-format prototype first, in the C as here. So these make proto
 draws (number_range returns its top, dice its maximum, number_fuzzy adds 1), and check every value and the order of
 the draws against db.c.
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import tempfile
@@ -17,15 +18,15 @@ from dataclasses import replace
 from pathlib import Path
 from unittest import mock
 
-from charm.core import log
-from charm.core.errors import CWouldCrash
-from charm.data import constants as C
-from charm.data.skills import SKILL_TABLE
-from charm.entities import create, oldformat, resets
-from charm.entities.boot import boot_db
-from charm.entities.handler import extract_char
-from charm.world.areafile.world import load_world
-from charm.world.index import build_index
+from quickmud.core import log
+from quickmud.core.errors import CWouldCrash
+from quickmud.data import constants as C
+from quickmud.data.skills import SKILL_TABLE
+from quickmud.entities import create, oldformat, resets
+from quickmud.entities.boot import boot_db
+from quickmud.entities.handler import extract_char
+from quickmud.world.areafile.world import load_world
+from quickmud.world.index import build_index
 
 REPO = Path(__file__).resolve().parents[2]
 FIXTURE = REPO / "tools" / "fixtures" / "files" / "oldformat.are"
@@ -37,7 +38,7 @@ def boot_fixture():
         Path(d, "music.txt").write_text("#\n")
         Path(d, "oldformat.are").write_bytes(FIXTURE.read_bytes())
         with log.capture() as lines:
-            game = boot_db(Path(d), 1763400000, {"CHARM_SEED": "1"})
+            game = boot_db(Path(d), 1763400000, {"QUICKMUD_SEED": "1"})
         world = load_world(Path(d))
     return game, world, lines
 

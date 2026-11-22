@@ -1,4 +1,4 @@
-"""charm_tools port io: comm.c's input and output in the Python game against the C game's, from the saved capture.
+"""quickmud_tools port io: comm.c's input and output in the Python game against the C game's, from the saved capture.
 
 The capture is tools/tests/data/io.txt: tools/tests/data/iocases.txt run through the C game's comm.c by
 tools/oracle/iocheck.c, before cut-over (the c-final tag has the driver). A deliberate change to comm.c's behaviour
@@ -7,7 +7,7 @@ changes the expected results by hand, in the same PR.
 
 import unittest
 
-from charm_tools.port import io
+from quickmud_tools.port import io
 
 
 class SavedCapture(unittest.TestCase):

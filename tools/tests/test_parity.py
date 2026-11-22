@@ -9,10 +9,10 @@ import unittest
 from dataclasses import fields
 from pathlib import Path
 
-from charm.testing.watchdog import allow
-from charm_tools import paths
-from charm_tools.explore import parity
-from charm_tools.explore.world import Counts, load_world
+from quickmud.testing.watchdog import allow
+from quickmud_tools import paths
+from quickmud_tools.explore import parity
+from quickmud_tools.explore.world import Counts, load_world
 
 FIXTURES = paths.find_root() / "tools" / "fixtures" / "boot"
 
@@ -63,7 +63,7 @@ class ParseTest(unittest.TestCase):
 
     def test_bug_lines_drop_timestamps_and_stop_at_ready(self):
         log = ("Tue Nov 17 18:17:08 2026 :: [*****] BUG: one\n"
-               "Tue Nov 17 18:17:08 2026 :: Charm is ready to rock on port 4000 (0.0.0.0).\n"
+               "Tue Nov 17 18:17:08 2026 :: QuickMUD-Python is ready to rock on port 4000 (0.0.0.0).\n"
                "Tue Nov 17 18:17:09 2026 :: [*****] BUG: later\n")
         self.assertEqual(parity.bug_lines(log), ["[*****] BUG: one"])
 

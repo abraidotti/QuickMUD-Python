@@ -1,4 +1,4 @@
-# game/: Charm's game, in Python
+# game/: QuickMUD-Python's game, in Python
 
 This is the game. It's a port of QuickMUD's C game, following [plans/python-port.md](../plans/python-port.md), and
 it's at parity with it: every C function is ported (`port status`: 950 of 950), and 122 scenarios, the Sim trials
@@ -15,11 +15,11 @@ pointing there, and saying which C files it was ported from (at `c-final`). `tes
 
 ## Running it
 
-`python -m charm --port N --root DIR` runs the game from DIR (which holds `area/`, `player/`, `gods/`, `notes/` and
+`python -m quickmud --port N --root DIR` runs the game from DIR (which holds `area/`, `player/`, `gods/`, `notes/` and
 `log/`), as the C ran from its area directory. It boots, listens, and stops cleanly on SIGTERM or Ctrl-C (Ctrl-Break
 on Windows), saving everyone. `area/startup.sh` runs it in a restart loop, as the Docker image does. Copyover
-re-executes the game with its connections open, which needs Linux. `CHARM_SEED` seeds the random numbers, and
-`CHARM_UPDATES` names the per-pulse updates to run (`area,violence`, or `all`; unset, all of them; #74).
+re-executes the game with its connections open, which needs Linux. `QUICKMUD_SEED` seeds the random numbers, and
+`QUICKMUD_UPDATES` names the per-pulse updates to run (`area,violence`, or `all`; unset, all of them; #74).
 
 ## Layout
 
@@ -27,7 +27,7 @@ The code is organised by topic, not by C file:
 
 | Package | What | Imports from |
 |---|---|---|
-| `core/` | C-faithful primitives: integer behaviour (`cint`), random numbers (`rng`), strings, crypt, logging | nothing else in `charm` |
+| `core/` | C-faithful primitives: integer behaviour (`cint`), random numbers (`rng`), strings, crypt, logging | nothing else in `quickmud` |
 | `data/` | static tables: classes, races, skills, the command table, flags | `core` |
 | `world/` | the static world: area files, rooms and the prototypes, name lookups | `core`, `data` |
 | `entities/` | characters and objects at run time, moving them around, making them, resets, boot | |
@@ -41,7 +41,7 @@ The code is organised by topic, not by C file:
 The import rules for the first three are checked by `tests/test_guards.py`. The rest follow the C game's circular
 calls for now; untangling them is refactor work (plans/refactor.md).
 
-`data/` was generated from the C (`const.c`, `tables.c`, `special.c` and `merc.h`) by `charm_tools port data` until
+`data/` was generated from the C (`const.c`, `tables.c`, `special.c` and `merc.h`) by `quickmud_tools port data` until
 cut-over. It's the source now: edit it by hand.
 
 ## Scenarios
@@ -52,15 +52,15 @@ Scenarios (#35) check state as well as output, with no network and no real clock
 `@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too), `@obj` (with the object's five values, if
 given), `@owner` (the last object's owner, as a player's corpse has), `@spec` (runs the last mob's special, as
 `mobile_update` would), `@state`, `@file`, and before boot `@seed`, `@clock`, `@updates` and `@place` (a file from
-`tools/fixtures/files`, such as a board's notes or a ban list, put where boot reads it). `charm.testing.scenario`
+`tools/fixtures/files`, such as a board's notes or a ban list, put where boot reads it). `quickmud.testing.scenario`
 reads the format; the C driver that defined it, `tools/oracle/scenario.c`, is at `c-final`. A scenario with the
 comment `# expect: stopped NotPorted` checks that the game stops there.
 
 Each scenario prints each step's output, the random numbers drawn so far, and on `@state` the rooms' characters and
 objects. `NAME.golden` is what the C game printed, and `tests/test_scenarios.py` replays it. A golden's first line
 says where it came from: `c-final`, or `python` once a deliberate change has saved it again. After a bug fix, from
-`tools/`, `python -m charm_tools port scenarios --save --only NAME` writes the affected goldens from the game, and
-the PR shows their diff. `python -m charm_tools port coverage FILE.c` runs the tests and lists the lines of the
+`tools/`, `python -m quickmud_tools port scenarios --save --only NAME` writes the affected goldens from the game, and
+the PR shows their diff. `python -m quickmud_tools port coverage FILE.c` runs the tests and lists the lines of the
 functions ported from FILE.c that nothing reaches (#39, decision 6).
 
 ## Checked against the C game
@@ -105,8 +105,8 @@ def number_range(from_, to):
 Something worth improving now the port matches the C has a `# LATER: <what>` comment where the change would go; the
 cross-cutting ones are listed in the plan, under Improvements for later.
 
-From `tools/`, `python -m charm_tools port status` turns the markers into a report per C file, against the list of
-C functions frozen at `c-final` (`tools/charm_tools/port/c_functions.txt`): which are ported, and which Python
+From `tools/`, `python -m quickmud_tools port status` turns the markers into a report per C file, against the list of
+C functions frozen at `c-final` (`tools/quickmud_tools/port/c_functions.txt`): which are ported, and which Python
 modules they went to. It also lists the C functions with no Python counterpart (`core/no_counterpart.py`), the ones
 ported whole but for a difference kept on purpose (`core/kept_differences.py`), and the `# LATER:` notes. A marker
 that names no C function fails it, and so does an empty `# LATER:`.

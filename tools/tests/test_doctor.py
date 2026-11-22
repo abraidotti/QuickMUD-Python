@@ -4,7 +4,7 @@ import subprocess
 import unittest
 from unittest import mock
 
-from charm_tools import doctor
+from quickmud_tools import doctor
 
 
 def completed(stdout="", code=0):
@@ -36,10 +36,10 @@ class DoctorTest(unittest.TestCase):
         results = [completed("29.9.3\n"), completed(code=1)]
         with mock.patch("shutil.which", return_value="docker"), \
              mock.patch.object(doctor, "_run", side_effect=results):
-            docker, image = doctor.check_docker("charm")
+            docker, image = doctor.check_docker("quickmud")
         self.assertTrue(docker.ok)
         self.assertFalse(image.ok)
-        self.assertIn("docker build -t charm .", image.detail)
+        self.assertIn("docker build -t quickmud .", image.detail)
 
     def test_exit_code_is_1_when_anything_fails(self):
         checks = [doctor.Check("a", True, ""), doctor.Check("b", False, "why")]

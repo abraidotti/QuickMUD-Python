@@ -1,8 +1,8 @@
 import unittest
 
-from charm_tools.explore import checks
-from charm_tools.explore import graph
-from charm_tools.explore.world import load_world
+from quickmud_tools.explore import checks
+from quickmud_tools.explore import graph
+from quickmud_tools.explore.world import load_world
 
 
 class ChecksTest(unittest.TestCase):

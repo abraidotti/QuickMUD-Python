@@ -1,14 +1,14 @@
-# Plan: port Charm's game from C to Python
+# Plan: port QuickMUD-Python's game from C to Python
 
 Status: decisions 1-7 answered (#19); R2 done (#22); P0 done (#24); P1 spike started 2026-11-17 (#25), time box
 5 PRs or 2026-12-08. PR 1 of 5 done (#26): the tables and the loader move. PR 2 of 5 done (#27): the world and
-resets (`charm_tools port world`). PR 3 of 5 done (#29): the loop, connections and output (`port io`, `port
+resets (`quickmud_tools port world`). PR 3 of 5 done (#29): the loop, connections and output (`port io`, `port
 greeting`); the checkpoint after it estimated 60% of the spike's functions ported, over #25's 40% line. PR 4 of 5
 done (#31): login and player files (`port crypt`, `port login`, `port players`). PR 5 of 5 done (#33): the commands
-(`port commands`, `sim smoke --python`, `sim bots`); the C game gained the test-only `CHARM_UPDATES=area`. P1 done:
+(`port commands`, `sim smoke --python`, `sim bots`); the C game gained the test-only `QUICKMUD_UPDATES=area`. P1 done:
 the go/no-go (#34) answered go, with a speed checkpoint when the mob and combat updates run. P2, the differential
 harness, started 2026-11-18 (#35), time box 3 PRs or 2026-11-26: PR 1 of 3 done (#36), the scenario player on both
-sides (`tools/oracle/scenario.c`, `charm.testing.scenario`, `port scenarios`) and the first golden. PR 2 of 3 done (#37):
+sides (`tools/oracle/scenario.c`, `quickmud.testing.scenario`, `port scenarios`) and the first golden. PR 2 of 3 done (#37):
 the first scenarios, 14 in all. PR 3 of 3 done (#38): the guard tests for the divergence classes (`tests/test_guards.py`). P2 done.
 P3, the commands, started 2026-11-18 (#39), time box 8 PRs or 2026-12-02: PR 1 of 8 done (#45), positions, doors
 and portals (the rest of `act_move.c`, and `act_enter.c`), with `port coverage`. PR 2 of 8 done (#48), information:
@@ -33,23 +33,24 @@ checkpoint after it is on #91, on pace. PR 4 done (#99), objects: the object edi
 and the mob program editor (`olc_mpcode.c`). PR 6 done (#103), helps and leftovers: the help editor (`hedit.c`),
 so every editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. PR 7 done (#105), memory: `memory` and `dump`
 (the boot's string space modelled, Perms a kept difference), the C functions with no counterpart
-(`charm/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs. PR 8 done (#107), copyover: `do_copyover` and
+(`quickmud/core/no_counterpart.py`), and the odds and ends. P5 is now 9 PRs. PR 8 done (#107), copyover: `do_copyover` and
 `copyover_recover`, re-executing with inherited sockets on Linux (`sim smoke --wsl` runs its steps from Windows), so
 every command is ported. PR 9 done, the old area formats: `#MOBOLD` and `#OBJOLD` (`load_old_mob`, `load_old_obj`
-and `db2.c`'s `convert_*`, in `charm/entities/oldformat.py`), with a fixture area, and `bug`'s hang on a last line
+and `db2.c`'s `convert_*`, in `quickmud/entities/oldformat.py`), with a fixture area, and `bug`'s hang on a last line
 with no newline. P5 done 2026-11-21: 949 of 950 C functions are whole. `game_loop_unix` stays partial for the
 out-of-band difference accepted in #29, and how to count it is a question for P6. P6, cut-over, is 3 PRs or
 2026-11-28 (#112, every decision answered as recommended). PR 1 of 3 done, the trials: `sim lobby` and `sim
-churn`, run on both games and compared (#113). PR 2 done, ready to switch: `charm/core/kept_differences.py` makes
+churn`, run on both games and compared (#113). PR 2 done, ready to switch: `quickmud/core/kept_differences.py` makes
 `game_loop_unix` whole with its kept difference, so 950 of 950; the root `Dockerfile` builds the Python game, and the
 C's is `tools/oracle/Dockerfile.c` (`charm:c`); the README has the licence checklist (#114). PR 3 done, the cut-over:
 `c-final` tags the last commit with `src/`, which is removed with `tools/oracle/` and the checks that ran the C live;
-`port status` reads the C functions frozen at `c-final`, the goldens' first line is `c-final`, `game/charm/data/` is
-edited by hand, the licence checklist is ticked, and `v1.0` tags the result. P6 done 2026-11-22, and the port with it.
+`port status` reads the C functions frozen at `c-final`, the goldens' first line is `c-final`, `game/quickmud/data/` is
+edited by hand, the licence checklist is ticked, and `v1.0` tags the result. P6 done 2026-11-22, and the port with it. Then the repo was renamed QuickMUD-Python
+(#116): see "After cut-over: three repos".
 
 ## Goal
 
-Charm's game would run as a Python program that behaves the same as today's C game: same area files, same player
+QuickMUD-Python's game would run as a Python program that behaves the same as today's C game: same area files, same player
 files, same messages, same numbers. Gameplay changes come after that, as in the refactor plan. The aim is a codebase
 where new game work is easy to write, test and review, sharing one language with `tools/`.
 
@@ -63,13 +64,13 @@ Measured on master (8cdcf11), 2026-11-17:
 - **C to port.** `src/` is 74.8k lines. Without IMC2 (`imc.c`, `imc.h`, `imccfg.h`, `sha256.*`, about 9.3k lines,
   which refactor decision 2 recommends removing) it's about 65k. The largest files are `olc_act.c` (5.0k), `magic.c`
   (4.9k), `act_wiz.c` (4.8k), `db.c` (4.0k), `handler.c` (3.6k) and `fight.c` (3.3k).
-- **Already ported.** T1's area loader in `tools/charm_tools/explore/areafile/` is a faithful port of `boot_db`'s
+- **Already ported.** T1's area loader in `tools/quickmud_tools/explore/areafile/` is a faithful port of `boot_db`'s
   area loading (about 1,100 lines of Python). It matches the game's `memory` totals and its `bug()` output exactly,
   including 11 broken-area cases.
-- **A parity method that already works.** `charm_tools explore parity` boots the real game in Docker, captures its
-  output and compares it with the Python side. The smoke test (`charm_tools sim smoke`) speaks telnet and doesn't care
+- **A parity method that already works.** `quickmud_tools explore parity` boots the real game in Docker, captures its
+  output and compares it with the Python side. The smoke test (`quickmud_tools sim smoke`) speaks telnet and doesn't care
   what language the server is in, so the same steps can run against both games.
-- **The RNG.** Charm is built without `OLD_RAND`, so `number_mm` (`db.c:3599`) calls glibc's `random()`, seeded with
+- **The RNG.** QuickMUD-Python is built without `OLD_RAND`, so `number_mm` (`db.c:3599`) calls glibc's `random()`, seeded with
   `time(NULL) ^ getpid()` in `init_mm`. A port that wants identical fights needs glibc's `random()` in Python and a way
   to fix the seed on both sides.
 - **Passwords.** Player files hold DES `crypt()` hashes. Python 3.13 removed the `crypt` module, so verifying them
@@ -83,12 +84,12 @@ Python port of the same QuickMUD code. It's the best evidence we have of what a 
 **The cost.** Version 0.1.0 was on 2025-09-13 and 2.14.268 on 2026-07-05, with work continuing since. The engine
 (`mud/`) is 78.7k lines of Python, the repo about 246k with its tests, and the README counts 6,127 tests and 69
 differential scenarios. After all that, it still calls its parity "beta". Most of the work was done by AI agents
-working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked on.
+working from a tracker (`AGENTS.md`, `docs/sessions/`), much as QuickMUD-Python is worked on.
 
 **Patterns worth borrowing:**
 
 - **Divergence classes.** `docs/parity/DIVERGENCE_CLASS_ROSTER.md` lists the places where Python and C differ
-  structurally, each with one way to check it. The list is a ready-made checklist for Charm:
+  structurally, each with one way to check it. The list is a ready-made checklist for QuickMUD-Python:
   - RNG
   - C integer division and modulo (truncating toward zero, not flooring)
   - `int` and `sh_int` overflow
@@ -98,7 +99,7 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
   - output ordering inside a tick
   - link-dead characters staying in the world
 
-  Found in Charm so far (#25), and added to the list:
+  Found in QuickMUD-Python so far (#25), and added to the list:
   - macros that evaluate an argument twice: `UMIN(number_fuzzy(level), LEVEL_HERO - 1)` draws two random numbers
     whenever the first is the smaller, and every reset after it depends on that
   - text read with newline translation: Python turned the stray `\n\r` in two area files into two newlines,
@@ -110,15 +111,15 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
     for exceptional conditions; `selectors` has no such set, so the Python game doesn't. Accepted as a known
     difference (#29)
 
-  Differences kept on purpose, listed in `game/charm/core/kept_differences.py` (`port status` checks each one):
+  Differences kept on purpose, listed in `game/quickmud/core/kept_differences.py` (`port status` checks each one):
   - a connection that sends out-of-band data stays open (above)
   - `memory`'s Perms line, and `dump`'s byte figures and free lists in `mem.dmp`, are Python's own (#91, decision 6)
 
-  The Python game said "Charm" in three lines where the C said "ROM" (the startup log, the MOTD's last line and
-  save; #29, #30, #32). The ROM licence forbids calling the game ROM, so the C now says Charm there too, and in
+  The Python game said "QuickMUD-Python" in three lines where the C said "ROM" (the startup log, the MOTD's last line and
+  save; #29, #30, #32). The ROM licence forbids calling the game ROM, so the C now says QuickMUD-Python there too, and in
   `do_time` (#40). The checks no longer substitute anything.
 
-  The pointer identity class above showed up in Charm too (#30): fwrite_obj and fwrite_pet write a string when
+  The pointer identity class above showed up in QuickMUD-Python too (#30): fwrite_obj and fwrite_pet write a string when
   its pointer differs from the prototype's, and a string read from a player file is always a new one. The port
   records which strings are an object's own (`own_strings`) instead of comparing Python strings with `is`. The
   fields mark themselves (a descriptor, `things._OwnString`): assigning one after construction makes it the
@@ -144,9 +145,9 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
 - **Features before parity.** WebSocket and SSH servers, accounts, a web client. Each is reasonable, but each also
   moves the target.
 
-**Why not adopt their code.** It's 246k lines written to their own conventions, it doesn't have Charm's fixes
+**Why not adopt their code.** It's 246k lines written to their own conventions, it doesn't have QuickMUD-Python's fixes
 (#4-#9), and it ships under MIT. A port of ROM is still a derivative of ROM, so we'd treat it as bound by the Diku,
-Merc and ROM terms whatever its LICENSE says. Taking it would leave Charm unsure what licence its own game is under.
+Merc and ROM terms whatever its LICENSE says. Taking it would leave QuickMUD-Python unsure what licence its own game is under.
 Reading it for patterns is fine. Copying code from it isn't.
 
 ## Ground rules (if the port goes ahead)
@@ -172,10 +173,10 @@ Reading it for patterns is fine. Copying code from it isn't.
    a time box, whichever comes first. The go/no-go issue then has real numbers: lines per C line, divergences found,
    and an estimate for the rest. Alternatives: commit to the port now, or stay in C and close this plan.
 2. **Our own port or Nostoi's?** *Answered: our own, borrowing their patterns (see above).* Alternative: fork
-   theirs and add Charm's fixes. That's faster to a running game, but it comes with their licence, their size and their
+   theirs and add QuickMUD-Python's fixes. That's faster to a running game, but it comes with their licence, their size and their
    data formats.
 3. **How exact?** *Answered: identical given the same seed, the RNG included.* Port glibc's `random()` (the TYPE_3
-   additive generator that `srandom()` sets up), and add a test-only `CHARM_SEED` environment variable to the C game
+   additive generator that `srandom()` sets up), and add a test-only `QUICKMUD_SEED` environment variable to the C game
    so both sides can be fixed. Alternative: build the oracle with `-DOLD_RAND` as Nostoi did. That's less work, but
    then the oracle isn't the game players are on.
 4. **Networking loop.** *Answered: stdlib `selectors`, a copy of `game_loop_unix`'s structure* (`comm.c:765`). Each
@@ -190,7 +191,7 @@ Reading it for patterns is fine. Copying code from it isn't.
 5. **Dependencies.** *Answered: stdlib only, Python 3.12+, as for `tools/`.* Verify old DES hashes through `ctypes`
    and libcrypt, which is in the Docker image already. Refactor decision 3 (modern hashing) then becomes `hashlib.scrypt`
    with a rehash on login, as its own issue after cut-over.
-6. **Where it lives.** *Answered: a `game/` directory holding a `charm` package, with its own tests.* T1's loader
+6. **Where it lives.** *Answered: a `game/` directory holding a `charm` package (renamed `quickmud` in #116), with its own tests.* T1's loader
    moves from `tools/` into `game/` and `tools/` imports it from there. Because the loader is a port of `db.c`, it then
    sits under the game's licences rather than MIT. Alternative: keep the two separate and maintain two loaders.
 7. **What happens to `src/` at cut-over.** *Answered: a tag (`c-final`) and removal from master, once the parity
@@ -198,24 +199,24 @@ Reading it for patterns is fine. Copying code from it isn't.
 
 ## P0 decisions (answered in #23)
 
-1. **Package.** `game/charm/`, run as `python -m charm`; tests in `game/tests/` with `unittest`. `charm_tools` makes
+1. **Package.** `game/quickmud/`, run as `python -m quickmud`; tests in `game/tests/` with `unittest`. `quickmud_tools` makes
    it importable with `paths.use_game()`, which puts `game/` on `sys.path`.
 2. **Licence headers.** Every module's docstring has a short header: the Diku, Merc and ROM copyright holders, the C
-   file it was ported from (or "Written for Charm; no single C source"), and a pointer to the licence texts in
+   file it was ported from (or "Written for QuickMUD-Python; no single C source"), and a pointer to the licence texts in
    `doc/` and the README's licence section. No `game/LICENSE`. `game/tests/test_guards.py` checks every module.
 3. **Layout and tracker.** By topic, not by C file (see Layout below). Ported functions carry
-   `# C: <file>.c <function>` above their `def`; `charm_tools port status` reports per C file from those markers,
+   `# C: <file>.c <function>` above their `def`; `quickmud_tools port status` reports per C file from those markers,
    and fails on a marker that names no C function.
-4. **`CHARM_SEED`.** An environment variable read by `init_mm`. The game logs the seed it used at every boot.
+4. **`QUICKMUD_SEED`.** An environment variable read by `init_mm`. The game logs the seed it used at every boot.
 5. **RNG check.** `tools/oracle/rngcheck.c`, linked against the game's object files, prints 8 streams of 10,000
-   draws on 4 seeds. `charm_tools port rng` captures them into `game/tests/data/rng.json`, and
+   draws on 4 seeds. `quickmud_tools port rng` captures them into `game/tests/data/rng.json`, and
    `game/tests/test_rng.py` checks the Python RNG against that file.
 
 ## Layout
 
 ```
-game/charm/
-  core/       C-faithful primitives: cint, rng, later text and flags       imports nothing else in charm
+game/quickmud/
+  core/       C-faithful primitives: cint, rng, later text and flags       imports nothing else in quickmud
   data/       static tables: classes, races, skills, liquids, weapons      imports core
   world/      the static world: areafile/ (T1's loader), prototypes, lookups imports core, data
   entities/   characters and objects at run time, handler functions, resets
@@ -239,7 +240,7 @@ change has to pass the line-by-line checks against the C game (`port world`, and
 that changes behaviour would hide real divergences. Then they're weighed like the refactor plan's items, by impact
 and effort.
 
-Ones with a place in the code are `# LATER:` comments there, and `charm_tools port status` lists them with file
+Ones with a place in the code are `# LATER:` comments there, and `quickmud_tools port status` lists them with file
 and line. Ones that cut across the code are here:
 
 - **One model for the world, not two.** `world/areafile/` reads area files into Explorer's model (what the file
@@ -261,7 +262,7 @@ and line. Ones that cut across the code are here:
 
 | Phase | What | Done when |
 |---|---|---|
-| **P0 Groundwork** | Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-function tracker and `CHARM_SEED` in C. glibc `random()` and `db.c`'s RNG functions in Python, checked against the C game's own. | Tracker lists every C function; RNG matches C for 10k draws per stream on 4 seeds |
+| **P0 Groundwork** | Refactor R2 (pruning, and IMC2 per refactor decision 2) runs first, so there's less to port. The `game/` package, licence headers, the C-function tracker and `QUICKMUD_SEED` in C. glibc `random()` and `db.c`'s RNG functions in Python, checked against the C game's own. | Tracker lists every C function; RNG matches C for 10k draws per stream on 4 seeds |
 | **P1 Spike** | Move T1's loader into `game/`, then port: `area_update` and resets, the descriptor loop, `nanny.c`, `save.c` (load and save, round-trip with C's files), `interp.c`, `act()`, and the commands the smoke test uses (`look`, movement, `save`, `quit`, `score`, `title`). | `sim smoke` passes its login, save and quit steps on the Python game, or the time box ends. Go/no-go issue written with the numbers. |
 | **P2 Differential harness** | Scenario files, an additive C driver, goldens, pure-Python replay in the tests. Guard tests for the divergence classes. | 10 scenarios replay green; guard tests run in the suite |
 | **P3 Commands** | The rest of `act_info.c`, `act_move.c`, `act_obj.c`, `act_comm.c`, `act_enter.c`, `alias.c`, `ban.c`, `board.c`, `act_wiz.c` (but copyover and the commands that call OLC), with the random draws they make and the small pieces of P4 they need (#39). | Their tracker rows done; every `sim smoke` step but copyover's passes on Python |
@@ -276,20 +277,21 @@ cheap first look is possible: export each `.are` file to JSON from the loaded mo
 nothing changed. That gives real JSON to judge the format by, for areas first and then skills, classes and the other
 tables. The same issue takes up refactor decision 6 (tables in C or in data files).
 
-## After cut-over: stock ROM, and a separate 2.4b6 repo
+## After cut-over: three repos
 
-The next plan, before the bug fixes, takes Charm back toward stock ROM 2.4b6 (`plans/stock-rom.md`, its own issue).
-The same pristine source also serves a separate repo, "2.4b6-fixed", with two aims:
+The plan agreed on 2026-11-22 (#116) has three repos, in this order:
 
-- **An archive:** stock ROM 2.4b6 as Russ Taylor released it, with no additions, for the community.
-- **A fixed version:** the same code with the C bugs filed here fixed, the ones that are in stock ROM. Many of the
-  bugs labelled "after cut-over" are in QuickMUD's add-ons (OLC, copyover, colour, boards), so each is triaged
-  against the stock code first.
+1. **This repo becomes QuickMUD-Python** (#116, answered). It's renamed from Charm (`v1.1`), then every bug labelled
+   "after cut-over" is fixed, OLC and the other add-ons included (`v2.0`).
+2. **`2.4b6-fixed`, a new repo in C.** It holds an archive of stock ROM 2.4b6 as Russ Taylor released it, and a fixed
+   version: the same code with the bugs that are in stock ROM fixed. Many of the bugs filed here are in QuickMUD's
+   add-ons (OLC, copyover, colour, boards), so each is triaged against the stock code first.
+3. **Charm, a new repo:** a Python port of stock ROM. It's derived from QuickMUD-Python by stripping what QuickMUD
+   added, rather than ported again, and compared live with `2.4b6-fixed`. The harness at `c-final`
+   (`tools/oracle/`), adapted to stock ROM, makes the fixed C game Charm's oracle.
 
-These fit together. The diff between stock ROM and `c-final` is the list of what QuickMUD added, which is what the
-stock-ROM plan strips. A bug fixed in C in the fixed repo, and then in Charm's Python, can be checked against each
-other live: the harness at `c-final` (`tools/oracle/`), adapted to stock ROM, makes the fixed C game Charm's oracle
-again.
+The diff between stock ROM and `c-final` is the list of what QuickMUD added, which is what step 3 strips. Issues for
+steps 2 and 3 come after #116's work.
 
 **The pristine source** (found 2026-11-22; one source is enough, the user decided). It's the ROM consortium's own
 distribution page: Gabrielle Taylor's hypercube.org/tess/rom/, archived by the Wayback Machine in December 2000 and
@@ -306,14 +308,14 @@ Why it's trusted:
 - all 124 files are owned by `rtaylor/tess`, the newest is dated 1998-05-29, and `README.version` says "ROM 2.4b6,
   May 29, 1998"
 - `README.rom`, `README.version`, `doc/license.doc`, `doc/license.txt` and `doc/rom.license` are byte for byte
-  Charm's, which came by another path (QuickMUD, then avinson)
+  QuickMUD-Python's, which came by another path (QuickMUD, then avinson)
 - the official 2.4b5-to-2.4b6 patch reverse-applies to it cleanly: all 25 files, no failed, offset or fuzzed hunks
 
 The tree is `Rom24/` (`src/` 43 files, `area/` 56, `doc/`, the READMEs). The SHA-256 of a manifest of every file's
 SHA-256 (`find Rom24 -type f | sort`, then `sha256sum` each) is `a60419d0fd414548509945dba1e946e6b2cb7f6e5e3e2f7960a355f20eac3234`,
 for checking another copy by content.
 
-**Open for the issue:**
+**Open for step 2's issue:**
 
 - **The licence.** ROM's licence lets anyone release derivatives, "properly labelled as being derivatives of the
   ROM 2.4 code", but says only Russ Taylor may release ROM source itself. The fixed version is a derivative: it
@@ -327,8 +329,8 @@ for checking another copy by content.
 The Xania tools come over in [tools-port.md](tools-port.md). A Python game changes what each one can lean on.
 
 - **Explorer (assessments).** Until cut-over, Explorer reads the C: T2's table readers parse `const.c` and
-  `tables.c`, and the same readers check `charm/data/` against them. After cut-over, Explorer imports the tables
-  and the world from `charm` directly, so there's one source of truth. For formulas (to-hit, damage, XP, regen), an
+  `tables.c`, and the same readers check `quickmud/data/` against them. After cut-over, Explorer imports the tables
+  and the world from `quickmud` directly, so there's one source of truth. For formulas (to-hit, damage, XP, regen), an
   assessment that asks "what does the game do" calls the game's own pure functions. One that checks the game
   against its intent keeps an independent derivation, or it could only ever agree with the code. Source pointers
   name the Python function, and the marker gives its C origin.
@@ -338,7 +340,7 @@ The Xania tools come over in [tools-port.md](tools-port.md). A Python game chang
   runnable without Docker. Keeping `net/`'s descriptor interface small (#19, decision 4) is what makes it possible.
   P2's differential scenarios are Sim scenarios run against both games.
 - **Companions.** Xania Companions are rule-based bots that play beside a player. They follow, fight and heal, and
-  write their own legends, all built on Sim's session layer. On Charm they'd connect the same way, over telnet or
+  write their own legends, all built on Sim's session layer. On QuickMUD-Python they'd connect the same way, over telnet or
   in-process through a descriptor, and see only what a player sees. They never read game state directly, so they
   play by the same rules as people and don't tie themselves to the game's internals. They come after Sim's trials
   (T5) and aren't part of this plan, but the descriptor interface keeps the door open.

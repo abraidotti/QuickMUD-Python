@@ -1,14 +1,14 @@
-"""charm_tools port world: the Python game's world against the C game's, from the saved capture (no Docker).
+"""quickmud_tools port world: the Python game's world against the C game's, from the saved capture (no Docker).
 
 The capture is tools/tests/data/world-20261117.txt.xz: the C game booted by tools/oracle/worldcheck.c with
-CHARM_SEED=20261117 and a fixed clock, then three more area_update passes, dumped after each, before cut-over
+QUICKMUD_SEED=20261117 and a fixed clock, then three more area_update passes, dumped after each, before cut-over
 (the c-final tag has the driver).
 """
 
 import unittest
 from functools import lru_cache
 
-from charm_tools.port import world
+from quickmud_tools.port import world
 
 
 @lru_cache(maxsize=1)

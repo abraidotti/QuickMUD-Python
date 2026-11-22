@@ -1,11 +1,15 @@
-# Charm
+# QuickMUD-Python
 
-Charm is a MUD (a text-based multiplayer game) built on **ROM 2.4b6**, by way of the **QuickMUD** distribution.
-It's a Python port of QuickMUD's C game, at parity with it: the same game, the same files, bugs included. The C game
-is at the [`c-final`](https://github.com/abraidotti/charm/tree/c-final) tag. The aim is to grow it into a new game, using the assessment, simulation and
-build tools first developed for [Xania](https://github.com/mattgodbolt/xania) (see [Roadmap](#roadmap)).
+QuickMUD-Python is an unofficial Python port of **QuickMUD**, a MUD (a text-based multiplayer game) derived from
+**ROM 2.4b6**. It's at parity with QuickMUD's C game: the same game, the same files, bugs included (`v1.0`). Next, every
+bug filed here is fixed, OLC and the other add-ons included (#116). The C game is at the
+[`c-final`](https://github.com/abraidotti/QuickMUD-Python/tree/c-final) tag. The tools were first developed for
+[Xania](https://github.com/mattgodbolt/xania) (see [Roadmap](#roadmap)).
 
-Charm stands on more than thirty years of other people's work. The [lineage](#lineage) below credits them, and the
+This repo was called Charm until #116. That name goes to a new repo: a Python port of stock ROM 2.4b6, derived from this
+one, and checked against `2.4b6-fixed`, a C archive of stock ROM with its bugs fixed.
+
+QuickMUD-Python stands on more than thirty years of other people's work. The [lineage](#lineage) below credits them, and the
 [licence terms](#licence-terms) they set still apply to every copy of this code.
 
 - [Lineage](#lineage)
@@ -26,7 +30,7 @@ Each generation is a derivative of the one before it and is bound by every earli
 | to 2007 | **QuickMUD** (called "FastROM" until 2000) | Jim Robinson (Flugh), maintainer, "and many others before me" |
 | 2012 | QuickMUD 2007, warning fixes | Nick Di Mario (Trom Lios) |
 | 2014–2018 | `avinson/rom24-quickmud` on GitHub, Docker image | Aaron Vinson (avinson), with fixes from Blake Pell (blakepell) |
-| 2026– | **Charm** | [abraidotti](https://github.com/abraidotti) |
+| 2026– | **QuickMUD-Python** | [abraidotti](https://github.com/abraidotti) |
 
 ### DikuMUD (1990–1991)
 
@@ -99,19 +103,20 @@ Aaron Vinson (avinson) published the code as
 Pell (blakepell) contributed a Makefile fix, the copyover path fix, a fix for a copyover bug that let half-created
 characters log in (at level 0, or as anyone without a password), a shop memory leak fix and a help-logging fix.
 
-### Charm (2026–)
+### QuickMUD-Python (2026–)
 
-Charm is a fork of `avinson/rom24-quickmud` at [abraidotti/charm](https://github.com/abraidotti/charm). In 2026 it
+QuickMUD-Python is a fork of `avinson/rom24-quickmud` at
+[abraidotti/QuickMUD-Python](https://github.com/abraidotti/QuickMUD-Python), and was called Charm until #116. In 2026 it
 was ported to Python ([plans/python-port.md](plans/python-port.md)) and checked against the C game function by
 function, until the two matched: every C function ported, 122 scenarios and every live check the same on both. The C
 was then removed (#112); `c-final` is the last commit with it, and `v1.0` the first without.
 
 The Xania developers (The Moog, Death, Faramir, Rohan and Wandera) are thanked here too. Xania is a separate ROM
-descendant, and Charm's tooling grew out of work on it. No Xania code is in this repository.
+descendant, and QuickMUD-Python's tooling grew out of work on it. No Xania code is in this repository.
 
 ## Licence terms
 
-Charm is not open source in the modern sense. Running it means following all three licences in `doc/`:
+QuickMUD-Python is not open source in the modern sense. Running it means following all three licences in `doc/`:
 
 - **Diku** ([doc/license.doc](doc/license.doc)): no resale or operation for profit; the original authors' names must
   appear in the login sequence; the `credits` command must report the original authors; you must notify the Diku
@@ -125,7 +130,7 @@ Charm is not open source in the modern sense. Running it means following all thr
 
 ### Licence checklist
 
-Checked at cut-over (#112, decision 5; ticked for `v1.0`) and again at refactor R6, when Charm gets its own
+Checked at cut-over (#112, decision 5; ticked for `v1.0`) and again at refactor R6, when QuickMUD-Python gets its own
 identity:
 
 - [x] The login screen names the Diku authors and says it's based on ROM 2.4 beta, copyright Russ Taylor, inside 24
@@ -137,13 +142,13 @@ identity:
   the Docker image.
 - [x] Every `game/` module keeps its copyright header (`game/tests/test_guards.py`).
 - [x] `README*`, `CHANGELOG.quickmud` and `doc/`'s three licences are in the repo and the Docker image.
-- The operator's steps, not the code's: whoever runs Charm publicly notifies the Diku creators that they run a Diku
+- The operator's steps, not the code's: whoever runs QuickMUD-Python publicly notifies the Diku creators that they run a Diku
   MUD, and emails the ROM author before opening (ROM licence, term 4).
 
-IMC2, its strlcpy/strlcat and SHA-256 carried their own licences. Charm no longer ships them (#21), so their terms
+IMC2, its strlcpy/strlcat and SHA-256 carried their own licences. QuickMUD-Python no longer ships them (#21), so their terms
 no longer apply; their authors stay credited above. Leave every copyright header in `game/` as it is (each module's
 licence header, and the C's own headers at `c-final`), and keep `help diku`, `help merc`, `help rom` and the
-greeting's credits when Charm gets its own identity.
+greeting's credits when QuickMUD-Python gets its own identity.
 
 The QuickMUD maintainer's request still stands: "don't just download this code, compile it, and advertise it on MUD
 websites as 'a highly modified ROM codebase'. Spend some time developing it."
@@ -174,8 +179,8 @@ To check a build, run the smoke test. It starts a throwaway container from the i
 The container is always removed afterwards.
 
 ```sh
-docker build -t charm .
-python tools/smoke.py --docker charm   # exit 0 passed, 1 failed, 2 couldn't run
+docker build -t quickmud .
+python tools/smoke.py --docker quickmud   # exit 0 passed, 1 failed, 2 couldn't run
 ```
 
 The C game's image was built from `tools/oracle/Dockerfile.c`, which is at the `c-final` tag with the C source.
@@ -188,7 +193,7 @@ PYTHONPATH=../game ./startup.sh &  # restarts the game if it stops; a 'shutdown'
 telnet 127.0.0.1 4000
 ```
 
-Or run it once, in the foreground: `PYTHONPATH=game python3 -m charm --port 4000` from the repo root. It needs Python
+Or run it once, in the foreground: `PYTHONPATH=game python3 -m quickmud --port 4000` from the repo root. It needs Python
 3.12 or later, and nothing else. Copyover needs Linux (WSL works).
 
 ### First immortal
@@ -204,31 +209,31 @@ character to level 2 and edit its file, to make the first immortal. After that, 
 | `area/` | Area files, `area.lst`, `startup.sh`, `qmconfig.rc` |
 | `doc/` | Diku, Merc, ROM, OLC and MOBprogram documentation and licences |
 | `player/`, `log/` | Player files and logs |
-| `plans/` | Charm's plans |
-| `tools/` | `charm_tools`, the Python tools for working on Charm (MIT, see [tools/LICENSE](tools/LICENSE)) |
+| `plans/` | QuickMUD-Python's plans |
+| `tools/` | `quickmud_tools`, the Python tools for working on QuickMUD-Python (MIT, see [tools/LICENSE](tools/LICENSE)) |
 
 ## Tools
 
-`tools/` holds `charm_tools`. It's stdlib-only Python 3.12+, so there's nothing to install. Run it from `tools/`:
+`tools/` holds `quickmud_tools`. It's stdlib-only Python 3.12+, so there's nothing to install. Run it from `tools/`:
 
 ```sh
 cd tools
-python -m charm_tools doctor                     # Python, checkout, Docker and the charm image
-python -m charm_tools explore areas              # load every area as the game does: counts and bug() lines
-python -m charm_tools explore check              # data checks: never-spawned mobs, unreachable rooms, ...
-python -m charm_tools explore parity           # compare the loader with the C game's saved capture
-python -m charm_tools sim smoke --docker charm   # the smoke test on the image (also: python tools/smoke.py from the root)
-python -m charm_tools sim smoke --python         # its mortal steps against the game, run here
-python -m charm_tools sim bots --python --quick  # bots playing while the game times its pulses
-python -m charm_tools sim lobby --python         # awkward replies at every login prompt
-python -m charm_tools sim churn --python         # bots creating characters and quitting
-python -m charm_tools port status                # the C functions ported (frozen at c-final), and where each went
-python -m charm_tools port world                 # boot the world and compare it with the C game's capture
-python -m charm_tools port io                    # comm.c's input and output cases, against the C game's results
-python -m charm_tools port crypt                 # the game's password hashing against glibc's saved answers
-python -m charm_tools port players               # the C game's saved player files, loaded and saved by the game
-python -m charm_tools port scenarios             # scenario files against their goldens, step by step
-python -m charm_tools port coverage act_move.c   # lines of the ported functions no test or scenario runs
+python -m quickmud_tools doctor                     # Python, checkout, Docker and the quickmud image
+python -m quickmud_tools explore areas              # load every area as the game does: counts and bug() lines
+python -m quickmud_tools explore check              # data checks: never-spawned mobs, unreachable rooms, ...
+python -m quickmud_tools explore parity           # compare the loader with the C game's saved capture
+python -m quickmud_tools sim smoke --docker quickmud   # the smoke test on the image (also: python tools/smoke.py from the root)
+python -m quickmud_tools sim smoke --python         # its mortal steps against the game, run here
+python -m quickmud_tools sim bots --python --quick  # bots playing while the game times its pulses
+python -m quickmud_tools sim lobby --python         # awkward replies at every login prompt
+python -m quickmud_tools sim churn --python         # bots creating characters and quitting
+python -m quickmud_tools port status                # the C functions ported (frozen at c-final), and where each went
+python -m quickmud_tools port world                 # boot the world and compare it with the C game's capture
+python -m quickmud_tools port io                    # comm.c's input and output cases, against the C game's results
+python -m quickmud_tools port crypt                 # the game's password hashing against glibc's saved answers
+python -m quickmud_tools port players               # the C game's saved player files, loaded and saved by the game
+python -m quickmud_tools port scenarios             # scenario files against their goldens, step by step
+python -m quickmud_tools port coverage act_move.c   # lines of the ported functions no test or scenario runs
 python -m unittest discover -s tests -t .        # the tools' own tests
 ```
 
@@ -247,8 +252,8 @@ The tools are being ported from the Xania tools in stages; see [plans/tools-port
 ## Roadmap
 
 - [plans/tools-port.md](plans/tools-port.md): bring the assessment (Explorer), testing (Sim) and build (Builder) tools
-  from the Xania work into this repository, so Charm can be developed on its own.
+  from the Xania work into this repository, so QuickMUD-Python can be developed on its own.
 - [plans/refactor.md](plans/refactor.md): make the code safe and testable to work on, without breaking the
   credits and licences above.
 - [plans/python-port.md](plans/python-port.md): port the game to Python, matching the C game first. Done at
-  `v1.0`.
+  `v1.0`. Its last section is the plan after it: fix every bug here (#116), then `2.4b6-fixed` and Charm.

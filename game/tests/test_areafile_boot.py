@@ -1,17 +1,18 @@
 """The loaders (areafile/boot.py) on small synthetic areas. The real game's behaviour on the stock areas and on
-broken ones is pinned by charm_tools' test_parity.py; these cover the details those don't show.
+broken ones is pinned by quickmud_tools' test_parity.py; these cover the details those don't show.
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import unittest
 from functools import lru_cache
 
-from charm.world.areafile.boot import Boot
-from charm.world.areafile.lookups import LookupTables
-from charm.world.areafile.reader import AreaParseError, Reader
+from quickmud.world.areafile.boot import Boot
+from quickmud.world.areafile.lookups import LookupTables
+from quickmud.world.areafile.reader import AreaParseError, Reader
 
 HEADER = "#AREA\nt.are~\nTest~\n{ 1 5} Me  Test~\n30000 30099\n\n"
 

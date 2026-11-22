@@ -1,23 +1,24 @@
-"""Player files and passwords: the pieces the round trip with the C game (charm_tools port players) builds on.
+"""Player files and passwords: the pieces the round trip with the C game (quickmud_tools port players) builds on.
 
-- crypt: the 2,000 cases glibc answered (game/tests/data/crypt.json, from charm_tools port crypt)
+- crypt: the 2,000 cases glibc answered (game/tests/data/crypt.json, from quickmud_tools port crypt)
 - the save format's quirks: print_flags, capitalize, the colour digits, objects written tail first and the ones
   a low-level character can't keep left out, the pet's Pos line, and own strings (the C's pointer comparison)
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import json
 import unittest
 from pathlib import Path
 
-from charm.core.crypt import crypt
-from charm.data import constants as C
-from charm.entities.things import Char, Obj, PCData
-from charm.persist import player
-from charm.world.areafile.reader import Reader
+from quickmud.core.crypt import crypt
+from quickmud.data import constants as C
+from quickmud.entities.things import Char, Obj, PCData
+from quickmud.persist import player
+from quickmud.world.areafile.reader import Reader
 
 DATA = Path(__file__).parent / "data"
 

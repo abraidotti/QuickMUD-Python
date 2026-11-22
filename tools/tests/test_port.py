@@ -1,9 +1,9 @@
-"""charm_tools port status: the C functions frozen at c-final, and the marker scan."""
+"""quickmud_tools port status: the C functions frozen at c-final, and the marker scan."""
 
 import unittest
 
-from charm_tools import paths
-from charm_tools.port import status
+from quickmud_tools import paths
+from quickmud_tools.port import status
 
 
 class FrozenCFunctions(unittest.TestCase):
@@ -22,7 +22,7 @@ class RealTree(unittest.TestCase):
         ported = {(p.c_file, p.c_name): p.module for p in st.ports}
         for name in ("init_mm", "number_mm", "number_range", "number_percent", "number_door", "number_bits",
                      "number_fuzzy", "dice"):
-            self.assertEqual(ported.get(("db.c", name)), "charm/core/rng.py", name)
+            self.assertEqual(ported.get(("db.c", name)), "quickmud/core/rng.py", name)
 
     def test_finds_the_editor_functions(self):
         names = {(f.file, f.name) for f in status.status().functions}
@@ -32,14 +32,14 @@ class RealTree(unittest.TestCase):
 
     def test_report(self):
         text = status.report(status.status())
-        self.assertIn("charm/core/rng.py", text)
+        self.assertIn("quickmud/core/rng.py", text)
         self.assertRegex(text, r"\d+ of \d+ C functions ported \(\d+\.\d%\), \d+ more partly")
-        self.assertIn("All hand-written Python in game/charm", text)
+        self.assertIn("All hand-written Python in game/quickmud", text)
 
     def test_partial_markers(self):
         st = status.status()
         partial = {(p.c_file, p.c_name) for p in st.ports if p.partial}
-        self.assertIn(("db.c", "boot_db"), partial)  # charm.world.areafile.world's half; charm.entities.boot is whole
+        self.assertIn(("db.c", "boot_db"), partial)  # quickmud.world.areafile.world's half; quickmud.entities.boot is whole
         self.assertNotIn(("comm.c", "game_loop_unix"), partial)  # whole, with a kept difference (#112)
         for name in ("load_rooms", "create_mobile", "create_object", "reset_room", "bug"):
             self.assertNotIn(("db.c", name), partial)
@@ -53,7 +53,7 @@ class RealTree(unittest.TestCase):
     def test_kept_differences(self):
         st = status.status()
         self.assertEqual(set(st.kept), {("comm.c", "game_loop_unix"), ("db.c", "do_memory"), ("db.c", "do_dump")})
-        self.assertIn("kept on purpose (3, charm/core/kept_differences.py)", status.report(st))
+        self.assertIn("kept on purpose (3, quickmud/core/kept_differences.py)", status.report(st))
 
     def test_a_bad_kept_entry_is_an_error(self):
         real = status.kept_differences
@@ -74,7 +74,7 @@ class RealTree(unittest.TestCase):
         st = status.status()
         self.assertTrue(st.later)
         self.assertTrue(all(n.text for n in st.later))
-        self.assertTrue(any(n.module == "charm/entities/handler.py" for n in st.later))
+        self.assertTrue(any(n.module == "quickmud/entities/handler.py" for n in st.later))
         self.assertIn("Improvements noted for later", status.report(st))
         lists = next(n for n in st.later if "insert(0)" in n.text)
         self.assertTrue(lists.text.endswith("carrying, contains)"))  # joined over its second comment line
@@ -82,7 +82,7 @@ class RealTree(unittest.TestCase):
 
     def test_use_game_makes_charm_importable(self):
         paths.use_game()
-        from charm.core import rng as game_rng  # noqa: F401  (the import is the test)
+        from quickmud.core import rng as game_rng  # noqa: F401  (the import is the test)
 
 
 if __name__ == "__main__":

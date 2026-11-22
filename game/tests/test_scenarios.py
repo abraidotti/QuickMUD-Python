@@ -3,18 +3,19 @@
 Each game/tests/data/scenarios/NAME.scn has a NAME.golden: what the C game printed for it, through
 tools/oracle/scenario.c at the c-final tag. Here the Python game plays the same file, and every line must match.
 A golden's first line says where it came from: "c-final", or "python" once a deliberate change (a bug fix) has saved
-it again from the Python game (charm_tools port scenarios --save).
+it again from the Python game (quickmud_tools port scenarios --save).
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import unittest
 from pathlib import Path
 
-from charm.testing import watchdog
-from charm.testing.scenario import EXPECT_STOP, GOLDEN_SOURCES, difference, esc, play_fresh
+from quickmud.testing import watchdog
+from quickmud.testing.scenario import EXPECT_STOP, GOLDEN_SOURCES, difference, esc, kept_form, play_fresh
 
 REPO = Path(__file__).resolve().parents[2]
 SCENARIOS = Path(__file__).parent / "data" / "scenarios"
@@ -27,9 +28,11 @@ class Goldens(unittest.TestCase):
         for scn in files:
             with self.subTest(scenario=scn.stem):
                 golden = scn.with_suffix(".golden")
-                self.assertTrue(golden.exists(), "no golden: charm_tools port scenarios --save --only NAME")
-                first = golden.read_text(encoding="latin-1").splitlines()[0]
-                self.assertIn(first, GOLDEN_SOURCES)
+                self.assertTrue(golden.exists(), "no golden: quickmud_tools port scenarios --save --only NAME")
+                lines = golden.read_text(encoding="latin-1").splitlines()
+                self.assertIn(lines[0], GOLDEN_SOURCES)
+                if lines[0] == "python":  # saved from the game: its kept differences are written set aside
+                    self.assertEqual([x for x in lines if kept_form(x) != x], [])
 
     def test_python_matches_the_c(self):
         for scn in sorted(SCENARIOS.glob("*.scn")):
@@ -48,7 +51,7 @@ class WhereTheCCrashes(unittest.TestCase):
     CWouldCrash there instead."""
 
     def test_a_tell_to_an_awake_mob(self):
-        # do_tell reads victim->desc->connected, and a mob has no connection (abraidotti/charm#49). The C
+        # do_tell reads victim->desc->connected, and a mob has no connection (abraidotti/QuickMUD-Python#49). The C
         # driver dies with a segmentation fault on this step.
         text = "@connect dec\nDecimus\npsswrd\n@return\n@mob 3011 3001\ntell hassan hello\nlook\n"
         out = play_fresh(text, REPO)
@@ -57,7 +60,7 @@ class WhereTheCCrashes(unittest.TestCase):
 
     def test_removing_note_0_from_an_empty_board(self):
         # find_note counts no notes, so count == num == 0, and it calls is_note_to with a NULL note
-        # (abraidotti/charm#63).
+        # (abraidotti/QuickMUD-Python#63).
         text = "@connect dec\nDecimus\npsswrd\n@return\n@return\nnote remove 0\nlook\n"
         out = play_fresh(text, REPO)
         self.assertEqual(out[-2], 'step 6 "note remove 0"')
@@ -65,7 +68,7 @@ class WhereTheCCrashes(unittest.TestCase):
 
     def test_reading_a_long_note(self):
         # show_note_to_char formats the whole note into printf_to_char's buf[MAX_STRING_LENGTH] (4608), and a note
-        # may hold 17,432 characters: 58 lines of 80 overflow it (abraidotti/charm#63). Posting it is fine.
+        # may hold 17,432 characters: 58 lines of 80 overflow it (abraidotti/QuickMUD-Python#63). Posting it is fine.
         lines = "".join("%02d %s\n" % (i, "x" * 77) for i in range(58))
         text = "@connect dec\nDecimus\npsswrd\n@return\n@return\nnote write\nall\nLong\n" + lines + "~\np\nnote read 1\n"
         out = play_fresh(text, REPO)
@@ -74,7 +77,7 @@ class WhereTheCCrashes(unittest.TestCase):
 
     def test_a_long_recipient_list_on_general(self):
         # General must include "all", and handle_con_note_to strcats " all" onto the 252 characters typed, in a
-        # buf[MAX_INPUT_LENGTH] (256): glibc aborts with "buffer overflow detected" (abraidotti/charm#63).
+        # buf[MAX_INPUT_LENGTH] (256): glibc aborts with "buffer overflow detected" (abraidotti/QuickMUD-Python#63).
         to = " ".join(["Quintus"] * 32)[:252]
         text = "@connect dec\nDecimus\npsswrd\n@return\n@return\nnote write\n" + to + "\nlook\n"
         out = play_fresh(text, REPO)
@@ -83,7 +86,7 @@ class WhereTheCCrashes(unittest.TestCase):
 
     def test_a_long_prefix(self):
         # do_prefix sprintfs "Prefix changed to %s.\r\n" into buf[MAX_INPUT_LENGTH] (256), and never sends it: a
-        # 235-character prefix overflows it, and glibc aborts with "buffer overflow detected" (abraidotti/charm#69).
+        # 235-character prefix overflows it, and glibc aborts with "buffer overflow detected" (abraidotti/QuickMUD-Python#69).
         text = "@connect god\nSmokegod\nsmoke123\n@return\n@return\nprefix say\nprefix %s\nlook\n" % ("x" * 235)
         out = play_fresh(text, REPO)
         self.assertEqual(out[-2], 'step 7 "prefix %s"' % ("x" * 235))
@@ -92,7 +95,7 @@ class WhereTheCCrashes(unittest.TestCase):
     def test_forcing_players_to_quit_past_a_pet(self):
         # A player's pet loads just after them in char_list. force players takes the next character before each
         # command, so when Decimus quits and his kitten is freed, the loop goes on through freed memory. The C doesn't
-        # crash here: it stops short, and Outlaw, after the kitten, is never forced (abraidotti/charm#72).
+        # crash here: it stops short, and Outlaw, after the kitten, is never forced (abraidotti/QuickMUD-Python#72).
         text = ("@connect out\nOutlaw\npsswrd\n@return\n@return\n"
                 "@connect dec\nDecimus\npsswrd\n@return\n@return\n@mob 3090 3001\n@charm pet\nquit\n"
                 "@connect dec2\nDecimus\npsswrd\n@return\n@return\n"
@@ -104,7 +107,7 @@ class WhereTheCCrashes(unittest.TestCase):
 
 
 class Difference(unittest.TestCase):
-    C = ['step 1 "look"', 'out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]
+    C = ['step 1 "look"', 'out a "Welcome to QuickMUD-Python."', "rng 1 0", 'step 2 "sc"', 'out a "scan"', "rng 1 0"]
 
     def test_lines_must_match(self):
         self.assertIsNone(difference(self.C, list(self.C), ""))
@@ -112,7 +115,7 @@ class Difference(unittest.TestCase):
         self.assertIn("line 2", difference(self.C, py, ""))
 
     def test_a_stop_is_a_difference_unless_expected(self):
-        py = self.C[:1] + ['out a "Welcome to Charm."', "rng 1 0", 'step 2 "sc"', "stopped NotPorted: do_scan"]
+        py = self.C[:1] + ['out a "Welcome to QuickMUD-Python."', "rng 1 0", 'step 2 "sc"', "stopped NotPorted: do_scan"]
         self.assertIn("line 5", difference(self.C, py, ""))
         self.assertIsNone(difference(self.C, py, EXPECT_STOP + "\n"))
         self.assertIn("didn't", difference(self.C, self.C, EXPECT_STOP))

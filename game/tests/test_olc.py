@@ -4,9 +4,10 @@ What asave writes was compared with the C game byte for byte by port asave until
 asave-* scenarios (a fixture area in OLC's format). These pin down fix_string's quirks, flag_value, and the paths
 where the C would crash or can't open a file.
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import io
@@ -14,13 +15,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from charm.core import log
-from charm.core.errors import CWouldCrash
-from charm.data import constants as C
-from charm.data import flags as F
-from charm.entities import game as game_module
-from charm.olc import bits, save
-from charm.world.index import Reset
+from quickmud.core import log
+from quickmud.core.errors import CWouldCrash
+from quickmud.data import constants as C
+from quickmud.data import flags as F
+from quickmud.entities import game as game_module
+from quickmud.olc import bits, save
+from quickmud.world.index import Reset
 from tests.test_commands import boot_game
 
 
@@ -75,7 +76,7 @@ class FixString(unittest.TestCase):
 
 class Strings(unittest.TestCase):
     def test_string_replace(self):
-        from charm.olc.strings import string_replace
+        from quickmud.olc.strings import string_replace
 
         self.assertEqual(string_replace("Planner Delver", "Del", ""), "Planner ver")  # strstr: inside a word
         self.assertEqual(string_replace("a b a", "a", "c"), "c b a")  # the first only
@@ -84,7 +85,7 @@ class Strings(unittest.TestCase):
             string_replace("x" * C.MAX_STRING_LENGTH, "x", "")
 
     def test_unpad_and_proper(self):
-        from charm.olc.strings import string_proper, string_unpad
+        from quickmud.olc.strings import string_proper, string_unpad
 
         self.assertEqual(string_unpad("  a b  "), "a b")
         self.assertEqual(string_unpad("\ta "), "\ta")  # spaces only
@@ -95,7 +96,7 @@ class Strings(unittest.TestCase):
 
 class StringEditor(unittest.TestCase):
     def test_format_string(self):
-        from charm.olc.strings import format_string
+        from quickmud.olc.strings import format_string
 
         self.assertEqual(format_string("hello.  there\n\r"), "Hello.  There \n\r")  # the trailing space stays
         self.assertEqual(format_string('a (b.) c "d." e'), 'A (b.)  C "d."  E\n\r')
@@ -107,14 +108,14 @@ class StringEditor(unittest.TestCase):
         self.assertIn("No spaces", "".join(lines))
 
     def test_format_string_reads_before_its_buffer(self):
-        from charm.olc.strings import format_string
+        from quickmud.olc.strings import format_string
 
         for text in ("", " leading", "\nx", ". x"):
             with self.subTest(text=text), self.assertRaises(CWouldCrash):
                 format_string(text)
 
     def test_lines(self):
-        from charm.olc.strings import first_arg, merc_getline, numlines, string_lineadd, string_linedel
+        from quickmud.olc.strings import first_arg, merc_getline, numlines, string_lineadd, string_linedel
 
         text = "one\n\rtwo\n\rthree\n\r"
         self.assertEqual(string_linedel(text, 2), "one\n\rthree\n\r")
@@ -130,10 +131,10 @@ class StringEditor(unittest.TestCase):
         self.assertEqual(first_arg("%Pct% x", True), ("x", "pct"))
 
     def test_too_long_and_none(self):
-        from charm.olc.strings import string_add, string_append
-        from charm.net.descriptor import new_descriptor
-        from charm.entities.things import new_char
-        from charm.world.index import ExtraDescr
+        from quickmud.olc.strings import string_add, string_append
+        from quickmud.net.descriptor import new_descriptor
+        from quickmud.entities.things import new_char
+        from quickmud.world.index import ExtraDescr
 
         ch = new_char(0)
         ch.desc = new_descriptor()
@@ -160,7 +161,7 @@ class RoomEditor(unittest.TestCase):
         self.case.tearDown()
 
     def test_add_reset_slots(self):
-        from charm.olc.olc import add_reset
+        from quickmud.olc.olc import add_reset
 
         room = self.room
         room.resets = []
@@ -173,8 +174,8 @@ class RoomEditor(unittest.TestCase):
         self.assertEqual([r.command for r in room.resets], ["B", "D", "A", "C", "E"])
 
     def test_an_exit_to_nowhere_crashes(self):
-        from charm.olc.act import change_exit
-        from charm.olc.mem import new_exit
+        from quickmud.olc.act import change_exit
+        from quickmud.olc.mem import new_exit
 
         self.room.exit[1] = new_exit()  # to_room None
         for line in ("door", "delete"):
@@ -182,7 +183,7 @@ class RoomEditor(unittest.TestCase):
                 change_exit(self.ch, line, 1)
 
     def test_removing_no_shop_crashes(self):
-        from charm.olc.act import medit_shop
+        from quickmud.olc.act import medit_shop
 
         self.ch.desc.pEdit = next(iter(self.game.index.mobs.values()))
         self.ch.desc.pEdit.shop = None
@@ -193,14 +194,14 @@ class RoomEditor(unittest.TestCase):
             medit_shop(self.ch, "type -1 food")  # before the array in the C, not its last slot
 
     def test_dice_are_cut_at_non_digits(self):
-        from charm.olc.act import _dice_parts
+        from quickmud.olc.act import _dice_parts
 
         self.assertEqual(_dice_parts("2d6+10"), ("2", "6", "10"))
         self.assertEqual(_dice_parts("3 d 4 + 5x9"), ("3", "4", "5"))
         self.assertEqual(_dice_parts("d6"), ("", "6", ""))
 
     def test_resets_inside_nothing_crashes(self):
-        from charm.olc.olc import do_resets
+        from quickmud.olc.olc import do_resets
 
         self.room.area.security = 0
         with self.assertRaises(CWouldCrash):
@@ -209,7 +210,7 @@ class RoomEditor(unittest.TestCase):
 
 class StringSpaceAndOdds(unittest.TestCase):
     def test_strings_are_kept_once(self):
-        from charm.world.areafile.reader import Reader, StringSpace
+        from quickmud.world.areafile.reader import Reader, StringSpace
 
         space = StringSpace()
         r = Reader("one~ two~ one~ ~ three\n")
@@ -220,7 +221,7 @@ class StringSpaceAndOdds(unittest.TestCase):
         self.assertEqual((space.count, space.used), (3, (8 + 3 + 1) * 2 + (8 + 5 + 1)))  # "" and a repeat take nothing
 
     def test_the_space_runs_out(self):
-        from charm.world.areafile.reader import MAX_STRING, AreaParseError, Reader, StringSpace
+        from quickmud.world.areafile.reader import MAX_STRING, AreaParseError, Reader, StringSpace
 
         space = StringSpace()
         space.used = MAX_STRING - C.MAX_STRING_LENGTH - 8  # just room for one more check
@@ -232,8 +233,8 @@ class StringSpaceAndOdds(unittest.TestCase):
         self.assertIn("Fread_string: MAX_STRING 1413120 exceeded.", str(e.exception))
 
     def test_slot_lookup(self):
-        from charm.data.skills import SKILL_TABLE
-        from charm.systems.magic import slot_lookup
+        from quickmud.data.skills import SKILL_TABLE
+        from quickmud.systems.magic import slot_lookup
 
         sn = next(k for k, s in enumerate(SKILL_TABLE) if s.slot > 0)
         self.assertEqual(slot_lookup(SKILL_TABLE[sn].slot), sn)
@@ -243,8 +244,8 @@ class StringSpaceAndOdds(unittest.TestCase):
             slot_lookup(99999, booting=True)
 
     def test_a_dazed_exotic_weapon_reads_before_the_table(self):
-        from charm.entities.handler import get_skill
-        from charm.entities.things import new_char
+        from quickmud.entities.handler import get_skill
+        from quickmud.entities.things import new_char
 
         ch = new_char(0)
         ch.daze = 1
@@ -252,8 +253,8 @@ class StringSpaceAndOdds(unittest.TestCase):
             get_skill(ch, -1)
 
     def test_improving_an_exotic_weapon_reads_before_the_table(self):
-        from charm.entities.things import new_char, new_pcdata
-        from charm.systems.skills import check_improve
+        from quickmud.entities.things import new_char, new_pcdata
+        from quickmud.systems.skills import check_improve
 
         ch = new_char(0)
         ch.pcdata = new_pcdata()
@@ -332,13 +333,13 @@ class Saving(unittest.TestCase):
 
 
 def save_affect(where):
-    from charm.world.index import Affect
+    from quickmud.world.index import Affect
 
     return Affect(where, -1, 1, -1, 1, 2, 4)
 
 
 def save_help_area(game):
-    from charm.world.index import Help, HelpArea
+    from quickmud.world.index import Help, HelpArea
 
     ha = HelpArea("h.hlp", None, [Help(0, "TEST", "Some text.\n\r")], changed=True)
     game.index.had_list.insert(0, ha)

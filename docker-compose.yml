@@ -1,13 +1,13 @@
 services:
-  charm:
+  quickmud:
     build: .
-    image: charm
+    image: quickmud
     init: true
     restart: unless-stopped
     ports:
       - "4000:4000"
     volumes:
-      - ./player:/opt/charm/player
-      - ./log:/opt/charm/log
-      - ./gods:/opt/charm/gods
-      - ./notes:/opt/charm/notes
+      - ./player:/opt/quickmud/player
+      - ./log:/opt/quickmud/log
+      - ./gods:/opt/quickmud/gods
+      - ./notes:/opt/quickmud/notes

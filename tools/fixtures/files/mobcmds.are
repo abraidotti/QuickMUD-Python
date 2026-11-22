@@ -1,7 +1,7 @@
 #AREA
 mobcmds.are~
 Mob command tests~
-{ 1 5} Charm  Mob commands~
+{ 1 5} QuickMUD-Python Mob commands~
 30000 30099
 
 #MOBILES
