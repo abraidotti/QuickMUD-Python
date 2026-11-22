@@ -1,8 +1,8 @@
 # QuickMUD-Python
 
 QuickMUD-Python is an unofficial Python port of **QuickMUD**, a MUD (a text-based multiplayer game) derived from
-**ROM 2.4b6**. It's at parity with QuickMUD's C game: the same game, the same files, bugs included (`v1.0`). Next, every
-bug filed here is fixed, OLC and the other add-ons included (#116). The C game is at the
+**ROM 2.4b6**. It's at parity with QuickMUD's C game: the same game, the same files, bugs included (`v1.0`). The bugs
+filed here are fixed first in stock ROM's C and in Charm (below), and then here. The C game is at the
 [`c-final`](https://github.com/abraidotti/QuickMUD-Python/tree/c-final) tag. The tools were first developed for
 [Xania](https://github.com/mattgodbolt/xania) (see [Roadmap](#roadmap)).
 
@@ -256,4 +256,4 @@ The tools are being ported from the Xania tools in stages; see [plans/tools-port
 - [plans/refactor.md](plans/refactor.md): make the code safe and testable to work on, without breaking the
   credits and licences above.
 - [plans/python-port.md](plans/python-port.md): port the game to Python, matching the C game first. Done at
-  `v1.0`. Its last section is the plan after it: fix every bug here (#116), then `2.4b6-fixed` and Charm.
+  `v1.0`. Its last section is the plan after it: `2.4b6-fixed`, then Charm, then this repo's fixes.

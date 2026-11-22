@@ -5,9 +5,10 @@ parity with QuickMUD's C, which is at the `c-final` tag (#112). It was called Ch
 `abraidotti/QuickMUD-Python`, a fork of `avinson/rom24-quickmud`. No upstream for our work: PRs go to
 `abraidotti/QuickMUD-Python` only.
 
-The plan (#116): fix every bug here, OLC included (`v2.0`); then `2.4b6-fixed`, a new C repo archiving stock ROM 2.4b6
-with its bugs fixed; then Charm, a new Python repo porting stock ROM, derived from this one and compared live with
-`2.4b6-fixed`. In this repo, "charm" is the game word (the spell, `AFF_CHARM`, "Charmed"), not a name: leave it.
+The plan (#116, order changed 2026-11-22): first `2.4b6-fixed`, a new C repo archiving stock ROM 2.4b6 with its bugs
+fixed, for the ROM community; then Charm, a new Python repo porting stock ROM with the same fixes, derived from this one
+and compared live with `2.4b6-fixed`; then back here, to decide which fixes this repo takes. The bugs filed here stay
+open until then: don't fix them here yet. In this repo, "charm" is the game word (the spell, `AFF_CHARM`, "Charmed"), not a name: leave it.
 
 ## Read first
 
