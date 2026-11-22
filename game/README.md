@@ -138,7 +138,7 @@ seeds, from `tests/data/rng.json`. To capture that file again from the C game (i
 image):
 
 ```sh
-docker build --target build -t charm:build .
+docker build -f tools/oracle/Dockerfile.c --target build -t charm:build .
 cd tools
 python -m charm_tools port rng --docker charm:build          # compare with the saved file
 python -m charm_tools port rng --docker charm:build --save   # replace it

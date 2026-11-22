@@ -30,6 +30,7 @@ NOT_NAMES = {"if", "while", "for", "switch", "return", "sizeof", "args"}
 # OLC defines its editor functions through macros: "REDIT( redit_show )" is bool redit_show(CHAR_DATA *, char *).
 MACRO_DEF = re.compile(r"^[A-Z][A-Z_]*\s*\(\s*([a-z_]\w*)\s*\)\s*$")
 COMMENT = re.compile(r"/\*.*?\*/", re.S)
+ISSUE = re.compile(r"#\d+")
 
 
 @dataclass
@@ -70,6 +71,7 @@ class Status:
     bad_markers: list[str] = field(default_factory=list)
     python_lines: int = 0  # every line of game/charm/**/*.py outside data/
     no_counterpart: dict = field(default_factory=dict)  # (C file, function): reason (charm/core/no_counterpart.py)
+    kept: dict = field(default_factory=dict)  # (C file, function): the difference (charm/core/kept_differences.py)
     later: list[Later] = field(default_factory=list)
 
 
@@ -172,19 +174,40 @@ def status(root: Path | None = None) -> Status:
     marked = {(p.c_file, p.c_name) for p in ports}
     bad += [f"charm/core/no_counterpart.py: {f} {n} names no C function" for f, n in none if (f, n) not in known]
     bad += [f"charm/core/no_counterpart.py: {f} {n} has a '# C:' marker too" for f, n in none if (f, n) in marked]
-    return Status(functions, c_lines, ports, bad, python_lines, later=later, no_counterpart=none)
+    kept = kept_differences(root)
+    whole = {(p.c_file, p.c_name) for p in ports if not p.partial}
+    part = {(p.c_file, p.c_name) for p in ports if p.partial}
+    for (f, n), why in sorted(kept.items()):
+        where = f"charm/core/kept_differences.py: {f} {n}"
+        if (f, n) not in known:
+            bad.append(f"{where} names no C function")
+        elif (f, n) in part:
+            bad.append(f"{where} still has a [partial] marker")
+        elif (f, n) not in whole:
+            bad.append(f"{where} has no '# C:' marker")
+        if not ISSUE.search(why):
+            bad.append(f"{where} cites no issue (#N)")
+    return Status(functions, c_lines, ports, bad, python_lines, later=later, no_counterpart=none, kept=kept)
 
 
-def no_counterpart(root: Path) -> dict:
-    """NO_COUNTERPART, read as a literal (the game isn't imported)."""
-    path = game_dir(root) / "charm" / "core" / "no_counterpart.py"
+def _literal(root: Path, module: str, name: str) -> dict:
+    """A dict assigned in charm/core/<module>.py, read as a literal (the game isn't imported)."""
+    path = game_dir(root) / "charm" / "core" / f"{module}.py"
     if not path.exists():
         return {}
     tree = ast.parse(path.read_text(encoding="utf-8"))
     for node in tree.body:
-        if isinstance(node, ast.Assign) and any(getattr(t, "id", "") == "NO_COUNTERPART" for t in node.targets):
+        if isinstance(node, ast.Assign) and any(getattr(t, "id", "") == name for t in node.targets):
             return ast.literal_eval(node.value)
     return {}
+
+
+def no_counterpart(root: Path) -> dict:
+    return _literal(root, "no_counterpart", "NO_COUNTERPART")
+
+
+def kept_differences(root: Path) -> dict:
+    return _literal(root, "kept_differences", "KEPT_DIFFERENCES")
 
 
 def report(st: Status) -> str:
@@ -222,6 +245,11 @@ def report(st: Status) -> str:
         out.append("")
         out.append(f"Counted as done with no Python counterpart ({len(st.no_counterpart)}, charm/core/no_counterpart.py):")
         out += [f"  {f} {n}: {why}" for (f, n), why in sorted(st.no_counterpart.items())]
+    if st.kept:
+        out.append("")
+        out.append(f"Ported whole but for a difference kept on purpose ({len(st.kept)}, "
+                   f"charm/core/kept_differences.py):")
+        out += [f"  {f} {n}: {why}" for (f, n), why in sorted(st.kept.items())]
     notes = [n for n in st.later if n.text]
     if notes:
         out.append("")

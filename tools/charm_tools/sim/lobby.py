@@ -1,8 +1,8 @@
 """charm_tools sim lobby: awkward replies at every login prompt, on one game or on both, compared (#112, decision 1).
 
     python -m charm_tools sim lobby --python --quick         # preflight: two prompts, two replies
-    python -m charm_tools sim lobby --docker charm:p1        # the C game
-    python -m charm_tools sim lobby --compare charm:p1       # both, then the differences
+    python -m charm_tools sim lobby --docker charm:c        # the C game
+    python -m charm_tools sim lobby --compare charm:c       # both, then the differences
 
 For each of nanny.c's prompts, walk the lobby to it, send one awkward reply, and record what the game answered,
 whether it closed the connection, and whether it's still up and greeting. The replies are an empty line, a space,

@@ -117,6 +117,21 @@ Charm is not open source in the modern sense. Running it means following all thr
   copyright 1993–1996 Russ Taylor, visible on a 24-line terminal; the help files must keep the `ROM` entry unaltered;
   the game may not be called ROM or "something-ROM"; derivatives must keep all README and credits files.
 
+### Licence checklist
+
+Checked at cut-over (#112, decision 5) and again at refactor R6, when Charm gets its own identity:
+
+- [ ] The login screen names the Diku authors and says "based on ROM 2.4 beta, (c) 1993-1996 Russ Taylor", inside
+  24 lines, on the Python game (`port greeting` shows the same bytes as the C).
+- [ ] `credits` reports the original authors.
+- [ ] `help diku`, `help merc` and `help rom` are byte for byte as at `c-final`.
+- [ ] The game isn't called ROM, or "something-ROM", anywhere: the greeting, `version`, the who list, the README and
+  the Docker image.
+- [ ] Every `game/` module keeps its copyright header (`game/tests/test_guards.py`).
+- [ ] `README*`, `CHANGELOG.quickmud` and `doc/`'s three licences are in the repo and the Docker image.
+- The operator's step, not the code's: whoever runs Charm publicly notifies the Diku creators that they run a Diku
+  MUD.
+
 IMC2, its strlcpy/strlcat and SHA-256 carried their own licences. Charm no longer ships them (#21), so their terms
 no longer apply; their authors stay credited above. Leave every copyright header in `src/` as it is, and keep `help diku`, `help merc`, `help rom` and the greeting's credits
 when Charm gets its own identity.
@@ -133,7 +148,7 @@ docker compose up -d --build
 telnet 127.0.0.1 4000
 ```
 
-This builds the game from this checkout (Ubuntu 26.04, gcc 15) and runs it on port 4000. `player/`, `log/`, `gods/`
+This builds the Python game from this checkout (Ubuntu 26.04, Python 3.14) and runs it on port 4000. `player/`, `log/`, `gods/`
 and `notes/` are mounted from the checkout, so they survive restarts; each run's log is `log/NNNN.log`. Stop it with
 `docker compose down`.
 
@@ -152,20 +167,28 @@ The container is always removed afterwards.
 ```sh
 docker build -t charm .
 python tools/smoke.py --docker charm   # exit 0 passed, 1 failed, 2 couldn't run
-
-docker build --build-arg CC=clang -t charm:clang .   # the same with clang
-python tools/smoke.py --docker charm:clang
 ```
 
-### Building from source
+The C game's image is built from [tools/oracle/Dockerfile.c](tools/oracle/Dockerfile.c) until cut-over removes
+`src/` (#112). The live checks below compare against it:
 
 ```sh
-cd src
-make            # builds ../area/rom; needs gcc, make and libcrypt
-cd ../area
-./startup.sh &  # restarts the server if it stops (the original csh 'startup' still works)
-telnet localhost 4000
+docker build -f tools/oracle/Dockerfile.c -t charm:c .                     # the C game
+docker build -f tools/oracle/Dockerfile.c --target build -t charm:build .  # its build stage, for the port checks
+docker build -f tools/oracle/Dockerfile.c --build-arg CC=clang -t charm:clang .   # the C game with clang
+python tools/smoke.py --docker charm:c
 ```
+
+### Running from the checkout
+
+```sh
+cd area
+PYTHONPATH=../game ./startup.sh &  # the Python game; restarts it if it stops
+telnet 127.0.0.1 4000
+```
+
+`startup.sh` runs `area/rom` instead if it's there: `cd src && make` builds it (gcc, make and libcrypt). The original
+csh `startup` runs only the C game.
 
 ### First immortal
 
@@ -193,22 +216,22 @@ cd tools
 python -m charm_tools doctor                     # Python, checkout, Docker and the charm image
 python -m charm_tools explore areas              # load every area as the game does: counts and bug() lines
 python -m charm_tools explore check              # data checks: never-spawned mobs, unreachable rooms, ...
-python -m charm_tools explore parity --docker charm   # compare the loader with the real game
-python -m charm_tools sim smoke --docker charm   # the smoke test (also: python tools/smoke.py from the root)
+python -m charm_tools explore parity --docker charm:c   # compare the loader with the real game
+python -m charm_tools sim smoke --docker charm   # the smoke test, on either image (also: python tools/smoke.py from the root)
 python -m charm_tools sim smoke --python         # its mortal steps against the Python game
 python -m charm_tools sim bots --python --quick  # bots playing while the Python game times its pulses
-python -m charm_tools sim lobby --compare charm  # awkward replies at every login prompt, on both games
-python -m charm_tools sim churn --compare charm  # bots creating characters and quitting, on both games
+python -m charm_tools sim lobby --compare charm:c  # awkward replies at every login prompt, on both games
+python -m charm_tools sim churn --compare charm:c  # bots creating characters and quitting, on both games
 python -m charm_tools port status                # how much of the C game the Python port has ported
 python -m charm_tools port rng --docker charm:build   # the C game's random numbers vs game/tests/data/rng.json
 python -m charm_tools port data                  # regenerate game/charm/data/ from the C tables
 python -m charm_tools port world --docker charm:build   # boot the C and Python worlds and compare them
 python -m charm_tools port io --docker charm:build      # comm.c's input and output cases, C against Python
-python -m charm_tools port greeting --docker charm      # connect to both games and compare their greetings
+python -m charm_tools port greeting --docker charm:c    # connect to both games and compare their greetings
 python -m charm_tools port crypt --docker charm:build   # the Python game's password hashing against glibc
-python -m charm_tools port login --docker charm         # the same login sessions on both games, byte for byte
-python -m charm_tools port players --docker charm       # player files saved by each game load in the other
-python -m charm_tools port commands --docker charm      # the same sessions in the game on both, byte for byte
+python -m charm_tools port login --docker charm:c       # the same login sessions on both games, byte for byte
+python -m charm_tools port players --docker charm:c     # player files saved by each game load in the other
+python -m charm_tools port commands --docker charm:c    # the same sessions in the game on both, byte for byte
 python -m charm_tools port scenarios --docker charm:build   # scenario files on both, output and state, step by step
 python -m charm_tools port coverage act_move.c          # lines of the ported functions no test or scenario runs
 python -m unittest discover -s tests -t .        # the tools' own tests

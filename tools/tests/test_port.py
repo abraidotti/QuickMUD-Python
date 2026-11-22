@@ -88,7 +88,7 @@ class RealTree(unittest.TestCase):
         st = status.status()
         partial = {(p.c_file, p.c_name) for p in st.ports if p.partial}
         self.assertIn(("db.c", "boot_db"), partial)  # charm.world.areafile.world's half; charm.entities.boot is whole
-        self.assertIn(("comm.c", "game_loop_unix"), partial)
+        self.assertNotIn(("comm.c", "game_loop_unix"), partial)  # whole, with a kept difference (#112)
         for name in ("load_rooms", "create_mobile", "create_object", "reset_room", "bug"):
             self.assertNotIn(("db.c", name), partial)
         full = {(p.c_file, p.c_name) for p in st.ports if not p.partial}
@@ -97,6 +97,26 @@ class RealTree(unittest.TestCase):
             self.assertIn(name, full)
         self.assertTrue(status.MARKER.match("    # C: db2.c load_objects [partial]").group(3))
         self.assertIsNone(status.MARKER.match("# C: db.c load_rooms [partly]"))
+
+    def test_kept_differences(self):
+        st = status.status()
+        self.assertEqual(set(st.kept), {("comm.c", "game_loop_unix"), ("db.c", "do_memory"), ("db.c", "do_dump")})
+        self.assertIn("kept on purpose (3, charm/core/kept_differences.py)", status.report(st))
+
+    def test_a_bad_kept_entry_is_an_error(self):
+        real = status.kept_differences
+        cases = {("comm.c", "no_such_fn"): "names no C function",
+                 ("db.c", "boot_db"): "still has a [partial] marker",
+                 ("db.c", "alloc_mem"): "has no '# C:' marker",
+                 ("db.c", "do_memory"): "cites no issue"}
+        for key, error in cases.items():
+            with self.subTest(key=key):
+                status.kept_differences = lambda root, key=key: {key: "kept, no reason given"}
+                try:
+                    bad = status.status().bad_markers
+                finally:
+                    status.kept_differences = real
+                self.assertTrue(any(error in b for b in bad), bad)
 
     def test_later_notes(self):
         st = status.status()

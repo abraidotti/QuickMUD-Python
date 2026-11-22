@@ -40,7 +40,9 @@ and `db2.c`'s `convert_*`, in `charm/entities/oldformat.py`), with a fixture are
 with no newline. P5 done 2026-11-21: 949 of 950 C functions are whole. `game_loop_unix` stays partial for the
 out-of-band difference accepted in #29, and how to count it is a question for P6. P6, cut-over, is 3 PRs or
 2026-11-28 (#112, every decision answered as recommended). PR 1 of 3 done, the trials: `sim lobby` and `sim
-churn`, run on both games and compared.
+churn`, run on both games and compared (#113). PR 2 done, ready to switch: `charm/core/kept_differences.py` makes
+`game_loop_unix` whole with its kept difference, so 950 of 950; the root `Dockerfile` builds the Python game, and the
+C's is `tools/oracle/Dockerfile.c` (`charm:c`); the README has the licence checklist.
 
 ## Goal
 
@@ -105,8 +107,9 @@ working from a tracker (`AGENTS.md`, `docs/sessions/`), much as Charm is worked 
     for exceptional conditions; `selectors` has no such set, so the Python game doesn't. Accepted as a known
     difference (#29)
 
-  Differences kept on purpose:
+  Differences kept on purpose, listed in `game/charm/core/kept_differences.py` (`port status` checks each one):
   - a connection that sends out-of-band data stays open (above)
+  - `memory`'s Perms line, and `dump`'s byte figures and free lists in `mem.dmp`, are Python's own (#91, decision 6)
 
   The Python game said "Charm" in three lines where the C said "ROM" (the startup log, the MOTD's last line and
   save; #29, #30, #32). The ROM licence forbids calling the game ROM, so the C now says Charm there too, and in

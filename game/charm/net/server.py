@@ -206,7 +206,7 @@ def handle_shutdown_signal(game, sig: int) -> None:
     game.shutdown_signal = sig
 
 
-# C: comm.c game_loop_unix [partial]
+# C: comm.c game_loop_unix
 def game_loop(game, control: socket.socket, stats: PulseStats | None = None) -> None:
     sel = game.selector = selectors.DefaultSelector()
     sel.register(control, selectors.EVENT_READ, None)

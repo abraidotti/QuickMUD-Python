@@ -1,8 +1,8 @@
 """charm_tools sim churn: bots create characters and quit as fast as the lobby allows (#112, decision 1).
 
     python -m charm_tools sim churn --python --quick              # preflight: 2 bots for 1 minute
-    python -m charm_tools sim churn --docker charm:p1 --minutes 15
-    python -m charm_tools sim churn --compare charm:p1            # both, 15 minutes each, then compared
+    python -m charm_tools sim churn --docker charm:c --minutes 15
+    python -m charm_tools sim churn --compare charm:c            # both, 15 minutes each, then compared
 
 It looks for crashes that need a quit to land on something periodic, such as a tick (Xania's churn found a quit on
 the same pulse as a tick reading freed memory). Each bot loops: connect, create a character (the classes in turn),
