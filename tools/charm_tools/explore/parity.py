@@ -1,17 +1,15 @@
-"""Parity: does the Python loader agree with the real game?
+"""Parity: does the loader agree with what the C game printed?
 
-Boots a throwaway container from a Charm image, logs in as the immortal fixture, runs ``memory`` (db.c
-do_memory) and reads the boot log's bug() lines, then compares both with ``load_world()`` on this checkout.
-The image should be built from the same checkout, or the comparison means nothing.
-
-A saved capture (tools/fixtures/boot/) lets the unit tests make the same comparison without Docker.
+tools/fixtures/boot/ holds captures from the C game, made before cut-over (the c-final tag has the live capture):
+its ``memory`` totals (db.c do_memory) and its boot log's bug() lines for the stock world, and the bug() lines for
+each deliberately broken area in cases/. This compares them with ``load_world()`` and the Python game's boot on this
+checkout.
 """
 
 from __future__ import annotations
 
 import re
 import shutil
-import subprocess
 from dataclasses import dataclass, fields
 from pathlib import Path
 
@@ -79,31 +77,6 @@ def compare(world: World, memory_text: str, log_text: str) -> Report:
     return Report(parse_memory(memory_text), world.counts, bug_lines(log_text), world.log_lines())
 
 
-def capture(image: str, timeout: float = 10.0) -> tuple[str, str]:
-    """(memory output, boot log) from a throwaway container."""
-    from ..sim import smoke
-
-    port = smoke.free_port()
-    container = f"charm-parity-{port}"
-    smoke.docker("create", "--init", "--name", container, "-p", f"127.0.0.1:{port}:4000", image)
-    try:
-        name, pw = smoke.IMMORTAL
-        smoke.docker("cp", str(smoke.FIXTURES / "player" / name), f"{container}:/opt/charm/player/{name}")
-        smoke.docker("cp", str(smoke.FIXTURES / "qmconfig.rc"), f"{container}:/opt/charm/area/qmconfig.rc")
-        smoke.docker("start", container)
-        s = smoke.connect("127.0.0.1", port, timeout, 30)
-        try:
-            smoke.old_character(s, name, pw)
-            s.send("memory")
-            memory = s.expect(r"Perms\s+\d+ blocks")
-        finally:
-            s.close()
-        log = smoke.docker("exec", container, "sh", "-c", "cat /opt/charm/log/*.log").stdout
-        return memory, log
-    finally:
-        smoke.docker("rm", "-f", container, check=False)
-
-
 def area_list_with(area_dir: Path, extra: str) -> str:
     """area.lst with one more file added just before the closing '$'."""
     lines = (area_dir / "area.lst").read_text(encoding="latin-1").splitlines()
@@ -123,40 +96,6 @@ def case_area_dir(area_dir: Path, case: Path, tmp: Path) -> Path:
     return out
 
 
-def capture_case(image: str, area_dir: Path, case: Path, timeout: float = 20.0) -> str:
-    """Boot a throwaway container with the case file added to area.lst; return the first run's log once the boot
-    has finished (ready, or stopped by a fatal error)."""
-    import tempfile
-    import time
-
-    from ..sim import smoke
-
-    port = smoke.free_port()
-    container = f"charm-parity-case-{port}"
-    smoke.docker("create", "--init", "--name", container, image)
-    try:
-        smoke.docker("cp", str(case), f"{container}:/opt/charm/area/{case.name}")
-        with tempfile.TemporaryDirectory() as tmp:
-            lst = Path(tmp) / "area.lst"
-            lst.write_text(area_list_with(area_dir, case.name), encoding="latin-1", newline="\n")
-            smoke.docker("cp", str(lst), f"{container}:/opt/charm/area/area.lst")
-        smoke.docker("start", container)
-        deadline, last, stable_since = time.monotonic() + timeout, None, time.monotonic()
-        while time.monotonic() < deadline:
-            log = smoke.docker("exec", container, "sh", "-c", "cat /opt/charm/log/1000.log 2>/dev/null",
-                               check=False).stdout
-            if "is ready to rock" in log:
-                return log
-            if log != last:
-                last, stable_since = log, time.monotonic()
-            elif log and time.monotonic() - stable_since > 2:  # stopped writing: a fatal exit (or a crash)
-                return log
-            time.sleep(0.5)
-        raise TimeoutError(f"{case.name}: the boot didn't finish within {timeout}s")
-    finally:
-        smoke.docker("rm", "-f", container, check=False)
-
-
 def game_boot_bugs(area_dir: Path) -> list[str]:
     """The bug() lines of the Python game's whole boot (charm.entities.boot.boot_db) from area_dir, ending with the
     fatal one if the boot stops. That's the area loader's lines (World.log_lines) and then what comes after it, as
@@ -174,12 +113,6 @@ def game_boot_bugs(area_dir: Path) -> list[str]:
     return [line for line in lines if line.startswith("[*****]")]
 
 
-def save_capture(memory: str, log: str, directory: Path) -> None:
-    directory.mkdir(parents=True, exist_ok=True)
-    (directory / "memory.txt").write_text(memory.replace("\r", ""), encoding="latin-1", newline="\n")
-    (directory / "boot-bugs.txt").write_text("\n".join(bug_lines(log)) + "\n", encoding="latin-1", newline="\n")
-
-
 def print_report(rep: Report) -> None:
     for name, exp, act in rep.count_diffs:
         print(f"  DIFF  {name}: game {exp}, charm_tools {act}")
@@ -194,10 +127,3 @@ def print_report(rep: Report) -> None:
         for line in rep.actual_bugs:
             print(f"          tools  {line}")
     print("PARITY" if rep.ok else "MISMATCH")
-
-
-def docker_available() -> bool:
-    try:
-        return subprocess.run(["docker", "version"], capture_output=True, timeout=20).returncode == 0
-    except (OSError, subprocess.TimeoutExpired):
-        return False

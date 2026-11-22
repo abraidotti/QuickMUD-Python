@@ -23,4 +23,4 @@ class Difference(unittest.TestCase):
 class Goldens(unittest.TestCase):
     @allow(600)  # every scenario, played in one call (about 150 seconds)
     def test_saved_goldens_match_the_python_game(self):
-        self.assertEqual(scenarios.run(None), 0)
+        self.assertEqual(scenarios.run(), 0)

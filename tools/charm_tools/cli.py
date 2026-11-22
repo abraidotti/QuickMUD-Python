@@ -3,23 +3,20 @@
     doctor                 check that the tools can run here
     explore areas          load every area as boot_db does: per-area counts, totals, bug() lines
     explore check          data checks on the loaded world
-    explore parity         compare the loader with the real game (--docker IMAGE, or the saved capture)
+    explore parity         compare the loader with the C game's saved capture (tools/fixtures/boot)
     sim smoke [ARGS...]    the smoke test (see: python -m charm_tools sim smoke --help)
-    sim bots [ARGS...]     bots playing while the Python game times its pulses (sim bots --help)
-    sim lobby [ARGS...]    awkward replies at every login prompt, on one game or both (sim lobby --help)
-    sim churn [ARGS...]    bots creating characters and quitting, on one game or both (sim churn --help)
-    port status            how much of the C game the Python game (game/) has ported, function by function
-    port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
-    port data [--check]    generate game/charm/data/ from the C tables (--check: fail if it would change)
-    port world             boot both games' worlds and compare them (--docker IMAGE, or the saved capture)
-    port io                run comm.c's input and output cases through both games (--docker IMAGE, or saved)
-    port greeting --docker IMG  connect to both games and compare what they send first
-    port crypt             the Python game's DES crypt against glibc's (--docker IMAGE, or the saved cases)
-    port login --docker IMG     the same login sessions against both games, byte for byte
-    port players --docker IMG   player files saved by each game load in the other, key by key
-    port commands --docker IMG  the same sessions in the game against both games, byte for byte
-    port scenarios         scenario files through both games, line by line (--docker IMAGE, or the goldens)
-    port asave --docker IMG     OLC's asave world on both games, every area file compared byte for byte
+    sim bots [ARGS...]     bots playing while the game times its pulses (sim bots --help)
+    sim lobby [ARGS...]    awkward replies at every login prompt (sim lobby --help)
+    sim churn [ARGS...]    bots creating characters and quitting (sim churn --help)
+    port status            the C functions the game ported (frozen at c-final) and where each went
+    port coverage [FILE.c] the lines of the ported functions that no test or scenario runs
+    port world             boot the game's world and compare it with the C game's saved capture
+    port io                run comm.c's input and output cases and compare with the C game's saved results
+    port crypt             the game's DES crypt against glibc's saved answers
+    port players           the C game's saved player files, loaded and saved by the game, key by key
+    port scenarios         the scenario files against their goldens, line by line (--save: write them again)
+
+The checks that ran the C game live are at the c-final tag (#112).
 """
 
 from __future__ import annotations
@@ -58,10 +55,7 @@ def main(argv: list[str] | None = None) -> int:
     exp_sub = exp.add_subparsers(dest="explore_command", required=True, metavar="explore-command")
     exp_sub.add_parser("areas", help="per-area counts, the totals 'memory' prints, and the boot's bug() lines")
     exp_sub.add_parser("check", help="data checks on the loaded world")
-    par = exp_sub.add_parser("parity", help="compare the loader with the real game")
-    par.add_argument("--docker", metavar="IMAGE", help="capture from a throwaway container (default: the saved "
-                                                       "capture in tools/fixtures/boot)")
-    par.add_argument("--save", action="store_true", help="with --docker: save the capture as the new fixture")
+    exp_sub.add_parser("parity", help="compare the loader with the C game's saved capture")
 
     sim = sub.add_parser("sim", help="testing against a running game")
     sim_sub = sim.add_subparsers(dest="sim_command", required=True, metavar="sim-command")
@@ -73,47 +67,17 @@ def main(argv: list[str] | None = None) -> int:
     port = sub.add_parser("port", help="the Python port of the game")
     port_sub = port.add_subparsers(dest="port_command", required=True, metavar="port-command")
     port_sub.add_parser("status", help="per C file: functions ported, and where they went")
-    prng = port_sub.add_parser("rng", help="capture the C game's random numbers and compare with the fixture")
-    prng.add_argument("--docker", metavar="IMAGE", required=True,
-                      help="the C build stage: docker build -f tools/oracle/Dockerfile.c --target build -t charm:build .")
-    prng.add_argument("--save", action="store_true", help="save the capture as the new fixture")
-    pdata = port_sub.add_parser("data", help="generate game/charm/data/ from the C tables")
-    pdata.add_argument("--check", action="store_true", help="write nothing; exit 1 if regenerating would change it")
-    pworld = port_sub.add_parser("world", help="boot the C and Python worlds with one seed and compare them")
-    pworld.add_argument("--docker", metavar="IMAGE",
-                        help="a build-stage image to boot the C world in (default: the saved capture)")
-    pworld.add_argument("--seed", action="append", metavar="N",
-                        help="CHARM_SEED for both sides; repeat for more (default: the saved capture's)")
-    pworld.add_argument("--time", metavar="T", help="current_time at boot (default: the saved capture's)")
-    pworld.add_argument("--updates", type=int, help="area_update passes after boot (default: the saved capture's)")
-    pworld.add_argument("--save", action="store_true", help="with --docker: save the C capture as the fixture")
-    pio = port_sub.add_parser("io", help="run comm.c's input and output cases through both games and compare")
-    pio.add_argument("--docker", metavar="IMAGE", help="a build-stage image (default: the saved capture)")
-    pio.add_argument("--save", action="store_true", help="with --docker: save the C results as the fixture")
-    pcrypt = port_sub.add_parser("crypt", help="check the Python game's password hashing against glibc's crypt")
-    pcrypt.add_argument("--docker", metavar="IMAGE", help="a build-stage image (default: the saved cases)")
-    pcrypt.add_argument("--save", action="store_true", help="with --docker: save the cases and answers")
-    plogin = port_sub.add_parser("login", help="run the same login sessions against both games and compare")
-    plogin.add_argument("--docker", metavar="IMAGE", required=True, help="the C game's image: docker build -f tools/oracle/Dockerfile.c -t charm:c .")
-    plogin.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
-    pcommands = port_sub.add_parser("commands", help="run the same sessions in the game against both games")
-    pcommands.add_argument("--docker", metavar="IMAGE", required=True, help="the C game's image: docker build -f tools/oracle/Dockerfile.c -t charm:c .")
-    pcommands.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
-    pscen = port_sub.add_parser("scenarios", help="play the scenario files through both games and compare")
-    pscen.add_argument("--docker", metavar="IMAGE", help="the C build stage: docker build -f tools/oracle/Dockerfile.c --target build -t charm:build .")
-    pscen.add_argument("--save", action="store_true", help="with --docker: write the goldens the tests replay")
+    port_sub.add_parser("world", help="boot the world and compare it with the C game's saved capture")
+    port_sub.add_parser("io", help="run comm.c's input and output cases and compare with the C game's results")
+    port_sub.add_parser("crypt", help="check the game's password hashing against glibc's saved answers")
+    port_sub.add_parser("players", help="load and save the C game's saved player files, and compare")
+    pscen = port_sub.add_parser("scenarios", help="play the scenario files and compare with their goldens")
+    pscen.add_argument("--save", action="store_true",
+                       help="after a deliberate change: write the goldens again from the game (check the diff)")
     pscen.add_argument("--only", metavar="TEXT", help="only the scenarios whose name contains TEXT")
-    pasave = port_sub.add_parser("asave", help="asave world on both games, and compare every file it writes")
-    pasave.add_argument("--docker", metavar="IMAGE", required=True, help="the C build stage: docker build -f tools/oracle/Dockerfile.c --target build -t charm:build .")
-    pasave.add_argument("--only", metavar="TEXT", help="only read back the files whose name contains TEXT")
     pcov = port_sub.add_parser("coverage", help="the lines of the ported functions that no test or scenario runs")
     pcov.add_argument("c_files", nargs="*", metavar="FILE.c", help="only the functions ported from these C files")
     pcov.add_argument("--scenarios", action="store_true", help="run only the scenarios, not the unit tests")
-    pplayers = port_sub.add_parser("players", help="round-trip player files between the two games")
-    pplayers.add_argument("--docker", metavar="IMAGE", required=True, help="the C game's image: docker build -f tools/oracle/Dockerfile.c -t charm:c .")
-    pplayers.add_argument("--save", action="store_true", help="keep the C game's files for the tests")
-    pgreet = port_sub.add_parser("greeting", help="connect to both games and compare the first bytes they send")
-    pgreet.add_argument("--docker", metavar="IMAGE", required=True, help="the C game's image: docker build -f tools/oracle/Dockerfile.c -t charm:c .")
 
     args = ap.parse_args(argv)
 
@@ -127,58 +91,28 @@ def main(argv: list[str] | None = None) -> int:
         if args.explore_command == "check":
             return commands.check()
         if args.explore_command == "parity":
-            if args.save and not args.docker:
-                ap.error("--save needs --docker")
-            return commands.run_parity(args.docker, args.save)
+            return commands.run_parity()
     if args.command == "port":
         if args.port_command == "status":
             from .port import status
             return status.run()
-        if args.port_command == "rng":
-            from .port import rng
-            return rng.run(args.docker, args.save)
-        if args.port_command == "data":
-            from .port import data
-            return data.run(args.check)
         if args.port_command == "io":
             from .port import io
-            if args.save and not args.docker:
-                ap.error("--save needs --docker")
-            return io.run(args.docker, args.save)
+            return io.run()
         if args.port_command == "crypt":
             from .port import cryptcheck
-            if args.save and not args.docker:
-                ap.error("--save needs --docker")
-            return cryptcheck.run(args.docker, args.save)
-        if args.port_command == "login":
-            from .port import login
-            return login.run(args.docker, args.only)
-        if args.port_command == "commands":
-            from .port import commands
-            return commands.run(args.docker, args.only)
+            return cryptcheck.run()
         if args.port_command == "scenarios":
             from .port import scenarios
-            return scenarios.run(args.docker, args.save, args.only)
-        if args.port_command == "asave":
-            from .port import asave
-            return asave.run(args.docker, args.only)
+            return scenarios.run(args.save, args.only)
         if args.port_command == "coverage":
             from .port import coverage
             return coverage.run(args.c_files, args.scenarios)
         if args.port_command == "players":
             from .port import players
-            return players.run(args.docker, args.save)
-        if args.port_command == "greeting":
-            from .port import greeting
-            return greeting.run(args.docker)
+            return players.run()
         if args.port_command == "world":
             from .port import world
-            custom = args.seed or args.time or args.updates is not None
-            if not args.docker and custom:
-                ap.error("--seed, --time and --updates need --docker (the saved capture has its own)")
-            if args.save and (not args.docker or custom):
-                ap.error("--save needs --docker, with the default seed, time and updates")
-            return world.run(args.docker, args.seed or [world.SEED], args.time or world.TIME,
-                             world.UPDATES if args.updates is None else args.updates, args.save)
+            return world.run()
     ap.error(f"unknown command {args.command}")  # unreachable: argparse enforces the choices
     return 2

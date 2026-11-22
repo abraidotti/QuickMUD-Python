@@ -3,7 +3,7 @@
 Charm is built without OLD_RAND, so number_mm is random() >> 6 and init_mm seeds with srandom(). Python's own
 random module would give different numbers; this reproduces glibc's TYPE_3 generator (the one srandom() sets up:
 a 31-word additive feedback generator, seeded by a Park-Miller LCG and run 310 steps before use), so the same seed
-gives the same fights as the C game. Checked against the game's own functions by charm_tools port rng.
+gives the same fights as the C game. Checked against the C game's own numbers (game/tests/data/rng.json).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4

@@ -1,6 +1,6 @@
-"""Play a scenario file through the Python game: the same steps, and the same output, as tools/oracle/scenario.c.
+"""Play a scenario file through the Python game: the same steps, and the same output, as the C driver did.
 
-The C driver and this one do the same thing on each side (#35, decision 1):
+The C driver (tools/oracle/scenario.c, at the c-final tag) and this one do the same thing (#35, decision 1):
 - boot with a fixed seed and clock; a pulse is a call, and the clock moves a second every 4 pulses
 - connections are one end of a socketpair: what the game writes arrives at the other end, which is read after
   each step
@@ -8,8 +8,9 @@ The C driver and this one do the same thing on each side (#35, decision 1):
   update_handler and process_output
 - every random() is counted and hashed (FNV-1a over each value's 4 low bytes)
 
-The format and the output lines are described in tools/oracle/scenario.c. play() returns the output lines; a
-NotPorted or CWouldCrash ends the scenario with a "stopped" line, so it shows as a difference from the C.
+The format and the output lines are described in tools/oracle/scenario.c at c-final, and play() below reads
+the same format. play() returns the output lines; a NotPorted or CWouldCrash ends the scenario with a "stopped"
+line, so it shows as a difference from the golden.
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -398,14 +399,10 @@ def difference(c_lines: list[str], py_lines: list[str], text: str) -> str | None
     return None
 
 
-def source_hash(repo: Path) -> str:
-    """A hash of the C game's sources and the C driver: a golden records the one it came from."""
-    import hashlib
-
-    h = hashlib.sha256()
-    for p in sorted((repo / "src").glob("*.[ch]")) + [repo / "tools" / "oracle" / "scenario.c"]:
-        h.update(p.name.encode() + b"\0" + p.read_bytes())
-    return h.hexdigest()[:16]
+# A golden's first line says where it came from (#112, decision 4): "c-final", the C game through
+# tools/oracle/scenario.c at the c-final tag, or "python", saved again from the Python game after a deliberate change
+# (charm_tools port scenarios --save), whose PR shows the diff.
+GOLDEN_SOURCES = ("c-final", "python")
 
 
 def play_fresh(text: str, repo: Path) -> list[str]:

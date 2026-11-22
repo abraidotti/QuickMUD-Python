@@ -1,9 +1,9 @@
 """The differential harness's goldens, replayed in pure Python: no Docker, no C build (#35, decision 4).
 
 Each game/tests/data/scenarios/NAME.scn has a NAME.golden: what the C game printed for it, through
-tools/oracle/scenario.c (charm_tools port scenarios --docker charm:build --save). Here the Python game plays the
-same file, and every line must match.
-A golden whose first line names other C sources is stale: change the C, then save it again.
+tools/oracle/scenario.c at the c-final tag. Here the Python game plays the same file, and every line must match.
+A golden's first line says where it came from: "c-final", or "python" once a deliberate change (a bug fix) has saved
+it again from the Python game (charm_tools port scenarios --save).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -14,23 +14,22 @@ import unittest
 from pathlib import Path
 
 from charm.testing import watchdog
-from charm.testing.scenario import EXPECT_STOP, difference, esc, play_fresh, source_hash
+from charm.testing.scenario import EXPECT_STOP, GOLDEN_SOURCES, difference, esc, play_fresh
 
 REPO = Path(__file__).resolve().parents[2]
 SCENARIOS = Path(__file__).parent / "data" / "scenarios"
 
 
 class Goldens(unittest.TestCase):
-    def test_every_scenario_has_a_fresh_golden(self):
-        digest = source_hash(REPO)
+    def test_every_scenario_has_a_golden_that_says_where_it_came_from(self):
         files = sorted(SCENARIOS.glob("*.scn"))
         self.assertTrue(files)
         for scn in files:
             with self.subTest(scenario=scn.stem):
                 golden = scn.with_suffix(".golden")
-                self.assertTrue(golden.exists(), "no golden: charm_tools port scenarios --docker charm:build --save")
+                self.assertTrue(golden.exists(), "no golden: charm_tools port scenarios --save --only NAME")
                 first = golden.read_text(encoding="latin-1").splitlines()[0]
-                self.assertEqual(first, f"sources {digest}", "stale: the C changed since the golden was saved")
+                self.assertIn(first, GOLDEN_SOURCES)
 
     def test_python_matches_the_c(self):
         for scn in sorted(SCENARIOS.glob("*.scn")):

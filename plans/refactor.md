@@ -4,7 +4,8 @@ Status: R0 and R1 done (#1/#2, #3/#10), R2 in review (#21), 2026-11-17. The game
 test (`charm_tools sim smoke`) covers login, save, clean shutdown and copyover, and bugs #4-#9 found on the way are
 fixed (#10-#15). R1 dropped configurable paths: each trial runs in its own container (#3, decision 1).
 Decision 2 is answered (#21); 1 and 3-6 are still open. A Python port is planned in [python-port.md](python-port.md) (#19): R2 runs
-first, then a spike decides whether R3-R5 continue in C.
+first, then a spike decides whether R3-R5 continue in C. They don't: the game is Python since cut-over (#112, `v1.0`),
+the C is at the `c-final` tag, and the remaining phases, R6 among them, apply to `game/`.
 
 ## Goal
 

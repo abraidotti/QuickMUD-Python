@@ -42,7 +42,10 @@ out-of-band difference accepted in #29, and how to count it is a question for P6
 2026-11-28 (#112, every decision answered as recommended). PR 1 of 3 done, the trials: `sim lobby` and `sim
 churn`, run on both games and compared (#113). PR 2 done, ready to switch: `charm/core/kept_differences.py` makes
 `game_loop_unix` whole with its kept difference, so 950 of 950; the root `Dockerfile` builds the Python game, and the
-C's is `tools/oracle/Dockerfile.c` (`charm:c`); the README has the licence checklist.
+C's is `tools/oracle/Dockerfile.c` (`charm:c`); the README has the licence checklist (#114). PR 3 done, the cut-over:
+`c-final` tags the last commit with `src/`, which is removed with `tools/oracle/` and the checks that ran the C live;
+`port status` reads the C functions frozen at `c-final`, the goldens' first line is `c-final`, `game/charm/data/` is
+edited by hand, the licence checklist is ticked, and `v1.0` tags the result. P6 done 2026-11-22, and the port with it.
 
 ## Goal
 
@@ -272,6 +275,52 @@ Each phase is one or more PRs, each with its parity proof, as for T1.
 cheap first look is possible: export each `.are` file to JSON from the loaded model, read it back and check that
 nothing changed. That gives real JSON to judge the format by, for areas first and then skills, classes and the other
 tables. The same issue takes up refactor decision 6 (tables in C or in data files).
+
+## After cut-over: stock ROM, and a separate 2.4b6 repo
+
+The next plan, before the bug fixes, takes Charm back toward stock ROM 2.4b6 (`plans/stock-rom.md`, its own issue).
+The same pristine source also serves a separate repo, "2.4b6-fixed", with two aims:
+
+- **An archive:** stock ROM 2.4b6 as Russ Taylor released it, with no additions, for the community.
+- **A fixed version:** the same code with the C bugs filed here fixed, the ones that are in stock ROM. Many of the
+  bugs labelled "after cut-over" are in QuickMUD's add-ons (OLC, copyover, colour, boards), so each is triaged
+  against the stock code first.
+
+These fit together. The diff between stock ROM and `c-final` is the list of what QuickMUD added, which is what the
+stock-ROM plan strips. A bug fixed in C in the fixed repo, and then in Charm's Python, can be checked against each
+other live: the harness at `c-final` (`tools/oracle/`), adapted to stock ROM, makes the fixed C game Charm's oracle
+again.
+
+**The pristine source** (found 2026-11-22; one source is enough, the user decided). It's the ROM consortium's own
+distribution page: Gabrielle Taylor's hypercube.org/tess/rom/, archived by the Wayback Machine in December 2000 and
+rehosted at <http://download.ansalon.net/rom/>. Its files:
+
+| File | Size | SHA-256 |
+|---|---|---|
+| `download/Rom24b6.tar.gz` (an uncompressed tar, despite its name) | 3,543,040 B | `2c1982fd78f587bd6f07228ad70b0acb305623b1c8d774f612fe4e3d2d903a5a` |
+| `download/24b5_to_b6.patch` | 92,148 B | `fb0a5856f3364a294a994dd5a886c35cb58a191d0bb1a80132a4d7aa63e08f47` |
+| `download/24b4a_to_b5.patch` | 66,216 B | `9f473ec519d07e3c8f419465499026b6ffd1912bad16c0bd1cfe40d5971fe961` |
+
+Why it's trusted:
+
+- all 124 files are owned by `rtaylor/tess`, the newest is dated 1998-05-29, and `README.version` says "ROM 2.4b6,
+  May 29, 1998"
+- `README.rom`, `README.version`, `doc/license.doc`, `doc/license.txt` and `doc/rom.license` are byte for byte
+  Charm's, which came by another path (QuickMUD, then avinson)
+- the official 2.4b5-to-2.4b6 patch reverse-applies to it cleanly: all 25 files, no failed, offset or fuzzed hunks
+
+The tree is `Rom24/` (`src/` 43 files, `area/` 56, `doc/`, the READMEs). The SHA-256 of a manifest of every file's
+SHA-256 (`find Rom24 -type f | sort`, then `sha256sum` each) is `a60419d0fd414548509945dba1e946e6b2cb7f6e5e3e2f7960a355f20eac3234`,
+for checking another copy by content.
+
+**Open for the issue:**
+
+- **The licence.** ROM's licence lets anyone release derivatives, "properly labelled as being derivatives of the
+  ROM 2.4 code", but says only Russ Taylor may release ROM source itself. The fixed version is a derivative: it
+  mustn't be called ROM, and its README says "a derivative of ROM 2.4b6". The archive is the grey area: the most
+  defensible form is the release byte for byte, with these hashes, labelled as Russ Taylor's 1998 release. An
+  ftp.game.org mirror reportedly notes Russ Taylor's permission to mirror the ROM distributions; it wasn't read.
+- whether builds on a current gcc count as "fixed", and where the harness lives.
 
 ## How the tools fit
 

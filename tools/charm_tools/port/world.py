@@ -1,21 +1,18 @@
-"""charm_tools port world: boot the C game's world and the Python game's, and compare them line by line.
+"""charm_tools port world: boot the Python game's world and compare it, line by line, with the C game's.
 
-The C side is tools/oracle/worldcheck.c, built in the game's build-stage image against the game's own object files
-(like port rng). Both sides boot with the same CHARM_SEED and clock, run more area_update passes, and print the
-same plain-text dump:
+The C side is a capture (tools/tests/data/world-SEED.txt.xz, with its log), made before cut-over by
+tools/oracle/worldcheck.c, which is at the c-final tag. Both sides booted with the same CHARM_SEED and clock, ran
+more area_update passes, and print the same plain-text dump:
 - the prototypes after loading
 - every room's light, people, contents and exits
 - every mob and object in list order, with its numbers and affects
 - the next three random numbers, which shows that both sides drew as many
 The game's log lines (bug() and log_f) are compared too, without timestamps.
-
-A saved capture (tools/tests/data/world-SEED.txt.xz, with its log) lets the tests compare without Docker.
 """
 
 from __future__ import annotations
 
 import lzma
-import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -25,18 +22,6 @@ SEED = "20261117"
 TIME = "1763400000"  # 14:00 on day 20 of month 1 of the game year: daylight, and the 1-80 weather draw
 UPDATES = 3
 MAX_VNUM = 32768
-
-BUILD = r"""
-set -e
-cd /opt/charm/src
-gcc -O -g3 -Wall -std=gnu17 -fcommon -Dmain=game_main -c -o /tmp/comm_nomain.o comm.c 2>/dev/null
-gcc -O -g3 -Wall -std=gnu17 -fcommon -I. -o /tmp/worldcheck /oracle/worldcheck.c \
-    $(ls obj/*.o | grep -v '^obj/comm\.o$') /tmp/comm_nomain.o -lcrypt
-mkdir -p /opt/charm/notes /opt/charm/log /opt/charm/player /opt/charm/gods
-cd /opt/charm/area
-/tmp/worldcheck "$@"
-"""
-
 
 @dataclass
 class Capture:
@@ -176,27 +161,6 @@ def python_world(seed: str = SEED, now: str = TIME, updates: int = UPDATES, root
     return Capture(dump, comparable_log(list(lines)))
 
 
-# -- the C side ------------------------------------------------------------------------------------------------
-
-def c_world(image: str, seed: str = SEED, now: str = TIME, updates: int = UPDATES,
-            root: Path | None = None) -> Capture:
-    root = root or find_root()
-    oracle = root / "tools" / "oracle"
-    cmd = ["docker", "run", "--rm", "-v", f"{oracle}:/oracle:ro", image, "sh", "-c", BUILD, "worldcheck", seed,
-           now, str(updates)]
-    out = subprocess.run(cmd, capture_output=True, text=True, encoding="latin-1")
-    if out.returncode != 0:
-        raise RuntimeError(f"worldcheck failed in {image}:\n{out.stderr.strip()[-2000:]}")
-    log = [_strip_time(x) for x in out.stderr.splitlines() if " :: " in x]
-    return Capture(out.stdout.splitlines(), comparable_log(log))
-
-
-def save(capture: Capture, path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    text = "\n".join(capture.dump) + "\n=== log\n" + "\n".join(capture.log) + "\n"
-    path.write_bytes(lzma.compress(text.encode("latin-1"), preset=9 | lzma.PRESET_EXTREME))
-
-
 def load(path: Path) -> Capture:
     text = lzma.decompress(path.read_bytes()).decode("latin-1")
     dump, _, log = text.partition("\n=== log\n")
@@ -239,31 +203,18 @@ def summary(cap: Capture) -> str:
             f"{len(cap.log)} log lines")
 
 
-def run(image: str | None, seeds: list[str], now: str, updates: int, save_fixture: bool) -> int:
-    failed = 0
-    for seed in seeds:
-        print(f"seed {seed}, clock {now}, {updates} more area_update passes", flush=True)
-        if image:
-            try:
-                c = c_world(image, seed, now, updates)
-            except (OSError, RuntimeError) as e:
-                print(f"  couldn't run the C side: {e}")
-                return 2
-            if save_fixture:
-                save(c, fixture_path(seed))
-                print(f"  saved the C capture to {fixture_path(seed)}")
-        else:
-            path = fixture_path(seed)
-            if not path.exists():
-                print(f"  no saved capture at {path}; run with --docker IMAGE")
-                return 2
-            c = load(path)
-        print(f"  C:      {summary(c)}")
-        py = python_world(seed, now, updates)
-        print(f"  Python: {summary(py)}")
-        diffs = compare(c, py)
-        for d in diffs:
-            print(f"  differs  {d}")
-        print("  SAME" if not diffs else f"  {len(diffs)} difference(s)")
-        failed += bool(diffs)
-    return 1 if failed else 0
+def run() -> int:
+    print(f"seed {SEED}, clock {TIME}, {UPDATES} more area_update passes", flush=True)
+    path = fixture_path()
+    if not path.exists():
+        print(f"  no saved capture at {path}")
+        return 2
+    c = load(path)
+    print(f"  C:      {summary(c)}")
+    py = python_world(SEED, TIME, UPDATES)
+    print(f"  Python: {summary(py)}")
+    diffs = compare(c, py)
+    for d in diffs:
+        print(f"  differs  {d}")
+    print("  SAME" if not diffs else f"  {len(diffs)} difference(s)")
+    return 1 if diffs else 0

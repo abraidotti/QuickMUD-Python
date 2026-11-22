@@ -16,6 +16,7 @@ class DoctorTest(unittest.TestCase):
         checks = {c.name: c for c in doctor.check_checkout()}
         self.assertTrue(checks["checkout"].ok)
         self.assertTrue(checks["areas"].ok)
+        self.assertTrue(checks["game"].ok)
         self.assertRegex(checks["areas"].detail, r"^\d+ area files")
 
     def test_no_docker_on_path(self):

@@ -36,7 +36,7 @@ def check_checkout() -> list[Check]:
     areas = [line.strip() for line in (paths.area_dir(root) / "area.lst").read_text(encoding="latin-1").splitlines()
              if line.strip().endswith(".are")]
     return [Check("checkout", True, str(root)),
-            Check("src", (paths.src_dir(root) / "merc.h").is_file(), str(paths.src_dir(root))),
+            Check("game", (paths.game_dir(root) / "charm" / "__main__.py").is_file(), str(paths.game_dir(root))),
             Check("areas", bool(areas), f"{len(areas)} area files in area.lst")]
 
 

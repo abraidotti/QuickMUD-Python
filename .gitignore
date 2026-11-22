@@ -1,7 +1,3 @@
-# Build output
-src/obj/
-area/rom
-
 # Runtime output
 log/*.log
 area/bugs.txt

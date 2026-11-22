@@ -1,15 +1,13 @@
-"""charm_tools port players: player files saved by each game load in the other (#25 decision 6, #30 decision 4).
+"""charm_tools port players: the player files the C game saved load and save the same in the Python game (#25
+decision 6, #30 decision 4).
 
-Three round trips, each compared section by section and key by key, without the two keys that depend on the
-clock (LogO, the logoff time, and Plyd, the time played):
-1. C to Python: the C game (a container) creates a character, enters the game, saves and quits. The Python game
-   loads that file and saves it.
-2. Python to C: the C game logs in with the Python game's file, saves and quits.
-3. The fixtures (tools/fixtures/player): each game logs in with them and saves, and the two are compared. The
-   C enters the game first; the Python, until spike PR 5, stops at the MOTD.
+tools/tests/data/players holds what the C game wrote, captured before cut-over (the c-final tag has the live
+round trips): Newbie, a character it made, and Shemp and Smokegod after logging in with the fixtures. Each is
+compared with the Python game's save, section by section and key by key, without the two keys that depend on the
+clock (LogO, the logoff time, and Plyd, the time played).
 
 The Python side runs in-process (load_char_obj, then save_char_obj) from a throwaway copy of area/, with its
-clock set to the file's logoff time, so loading doesn't heal anyone. Until spike PR 5 it can't enter the game.
+clock set to the file's logoff time, so loading doesn't heal anyone.
 """
 
 from __future__ import annotations
@@ -19,8 +17,7 @@ import tempfile
 from pathlib import Path
 
 from ..paths import area_dir, use_game
-from .live import CGame, fixtures
-from .login import NEW
+from .live import fixtures
 
 SKIP = {"LogO", "Plyd"}
 NAME = "Newbie"
@@ -28,7 +25,7 @@ FIXTURE_PASSWORDS = (("Shemp", "psswrd"), ("Smokegod", "smoke123"))
 
 
 def saved_dir() -> Path:
-    """Where --save keeps the C game's files, for tools/tests/test_players.py."""
+    """The C game's files, saved before cut-over."""
     from ..paths import find_root
     return find_root() / "tools" / "tests" / "data" / "players"
 
@@ -110,27 +107,9 @@ def game_const():
     return constants
 
 
-def c_login_save(c: CGame, name: str, password: str, new: bool = False) -> str:
-    """Log in on the C game, enter the game, save, quit; the file it wrote."""
-    s = c.session()
-    if new:
-        for line in NEW:
-            s.send(line)
-    else:
-        s.send(name)
-        s.send(password)
-    for _ in range(3):  # past the MOTD (an immortal gets the IMOTD first): entering ends with the board list
-        if b"You current board is" in s.send(""):
-            break
-    s.send("save")
-    s.send("quit")
-    s.close()
-    return c.player_file(name)
-
-
-def run(image: str, save: bool = False) -> int:
+def run() -> int:
+    """The C game's saved files, each loaded and saved by the Python game."""
     failed = 0
-    kept: dict[str, str] = {}
 
     def report(label: str, diffs: list[str]) -> None:
         nonlocal failed
@@ -139,35 +118,14 @@ def run(image: str, save: bool = False) -> int:
             print(f"    {d}")
         failed += bool(diffs)
 
-    with CGame(image) as c:
-        c_file = c_login_save(c, NAME, "secret1", new=True)
-    kept[NAME] = c_file
-    py_file = python_resave(c_file, NAME)
-    report("C to Python: a new character the C game saved, loaded and saved by Python",
-           compare(c_file, py_file, "C", "Python"))
-
-    with tempfile.TemporaryDirectory() as d:
-        path = Path(d) / NAME
-        path.write_text(py_file, encoding="latin-1", newline="\n")
-        with CGame(image, players=()) as c:
-            c.put_player(path)
-            back = c_login_save(c, NAME, "secret1")
-    report("Python to C: that file as the Python game saved it, logged in on the C game and saved",
-           compare(py_file, back, "Python", "C"))
-
+    c_file = (saved_dir() / NAME).read_text(encoding="latin-1")
+    report("a new character the C game saved, loaded and saved by Python",
+           compare(c_file, python_resave(c_file, NAME), "C", "Python"))
     for who, password in FIXTURE_PASSWORDS:
+        c_saved = (saved_dir() / f"{who}.after-login").read_text(encoding="latin-1")
+        now = int(next(line.split()[1] for line in c_saved.splitlines() if line.startswith("LogO")))
         fixture = (fixtures() / "player" / who).read_text(encoding="latin-1")
-        with CGame(image, players=(who,)) as c:
-            c_saved = c_login_save(c, who, password)
-            now = int(next(line.split()[1] for line in c_saved.splitlines() if line.startswith("LogO")))
-        kept[f"{who}.after-login"] = c_saved
-        # The C logged in long after the fixture's logoff and healed it; the Python loads at the same moment.
         report(f"the {who} fixture: saved after logging in, on each game",
                compare(c_saved, python_resave(fixture, who, now, password), "C", "Python"))
-    if save:
-        saved_dir().mkdir(parents=True, exist_ok=True)
-        for name, text in kept.items():
-            (saved_dir() / name).write_text(text, encoding="latin-1", newline="\n")
-        print(f"saved the C game's files to {saved_dir()}")
-    print("all the same" if not failed else f"{failed} round trip(s) differ")
+    print("all the same" if not failed else f"{failed} file(s) differ")
     return 1 if failed else 0

@@ -1,7 +1,8 @@
 """charm_tools port io: comm.c's input and output in the Python game against the C game's, from the saved capture.
 
-The capture is tools/tests/data/io.txt: tools/oracle/iocases.txt run through tools/oracle/iocheck.c. Recapture it
-with python -m charm_tools port io --docker charm:build --save after changing the cases or the C.
+The capture is tools/tests/data/io.txt: tools/tests/data/iocases.txt run through the C game's comm.c by
+tools/oracle/iocheck.c, before cut-over (the c-final tag has the driver). A deliberate change to comm.c's behaviour
+changes the expected results by hand, in the same PR.
 """
 
 import unittest

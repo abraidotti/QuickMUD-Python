@@ -1,4 +1,4 @@
-"""The RNG port against the C game's own numbers (game/tests/data/rng.json, from charm_tools port rng).
+"""The RNG port against the C game's own numbers (game/tests/data/rng.json, captured before cut-over).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
@@ -24,7 +24,7 @@ def pairs(args):
 
 
 def draw(name, args, count):
-    """The same draws tools/oracle/rngcheck.c makes: each draw's arguments cycle through args."""
+    """The same draws the C capture made (rngcheck.c, at c-final): each draw's arguments cycle through args."""
     if name == "random":
         return [rng.random() for _ in range(count)]
     if name in ("number_mm", "number_percent", "number_door"):

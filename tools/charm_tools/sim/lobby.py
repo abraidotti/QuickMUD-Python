@@ -1,8 +1,8 @@
-"""charm_tools sim lobby: awkward replies at every login prompt, on one game or on both, compared (#112, decision 1).
+"""charm_tools sim lobby: awkward replies at every login prompt (#112, decision 1).
 
     python -m charm_tools sim lobby --python --quick         # preflight: two prompts, two replies
-    python -m charm_tools sim lobby --docker charm:c        # the C game
-    python -m charm_tools sim lobby --compare charm:c       # both, then the differences
+    python -m charm_tools sim lobby --python                 # every prompt, every reply
+    python -m charm_tools sim lobby --wsl                    # the same, inside WSL
 
 For each of nanny.c's prompts, walk the lobby to it, send one awkward reply, and record what the game answered,
 whether it closed the connection, and whether it's still up and greeting. The replies are an empty line, a space,
@@ -10,8 +10,9 @@ a lone ~, !, a 300-character line and a non-ASCII letter. The C reads argument[0
 carries on. In Python the same index raises IndexError on an empty string, which is the divergence class this
 looks for. A game that goes down is restarted before the next case.
 
-Each case uses its own character name, the same on both games, so --compare can match the answers line for line.
-Exit codes follow the Sim convention: 0 clean (and, with --compare, the same), 1 a finding, 2 couldn't run.
+Each case uses its own character name. Until cut-over, the trial ran on the C game too and compared the answers
+case by case (all the same: #113, #114); that's at the c-final tag.
+Exit codes follow the Sim convention: 0 clean, 1 a finding, 2 couldn't run.
 """
 
 from __future__ import annotations
@@ -123,7 +124,7 @@ def run_game(args, targets, replies, ansi: bool) -> list[dict]:
     """Every case on one game. Returns one record per case."""
     out = []
     qmconfig = None if ansi else "fixture"
-    with open_game(args, qmconfig, (GOD[0],)) as game:
+    with open_game(qmconfig, (GOD[0],)) as game:
         wait_up(game)
         print(f"{game.kind} game on 127.0.0.1:{game.port}" + (" (stock qmconfig: the ANSI question)" if ansi else ""),
               flush=True)
@@ -191,32 +192,10 @@ def report(records) -> int:
     return 1 if findings else 0
 
 
-def compare(c, py) -> int:
-    """The two games' records, case by case."""
-    diffs = 0
-    pyd = {r["case"]: r for r in py}
-    for rc in c:
-        rp = pyd.get(rc["case"])
-        if rp is None:
-            print(f"DIFF {rc['case']}: only the C game ran it")
-            diffs += 1
-            continue
-        for key in ("up", "closed", "error", "reply", "bugs"):
-            if rc.get(key) != rp.get(key):
-                diffs += 1
-                print(f"DIFF {rc['case']} {key}:\n   C:      {str(rc.get(key))[-300:]!r}\n   Python: "
-                      f"{str(rp.get(key))[-300:]!r}")
-                break
-    print(f"{'SAME' if not diffs else 'DIFFERENT'}: {len(c)} records, {diffs} difference(s)")
-    return 1 if diffs else 0
-
-
 def main(argv=None, prog=None) -> int:
     ap = argparse.ArgumentParser(prog=prog, description=__doc__.splitlines()[0])
     where = ap.add_mutually_exclusive_group(required=True)
-    where.add_argument("--docker", metavar="IMAGE", help="the C game, in a throwaway container from IMAGE")
-    where.add_argument("--python", action="store_true", help="the Python game, from a throwaway copy")
-    where.add_argument("--compare", metavar="IMAGE", help="the C game from IMAGE, then the Python game; compare them")
+    where.add_argument("--python", action="store_true", help="the game, from a throwaway copy")
     where.add_argument("--wsl", nargs="?", const="", metavar="DISTRO", help="from Windows: --python inside WSL")
     ap.add_argument("--quick", action="store_true", help="preflight: two prompts, two replies")
     ap.add_argument("--fail-fast", action="store_true", help="stop at the first finding")
@@ -229,23 +208,12 @@ def main(argv=None, prog=None) -> int:
     labels, replies = QUICK if args.quick else ([t[0] for t in TARGETS], list(REPLIES))
     targets = [t for t in TARGETS if t[0] in labels]
 
-    def one(docker_image):
-        args.docker = docker_image
+    try:
         recs = run_game(args, targets, replies, ansi=False)
         recs += [dict(r, case="ansi:" + r["case"]) for r in run_game(args, [("ansi", ANSI, "ansi")], replies, True)]
-        return recs
-
-    try:
-        if args.compare:
-            c, py = one(args.compare), one(None)
-            code = max(report(c), report(py))
-            return max(code, compare(c, py))
-        return report(one(args.docker))
+        return report(recs)
     except Down as e:
         print(f"SKIP {e}")
-        return 2
-    except FileNotFoundError:
-        print("SKIP docker isn't installed")
         return 2
 
 

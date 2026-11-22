@@ -62,36 +62,25 @@ def check() -> int:
     return 1 if w.fatal else 0
 
 
-def run_parity(image: str | None, save: bool) -> int:
-    """Compare load_world() with the game: live from IMAGE, or with the saved capture in tools/fixtures/boot."""
+def run_parity() -> int:
+    """Compare load_world() with the C game's capture in tools/fixtures/boot."""
     w = load_world()
-    if image:
-        if not parity.docker_available():
-            print("SKIP docker isn't available")
-            return 2
-        memory, log = parity.capture(image)
-        if save:
-            parity.save_capture(memory, log, FIXTURE_DIR)
-            print(f"saved the capture to {FIXTURE_DIR}")
-        source = f"the game in {image}"
-    else:
-        memory = (FIXTURE_DIR / "memory.txt").read_text(encoding="latin-1")
-        log = (FIXTURE_DIR / "boot-bugs.txt").read_text(encoding="latin-1")
-        source = f"the saved capture in {FIXTURE_DIR.relative_to(paths.find_root())}"
-    print(f"charm_tools vs {source}:")
+    memory = (FIXTURE_DIR / "memory.txt").read_text(encoding="latin-1")
+    log = (FIXTURE_DIR / "boot-bugs.txt").read_text(encoding="latin-1")
+    print(f"charm_tools vs the C game's capture in {FIXTURE_DIR.relative_to(paths.find_root())}:")
     rep = parity.compare(w, memory, log)
     parity.print_report(rep)
     _fatal_line(w)
-    cases_ok = run_cases(image, save)
+    cases_ok = run_cases()
     return 0 if rep.ok and cases_ok else 1
 
 
 CASES_DIR = FIXTURE_DIR / "cases"
 
 
-def run_cases(image: str | None, save: bool) -> bool:
-    """Each broken area in tools/fixtures/boot/cases, added to the end of area.lst: the game's bug() lines (live,
-    or saved next to the case as <case>.log) must equal the Python game's boot's (parity.game_boot_bugs)."""
+def run_cases() -> bool:
+    """Each broken area in tools/fixtures/boot/cases, added to the end of area.lst: the C game's bug() lines (saved
+    next to the case as <case>.log) must equal the Python game's boot's (parity.game_boot_bugs)."""
     import tempfile
 
     area_dir = paths.area_dir()
@@ -100,12 +89,7 @@ def run_cases(image: str | None, save: bool) -> bool:
     print("broken-area and old-format cases (each added to the end of area.lst):")
     for case in sorted(CASES_DIR.glob("*.are")):
         saved = case.with_suffix(".log")
-        if image:
-            expected = parity.bug_lines(parity.capture_case(image, area_dir, case))
-            if save:
-                saved.write_text("".join(line + "\n" for line in expected), encoding="latin-1", newline="\n")
-        else:
-            expected = saved.read_text(encoding="latin-1").splitlines() if saved.exists() else None
+        expected = saved.read_text(encoding="latin-1").splitlines() if saved.exists() else None
         with tempfile.TemporaryDirectory() as tmp:
             actual = parity.game_boot_bugs(parity.case_area_dir(area_dir, case, Path(tmp)))
         ok = expected == actual

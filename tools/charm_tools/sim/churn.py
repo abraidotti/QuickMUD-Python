@@ -1,16 +1,16 @@
 """charm_tools sim churn: bots create characters and quit as fast as the lobby allows (#112, decision 1).
 
     python -m charm_tools sim churn --python --quick              # preflight: 2 bots for 1 minute
-    python -m charm_tools sim churn --docker charm:c --minutes 15
-    python -m charm_tools sim churn --compare charm:c            # both, 15 minutes each, then compared
+    python -m charm_tools sim churn --python                      # 6 bots for 15 minutes
 
 It looks for crashes that need a quit to land on something periodic, such as a tick (Xania's churn found a quit on
 the same pulse as a tick reading freed memory). Each bot loops: connect, create a character (the classes in turn),
 quit, and wait for the game to close the connection. The run stops when the time is up or the game goes down, and
 with --fail-fast at a bot's first error. A heartbeat line prints every 30 seconds.
 
-"Compared" means: neither game went down, and the Python game's [*****] lines are the C's, or fewer. The games
-run at their own speeds, so the two runs can't match step for step.
+A finding is the game going down or a bot's error. The report lists the [*****] lines the game logged. Until
+cut-over the trial ran on the C game too, and the Python game logged no line the C didn't (#113, #114); that's at
+the c-final tag.
 Exit codes follow the Sim convention: 0 clean, 1 a finding, 2 couldn't run.
 """
 
@@ -82,11 +82,10 @@ class Bot(threading.Thread):
             k += 1
 
 
-def run_game(args, image) -> dict:
-    args.docker = image
+def run_game(args) -> dict:
     seconds = 60.0 if args.quick else args.minutes * 60
     count = 2 if args.quick else args.bots
-    with open_game(args) as game:
+    with open_game() as game:
         wait_up(game)
         print(f"{game.kind} game on 127.0.0.1:{game.port}: {count} bots for {seconds:.0f}s", flush=True)
         stop, errors = threading.Event(), []
@@ -130,29 +129,16 @@ def report(rec) -> int:
     if rec["errors"]:
         findings += 1
         print(f"FINDING {rec['game']}: {len(rec['errors'])} bot error(s)")
+    for b in rec["bugs"]:
+        print(f"  log: {b}")
     print(f"{'PASS' if not findings else 'FAIL'} {rec['game']}: {rec['quits']} quits, {len(rec['bugs'])} bug line(s)")
     return 1 if findings else 0
-
-
-def compare(c, py) -> int:
-    """The Python game's bug lines must be the C's, or fewer: a line only Python logs is a difference."""
-    c_bugs = set(c["bugs"])
-    extra = sorted(set(py["bugs"]) - c_bugs)
-    for b in extra:
-        print(f"DIFF only the Python game logged: {b}")
-    for b in sorted(c_bugs - set(py["bugs"])):
-        print(f"  only the C game logged: {b}")
-    print(f"{'SAME' if not extra else 'DIFFERENT'}: C {c['quits']} quits, Python {py['quits']} quits; "
-          f"{len(extra)} bug line(s) only on Python")
-    return 1 if extra else 0
 
 
 def main(argv=None, prog=None) -> int:
     ap = argparse.ArgumentParser(prog=prog, description=__doc__.splitlines()[0])
     where = ap.add_mutually_exclusive_group(required=True)
-    where.add_argument("--docker", metavar="IMAGE", help="the C game, in a throwaway container from IMAGE")
-    where.add_argument("--python", action="store_true", help="the Python game, from a throwaway copy")
-    where.add_argument("--compare", metavar="IMAGE", help="the C game from IMAGE, then the Python game; compare them")
+    where.add_argument("--python", action="store_true", help="the game, from a throwaway copy")
     where.add_argument("--wsl", nargs="?", const="", metavar="DISTRO", help="from Windows: --python inside WSL")
     ap.add_argument("--bots", type=int, default=6, help="how many bots (default 6)")
     ap.add_argument("--minutes", type=float, default=15.0, help="how long on each game (default 15)")
@@ -164,15 +150,9 @@ def main(argv=None, prog=None) -> int:
         return run_wsl("churn", [a for a in (argv or sys.argv[1:]) if not a.startswith("--wsl")
                                  and a != args.wsl], args.wsl)
     try:
-        if args.compare:
-            c, py = run_game(args, args.compare), run_game(args, None)
-            return max(report(c), report(py), compare(c, py))
-        return report(run_game(args, args.docker))
+        return report(run_game(args))
     except Down as e:
         print(f"SKIP {e}")
-        return 2
-    except FileNotFoundError:
-        print("SKIP docker isn't installed")
         return 2
 
 

@@ -1,4 +1,4 @@
-# The Python game (#112, decision 3). The C game's image is tools/oracle/Dockerfile.c until cut-over.
+# The game (#112, decision 3). The C game's image is tools/oracle/Dockerfile.c at the c-final tag.
 #   docker build -t charm .
 FROM ubuntu:26.04
 RUN apt-get update \

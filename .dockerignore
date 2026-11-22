@@ -2,8 +2,6 @@
 .claude
 plans
 tools
-src/obj
-area/rom
 log/*
 gods
 notes
