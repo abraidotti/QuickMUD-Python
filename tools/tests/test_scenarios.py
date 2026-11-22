@@ -1,12 +1,12 @@
-"""charm_tools port scenarios without Docker: the comparison, and the goldens against the Python game.
+"""quickmud_tools port scenarios without Docker: the comparison, and the goldens against the Python game.
 
 The game's own tests (game/tests/test_scenarios.py) replay the goldens too; this checks the tool's side of it.
 """
 
 import unittest
 
-from charm.testing.watchdog import allow
-from charm_tools.port import scenarios
+from quickmud.testing.watchdog import allow
+from quickmud_tools.port import scenarios
 
 
 class Difference(unittest.TestCase):

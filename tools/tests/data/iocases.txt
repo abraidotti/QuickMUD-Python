@@ -1,4 +1,4 @@
-# Cases for charm_tools port io: comm.c's input and output, run through the Python game and compared with the C
+# Cases for quickmud_tools port io: comm.c's input and output, run through the Python game and compared with the C
 # game's results (io.txt, from tools/oracle/iocheck.c at the c-final tag, whose top lists the commands; port io's
 # python_io reads the same ones). Lines starting with # are skipped.
 

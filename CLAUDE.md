@@ -1,8 +1,13 @@
-# Charm: notes for Claude
+# QuickMUD-Python: notes for Claude
 
-Charm is a new MUD built on ROM 2.4b6 via QuickMUD, in Python (`game/`; areas in `area/`). It's a port of QuickMUD's
-C game, at parity with it; the C is at the `c-final` tag (#112). Origin: `abraidotti/charm`, a fork of
-`avinson/rom24-quickmud`. No upstream for our work: PRs go to `abraidotti/charm` only.
+QuickMUD-Python is an unofficial Python port of QuickMUD, a derivative of ROM 2.4b6 (`game/`; areas in `area/`), at
+parity with QuickMUD's C, which is at the `c-final` tag (#112). It was called Charm until #116. Origin:
+`abraidotti/QuickMUD-Python`, a fork of `avinson/rom24-quickmud`. No upstream for our work: PRs go to
+`abraidotti/QuickMUD-Python` only.
+
+The plan (#116): fix every bug here, OLC included (`v2.0`); then `2.4b6-fixed`, a new C repo archiving stock ROM 2.4b6
+with its bugs fixed; then Charm, a new Python repo porting stock ROM, derived from this one and compared live with
+`2.4b6-fixed`. In this repo, "charm" is the game word (the spell, `AFF_CHARM`, "Charmed"), not a name: leave it.
 
 ## Read first
 
@@ -32,15 +37,15 @@ The Xania tools live in `../xania-sandro/` and are read by path. They're Xania's
 - Tools: stdlib-only Python for analysis; MIT licence in `tools/LICENSE`, kept separate from the game's licences.
 - `game/` is under the game's licences, not MIT. Every module keeps the short licence header, and every ported
   function keeps its `# C: <file>.c <function>` marker above its `def` (checked against the C functions frozen at
-  `c-final`); tests enforce both. `game/charm/data/` is edited by hand now (it was generated from the C).
+  `c-final`); tests enforce both. `game/quickmud/data/` is edited by hand now (it was generated from the C).
 - A deliberate change to behaviour (a bug fix) updates the saved C output it changes in the same PR: the goldens
-  with `charm_tools port scenarios --save --only NAME` (first line `python`), and the other captures by hand, so the
+  with `quickmud_tools port scenarios --save --only NAME` (first line `python`), and the other captures by hand, so the
   diff shows what changed.
 - Commit or push only when the user asks. Commit messages are casual.
 
 ## How the user works
 
-- **Issue first for decisions.** A change with judgement calls starts as an issue on `abraidotti/charm` with options
+- **Issue first for decisions.** A change with judgement calls starts as an issue on `abraidotti/QuickMUD-Python` with options
   and recommended answers. Open the PR only after every question is answered.
 - **Bug issues** have these sections: Summary, How to reproduce, Faulty lines, Suggested fix, How this was found.
 - **PRs** are thorough, verified and explainable (what changed, why, and the proof), and link to the dossier site

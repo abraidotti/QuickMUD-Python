@@ -2,12 +2,13 @@
 
 A dataclass's default repr prints every field, so a character printed its room, the room its people, and so on:
 a failing assertIn on the character list once hung a test for ten minutes (P5 PR 8). The game's linked classes
-have short reprs now, and these check they stay short. The watchdog (charm.testing.watchdog) stops any test that
+have short reprs now, and these check they stay short. The watchdog (quickmud.testing.watchdog) stops any test that
 still hangs, with every thread's traceback; the last test runs one that does, in a subprocess.
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import subprocess
@@ -16,8 +17,8 @@ import time
 import unittest
 from pathlib import Path
 
-from charm.entities.create import create_object
-from charm.net.descriptor import new_descriptor
+from quickmud.entities.create import create_object
+from quickmud.net.descriptor import new_descriptor
 from tests import test_commands  # (the module: importing its class would run its tests here too)
 
 GAME = Path(__file__).resolve().parents[1]
@@ -67,14 +68,14 @@ class Watchdog(unittest.TestCase):
     def test_a_hanging_test_is_stopped_with_its_traceback(self):
         script = (
             "import time, unittest\n"
-            "from charm.testing import watchdog\n"
+            "from quickmud.testing import watchdog\n"
             "watchdog.install()\n"
             "class Hangs(unittest.TestCase):\n"
             "    def test_sleeps(self):\n"
             "        time.sleep(60)\n"
             "unittest.main(argv=['hangs'])\n"
         )
-        env = {**__import__("os").environ, "CHARM_TEST_TIMEOUT": "2", "PYTHONPATH": str(GAME)}
+        env = {**__import__("os").environ, "QUICKMUD_TEST_TIMEOUT": "2", "PYTHONPATH": str(GAME)}
         start = time.monotonic()
         r = subprocess.run([sys.executable, "-c", script], capture_output=True, text=True, env=env, timeout=50)
         self.assertLess(time.monotonic() - start, 30)
@@ -83,7 +84,7 @@ class Watchdog(unittest.TestCase):
         self.assertIn("test_sleeps", r.stderr)
 
     def test_allow_gives_a_test_longer(self):
-        from charm.testing.watchdog import allow
+        from quickmud.testing.watchdog import allow
 
         @allow(600)
         def slow():

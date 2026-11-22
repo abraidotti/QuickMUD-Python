@@ -1,7 +1,7 @@
-# Plan: refactor Charm's code
+# Plan: refactor QuickMUD-Python's code
 
 Status: R0 and R1 done (#1/#2, #3/#10), R2 in review (#21), 2026-11-17. The game builds with gcc 15 and clang 21 in Docker, the smoke
-test (`charm_tools sim smoke`) covers login, save, clean shutdown and copyover, and bugs #4-#9 found on the way are
+test (`quickmud_tools sim smoke`) covers login, save, clean shutdown and copyover, and bugs #4-#9 found on the way are
 fixed (#10-#15). R1 dropped configurable paths: each trial runs in its own container (#3, decision 1).
 Decision 2 is answered (#21); 1 and 3-6 are still open. A Python port is planned in [python-port.md](python-port.md) (#19): R2 runs
 first, then a spike decides whether R3-R5 continue in C. They don't: the game is Python since cut-over (#112, `v1.0`),
@@ -45,7 +45,7 @@ Measured on master (364c26f), 2026-11-17:
 ## Decisions (recommended answers first)
 
 1. **C or C++?** *Recommended: stay in C (C17) for now.* Modernise in place, and revisit once the tests and tools
-   exist. Xania's move to C++ worked out, but it went along with unit tests and CI that Charm doesn't have yet. Moving early
+   exist. Xania's move to C++ worked out, but it went along with unit tests and CI that QuickMUD-Python doesn't have yet. Moving early
    would also change every line Explorer's table readers depend on. Alternative: compile as C++ from R5 and adopt it
    gradually.
 2. **IMC2.** *Answered (#21): removed in R2,* with `imc.c`, `imc.h`, `imccfg.h`, `sha256.*` and `imc/`. Credits for
@@ -72,7 +72,7 @@ Measured on master (364c26f), 2026-11-17:
 | **R3 Memory and string safety** | Debug build with `-fsanitize=address,undefined`. Replace unbounded `sprintf`/`strcat`/`strcpy` with `snprintf` and `strlcpy`/`strlcat` (in glibc since 2.38; the build image has 2.43), file by file, starting with input paths: `comm.c`, `nanny.c`, `interp.c`, then `act_*.c`. Decision 3 for passwords. Fix whatever the sanitizers and Sim's lobby, churn and hunt trials find, each as its own issue and PR. | Sanitizer build runs every Sim trial clean; no unbounded string writes left in input-handling code |
 | **R4 Tests** | Decision 4. A test target in the Makefile, then tests for pure functions first: dice and number ranges, `str_prefix` and argument parsing, flag conversions, `act()` formatting, area loading of every stock area with zero `bug()` lines. Builder's gate gains unit tests and the before/after step. | `make test` runs in the gate; every R3 fix after this point comes with a test |
 | **R5 Structure** | Decision 5 (one formatting commit). Split `merc.h` into headers by area (characters, objects, rooms, combat, tables, descriptors) while `merc.h` still includes them all. Group the `do_*` commands by topic. Make warnings errors in CI. Add a CI workflow (build both compilers, sanitizers, tests, Sim smoke). | CI green on every push; `merc.h` is an index of smaller headers |
-| **R6 Identity** | Rename the game to Charm in the greeting, `help charm`, `version` and the who list, with the Diku, Merc and ROM credits kept on the login screen as the licences require. This is the first deliberately visible change. | Greeting fits a 24-line terminal with all required credits; licence checklist ticked in the PR |
+| **R6 Identity** | Rename the game to QuickMUD-Python in the greeting, `help quickmud-python`, `version` and the who list, with the Diku, Merc and ROM credits kept on the login screen as the licences require. This is the first deliberately visible change. | Greeting fits a 24-line terminal with all required credits; licence checklist ticked in the PR |
 
 R0 and R1 come first because the tools need them. R2-R6 run through Builder's gate once tools-port T6 exists; before
 then, through the Sim trials from T4-T5 and an Explorer before/after diff.

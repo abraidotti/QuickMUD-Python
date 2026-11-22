@@ -1,8 +1,9 @@
 """The RNG port against the C game's own numbers (game/tests/data/rng.json, captured before cut-over).
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import hashlib
@@ -10,7 +11,7 @@ import json
 import unittest
 from pathlib import Path
 
-from charm.core import rng
+from quickmud.core import rng
 
 FIXTURE = json.loads((Path(__file__).parent / "data" / "rng.json").read_text(encoding="utf-8"))
 
@@ -48,8 +49,8 @@ class MatchesTheCGame(unittest.TestCase):
             self.assertEqual(len(streams), 8)
             for name, want in streams.items():
                 with self.subTest(seed=seed, stream=name):
-                    # rngcheck reseeds through init_mm and CHARM_SEED before each stream, so this does too.
-                    rng.init_mm({"CHARM_SEED": seed}, log=quiet)
+                    # rngcheck reseeds through init_mm and QUICKMUD_SEED before each stream, so this does too.
+                    rng.init_mm({"QUICKMUD_SEED": seed}, log=quiet)
                     got = draw(name, want["args"], count)
                     self.assertEqual(got[: len(want["first"])], want["first"])
                     self.assertEqual(hashlib.sha256(" ".join(map(str, got)).encode()).hexdigest(), want["sha256"])
@@ -58,17 +59,17 @@ class MatchesTheCGame(unittest.TestCase):
 class InitMm(unittest.TestCase):
     def seed(self, value):
         lines = []
-        got = rng.init_mm({} if value is None else {"CHARM_SEED": value}, log=lines.append)
+        got = rng.init_mm({} if value is None else {"QUICKMUD_SEED": value}, log=lines.append)
         return got, lines
 
     def test_charm_seed_is_used_and_logged(self):
-        self.assertEqual(self.seed("42"), (42, ["Random seed: 42 (CHARM_SEED)"]))
+        self.assertEqual(self.seed("42"), (42, ["Random seed: 42 (QUICKMUD_SEED)"]))
         self.assertEqual(self.seed("4294967295")[0], 4294967295)
 
     def test_zero_gives_the_same_numbers_as_one(self):
-        rng.init_mm({"CHARM_SEED": "0"}, log=quiet)
+        rng.init_mm({"QUICKMUD_SEED": "0"}, log=quiet)
         a = [rng.random() for _ in range(5)]
-        rng.init_mm({"CHARM_SEED": "1"}, log=quiet)
+        rng.init_mm({"QUICKMUD_SEED": "1"}, log=quiet)
         self.assertEqual(a, [rng.random() for _ in range(5)])
 
     def test_bad_values_fall_back_to_the_clock(self):

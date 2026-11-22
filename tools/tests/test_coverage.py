@@ -1,10 +1,10 @@
-"""charm_tools port coverage: the lines it finds for a ported function, and the ones it sees run."""
+"""quickmud_tools port coverage: the lines it finds for a ported function, and the ones it sees run."""
 
 import io
 import unittest
 
-from charm_tools.paths import use_game
-from charm_tools.port import coverage
+from quickmud_tools.paths import use_game
+from quickmud_tools.port import coverage
 
 
 class Coverage(unittest.TestCase):
@@ -15,12 +15,12 @@ class Coverage(unittest.TestCase):
 
     def test_finds_marked_functions_and_their_lines(self):
         f = self.funcs["str_prefix"]
-        self.assertEqual((f.c_file, f.module, f.name), ("db.c", "charm/core/strings.py", "str_prefix"))
+        self.assertEqual((f.c_file, f.module, f.name), ("db.c", "quickmud/core/strings.py", "str_prefix"))
         self.assertNotIn(f.first, f.lines)  # the def line has no line event; PY_START says it was called
         self.assertGreater(len(f.lines), 0)
 
     def test_a_branch_not_taken_is_missing(self):
-        from charm.core.strings import str_suffix
+        from quickmud.core.strings import str_suffix
 
         f = self.funcs["str_suffix"]
         # A longer suffix stops at the length test, so str_cmp is never called; the line itself still runs.
@@ -35,7 +35,7 @@ class Coverage(unittest.TestCase):
         self.assertIn("never called", out.getvalue())
 
     def test_a_function_not_called_misses_every_line(self):
-        from charm.core.strings import atoi
+        from quickmud.core.strings import atoi
 
         f = self.funcs["str_prefix"]
         hits = coverage.record(lambda: atoi("12"))

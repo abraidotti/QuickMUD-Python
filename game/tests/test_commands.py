@@ -4,9 +4,10 @@ What each command prints, byte for byte, was compared with the C game by port co
 pin down the pieces around it: the C's string helpers, number_argument, the command table's prefix order, what an
 unported command does, and the lines that differ from the C on purpose.
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import tempfile
@@ -14,19 +15,19 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from charm.commands import interp
-from charm.commands.interp import interpret, number_argument
-from charm.core import log
-from charm.core.errors import NotPorted
-from charm.core.strings import atoi, lower, str_cmp, str_prefix, str_suffix, upper
-from charm.persist.player import capitalize
-from charm.data import constants as C
-from charm.data.commands import CMD_TABLE
-from charm.entities import game as game_module
-from charm.entities.boot import boot_db
-from charm.entities.handler import char_to_room
-from charm.entities.things import new_char, new_pcdata
-from charm.net.descriptor import new_descriptor
+from quickmud.commands import interp
+from quickmud.commands.interp import interpret, number_argument
+from quickmud.core import log
+from quickmud.core.errors import NotPorted
+from quickmud.core.strings import atoi, lower, str_cmp, str_prefix, str_suffix, upper
+from quickmud.persist.player import capitalize
+from quickmud.data import constants as C
+from quickmud.data.commands import CMD_TABLE
+from quickmud.entities import game as game_module
+from quickmud.entities.boot import boot_db
+from quickmud.entities.handler import char_to_room
+from quickmud.entities.things import new_char, new_pcdata
+from quickmud.net.descriptor import new_descriptor
 from tests.test_entities import AREA
 
 
@@ -73,7 +74,7 @@ def boot_game():
         Path(d, "music.txt").write_text("#\n")  # load_songs crashes the C without one
         Path(d, "t.are").write_text(text)
         with log.capture():
-            game = boot_db(Path(d), 1763400000, {"CHARM_SEED": "1"})
+            game = boot_db(Path(d), 1763400000, {"QUICKMUD_SEED": "1"})
     return game
 
 
@@ -149,8 +150,8 @@ class Commands(unittest.TestCase):
         self.assertFalse(self.ch.comm & C.COMM_PROMPT)
 
     def test_save_says_charm_and_lags(self):
-        with mock.patch("charm.persist.player.save_char_obj") as save:
-            self.assertEqual(self.say("save"), "Saving. Remember that Charm has automatic saving now.\n\r")
+        with mock.patch("quickmud.persist.player.save_char_obj") as save:
+            self.assertEqual(self.say("save"), "Saving. Remember that QuickMUD-Python has automatic saving now.\n\r")
         save.assert_called_once()
         self.assertEqual(self.ch.wait, 4 * C.PULSE_VIOLENCE)
 
@@ -167,10 +168,10 @@ class Money(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         with log.capture():
-            cls.game = boot_db(Path(__file__).resolve().parents[2] / "area", 1763400000, {"CHARM_SEED": "1"})
+            cls.game = boot_db(Path(__file__).resolve().parents[2] / "area", 1763400000, {"QUICKMUD_SEED": "1"})
 
     def test_each_shape(self):
-        from charm.entities.handler import create_money
+        from quickmud.entities.handler import create_money
 
         def made(gold, silver):
             o = create_money(self.game, gold, silver)
@@ -183,7 +184,7 @@ class Money(unittest.TestCase):
         self.assertEqual(made(7, 41), (C.OBJ_VNUM_COINS, "41 silver coins and 7 gold coins", [41, 7], 741, 3))
 
     def test_zero_or_negative_money_is_mended_and_logged(self):
-        from charm.entities.handler import create_money
+        from quickmud.entities.handler import create_money
 
         with mock.patch.object(log, "log_string") as logged:
             o = create_money(self.game, 0, 0)
@@ -198,7 +199,7 @@ class Buffers(unittest.TestCase):
     """recycle.c's BUFFER, which keeps tells for replay: it grows through buf_size, and holds 16382 characters at most."""
 
     def test_grows_then_overflows_and_stays_overflowed(self):
-        from charm.entities.things import BUFFER_OVERFLOW, add_buf, clear_buf, new_buf
+        from quickmud.entities.things import BUFFER_OVERFLOW, add_buf, clear_buf, new_buf
 
         buf = new_buf()
         self.assertEqual(buf.size, 1024)
@@ -217,10 +218,10 @@ class Buffers(unittest.TestCase):
 
 
 class Updates(unittest.TestCase):
-    """CHARM_UPDATES's names, read as update.c's update_runs reads them (#74)."""
+    """QUICKMUD_UPDATES's names, read as update.c's update_runs reads them (#74)."""
 
     def test_names_pick_the_updates(self):
-        from charm.systems.update import UPDATES, updates_named
+        from quickmud.systems.update import UPDATES, updates_named
 
         self.assertEqual(updates_named(None), frozenset(UPDATES))
         self.assertEqual(updates_named("all"), frozenset(UPDATES))
@@ -231,7 +232,7 @@ class Updates(unittest.TestCase):
 
     def test_every_update_is_ported(self):
         # P4 PR 6 (#74): nothing is left for a scenario's @updates to stop at, or for boot to log as not running.
-        from charm.systems.update import NOT_RUNNING, PORTED, UPDATES
+        from quickmud.systems.update import NOT_RUNNING, PORTED, UPDATES
 
         self.assertEqual(PORTED, frozenset(UPDATES))
         self.assertEqual(NOT_RUNNING, ())

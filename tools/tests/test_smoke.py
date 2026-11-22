@@ -1,8 +1,8 @@
-"""Unit tests for the smoke test's telnet handling. The live run is: python -m charm_tools sim smoke --docker charm"""
+"""Unit tests for the smoke test's telnet handling. The live run is: python -m quickmud_tools sim smoke --docker quickmud"""
 
 import unittest
 
-from charm_tools.sim import smoke
+from quickmud_tools.sim import smoke
 
 IAC, WILL, WONT, ECHO, GA = 255, 251, 252, 1, 249
 

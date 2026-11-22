@@ -1,13 +1,13 @@
-"""Unit tests for the lobby and churn trials' own logic. The live runs are: python -m charm_tools sim lobby
---python, and python -m charm_tools sim churn --python."""
+"""Unit tests for the lobby and churn trials' own logic. The live runs are: python -m quickmud_tools sim lobby
+--python, and python -m quickmud_tools sim churn --python."""
 
 import re
 import unittest
 
-from charm_tools.paths import game_dir
-from charm_tools.sim import churn, lobby
-from charm_tools.sim.games import bug_lines
-from charm_tools.sim.smoke import Fail
+from quickmud_tools.paths import game_dir
+from quickmud_tools.sim import churn, lobby
+from quickmud_tools.sim.games import bug_lines
+from quickmud_tools.sim.smoke import Fail
 
 
 class FakeSession:
@@ -27,7 +27,7 @@ class FakeSession:
 
 class LobbyTest(unittest.TestCase):
     def test_every_state_the_nanny_handles_has_a_case(self):
-        text = (game_dir() / "charm" / "net" / "nanny.py").read_text(encoding="utf-8")
+        text = (game_dir() / "quickmud" / "net" / "nanny.py").read_text(encoding="utf-8")
         handled = set(re.findall(r"state == C\.(CON_\w+)", text))
         self.assertEqual(handled, set(lobby.STATES.values()))
         self.assertEqual({t[0] for t in lobby.TARGETS} | {"ansi"}, set(lobby.STATES))

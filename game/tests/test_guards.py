@@ -1,8 +1,9 @@
 """Rules the whole package keeps, checked by reading the source (plans/python-port.md, #23).
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import ast
@@ -14,16 +15,16 @@ import unittest
 from pathlib import Path
 
 GAME = Path(__file__).resolve().parents[1]
-PACKAGE = GAME / "charm"
+PACKAGE = GAME / "quickmud"
 MODULES = sorted(PACKAGE.rglob("*.py")) + sorted((GAME / "tests").rglob("*.py"))
 
-CREDIT = ("Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik "
+CREDIT = ("Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik "
           "Staerfeldt, Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell "
           "Tse; and ROM 2.4 (c) 1993-98 Russ Taylor.")
 POINTER = "Licence terms: README.md#licence-terms and doc/."
-SOURCE = re.compile(r"(Ported from src/\w+\.[ch](, src/\w+\.[ch])*\.|Written for Charm; no single C source\.)")
+SOURCE = re.compile(r"(Ported from src/\w+\.[ch](, src/\w+\.[ch])*\.|Written for QuickMUD-Python; no single C source\.)")
 
-# Which charm packages each layer may import. Rules for the layers after world wait until the port shows where the
+# Which quickmud packages each layer may import. Rules for the layers after world wait until the port shows where the
 # C game's circular calls land (#23, decision 3).
 LAYERS = {"core": {"core"}, "data": {"core", "data"}, "world": {"core", "data", "world"}}
 
@@ -33,7 +34,7 @@ def docstring(path):
 
 
 def charm_imports(path, package_parts):
-    """Every charm.* module path imports, with relative imports resolved."""
+    """Every quickmud.* module path imports, with relative imports resolved."""
     for node in ast.walk(ast.parse(path.read_text(encoding="utf-8"))):
         if isinstance(node, ast.Import):
             yield from (a.name for a in node.names)
@@ -48,7 +49,7 @@ def charm_imports(path, package_parts):
 # -- Divergence guards (#35, decision 6) -----------------------------------------------------------------------------
 # Each guard reads one module and returns (line, what) for every place the Python would go quietly different from
 # the C. A line it should allow carries a comment that starts with the guard's marker and says why, such as
-# "# clock: the loop's pulse". DivergenceGuards runs them over game/charm; GuardsCatch checks each one on snippets.
+# "# clock: the loop's pulse". DivergenceGuards runs them over game/quickmud; GuardsCatch checks each one on snippets.
 
 # Python's // and % floor, and the C's / and % truncate: they differ when one side is negative. cint.c_div and
 # c_mod do what the C does.
@@ -190,7 +191,7 @@ GUARDS = [random_finds, clock_finds, division_finds, case_finds, identity_finds,
 
 
 class DivergenceGuards(unittest.TestCase):
-    """Every guard, over every module in game/charm. A failure lists each line, with what it found."""
+    """Every guard, over every module in game/quickmud. A failure lists each line, with what it found."""
 
     def test_game_keeps_every_guard(self):
         modules = [(p.relative_to(PACKAGE).as_posix(), p.read_text(encoding="utf-8"))
@@ -198,7 +199,7 @@ class DivergenceGuards(unittest.TestCase):
         self.assertTrue(modules)
         for guard in GUARDS:
             with self.subTest(guard=guard.__name__):
-                finds = [f"game/charm/{rel}:{n}: {what}" for rel, text in modules for n, what in guard(rel, text)]
+                finds = [f"game/quickmud/{rel}:{n}: {what}" for rel, text in modules for n, what in guard(rel, text)]
                 if finds:
                     self.fail("\n" + "\n".join(finds))
 
@@ -212,7 +213,7 @@ class GuardsCatch(unittest.TestCase):
     def test_random(self):
         self.assertEqual(self.finds(random_finds, "import random\nfrom random import randint\n"),
                          ["imports random", "imports random"])
-        self.assertEqual(self.finds(random_finds, "from charm.core.rng import number_range\n"), [])
+        self.assertEqual(self.finds(random_finds, "from quickmud.core.rng import number_range\n"), [])
 
     def test_clock(self):
         self.assertEqual(self.finds(clock_finds, "import time\nt = time.time()\n"), ["time.time"])
@@ -272,10 +273,10 @@ class Layers(unittest.TestCase):
             layer = rel[0] if len(rel) > 1 else None
             if layer not in LAYERS:
                 continue
-            package_parts = ("charm",) + rel[:-1]
+            package_parts = ("quickmud",) + rel[:-1]
             for name in charm_imports(path, package_parts):
                 parts = name.split(".")
-                if parts[0] == "charm" and len(parts) > 1:
+                if parts[0] == "quickmud" and len(parts) > 1:
                     with self.subTest(module=str(path.relative_to(GAME)), imports=name):
                         self.assertIn(parts[1], LAYERS[layer])
 

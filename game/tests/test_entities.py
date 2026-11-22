@@ -1,31 +1,32 @@
 """Prototypes, resets and the handler functions, on small synthetic areas booted through boot_db.
 
-The stock areas are compared with the C game line by line by ``charm_tools port world`` (and its test, which uses
+The stock areas are compared with the C game line by line by ``quickmud_tools port world`` (and its test, which uses
 the saved capture). These cover what the stock areas don't reach, or reach too rarely to pin down: the 'F' line
 after the race flags, the anti-alignment zap, a dark room's infrared, nested container weights, the UMIN double
 draw, an area range of "0 0", the NotPorted branches, and the music file's edge cases.
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import tempfile
 import unittest
 from pathlib import Path
 
-from charm.core import log, rng
-from charm.core.errors import NotPorted
-from charm.data import constants as C
-from charm.data.races import RACE_TABLE
-from charm.entities import handler
-from charm.entities.boot import boot_db
-from charm.entities.resets import _umin_fuzzy
-from charm.entities.things import Char, Obj
-from charm.persist import player
-from charm.world import lookup
-from charm.world.areafile.reader import Reader
-from charm.world.index import Affect
+from quickmud.core import log, rng
+from quickmud.core.errors import NotPorted
+from quickmud.data import constants as C
+from quickmud.data.races import RACE_TABLE
+from quickmud.entities import handler
+from quickmud.entities.boot import boot_db
+from quickmud.entities.resets import _umin_fuzzy
+from quickmud.entities.things import Char, Obj
+from quickmud.persist import player
+from quickmud.world import lookup
+from quickmud.world.areafile.reader import Reader
+from quickmud.world.index import Affect
 
 BAT = next(r for r in RACE_TABLE if r.name == "bat")
 BAT_AFF_BIT = BAT.aff & -BAT.aff  # the lowest affect bit the race gives; the 'F' line below removes it
@@ -128,7 +129,7 @@ def boot_area(trigger: str = "", progs: str = "", seed: str = "1", music: str | 
             Path(d, "music.txt").write_text(music)  # load_songs crashes the C without one
         Path(d, "t.are").write_text(text)
         with log.capture() as lines:
-            game = boot_db(Path(d), 1763400000, {"CHARM_SEED": seed})
+            game = boot_db(Path(d), 1763400000, {"QUICKMUD_SEED": seed})
     return game, lines
 
 
@@ -189,7 +190,7 @@ class Resets(unittest.TestCase):
         # The zap's act() messages reach the guards. A trigger whose phrase isn't in them does nothing, as in the C.
         from unittest import mock
 
-        from charm.systems import mobprog
+        from quickmud.systems import mobprog
 
         with mock.patch.object(mobprog, "program_flow") as flow:
             boot_area(trigger="M act 30050 hello~\n", progs=PROGS)
@@ -298,7 +299,7 @@ class Songs(unittest.TestCase):
         self.assertEqual(game.channel_songs, [-1] * 11)
 
     def test_too_many_lines(self):
-        # The 101st line logs a bug and stops the song without setting its lines (abraidotti/charm#83), so it can't
+        # The 101st line logs a bug and stops the song without setting its lines (abraidotti/QuickMUD-Python#83), so it can't
         # be played, and the next song starts where the lyrics were cut off.
         lyrics = "".join("line %d\n" % i for i in range(101))
         game, lines = boot_area(music="Band~\nLong~\n" + lyrics + "~\nSong~\nx\n~\n#\n")
@@ -309,8 +310,8 @@ class Songs(unittest.TestCase):
         self.assertEqual((second.name, second.lines, second.lyrics[0]), ("Song", 1, "x"))
 
     def test_no_music_file(self):
-        # fopen fails, and the C calls fclose (NULL) (abraidotti/charm#83).
-        from charm.core.errors import CWouldCrash
+        # fopen fails, and the C calls fclose (NULL) (abraidotti/QuickMUD-Python#83).
+        from quickmud.core.errors import CWouldCrash
 
         with self.assertRaises(CWouldCrash):
             boot_area(music=None)

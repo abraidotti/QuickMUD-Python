@@ -4,7 +4,7 @@
 #
 # Usage: ./startup.sh [port]   (default 4000)
 # Runs the game from area/, logging each run to ../log/NNNN.log, and restarts it
-# after a crash. The game is python3 -m charm, with game/ on PYTHONPATH (the C
+# after a crash. The game is python3 -m quickmud, with game/ on PYTHONPATH (the C
 # game's ../area/rom until cut-over; see the c-final tag). A 'shutdown' in game (which writes shutdown.txt) stops the loop.
 # SIGTERM or SIGINT stops the game and the loop (for 'docker stop'); the game
 # saves everyone first, and the script exits with the game's exit status.
@@ -26,7 +26,7 @@ while :; do
     done
     logfile="../log/$index.log"
 
-    python3 -m charm --port "$port" --root .. >"$logfile" 2>&1 &
+    python3 -m quickmud --port "$port" --root .. >"$logfile" 2>&1 &
     pid=$!
     wait "$pid"
     pid=

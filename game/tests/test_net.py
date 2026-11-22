@@ -1,13 +1,14 @@
 """The game loop on real sockets, and the pieces around it: qmconfig.rc, one_argument, the pulse stats.
 
 What comm.c's input and output functions do, byte for byte, is compared with the C game's saved results by
-charm_tools port io (tools/tests/data/iocases.txt). These check the loop itself: a connection gets the greeting, a
+quickmud_tools port io (tools/tests/data/iocases.txt). These check the loop itself: a connection gets the greeting, a
 shutdown signal says goodbye and closes it, and a line of input reaches nanny. Until cut-over, port greeting and port
 login compared the greeting and logging in with the C game live (the c-final tag).
 
-Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
+Part of QuickMUD-Python, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4
-(c) 1993-98 Russ Taylor. Written for Charm; no single C source. Licence terms: README.md#licence-terms and doc/.
+(c) 1993-98 Russ Taylor. Written for QuickMUD-Python; no single C source.
+Licence terms: README.md#licence-terms and doc/.
 """
 
 import socket
@@ -16,11 +17,11 @@ import threading
 import unittest
 from pathlib import Path
 
-from charm.commands.interp import one_argument
-from charm.core import log
-from charm.entities.boot import boot_db
-from charm.net import server
-from charm.net.config import Config, qmconfig_read
+from quickmud.commands.interp import one_argument
+from quickmud.core import log
+from quickmud.entities.boot import boot_db
+from quickmud.net import server
+from quickmud.net.config import Config, qmconfig_read
 from tests.test_entities import AREA
 
 GREETING_AREA = AREA.replace("#MOBILES", "#HELPS\n-1 greeting~\n.  Hello, test!\n~\n0 $~\n\n#MOBILES", 1)
@@ -33,7 +34,7 @@ def boot():
         Path(d, "music.txt").write_text("#\n")  # load_songs crashes the C without one
         Path(d, "t.are").write_text(text)
         with log.capture():
-            game = boot_db(Path(d), 1763400000, {"CHARM_SEED": "1"})
+            game = boot_db(Path(d), 1763400000, {"QUICKMUD_SEED": "1"})
     game.config = Config()
     return game
 
@@ -154,7 +155,7 @@ class Copyover(unittest.TestCase):
     def setUp(self):
         import shutil
 
-        from charm.entities import game as game_module
+        from quickmud.entities import game as game_module
 
         repo = Path(__file__).resolve().parents[2]
         self.tmp = tempfile.TemporaryDirectory()
@@ -163,20 +164,20 @@ class Copyover(unittest.TestCase):
         (root / "player").mkdir()
         shutil.copy(repo / "tools" / "fixtures" / "player" / "Shemp", root / "player" / "Shemp")
         with log.capture():
-            self.game = boot_db(root / "area", 1763400000, {"CHARM_SEED": "1"})
+            self.game = boot_db(root / "area", 1763400000, {"QUICKMUD_SEED": "1"})
         self.game.config = Config()
         self.saved, game_module.current = game_module.current, self.game
         self.area = root / "area"
 
     def tearDown(self):
-        from charm.entities import game as game_module
+        from quickmud.entities import game as game_module
 
         game_module.current = self.saved
         self.tmp.cleanup()
 
     def test_recover_a_player_and_drop_the_lost(self):
-        from charm.commands.copyover import COPYOVER_FILE, copyover_recover
-        from charm.data import constants as C
+        from quickmud.commands.copyover import COPYOVER_FILE, copyover_recover
+        from quickmud.data import constants as C
 
         game_end, ours = socket.socketpair()
         lost_end, lost_ours = socket.socketpair()
@@ -203,21 +204,21 @@ class Copyover(unittest.TestCase):
             s.close()
 
     def test_no_copyover_file_stops_the_game(self):
-        from charm.commands.copyover import copyover_recover
+        from quickmud.commands.copyover import copyover_recover
 
         with log.capture() as lines, self.assertRaises(SystemExit):
             copyover_recover(self.game)
         self.assertIn("Copyover file not found. Exitting.", "".join(lines))
 
     def test_copyover_file_not_writeable(self):
-        from charm.commands.copyover import do_copyover
-        from charm.entities.things import new_char
+        from quickmud.commands.copyover import do_copyover
+        from quickmud.entities.things import new_char
 
         self.game.area_dir = self.area / "missing"
         ch = new_char(0)
         ch.desc = None
         sent = []
-        import charm.commands.copyover as co
+        import quickmud.commands.copyover as co
 
         real, co.send_to_char = co.send_to_char, lambda text, c: sent.append(text)
         try:

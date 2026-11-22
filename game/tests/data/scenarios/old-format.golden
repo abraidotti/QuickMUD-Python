@@ -1,4 +1,4 @@
-c-final
+python
 boot seed 20261117 clock 1763400000 updates area
 rng 51995 fa6cc523
 step 1 "@connect god"
@@ -13,13 +13,13 @@ step 4 "@return"
 out god "\n\r* You are responsible for knowing the rules (type 'rules').  Ignorance of \n\r  the rules is no excuse.\n\r* Important commands: help, commands, news, notes\n\r* Use the delete command to erase unwanted characters\n\r  \n\r[Hit Return to continue]\n\r"
 rng 52018 6742c869
 step 5 "@return"
-out god "\n\rWelcome to Charm.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out god "\n\rWelcome to QuickMUD-Python.  Please don't feed the mobiles!\n\rThe Temple Of Mota\n\r  You are in the southern end of the temple hall in the Temple of Mota.\n\rThe temple has been constructed from giant marble blocks, eternal in\n\rappearance, and most of the walls are covered by ancient wall paintings\n\rpicturing gods, giants and peasants.\n\r   Large steps lead down through the grand temple gate, descending the huge\n\rmound upon which the temple is built and ends on the temple square below.\n\r   Equally large steps lead UP through a small door into the ENTRANCE to MUD \n\rSCHOOL.  (type 'up' to go to MUD SCHOOL.)  A small plaque is on this wall.\n\rHassan is here, waiting to dispense some justice.\n\r\nNum          Name Unread Description\n\r==== ============ ====== =============================\n\r( 1)      General [   0] General discussion\n\r( 2)        Ideas [   0] Suggestion for improvement\n\r( 3)     Announce [   0] Announcements from Immortals\n\r( 4)         Bugs [   0] Typos, bugs, errors\n\r( 5)     Personal [   0] Personal messages\n\r\n\rYou current board is General.\n\rYou can both read and write on this board.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
 rng 52018 6742c869
 step 6 "holylight"
 out god "Holy light mode on.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
 rng 52018 6742c869
 step 7 "memory"
-out god "Affects   744\n\rAreas      49\n\rExDes    1116\n\rExits    7322\n\rHelps     273\n\rSocials   244\n\rMobs      991(991 new format)\n\r(in use) 2178\n\rObjs     1281(1281 new format)\n\rResets   4609\n\rRooms    3128\n\rShops      63\n\rStrings 17184 strings of 1402521 bytes (max 1413120).\n\rPerms   28174 blocks  of 2943944 bytes.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
+out god "Affects   744\n\rAreas      49\n\rExDes    1116\n\rExits    7322\n\rHelps     273\n\rSocials   244\n\rMobs      991(991 new format)\n\r(in use) 2178\n\rObjs     1281(1281 new format)\n\rResets   4609\n\rRooms    3128\n\rShops      63\n\rStrings 17184 strings of 1402530 bytes (max 1413120).\n\rPerms (kept different)\n\r\n\r<100hp 100m 100mv> \xff\xf9"
 rng 52018 6742c869
 step 8 "goto 31000"
 out god "The Old Hall [Room 31000]\n\r  Dust lies thick on everything here. A doorway leads east.\n\r     A cloudy gem lies here.\n\r\n\r     An old lamp lies here.\n\r\n\r     A few old coins lie here.\n\r\n\r     An old chest sits here.\n\r\n\r     A small idol sits here.\n\r\n\r     A bone lies here, forgotten.\n\r\n\rA child who was never young stands here.\n\rA huge old brute looms over you.\n\rAn old elven sage sits here.\n\rAn old guard stands here, leaning on a spear.\n\r\n\r<100hp 100m 100mv> \xff\xf9"
