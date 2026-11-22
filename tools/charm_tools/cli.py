@@ -6,6 +6,8 @@
     explore parity         compare the loader with the real game (--docker IMAGE, or the saved capture)
     sim smoke [ARGS...]    the smoke test (see: python -m charm_tools sim smoke --help)
     sim bots [ARGS...]     bots playing while the Python game times its pulses (sim bots --help)
+    sim lobby [ARGS...]    awkward replies at every login prompt, on one game or both (sim lobby --help)
+    sim churn [ARGS...]    bots creating characters and quitting, on one game or both (sim churn --help)
     port status            how much of the C game the Python game (game/) has ported, function by function
     port rng --docker IMG  check the C game's random numbers against game/tests/data/rng.json
     port data [--check]    generate game/charm/data/ from the C tables (--check: fail if it would change)
@@ -35,6 +37,12 @@ def main(argv: list[str] | None = None) -> int:
     if argv[:2] == ["sim", "bots"]:
         from .sim import bots as bots_mod
         return bots_mod.main(argv[2:], prog="python -m charm_tools sim bots")
+    if argv[:2] == ["sim", "lobby"]:
+        from .sim import lobby as lobby_mod
+        return lobby_mod.main(argv[2:], prog="python -m charm_tools sim lobby")
+    if argv[:2] == ["sim", "churn"]:
+        from .sim import churn as churn_mod
+        return churn_mod.main(argv[2:], prog="python -m charm_tools sim churn")
     if argv[:2] == ["sim", "smoke"]:
         from .sim import smoke as smoke_mod
         return smoke_mod.main(argv[2:], prog="python -m charm_tools sim smoke")
@@ -59,6 +67,8 @@ def main(argv: list[str] | None = None) -> int:
     sim_sub = sim.add_subparsers(dest="sim_command", required=True, metavar="sim-command")
     sim_sub.add_parser("smoke", help="the smoke test (handled above; listed here for --help)")
     sim_sub.add_parser("bots", help="bots playing while the game times its pulses (handled above)")
+    sim_sub.add_parser("lobby", help="awkward replies at every login prompt (handled above)")
+    sim_sub.add_parser("churn", help="bots creating characters and quitting (handled above)")
 
     port = sub.add_parser("port", help="the Python port of the game")
     port_sub = port.add_subparsers(dest="port_command", required=True, metavar="port-command")

@@ -38,7 +38,9 @@ so every editor runs, and `scan`, `flag`, `areas`, `commands` and `wizhelp`. PR 
 every command is ported. PR 9 done, the old area formats: `#MOBOLD` and `#OBJOLD` (`load_old_mob`, `load_old_obj`
 and `db2.c`'s `convert_*`, in `charm/entities/oldformat.py`), with a fixture area, and `bug`'s hang on a last line
 with no newline. P5 done 2026-11-21: 949 of 950 C functions are whole. `game_loop_unix` stays partial for the
-out-of-band difference accepted in #29, and how to count it is a question for P6.
+out-of-band difference accepted in #29, and how to count it is a question for P6. P6, cut-over, is 3 PRs or
+2026-11-28 (#112, every decision answered as recommended). PR 1 of 3 done, the trials: `sim lobby` and `sim
+churn`, run on both games and compared.
 
 ## Goal
 
