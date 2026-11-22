@@ -3,7 +3,9 @@
 Status: T0 and T1 done (#17, #18), 2026-11-17 (#16). T1's area loader moved into the Python game in P1
 (`game/charm/world/areafile/`, #25); Explore imports it from there. The first of T2's C table readers came with it
 (`charm_tools port data`). Decisions 1-4 answered as recommended; Docker replaced WSL as the
-place the game runs (decision 5, #1). Decisions 6-7 are still open.
+place the game runs (decision 5, #1). Decisions 6-7 are still open. The `lobby` and `churn` trials came early,
+for the Python port's cut-over (#112, decision 1): `sim lobby` and `sim churn`, built on `smoke.py`'s telnet and
+login code rather than on T4's Sim core, which is still to come.
 
 ## Goal
 
