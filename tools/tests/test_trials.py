@@ -1,5 +1,5 @@
 """Unit tests for the lobby and churn trials' own logic. The live runs are: python -m charm_tools sim lobby
---compare IMAGE, and python -m charm_tools sim churn --compare IMAGE."""
+--python, and python -m charm_tools sim churn --python."""
 
 import re
 import unittest
@@ -53,13 +53,6 @@ class LobbyTest(unittest.TestCase):
         self.assertEqual(len(set(names)), 600)
         self.assertTrue(all(n.isalpha() and len(n) <= 12 for n in names))
 
-    def test_compare_finds_a_different_answer(self):
-        c = [{"case": "sex/empty", "up": True, "closed": False, "reply": "That's not a sex."}]
-        self.assertEqual(lobby.compare(c, [dict(c[0])]), 0)
-        self.assertEqual(lobby.compare(c, [dict(c[0], reply="Traceback")]), 1)
-        self.assertEqual(lobby.compare(c, [dict(c[0], up=False)]), 1)
-        self.assertEqual(lobby.compare(c, []), 1)
-
     def test_a_case_that_went_down_is_a_finding(self):
         recs = [{"case": "sex/empty", "game": "Python", "up": False, "why": "exit status 1"},
                 {"case": "(log)", "game": "Python", "up": True, "bugs": []}]
@@ -74,11 +67,6 @@ class ChurnTest(unittest.TestCase):
         self.assertEqual(len(set(names)), len(names))
         self.assertTrue(all(n.isalpha() and len(n) <= 12 for n in names))
         self.assertNotEqual(bots[0].name(1), bots[0].name(1 + 26 ** 3))  # distinct for 26^4 quits per bot
-
-    def test_compare_allows_fewer_bug_lines_on_python_but_not_more(self):
-        c = {"quits": 9, "bugs": ["BUG: a", "BUG: b"]}
-        self.assertEqual(churn.compare(c, {"quits": 7, "bugs": ["BUG: a"]}), 0)
-        self.assertEqual(churn.compare(c, {"quits": 7, "bugs": ["BUG: a", "BUG: c"]}), 1)
 
     def test_going_down_or_bot_errors_are_findings(self):
         rec = {"game": "C", "quits": 3, "errors": [], "down": None, "bugs": [], "tail": []}

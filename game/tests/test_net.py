@@ -1,9 +1,9 @@
 """The game loop on real sockets, and the pieces around it: qmconfig.rc, one_argument, the pulse stats.
 
-What comm.c's input and output functions do, byte for byte, is compared with the C game by charm_tools port io
-(tools/oracle/iocases.txt), and the live greeting by port greeting. These check the loop itself: a connection gets
-the greeting, a shutdown signal says goodbye and closes it, and a line of input reaches nanny. Logging in, byte for
-byte, is charm_tools port login's.
+What comm.c's input and output functions do, byte for byte, is compared with the C game's saved results by
+charm_tools port io (tools/tests/data/iocases.txt). These check the loop itself: a connection gets the greeting, a
+shutdown signal says goodbye and closes it, and a line of input reaches nanny. Until cut-over, port greeting and port
+login compared the greeting and logging in with the C game live (the c-final tag).
 
 Part of Charm, derived from DikuMUD (c) 1990-91 Sebastian Hammer, Michael Seifert, Hans Henrik Staerfeldt,
 Tom Madsen and Katja Nyboe; Merc (c) 1992-93 Michael Chastain, Michael Quan and Mitchell Tse; and ROM 2.4

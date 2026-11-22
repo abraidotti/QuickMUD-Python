@@ -1,8 +1,7 @@
 """charm_tools port players without Docker: the C game's saved files, loaded and saved again by the Python game.
 
-tools/tests/data/players holds what the C game wrote in a port players --save run: Newbie, a character it made,
-and Shemp and Smokegod after logging in with the fixtures. Recapture with
-python -m charm_tools port players --docker charm:c --save after changing the C or the fixtures.
+tools/tests/data/players holds what the C game wrote before cut-over: Newbie, a character it made, and Shemp and
+Smokegod after logging in with the fixtures.
 """
 
 import unittest

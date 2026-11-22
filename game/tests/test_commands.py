@@ -1,6 +1,6 @@
 """The interpreter and the spike's commands, offline, on the small test area from test_entities.
 
-What each command prints, byte for byte, is compared with the C game by charm_tools port commands (#32). These
+What each command prints, byte for byte, was compared with the C game by port commands until cut-over (#32). These
 pin down the pieces around it: the C's string helpers, number_argument, the command table's prefix order, what an
 unported command does, and the lines that differ from the C on purpose.
 

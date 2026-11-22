@@ -215,7 +215,7 @@ def create_object(game: Game, p: ObjIndex, level: int) -> Obj:
     obj.weight = p.weight
     if level == -1 or not old:
         obj.cost = p.cost
-    else:  # left to right, as gcc calls them (tools/oracle checks nothing here: the branch never runs)
+    else:  # left to right, as gcc calls them (the C oracle checked nothing here: the branch never runs)
         obj.cost = int32(number_fuzzy(10) * number_fuzzy(level) * number_fuzzy(level))
     fuzz = old and level != -1  # the old-format branches that use the level given
 

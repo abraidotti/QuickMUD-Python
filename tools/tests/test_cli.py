@@ -50,10 +50,13 @@ class CliTest(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("mob.never-spawns", out)
 
-    def test_explore_parity_save_needs_docker(self):
-        code, _, err = run(["explore", "parity", "--save"])
-        self.assertEqual(code, 2)
-        self.assertIn("--save needs --docker", err)
+    def test_the_c_only_commands_are_gone(self):
+        for argv in (["port", "rng"], ["port", "data"], ["port", "login"], ["port", "greeting"],
+                     ["port", "commands"], ["port", "asave"], ["explore", "parity", "--docker", "x"]):
+            with self.subTest(argv=argv):
+                code, _, err = run(argv)
+                self.assertEqual(code, 2)
+                self.assertRegex(err, r"invalid choice|unrecognized arguments")
 
     def test_sim_smoke_help(self):
         code, out, _ = run(["sim", "smoke", "--help"])

@@ -2,8 +2,8 @@
 
 The Python game is organised by topic, not by C file (plans/python-port.md), so the map from C to Python comes from
 marker comments: a line "# C: <file>.c <function>" directly above the Python def that ports it, with " [partial]"
-after it when only part of the function is ported so far (#25, decision 3). This reads every C function in src/
-and every marker in game/charm/, and reports per C file what's ported, what's partial and where it went, plus
+after it when only part of the function is ported so far (#25, decision 3). This reads the C game's functions
+(c_functions.txt, frozen at the c-final tag when src/ was removed, #112) and every marker in game/charm/, and reports per C file what's ported, what's partial and where it went, plus
 Python lines per C line for the fully ported functions. A marker that names no C function is an error.
 
 It also lists the improvements noted for later: "# LATER: <what>" comments, put where a refactor or a faster
@@ -18,18 +18,11 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from ..paths import find_root, game_dir, src_dir
+from ..paths import find_root, game_dir
 
 MARKER = re.compile(r"^\s*# C: (\S+\.c) (\w+)( \[partial\])?\s*$")
 LATER = re.compile(r"#\s*LATER:(.*)$")
 CONTINUED = re.compile(r"^\s*#\s(.*)$")
-# A definition starts in column 0 with a return type, the name and "(". Its body opens with "{" at the end of the
-# parameter list or in column 0 on a following line (ROM's style throughout), and closes with "}" in column 0.
-DEF_START = re.compile(r"^(?!typedef\b|#|/|\s)[A-Za-z_][\w\s*]*?\b([A-Za-z_]\w*)\s*\(")
-NOT_NAMES = {"if", "while", "for", "switch", "return", "sizeof", "args"}
-# OLC defines its editor functions through macros: "REDIT( redit_show )" is bool redit_show(CHAR_DATA *, char *).
-MACRO_DEF = re.compile(r"^[A-Z][A-Z_]*\s*\(\s*([a-z_]\w*)\s*\)\s*$")
-COMMENT = re.compile(r"/\*.*?\*/", re.S)
 ISSUE = re.compile(r"#\d+")
 
 
@@ -75,40 +68,21 @@ class Status:
     later: list[Later] = field(default_factory=list)
 
 
-def c_functions(path: Path) -> list[CFunction]:
-    """Every function defined in a C file, going by ROM's layout (see DEF_START)."""
-    # Blank out comments, keeping their newlines, so commented-out code isn't counted and line numbers hold.
-    text = COMMENT.sub(lambda c: re.sub(r"[^\n]", " ", c.group()), path.read_bytes().decode("latin-1"))
-    lines = text.splitlines()
-    found = []
-    i = 0
-    while i < len(lines):
-        m = MACRO_DEF.match(lines[i]) or DEF_START.match(lines[i])
-        if m and m.group(1) not in NOT_NAMES:
-            # Join lines until the parameter list closes. What follows it says what this is: ";" a prototype,
-            # "{" (here or on a later line) a definition.
-            j, text = i, lines[i]
-            while text.count("(") > text.count(")") and j + 1 < len(lines):
-                j += 1
-                text += " " + lines[j]
-            after = text[text.rfind(")") + 1:].strip()
-            body = None
-            if after.startswith("{"):
-                body = j
-            elif after == "":
-                k = j + 1
-                while k < len(lines) and lines[k].strip() == "":
-                    k += 1
-                if k < len(lines) and lines[k].startswith("{"):
-                    body = k
-            if body is not None:
-                end = next((k for k in range(body, len(lines)) if lines[k].startswith("}")), None)
-                if end is not None:
-                    found.append(CFunction(path.name, m.group(1), i + 1, end + 1))
-                    i = end + 1
-                    continue
-        i += 1
-    return found
+C_FUNCTIONS = Path(__file__).with_name("c_functions.txt")
+
+
+def c_functions(path: Path = C_FUNCTIONS) -> tuple[list[CFunction], dict[str, int]]:
+    """The C game's functions and each C file's length, as frozen at c-final."""
+    functions, c_lines = [], {}
+    for line in path.read_text(encoding="utf-8").splitlines():
+        if not line or line.startswith("#"):
+            continue
+        f, name, a, *b = line.split()
+        if name == "lines":
+            c_lines[f] = int(a)
+        else:
+            functions.append(CFunction(f, name, int(a), int(b[0])))
+    return functions, c_lines
 
 
 def markers(root: Path) -> list[Port]:
@@ -154,10 +128,7 @@ def later_notes(root: Path) -> list[Later]:
 
 def status(root: Path | None = None) -> Status:
     root = root or find_root()
-    functions, c_lines = [], {}
-    for c in sorted(src_dir(root).glob("*.c")):
-        functions += c_functions(c)
-        c_lines[c.name] = len(c.read_bytes().splitlines())
+    functions, c_lines = c_functions()
     known = {(f.file, f.name) for f in functions}
     ports = markers(root)
     bad = [f"game/{p.module}:{p.line}: '# C: {p.c_file} {p.c_name}' names no C function"

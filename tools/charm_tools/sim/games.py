@@ -1,8 +1,8 @@
-"""The games a Sim trial runs against: the C game in a container, or the Python game here.
+"""The game a Sim trial runs against: the Python game here, from a throwaway root.
 
-Both start fresh from the same fixtures (tools/fixtures: qmconfig.rc and the player files) and the same CHARM_SEED,
-and both can say whether the game is still up, what it logged, and why it stopped. The C game runs as `rom` itself,
-not under startup.sh, so a crash ends the container instead of being restarted ten seconds later.
+It starts fresh from the fixtures (tools/fixtures: qmconfig.rc and the player files) and a fixed CHARM_SEED, and
+can say whether it's still up, what it logged, and why it stopped. (Until cut-over the trials ran the C game too,
+and compared the two; that's at the c-final tag.)
 """
 
 from __future__ import annotations
@@ -11,54 +11,11 @@ import subprocess
 import sys
 import time
 
-from .smoke import Fail, connect, docker, free_port
-
-SEED = "20261117"
+from .smoke import connect
 
 
 class Down(Exception):
     """The game stopped, or stopped answering."""
-
-
-class CGame:
-    """The C game in a throwaway container from IMAGE, run as ./rom with no restart loop."""
-
-    kind = "C"
-
-    def __init__(self, image: str, qmconfig: str | None = "fixture", players: tuple[str, ...] = ()):
-        self.image, self.qmconfig, self.players = image, qmconfig, players
-
-    def __enter__(self):
-        from ..port.live import fixtures
-
-        self.port = free_port()
-        self.name = f"charm-trial-{self.port}"
-        docker("create", "--init", "--name", self.name, "-p", f"127.0.0.1:{self.port}:4000",
-               "-e", f"CHARM_SEED={SEED}", "--entrypoint", "./rom", self.image, "4000")
-        if self.qmconfig == "fixture":
-            docker("cp", str(fixtures() / "qmconfig.rc"), f"{self.name}:/opt/charm/area/qmconfig.rc")
-        for who in self.players:
-            docker("cp", str(fixtures() / "player" / who), f"{self.name}:/opt/charm/player/{who}")
-        docker("start", self.name)
-        return self
-
-    def alive(self) -> bool:
-        return docker("inspect", "-f", "{{.State.Running}}", self.name, check=False).stdout.strip() == "true"
-
-    def log(self) -> str:
-        out = subprocess.run(["docker", "logs", self.name], capture_output=True)
-        return (out.stdout + out.stderr).decode("latin-1")
-
-    def why_down(self) -> str:
-        code = docker("inspect", "-f", "{{.State.ExitCode}}", self.name, check=False).stdout.strip()
-        signals = {"134": "SIGABRT", "136": "SIGFPE", "137": "SIGKILL", "139": "SIGSEGV"}
-        return f"exit status {code}" + (f" ({signals[code]})" if code in signals else "")
-
-    def restart(self) -> None:
-        docker("start", self.name)
-
-    def __exit__(self, *exc):
-        docker("rm", "-f", self.name, check=False)
 
 
 class PyGame:
@@ -95,10 +52,7 @@ class PyGame:
         self.live.__exit__(*exc)
 
 
-def open_game(args, qmconfig: str | None = "fixture", players: tuple[str, ...] = ()):
-    """The game args asks for: --docker IMAGE, or --python."""
-    if args.docker:
-        return CGame(args.docker, qmconfig, players)
+def open_game(qmconfig: str | None = "fixture", players: tuple[str, ...] = ()):
     return PyGame(qmconfig, players)
 
 

@@ -1,8 +1,7 @@
 """T1's done criterion: the loader agrees with the real game.
 
-Compares load_world() with captures from the game itself (tools/fixtures/boot): the stock world's 'memory'
-totals and boot log, and each broken area in cases/ with the bug() lines the game printed for it. Refresh the
-captures with: python -m charm_tools explore parity --docker charm:c --save
+Compares load_world() with captures from the C game (tools/fixtures/boot), made before cut-over: the stock world's
+'memory' totals and boot log, and each broken area in cases/ with the bug() lines the game printed for it.
 """
 
 import tempfile

@@ -1,6 +1,6 @@
 """The online builder, offline: bit.c's flag helpers and the parts of olc_save.c no scenario can reach.
 
-What asave writes is compared with the C game byte for byte by charm_tools port asave (every stock area) and the
+What asave writes was compared with the C game byte for byte by port asave until cut-over (every stock area), and the
 asave-* scenarios (a fixture area in OLC's format). These pin down fix_string's quirks, flag_value, and the paths
 where the C would crash or can't open a file.
 

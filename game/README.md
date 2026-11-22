@@ -1,8 +1,9 @@
-# game/: Charm's game in Python
+# game/: Charm's game, in Python
 
-This is the Python port of the C game in `src/`, following [plans/python-port.md](../plans/python-port.md). It's in
-phase P1, the spike (#25): so far the random numbers, the generated tables and the area loader. There's nothing to
-play yet. The C game is the real one until the port matches it.
+This is the game. It's a port of QuickMUD's C game, following [plans/python-port.md](../plans/python-port.md), and
+it's at parity with it: every C function is ported (`port status`: 950 of 950), and 122 scenarios, the Sim trials
+and every live check came out the same on both games before the C was removed (#112). The C game is at the
+`c-final` tag. Its known bugs are kept, filed with the label "after cut-over", and are fixed from `v1.0` on.
 
 ## Licence
 
@@ -10,7 +11,15 @@ The game is derived from DikuMUD, Merc and ROM 2.4, and the Python port is too. 
 the MIT licence of `tools/`. The licence texts are in [doc/](../doc/): `license.doc` (Diku), `license.txt` (Merc)
 and `rom.license` and `rom.credits` (ROM). The lineage, and what each licence asks of us, are in the
 [README](../README.md#licence-terms). Every module starts with a short header naming the copyright holders and
-pointing there. `tests/test_guards.py` checks it.
+pointing there, and saying which C files it was ported from (at `c-final`). `tests/test_guards.py` checks it.
+
+## Running it
+
+`python -m charm --port N --root DIR` runs the game from DIR (which holds `area/`, `player/`, `gods/`, `notes/` and
+`log/`), as the C ran from its area directory. It boots, listens, and stops cleanly on SIGTERM or Ctrl-C (Ctrl-Break
+on Windows), saving everyone. `area/startup.sh` runs it in a restart loop, as the Docker image does. Copyover
+re-executes the game with its connections open, which needs Linux. `CHARM_SEED` seeds the random numbers, and
+`CHARM_UPDATES` names the per-pulse updates to run (`area,violence`, or `all`; unset, all of them; #74).
 
 ## Layout
 
@@ -18,73 +27,54 @@ The code is organised by topic, not by C file:
 
 | Package | What | Imports from |
 |---|---|---|
-| `core/` | C-faithful primitives: integer behaviour (`cint`), random numbers (`rng`), later text and flags | nothing else in `charm` |
-| `data/` | static tables: classes, races, skills, liquids, weapons | `core` |
+| `core/` | C-faithful primitives: integer behaviour (`cint`), random numbers (`rng`), strings, crypt, logging | nothing else in `charm` |
+| `data/` | static tables: classes, races, skills, the command table, flags | `core` |
 | `world/` | the static world: area files, rooms and the prototypes, name lookups | `core`, `data` |
-| `entities/` | characters and objects at run time, moving them around, making them, resets | (rules come with the port) |
+| `entities/` | characters and objects at run time, moving them around, making them, resets, boot | |
 | `net/` | the game loop, descriptors, output, `act()`, login | |
 | `persist/` | player files, notes, bans | |
-| `commands/` | the command table and the commands, by topic | |
-| `systems/` | what runs every tick: fighting, magic, updates, specials, mob programs | |
+| `commands/` | the interpreter and the commands, by topic | |
+| `systems/` | what runs every pulse: fighting, magic, updates, specials, mob programs | |
 | `olc/` | the online builder | |
+| `testing/` | the scenario player and the test watchdog (not game code) | |
 
-So far there are `core/`, `data/`, `world/`, `entities/`, `net/`, `persist/` (player files and the boards),
-`systems/` (`update_handler`, the skill groups, mob program triggers, and fighting: all of `fight.c` and
-`effects.c`) and `commands/` (the interpreter, and the information, movement and talking commands). The import
-rules for the
-first three are checked by `tests/test_guards.py`; the rest get rules once the port shows where the C game's
-circular calls land. The first one has: `equip_char` (`entities/`) calls `act()` (`net/`).
+The import rules for the first three are checked by `tests/test_guards.py`. The rest follow the C game's circular
+calls for now; untangling them is refactor work (plans/refactor.md).
 
-`python -m charm --port N --root DIR` runs the game from DIR (which holds `area/`), as the C does from its run
-directory: it boots, listens, greets connections and stops cleanly on SIGTERM or Ctrl-C (Ctrl-Break on Windows).
-Logging in works: new characters (customised or not), old ones from `player/`, the ANSI question, and the C's
-checks on names and passwords. In the game, the interpreter takes the whole command table (generated, in the C's
-order, so a prefix finds the same command), aliases and socials. The commands ported so far are all of
-`act_info.c`'s (look, examine, who, where, score, practice, the auto toggles and the rest), all of `act_move.c`'s
-and `act_enter.c`'s (the directions, the doors, the positions, sneak, recall, train, enter), all of `act_comm.c`'s
-and `alias.c`'s (the channels, say, tell, emote, pose, follow, group, order, split, colour, alias, delete, save,
-quit), all of `act_obj.c`'s (get, put, drop, give, wear, remove, food and drink, sacrifice, steal, the shops,
-and the magic items, whose spells run if they're ported), all of `board.c`'s and `ban.c`'s (note, board and
-writing a note; ban, permban and allow), all of `act_wiz.c`'s but copyover, which comes with OLC in P5 (goto,
-at, transfer, stat, vnum, the wheres, sockets, the echoes, poofs, invis, prefix, wiznet; deny, disconnect, freeze,
-the no- commands, pardon, log, protect, snoop, switch; load, clone, purge, advance, trust, restore, peace; set,
-string, force, the locks, shutdown, reboot and qmconfig), all of `fight.c`'s (kill, murder, flee, surrender,
-slay and the fighting skills), `cast` and every spell (`magic.c` and `magic2.c`), `heal` (`healer.c`), `play`
-(`music.c`), and what login calls; any other command raises `NotPorted`, which stops the game (#32). Every
-per-pulse update runs, as the C's do: areas, songs, mobs (and their specials), fights, weather, characters, objects
-and aggression. Mob programs run (`mob_prog.c`), with their `mob` commands (`mob_cmds.c`); no stock area has a
-program, so the scenarios use two fixture areas, `tools/fixtures/files/mobprog.are` and `mobcmds.are`. `CHARM_UPDATES` names the ones to run in both games (`area,violence`, or `all`; unset, all of
-them), as `@updates` does in a scenario (#74).
-`charm_tools port commands` plays the same sessions on both games and compares them byte for byte; the C game runs
-with `CHARM_UPDATES=area` for it, so its other updates are off too.
+`data/` was generated from the C (`const.c`, `tables.c`, `special.c` and `merc.h`) by `charm_tools port data` until
+cut-over. It's the source now: edit it by hand.
+
+## Scenarios
 
 Scenarios (#35) check state as well as output, with no network and no real clock. A scenario is a text file in
 `tests/data/scenarios/` (`NAME.scn`): lines of input for a connection, and `@` lines for the harness (`@connect`,
 `@as`, `@return`, `@pulse N`, `@pulse until N TEXT` (pulses until a connection is sent TEXT, at most N), `@mob`,
-`@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too),
-`@obj` (with the object's five values, if given), `@owner` (the last object's owner, as a player's
-corpse has), `@spec` (runs the last mob's special, as `mobile_update` would), `@state`, `@file`, and before
-boot `@seed`, `@clock`, `@updates` and `@place` (a file from `tools/fixtures/files`, such as a board's notes or a
-ban list, put where boot reads it); the format is in `tools/oracle/scenario.c`). A scenario with the comment `# expect: stopped NotPorted` checks that unported code stops the Python game. The C driver
-plays it through the C game's own code, and `charm.testing.scenario` through the Python game's. Both print each
-step's output, the random numbers drawn so far, and on `@state` the rooms' characters and objects. The C's lines
-are saved as `NAME.golden`, which `tests/test_scenarios.py` replays with no Docker. From `tools/`,
-`python -m charm_tools port scenarios --docker charm:build --save` saves them again after a C change; a golden
-names the C sources it came from, so a stale one fails. `python -m charm_tools port coverage FILE.c` runs the
-tests and lists the lines of the functions ported from FILE.c that nothing reaches (#39, decision 6).
+`@charm` (the last mob follows, charmed; `@charm pet` makes it a pet too), `@obj` (with the object's five values, if
+given), `@owner` (the last object's owner, as a player's corpse has), `@spec` (runs the last mob's special, as
+`mobile_update` would), `@state`, `@file`, and before boot `@seed`, `@clock`, `@updates` and `@place` (a file from
+`tools/fixtures/files`, such as a board's notes or a ban list, put where boot reads it). `charm.testing.scenario`
+reads the format; the C driver that defined it, `tools/oracle/scenario.c`, is at `c-final`. A scenario with the
+comment `# expect: stopped NotPorted` checks that the game stops there.
 
-Player files are `persist/player.py`, line by line from `save.c`, so either game loads the other's files
-(`charm_tools port players` checks it both ways). Passwords use `core/crypt.py`, a stdlib-only port of the DES
-`crypt()` the C calls, checked against glibc (`port crypt`).
+Each scenario prints each step's output, the random numbers drawn so far, and on `@state` the rooms' characters and
+objects. `NAME.golden` is what the C game printed, and `tests/test_scenarios.py` replays it. A golden's first line
+says where it came from: `c-final`, or `python` once a deliberate change has saved it again. After a bug fix, from
+`tools/`, `python -m charm_tools port scenarios --save --only NAME` writes the affected goldens from the game, and
+the PR shows their diff. `python -m charm_tools port coverage FILE.c` runs the tests and lists the lines of the
+functions ported from FILE.c that nothing reaches (#39, decision 6).
 
-`charm.entities.boot.boot_db` boots the world the way the C game does: the seed, the clock and weather, the areas,
-then a reset of every area. From `tools/`, `python -m charm_tools port world` boots it next to the C game's (Docker,
-or the saved capture) and compares the two line by line: every prototype, room, mob and object, the log, and the
-random numbers drawn.
+## Checked against the C game
 
-`data/` is generated from the C (`const.c`, `tables.c`, `special.c` and `merc.h`), except its `__init__.py`. Don't
-edit it by hand: change the C, then from `tools/` run `python -m charm_tools port data`. The tools' tests fail if it's
-out of date, and check that the loader's tables built from it equal the ones read straight from the C.
+Besides the goldens, these compare the game with output the C game saved before cut-over:
+
+- `port world`: the booted world, every prototype, room, mob and object, the log, and the random numbers drawn
+- `port io`: comm.c's input and output cases (`tools/tests/data/iocases.txt`)
+- `port crypt`: `core/crypt.py`, a stdlib-only port of the DES `crypt()` the C called, against glibc's answers
+- `port players`: player files the C game saved, loaded and saved by the game, key by key
+- `explore parity`: the loader's totals and boot log, and the broken-area cases
+- `tests/test_rng.py`: 10,000 draws of each of the 8 random-number streams on 4 seeds (`tests/data/rng.json`)
+
+A deliberate change updates the saved output it changes, in the same PR, so the diff shows what changed.
 
 ## Guards
 
@@ -112,34 +102,18 @@ A Python function that ports a C one carries a marker on the line above its `def
 def number_range(from_, to):
 ```
 
-A function that's only partly ported so far says so, and raises `charm.core.errors.NotPorted` on any branch it
-doesn't cover yet, so it fails loudly instead of doing something different from the C:
+Something worth improving now the port matches the C has a `# LATER: <what>` comment where the change would go; the
+cross-cutting ones are listed in the plan, under Improvements for later.
 
-```python
-# C: db2.c load_mobiles [partial]
-```
-
-Something worth improving once the port matches the C gets a `# LATER: <what>` comment where the change would
-go; the cross-cutting ones are listed in the plan, under Improvements for later.
-
-From `tools/`, `python -m charm_tools port status` turns the markers into a report per C file: how many of its
-functions are ported, how many partly, and which Python modules they went to. It ends with the `# LATER:` list. A
-marker that names no C function fails it, and so does an empty `# LATER:`.
+From `tools/`, `python -m charm_tools port status` turns the markers into a report per C file, against the list of
+C functions frozen at `c-final` (`tools/charm_tools/port/c_functions.txt`): which are ported, and which Python
+modules they went to. It also lists the C functions with no Python counterpart (`core/no_counterpart.py`), the ones
+ported whole but for a difference kept on purpose (`core/kept_differences.py`), and the `# LATER:` notes. A marker
+that names no C function fails it, and so does an empty `# LATER:`.
 
 ## Tests
 
 ```sh
 cd game
 python -m unittest discover -s tests
-```
-
-`tests/test_rng.py` checks the random numbers against the C game's own: 10,000 draws of each of the 8 streams on 4
-seeds, from `tests/data/rng.json`. To capture that file again from the C game (it needs Docker and the build-stage
-image):
-
-```sh
-docker build -f tools/oracle/Dockerfile.c --target build -t charm:build .
-cd tools
-python -m charm_tools port rng --docker charm:build          # compare with the saved file
-python -m charm_tools port rng --docker charm:build --save   # replace it
 ```

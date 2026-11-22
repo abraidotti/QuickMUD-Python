@@ -1,7 +1,7 @@
 """Where the Charm checkout is.
 
-The repo root is the nearest directory above this package (or above CHARM_ROOT, if set) that holds both
-src/merc.h and area/area.lst.
+The repo root is the nearest directory above this package (or CHARM_ROOT, if set) that holds both the game
+(game/charm/__init__.py) and area/area.lst.
 """
 
 from __future__ import annotations
@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-MARKERS = (Path("src") / "merc.h", Path("area") / "area.lst")
+MARKERS = (Path("game") / "charm" / "__init__.py", Path("area") / "area.lst")
 
 
 class RootNotFound(Exception):
@@ -33,10 +33,6 @@ def find_root(start: Path | None = None) -> Path:
         if is_root(candidate):
             return candidate
     raise RootNotFound(f"no Charm checkout (with {' and '.join(str(m) for m in MARKERS)}) above {here}")
-
-
-def src_dir(root: Path | None = None) -> Path:
-    return (root or find_root()) / "src"
 
 
 def area_dir(root: Path | None = None) -> Path:

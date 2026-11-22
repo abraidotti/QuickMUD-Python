@@ -1,33 +1,19 @@
 """charm_tools port io: the C game's input and output code against the Python game's, case by case.
 
-The cases are tools/oracle/iocases.txt, a small script. tools/oracle/iocheck.c runs it through the C game's own
-comm.c (built in the build-stage image, like port rng and port world); this module runs it through the Python
-game's. Then the printed results and the log lines are compared. The C side uses a real socketpair; the Python side
-uses an in-memory pair, so the results don't depend on the platform's loopback timing. The live greeting check
-(port greeting) covers real sockets.
-
-A saved capture (tools/tests/data/io.txt) lets the tests compare without Docker.
+The cases are tools/tests/data/iocases.txt, a small script. Before cut-over, tools/oracle/iocheck.c (at the c-final
+tag) ran it through the C game's own comm.c, over a real socketpair, and its results are tools/tests/data/io.txt.
+This module runs the cases through the Python game's, over an in-memory pair, so the results don't depend on the
+platform's loopback timing, and compares the printed results and the log lines.
 """
 
 from __future__ import annotations
 
 import re
-import subprocess
 import types
 from dataclasses import dataclass
 from pathlib import Path
 
 from ..paths import find_root, use_game
-
-BUILD = r"""
-set -e
-cd /opt/charm/src
-gcc -O -g3 -Wall -std=gnu17 -fcommon -Dmain=game_main -c -o /tmp/comm_nomain.o comm.c 2>/dev/null
-gcc -O -g3 -Wall -std=gnu17 -fcommon -I. -o /tmp/iocheck /oracle/iocheck.c \
-    $(ls obj/*.o | grep -v '^obj/comm\.o$') /tmp/comm_nomain.o -lcrypt
-/tmp/iocheck < /oracle/iocases.txt
-"""
-
 
 @dataclass
 class Capture:
@@ -36,7 +22,7 @@ class Capture:
 
 
 def cases_path(root: Path | None = None) -> Path:
-    return (root or find_root()) / "tools" / "oracle" / "iocases.txt"
+    return (root or find_root()) / "tools" / "tests" / "data" / "iocases.txt"
 
 
 def fixture_path(root: Path | None = None) -> Path:
@@ -256,23 +242,6 @@ def python_io(cases: str) -> Capture:
     return Capture(out, list(lines))
 
 
-def c_io(image: str, root: Path | None = None) -> Capture:
-    root = root or find_root()
-    oracle = root / "tools" / "oracle"
-    cmd = ["docker", "run", "--rm", "-v", f"{oracle}:/oracle:ro", image, "sh", "-c", BUILD]
-    run = subprocess.run(cmd, capture_output=True, text=True, encoding="latin-1")
-    if run.returncode != 0:
-        raise RuntimeError(f"iocheck failed in {image} (exit {run.returncode}):\n{run.stderr.strip()[-2000:]}")
-    log = [x.split(" :: ", 1)[1] for x in run.stderr.splitlines() if " :: " in x]
-    return Capture(run.stdout.splitlines(), log)
-
-
-def save(cap: Capture, path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(cap.out) + "\n=== log\n" + "\n".join(cap.log) + "\n", encoding="latin-1",
-                    newline="\n")
-
-
 def load(path: Path) -> Capture:
     out, _, log = path.read_text(encoding="latin-1").partition("\n=== log\n")
     return Capture(out.split("\n"), [x for x in log.split("\n") if x])
@@ -292,22 +261,12 @@ def compare(c: Capture, py: Capture, limit: int = 10) -> list[str]:
     return diffs
 
 
-def run(image: str | None, save_fixture: bool) -> int:
+def run() -> int:
     cases = cases_path().read_text(encoding="latin-1")
-    if image:
-        try:
-            c = c_io(image)
-        except (OSError, RuntimeError) as e:
-            print(f"couldn't run the C side: {e}")
-            return 2
-        if save_fixture:
-            save(c, fixture_path())
-            print(f"saved the C results to {fixture_path()}")
-    else:
-        if not fixture_path().exists():
-            print(f"no saved capture at {fixture_path()}; run with --docker IMAGE")
-            return 2
-        c = load(fixture_path())
+    if not fixture_path().exists():
+        print(f"no saved capture at {fixture_path()}")
+        return 2
+    c = load(fixture_path())
     py = python_io(cases)
     print(f"{len(c.out)} results and {len(c.log)} log lines from C, {len(py.out)} and {len(py.log)} from Python")
     diffs = compare(c, py)

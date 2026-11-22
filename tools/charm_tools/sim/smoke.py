@@ -404,9 +404,8 @@ def run_docker(args):
             return None
 
         def open_fds(self):
-            """How many file descriptors the game process has open: the C's rom, or python3 -m charm."""
-            script = ('for p in /proc/[0-9]*; do case "$(readlink $p/exe)" in */rom|*/python3*) '
-                      'ls $p/fd | wc -l;; esac; done')
+            """How many file descriptors the game process (python3 -m charm) has open."""
+            script = 'for p in /proc/[0-9]*; do case "$(readlink $p/exe)" in */python3*) ls $p/fd | wc -l;; esac; done'
             return int(docker("exec", container, "sh", "-c", script).stdout.split()[0])
 
         def player_file(self, name):

@@ -1,9 +1,7 @@
-"""Running the C game and the Python game side by side, for port login, port players and port commands.
+"""Running the Python game for the tools: PyGame runs it here, from a throwaway copy of area/.
 
-A game starts fresh for each use, from the same fixtures (tools/fixtures: qmconfig.rc, the player files) and the
-same CHARM_SEED:
-- CGame runs the C game in a container from a runtime image
-- PyGame runs the Python game here, from a throwaway copy of area/
+A game starts fresh for each use, from the fixtures (tools/fixtures: qmconfig.rc, the player files) and a fixed
+CHARM_SEED. (Until cut-over, a CGame ran the C game beside it in a container; it's at the c-final tag.)
 Sessions read until the game has been quiet for a moment, so each step's output is everything one line of input
 produced. Stopping follows the Xania gotchas: SIGTERM (CTRL_BREAK on Windows) first, then the whole process tree.
 """
@@ -21,7 +19,7 @@ import time
 from pathlib import Path
 
 from ..paths import area_dir, find_root, game_dir
-from ..sim.smoke import docker, free_port
+from ..sim.smoke import free_port
 
 SEED = "20261117"
 CLOSED = b"<closed>"
@@ -74,40 +72,6 @@ class Session:
 
     def close(self) -> None:
         self.sock.close()
-
-
-class CGame:
-    """The C game in a container. Use as a context manager; player files can be copied in and out."""
-
-    def __init__(self, image: str, qmconfig: str | None = "fixture", players: tuple[str, ...] = ("Shemp",),
-                 area_updates_only: bool = False):
-        self.image, self.qmconfig, self.players = image, qmconfig, players
-        # CHARM_UPDATES=area (#32): only area_update runs, in both games, so the worlds stay the same
-        self.env = ["-e", "CHARM_UPDATES=area"] if area_updates_only else []
-
-    def __enter__(self):
-        self.port = free_port()
-        self.name = f"charm-port-{self.port}"
-        docker("create", "--init", "--name", self.name, "-p", f"127.0.0.1:{self.port}:4000", "-e",
-               f"CHARM_SEED={SEED}", *self.env, self.image)
-        if self.qmconfig == "fixture":
-            docker("cp", str(fixtures() / "qmconfig.rc"), f"{self.name}:/opt/charm/area/qmconfig.rc")
-        for who in self.players:
-            docker("cp", str(fixtures() / "player" / who), f"{self.name}:/opt/charm/player/{who}")
-        docker("start", self.name)
-        return self
-
-    def put_player(self, path: Path) -> None:
-        docker("cp", str(path), f"{self.name}:/opt/charm/player/{path.name}")
-
-    def player_file(self, name: str) -> str:
-        return docker("exec", self.name, "cat", f"/opt/charm/player/{name}").stdout
-
-    def session(self) -> Session:
-        return Session(self.port)
-
-    def __exit__(self, *exc):
-        docker("rm", "-f", self.name, check=False)
 
 
 class PyGame:

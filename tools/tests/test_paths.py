@@ -10,9 +10,9 @@ from charm_tools import paths
 class PathsTest(unittest.TestCase):
     def test_finds_this_checkout(self):
         root = paths.find_root()
-        self.assertTrue((root / "src" / "merc.h").is_file())
+        self.assertTrue((root / "game" / "charm" / "__init__.py").is_file())
         self.assertTrue((root / "area" / "area.lst").is_file())
-        self.assertEqual(paths.src_dir(root), root / "src")
+        self.assertEqual(paths.game_dir(root), root / "game")
 
     def test_charm_root_must_be_a_checkout(self):
         with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, {"CHARM_ROOT": tmp}):
