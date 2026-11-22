@@ -2,7 +2,7 @@
 
 Compares load_world() with captures from the game itself (tools/fixtures/boot): the stock world's 'memory'
 totals and boot log, and each broken area in cases/ with the bug() lines the game printed for it. Refresh the
-captures with: python -m charm_tools explore parity --docker charm --save
+captures with: python -m charm_tools explore parity --docker charm:c --save
 """
 
 import tempfile

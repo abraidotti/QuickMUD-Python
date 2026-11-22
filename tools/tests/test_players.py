@@ -2,7 +2,7 @@
 
 tools/tests/data/players holds what the C game wrote in a port players --save run: Newbie, a character it made,
 and Shemp and Smokegod after logging in with the fixtures. Recapture with
-python -m charm_tools port players --docker charm --save after changing the C or the fixtures.
+python -m charm_tools port players --docker charm:c --save after changing the C or the fixtures.
 """
 
 import unittest

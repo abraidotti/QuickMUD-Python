@@ -7,3 +7,5 @@ area/rom
 log/*
 gods
 notes
+**/__pycache__
+game/tests
